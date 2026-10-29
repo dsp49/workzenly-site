@@ -3,26 +3,365 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Workzenly</title>
-  <meta name="description" content="Workzenly — coming soon.">
-  <style>
-    :root { --bg: #0b1020; --text: #f5f7ff; --muted: #a9b1d6; --accent: #4f7cff; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      min-height: 100vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; text-align: center;
-      padding: 24px 16px; background: var(--bg); color: var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    }
-    h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); letter-spacing: -0.02em; }
-    h1 span { color: var(--accent); }
-    p { margin-top: 16px; font-size: 1.15rem; color: var(--muted); max-width: 560px; line-height: 1.6; }
-    footer { position: fixed; bottom: 20px; font-size: 0.85rem; color: var(--muted); }
-  </style>
+  <title>Workzenly · One place for the whole workday</title>
+  <meta name="description" content="Workzenly runs hiring, shifts, time, leave and pay for employers, and gives every employee one app for all of it.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-  <h1>Work<span>zenly</span></h1>
-  <p>Something new is on the way. Check back soon.</p>
-  <footer>&copy; 2026 Workzenly</footer>
+
+<header class="nav">
+  <a class="wordmark" href="#top" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="#features">Features</a>
+    <a class="link" href="#how">How it works</a>
+    <a class="link" href="#workplaces">Workplaces</a>
+    <a class="link" href="#faq">Questions</a>
+  </nav>
+  <a class="button button--small" href="#start">Book a demo</a>
+</header>
+
+<main id="top">
+
+  <!-- HERO: the product performs, for both sides of the workday -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__text">
+      <h1 id="hero-title" class="load" style="--i:0">One place for<br> the whole workday</h1>
+      <p class="hero__lead load" style="--i:1">Workzenly runs hiring, shifts, time, leave and pay for employers, and gives every employee one app for all of it.</p>
+      <div class="hero__actions load" style="--i:2">
+        <a class="button" href="#start">Book a demo</a>
+        <a class="link" href="#features">See everything it does</a>
+      </div>
+      <p class="hero__hint load" style="--i:3">Switch sides on the card to see what each person gets.</p>
+    </div>
+
+    <div class="hero__stage load" style="--i:2">
+      <div class="app" data-ui id="app">
+        <div class="app__bar">
+          <span class="app__brand">Workzenly</span>
+          <div class="seg" role="group" aria-label="Choose a view">
+            <button type="button" class="seg__btn" data-role="employee" aria-pressed="true">Employee</button>
+            <button type="button" class="seg__btn" data-role="employer" aria-pressed="false">Employer</button>
+          </div>
+        </div>
+
+        <!-- Employee view -->
+        <div class="app__view" data-view="employee">
+          <p class="app__hello">Good morning, Priya</p>
+          <p class="app__date" id="app-date">Wednesday 29 October</p>
+
+          <div class="clock">
+            <div class="clock__top">
+              <div>
+                <p class="clock__label">Front desk · Northfield Café, Banjara Hills</p>
+                <p class="clock__time num" id="clock-time" aria-live="off">09:02:14</p>
+                <p class="clock__shift">Today’s shift 09:00–17:30</p>
+              </div>
+              <button type="button" class="clock__btn" id="clock-btn" aria-pressed="false">Clock in</button>
+            </div>
+            <p class="clock__status" id="clock-status">Not clocked in yet</p>
+          </div>
+
+          <ul class="tiles">
+            <li class="tile">
+              <span class="tile__k">Leave left</span>
+              <span class="tile__v">14.5 <small>of 24 days</small></span>
+            </li>
+            <li class="tile">
+              <span class="tile__k">Next payslip</span>
+              <span class="tile__v">₹48,260 <small>Fri 31 Oct</small></span>
+            </li>
+            <li class="tile">
+              <span class="tile__k">Next shift</span>
+              <span class="tile__v">Thu 07:00 <small>to 15:30</small></span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Employer view -->
+        <div class="app__view" data-view="employer" hidden>
+          <p class="app__hello">Today at Northfield Café</p>
+          <p class="app__date"><span class="num">6</span> of <span class="num">8</span> people on shift</p>
+
+          <table class="roster">
+            <thead>
+              <tr><th scope="col">Name</th><th scope="col">Role</th><th scope="col" class="num">In</th><th scope="col">Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Priya Raman</td><td>Front desk</td><td class="num">08:58</td><td><span class="pill pill--ok">On shift</span></td></tr>
+              <tr><td>Arjun Mehta</td><td>Barista</td><td class="num">07:01</td><td><span class="pill pill--ok">On shift</span></td></tr>
+              <tr><td>Sara Khan</td><td>Kitchen</td><td class="num">09:14</td><td><span class="pill pill--warn">Late 14 min</span></td></tr>
+              <tr><td>Daniel Joseph</td><td>Barista</td><td class="num">–</td><td><span class="pill">On leave</span></td></tr>
+            </tbody>
+          </table>
+
+          <div class="approve">
+            <div>
+              <p class="approve__k">Waiting for you</p>
+              <p class="approve__v" id="approve-text">3 timesheets and 1 leave request</p>
+            </div>
+            <button type="button" class="approve__btn" id="approve-btn">Approve all</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO: who it is for -->
+  <section class="intro" aria-labelledby="intro-title">
+    <h2 id="intro-title" class="reveal">Built for both sides of the job</h2>
+    <p class="intro__lead reveal">Most companies run work on a payroll tool, a rota spreadsheet, a leave email chain and a group chat. Workzenly puts it in one place, so the person who hires and the person who works see the same facts.</p>
+    <div class="intro__cols">
+      <p class="reveal"><b>For employers.</b> Post a job, hire, onboard, build the rota, approve hours and run payroll from one account. Every number on a payslip traces back to a shift someone actually worked.</p>
+      <p class="reveal"><b>For employees.</b> Clock in from your phone, swap a shift, ask for leave, read your payslip and find the policy you need without asking anyone where it is.</p>
+      <p class="reveal"><b>For managers.</b> See who is in today, who is late and who is on leave. Approve a whole week of timesheets in one tap, and get told before a shift goes uncovered.</p>
+      <p class="reveal"><b>For HR and payroll.</b> Contracts, documents, reviews and pay history live in each person’s record, so month end is a check and not a hunt through inboxes.</p>
+    </div>
+  </section>
+
+  <!-- FEATURES: the command list -->
+  <section class="features" id="features" aria-labelledby="features-title">
+    <h2 id="features-title" class="reveal">Everything a workplace needs</h2>
+    <p class="features__note reveal">Type to find a part of Workzenly, or move through the list.</p>
+    <div class="cmd" data-ui>
+      <label class="visually-hidden" for="cmd-input">Search Workzenly</label>
+      <input class="cmd__input" id="cmd-input" type="search" placeholder="Search Workzenly" autocomplete="off">
+      <ul class="cmd__list" id="cmd-list" role="listbox" aria-label="Parts of Workzenly">
+        <li class="cmd__row" role="option" aria-selected="true" tabindex="0" data-keys="H">
+          <span class="cmd__name">Hiring</span><span class="cmd__keys"><kbd>H</kbd></span>
+          <span class="cmd__text">Post a role, collect applications in one list, schedule interviews and send the offer letter from the same screen.</span>
+        </li>
+        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
+          <span class="cmd__name">Onboarding</span><span class="cmd__keys"><kbd>O</kbd></span>
+          <span class="cmd__text">New starters sign their contract, add bank details and read the handbook before day one, on their own phone.</span>
+        </li>
+        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
+          <span class="cmd__name">Shifts and rotas</span><span class="cmd__keys"><kbd>R</kbd></span>
+          <span class="cmd__text">Build next week’s rota by dragging people into slots. Staff see it instantly and can offer or swap a shift.</span>
+        </li>
+        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
+          <span class="cmd__name">Time and attendance</span><span class="cmd__keys"><kbd>T</kbd></span>
+          <span class="cmd__text">Clock in by phone or a shared tablet at the door. Breaks, overtime and lateness are worked out for you.</span>
+        </li>
+        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
+          <span class="cmd__name">Leave and holidays</span><span class="cmd__keys"><kbd>L</kbd></span>
+          <span class="cmd__text">Ask for a day off in two taps. Managers see who else is away before they say yes, and balances update themselves.</span>
+        </li>
+        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
+          <span class="cmd__name">Payroll and payslips</span><span class="cmd__keys"><kbd>P</kbd></span>
+          <span class="cmd__text">Approved hours, leave and expenses flow into the pay run. Everyone gets their payslip in the app the same day.</span>
+        </li>
+        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
+          <span class="cmd__name">Expenses</span><span class="cmd__keys"><kbd>E</kbd></span>
+          <span class="cmd__text">Photograph the receipt, pick a category, send. Approved claims are paid with the next salary.</span>
+        </li>
+        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
+          <span class="cmd__name">Reviews and goals</span><span class="cmd__keys"><kbd>G</kbd></span>
+          <span class="cmd__text">Set goals together, keep notes from one-to-ones, and run a review cycle without a single spreadsheet.</span>
+        </li>
+        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
+          <span class="cmd__name">Documents and policies</span><span class="cmd__keys"><kbd>D</kbd></span>
+          <span class="cmd__text">Contracts, ID checks, certificates and the staff handbook, stored against each person and searchable.</span>
+        </li>
+      </ul>
+      <p class="cmd__empty" id="cmd-empty" hidden>Nothing by that name yet. Ask us, it may be on the way.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: one leave request, three states -->
+  <section class="how" id="how" aria-labelledby="how-title">
+    <div class="how__steps">
+      <h2 id="how-title" class="reveal">How a day off works</h2>
+      <div class="how__step is-active" data-step="1">
+        <p class="how__line">Asha asks for Friday off.</p>
+        <p class="how__sub">From her phone, on the bus. She can see she has 9 days left before she sends it.</p>
+      </div>
+      <div class="how__step" data-step="2">
+        <p class="how__line">Then her manager says yes.</p>
+        <p class="how__sub">Ravi sees that two others are already off on Friday, finds cover from the rota, and approves it.</p>
+      </div>
+      <div class="how__step" data-step="3">
+        <p class="how__line">Payroll knows without an email.</p>
+        <p class="how__sub">The day comes off her balance and lands in October’s pay run as paid leave. Nobody types it twice.</p>
+      </div>
+    </div>
+
+    <div class="how__stage" aria-hidden="true">
+      <div class="req" data-ui data-state="1" id="req">
+        <!-- state 1 -->
+        <div class="req__state" data-s="1">
+          <p class="req__title">Request leave</p>
+          <div class="req__field"><span>Type</span><b>Annual leave</b></div>
+          <div class="req__field"><span>Dates</span><b>Fri 7 Nov, full day</b></div>
+          <div class="req__field"><span>Balance after</span><b class="num">8 of 24 days</b></div>
+          <div class="req__field req__field--note"><span>Note</span><b>Sister’s wedding in Vizag</b></div>
+          <span class="req__btn">Send request</span>
+        </div>
+        <!-- state 2 -->
+        <div class="req__state" data-s="2">
+          <p class="req__title">Asha Reddy wants Fri 7 Nov off</p>
+          <p class="req__meta">Kitchen · 1 day · Annual leave</p>
+          <p class="req__k">Also away that day</p>
+          <ul class="req__away">
+            <li><span class="dot"></span>Daniel Joseph <em>Annual leave</em></li>
+            <li><span class="dot"></span>Meera Iyer <em>Training</em></li>
+          </ul>
+          <p class="req__k">Cover found</p>
+          <ul class="req__away">
+            <li><span class="dot dot--ok"></span>Karthik S. takes 09:00–17:30 <em>Accepted</em></li>
+          </ul>
+          <div class="req__row"><span class="req__btn req__btn--ghost">Decline</span><span class="req__btn">Approve</span></div>
+        </div>
+        <!-- state 3 -->
+        <div class="req__state" data-s="3">
+          <p class="req__title">October pay run</p>
+          <p class="req__meta">Asha Reddy · Kitchen</p>
+          <table class="req__table">
+            <tr><td>Basic pay</td><td class="num">₹32,000.00</td></tr>
+            <tr><td>Overtime, 6 h</td><td class="num">₹2,400.00</td></tr>
+            <tr class="is-new"><td>Paid leave, 7 Nov</td><td class="num">1 day</td></tr>
+            <tr><td>Expenses</td><td class="num">₹860.00</td></tr>
+            <tr class="req__total"><td>Net pay</td><td class="num">₹35,260.00</td></tr>
+          </table>
+          <p class="req__done"><span class="dot dot--ok"></span>Leave added automatically from approval</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY: clocking on, then and now -->
+  <section class="then" aria-labelledby="then-title">
+    <figure class="then__main reveal">
+      <div class="then__crop"><img class="drift" src="assets/clocking-on-1940.jpg" width="1300" height="994" loading="lazy" decoding="async"
+           alt="A woman in a cap pushes her time card into a factory time clock while a line of colleagues waits behind her, 1940"></div>
+      <figcaption>Clocking on for the morning shift at a factory in Britain, 1940.</figcaption>
+    </figure>
+    <div class="then__text">
+      <h2 id="then-title" class="reveal">Clocking on, since 1940</h2>
+      <p class="reveal">For most of the last century a shift began with a card pushed into a clock by the door. Someone in an office then copied every card into a ledger, worked out the pay and posted the slips.</p>
+      <p class="reveal">The clock moved to the phone, but in most workplaces the copying never stopped. Workzenly is the clock, the ledger and the office in one place, so the time you clock in is the time you are paid for.</p>
+      <figure class="then__small reveal">
+        <img src="assets/punch-clock.jpg" width="900" height="1630" loading="lazy" decoding="async"
+             alt="A wooden master clock with brass gears above a black punch-card time recorder mounted on a blue wall">
+        <figcaption>An Ericsson time recorder, kept at the Lysekil Work Center in Sweden.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- WORKPLACES -->
+  <section class="places" id="workplaces" aria-labelledby="places-title">
+    <h2 id="places-title" class="reveal">Built for every kind of shift</h2>
+    <div class="places__grid">
+      <figure class="place place--a reveal">
+        <img src="assets/cafe-counter.jpg" width="1400" height="1053" loading="lazy" decoding="async" alt="A young man in a black T-shirt works the till behind a café counter">
+        <figcaption><b>Cafés and shops.</b> Rotas that change every week, staff who swap shifts by message, and a till that opens at seven.</figcaption>
+      </figure>
+      <figure class="place place--b reveal">
+        <img src="assets/nurses-station.jpg" width="1400" height="941" loading="lazy" decoding="async" alt="Black and white photograph of staff talking across a hospital nurses’ station with a telephone and charts">
+        <figcaption><b>Clinics and care.</b> Night shifts, handovers and certificates that must be in date before anyone is rostered.</figcaption>
+      </figure>
+      <figure class="place place--c reveal">
+        <img src="assets/site-scaffold.jpg" width="1400" height="1050" loading="lazy" decoding="async" alt="A builder in a white helmet and hi-vis vest walks behind blue scaffolding on a concrete building">
+        <figcaption><b>Sites and warehouses.</b> Crews clocking in at the gate from a shared tablet, overtime counted to the minute.</figcaption>
+      </figure>
+      <div class="place place--d reveal">
+        <p class="place__big">And offices.</p>
+        <p>Hybrid days, holiday calendars and reviews for teams who never clock in at all. Same app, same record, fewer tools.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <h2 id="faq-title" class="faq__title reveal">Questions</h2>
+    <div class="faq__list">
+      <details name="faq" class="reveal" open>
+        <summary>Who is Workzenly for?<span class="plus" aria-hidden="true"></span></summary>
+        <p>Any business with people on a payroll, from a single café to a company with several sites. The employer gets the admin tools and every employee gets their own app.</p>
+      </details>
+      <details name="faq" class="reveal">
+        <summary>Does every employee need a login?<span class="plus" aria-hidden="true"></span></summary>
+        <p>Each person gets their own account for payslips, leave and shifts. For sites where phones are not allowed on the floor, a shared tablet at the door handles clocking in.</p>
+      </details>
+      <details name="faq" class="reveal">
+        <summary>Can it run our payroll?<span class="plus" aria-hidden="true"></span></summary>
+        <p>Yes. Approved hours, leave and expenses go straight into the pay run, and payslips are published to each employee’s app when you finish it.</p>
+      </details>
+      <details name="faq" class="reveal">
+        <summary>Does it work on a phone?<span class="plus" aria-hidden="true"></span></summary>
+        <p>The employee side is built for phones first. Managers can approve, build rotas and check who is in from a phone too; payroll is easiest on a laptop.</p>
+      </details>
+      <details name="faq" class="reveal">
+        <summary>We already use spreadsheets. Can we move our data?<span class="plus" aria-hidden="true"></span></summary>
+        <p>Send us your staff list and leave balances as a spreadsheet and we will import them during setup, so nobody starts from zero.</p>
+      </details>
+      <details name="faq" class="reveal">
+        <summary>How long does setup take?<span class="plus" aria-hidden="true"></span></summary>
+        <p>Most small teams are clocking in within a week. We walk you through it on the demo call and stay with you for the first pay run.</p>
+      </details>
+      <details name="faq" class="reveal">
+        <summary>Who can see salaries and personal details?<span class="plus" aria-hidden="true"></span></summary>
+        <p>You decide. Employees see only their own record, managers see their team’s shifts and leave, and pay is visible only to the people you give payroll access to.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA: first step already open -->
+  <section class="start" id="start" aria-labelledby="start-title">
+    <div class="start__text">
+      <h2 id="start-title" class="reveal">Start with<br> your team</h2>
+      <p class="reveal">Tell us who you are and we will set up a demo workspace with your company name before the call.</p>
+    </div>
+    <form class="dialog reveal" data-ui id="start-form">
+      <p class="dialog__title">Name your workspace</p>
+      <label class="dialog__label" for="company">Company name</label>
+      <input class="dialog__input" id="company" name="company" type="text" value="Northfield Café" autocomplete="organization">
+      <p class="dialog__label" id="side-label">I am</p>
+      <div class="dialog__seg" role="radiogroup" aria-labelledby="side-label">
+        <label><input type="radio" name="side" value="an employer" checked><span>Hiring people</span></label>
+        <label><input type="radio" name="side" value="an employee"><span>Working somewhere</span></label>
+      </div>
+      <label class="dialog__label" for="size">Team size</label>
+      <select class="dialog__input" id="size" name="size">
+        <option>1–10 people</option>
+        <option selected>11–50 people</option>
+        <option>51–200 people</option>
+        <option>More than 200</option>
+      </select>
+      <button class="dialog__btn" type="submit">Book a demo</button>
+      <p class="dialog__note">Opens an email to our team with these details filled in.</p>
+    </form>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__tile foot__statement">
+    <p>Workzenly is one place for hiring, shifts, time, leave and pay, for the people who run work and the people who do it.</p>
+    <p class="foot__legal">© <span id="year">2026</span> Workzenly</p>
+  </div>
+  <nav class="foot__tile foot__nav" aria-label="Footer">
+    <a class="link" href="#features">Features</a>
+    <a class="link" href="#how">How it works</a>
+    <a class="link" href="#workplaces">Workplaces</a>
+    <a class="link" href="#faq">Questions</a>
+  </nav>
+  <div class="foot__tile foot__mail">
+    <p>Write to us</p>
+    <a class="link" href="mailto:hello@workzenly.com">hello@workzenly.com</a>
+  </div>
+  <div class="foot__tile foot__word" aria-hidden="true">Workzenly</div>
+  <a class="foot__tile foot__go" href="#start">
+    <span>Book a demo</span>
+    <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><path d="M10 38 38 10M16 10h22v22" fill="none" stroke="currentColor" stroke-width="4"/></svg>
+  </a>
+  <p class="foot__credits">Pictures: <a class="link" href="https://commons.wikimedia.org/wiki/File:A_Day_in_the_Life_of_a_Munitions_Worker,_Britain,_1940_D679.jpg">“A Day in the Life of a Munitions Worker, 1940”</a>, Ministry of Information, public domain, via Imperial War Museums; <a class="link" href="https://commons.wikimedia.org/wiki/File:LM_Ericsson_tidkontroll_-_old_punch_clock_1.jpg">“LM Ericsson tidkontroll”</a> by W.carter, CC0; <a class="link" href="https://commons.wikimedia.org/wiki/File:Confused._(Unsplash).jpg">“The Coffee Nook”</a> by Zachary Staines, CC0; <a class="link" href="https://commons.wikimedia.org/wiki/File:Nurses%27_Station_at_West_Hospital_(4269772576).jpg">“Nurses’ Station at West Hospital”</a> by VCU Libraries, <a class="link" href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>; <a class="link" href="https://commons.wikimedia.org/wiki/File:Construction_worker_on_scaffolding_during_Mountbatten_House_redevelopment,_Chatham,_Kent.jpg">“Construction worker on scaffolding”</a> by OathOn, CC0. All via Wikimedia Commons.</p>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
