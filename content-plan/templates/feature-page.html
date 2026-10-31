@@ -1,0 +1,165 @@
+<!doctype html>
+<!--
+  WORKZENLY FEATURE PAGE TEMPLATE
+  Copy to /features/<slug>/index.html and replace every {{PLACEHOLDER}}.
+  Rules (checked by content-plan/seo_check.py --feature):
+  - <title> 35–60 chars with the primary keyword; meta description 120–158 chars with it.
+  - One <h1> with the primary keyword (or a close variant) and what Workzenly does.
+  - Hero holds a real product fragment built in HTML (root has data-ui), with believable sample data, no screenshots.
+  - At least 5 <h2>; a .feat-list of 6 capabilities; a mid-page .cta-inline; FAQ (.faq-list) of 5–7 questions mirrored in FAQPage JSON-LD.
+  - At least 4 links to related /blog/ posts from the plan.
+  - Body word count ≥ 900. No invented customers, ratings, prices, certifications or integrations.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/features/{{SLUG}}/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/features/{{SLUG}}/">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="{{META_DESCRIPTION}}">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "{{TITLE}}",
+        "description": "{{META_DESCRIPTION}}",
+        "url": "https://workzenly.com/features/{{SLUG}}/",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Workzenly {{FEATURE_NAME}}",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "description": "{{META_DESCRIPTION}}",
+        "url": "https://workzenly.com/features/{{SLUG}}/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "{{FEATURE_NAME}}", "item": "https://workzenly.com/features/{{SLUG}}/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "{{FAQ_Q1}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A1}}" } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="{{PRIMARY_KEYWORD}}" data-intent="commercial" data-topic="{{FEATURE_NAME}}">
+
+<header class="nav">
+  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/time-clock/">Time clock</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/features/pto/">PTO</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li aria-current="page">{{FEATURE_NAME}}</li></ol>
+</nav>
+
+<main>
+  <section class="feat-hero" aria-labelledby="feat-title">
+    <div class="feat-hero__text">
+      <h1 id="feat-title">{{H1}}</h1>
+      <p class="feat-hero__lead">{{LEAD}}</p>
+      <div class="feat-hero__actions">
+        <a class="button" href="/#start">Book a demo</a>
+        <a class="link" href="#how">{{SECONDARY_LINK_TEXT}}</a>
+      </div>
+    </div>
+    <div class="feat-hero__stage">
+      <div class="frag" data-ui>
+        <p class="frag__title">{{FRAGMENT_TITLE}}</p>
+        <p class="frag__meta">{{FRAGMENT_META}}</p>
+        <!-- real table / controls with believable sample data; one working control -->
+      </div>
+    </div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="why-title">
+    <h2 id="why-title">{{WHY_HEADING}}</h2>
+    <div class="feat-section__body"><p>…</p></div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="what-title">
+    <h2 id="what-title">{{CAPABILITIES_HEADING}}</h2>
+    <ul class="feat-list">
+      <li><b>{{CAP_1}}</b><p>{{CAP_1_TEXT}}</p></li>
+      <!-- six items -->
+    </ul>
+  </section>
+
+  <div class="feat-section">
+    <aside class="cta-inline" aria-label="Book a demo" style="grid-column: 1 / -1;">
+      <div><p class="cta-inline__title">{{CTA_TITLE}}</p><p>{{CTA_TEXT}}</p></div>
+      <a class="cta-inline__btn" href="/#start">Book a demo</a>
+    </aside>
+  </div>
+
+  <section class="feat-section" id="how" aria-labelledby="how-title">
+    <h2 id="how-title">{{HOW_HEADING}}</h2>
+    <div class="feat-section__body"><ol>…</ol></div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="guides-title">
+    <h2 id="guides-title">Guides and free tools</h2>
+    <div class="feat-section__body"><ul><li><a class="link" href="/blog/{{SLUG}}/">…</a></li></ul></div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="faq-title">
+    <h2 id="faq-title">Questions</h2>
+    <div class="feat-section__body faq-list">
+      <details><summary>{{FAQ_Q1}}</summary><p>{{FAQ_A1}}</p></details>
+    </div>
+  </section>
+
+  <section class="close-cta" aria-labelledby="close-title">
+    <h2 id="close-title">{{CLOSE_HEADING}}</h2>
+    <div class="close-cta__side"><p>{{CLOSE_TEXT}}</p><a class="button" href="/#start">Book a demo</a></div>
+  </section>
+</main>
+
+<footer class="simple-foot">
+  <p>© <span id="year">2026</span> Workzenly</p>
+  <nav aria-label="Footer">
+    <a href="/features/time-clock/">Time clock</a>
+    <a href="/features/scheduling/">Scheduling</a>
+    <a href="/features/payroll/">Payroll</a>
+    <a href="/features/pto/">PTO</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+  <p><a href="mailto:hello@workzenly.com">hello@workzenly.com</a></p>
+</footer>
+<script src="/blog.js" defer></script>
+</body>
+</html>

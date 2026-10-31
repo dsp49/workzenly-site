@@ -1,0 +1,1028 @@
+{
+ "audience": "United States",
+ "posts": [
+  {
+   "batch": "A_pay_calculators",
+   "slug": "salary-to-hourly-calculator",
+   "url": "/blog/salary-to-hourly-calculator/",
+   "keyword": "salary to hourly",
+   "intent": "transactional",
+   "volume": 32000,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "salary to hourly calculator",
+    "yearly salary to hourly",
+    "annual salary to hourly wage",
+    "how much is 50000 a year hourly"
+   ],
+   "tool": true,
+   "feature": "payroll"
+  },
+  {
+   "batch": "A_pay_calculators",
+   "slug": "hourly-to-salary-calculator",
+   "url": "/blog/hourly-to-salary-calculator/",
+   "keyword": "hourly to salary",
+   "intent": "transactional",
+   "volume": 33000,
+   "kd": 23,
+   "country": "us",
+   "secondary": [
+    "hourly to salary calculator",
+    "hourly wage to annual salary",
+    "20 an hour is how much a year"
+   ],
+   "tool": true,
+   "feature": "payroll"
+  },
+  {
+   "batch": "A_pay_calculators",
+   "slug": "overtime-calculator",
+   "url": "/blog/overtime-calculator/",
+   "keyword": "overtime calculator",
+   "intent": "transactional",
+   "volume": 17000,
+   "kd": 3,
+   "country": "us",
+   "secondary": [
+    "overtime pay calculator",
+    "how much is overtime pay",
+    "time and a half calculator"
+   ],
+   "tool": true,
+   "feature": "payroll"
+  },
+  {
+   "batch": "A_pay_calculators",
+   "slug": "time-card-calculator",
+   "url": "/blog/time-card-calculator/",
+   "keyword": "time card calculator",
+   "intent": "transactional",
+   "volume": 18000,
+   "kd": 3,
+   "country": "us",
+   "secondary": [
+    "free time card calculator",
+    "clock in calculator",
+    "hours calculator with lunch"
+   ],
+   "tool": true,
+   "feature": "time-clock"
+  },
+  {
+   "batch": "A_pay_calculators",
+   "slug": "hours-to-decimal-calculator",
+   "url": "/blog/hours-to-decimal-calculator/",
+   "keyword": "hours to decimal calculator",
+   "intent": "transactional",
+   "volume": 2100,
+   "kd": 6,
+   "country": "us",
+   "secondary": [
+    "minutes to decimal",
+    "convert hours and minutes to decimal",
+    "payroll decimal hours"
+   ],
+   "tool": true,
+   "feature": "payroll"
+  },
+  {
+   "batch": "A_pay_calculators",
+   "slug": "how-to-calculate-overtime",
+   "url": "/blog/how-to-calculate-overtime/",
+   "keyword": "how to calculate overtime",
+   "intent": "informational",
+   "volume": 2700,
+   "kd": 9,
+   "country": "us",
+   "secondary": [
+    "how is overtime calculated",
+    "overtime rate",
+    "regular rate of pay",
+    "time and a half"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "A_pay_calculators",
+   "slug": "holiday-pay",
+   "url": "/blog/holiday-pay/",
+   "keyword": "holiday pay",
+   "intent": "informational",
+   "volume": 8100,
+   "kd": 6,
+   "country": "us",
+   "secondary": [
+    "is holiday pay required",
+    "federal holidays",
+    "holiday pay rules",
+    "time and a half on holidays"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "B_payroll_forms",
+   "slug": "w-4-form",
+   "url": "/blog/w-4-form/",
+   "keyword": "w-4",
+   "intent": "informational",
+   "volume": 46000,
+   "kd": 1,
+   "country": "us",
+   "secondary": [
+    "w-4 form 2026",
+    "how to fill out a w-4",
+    "w4 form",
+    "employee withholding certificate"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "B_payroll_forms",
+   "slug": "i-9-form",
+   "url": "/blog/i-9-form/",
+   "keyword": "i-9 form",
+   "intent": "informational",
+   "volume": 24000,
+   "kd": 2,
+   "country": "us",
+   "secondary": [
+    "i-9 form 2026",
+    "i-9 documents",
+    "form i-9 list of acceptable documents",
+    "e-verify"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "B_payroll_forms",
+   "slug": "1099-vs-w2",
+   "url": "/blog/1099-vs-w2/",
+   "keyword": "1099 vs w2",
+   "intent": "informational",
+   "volume": 8700,
+   "kd": 2,
+   "country": "us",
+   "secondary": [
+    "w2 vs 1099",
+    "independent contractor vs employee",
+    "worker classification"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "B_payroll_forms",
+   "slug": "exempt-vs-non-exempt",
+   "url": "/blog/exempt-vs-non-exempt/",
+   "keyword": "exempt vs non exempt",
+   "intent": "informational",
+   "volume": 33000,
+   "kd": 12,
+   "country": "us",
+   "secondary": [
+    "non exempt vs exempt",
+    "exempt employee",
+    "salary threshold",
+    "flsa exemptions"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "B_payroll_forms",
+   "slug": "how-to-read-a-pay-stub",
+   "url": "/blog/how-to-read-a-pay-stub/",
+   "keyword": "how to read a pay stub",
+   "intent": "informational",
+   "volume": 11000,
+   "kd": 2,
+   "country": "us",
+   "secondary": [
+    "what is a pay stub",
+    "pay stub abbreviations",
+    "gross vs net pay",
+    "ytd on pay stub"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "B_payroll_forms",
+   "slug": "how-to-process-payroll",
+   "url": "/blog/how-to-process-payroll/",
+   "keyword": "how to process payroll",
+   "intent": "informational",
+   "volume": 1300,
+   "kd": 8,
+   "country": "us",
+   "secondary": [
+    "how to do payroll",
+    "payroll process",
+    "payroll checklist small business"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "B_payroll_forms",
+   "slug": "new-hire-paperwork",
+   "url": "/blog/new-hire-paperwork/",
+   "keyword": "new hire paperwork",
+   "intent": "informational",
+   "volume": 1700,
+   "kd": 9,
+   "country": "us",
+   "secondary": [
+    "new employee forms",
+    "new hire forms checklist",
+    "onboarding documents"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "C_minimum_wage",
+   "slug": "minimum-wage-by-state",
+   "url": "/blog/minimum-wage-by-state/",
+   "keyword": "minimum wage by state",
+   "intent": "informational",
+   "volume": 9700,
+   "kd": 1,
+   "country": "us",
+   "secondary": [
+    "state minimum wage 2026",
+    "highest minimum wage",
+    "federal minimum wage"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "C_minimum_wage",
+   "slug": "california-minimum-wage",
+   "url": "/blog/california-minimum-wage/",
+   "keyword": "california minimum wage",
+   "intent": "informational",
+   "volume": 50000,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "minimum wage in california",
+    "california minimum wage 2026",
+    "ca minimum wage"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "C_minimum_wage",
+   "slug": "florida-minimum-wage",
+   "url": "/blog/florida-minimum-wage/",
+   "keyword": "florida minimum wage",
+   "intent": "informational",
+   "volume": 21000,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "minimum wage in florida",
+    "florida minimum wage 2026",
+    "florida tipped minimum wage"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "C_minimum_wage",
+   "slug": "texas-minimum-wage",
+   "url": "/blog/texas-minimum-wage/",
+   "keyword": "texas minimum wage",
+   "intent": "informational",
+   "volume": 34000,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "minimum wage in texas",
+    "texas minimum wage 2026",
+    "what is minimum wage in texas"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "C_minimum_wage",
+   "slug": "new-york-minimum-wage",
+   "url": "/blog/new-york-minimum-wage/",
+   "keyword": "new york minimum wage",
+   "intent": "informational",
+   "volume": 15000,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "minimum wage ny",
+    "nys minimum wage 2026",
+    "nyc minimum wage"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "C_minimum_wage",
+   "slug": "ohio-minimum-wage",
+   "url": "/blog/ohio-minimum-wage/",
+   "keyword": "ohio minimum wage",
+   "intent": "informational",
+   "volume": 12000,
+   "kd": 12,
+   "country": "us",
+   "secondary": [
+    "minimum wage in ohio",
+    "ohio minimum wage 2026",
+    "ohio tipped wage"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "C_minimum_wage",
+   "slug": "michigan-minimum-wage",
+   "url": "/blog/michigan-minimum-wage/",
+   "keyword": "michigan minimum wage",
+   "intent": "informational",
+   "volume": 12000,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "michigan minimum wage 2026",
+    "minimum wage in michigan",
+    "michigan tipped wage"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "D_leave_attendance",
+   "slug": "bereavement-leave",
+   "url": "/blog/bereavement-leave/",
+   "keyword": "bereavement leave",
+   "intent": "informational",
+   "volume": 69000,
+   "kd": 10,
+   "country": "us",
+   "secondary": [
+    "what is bereavement leave",
+    "is bereavement leave paid",
+    "bereavement leave policy",
+    "immediate family for bereavement"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "batch": "D_leave_attendance",
+   "slug": "fmla-leave",
+   "url": "/blog/fmla-leave/",
+   "keyword": "fmla leave",
+   "intent": "informational",
+   "volume": 15000,
+   "kd": 18,
+   "country": "us",
+   "secondary": [
+    "what is fmla",
+    "fmla eligibility",
+    "fmla rules for employers"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "batch": "D_leave_attendance",
+   "slug": "paid-time-off",
+   "url": "/blog/paid-time-off/",
+   "keyword": "paid time off",
+   "intent": "informational",
+   "volume": 5600,
+   "kd": 17,
+   "country": "us",
+   "secondary": [
+    "pto",
+    "what is paid time off",
+    "pto policy",
+    "pto accrual"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "batch": "D_leave_attendance",
+   "slug": "jury-duty-pay",
+   "url": "/blog/jury-duty-pay/",
+   "keyword": "do you get paid for jury duty",
+   "intent": "informational",
+   "volume": 4400,
+   "kd": 2,
+   "country": "us",
+   "secondary": [
+    "jury duty pay",
+    "jury duty leave",
+    "employer jury duty policy"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "batch": "D_leave_attendance",
+   "slug": "no-call-no-show",
+   "url": "/blog/no-call-no-show/",
+   "keyword": "no call no show",
+   "intent": "informational",
+   "volume": 4500,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "no call no show policy",
+    "job abandonment",
+    "what is a no call no show"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "batch": "D_leave_attendance",
+   "slug": "tardiness-policy",
+   "url": "/blog/tardiness-policy/",
+   "keyword": "tardiness",
+   "intent": "informational",
+   "volume": 4500,
+   "kd": 3,
+   "country": "us",
+   "secondary": [
+    "tardiness policy",
+    "late to work policy",
+    "how to handle tardy employees"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "batch": "D_leave_attendance",
+   "slug": "attendance-policy",
+   "url": "/blog/attendance-policy/",
+   "keyword": "attendance policy",
+   "intent": "transactional",
+   "volume": 1400,
+   "kd": 1,
+   "country": "us",
+   "secondary": [
+    "employee attendance policy",
+    "attendance policy template",
+    "attendance point system"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "batch": "E_scheduling",
+   "slug": "9-80-work-schedule",
+   "url": "/blog/9-80-work-schedule/",
+   "keyword": "9/80 work schedule",
+   "intent": "informational",
+   "volume": 8400,
+   "kd": 1,
+   "country": "us",
+   "secondary": [
+    "what is a 9/80 work schedule",
+    "9/80 schedule pros and cons",
+    "compressed work week"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "batch": "E_scheduling",
+   "slug": "dupont-schedule",
+   "url": "/blog/dupont-schedule/",
+   "keyword": "dupont schedule",
+   "intent": "informational",
+   "volume": 5400,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "dupont shift schedule",
+    "dupont schedule example",
+    "12 hour rotating shift"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "batch": "E_scheduling",
+   "slug": "2-2-3-schedule",
+   "url": "/blog/2-2-3-schedule/",
+   "keyword": "2-2-3 schedule",
+   "intent": "informational",
+   "volume": 2900,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "what is a 2-2-3 schedule",
+    "2 2 3 work schedule",
+    "panama schedule"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "batch": "E_scheduling",
+   "slug": "pitman-schedule",
+   "url": "/blog/pitman-schedule/",
+   "keyword": "pitman schedule",
+   "intent": "informational",
+   "volume": 1900,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "what is a pitman schedule",
+    "pitman shift pattern",
+    "12 hour shift schedule"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "batch": "E_scheduling",
+   "slug": "work-schedule-template",
+   "url": "/blog/work-schedule-template/",
+   "keyword": "work schedule template",
+   "intent": "transactional",
+   "volume": 4300,
+   "kd": 17,
+   "country": "us",
+   "secondary": [
+    "employee schedule template",
+    "weekly work schedule template",
+    "shift schedule template"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "batch": "E_scheduling",
+   "slug": "hybrid-work-schedule",
+   "url": "/blog/hybrid-work-schedule/",
+   "keyword": "hybrid work schedule",
+   "intent": "informational",
+   "volume": 3100,
+   "kd": 3,
+   "country": "us",
+   "secondary": [
+    "hybrid schedule examples",
+    "hybrid work policy",
+    "office days"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "batch": "E_scheduling",
+   "slug": "shift-differential",
+   "url": "/blog/shift-differential/",
+   "keyword": "shift differential",
+   "intent": "informational",
+   "volume": 3600,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "shift differential meaning",
+    "shift differential pay",
+    "night shift differential"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "batch": "F_time_tracking",
+   "slug": "timesheet-template",
+   "url": "/blog/timesheet-template/",
+   "keyword": "timesheet template",
+   "intent": "transactional",
+   "volume": 5100,
+   "kd": 2,
+   "country": "us",
+   "secondary": [
+    "weekly timesheet",
+    "excel timesheet template",
+    "free timesheet template"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "batch": "F_time_tracking",
+   "slug": "what-is-a-timesheet",
+   "url": "/blog/what-is-a-timesheet/",
+   "keyword": "what is a timesheet",
+   "intent": "informational",
+   "volume": 3400,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "timesheet meaning",
+    "how to fill out a timesheet",
+    "timesheet rules"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "batch": "F_time_tracking",
+   "slug": "time-card-template",
+   "url": "/blog/time-card-template/",
+   "keyword": "time card template",
+   "intent": "transactional",
+   "volume": 1500,
+   "kd": 7,
+   "country": "us",
+   "secondary": [
+    "printable time card",
+    "weekly time card",
+    "employee time card"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "batch": "F_time_tracking",
+   "slug": "what-is-a-geofence",
+   "url": "/blog/what-is-a-geofence/",
+   "keyword": "what is a geofence",
+   "intent": "informational",
+   "volume": 66000,
+   "kd": 14,
+   "country": "us",
+   "secondary": [
+    "geofencing",
+    "geofence time clock",
+    "geofencing for employees"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "batch": "F_time_tracking",
+   "slug": "time-and-attendance-tracking",
+   "url": "/blog/time-and-attendance-tracking/",
+   "keyword": "time and attendance tracking",
+   "intent": "commercial",
+   "volume": 1900,
+   "kd": 14,
+   "country": "us",
+   "secondary": [
+    "time and attendance system",
+    "employee attendance tracking",
+    "time and attendance software"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "batch": "F_time_tracking",
+   "slug": "gps-time-clock-app",
+   "url": "/blog/gps-time-clock-app/",
+   "keyword": "gps time clock app",
+   "intent": "commercial",
+   "volume": 450,
+   "kd": 13,
+   "country": "us",
+   "secondary": [
+    "gps time clock",
+    "gps clock in app",
+    "mobile time clock"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "batch": "F_time_tracking",
+   "slug": "california-overtime-law",
+   "url": "/blog/california-overtime-law/",
+   "keyword": "california overtime law",
+   "intent": "informational",
+   "volume": 2000,
+   "kd": 7,
+   "country": "us",
+   "secondary": [
+    "california daily overtime",
+    "double time california",
+    "california overtime rules"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "G_people_docs",
+   "slug": "employee-onboarding",
+   "url": "/blog/employee-onboarding/",
+   "keyword": "employee onboarding",
+   "intent": "informational",
+   "volume": 40000,
+   "kd": 2,
+   "country": "us",
+   "secondary": [
+    "onboarding process",
+    "onboarding new employees",
+    "employee onboarding best practices"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "G_people_docs",
+   "slug": "employee-onboarding-checklist",
+   "url": "/blog/employee-onboarding-checklist/",
+   "keyword": "employee onboarding checklist",
+   "intent": "transactional",
+   "volume": 3900,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "onboarding checklist",
+    "new hire checklist",
+    "onboarding checklist template"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "G_people_docs",
+   "slug": "performance-review-template",
+   "url": "/blog/performance-review-template/",
+   "keyword": "performance review template",
+   "intent": "transactional",
+   "volume": 3700,
+   "kd": 1,
+   "country": "us",
+   "secondary": [
+    "employee performance review template",
+    "performance review examples",
+    "performance review phrases"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "batch": "G_people_docs",
+   "slug": "self-performance-review-examples",
+   "url": "/blog/self-performance-review-examples/",
+   "keyword": "self performance review examples",
+   "intent": "informational",
+   "volume": 1900,
+   "kd": 6,
+   "country": "us",
+   "secondary": [
+    "self evaluation examples",
+    "self assessment examples",
+    "areas of improvement examples"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "batch": "G_people_docs",
+   "slug": "employee-handbook-template",
+   "url": "/blog/employee-handbook-template/",
+   "keyword": "employee handbook template",
+   "intent": "transactional",
+   "volume": 3100,
+   "kd": 6,
+   "country": "us",
+   "secondary": [
+    "employee handbook",
+    "employee handbook examples",
+    "what to include in an employee handbook"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "batch": "G_people_docs",
+   "slug": "offer-letter-template",
+   "url": "/blog/offer-letter-template/",
+   "keyword": "offer letter template",
+   "intent": "transactional",
+   "volume": 7800,
+   "kd": 4,
+   "country": "us",
+   "secondary": [
+    "job offer letter",
+    "offer letter sample",
+    "employment offer letter"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "G_people_docs",
+   "slug": "termination-letter",
+   "url": "/blog/termination-letter/",
+   "keyword": "termination letter",
+   "intent": "transactional",
+   "volume": 7100,
+   "kd": 4,
+   "country": "us",
+   "secondary": [
+    "termination letter template",
+    "employee termination letter",
+    "letter of termination"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "H_software",
+   "slug": "best-hr-software-for-small-business",
+   "url": "/blog/best-hr-software-for-small-business/",
+   "keyword": "best hr software for small business",
+   "intent": "commercial",
+   "volume": 1800,
+   "kd": 12,
+   "country": "us",
+   "secondary": [
+    "hr software for small business",
+    "hris for small business",
+    "small business hr tools"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "H_software",
+   "slug": "employee-onboarding-software",
+   "url": "/blog/employee-onboarding-software/",
+   "keyword": "employee onboarding software",
+   "intent": "commercial",
+   "volume": 2800,
+   "kd": 8,
+   "country": "us",
+   "secondary": [
+    "onboarding software",
+    "new hire onboarding software",
+    "onboarding tools"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "batch": "H_software",
+   "slug": "pto-tracker",
+   "url": "/blog/pto-tracker/",
+   "keyword": "pto tracker",
+   "intent": "commercial",
+   "volume": 1000,
+   "kd": 6,
+   "country": "us",
+   "secondary": [
+    "vacation tracker",
+    "pto tracking software",
+    "employee time off tracker"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "batch": "H_software",
+   "slug": "retail-scheduling-software",
+   "url": "/blog/retail-scheduling-software/",
+   "keyword": "retail scheduling software",
+   "intent": "commercial",
+   "volume": 800,
+   "kd": 7,
+   "country": "us",
+   "secondary": [
+    "retail employee scheduling",
+    "retail staff scheduling app",
+    "store scheduling"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "batch": "H_software",
+   "slug": "restaurant-scheduling-software",
+   "url": "/blog/restaurant-scheduling-software/",
+   "keyword": "restaurant scheduling software",
+   "intent": "commercial",
+   "volume": 600,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "restaurant schedule software",
+    "restaurant employee scheduling app",
+    "server scheduling"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "batch": "H_software",
+   "slug": "healthcare-scheduling-software",
+   "url": "/blog/healthcare-scheduling-software/",
+   "keyword": "healthcare scheduling software",
+   "intent": "commercial",
+   "volume": 800,
+   "kd": 6,
+   "country": "us",
+   "secondary": [
+    "nurse scheduling software",
+    "healthcare staff scheduling",
+    "clinic scheduling"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "batch": "H_software",
+   "slug": "when-i-work-alternatives",
+   "url": "/blog/when-i-work-alternatives/",
+   "keyword": "when i work alternatives",
+   "intent": "commercial",
+   "volume": 700,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "when i work competitors",
+    "apps like when i work",
+    "employee scheduling app alternatives"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  }
+ ],
+ "features": [
+  {
+   "slug": "time-clock",
+   "url": "/features/time-clock/",
+   "keyword": "employee time clock app",
+   "intent": "commercial",
+   "volume": 10000,
+   "kd": 22,
+   "country": "us",
+   "secondary": [
+    "time clock app",
+    "clock in clock out app",
+    "gps time clock",
+    "free time clock app"
+   ]
+  },
+  {
+   "slug": "scheduling",
+   "url": "/features/scheduling/",
+   "keyword": "shift scheduling app",
+   "intent": "commercial",
+   "volume": 350,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "employee scheduling app",
+    "employee scheduling software",
+    "shift swap app",
+    "staff scheduling"
+   ]
+  },
+  {
+   "slug": "payroll",
+   "url": "/features/payroll/",
+   "keyword": "payroll software for small business",
+   "intent": "commercial",
+   "volume": 2700,
+   "kd": 35,
+   "country": "us",
+   "secondary": [
+    "small business payroll",
+    "payroll app",
+    "run payroll",
+    "direct deposit payroll"
+   ]
+  },
+  {
+   "slug": "pto",
+   "url": "/features/pto/",
+   "keyword": "pto tracking software",
+   "intent": "commercial",
+   "volume": 500,
+   "kd": 15,
+   "country": "us",
+   "secondary": [
+    "pto tracker",
+    "leave management software",
+    "time off tracking",
+    "vacation tracker"
+   ]
+  }
+ ]
+}

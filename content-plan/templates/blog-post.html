@@ -1,0 +1,219 @@
+<!doctype html>
+<!--
+  WORKZENLY BLOG POST TEMPLATE
+  Copy to /blog/<slug>/index.html and replace every {{PLACEHOLDER}}.
+  Rules (checked by content-plan/seo_check.py):
+  - <title>: 35–60 characters, contains the primary keyword, ends with " · Workzenly" only if it fits.
+  - meta description: 120–158 characters, contains the primary keyword, ends with a reason to click.
+  - Exactly one <h1>, containing the primary keyword.
+  - Primary keyword in the first 100 words of the article.
+  - <body data-keyword="..." data-intent="..."> must match the plan.
+  - At least 5 <h2> with id attributes, each listed in the table of contents.
+  - Two CTA blocks: one .cta-inline in the MIDDLE of the article (30–65% of the words), one near the end.
+  - At least 4 internal links to other /blog/ posts or /features/ pages from the plan.
+  - A FAQ section (.faq-list) with 4–6 questions, mirrored exactly in the FAQPage JSON-LD.
+  - JSON-LD: BlogPosting + BreadcrumbList + FAQPage, valid JSON.
+  - Word count: informational ≥ 1300, transactional ≥ 1000, commercial ≥ 1500 (article body only).
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/blog/{{SLUG}}/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/blog/{{SLUG}}/">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="{{META_DESCRIPTION}}">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta property="article:published_time" content="2026-10-31">
+  <meta property="article:section" content="{{TOPIC}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "{{H1}}",
+        "description": "{{META_DESCRIPTION}}",
+        "datePublished": "2026-10-31",
+        "dateModified": "2026-10-31",
+        "author": { "@type": "Organization", "name": "Workzenly", "url": "https://workzenly.com/" },
+        "publisher": { "@type": "Organization", "name": "Workzenly", "logo": { "@type": "ImageObject", "url": "https://workzenly.com/apple-touch-icon.png" } },
+        "mainEntityOfPage": "https://workzenly.com/blog/{{SLUG}}/",
+        "image": "https://workzenly.com/og-image.png",
+        "keywords": "{{PRIMARY_KEYWORD}}, {{SECONDARY_KEYWORDS}}"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://workzenly.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "{{SHORT_NAME}}", "item": "https://workzenly.com/blog/{{SLUG}}/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "{{FAQ_Q1}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A1}}" } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="{{PRIMARY_KEYWORD}}" data-intent="{{INTENT}}" data-topic="{{TOPIC}}">
+
+<header class="nav">
+  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/time-clock/">Time clock</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/features/pto/">PTO</a>
+    <a class="link" href="/blog/" aria-current="page">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li aria-current="page">{{SHORT_NAME}}</li>
+  </ol>
+</nav>
+
+<main>
+  <header class="post-head">
+    <div class="post-head__text">
+      <h1>{{H1}}</h1>
+      <p class="post-head__lead">{{LEAD_SENTENCE}}</p>
+      <p class="post-meta"><span>By <b>Workzenly team</b></span><span>Updated 31 October 2026</span><span>{{READ_MINUTES}} min read</span></p>
+    </div>
+    <aside class="post-head__aside">
+      <strong>{{ASIDE_TITLE}}</strong>
+      <p>{{ASIDE_TEXT}}</p>
+      <a class="button button--small" href="{{ASIDE_LINK}}">{{ASIDE_BUTTON}}</a>
+    </aside>
+  </header>
+
+  <div class="post">
+    <nav class="toc" aria-label="On this page">
+      <p class="toc__title">On this page</p>
+      <ol>
+        <li><a href="#{{H2_ID_1}}">{{H2_TEXT_1}}</a></li>
+        <!-- one <li> per h2 -->
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <div class="summary">
+        <p class="summary__title">Quick answer</p>
+        <ul>
+          <li>{{TAKEAWAY_1}}</li>
+          <li>{{TAKEAWAY_2}}</li>
+          <li>{{TAKEAWAY_3}}</li>
+        </ul>
+      </div>
+
+      <p>{{INTRO_PARAGRAPH_WITH_PRIMARY_KEYWORD}}</p>
+
+      <h2 id="{{H2_ID_1}}">{{H2_TEXT_1}}</h2>
+      <p>…</p>
+
+      <!-- OPTIONAL TOOL (calculator posts): put it right after the intro so the answer is first.
+      <div class="tool" id="calc">
+        <p class="tool__title">Overtime calculator</p>
+        <form class="tool__grid" id="calc-form">
+          <div><label for="f1">Hourly rate ($)</label><input id="f1" type="number" inputmode="decimal" min="0" step="0.01" value="20" required></div>
+          <div><label for="f2">Hours worked this week</label><input id="f2" type="number" min="0" step="0.25" value="46" required></div>
+        </form>
+        <button class="tool__btn" type="submit" form="calc-form">Calculate</button>
+        <div class="tool__result" aria-live="polite"><p class="tool__big" id="out">$980.00</p><p class="tool__note">…</p></div>
+      </div>
+      Inline <script> at the end of <body> wires the form. Must work with the default values on load.
+      -->
+
+      <!-- OPTIONAL TEMPLATE (letter/format posts):
+      <div class="template">
+        <div class="template__bar"><span class="template__name">Offer letter template 1</span><button class="copy-btn" type="button" data-copy="tpl-1">Copy text</button></div>
+        <div class="template__body" id="tpl-1">[Company name and address] …</div>
+      </div>
+      -->
+
+      <!-- MID-ARTICLE CTA: place between 30% and 65% of the article's words -->
+      <aside class="cta-inline" aria-label="Try Workzenly">
+        <div>
+          <p class="cta-inline__title">{{CTA1_TITLE}}</p>
+          <p>{{CTA1_TEXT}}</p>
+        </div>
+        <a class="cta-inline__btn" href="{{CTA1_LINK}}">{{CTA1_BUTTON}}</a>
+      </aside>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>{{FAQ_Q1}}</summary><p>{{FAQ_A1}}</p></details>
+      </div>
+
+      <!-- END CTA -->
+      <aside class="cta-inline cta-inline--quiet" aria-label="Book a demo">
+        <div>
+          <p class="cta-inline__title">{{CTA2_TITLE}}</p>
+          <p>{{CTA2_TEXT}}</p>
+        </div>
+        <a class="cta-inline__btn" href="/#start">Book a demo</a>
+      </aside>
+
+      <div class="byline">
+        <span class="byline__mark" aria-hidden="true">W</span>
+        <p>Written by the Workzenly team, who build time clock, scheduling, PTO and payroll software for US businesses. This guide is general information, not legal or tax advice. Federal, state and local rules change; confirm current requirements with your state labor department or an employment attorney.</p>
+      </div>
+    </article>
+  </div>
+
+  <section class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Keep reading</h2>
+    <div class="related__list">
+      <a class="related__item" href="/blog/{{RELATED_SLUG_1}}/"><b>{{RELATED_TITLE_1}}</b><span>{{RELATED_TOPIC_1}}</span></a>
+      <a class="related__item" href="/blog/{{RELATED_SLUG_2}}/"><b>{{RELATED_TITLE_2}}</b><span>{{RELATED_TOPIC_2}}</span></a>
+      <a class="related__item" href="/blog/{{RELATED_SLUG_3}}/"><b>{{RELATED_TITLE_3}}</b><span>{{RELATED_TOPIC_3}}</span></a>
+    </div>
+  </section>
+
+  <section class="close-cta" aria-labelledby="close-title">
+    <h2 id="close-title">Run time, schedules and pay in one place</h2>
+    <div class="close-cta__side">
+      <p>Workzenly handles time clocks, schedules, PTO and payroll for employers, and gives every employee one app for all of it.</p>
+      <a class="button" href="/#start">Book a demo</a>
+    </div>
+  </section>
+</main>
+
+<footer class="simple-foot">
+  <p>© <span id="year">2026</span> Workzenly</p>
+  <nav aria-label="Footer">
+    <a href="/features/time-clock/">Time clock</a>
+    <a href="/features/scheduling/">Scheduling</a>
+    <a href="/features/payroll/">Payroll</a>
+    <a href="/features/pto/">PTO</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+  <p><a href="mailto:hello@workzenly.com">hello@workzenly.com</a></p>
+</footer>
+
+<script src="/blog.js" defer></script>
+</body>
+</html>

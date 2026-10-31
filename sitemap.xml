@@ -3,5 +3,16 @@
   <url>
     <loc>https://workzenly.com/</loc>
     <lastmod>2026-10-31</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://workzenly.com/blog/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://workzenly.com/blog/overtime-calculator/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>

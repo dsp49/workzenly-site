@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /content-plan/
 
 Sitemap: https://workzenly.com/sitemap.xml

@@ -23,18 +23,18 @@
   const greet = () => {
     const h = new Date().getHours();
     const hello = $('.app__view[data-view="employee"] .app__hello');
-    if (hello) hello.textContent = (h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening') + ', Priya';
+    if (hello) hello.textContent = (h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening') + ', Maya';
   };
 
   const tick = () => {
     const now = new Date();
-    if (timeEl) timeEl.textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+    if (timeEl) timeEl.textContent = `${now.getHours() % 12 || 12}:${pad(now.getMinutes())}:${pad(now.getSeconds())} ${now.getHours() < 12 ? 'AM' : 'PM'}`;
     if (clockedAt && statusEl) {
       const s = Math.floor((now - clockedAt) / 1000);
-      statusEl.innerHTML = `On shift for <b class="num">${pad(Math.floor(s / 3600))}:${pad(Math.floor(s / 60) % 60)}:${pad(s % 60)}</b> · clocked in at ${pad(clockedAt.getHours())}:${pad(clockedAt.getMinutes())}`;
+      statusEl.innerHTML = `On shift for <b class="num">${pad(Math.floor(s / 3600))}:${pad(Math.floor(s / 60) % 60)}:${pad(s % 60)}</b> · clocked in at ${clockedAt.getHours() % 12 || 12}:${pad(clockedAt.getMinutes())} ${clockedAt.getHours() < 12 ? 'AM' : 'PM'}`;
     }
   };
-  if (dateEl) dateEl.textContent = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+  if (dateEl) dateEl.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
   greet();
   tick();
   setInterval(tick, 1000);
