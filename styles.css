@@ -481,7 +481,9 @@ details[open] .plus::after { transform: rotate(0deg); }
   .how h2 { order: 0; margin-bottom: 24px; }
   .how__stage { order: 1; display: block; align-self: stretch; position: sticky; top: 64px; z-index: 2; height: auto; min-height: 0; padding: 10px; }
   [data-ui].req { width: 100%; min-height: 372px; max-width: none; }
-  .how__step { order: 2; min-height: 52svh; justify-content: flex-start; padding-top: 28px; }
+  /* Each step is as tall as the space left under the pinned card
+     (64px top + 372px card + 20px padding = 456px), so its text stays in view while it is active. */
+  .how__step { order: 2; min-height: max(240px, calc(100svh - 456px)); justify-content: flex-start; padding-top: 28px; }
   .how__line { font-size: 24px; }
   .how__sub { font-size: 16px; }
 

@@ -103,19 +103,30 @@
   });
 
   /* ---------- How it works: the request changes with each statement ---------- */
+  // Wide screens: a step takes over when it reaches the middle of the window,
+  // beside the card. Phones: the card is pinned above the text, so a step takes
+  // over as its headline comes into view below the card, not once it has
+  // already scrolled underneath it.
   const req = $('#req');
   const steps = $$('.how__step');
-  if (req && steps.length && 'IntersectionObserver' in window) {
-    const so = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        steps.forEach((s) => s.classList.toggle('is-active', s === e.target));
-        req.dataset.state = e.target.dataset.step;
+  const phone = matchMedia('(max-width: 760px)');
+  if (req && steps.length) {
+    let current = null;
+    const updateStep = () => {
+      const line = phone.matches ? innerHeight - 48 : innerHeight * 0.55;
+      let active = steps[0];
+      steps.forEach((s) => {
+        const edge = phone.matches ? $('.how__line', s) : s;
+        if (edge.getBoundingClientRect().top <= line) active = s;
       });
-    }, { rootMargin: '-45% 0px -45% 0px' });
-    steps.forEach((s) => so.observe(s));
-  } else {
-    steps.forEach((s) => s.classList.add('is-active'));
+      if (active === current) return;
+      current = active;
+      steps.forEach((s) => s.classList.toggle('is-active', s === active));
+      req.dataset.state = active.dataset.step;
+    };
+    updateStep();
+    addEventListener('scroll', updateStep, { passive: true });
+    addEventListener('resize', updateStep);
   }
 
   /* ---------- Start: the form opens a filled-in email ---------- */
