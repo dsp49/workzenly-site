@@ -127,7 +127,7 @@
     const size = f.size.value;
     const subject = `Workzenly demo for ${company}`;
     const body = `Hello Workzenly,\n\nI would like a demo.\n\nCompany: ${company}\nI am: ${side}\nTeam size: ${size}\n\nThank you.`;
-    location.href = `mailto:hello@workzenly.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    location.href = `mailto:info@workzenly.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 
   /* ---------- Reveals, staggered inside each section ---------- */
