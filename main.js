@@ -23,18 +23,18 @@
   const greet = () => {
     const h = new Date().getHours();
     const hello = $('.app__view[data-view="employee"] .app__hello');
-    if (hello) hello.textContent = (h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening') + ', Priya';
+    if (hello) hello.textContent = (h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening') + ', Maya';
   };
 
   const tick = () => {
     const now = new Date();
-    if (timeEl) timeEl.textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+    if (timeEl) timeEl.textContent = `${now.getHours() % 12 || 12}:${pad(now.getMinutes())}:${pad(now.getSeconds())} ${now.getHours() < 12 ? 'AM' : 'PM'}`;
     if (clockedAt && statusEl) {
       const s = Math.floor((now - clockedAt) / 1000);
-      statusEl.innerHTML = `On shift for <b class="num">${pad(Math.floor(s / 3600))}:${pad(Math.floor(s / 60) % 60)}:${pad(s % 60)}</b> · clocked in at ${pad(clockedAt.getHours())}:${pad(clockedAt.getMinutes())}`;
+      statusEl.innerHTML = `On shift for <b class="num">${pad(Math.floor(s / 3600))}:${pad(Math.floor(s / 60) % 60)}:${pad(s % 60)}</b> · clocked in at ${clockedAt.getHours() % 12 || 12}:${pad(clockedAt.getMinutes())} ${clockedAt.getHours() < 12 ? 'AM' : 'PM'}`;
     }
   };
-  if (dateEl) dateEl.textContent = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+  if (dateEl) dateEl.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
   greet();
   tick();
   setInterval(tick, 1000);
@@ -103,19 +103,30 @@
   });
 
   /* ---------- How it works: the request changes with each statement ---------- */
+  // Wide screens: a step takes over when it reaches the middle of the window,
+  // beside the card. Phones: the card is pinned above the text, so a step takes
+  // over as its headline comes into view below the card, not once it has
+  // already scrolled underneath it.
   const req = $('#req');
   const steps = $$('.how__step');
-  if (req && steps.length && 'IntersectionObserver' in window) {
-    const so = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        steps.forEach((s) => s.classList.toggle('is-active', s === e.target));
-        req.dataset.state = e.target.dataset.step;
+  const phone = matchMedia('(max-width: 760px)');
+  if (req && steps.length) {
+    let current = null;
+    const updateStep = () => {
+      const line = phone.matches ? innerHeight - 48 : innerHeight * 0.55;
+      let active = steps[0];
+      steps.forEach((s) => {
+        const edge = phone.matches ? $('.how__line', s) : s;
+        if (edge.getBoundingClientRect().top <= line) active = s;
       });
-    }, { rootMargin: '-45% 0px -45% 0px' });
-    steps.forEach((s) => so.observe(s));
-  } else {
-    steps.forEach((s) => s.classList.add('is-active'));
+      if (active === current) return;
+      current = active;
+      steps.forEach((s) => s.classList.toggle('is-active', s === active));
+      req.dataset.state = active.dataset.step;
+    };
+    updateStep();
+    addEventListener('scroll', updateStep, { passive: true });
+    addEventListener('resize', updateStep);
   }
 
   /* ---------- Start: the form opens a filled-in email ---------- */
