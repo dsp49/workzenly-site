@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Employee Time Clock App with GPS and Geofencing</title>
+  <meta name="description" content="An employee time clock app for US teams: clock in by phone or shared tablet with GPS and geofencing, then approve timesheets that flow into payroll.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/features/time-clock/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/features/time-clock/">
+  <meta property="og:title" content="Employee Time Clock App with GPS and Geofencing">
+  <meta property="og:description" content="An employee time clock app for US teams: clock in by phone or shared tablet with GPS and geofencing, then approve timesheets that flow into payroll.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <style>
+    .feat-section__body ul, .feat-section__body ol { padding-left: 1.3em; display: grid; gap: 10px; }
+    .feat-section__body ul { list-style: disc; }
+    .feat-section__body ol { list-style: decimal; }
+    .feat-section__body table { width: 100%; border-collapse: collapse; font-size: 16px; line-height: 1.45; min-width: 520px; }
+    .feat-section__body th, .feat-section__body td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line, #2a2a2a); }
+    .feat-section__body th { font-weight: 600; }
+    [data-ui] .frag__row { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 16px; }
+    [data-ui] .frag__status { color: #a8a8a8; font-size: 13px; }
+    [data-ui].frag tfoot td { font-weight: 600; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Employee Time Clock App with GPS and Geofencing",
+        "description": "An employee time clock app for US teams: clock in by phone or shared tablet with GPS and geofencing, then approve timesheets that flow into payroll.",
+        "url": "https://workzenly.com/features/time-clock/",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Workzenly Time clock",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "description": "An employee time clock app for US teams: clock in by phone or shared tablet with GPS and geofencing, then approve timesheets that flow into payroll.",
+        "url": "https://workzenly.com/features/time-clock/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Time clock", "item": "https://workzenly.com/features/time-clock/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does federal law require a time clock?", "acceptedAnswer": { "@type": "Answer", "text": "No. The FLSA does not require any particular timekeeping method. A time clock, a timekeeper or employees writing their own hours are all acceptable, as long as the records are complete and accurate. For non-exempt staff you must record hours worked each workday and each workweek, and keep time cards for at least two years." } },
+          { "@type": "Question", "name": "Can employees clock in from their own phones?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each employee has their own Workzenly account and can clock in and out from their phone, with GPS and a geofence confirming they are at the right site. Where phones are not allowed on the floor, you can set up a shared tablet at the door for clocking in instead." } },
+          { "@type": "Question", "name": "Is a GPS time clock legal?", "acceptedAnswer": { "@type": "Answer", "text": "Recording location when an employee clocks in is common and generally lawful in the US, but state privacy and notice rules vary. Tell employees in writing what the app records and when, put it in your handbook, and check your state's rules before you roll it out, especially if staff use personal phones." } },
+          { "@type": "Question", "name": "Can I round time clock punches?", "acceptedAnswer": { "@type": "Answer", "text": "Federal rules allow rounding to the nearest 5 minutes, tenth of an hour or quarter hour, but only if it evens out and does not underpay employees over time. Some states and courts are stricter. Paying from the actual minutes recorded is the safest choice when your clock captures exact punch times." } },
+          { "@type": "Question", "name": "Is there a free time clock app?", "acceptedAnswer": { "@type": "Answer", "text": "Several vendors offer free plans or free tiers, usually with limits on team size, locations or features such as GPS, scheduling or payroll. Check current terms on each vendor's site. Workzenly does not list a price on this page; book a demo and we will walk you through pricing for your team." } },
+          { "@type": "Question", "name": "What happens to the hours after people clock out?", "acceptedAnswer": { "@type": "Answer", "text": "Punches build each person's timesheet, with breaks, overtime and late arrivals worked out. A manager reviews and approves the week, in one tap if nothing needs fixing, and the approved hours flow into Workzenly payroll. Each employee then sees their pay stub in the same app on payday." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="employee time clock app" data-intent="commercial" data-topic="Time clock">
+
+<header class="nav">
+  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/time-clock/" aria-current="page">Time clock</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/features/pto/">PTO</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li aria-current="page">Time clock</li></ol>
+</nav>
+
+<main>
+  <section class="feat-hero" aria-labelledby="feat-title">
+    <div class="feat-hero__text">
+      <h1 id="feat-title">An employee time clock app that turns punches into payroll</h1>
+      <p class="feat-hero__lead">Your team clocks in from their phones or a shared tablet at the door, with GPS and geofencing. Workzenly works out breaks, overtime and late arrivals, and sends approved hours straight to payroll.</p>
+      <div class="feat-hero__actions">
+        <a class="button" href="/#start">Book a demo</a>
+        <a class="link" href="#how">See how clocking in works</a>
+      </div>
+    </div>
+    <div class="feat-hero__stage">
+      <div class="frag" data-ui>
+        <p class="frag__title">Maya Torres · Week of Nov 2</p>
+        <p class="frag__meta">Front counter · Northfield Coffee, Austin, TX</p>
+        <table>
+          <thead>
+            <tr><th scope="col">Day</th><th scope="col">In</th><th scope="col">Out</th><th scope="col">Break</th><th scope="col" class="num">Hours</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Mon, Nov 2</td><td>6:58 AM</td><td>3:31 PM</td><td>30 min</td><td class="num">8:03</td></tr>
+            <tr><td>Tue, Nov 3</td><td>8:57 AM</td><td>5:34 PM</td><td>30 min</td><td class="num">8:07</td></tr>
+            <tr><td>Wed, Nov 4</td><td id="tc-in">–</td><td id="tc-out">–</td><td>–</td><td class="num" id="tc-today">0:00</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="4">This week so far</td><td class="num" id="tc-total">16:10</td></tr>
+          </tfoot>
+        </table>
+        <div class="frag__row">
+          <div>
+            <span class="pill pill--ok">Inside geofence</span>
+            <p class="frag__status" id="tc-status">Today’s shift 9:00 AM–5:30 PM</p>
+          </div>
+          <button type="button" class="frag__btn" id="tc-btn" aria-pressed="false">Clock in</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="why-title">
+    <h2 id="why-title">Why move your time clock app off paper</h2>
+    <div class="feat-section__body">
+      <p>Under the Fair Labor Standards Act, the US Department of Labor does not require any particular way of tracking time. A punch clock, a paper sheet or a phone app all work, as long as the records are complete and accurate. What the law does require, for every non-exempt employee, is the day and time the workweek begins, the hours worked each workday and the total hours for each workweek.</p>
+      <p>Those records have to last. The DOL says employers must keep payroll records for at least three years and time cards, work schedules and wage calculations for at least two. A shoebox of paper cards meets the rule on paper, but it is hard to read, easy to lose and has to be typed into payroll by someone every week.</p>
+      <p>That copying step is where most errors come from: a 3:31 PM out-time read as 3:01, a forgotten lunch break, a Sunday shift added to the wrong week. A digital clock in clock out app records the exact time once, and every later number (overtime, PTO, the pay stub) is built from that same punch.</p>
+      <p>Exact times also settle the rounding question. Federal rules allow rounding to the nearest 5 minutes, tenth of an hour or quarter hour only when it evens out over time and never shortchanges employees. When your clock captures the real minute, you can simply pay for the real minute.</p>
+    </div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="what-title">
+    <h2 id="what-title">What the Workzenly time clock does</h2>
+    <ul class="feat-list">
+      <li><b>Clock in from any phone</b><p>Every employee gets their own account. They tap Clock in on their phone, see today’s shift, and can check their hours for the week without asking a manager.</p></li>
+      <li><b>GPS time clock with geofencing</b><p>Draw a boundary around the store, clinic or job site. GPS and the geofence confirm people are where they should be when they clock in, so a crew at the gate and a barista at the counter are both on the record.</p></li>
+      <li><b>A shared tablet at the door</b><p>Where phones are not allowed on the floor, such as kitchens, warehouses or patient areas, set up one tablet by the entrance and let the whole team clock in there.</p></li>
+      <li><b>Breaks, overtime and late arrivals worked out</b><p>Workzenly adds up each shift, takes out breaks, flags overtime and shows who came in late against the schedule, so nobody does the math on a calculator at the end of the week.</p></li>
+      <li><b>Who is in, right now</b><p>Managers see who is on shift, who is running late and who is out on PTO today, from a phone or a laptop, without walking the floor or texting around.</p></li>
+      <li><b>Approve the week, then pay it</b><p>Review timesheets and approve a whole week in one tap. Approved hours, overtime and PTO flow into payroll, and each employee gets their pay stub in the same app on payday.</p></li>
+    </ul>
+  </section>
+
+  <div class="feat-section">
+    <aside class="cta-inline" aria-label="Book a demo" style="grid-column: 1 / -1;">
+      <div><p class="cta-inline__title">Stop retyping time cards into payroll</p><p>With Workzenly, the minute someone clocks in is the minute they are paid for, and nobody copies hours from one screen to another.</p></div>
+      <a class="cta-inline__btn" href="/#start">Book a demo</a>
+    </aside>
+  </div>
+
+  <section class="feat-section" aria-labelledby="check-title">
+    <h2 id="check-title">How to choose a clock in clock out app: a buying checklist</h2>
+    <div class="feat-section__body">
+      <p>Every employee time clock app looks much the same in a screenshot. These are the questions that separate them once a real team is using one every day.</p>
+      <ul>
+        <li><strong>Can every kind of worker clock in?</strong> Staff with smartphones, staff without them and staff who are not allowed to carry them at work. Look for both personal phone and shared device options.</li>
+        <li><strong>Does location checking match your sites?</strong> A GPS time clock suits field crews and multi-site teams. A geofence suits a fixed store or clinic. Ask how the app handles a site with weak signal, and what employees see when they are outside the boundary.</li>
+        <li><strong>Are exact punch times kept?</strong> You want the original punch, any edit, who made it and when. That edit history is your evidence if hours are ever disputed.</li>
+        <li><strong>Does it know your overtime rules?</strong> Federal overtime is weekly, after 40 hours. Some states add daily overtime; California, for example, pays daily overtime after 8 hours. Our <a class="link" href="/blog/california-overtime-law/">California overtime law guide</a> shows how much that changes a paycheck.</li>
+        <li><strong>Is it tied to the schedule?</strong> Late arrivals and no-shows only make sense against the shift someone was meant to work. A clock that knows the schedule can tell a manager before a shift goes uncovered.</li>
+        <li><strong>Where do the hours go next?</strong> If approved timesheets still have to be exported and re-entered into payroll, you have kept half the copying problem.</li>
+        <li><strong>What does it collect, and is it disclosed?</strong> Location at clock-in should be explained to employees in writing. If a vendor uses fingerprints or face scans, check biometric privacy laws first; Illinois, for one, requires written consent and a written retention policy before collecting them.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="types-title">
+    <h2 id="types-title">Phone app, shared tablet or punch clock</h2>
+    <div class="feat-section__body">
+      <p>There is no single right setup. Many teams mix two: phones for managers and field staff, a tablet for the kitchen or warehouse floor.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Setup</th><th scope="col">Works well for</th><th scope="col">Watch out for</th></tr></thead>
+          <tbody>
+            <tr><td>Employee time clock app on personal phones</td><td>Field crews, home care, multi-site and hybrid teams</td><td>Staff without smartphones; clear notice about location data</td></tr>
+            <tr><td>Shared tablet at the door</td><td>Kitchens, warehouses, clinics, stores where phones stay in lockers</td><td>One device to keep charged, mounted and secure</td></tr>
+            <tr><td>Wall punch clock with cards</td><td>One location, very stable schedules</td><td>Lost cards, buddy punching, hours typed into payroll by hand</td></tr>
+            <tr><td>Paper timesheets</td><td>Very small teams just starting out</td><td>Rounded or remembered times, slow approvals, storage for two years</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>If you are still on paper, our <a class="link" href="/blog/timesheet-template/">free timesheet template</a> is a sensible bridge, and the <a class="link" href="/blog/time-card-calculator/">time card calculator</a> adds up a week of punches with lunch breaks taken out.</p>
+    </div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="free-title">
+    <h2 id="free-title">Free time clock app or paid: the honest trade-offs</h2>
+    <div class="feat-section__body">
+      <p>A free time clock app can be a reasonable start. Several vendors offer free plans or free tiers, and for a five-person shop with one location they may be enough. Check each vendor’s site for current terms, because limits change.</p>
+      <p>The catches are usually the same ones. Free tiers tend to cap the number of employees or locations, hold back GPS, geofencing or the scheduling tools, or stop at a timesheet export that someone then types into a separate payroll service. The cost moves from the software bill to the hour your manager spends every Friday reconciling two systems.</p>
+      <p>Workzenly is an employee time clock app built for the other approach: one account where the clock, the schedule, PTO and payroll share the same record. We do not list a price on this page. Book a demo and we will walk you through pricing for your team size, so you can compare it fairly with what you use today.</p>
+      <p>Whatever you choose, two things are worth doing on day one: write down your workweek start day and your break policy, and put your attendance rules in writing. Our <a class="link" href="/blog/attendance-policy/">attendance policy template</a> and guide to <a class="link" href="/blog/tardiness-policy/">handling tardiness</a> are good places to start.</p>
+    </div>
+  </section>
+
+  <section class="feat-section" id="how" aria-labelledby="how-title">
+    <h2 id="how-title">How clocking in works with Workzenly</h2>
+    <div class="feat-section__body">
+      <ol>
+        <li><strong>Set up your sites.</strong> Add each location and its geofence, or a shared tablet at the door. Send us your employee list as a spreadsheet and we import it during setup.</li>
+        <li><strong>Employees clock in.</strong> Maya opens the app at 8:58 AM, sees she is inside the Northfield Coffee geofence and taps Clock in. Her shift from the <a class="link" href="/features/scheduling/">schedule</a> is right there on the card.</li>
+        <li><strong>Managers watch the day.</strong> Marcus sees six of eight people on shift, Sam 14 minutes late and Chris out on PTO, and covers the gap before the morning rush.</li>
+        <li><strong>Approve the week.</strong> On Monday, Marcus reviews the timesheets. Breaks and overtime are already worked out, so he approves the week in one tap.</li>
+        <li><strong>Hours become pay.</strong> Approved hours flow into <a class="link" href="/features/payroll/">Workzenly payroll</a>, and pay stubs land in each employee’s app on payday.</li>
+      </ol>
+      <p>Most small teams are clocking in within a week of setup, and we stay with you for the first pay run.</p>
+    </div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="guides-title">
+    <h2 id="guides-title">Guides and free tools</h2>
+    <div class="feat-section__body">
+      <ul>
+        <li><a class="link" href="/blog/gps-time-clock-app/">GPS time clock apps: what to look for</a></li>
+        <li><a class="link" href="/blog/what-is-a-geofence/">What is a geofence, and how it works for clocking in</a></li>
+        <li><a class="link" href="/blog/time-and-attendance-tracking/">Time and attendance tracking for small businesses</a></li>
+        <li><a class="link" href="/blog/what-is-a-timesheet/">What is a timesheet, and what it must include</a></li>
+        <li><a class="link" href="/blog/no-call-no-show/">No call, no show: how to handle it fairly</a></li>
+        <li><a class="link" href="/blog/overtime-calculator/">Overtime calculator for time and a half</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="faq-title">
+    <h2 id="faq-title">Frequently asked questions</h2>
+    <div class="feat-section__body faq-list">
+      <details><summary>Does federal law require a time clock?</summary><p>No. The FLSA does not require any particular timekeeping method. A time clock, a timekeeper or employees writing their own hours are all acceptable, as long as the records are complete and accurate. For non-exempt staff you must record hours worked each workday and each workweek, and keep time cards for at least two years.</p></details>
+      <details><summary>Can employees clock in from their own phones?</summary><p>Yes. Each employee has their own Workzenly account and can clock in and out from their phone, with GPS and a geofence confirming they are at the right site. Where phones are not allowed on the floor, you can set up a shared tablet at the door for clocking in instead.</p></details>
+      <details><summary>Is a GPS time clock legal?</summary><p>Recording location when an employee clocks in is common and generally lawful in the US, but state privacy and notice rules vary. Tell employees in writing what the app records and when, put it in your handbook, and check your state's rules before you roll it out, especially if staff use personal phones.</p></details>
+      <details><summary>Can I round time clock punches?</summary><p>Federal rules allow rounding to the nearest 5 minutes, tenth of an hour or quarter hour, but only if it evens out and does not underpay employees over time. Some states and courts are stricter. Paying from the actual minutes recorded is the safest choice when your clock captures exact punch times.</p></details>
+      <details><summary>Is there a free time clock app?</summary><p>Several vendors offer free plans or free tiers, usually with limits on team size, locations or features such as GPS, scheduling or payroll. Check current terms on each vendor's site. Workzenly does not list a price on this page; book a demo and we will walk you through pricing for your team.</p></details>
+      <details><summary>What happens to the hours after people clock out?</summary><p>Punches build each person's timesheet, with breaks, overtime and late arrivals worked out. A manager reviews and approves the week, in one tap if nothing needs fixing, and the approved hours flow into Workzenly payroll. Each employee then sees their pay stub in the same app on payday.</p></details>
+    </div>
+  </section>
+
+  <section class="close-cta" aria-labelledby="close-title">
+    <h2 id="close-title">Pay for the time people actually worked</h2>
+    <div class="close-cta__side"><p>Book a demo and we will set up a workspace with your company name, clock in a test shift and show you the hours landing on a pay stub.</p><a class="button" href="/#start">Book a demo</a></div>
+  </section>
+</main>
+
+<footer class="simple-foot">
+  <p>© <span id="year">2026</span> Workzenly</p>
+  <nav aria-label="Footer">
+    <a href="/features/time-clock/">Time clock</a>
+    <a href="/features/scheduling/">Scheduling</a>
+    <a href="/features/payroll/">Payroll</a>
+    <a href="/features/pto/">PTO</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+  <p><a href="mailto:hello@workzenly.com">hello@workzenly.com</a></p>
+</footer>
+<script src="/blog.js" defer></script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const pad = (n) => String(n).padStart(2, '0');
+  const fmt = (d) => `${d.getHours() % 12 || 12}:${pad(d.getMinutes())} ${d.getHours() < 12 ? 'AM' : 'PM'}`;
+  const hm = (mins) => `${Math.floor(mins / 60)}:${pad(mins % 60)}`;
+  const before = 16 * 60 + 10; // Mon 8:03 + Tue 8:07
+  const btn = $('tc-btn');
+  let inAt = null;
+  let timer = null;
+  const update = () => {
+    const mins = Math.max(0, Math.floor((Date.now() - inAt) / 60000));
+    $('tc-today').textContent = hm(mins);
+    $('tc-total').textContent = hm(before + mins);
+    return mins;
+  };
+  btn.addEventListener('click', () => {
+    if (!inAt) {
+      inAt = new Date();
+      $('tc-in').textContent = fmt(inAt);
+      $('tc-out').textContent = '–';
+      $('tc-status').textContent = `Clocked in at ${fmt(inAt)} inside the Northfield Coffee geofence`;
+      btn.textContent = 'Clock out';
+      btn.setAttribute('aria-pressed', 'true');
+      update();
+      timer = setInterval(update, 15000);
+    } else {
+      clearInterval(timer);
+      const mins = update();
+      $('tc-out').textContent = fmt(new Date());
+      $('tc-status').textContent = `Clocked out. ${Math.max(1, mins)} min added to this week’s timesheet.`;
+      btn.textContent = 'Clocked out';
+      btn.disabled = true;
+      btn.setAttribute('aria-pressed', 'false');
+    }
+  });
+})();
+</script>
+</body>
+</html>

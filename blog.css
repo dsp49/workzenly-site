@@ -73,7 +73,7 @@
 /* Copyable letter or template */
 .template {
   background: var(--surface); border-radius: var(--radius); padding: 28px; font-size: 16px; line-height: 1.6;
-  white-space: pre-wrap; position: relative;
+  white-space: normal; position: relative;
 }
 .template__bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 16px; white-space: normal; }
 .template__name { font-weight: 600; font-size: 17px; }
@@ -221,13 +221,13 @@
 [data-ui].frag { width: 100%; max-width: 520px; background: #0e0e0e; border: 1px solid #262626; border-radius: 14px; padding: 20px; font-size: 14px; line-height: 1.4; }
 [data-ui] .frag__title { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; }
 [data-ui] .frag__meta { color: #a8a8a8; margin: 2px 0 16px; }
-[data-ui] .frag table { width: 100%; border-collapse: collapse; font-size: 13px; }
-[data-ui] .frag th { text-align: left; font-weight: 400; color: #949494; font-size: 12px; padding: 0 8px 8px 0; }
-[data-ui] .frag td { padding: 10px 8px 10px 0; border-top: 1px solid #1f1f1f; white-space: nowrap; }
-[data-ui] .frag .num { text-align: right;  }
-[data-ui] .frag .pill { display: inline-block; font-size: 12px; font-weight: 500; padding: 3px 9px; border-radius: 999px; background: #222; color: #c4c4c4; }
-[data-ui] .frag .pill--ok { background: #222b14; color: var(--accent); }
-[data-ui] .frag .pill--warn { background: #2e2410; color: #f2c36b; }
+[data-ui].frag table { width: 100%; border-collapse: collapse; font-size: 13px; }
+[data-ui].frag th { text-align: left; font-weight: 400; color: #949494; font-size: 12px; padding: 0 8px 8px 0; }
+[data-ui].frag td { padding: 10px 8px 10px 0; border-top: 1px solid #1f1f1f; white-space: nowrap; }
+[data-ui].frag .num { text-align: right;  }
+[data-ui].frag .pill { display: inline-block; font-size: 12px; font-weight: 500; padding: 3px 9px; border-radius: 999px; background: #222; color: #c4c4c4; }
+[data-ui].frag .pill--ok { background: #222b14; color: var(--accent); }
+[data-ui].frag .pill--warn { background: #2e2410; color: #f2c36b; }
 [data-ui] .frag__btn { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-weight: 600; font-size: 13px; border: 0; cursor: pointer; }
 
 /* ---------- Tablet ---------- */

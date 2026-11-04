@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shift Scheduling App with Swaps and Open Shifts</title>
+  <meta name="description" content="A shift scheduling app for US hourly teams: drag people into shifts, publish to phones, let staff swap or pick up shifts, and see PTO before you post.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/features/scheduling/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/features/scheduling/">
+  <meta property="og:title" content="Shift Scheduling App with Swaps and Open Shifts">
+  <meta property="og:description" content="A shift scheduling app for US hourly teams: drag people into shifts, publish to phones, let staff swap or pick up shifts, and see PTO before you post.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <style>
+    .feat-section__body ul, .feat-section__body ol { padding-left: 1.3em; display: grid; gap: 10px; }
+    .feat-section__body ul { list-style: disc; }
+    .feat-section__body ol { list-style: decimal; }
+    .feat-section__body table { width: 100%; border-collapse: collapse; font-size: 16px; line-height: 1.45; min-width: 520px; }
+    .feat-section__body th, .feat-section__body td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line, #2a2a2a); }
+    .feat-section__body th { font-weight: 600; }
+    [data-ui].frag td small { display: block; color: #949494; font-size: 11px; }
+    [data-ui].frag td.is-swapped { color: var(--accent); }
+    [data-ui] .frag__swap { margin-top: 16px; padding: 14px; border-radius: 10px; background: #161616; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    [data-ui] .frag__swap p { margin: 0; }
+    [data-ui] .frag__k { color: #949494; font-size: 12px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Shift Scheduling App with Swaps and Open Shifts",
+        "description": "A shift scheduling app for US hourly teams: drag people into shifts, publish to phones, let staff swap or pick up shifts, and see PTO before you post.",
+        "url": "https://workzenly.com/features/scheduling/",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Workzenly Scheduling",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Android, iOS",
+        "description": "A shift scheduling app for US hourly teams: drag people into shifts, publish to phones, let staff swap or pick up shifts, and see PTO before you post.",
+        "url": "https://workzenly.com/features/scheduling/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Scheduling", "item": "https://workzenly.com/features/scheduling/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How far in advance do I have to post a work schedule?", "acceptedAnswer": { "@type": "Answer", "text": "Federal law sets no notice period. Oregon and several cities, including Seattle, Chicago, Philadelphia, Los Angeles and New York City for fast food, require covered employers to post schedules 14 days ahead, and New York City retail employers must give 72 hours. If none of these apply to you, posting a week or more ahead is still good practice." } },
+          { "@type": "Question", "name": "Do fair workweek laws apply to small businesses?", "acceptedAnswer": { "@type": "Answer", "text": "Usually not to a single independent shop. Most of these laws cover larger employers in set industries, often counted by employees or locations worldwide, such as 250 or 500 employees. Franchise locations can be counted toward the totals in some cities, so a small franchisee may be covered. Check the rules with your city or state labor agency." } },
+          { "@type": "Question", "name": "Can employees swap shifts in Workzenly?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Staff see the schedule on their phones and can pick up an open shift or swap one with a teammate, and the schedule updates for everyone. Where a scheduling law applies, keep a record that the employee asked for the change; Oregon, for example, exempts changes made at an employee's written request from its notice rules." } },
+          { "@type": "Question", "name": "Does the schedule show who is on PTO?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scheduling and PTO share one record, so approved time off shows up where you build shifts. When someone asks for a day off, the manager sees who else is already out that day before saying yes, and can find cover from the schedule in the same place." } },
+          { "@type": "Question", "name": "Do I have to pay for a shift I cancel?", "acceptedAnswer": { "@type": "Answer", "text": "Federal law only requires pay for hours worked, so it does not require pay for a canceled shift. Some states, including California and New York, require reporting-time or call-in pay when an employee reports to work and is sent home early, and fair workweek cities add predictability pay for late changes. Check your state and city rules." } },
+          { "@type": "Question", "name": "Can managers build the schedule from a phone?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Managers can build schedules, approve requests and check who is in from a phone. Many find it easier to plan a full week for a large team on a laptop, where you can see every day at once, and then handle swaps and last-minute changes from their phone during the week." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="shift scheduling app" data-intent="commercial" data-topic="Scheduling">
+
+<header class="nav">
+  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/time-clock/">Time clock</a>
+    <a class="link" href="/features/scheduling/" aria-current="page">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/features/pto/">PTO</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li aria-current="page">Scheduling</li></ol>
+</nav>
+
+<main>
+  <section class="feat-hero" aria-labelledby="feat-title">
+    <div class="feat-hero__text">
+      <h1 id="feat-title">A shift scheduling app with swaps, PTO and pay in one place</h1>
+      <p class="feat-hero__lead">Build next week by dragging people into shifts. Your team sees the schedule on their phones as soon as you publish, swaps or picks up shifts, and you hear before a shift goes uncovered.</p>
+      <div class="feat-hero__actions">
+        <a class="button" href="/#start">Book a demo</a>
+        <a class="link" href="#how">See how a week gets built</a>
+      </div>
+    </div>
+    <div class="feat-hero__stage">
+      <div class="frag" data-ui>
+        <p class="frag__title">Schedule · Week of Nov 9</p>
+        <p class="frag__meta">Northfield Coffee, Austin, TX · Published Mon, Oct 26</p>
+        <table>
+          <thead>
+            <tr><th scope="col">Name</th><th scope="col">Mon 9</th><th scope="col">Tue 10</th><th scope="col">Wed 11</th><th scope="col">Thu 12</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Maya Torres<small>Front counter</small></td><td>9–5:30</td><td>9–5:30</td><td>Off</td><td>9–5:30</td></tr>
+            <tr><td>Jordan Lee<small>Barista</small></td><td>7–3:30</td><td>7–3:30</td><td>7–3:30</td><td id="sc-jordan">7–3:30</td></tr>
+            <tr><td>Sam Rivera<small>Kitchen</small></td><td>6–2:30</td><td>Off</td><td>6–2:30</td><td>6–2:30</td></tr>
+            <tr><td>Chris Walker<small>Barista</small></td><td><span class="pill">PTO</span></td><td>12–8</td><td>12–8</td><td>Off</td></tr>
+            <tr><td>Tyler N.<small>Barista</small></td><td>Off</td><td>12–8</td><td>Off</td><td id="sc-tyler">Off</td></tr>
+          </tbody>
+        </table>
+        <div class="frag__swap">
+          <div>
+            <p class="frag__k" id="sc-k">Swap request</p>
+            <p id="sc-text">Jordan Lee offered Thu 7:00 AM–3:30 PM. Tyler N. said yes.</p>
+          </div>
+          <button type="button" class="frag__btn" id="sc-btn">Approve swap</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="why-title">
+    <h2 id="why-title">Why staff scheduling falls apart in a spreadsheet</h2>
+    <div class="feat-section__body">
+      <p>Most small businesses build the schedule in a spreadsheet, post a photo of it in a group text, and then manage the week by message. Someone asks to swap Thursday, someone else says yes, and the only record is a thread the manager has to scroll back through on Saturday.</p>
+      <p>The spreadsheet also cannot see anything else. It does not know that Chris already has Monday approved as PTO, that Sam was 14 minutes late three times last week, or that one more shift will push Jordan past 40 hours and into overtime. So the manager checks three places before every change, or skips the check and finds out on payday.</p>
+      <p>A shift scheduling app fixes the part the spreadsheet cannot: it keeps the schedule, the requests and the hours people actually worked in the same place, and puts the current version on every employee’s phone.</p>
+    </div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="what-title">
+    <h2 id="what-title">What the Workzenly employee scheduling app does</h2>
+    <ul class="feat-list">
+      <li><b>Drag people into shifts</b><p>Build next week by dragging each person into the shifts you need, for one location or several. Managers can do it from a laptop or a phone.</p></li>
+      <li><b>Publish to every phone</b><p>When you publish, staff see their shifts in the Workzenly app straight away. No photo of a whiteboard, no “which version is current?” texts.</p></li>
+      <li><b>Pick up open shifts</b><p>Post a shift nobody is on yet and let your team pick it up, so the people who want more hours can find them without calling around.</p></li>
+      <li><b>Shift swap app built in</b><p>Employees swap a shift with a teammate from their phones, and the schedule updates for everyone. Every swap is in the record, not buried in a group chat.</p></li>
+      <li><b>Time off in view while you schedule</b><p>PTO lives in the same system. Before approving a day off, managers see who else is already out, and they can find cover from the schedule on the same screen.</p></li>
+      <li><b>Connected to the clock and payroll</b><p>The <a class="link" href="/features/time-clock/">time clock</a> knows each person’s shift, so late arrivals show up against it, and you are told before a shift goes uncovered. Worked hours then flow into payroll.</p></li>
+    </ul>
+  </section>
+
+  <div class="feat-section">
+    <aside class="cta-inline" aria-label="Book a demo" style="grid-column: 1 / -1;">
+      <div><p class="cta-inline__title">Run the week without the group text</p><p>Workzenly puts the schedule, swaps and time off on everyone’s phone, so a Thursday swap is settled in the app instead of a thread.</p></div>
+      <a class="cta-inline__btn" href="/#start">Book a demo</a>
+    </aside>
+  </div>
+
+  <section class="feat-section" aria-labelledby="laws-title">
+    <h2 id="laws-title">Predictive scheduling and fair workweek laws</h2>
+    <div class="feat-section__body">
+      <p>There is no federal rule on how early you must post a schedule. One state and a group of cities have passed predictive scheduling, or fair workweek, laws for larger employers. They usually require advance notice, extra pay for late changes made by the employer, and rest between a closing and an opening shift. Here are the main ones, as published by each agency.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Where</th><th scope="col">Who is covered (summary)</th><th scope="col">Schedule notice</th></tr></thead>
+          <tbody>
+            <tr><td>Oregon (statewide)</td><td>Retail, hospitality and food service employers with 500+ employees worldwide</td><td>14 calendar days; 10 hours of rest after a shift unless the employee agrees, paid at time and a half</td></tr>
+            <tr><td>New York City</td><td>Fast food employers; retail employers</td><td>Fast food: 14 days. Retail: 72 hours, and no on-call shifts</td></tr>
+            <tr><td>San Francisco</td><td>Formula retail with 40+ establishments worldwide and 20+ employees in the city</td><td>Two weeks; pay for changes made on less than seven days’ notice</td></tr>
+            <tr><td>Seattle</td><td>Retail and food service with 500+ employees worldwide (full-service restaurants also need 40+ locations)</td><td>14 days; time and a half for shifts less than 10 hours apart</td></tr>
+            <tr><td>Chicago</td><td>Building services, healthcare, hotels, manufacturing, restaurants, retail and warehouse services, above size and pay thresholds</td><td>14 days</td></tr>
+            <tr><td>Philadelphia</td><td>Retail, hospitality and food service with 250+ employees and 30+ locations worldwide, franchises included</td><td>14 days, a good faith estimate of hours, and 9 hours of rest between shifts unless the worker consents</td></tr>
+            <tr><td>Los Angeles (city)</td><td>Retail employers with 300+ employees worldwide</td><td>14 days; employees can decline later changes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Los Angeles County added its own retail ordinance for unincorporated areas from July 1, 2025, and a few other cities have similar rules. Thresholds, premiums and exceptions differ in each place, and changes an employee asks for are often treated differently from changes the employer makes. Oregon, for example, exempts changes made at an employee’s written request. Confirm the details with the agency for your city or state before you rely on this summary.</p>
+      <p>Even if no law covers you, the habits are worth copying. Posting two weeks out makes it easier to keep good staff, and rotating patterns such as the <a class="link" href="/blog/dupont-schedule/">DuPont schedule</a> or the <a class="link" href="/blog/2-2-3-schedule/">2-2-3 schedule</a> are easier to post far ahead because they repeat.</p>
+    </div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="check-title">
+    <h2 id="check-title">What to look for in employee scheduling software</h2>
+    <div class="feat-section__body">
+      <p>Use this checklist on any tool you trial, including ours.</p>
+      <ul>
+        <li><strong>Employees actually open it.</strong> The schedule has to be on their phones, current, and easy to read at a glance. If staff still ask “am I on tomorrow?”, the tool is not doing its job.</li>
+        <li><strong>Swaps and open shifts leave a record.</strong> You want to see who offered a shift, who took it and when, which matters most where scheduling laws treat employee requests differently.</li>
+        <li><strong>Time off is visible while you build.</strong> Approving PTO in one place and scheduling in another is how double-booking happens.</li>
+        <li><strong>Scheduled hours meet worked hours.</strong> A schedule tied to the time clock shows late arrivals and no-shows, and helps you spot overtime before the week ends. Our <a class="link" href="/blog/shift-differential/">shift differential guide</a> explains why night and weekend shifts also change the cost of a schedule.</li>
+        <li><strong>It fits your pattern.</strong> Retail and restaurants change shifts every week; clinics and plants run fixed rotations. Ask the vendor to build one of your real weeks in the demo.</li>
+        <li><strong>The hours go somewhere.</strong> If worked hours still have to be exported and keyed into payroll, you have moved the spreadsheet, not removed it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="tradeoff-title">
+    <h2 id="tradeoff-title">Standalone scheduling tool or one connected system</h2>
+    <div class="feat-section__body">
+      <p>There are many good options. When I Work, Sling, Homebase, Deputy and 7shifts are well-known names in hourly scheduling, and 7shifts is built around restaurants. A standalone tool can go deeper on scheduling alone, and it may be the right call if you are happy with your payroll provider and only need the schedule fixed. Check each vendor’s site for current features and pricing; our <a class="link" href="/blog/when-i-work-alternatives/">When I Work alternatives</a> guide compares the main criteria.</p>
+      <p>The trade-off is the handoff. With separate tools, someone still moves hours from the schedule to the clock to payroll, and PTO lives somewhere else again. Workzenly takes the other route: one shift scheduling app that shares a record with the time clock, PTO and payroll, and one employee app for all of it. The cost of that choice is that you change more than one tool at once, so plan the switch around a pay period.</p>
+      <p>Industry needs differ too. Our guides to <a class="link" href="/blog/restaurant-scheduling-software/">restaurant scheduling software</a>, <a class="link" href="/blog/retail-scheduling-software/">retail scheduling software</a> and <a class="link" href="/blog/healthcare-scheduling-software/">healthcare scheduling software</a> cover what matters in each.</p>
+    </div>
+  </section>
+
+  <section class="feat-section" id="how" aria-labelledby="how-title">
+    <h2 id="how-title">How a week gets built in Workzenly</h2>
+    <div class="feat-section__body">
+      <ol>
+        <li><strong>Start from your team.</strong> Send us your employee list as a spreadsheet and we import it during setup, so every person, role and location is already there.</li>
+        <li><strong>Build the week.</strong> Marcus drags Maya, Jordan, Sam and Tyler into next week’s shifts. Chris’s approved PTO on Monday is already showing, so nobody schedules him by mistake.</li>
+        <li><strong>Publish.</strong> The team sees the week on their phones. Maya checks her next shift: Monday, 9:00 AM to 5:30 PM.</li>
+        <li><strong>Let the team sort the small stuff.</strong> Jordan offers his Thursday opening shift, Tyler takes it, and the schedule updates for both of them.</li>
+        <li><strong>Close the loop.</strong> On the day, the time clock shows who is in against the schedule. Approved hours go into <a class="link" href="/features/payroll/">payroll</a>, and any <a class="link" href="/features/pto/">PTO</a> is paid as PTO without anyone typing it twice.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="guides-title">
+    <h2 id="guides-title">Guides and free tools</h2>
+    <div class="feat-section__body">
+      <ul>
+        <li><a class="link" href="/blog/work-schedule-template/">Free work schedule templates for weekly shifts</a></li>
+        <li><a class="link" href="/blog/pitman-schedule/">The Pitman schedule for 12-hour shifts</a></li>
+        <li><a class="link" href="/blog/9-80-work-schedule/">How a 9/80 work schedule works</a></li>
+        <li><a class="link" href="/blog/hybrid-work-schedule/">Hybrid work schedule examples</a></li>
+        <li><a class="link" href="/blog/overtime-calculator/">Overtime calculator for time and a half</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="feat-section" aria-labelledby="faq-title">
+    <h2 id="faq-title">Frequently asked questions</h2>
+    <div class="feat-section__body faq-list">
+      <details><summary>How far in advance do I have to post a work schedule?</summary><p>Federal law sets no notice period. Oregon and several cities, including Seattle, Chicago, Philadelphia, Los Angeles and New York City for fast food, require covered employers to post schedules 14 days ahead, and New York City retail employers must give 72 hours. If none of these apply to you, posting a week or more ahead is still good practice.</p></details>
+      <details><summary>Do fair workweek laws apply to small businesses?</summary><p>Usually not to a single independent shop. Most of these laws cover larger employers in set industries, often counted by employees or locations worldwide, such as 250 or 500 employees. Franchise locations can be counted toward the totals in some cities, so a small franchisee may be covered. Check the rules with your city or state labor agency.</p></details>
+      <details><summary>Can employees swap shifts in Workzenly?</summary><p>Yes. Staff see the schedule on their phones and can pick up an open shift or swap one with a teammate, and the schedule updates for everyone. Where a scheduling law applies, keep a record that the employee asked for the change; Oregon, for example, exempts changes made at an employee's written request from its notice rules.</p></details>
+      <details><summary>Does the schedule show who is on PTO?</summary><p>Yes. Scheduling and PTO share one record, so approved time off shows up where you build shifts. When someone asks for a day off, the manager sees who else is already out that day before saying yes, and can find cover from the schedule in the same place.</p></details>
+      <details><summary>Do I have to pay for a shift I cancel?</summary><p>Federal law only requires pay for hours worked, so it does not require pay for a canceled shift. Some states, including California and New York, require reporting-time or call-in pay when an employee reports to work and is sent home early, and fair workweek cities add predictability pay for late changes. Check your state and city rules.</p></details>
+      <details><summary>Can managers build the schedule from a phone?</summary><p>Yes. Managers can build schedules, approve requests and check who is in from a phone. Many find it easier to plan a full week for a large team on a laptop, where you can see every day at once, and then handle swaps and last-minute changes from their phone during the week.</p></details>
+    </div>
+  </section>
+
+  <section class="close-cta" aria-labelledby="close-title">
+    <h2 id="close-title">Post next week’s schedule in minutes</h2>
+    <div class="close-cta__side"><p>Book a demo and we will build one of your real weeks in a workspace with your company name, then show a swap and a PTO request moving through it.</p><a class="button" href="/#start">Book a demo</a></div>
+  </section>
+</main>
+
+<footer class="simple-foot">
+  <p>© <span id="year">2026</span> Workzenly</p>
+  <nav aria-label="Footer">
+    <a href="/features/time-clock/">Time clock</a>
+    <a href="/features/scheduling/">Scheduling</a>
+    <a href="/features/payroll/">Payroll</a>
+    <a href="/features/pto/">PTO</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+  <p><a href="mailto:hello@workzenly.com">hello@workzenly.com</a></p>
+</footer>
+<script src="/blog.js" defer></script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const btn = $('sc-btn');
+  btn.addEventListener('click', () => {
+    $('sc-jordan').textContent = 'Off';
+    $('sc-tyler').textContent = '7–3:30';
+    $('sc-tyler').classList.add('is-swapped');
+    $('sc-k').textContent = 'Swap approved';
+    $('sc-text').textContent = 'Tyler N. now opens Thursday. Both schedules are updated.';
+    btn.textContent = 'Approved';
+    btn.disabled = true;
+  });
+})();
+</script>
+</body>
+</html>
