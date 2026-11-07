@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Is a Geofence? How Geofencing Works at Work</title>
+  <meta name="description" content="What is a geofence? A plain guide to how geofencing works, how accurate it is, how to pick a radius for a time clock, and the employee notice laws to know.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/blog/what-is-a-geofence/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/blog/what-is-a-geofence/">
+  <meta property="og:title" content="What Is a Geofence? How Geofencing Works at Work">
+  <meta property="og:description" content="What is a geofence? A plain guide to how geofencing works, how accurate it is, how to pick a radius for a time clock, and the employee notice laws to know.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta property="article:published_time" content="2026-11-04">
+  <meta property="article:section" content="Time tracking">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <style>
+    .geo-figure { background: var(--surface); border-radius: var(--radius); padding: 24px; }
+    .geo-figure svg { display: block; width: 100%; height: auto; max-width: 560px; margin: 0 auto; }
+    .geo-figure figcaption { margin-top: 14px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+    .geo-figure figcaption b { color: var(--ink); font-weight: 600; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "What is a geofence? How geofencing works for time clocks",
+        "description": "What is a geofence? A plain guide to how geofencing works, how accurate it is, how to pick a radius for a time clock, and the employee notice laws to know.",
+        "datePublished": "2026-11-04",
+        "dateModified": "2026-11-04",
+        "author": { "@type": "Organization", "name": "Workzenly", "url": "https://workzenly.com/" },
+        "publisher": { "@type": "Organization", "name": "Workzenly", "logo": { "@type": "ImageObject", "url": "https://workzenly.com/apple-touch-icon.png" } },
+        "mainEntityOfPage": "https://workzenly.com/blog/what-is-a-geofence/",
+        "image": "https://workzenly.com/og-image.png",
+        "keywords": "what is a geofence, geofencing, geofence time clock, geofencing for employees"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://workzenly.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "What is a geofence", "item": "https://workzenly.com/blog/what-is-a-geofence/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is a geofence in simple terms?", "acceptedAnswer": { "@type": "Answer", "text": "A geofence is an invisible boundary drawn on a map around a real place, such as a store, warehouse or job site. When a phone reports a location inside or outside that boundary, an app reacts: it allows a clock-in, sends an alert or shows a message. Nothing is installed at the site itself." } },
+          { "@type": "Question", "name": "Does a geofence time clock track employees all day?", "acceptedAnswer": { "@type": "Answer", "text": "It does not have to. A geofence time clock can check location only at the moment an employee clocks in or out. Continuous tracking is a separate setting or feature in some apps. Ask your vendor exactly when location is read, and write that answer into your employee policy." } },
+          { "@type": "Question", "name": "How accurate is geofencing?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the signal. The US government's GPS.gov site says GPS-enabled smartphones are typically accurate to within about 16 feet under open sky, but accuracy worsens near buildings, bridges and trees. Indoors, phones lean on Wi-Fi and cell signals, which are less precise, so plan for some error." } },
+          { "@type": "Question", "name": "What radius should I use for a geofence?", "acceptedAnswer": { "@type": "Answer", "text": "Start with a radius that covers the building, its parking and entrances, plus a margin for location error. Android's developer guidance suggests a minimum of 100 to 150 meters, about 330 to 490 feet, for reliable results. Shrink it only after you see few false rejections in real use." } },
+          { "@type": "Question", "name": "Is it legal to use geofencing for employees?", "acceptedAnswer": { "@type": "Answer", "text": "Checking location at clock-in is common and generally lawful in the US, but rules vary by state. New York, Connecticut and Delaware require written notice of certain electronic monitoring, and California's privacy law covers employee data. Give written notice, keep it to work time, and check your state's rules." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="what is a geofence" data-intent="informational" data-topic="Time tracking">
+
+<header class="nav">
+  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/time-clock/">Time clock</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/features/pto/">PTO</a>
+    <a class="link" href="/blog/" aria-current="page">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li aria-current="page">What is a geofence</li>
+  </ol>
+</nav>
+
+<main>
+  <header class="post-head">
+    <div class="post-head__text">
+      <h1>What is a geofence? How geofencing works for time clocks</h1>
+      <p class="post-head__lead">A plain explanation of geofences, how phones know where they are, how accurate that is, and how to use a geofence for clock-ins without crossing your employees’ privacy lines.</p>
+      <p class="post-meta"><span>By <b>Workzenly team</b></span><span>Updated November 4, 2026</span><span>10 min read</span></p>
+    </div>
+    <aside class="post-head__aside">
+      <strong>Clock-ins from the right place</strong>
+      <p>Workzenly lets employees clock in by phone or a shared tablet at the door, with GPS and geofencing confirming they are at the site.</p>
+      <a class="button button--small" href="/features/time-clock/">See the time clock</a>
+    </aside>
+  </header>
+
+  <div class="post">
+    <nav class="toc" aria-label="On this page">
+      <p class="toc__title">On this page</p>
+      <ol>
+        <li><a href="#definition">What a geofence is</a></li>
+        <li><a href="#how-it-works">How geofencing works</a></li>
+        <li><a href="#uses">Common uses</a></li>
+        <li><a href="#time-clock">Geofence time clocks</a></li>
+        <li><a href="#radius">Picking a radius</a></li>
+        <li><a href="#accuracy">Accuracy problems</a></li>
+        <li><a href="#privacy">Privacy and the law</a></li>
+        <li><a href="#compare">Geofencing vs GPS tracking</a></li>
+        <li><a href="#pros-cons">Pros and cons</a></li>
+        <li><a href="#faq">Questions</a></li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <div class="summary">
+        <p class="summary__title">Quick answer</p>
+        <ul>
+          <li>A geofence is a virtual boundary around a real place. When a phone’s reported location is inside or outside it, an app takes an action.</li>
+          <li>Phones locate themselves with GPS, Wi-Fi and cell signals. GPS is typically accurate to about 16 feet under open sky, but much worse indoors and between tall buildings.</li>
+          <li>At work, the most common use is a geofence time clock: employees can clock in only at the site. Give written notice and read location only at clock-in and clock-out.</li>
+        </ul>
+      </div>
+
+      <p>What is a geofence? It is an invisible line drawn on a digital map around a real location, like a coffee shop, a warehouse or a construction site. Software compares a phone’s location to that line. When the phone is inside, outside, or crosses it, the app does something: lets an employee clock in, sends a reminder, or flags a punch for review. This guide explains how geofencing works, where it is used, and how US employers can use a geofence for time tracking accurately and fairly.</p>
+
+      <h2 id="definition">What a geofence is, in plain terms</h2>
+      <p>If someone asks you “what is a geofence?”, the short version is: a boundary on a map that an app watches. A geofence has two parts: a <strong>shape</strong> on a map and a <strong>rule</strong> for what happens at its edge. Nothing physical is installed. There is no beacon in the parking lot and no fence post. The boundary exists only as coordinates stored in an app or on a server.</p>
+      <p>The shape comes in two common forms:</p>
+      <ul>
+        <li><strong>Radius (circle).</strong> You pick a center point, such as the front door, and a distance, such as 500 feet. Everything within that distance is inside. This is the simplest and most common setup.</li>
+        <li><strong>Polygon.</strong> You trace the outline of a property by dropping points on a map. A polygon fits odd-shaped sites, like a long warehouse, a farm or a road crew’s stretch of highway, better than a circle does.</li>
+      </ul>
+      <p>The rule is usually tied to one of three events: <strong>entering</strong> the area, <strong>leaving</strong> it, or <strong>staying</strong> inside for a set time (often called dwelling). A time clock app uses a simpler version of this: at the moment someone taps “clock in”, is the phone inside the fence or not?</p>
+
+      <h2 id="how-it-works">How geofencing works</h2>
+      <p>Geofencing depends on the phone knowing where it is. Phones blend several sources to get a location fix, and each one has a different level of precision.</p>
+      <ul>
+        <li><strong>GPS.</strong> The phone listens to US Global Positioning System satellites and calculates its position. According to GPS.gov, the official US government site for GPS, GPS-enabled smartphones are typically accurate to within a 4.9 meter (16 foot) radius under open sky. The same page notes that accuracy worsens near buildings, bridges and trees. GPS signals are also weak indoors.</li>
+        <li><strong>Wi-Fi.</strong> The phone sees nearby Wi-Fi networks and compares them with a database of known network locations. This works indoors. Android’s developer documentation says Wi-Fi location accuracy is usually between 20 and 50 meters (roughly 65 to 165 feet).</li>
+        <li><strong>Cell towers.</strong> The phone estimates its position from the towers it can reach. This works almost everywhere with service but is the least precise. Android’s documentation says that without Wi-Fi, for example in rural areas, accuracy can degrade to several hundred meters or more.</li>
+      </ul>
+      <p>The phone’s operating system combines these sources and reports a location plus an estimate of how uncertain it is. The app then checks whether that point falls inside the geofence. Some apps watch for boundary crossings in the background. Others, including most time clocks, only read the location when the user takes an action.</p>
+      <p>Two practical limits follow from this. First, the phone needs location services turned on and permission granted to the app. Second, background geofence alerts are not instant. Android’s documentation says alerts can take a couple of minutes, and longer if the device has been still. That is one reason a clock-in check, made at the moment of the tap, is more predictable than an automatic “you arrived” alert.</p>
+
+      <h2 id="uses">Common uses of geofencing</h2>
+      <p>Geofencing shows up in many everyday apps. A few familiar examples:</p>
+      <ul>
+        <li><strong>Retail and restaurants:</strong> an order-ahead app starts preparing your order, or a store app shows your loyalty card, when you arrive.</li>
+        <li><strong>Delivery:</strong> customers get a “your driver is nearby” message when a driver enters a zone around the address.</li>
+        <li><strong>Smart home:</strong> lights, thermostats or door locks change when the household’s phones leave or come home.</li>
+        <li><strong>Marketing:</strong> ads or offers are shown to people whose phones are in or near a defined area, subject to the app’s permissions and privacy rules.</li>
+        <li><strong>Security and IT:</strong> a company device restricts certain features, or logs a warning, when it leaves an approved area.</li>
+        <li><strong>Fleet and field service:</strong> dispatch sees when a vehicle arrives at or leaves a customer site.</li>
+      </ul>
+      <p>For small businesses with hourly staff, the use that matters most is simpler than any of these: confirming that a clock-in happened at work.</p>
+
+      <h2 id="time-clock">How a geofence time clock works for employees</h2>
+      <p>A geofence time clock draws a boundary around each work location. When an employee clocks in or out on their phone, the app reads the phone’s location at that moment and compares it with the boundary. Depending on the app and your settings, a punch outside the fence can be blocked, allowed with a flag for the manager, or allowed with a note.</p>
+      <p>The goal is to answer one question with a record rather than trust alone: was this person at the site when they started work? That helps with buddy punching, clocking in from the parking lot across town, and disputes about when a shift really began.</p>
+
+      <figure class="geo-figure">
+        <svg viewBox="0 0 560 340" role="img" aria-labelledby="geo-title geo-desc">
+          <title id="geo-title">Job site geofence diagram</title>
+          <desc id="geo-desc">A circular geofence with a 150 meter radius around a job site. One employee inside the circle can clock in. One employee outside the circle gets flagged. A third employee near the edge has a location error circle that crosses the boundary.</desc>
+          <rect x="0" y="0" width="560" height="340" fill="none"/>
+          <circle cx="250" cy="170" r="140" fill="#dafa9c" fill-opacity="0.08" stroke="#dafa9c" stroke-width="2" stroke-dasharray="7 6"/>
+          <line x1="250" y1="170" x2="390" y2="170" stroke="#a6a6a2" stroke-width="1.5"/>
+          <text x="320" y="162" fill="#a6a6a2" font-size="13" text-anchor="middle" font-family="inherit">150 m (about 490 ft)</text>
+          <rect x="205" y="140" width="90" height="60" rx="4" fill="#202020" stroke="#f2f2ef" stroke-width="1.5"/>
+          <text x="250" y="175" fill="#f2f2ef" font-size="14" text-anchor="middle" font-family="inherit">Job site</text>
+          <circle cx="250" cy="170" r="4" fill="#dafa9c"/>
+          <circle cx="175" cy="235" r="9" fill="#dafa9c"/>
+          <text x="175" y="262" fill="#f2f2ef" font-size="13" text-anchor="middle" font-family="inherit">Inside: clock-in OK</text>
+          <circle cx="490" cy="70" r="9" fill="#f2f2ef"/>
+          <text x="490" y="97" fill="#f2f2ef" font-size="13" text-anchor="middle" font-family="inherit">Outside: flagged</text>
+          <circle cx="345" cy="72" r="34" fill="#f2f2ef" fill-opacity="0.08" stroke="#f2f2ef" stroke-width="1" stroke-dasharray="3 4"/>
+          <circle cx="345" cy="72" r="6" fill="#f2f2ef"/>
+          <text x="345" y="24" fill="#a6a6a2" font-size="13" text-anchor="middle" font-family="inherit">Near the edge: error circle</text>
+        </svg>
+        <figcaption><b>Illustrative example.</b> A 150-meter radius around a job site. The employee at the gate is clearly inside. The one down the road is clearly outside. The one near the edge is the hard case: the phone’s location estimate has an error circle that crosses the line, so the punch could land either way.</figcaption>
+      </figure>
+
+      <p>Here is an illustrative week. A landscaping company sets a 500-foot geofence around its yard. Crew members clock in on their phones before loading trucks. One morning an employee taps “clock in” while still at a coffee shop a mile away. The punch is flagged, the manager sees the location, and the employee clocks in properly when they arrive 12 minutes later. Without the geofence, those 12 minutes would have been paid as work time and nobody would have known.</p>
+      <p>A geofence only tells you where a punch happened. You still need accurate hours. After the week closes, the totals go to payroll; if you ever need to check a paper card by hand, our <a href="/blog/time-card-calculator/">time card calculator</a> adds up daily punches with lunch breaks, and the <a href="/blog/hours-to-decimal-calculator/">hours to decimal calculator</a> converts minutes for payroll.</p>
+
+      <aside class="cta-inline" aria-label="See the Workzenly time clock">
+        <div>
+          <p class="cta-inline__title">Know every clock-in came from the site</p>
+          <p>Workzenly lets staff clock in by phone or a shared tablet at the door, with GPS and geofencing, and works out breaks and overtime from those punches.</p>
+        </div>
+        <a class="cta-inline__btn" href="/features/time-clock/">See the time clock</a>
+      </aside>
+
+      <h2 id="radius">How to pick a geofence radius</h2>
+      <p>The radius decides how often honest employees get rejected and how much room there is for clocking in from nearby. Too small and people standing at the door fail the check. Too large and the fence stops meaning much.</p>
+      <p>Android’s developer documentation recommends a minimum geofence radius of 100 to 150 meters (about 330 to 490 feet) for best results, because typical Wi-Fi location accuracy is about 50 meters. That is a reasonable starting point for most sites. Then adjust:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Type of site</th><th>Starting point (illustrative)</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>Store or restaurant in a strip mall</td><td>100–150 m (330–490 ft)</td><td>Covers the building, parking and the back door used by staff.</td></tr>
+            <tr><td>Downtown office or shop between tall buildings</td><td>150 m (490 ft) or more</td><td>Buildings reflect GPS signals, so locations jump around.</td></tr>
+            <tr><td>Warehouse, plant or campus</td><td>A polygon around the property</td><td>A circle big enough for the far dock would spill into neighbors.</td></tr>
+            <tr><td>Construction or job site</td><td>Cover the gate, trailer and parking area</td><td>Crews often clock in where they park, not at the work face.</td></tr>
+            <tr><td>Rural site with weak Wi-Fi</td><td>Larger, 250 m (820 ft) or more</td><td>Phones fall back to cell location, which is less precise.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Check three things when you set it up. Put the center on the entrance employees actually use, not the street address pin, which may sit at the curb. Make sure the fence covers the employee parking lot if people normally clock in on arrival. And for each new site, run a test week with flags turned on rather than hard blocks, so you can see where real punches land before you tighten anything.</p>
+
+      <h2 id="accuracy">Geofencing accuracy problems and how to handle them</h2>
+      <p>Location is an estimate, not a fact. Plan for these situations up front so they do not turn into payroll disputes.</p>
+      <ul>
+        <li><strong>Indoor or underground work.</strong> Basements, parking garages, freezers and steel buildings weaken signals. A shared tablet clock at the door avoids the problem entirely for staff who start inside.</li>
+        <li><strong>Location jumps.</strong> Between tall buildings a phone can report a spot a block away. A slightly larger radius, or allowing the punch with a flag instead of blocking it, keeps people working.</li>
+        <li><strong>Settings and permissions.</strong> If location services are off, or the app has not been granted location access, the app cannot check the fence. Say in your policy what employees should do, such as clock in at the shared tablet or tell a manager.</li>
+        <li><strong>No phone, or a phone that cannot be used on the floor.</strong> Some workplaces ban phones on the floor. A shared tablet at the entrance handles clocking in for those teams.</li>
+        <li><strong>Spoofed locations.</strong> Apps exist that fake a phone’s location. A geofence makes casual time theft harder, but it is not proof on its own. Spot checks against the schedule and manager knowledge still matter.</li>
+      </ul>
+      <p>One rule does not change, whatever the fence says: under the federal Fair Labor Standards Act, employers must pay non-exempt employees for all hours worked that the employer knew or should have known about. A failed geofence check is a reason to review a punch, not a reason to skip paying for time someone actually worked. If a flagged punch pushes someone past 40 hours, our guide on <a href="/blog/how-to-calculate-overtime/">how to calculate overtime</a> walks through the math.</p>
+
+      <h2 id="privacy">Geofencing for employees: privacy, consent and the law</h2>
+      <p>Location is personal. Most employees accept a check at clock-in. Many object to being followed after work. The law in this area is a patchwork, so the safest approach is clear notice and a narrow scope.</p>
+      <h3>State notice laws to know</h3>
+      <ul>
+        <li><strong>New York.</strong> Civil Rights Law section 52-c, in effect since May 7, 2022, requires employers with a place of business in the state that monitor employee phone calls, email or internet use to give written or electronic notice at hiring, get an acknowledgment, and post the notice where employees can see it. The state Attorney General enforces it, with civil penalties of up to $500 for a first offense, $1,000 for a second and $3,000 for each later one. The law is written around phone, email and internet monitoring, so treat a location check in your time clock app as something to cover in the same notice rather than assume it is exempt.</li>
+        <li><strong>Connecticut.</strong> Connecticut General Statutes section 31-48d requires employers that do electronic monitoring of employees on the employer’s premises to give prior written notice of the types of monitoring, which can be done by posting a notice in a conspicuous place. Public Act 26-73, effective October 1, 2026, revised the statute to add disclosure of where on the premises monitoring may happen and a written statement for new hires. Check the Connecticut Department of Labor for the current requirements.</li>
+        <li><strong>Delaware.</strong> Title 19, section 705 of the Delaware Code bars employers from monitoring employees’ phone, email or internet use unless they give notice daily when the employee uses employer email or internet, or give a one-time notice the employee acknowledges in writing or electronically. The civil penalty is $100 per violation.</li>
+        <li><strong>California.</strong> The California Consumer Privacy Act, as amended by the CPRA, covers employee personal information. The California Attorney General notes that the exemptions for employment-related information expired at the end of 2022, and lists precise geolocation as sensitive personal information. The law applies to for-profit businesses that meet its thresholds, such as gross annual revenue over $25 million. Covered employers owe employees a notice at collection and must honor privacy rights requests. Separately, California Penal Code section 637.7 restricts using electronic tracking devices on vehicles without the consent of the registered owner, lessor or lessee.</li>
+      </ul>
+      <p>Other states have their own privacy, biometric and monitoring rules, and some cities add more. If you have staff in several states, ask an employment attorney to review your policy once.</p>
+      <h3>Best practices for geofencing employees</h3>
+      <ol>
+        <li><strong>Read location only at clock-in and clock-out.</strong> That covers what a time clock needs. If your app can track location during a shift, decide deliberately whether you need it, and never track off the clock.</li>
+        <li><strong>Tell employees in writing.</strong> Say what the app records (location at each punch), when, who can see it, how long you keep it, and what happens to a punch outside the fence. Get a signed or electronic acknowledgment.</li>
+        <li><strong>Put it in a written policy.</strong> Add a timekeeping and location section to your handbook. Our <a href="/templates/employee-handbook-templates/">employee handbook template</a> has a place for it.</li>
+        <li><strong>Offer an alternative.</strong> A shared tablet clock at the door helps employees who do not want to install an app on a personal phone, or who cannot use a phone at work.</li>
+        <li><strong>Limit access and retention.</strong> Only managers who approve timesheets need punch locations. Keep them as long as you keep time records, and no longer than you need them.</li>
+      </ol>
+
+      <h2 id="compare">Geofencing vs GPS tracking vs geotagging</h2>
+      <p>These three terms get mixed up, and the difference matters to employees.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th></th><th>Geofencing</th><th>GPS tracking</th><th>Geotagging</th></tr></thead>
+          <tbody>
+            <tr><td>What it does</td><td>Checks whether a device is inside or outside a set boundary</td><td>Records a device’s location repeatedly over time, building a route</td><td>Attaches a location to one event, such as a punch or a photo</td></tr>
+            <tr><td>When location is read</td><td>At a trigger: crossing the line, or a clock-in tap</td><td>Continuously or at frequent intervals</td><td>Once, at the moment of the event</td></tr>
+            <tr><td>Typical work use</td><td>Allow or flag clock-ins by site</td><td>Fleet routes, field service dispatch</td><td>Showing where a punch or job photo was taken</td></tr>
+            <tr><td>Privacy impact</td><td>Low when limited to punches</td><td>Highest; shows where someone goes</td><td>Low; one point per event</td></tr>
+            <tr><td>Data kept</td><td>Inside or outside, often with the punch location</td><td>A trail of many locations</td><td>One location per event</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Many time clocks combine geofencing and geotagging: they check the fence at the punch and save the punch’s location so a manager can review it. That is very different from following someone all shift. When employees ask “is the company tracking me?”, the honest answer depends on which of these your app does, so find out and tell them.</p>
+
+      <h2 id="pros-cons">Pros and cons of geofencing at work</h2>
+      <p><strong>Pros</strong></p>
+      <ul>
+        <li>Cuts clock-ins from home, the car or across town, without a manager standing at the door.</li>
+        <li>Works for crews with several sites, where a wall-mounted clock is impractical.</li>
+        <li>Gives you a record to settle “I was here at 7” disputes.</li>
+        <li>Collects little data when limited to clock-in and clock-out.</li>
+      </ul>
+      <p><strong>Cons</strong></p>
+      <ul>
+        <li>Location errors can reject honest employees, especially indoors and downtown.</li>
+        <li>Needs phones with location turned on, or a shared tablet as a fallback.</li>
+        <li>Can be fooled by location-faking apps, so it does not replace good supervision.</li>
+        <li>Raises trust and legal questions if it is rolled out without notice or creeps into off-the-clock tracking.</li>
+      </ul>
+      <p>For most hourly teams, the trade is worth it when the fence is generous, the policy is written down, and location is read only at the punch. Pair it with a clear <a href="/blog/attendance-policy/">attendance policy</a> so employees know what counts as late and what happens when a punch is flagged.</p>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>What is a geofence in simple terms?</summary><p>A geofence is an invisible boundary drawn on a map around a real place, such as a store, warehouse or job site. When a phone reports a location inside or outside that boundary, an app reacts: it allows a clock-in, sends an alert or shows a message. Nothing is installed at the site itself.</p></details>
+        <details><summary>Does a geofence time clock track employees all day?</summary><p>It does not have to. A geofence time clock can check location only at the moment an employee clocks in or out. Continuous tracking is a separate setting or feature in some apps. Ask your vendor exactly when location is read, and write that answer into your employee policy.</p></details>
+        <details><summary>How accurate is geofencing?</summary><p>It depends on the signal. The US government's GPS.gov site says GPS-enabled smartphones are typically accurate to within about 16 feet under open sky, but accuracy worsens near buildings, bridges and trees. Indoors, phones lean on Wi-Fi and cell signals, which are less precise, so plan for some error.</p></details>
+        <details><summary>What radius should I use for a geofence?</summary><p>Start with a radius that covers the building, its parking and entrances, plus a margin for location error. Android's developer guidance suggests a minimum of 100 to 150 meters, about 330 to 490 feet, for reliable results. Shrink it only after you see few false rejections in real use.</p></details>
+        <details><summary>Is it legal to use geofencing for employees?</summary><p>Checking location at clock-in is common and generally lawful in the US, but rules vary by state. New York, Connecticut and Delaware require written notice of certain electronic monitoring, and California's privacy law covers employee data. Give written notice, keep it to work time, and check your state's rules.</p></details>
+      </div>
+
+      <aside class="cta-inline cta-inline--quiet" aria-label="Book a demo">
+        <div>
+          <p class="cta-inline__title">See geofenced clock-ins on your own sites</p>
+          <p>Book a 20-minute demo and we will show you phone and tablet clock-ins with GPS and geofencing, flowing into timesheets and payroll.</p>
+        </div>
+        <a class="cta-inline__btn" href="/#start">Book a demo</a>
+      </aside>
+
+      <div class="byline">
+        <span class="byline__mark" aria-hidden="true">W</span>
+        <p>Written by the Workzenly team, who build time clock, scheduling, PTO and payroll software for US businesses. This guide is general information, not legal or tax advice. Federal, state and local rules change; confirm current requirements with your state labor department or an employment attorney.</p>
+      </div>
+    </article>
+  </div>
+
+  <section class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Keep reading</h2>
+    <div class="related__list">
+      <a class="related__item" href="/blog/gps-time-clock-app/"><b>GPS time clock apps: what to look for</b><span>Time tracking</span></a>
+      <a class="related__item" href="/blog/time-and-attendance-tracking/"><b>Time and attendance tracking for small teams</b><span>Time tracking</span></a>
+      <a class="related__item" href="/blog/time-card-calculator/"><b>Time card calculator with lunch breaks</b><span>Pay and overtime</span></a>
+    </div>
+  </section>
+
+  <section class="close-cta" aria-labelledby="close-title">
+    <h2 id="close-title">Run time, schedules and pay in one place</h2>
+    <div class="close-cta__side">
+      <p>Workzenly handles time clocks, schedules, PTO and payroll for employers, and gives every employee one app for all of it.</p>
+      <a class="button" href="/#start">Book a demo</a>
+    </div>
+  </section>
+</main>
+
+<footer class="simple-foot">
+  <p>© <span id="year">2026</span> Workzenly</p>
+  <nav aria-label="Footer">
+    <a href="/features/time-clock/">Time clock</a>
+    <a href="/features/scheduling/">Scheduling</a>
+    <a href="/features/payroll/">Payroll</a>
+    <a href="/features/pto/">PTO</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+  <p><a href="mailto:info@workzenly.com">info@workzenly.com</a></p>
+</footer>
+
+<script src="/blog.js" defer></script>
+</body>
+</html>

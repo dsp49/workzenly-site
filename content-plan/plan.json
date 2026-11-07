@@ -1606,5 +1606,20 @@
     "vacation tracker"
    ]
   }
- ]
+ ],
+ "superseded_blog_posts": {
+  "best-hr-software-for-small-business": "/tools/best-hr-software-for-small-business/",
+  "employee-handbook-template": "/templates/employee-handbook-templates/",
+  "employee-onboarding-checklist": "/templates/onboarding-checklist-templates/",
+  "offer-letter-template": "/templates/job-offer-letter-templates/",
+  "performance-review-template": "/templates/performance-review-templates/",
+  "pto-tracker": "/tools/free-pto-trackers/",
+  "restaurant-scheduling-software": "/tools/best-restaurant-scheduling-apps/",
+  "retail-scheduling-software": "/tools/best-retail-scheduling-software/",
+  "termination-letter": "/templates/termination-letter-templates/",
+  "time-card-template": "/templates/timesheet-templates/",
+  "timesheet-template": "/templates/timesheet-templates/",
+  "when-i-work-alternatives": "/tools/when-i-work-alternatives/",
+  "work-schedule-template": "/templates/employee-schedule-templates/"
+ }
 }

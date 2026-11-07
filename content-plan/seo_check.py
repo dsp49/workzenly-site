@@ -440,6 +440,8 @@ def main(argv):
             if os.path.isdir(d):
                 for s in sorted(os.listdir(d)):
                     p = os.path.join(d, s, "index.html")
+                    if kind == "blog" and s in PLAN.get("superseded_blog_posts", {}):
+                        continue  # kept for visitors, canonical points at the listicle that replaced it
                     if os.path.isfile(p):
                         args.append(p)
     if not args:

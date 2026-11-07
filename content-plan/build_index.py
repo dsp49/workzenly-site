@@ -95,7 +95,7 @@ FOOT = """<footer class="simple-foot">
     <a href="/templates/">Free templates</a>
     <a href="/blog/">Guides</a>
   </nav>
-  <p><a href="mailto:hello@workzenly.com">hello@workzenly.com</a></p>
+  <p><a href="mailto:info@workzenly.com">info@workzenly.com</a></p>
 </footer>"""
 
 

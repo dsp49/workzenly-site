@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2-2-3 Schedule: Panama Shift Grid, Hours and Overtime</title>
+  <meta name="description" content="The 2-2-3 schedule explained: a 14-day grid for four teams, why it means 36- and 48-hour weeks, overtime math at $20 an hour, and setup steps.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/blog/2-2-3-schedule/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/blog/2-2-3-schedule/">
+  <meta property="og:title" content="2-2-3 Schedule: Panama Shift Grid, Hours and Overtime">
+  <meta property="og:description" content="The 2-2-3 schedule explained: a 14-day grid for four teams, why it means 36- and 48-hour weeks, overtime math at $20 an hour, and setup steps.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta property="article:published_time" content="2026-11-04">
+  <meta property="article:section" content="Scheduling">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "2-2-3 schedule: how the Panama shift pattern works",
+        "description": "The 2-2-3 schedule explained: a 14-day grid for four teams, why it means 36- and 48-hour weeks, overtime math at $20 an hour, and setup steps.",
+        "datePublished": "2026-11-04",
+        "dateModified": "2026-11-04",
+        "author": { "@type": "Organization", "name": "Workzenly", "url": "https://workzenly.com/" },
+        "publisher": { "@type": "Organization", "name": "Workzenly", "logo": { "@type": "ImageObject", "url": "https://workzenly.com/apple-touch-icon.png" } },
+        "mainEntityOfPage": "https://workzenly.com/blog/2-2-3-schedule/",
+        "image": "https://workzenly.com/og-image.png",
+        "keywords": "2-2-3 schedule, what is a 2-2-3 schedule, 2 2 3 work schedule, panama schedule"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://workzenly.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "2-2-3 schedule", "item": "https://workzenly.com/blog/2-2-3-schedule/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is a 2-2-3 schedule?", "acceptedAnswer": { "@type": "Answer", "text": "A 2-2-3 schedule is a 14-day rotation of 12-hour shifts: work 2 days, off 2, work 3, off 2, work 2, off 3. Four teams cover 24 hours a day, seven days a week, with two teams on days and two on nights. Each employee works 7 shifts, or 84 hours, every two weeks and gets every other weekend off." } },
+          { "@type": "Question", "name": "Is the Panama schedule the same as a 2-2-3 schedule?", "acceptedAnswer": { "@type": "Answer", "text": "Usually, yes. Panama, 2-2-3 and 2-3-2 are common names for the same 14-day cycle of 12-hour shifts; 2-3-2 just starts counting on a different day. Pitman is a close relative, but employers use that name for slightly different setups, so check the actual on and off days written in your schedule or contract." } },
+          { "@type": "Question", "name": "Do you get overtime on a 2-2-3 schedule?", "acceptedAnswer": { "@type": "Answer", "text": "Usually. Under the FLSA, non-exempt employees earn time and a half for hours over 40 in each workweek, and hours cannot be averaged across two weeks. With a workweek that starts on Sunday, the schedule alternates 48 and 36 hours, so each crew earns 8 overtime hours every two weeks. A Monday start produces 60 and 24 hours instead." } },
+          { "@type": "Question", "name": "How many hours a year is a 2-2-3 schedule?", "acceptedAnswer": { "@type": "Answer", "text": "Each employee works 84 hours every 14 days. Over 26 cycles, which is 364 days, that comes to 2,184 scheduled hours, an average of 42 hours a week. That is 104 hours more than a standard 2,080-hour year, before extra shifts, call-ins or unpaid meal breaks are taken into account." } },
+          { "@type": "Question", "name": "How many employees do you need for a 2-2-3 schedule?", "acceptedAnswer": { "@type": "Answer", "text": "You need four crews, and each crew needs enough people to fill every position on one shift. A post that must be staffed around the clock by one person needs four employees. Most employers add relief staff or a call-in list to cover vacations, sick days and training, because the base schedule has no spare capacity." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="2-2-3 schedule" data-intent="informational" data-topic="Scheduling">
+
+<header class="nav">
+  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/time-clock/">Time clock</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/features/pto/">PTO</a>
+    <a class="link" href="/blog/" aria-current="page">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li aria-current="page">2-2-3 schedule</li>
+  </ol>
+</nav>
+
+<main>
+  <header class="post-head">
+    <div class="post-head__text">
+      <h1>2-2-3 schedule: how the Panama shift pattern works</h1>
+      <p class="post-head__lead">Four teams, 12-hour shifts and a 14-day cycle that covers every hour of every day. Here is the grid, the hours each person works, and the overtime it creates.</p>
+      <p class="post-meta"><span>By <b>Workzenly team</b></span><span>Updated November 4, 2026</span><span>10 min read</span></p>
+    </div>
+    <aside class="post-head__aside">
+      <strong>Running a 24/7 rotation?</strong>
+      <p>Workzenly lets you build a repeating shift pattern once, publish it to every crew’s phone and handle swaps without a group text.</p>
+      <a class="button button--small" href="/features/scheduling/">See scheduling</a>
+    </aside>
+  </header>
+
+  <div class="post">
+    <nav class="toc" aria-label="On this page">
+      <p class="toc__title">On this page</p>
+      <ol>
+        <li><a href="#what">What a 2-2-3 schedule is</a></li>
+        <li><a href="#names">2-2-3, Panama and Pitman</a></li>
+        <li><a href="#example">Schedule grid for teams A to D</a></li>
+        <li><a href="#overtime">Hours and overtime</a></li>
+        <li><a href="#california">California daily overtime</a></li>
+        <li><a href="#pros-cons">Pros and cons</a></li>
+        <li><a href="#setup">How to set it up</a></li>
+        <li><a href="#compare">2-2-3 vs DuPont vs Pitman</a></li>
+        <li><a href="#faq">Questions</a></li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <div class="summary">
+        <p class="summary__title">Quick answer</p>
+        <ul>
+          <li>A 2-2-3 schedule repeats every 14 days: work 2, off 2, work 3, off 2, work 2, off 3, on 12-hour shifts.</li>
+          <li>Four teams cover 24/7: two on days, two on nights. Each person works 84 hours every two weeks and gets every other weekend off.</li>
+          <li>With a Sunday-start workweek, weeks alternate 36 and 48 hours, so the FLSA requires 8 hours of overtime pay every two weeks.</li>
+        </ul>
+      </div>
+
+      <p>A 2-2-3 schedule is a 12-hour shift rotation that keeps a business staffed 24 hours a day, seven days a week, with four teams. Each employee works 2 days, has 2 off, works 3, has 2 off, works 2, then has 3 off, and the 14-day cycle starts again. It is popular in manufacturing, warehouses, utilities, security, policing, dispatch and healthcare because nobody works more than three shifts in a row and every other weekend is a three-day weekend. The catch is pay: the hours are uneven from week to week, and federal overtime law looks at each week on its own.</p>
+
+      <h2 id="what">What is a 2-2-3 schedule?</h2>
+      <p>The name describes the runs of working days in one 14-day cycle. Written out in full, the 2 2 3 work schedule looks like this for one employee:</p>
+      <ol>
+        <li>Work 2 days (Monday, Tuesday)</li>
+        <li>Off 2 days (Wednesday, Thursday)</li>
+        <li>Work 3 days (Friday, Saturday, Sunday)</li>
+        <li>Off 2 days (Monday, Tuesday)</li>
+        <li>Work 2 days (Wednesday, Thursday)</li>
+        <li>Off 3 days (Friday, Saturday, Sunday)</li>
+      </ol>
+      <p>That is 7 shifts in 14 days. At 12 hours each, it adds up to 84 hours every two weeks, an average of 42 hours a week. Each day needs one team on the day shift (for example 7:00 a.m. to 7:00 p.m.) and one on the night shift (7:00 p.m. to 7:00 a.m.). Two teams follow the pattern above and the other two follow its mirror image, working exactly the days the first pair has off. Together the four teams cover all 168 hours of every week.</p>
+      <p>Because the second week is the first week flipped, each employee works one weekend (Friday through Sunday) and has the next one off. Days off move around the calendar, so the schedule suits teams that care more about long breaks than about the same days every week.</p>
+
+      <h2 id="names">2-2-3, Panama and Pitman: what the names mean</h2>
+      <p>Shift-pattern names are not set by any law or standard body, and employers use them loosely. Here is how they are most commonly used.</p>
+      <ul>
+        <li><strong>2-2-3 schedule and Panama schedule.</strong> These are the most common names for the 14-day pattern described above: four teams, 12-hour shifts, 2-2-3-2-2-3. In most job postings and scheduling guides, a Panama schedule and a 2-2-3 schedule are the same thing.</li>
+        <li><strong>2-3-2 schedule.</strong> The same cycle counted from a different day. Start on the second working block of the 2-2-3 pattern and you read it as work 2, off 3, work 2, off 2, work 3, off 2. The shifts are identical.</li>
+        <li><strong>Pitman schedule.</strong> A closely related variant built on the same rhythm of short work blocks with four crews on 12-hour shifts. Some employers use “Pitman” for a version where two crews stay on days and two stay on nights permanently; others use it interchangeably with 2-2-3 or 2-3-2. Our <a href="/blog/pitman-schedule/">Pitman schedule guide</a> covers the variants.</li>
+      </ul>
+      <p>Because the labels overlap, never rely on the name alone. When a union contract, offer letter or vendor template says “Panama” or “Pitman,” check the actual on and off days and whether crews rotate between day and night shifts.</p>
+
+      <h2 id="example">2-2-3 schedule example: the grid for teams A to D</h2>
+      <p>Both grids start the cycle on a Monday. Teams A and B work the same days, A on days and B on nights. Teams C and D work the other days. Read down any column and you will find exactly one team on days and one on nights.</p>
+      <h3>Fixed shifts: 14-day cycle</h3>
+      <p>In the fixed version, A and C always work days and B and D always work nights. The cycle is 14 days.</p>
+<div class="table-wrap">
+<table>
+<caption>Fixed-shift 2-2-3 schedule, one 14-day cycle</caption>
+<thead><tr><th>Team</th><th>Mon<br>1</th><th>Tue<br>2</th><th>Wed<br>3</th><th>Thu<br>4</th><th>Fri<br>5</th><th>Sat<br>6</th><th>Sun<br>7</th><th>Mon<br>8</th><th>Tue<br>9</th><th>Wed<br>10</th><th>Thu<br>11</th><th>Fri<br>12</th><th>Sat<br>13</th><th>Sun<br>14</th></tr></thead>
+<tbody>
+<tr><td>A (days)</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>off</td></tr>
+<tr><td>B (nights)</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>off</td></tr>
+<tr><td>C (days)</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>Day</td></tr>
+<tr><td>D (nights)</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>Night</td></tr>
+</tbody>
+</table>
+</div>
+      <h3>Rotating day and night shifts: 28-day cycle</h3>
+      <p>Many employers rotate crews so nobody stays on nights forever. In this common version, each team works one 14-day cycle on days, then the same days of the cycle on nights, so the full rotation takes 28 days. Every switch from nights to days, or days to nights, falls after at least two days off.</p>
+<div class="table-wrap">
+<table>
+<caption>Rotating 2-2-3 schedule, days 1 to 14</caption>
+<thead><tr><th>Team</th><th>Mon<br>1</th><th>Tue<br>2</th><th>Wed<br>3</th><th>Thu<br>4</th><th>Fri<br>5</th><th>Sat<br>6</th><th>Sun<br>7</th><th>Mon<br>8</th><th>Tue<br>9</th><th>Wed<br>10</th><th>Thu<br>11</th><th>Fri<br>12</th><th>Sat<br>13</th><th>Sun<br>14</th></tr></thead>
+<tbody>
+<tr><td>A</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>off</td></tr>
+<tr><td>B</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>off</td></tr>
+<tr><td>C</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>Day</td></tr>
+<tr><td>D</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>Night</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrap">
+<table>
+<caption>Rotating 2-2-3 schedule, days 15 to 28</caption>
+<thead><tr><th>Team</th><th>Mon<br>15</th><th>Tue<br>16</th><th>Wed<br>17</th><th>Thu<br>18</th><th>Fri<br>19</th><th>Sat<br>20</th><th>Sun<br>21</th><th>Mon<br>22</th><th>Tue<br>23</th><th>Wed<br>24</th><th>Thu<br>25</th><th>Fri<br>26</th><th>Sat<br>27</th><th>Sun<br>28</th></tr></thead>
+<tbody>
+<tr><td>A</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>off</td></tr>
+<tr><td>B</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>off</td></tr>
+<tr><td>C</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>off</td><td>off</td><td>Night</td><td>Night</td><td>Night</td></tr>
+<tr><td>D</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>off</td><td>off</td><td>Day</td><td>Day</td><td>Day</td></tr>
+</tbody>
+</table>
+</div>
+      <p>Other rotations exist, such as four weeks on days then four weeks on nights. If you would rather start from a blank layout, our <a href="/templates/employee-schedule-templates/">work schedule templates</a> include a shift grid you can copy.</p>
+
+      <h2 id="overtime">Hours and overtime on a 2-2-3 schedule</h2>
+      <p>Under the Fair Labor Standards Act (FLSA), non-exempt employees earn time and a half for every hour over 40 in a workweek. The US Department of Labor’s regulations (29 CFR 778.104) say each workweek stands alone: hours cannot be averaged over two or more weeks, even on a biweekly pay schedule. So a 2-2-3 schedule that averages 42 hours still owes overtime in any week over 40.</p>
+      <h3>Where your workweek starts changes the overtime</h3>
+      <p>A workweek is a fixed, recurring 168 hours that can begin on any day and at any hour (29 CFR 778.105). That choice decides how the seven shifts split between the two weeks of each cycle:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Workweek starts</th><th>Shifts per week</th><th>Hours per week</th><th class="num">Overtime hours per 2 weeks</th></tr></thead>
+          <tbody>
+            <tr><td>Sunday, 7:00 a.m.</td><td>4, then 3</td><td>48, then 36</td><td class="num">8</td></tr>
+            <tr><td>Monday, 7:00 a.m.</td><td>5, then 2</td><td>60, then 24</td><td class="num">20</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>These figures use the grid above, which starts the cycle on a Monday, and assume 12 paid hours per shift. Starting the workweek at a shift change, such as 7:00 a.m., keeps a night shift from being split across two workweeks. If you start at midnight instead, a Saturday night shift counts partly in each week, which changes the totals for the night crews. Pick the workweek when you set up the schedule. The regulation allows a later change only if it is meant to be permanent and is not designed to evade overtime, so get advice before moving an established workweek.</p>
+      <h3>Worked pay example at $20 an hour</h3>
+      <p>Take an employee on Team A who earns $20 an hour with a Sunday 7:00 a.m. workweek:</p>
+      <ol>
+        <li>The 48-hour week: 40 hours × $20 = $800, plus 8 overtime hours × $30 = $240, for $1,040.</li>
+        <li>The 36-hour week: 36 hours × $20 = $720, with no overtime.</li>
+        <li>Two-week total: $1,040 + $720 = $1,760 in gross pay for 84 hours.</li>
+      </ol>
+      <p>If the hours could be averaged, the same 84 hours would cost $1,680. The $80 difference is the overtime premium, and over 26 cycles a year it adds up to 208 overtime hours and $2,080 in premium pay per employee at this rate. With a Monday start, the same employee would get $1,400 for the 60-hour week and $480 for the 24-hour week, or $1,880. Our guide on <a href="/blog/how-to-calculate-overtime/">how to calculate overtime</a> walks through the regular-rate math in more detail.</p>
+      <h3>Night crews and shift differentials</h3>
+      <p>Federal law does not require extra pay for night work, but many employers pay it to staff Teams B and D. If you do, the differential is part of the regular rate. Say a night employee earns $20 plus a $2 night differential (an illustrative figure). The regular rate is $22, so the overtime rate is $33. The 48-hour week pays 40 × $22 = $880 plus 8 × $33 = $264, or $1,144. Our <a href="/blog/shift-differential/">shift differential guide</a> covers flat and percentage premiums.</p>
+
+      <aside class="cta-inline" aria-label="See Workzenly scheduling">
+        <div>
+          <p class="cta-inline__title">Build the rotation once, not every two weeks</p>
+          <p>Workzenly lets you drag crews into a 12-hour pattern, publish it to every employee’s phone, and approve swaps, while the time clock tracks the hours that turn into overtime.</p>
+        </div>
+        <a class="cta-inline__btn" href="/features/scheduling/">See scheduling</a>
+      </aside>
+
+      <h2 id="california">California daily overtime on 12-hour shifts</h2>
+      <p>A few states add daily overtime, and California is the big one. California requires time and a half for hours over 8 in a workday and double time for hours over 12, as well as weekly overtime after 40. A 12-hour shift therefore carries 4 hours of daily overtime unless the employer has a valid alternative workweek schedule.</p>
+      <p>Without one, the same $20-an-hour employee earns more:</p>
+      <ul>
+        <li><strong>48-hour week (4 shifts):</strong> 32 regular hours × $20 = $640, plus 16 overtime hours × $30 = $480, for $1,120.</li>
+        <li><strong>36-hour week (3 shifts):</strong> 24 regular hours × $20 = $480, plus 12 overtime hours × $30 = $360, for $840.</li>
+        <li><strong>Two-week total:</strong> $1,960, compared with $1,760 under federal rules alone.</li>
+      </ul>
+      <p>Daily overtime hours are not counted again toward the weekly 40, so the 48-hour week has no extra weekly overtime here. The 2-2-3 pattern never reaches a seventh consecutive day, so California’s seventh-day rule does not come into play. An alternative workweek schedule needs a two-thirds secret ballot vote of the affected employees. According to the California Department of Industrial Relations, most employers can schedule up to 10 regular hours a day that way, while certain healthcare employers can schedule up to 12, within a 40-hour week. Hours over 40 in a week still earn overtime. Our <a href="/blog/california-overtime-law/">California overtime law guide</a> covers the details, and you should confirm your wage order with the DIR.</p>
+
+      <h2 id="pros-cons">Pros and cons of the Panama schedule</h2>
+      <h3>Pros</h3>
+      <ul>
+        <li><strong>Every other weekend off.</strong> Each employee gets a Friday-to-Sunday break every two weeks.</li>
+        <li><strong>Short work runs.</strong> No one works more than three 12-hour shifts in a row, which many employees find easier than four or more.</li>
+        <li><strong>Fewer workdays.</strong> Employees work 182 shifts a year, so about half the days of the year are free and there are fewer commutes.</li>
+        <li><strong>Simple coverage.</strong> Four crews cover 24/7 with only two shift changes a day, so there are fewer handoffs than with three 8-hour shifts.</li>
+        <li><strong>Predictable.</strong> Once the cycle is set, anyone can work out their schedule months ahead.</li>
+      </ul>
+      <h3>Cons</h3>
+      <ul>
+        <li><strong>Built-in overtime.</strong> At 84 hours every two weeks, overtime is part of the base cost, not an exception.</li>
+        <li><strong>Long days.</strong> Twelve hours plus a commute is tiring, and fatigue matters in safety-sensitive work.</li>
+        <li><strong>Days off move.</strong> Fixed weekday commitments such as classes or childcare are harder to keep.</li>
+        <li><strong>Thin cover.</strong> When one person calls out, someone usually covers 12 hours on a day off, adding more overtime.</li>
+        <li><strong>Night work.</strong> In the fixed version, two crews stay on nights; in the rotating version, everyone changes sleep patterns every two weeks.</li>
+      </ul>
+
+      <h2 id="setup">How to set up a 2-2-3 schedule</h2>
+      <ol>
+        <li><strong>Confirm you need 24/7 coverage.</strong> The pattern only makes sense if every hour needs the same staffing. Count the positions each shift must fill.</li>
+        <li><strong>Staff four equal crews.</strong> One 24/7 post needs four people. Add relief staff or a call-in list for PTO, sick days and training.</li>
+        <li><strong>Choose fixed or rotating shifts.</strong> Fixed shifts let people keep one sleep pattern; rotating shifts share nights fairly. Ask your team.</li>
+        <li><strong>Set shift times and the workweek.</strong> Pick the handoff times, such as 7:00 a.m. and 7:00 p.m., and set the FLSA workweek to start at a shift change. Decide how unpaid meal breaks work, because a 30-minute unpaid meal turns 12 paid hours into 11.5.</li>
+        <li><strong>Budget the overtime.</strong> Multiply 8 overtime hours (with a Sunday-start workweek) by each employee’s overtime premium for every cycle, plus any state daily overtime and night differentials.</li>
+        <li><strong>Check state rules.</strong> Review daily overtime, meal and rest breaks, and any predictive scheduling law in your city or state.</li>
+        <li><strong>Publish the full cycle.</strong> Share at least one full cycle, and ideally several months, so employees can plan. Set a clear process for shift swaps.</li>
+        <li><strong>Track real hours.</strong> Pay overtime from actual clock-ins, not from the schedule. A <a href="/features/time-clock/">time clock app</a> records late handoffs and extra coverage that the grid does not show.</li>
+      </ol>
+
+      <h2 id="compare">2-2-3 vs DuPont vs Pitman schedule</h2>
+      <p>All three use four crews on 12-hour shifts to cover 24/7, and all three average 42 hours a week. The differences are the length of the cycle, the longest work run and how time off is grouped.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Feature</th><th>2-2-3 (Panama)</th><th>DuPont</th><th>Pitman</th></tr></thead>
+          <tbody>
+            <tr><td>Cycle length</td><td>14 days (28 if rotating days and nights)</td><td>28 days</td><td>Usually 14 days; varies by employer</td></tr>
+            <tr><td>Pattern</td><td>Work 2, off 2, work 3, off 2, work 2, off 3</td><td>4 nights, 3 off, 3 days, 1 off, 3 nights, 3 off, 4 days, 7 off</td><td>Same short-block rhythm, often with crews kept on fixed days or nights</td></tr>
+            <tr><td>Longest work run</td><td>3 shifts</td><td>4 shifts</td><td>3 shifts</td></tr>
+            <tr><td>Longest break</td><td>3 days</td><td>7 days</td><td>3 days</td></tr>
+            <tr><td>Weekends</td><td>Every other weekend off (Fri to Sun)</td><td>Varies through the cycle</td><td>Every other weekend off</td></tr>
+            <tr><td>Day and night</td><td>Fixed or rotating</td><td>Rotates within the cycle</td><td>Depends on the version</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The DuPont schedule trades longer work runs, including four nights in a row, for a full week off every 28 days. Its weekly hours also swing more, so overtime depends heavily on the workweek. See our <a href="/blog/dupont-schedule/">DuPont schedule guide</a> for its grid. If your crews prefer short runs and regular weekends, the 2-2-3 schedule is usually the easier sell.</p>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>What is a 2-2-3 schedule?</summary><p>A 2-2-3 schedule is a 14-day rotation of 12-hour shifts: work 2 days, off 2, work 3, off 2, work 2, off 3. Four teams cover 24 hours a day, seven days a week, with two teams on days and two on nights. Each employee works 7 shifts, or 84 hours, every two weeks and gets every other weekend off.</p></details>
+        <details><summary>Is the Panama schedule the same as a 2-2-3 schedule?</summary><p>Usually, yes. Panama, 2-2-3 and 2-3-2 are common names for the same 14-day cycle of 12-hour shifts; 2-3-2 just starts counting on a different day. Pitman is a close relative, but employers use that name for slightly different setups, so check the actual on and off days written in your schedule or contract.</p></details>
+        <details><summary>Do you get overtime on a 2-2-3 schedule?</summary><p>Usually. Under the FLSA, non-exempt employees earn time and a half for hours over 40 in each workweek, and hours cannot be averaged across two weeks. With a workweek that starts on Sunday, the schedule alternates 48 and 36 hours, so each crew earns 8 overtime hours every two weeks. A Monday start produces 60 and 24 hours instead.</p></details>
+        <details><summary>How many hours a year is a 2-2-3 schedule?</summary><p>Each employee works 84 hours every 14 days. Over 26 cycles, which is 364 days, that comes to 2,184 scheduled hours, an average of 42 hours a week. That is 104 hours more than a standard 2,080-hour year, before extra shifts, call-ins or unpaid meal breaks are taken into account.</p></details>
+        <details><summary>How many employees do you need for a 2-2-3 schedule?</summary><p>You need four crews, and each crew needs enough people to fill every position on one shift. A post that must be staffed around the clock by one person needs four employees. Most employers add relief staff or a call-in list to cover vacations, sick days and training, because the base schedule has no spare capacity.</p></details>
+      </div>
+
+      <aside class="cta-inline cta-inline--quiet" aria-label="Book a demo">
+        <div>
+          <p class="cta-inline__title">See a 12-hour rotation in Workzenly</p>
+          <p>Book a 20-minute demo and we will show you a four-crew schedule going out to phones, with clock-ins turning into overtime on each pay stub.</p>
+        </div>
+        <a class="cta-inline__btn" href="/#start">Book a demo</a>
+      </aside>
+
+      <div class="byline">
+        <span class="byline__mark" aria-hidden="true">W</span>
+        <p>Written by the Workzenly team, who build time clock, scheduling, PTO and payroll software for US businesses. This guide is general information, not legal or tax advice. Federal, state and local rules change; confirm current requirements with your state labor department or an employment attorney.</p>
+      </div>
+    </article>
+  </div>
+
+  <section class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Keep reading</h2>
+    <div class="related__list">
+      <a class="related__item" href="/blog/dupont-schedule/"><b>DuPont schedule for 12-hour rotating shifts</b><span>Scheduling</span></a>
+      <a class="related__item" href="/blog/pitman-schedule/"><b>Pitman schedule and how it works</b><span>Scheduling</span></a>
+      <a class="related__item" href="/templates/employee-schedule-templates/"><b>Work schedule templates to copy</b><span>Scheduling</span></a>
+    </div>
+  </section>
+
+  <section class="close-cta" aria-labelledby="close-title">
+    <h2 id="close-title">Run time, schedules and pay in one place</h2>
+    <div class="close-cta__side">
+      <p>Workzenly handles time clocks, schedules, PTO and payroll for employers, and gives every employee one app for all of it.</p>
+      <a class="button" href="/#start">Book a demo</a>
+    </div>
+  </section>
+</main>
+
+<footer class="simple-foot">
+  <p>© <span id="year">2026</span> Workzenly</p>
+  <nav aria-label="Footer">
+    <a href="/features/time-clock/">Time clock</a>
+    <a href="/features/scheduling/">Scheduling</a>
+    <a href="/features/payroll/">Payroll</a>
+    <a href="/features/pto/">PTO</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+  <p><a href="mailto:info@workzenly.com">info@workzenly.com</a></p>
+</footer>
+
+<script src="/blog.js" defer></script>
+</body>
+</html>
