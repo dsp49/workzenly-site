@@ -2,6 +2,766 @@
  "audience": "United States",
  "posts": [
   {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "best",
+   "slug": "best-hr-software-for-small-business",
+   "url": "/tools/best-hr-software-for-small-business/",
+   "keyword": "best hr software for small business",
+   "intent": "commercial",
+   "volume": 1800,
+   "kd": 11,
+   "country": "us",
+   "secondary": [
+    "hr software for small business",
+    "hris for small business",
+    "small business hr software"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "free",
+   "slug": "free-payroll-software",
+   "url": "/tools/free-payroll-software/",
+   "keyword": "free payroll software",
+   "intent": "commercial",
+   "volume": 1300,
+   "kd": 6,
+   "country": "us",
+   "secondary": [
+    "free payroll software for small business",
+    "free payroll app",
+    "payroll software free trial"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "free",
+   "slug": "free-time-clock-apps",
+   "url": "/tools/free-time-clock-apps/",
+   "keyword": "free time clock app",
+   "intent": "commercial",
+   "volume": 1000,
+   "kd": 23,
+   "country": "us",
+   "secondary": [
+    "best free time clock app",
+    "free employee time clock app",
+    "free clock in clock out app"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "best",
+   "slug": "employee-schedule-makers",
+   "url": "/tools/employee-schedule-makers/",
+   "keyword": "employee schedule maker",
+   "intent": "commercial",
+   "volume": 700,
+   "kd": 2,
+   "country": "us",
+   "secondary": [
+    "free schedule maker",
+    "shift schedule maker",
+    "work schedule maker"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "best",
+   "slug": "best-scheduling-apps-for-small-business",
+   "url": "/tools/best-scheduling-apps-for-small-business/",
+   "keyword": "best scheduling app for small business",
+   "intent": "commercial",
+   "volume": 600,
+   "kd": 15,
+   "country": "us",
+   "secondary": [
+    "scheduling software for small business",
+    "small business scheduling app"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "best",
+   "slug": "best-time-and-attendance-software",
+   "url": "/tools/best-time-and-attendance-software/",
+   "keyword": "best time and attendance software",
+   "intent": "commercial",
+   "volume": 500,
+   "kd": 7,
+   "country": "us",
+   "secondary": [
+    "time and attendance software",
+    "attendance management software",
+    "time and attendance system"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "best",
+   "slug": "best-employee-time-clock-apps",
+   "url": "/tools/best-employee-time-clock-apps/",
+   "keyword": "best employee time clock app",
+   "intent": "commercial",
+   "volume": 400,
+   "kd": 26,
+   "country": "us",
+   "secondary": [
+    "best time clock app",
+    "employee time clock app",
+    "time clock app for small business"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "best",
+   "slug": "best-employee-scheduling-apps",
+   "url": "/tools/best-employee-scheduling-apps/",
+   "keyword": "best employee scheduling app",
+   "intent": "commercial",
+   "volume": 400,
+   "kd": 28,
+   "country": "us",
+   "secondary": [
+    "employee scheduling app",
+    "employee scheduling software",
+    "shift scheduling app"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "best",
+   "slug": "best-payroll-services-for-small-business",
+   "url": "/tools/best-payroll-services-for-small-business/",
+   "keyword": "best payroll services for small business",
+   "intent": "commercial",
+   "volume": 350,
+   "kd": 1,
+   "country": "us",
+   "secondary": [
+    "payroll services for small business",
+    "cheapest payroll service",
+    "small business payroll"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "best",
+   "slug": "best-hris-for-small-business",
+   "url": "/tools/best-hris-for-small-business/",
+   "keyword": "best hris for small business",
+   "intent": "commercial",
+   "volume": 300,
+   "kd": 8,
+   "country": "us",
+   "secondary": [
+    "hris for small business",
+    "hris software",
+    "hris systems for small companies"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "free",
+   "slug": "free-pto-trackers",
+   "url": "/tools/free-pto-trackers/",
+   "keyword": "free pto tracker",
+   "intent": "commercial",
+   "volume": 200,
+   "kd": 10,
+   "country": "us",
+   "secondary": [
+    "pto tracker",
+    "time off tracker",
+    "vacation tracker app"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "best",
+   "slug": "best-leave-management-software",
+   "url": "/tools/best-leave-management-software/",
+   "keyword": "best leave management software",
+   "intent": "commercial",
+   "volume": 150,
+   "kd": 6,
+   "country": "us",
+   "secondary": [
+    "leave management software",
+    "employee leave tracking",
+    "absence management software"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "best",
+   "slug": "best-restaurant-scheduling-apps",
+   "url": "/tools/best-restaurant-scheduling-apps/",
+   "keyword": "best restaurant scheduling app",
+   "intent": "commercial",
+   "volume": 150,
+   "kd": 3,
+   "country": "us",
+   "secondary": [
+    "restaurant scheduling software",
+    "best scheduling software for restaurants",
+    "server scheduling app"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "best",
+   "slug": "best-applicant-tracking-systems-for-small-business",
+   "url": "/tools/best-applicant-tracking-systems-for-small-business/",
+   "keyword": "best applicant tracking system for small business",
+   "intent": "commercial",
+   "volume": 150,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "applicant tracking system",
+    "ats for small business",
+    "hiring software"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "best",
+   "slug": "best-retail-scheduling-software",
+   "url": "/tools/best-retail-scheduling-software/",
+   "keyword": "best retail scheduling software",
+   "intent": "commercial",
+   "volume": 100,
+   "kd": 2,
+   "country": "us",
+   "secondary": [
+    "retail scheduling software",
+    "retail employee scheduling app",
+    "store scheduling software"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "best",
+   "slug": "best-gps-time-clock-apps",
+   "url": "/tools/best-gps-time-clock-apps/",
+   "keyword": "best gps time clock app",
+   "intent": "commercial",
+   "volume": 50,
+   "kd": 10,
+   "country": "us",
+   "secondary": [
+    "gps time clock app",
+    "gps time tracking for employees",
+    "geofence time clock"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "alternatives",
+   "slug": "when-i-work-alternatives",
+   "url": "/tools/when-i-work-alternatives/",
+   "keyword": "when i work alternatives",
+   "intent": "commercial",
+   "volume": 700,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "when i work competitors",
+    "apps like when i work",
+    "when i work vs"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "alternatives",
+   "slug": "gusto-alternatives",
+   "url": "/tools/gusto-alternatives/",
+   "keyword": "gusto alternatives",
+   "intent": "commercial",
+   "volume": 500,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "gusto competitors",
+    "payroll like gusto",
+    "gusto vs"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "alternatives",
+   "slug": "connecteam-alternatives",
+   "url": "/tools/connecteam-alternatives/",
+   "keyword": "connecteam alternatives",
+   "intent": "commercial",
+   "volume": 400,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "connecteam competitors",
+    "apps like connecteam",
+    "connecteam vs"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "alternatives",
+   "slug": "homebase-alternatives",
+   "url": "/tools/homebase-alternatives/",
+   "keyword": "homebase alternatives",
+   "intent": "commercial",
+   "volume": 250,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "homebase competitors",
+    "apps like homebase",
+    "homebase vs"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "alternatives",
+   "slug": "sling-alternatives",
+   "url": "/tools/sling-alternatives/",
+   "keyword": "sling alternatives",
+   "intent": "commercial",
+   "volume": 200,
+   "kd": 2,
+   "country": "us",
+   "secondary": [
+    "sling competitors",
+    "apps like sling",
+    "sling vs"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "alternatives",
+   "slug": "clockify-alternatives",
+   "url": "/tools/clockify-alternatives/",
+   "keyword": "clockify alternatives",
+   "intent": "commercial",
+   "volume": 200,
+   "kd": 2,
+   "country": "us",
+   "secondary": [
+    "clockify competitors",
+    "apps like clockify",
+    "clockify vs"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "section": "tools",
+   "batch": "L_tools",
+   "list_kind": "alternatives",
+   "slug": "deputy-alternatives",
+   "url": "/tools/deputy-alternatives/",
+   "keyword": "deputy alternatives",
+   "intent": "commercial",
+   "volume": 150,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "deputy competitors",
+    "apps like deputy",
+    "deputy vs"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "weekly-schedule-templates",
+   "url": "/templates/weekly-schedule-templates/",
+   "keyword": "weekly schedule template",
+   "intent": "transactional",
+   "volume": 15000,
+   "kd": 14,
+   "country": "us",
+   "secondary": [
+    "weekly work schedule template",
+    "weekly employee schedule",
+    "printable weekly schedule"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "pay-stub-templates",
+   "url": "/templates/pay-stub-templates/",
+   "keyword": "pay stub template",
+   "intent": "transactional",
+   "volume": 3200,
+   "kd": 8,
+   "country": "us",
+   "secondary": [
+    "paystub template",
+    "free pay stub template",
+    "pay stub template excel"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "employee-write-up-forms",
+   "url": "/templates/employee-write-up-forms/",
+   "keyword": "employee write up form",
+   "intent": "transactional",
+   "volume": 3000,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "write up form",
+    "employee write up template",
+    "disciplinary form"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "termination-letter-templates",
+   "url": "/templates/termination-letter-templates/",
+   "keyword": "termination letter template",
+   "intent": "transactional",
+   "volume": 3000,
+   "kd": 3,
+   "country": "us",
+   "secondary": [
+    "termination letter",
+    "employee termination letter",
+    "letter of termination"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "time-off-request-forms",
+   "url": "/templates/time-off-request-forms/",
+   "keyword": "time off request form",
+   "intent": "transactional",
+   "volume": 2800,
+   "kd": 2,
+   "country": "us",
+   "secondary": [
+    "time off request template",
+    "pto request form",
+    "vacation request form"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "job-offer-letter-templates",
+   "url": "/templates/job-offer-letter-templates/",
+   "keyword": "job offer letter template",
+   "intent": "transactional",
+   "volume": 2700,
+   "kd": 8,
+   "country": "us",
+   "secondary": [
+    "offer letter template",
+    "offer letter sample",
+    "employment offer letter"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "employee-evaluation-forms",
+   "url": "/templates/employee-evaluation-forms/",
+   "keyword": "employee evaluation form",
+   "intent": "transactional",
+   "volume": 1200,
+   "kd": 3,
+   "country": "us",
+   "secondary": [
+    "performance evaluation form",
+    "employee evaluation template",
+    "evaluation form for employees"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "onboarding-checklist-templates",
+   "url": "/templates/onboarding-checklist-templates/",
+   "keyword": "onboarding checklist template",
+   "intent": "transactional",
+   "volume": 1100,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "new hire checklist template",
+    "onboarding checklist",
+    "employee onboarding checklist"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "timesheet-templates",
+   "url": "/templates/timesheet-templates/",
+   "keyword": "free timesheet template",
+   "intent": "transactional",
+   "volume": 700,
+   "kd": 6,
+   "country": "us",
+   "secondary": [
+    "timesheet template",
+    "weekly timesheet template",
+    "biweekly timesheet template",
+    "printable timesheet"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "attendance-tracker-templates",
+   "url": "/templates/attendance-tracker-templates/",
+   "keyword": "attendance tracker template",
+   "intent": "transactional",
+   "volume": 600,
+   "kd": 8,
+   "country": "us",
+   "secondary": [
+    "employee attendance tracker excel",
+    "attendance sheet template",
+    "attendance tracker"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "employee-warning-notice-templates",
+   "url": "/templates/employee-warning-notice-templates/",
+   "keyword": "employee warning notice",
+   "intent": "transactional",
+   "volume": 500,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "written warning template",
+    "employee warning letter",
+    "final written warning"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "employee-schedule-templates",
+   "url": "/templates/employee-schedule-templates/",
+   "keyword": "free employee schedule template",
+   "intent": "transactional",
+   "volume": 350,
+   "kd": 11,
+   "country": "us",
+   "secondary": [
+    "employee schedule template",
+    "shift schedule template",
+    "staff schedule template"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "employee-handbook-templates",
+   "url": "/templates/employee-handbook-templates/",
+   "keyword": "free employee handbook template",
+   "intent": "transactional",
+   "volume": 300,
+   "kd": 3,
+   "country": "us",
+   "secondary": [
+    "employee handbook template",
+    "employee handbook sample",
+    "handbook outline"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "pto-tracker-templates",
+   "url": "/templates/pto-tracker-templates/",
+   "keyword": "pto tracker excel",
+   "intent": "transactional",
+   "volume": 200,
+   "kd": 0,
+   "country": "us",
+   "secondary": [
+    "pto tracker template",
+    "pto calendar excel",
+    "vacation tracker excel"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "performance-review-templates",
+   "url": "/templates/performance-review-templates/",
+   "keyword": "performance review template free",
+   "intent": "transactional",
+   "volume": 150,
+   "kd": 6,
+   "country": "us",
+   "secondary": [
+    "performance review template",
+    "employee review template",
+    "performance review form"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "monthly-schedule-templates",
+   "url": "/templates/monthly-schedule-templates/",
+   "keyword": "monthly employee schedule template",
+   "intent": "transactional",
+   "volume": 150,
+   "kd": 10,
+   "country": "us",
+   "secondary": [
+    "monthly work schedule template",
+    "monthly shift schedule",
+    "monthly staff schedule"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "templates",
+   "batch": "L_templates",
+   "list_kind": "templates",
+   "slug": "shift-schedule-templates",
+   "url": "/templates/shift-schedule-templates/",
+   "keyword": "12 hour shift schedule template",
+   "intent": "transactional",
+   "volume": 70,
+   "kd": 2,
+   "country": "us",
+   "secondary": [
+    "rotating shift schedule template",
+    "12 hour rotating schedule",
+    "shift pattern template"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
    "batch": "A_pay_calculators",
    "slug": "salary-to-hourly-calculator",
    "url": "/blog/salary-to-hourly-calculator/",
@@ -17,7 +777,8 @@
     "how much is 50000 a year hourly"
    ],
    "tool": true,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "A_pay_calculators",
@@ -34,7 +795,8 @@
     "20 an hour is how much a year"
    ],
    "tool": true,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "A_pay_calculators",
@@ -51,7 +813,8 @@
     "time and a half calculator"
    ],
    "tool": true,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "A_pay_calculators",
@@ -68,7 +831,8 @@
     "hours calculator with lunch"
    ],
    "tool": true,
-   "feature": "time-clock"
+   "feature": "time-clock",
+   "section": "blog"
   },
   {
    "batch": "A_pay_calculators",
@@ -85,7 +849,8 @@
     "payroll decimal hours"
    ],
    "tool": true,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "A_pay_calculators",
@@ -103,7 +868,8 @@
     "time and a half"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "A_pay_calculators",
@@ -121,7 +887,8 @@
     "time and a half on holidays"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "B_payroll_forms",
@@ -139,7 +906,8 @@
     "employee withholding certificate"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "B_payroll_forms",
@@ -157,7 +925,8 @@
     "e-verify"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "B_payroll_forms",
@@ -174,7 +943,8 @@
     "worker classification"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "B_payroll_forms",
@@ -192,7 +962,8 @@
     "flsa exemptions"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "B_payroll_forms",
@@ -210,7 +981,8 @@
     "ytd on pay stub"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "B_payroll_forms",
@@ -227,7 +999,8 @@
     "payroll checklist small business"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "B_payroll_forms",
@@ -244,7 +1017,8 @@
     "onboarding documents"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "C_minimum_wage",
@@ -261,7 +1035,8 @@
     "federal minimum wage"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "C_minimum_wage",
@@ -278,7 +1053,8 @@
     "ca minimum wage"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "C_minimum_wage",
@@ -295,7 +1071,8 @@
     "florida tipped minimum wage"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "C_minimum_wage",
@@ -312,7 +1089,8 @@
     "what is minimum wage in texas"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "C_minimum_wage",
@@ -329,7 +1107,8 @@
     "nyc minimum wage"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "C_minimum_wage",
@@ -346,7 +1125,8 @@
     "ohio tipped wage"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "C_minimum_wage",
@@ -363,7 +1143,8 @@
     "michigan tipped wage"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "D_leave_attendance",
@@ -381,7 +1162,8 @@
     "immediate family for bereavement"
    ],
    "tool": false,
-   "feature": "pto"
+   "feature": "pto",
+   "section": "blog"
   },
   {
    "batch": "D_leave_attendance",
@@ -398,7 +1180,8 @@
     "fmla rules for employers"
    ],
    "tool": false,
-   "feature": "pto"
+   "feature": "pto",
+   "section": "blog"
   },
   {
    "batch": "D_leave_attendance",
@@ -416,7 +1199,8 @@
     "pto accrual"
    ],
    "tool": false,
-   "feature": "pto"
+   "feature": "pto",
+   "section": "blog"
   },
   {
    "batch": "D_leave_attendance",
@@ -433,7 +1217,8 @@
     "employer jury duty policy"
    ],
    "tool": false,
-   "feature": "pto"
+   "feature": "pto",
+   "section": "blog"
   },
   {
    "batch": "D_leave_attendance",
@@ -450,7 +1235,8 @@
     "what is a no call no show"
    ],
    "tool": false,
-   "feature": "time-clock"
+   "feature": "time-clock",
+   "section": "blog"
   },
   {
    "batch": "D_leave_attendance",
@@ -467,7 +1253,8 @@
     "how to handle tardy employees"
    ],
    "tool": false,
-   "feature": "time-clock"
+   "feature": "time-clock",
+   "section": "blog"
   },
   {
    "batch": "D_leave_attendance",
@@ -484,7 +1271,8 @@
     "attendance point system"
    ],
    "tool": false,
-   "feature": "time-clock"
+   "feature": "time-clock",
+   "section": "blog"
   },
   {
    "batch": "E_scheduling",
@@ -501,7 +1289,8 @@
     "compressed work week"
    ],
    "tool": false,
-   "feature": "scheduling"
+   "feature": "scheduling",
+   "section": "blog"
   },
   {
    "batch": "E_scheduling",
@@ -518,7 +1307,8 @@
     "12 hour rotating shift"
    ],
    "tool": false,
-   "feature": "scheduling"
+   "feature": "scheduling",
+   "section": "blog"
   },
   {
    "batch": "E_scheduling",
@@ -535,7 +1325,8 @@
     "panama schedule"
    ],
    "tool": false,
-   "feature": "scheduling"
+   "feature": "scheduling",
+   "section": "blog"
   },
   {
    "batch": "E_scheduling",
@@ -552,24 +1343,8 @@
     "12 hour shift schedule"
    ],
    "tool": false,
-   "feature": "scheduling"
-  },
-  {
-   "batch": "E_scheduling",
-   "slug": "work-schedule-template",
-   "url": "/blog/work-schedule-template/",
-   "keyword": "work schedule template",
-   "intent": "transactional",
-   "volume": 4300,
-   "kd": 17,
-   "country": "us",
-   "secondary": [
-    "employee schedule template",
-    "weekly work schedule template",
-    "shift schedule template"
-   ],
-   "tool": false,
-   "feature": "scheduling"
+   "feature": "scheduling",
+   "section": "blog"
   },
   {
    "batch": "E_scheduling",
@@ -586,7 +1361,8 @@
     "office days"
    ],
    "tool": false,
-   "feature": "scheduling"
+   "feature": "scheduling",
+   "section": "blog"
   },
   {
    "batch": "E_scheduling",
@@ -603,24 +1379,8 @@
     "night shift differential"
    ],
    "tool": false,
-   "feature": "scheduling"
-  },
-  {
-   "batch": "F_time_tracking",
-   "slug": "timesheet-template",
-   "url": "/blog/timesheet-template/",
-   "keyword": "timesheet template",
-   "intent": "transactional",
-   "volume": 5100,
-   "kd": 2,
-   "country": "us",
-   "secondary": [
-    "weekly timesheet",
-    "excel timesheet template",
-    "free timesheet template"
-   ],
-   "tool": false,
-   "feature": "time-clock"
+   "feature": "scheduling",
+   "section": "blog"
   },
   {
    "batch": "F_time_tracking",
@@ -637,24 +1397,8 @@
     "timesheet rules"
    ],
    "tool": false,
-   "feature": "time-clock"
-  },
-  {
-   "batch": "F_time_tracking",
-   "slug": "time-card-template",
-   "url": "/blog/time-card-template/",
-   "keyword": "time card template",
-   "intent": "transactional",
-   "volume": 1500,
-   "kd": 7,
-   "country": "us",
-   "secondary": [
-    "printable time card",
-    "weekly time card",
-    "employee time card"
-   ],
-   "tool": false,
-   "feature": "time-clock"
+   "feature": "time-clock",
+   "section": "blog"
   },
   {
    "batch": "F_time_tracking",
@@ -671,7 +1415,8 @@
     "geofencing for employees"
    ],
    "tool": false,
-   "feature": "time-clock"
+   "feature": "time-clock",
+   "section": "blog"
   },
   {
    "batch": "F_time_tracking",
@@ -688,7 +1433,8 @@
     "time and attendance software"
    ],
    "tool": false,
-   "feature": "time-clock"
+   "feature": "time-clock",
+   "section": "blog"
   },
   {
    "batch": "F_time_tracking",
@@ -705,7 +1451,8 @@
     "mobile time clock"
    ],
    "tool": false,
-   "feature": "time-clock"
+   "feature": "time-clock",
+   "section": "blog"
   },
   {
    "batch": "F_time_tracking",
@@ -722,7 +1469,8 @@
     "california overtime rules"
    ],
    "tool": false,
-   "feature": "payroll"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "G_people_docs",
@@ -739,41 +1487,8 @@
     "employee onboarding best practices"
    ],
    "tool": false,
-   "feature": "payroll"
-  },
-  {
-   "batch": "G_people_docs",
-   "slug": "employee-onboarding-checklist",
-   "url": "/blog/employee-onboarding-checklist/",
-   "keyword": "employee onboarding checklist",
-   "intent": "transactional",
-   "volume": 3900,
-   "kd": 0,
-   "country": "us",
-   "secondary": [
-    "onboarding checklist",
-    "new hire checklist",
-    "onboarding checklist template"
-   ],
-   "tool": false,
-   "feature": "payroll"
-  },
-  {
-   "batch": "G_people_docs",
-   "slug": "performance-review-template",
-   "url": "/blog/performance-review-template/",
-   "keyword": "performance review template",
-   "intent": "transactional",
-   "volume": 3700,
-   "kd": 1,
-   "country": "us",
-   "secondary": [
-    "employee performance review template",
-    "performance review examples",
-    "performance review phrases"
-   ],
-   "tool": false,
-   "feature": "scheduling"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "G_people_docs",
@@ -790,75 +1505,8 @@
     "areas of improvement examples"
    ],
    "tool": false,
-   "feature": "scheduling"
-  },
-  {
-   "batch": "G_people_docs",
-   "slug": "employee-handbook-template",
-   "url": "/blog/employee-handbook-template/",
-   "keyword": "employee handbook template",
-   "intent": "transactional",
-   "volume": 3100,
-   "kd": 6,
-   "country": "us",
-   "secondary": [
-    "employee handbook",
-    "employee handbook examples",
-    "what to include in an employee handbook"
-   ],
-   "tool": false,
-   "feature": "pto"
-  },
-  {
-   "batch": "G_people_docs",
-   "slug": "offer-letter-template",
-   "url": "/blog/offer-letter-template/",
-   "keyword": "offer letter template",
-   "intent": "transactional",
-   "volume": 7800,
-   "kd": 4,
-   "country": "us",
-   "secondary": [
-    "job offer letter",
-    "offer letter sample",
-    "employment offer letter"
-   ],
-   "tool": false,
-   "feature": "payroll"
-  },
-  {
-   "batch": "G_people_docs",
-   "slug": "termination-letter",
-   "url": "/blog/termination-letter/",
-   "keyword": "termination letter",
-   "intent": "transactional",
-   "volume": 7100,
-   "kd": 4,
-   "country": "us",
-   "secondary": [
-    "termination letter template",
-    "employee termination letter",
-    "letter of termination"
-   ],
-   "tool": false,
-   "feature": "payroll"
-  },
-  {
-   "batch": "H_software",
-   "slug": "best-hr-software-for-small-business",
-   "url": "/blog/best-hr-software-for-small-business/",
-   "keyword": "best hr software for small business",
-   "intent": "commercial",
-   "volume": 1800,
-   "kd": 12,
-   "country": "us",
-   "secondary": [
-    "hr software for small business",
-    "hris for small business",
-    "small business hr tools"
-   ],
-   "tool": false,
-   "feature": "payroll"
+   "feature": "scheduling",
+   "section": "blog"
   },
   {
    "batch": "H_software",
@@ -875,58 +1523,8 @@
     "onboarding tools"
    ],
    "tool": false,
-   "feature": "payroll"
-  },
-  {
-   "batch": "H_software",
-   "slug": "pto-tracker",
-   "url": "/blog/pto-tracker/",
-   "keyword": "pto tracker",
-   "intent": "commercial",
-   "volume": 1000,
-   "kd": 6,
-   "country": "us",
-   "secondary": [
-    "vacation tracker",
-    "pto tracking software",
-    "employee time off tracker"
-   ],
-   "tool": false,
-   "feature": "pto"
-  },
-  {
-   "batch": "H_software",
-   "slug": "retail-scheduling-software",
-   "url": "/blog/retail-scheduling-software/",
-   "keyword": "retail scheduling software",
-   "intent": "commercial",
-   "volume": 800,
-   "kd": 7,
-   "country": "us",
-   "secondary": [
-    "retail employee scheduling",
-    "retail staff scheduling app",
-    "store scheduling"
-   ],
-   "tool": false,
-   "feature": "scheduling"
-  },
-  {
-   "batch": "H_software",
-   "slug": "restaurant-scheduling-software",
-   "url": "/blog/restaurant-scheduling-software/",
-   "keyword": "restaurant scheduling software",
-   "intent": "commercial",
-   "volume": 600,
-   "kd": 0,
-   "country": "us",
-   "secondary": [
-    "restaurant schedule software",
-    "restaurant employee scheduling app",
-    "server scheduling"
-   ],
-   "tool": false,
-   "feature": "scheduling"
+   "feature": "payroll",
+   "section": "blog"
   },
   {
    "batch": "H_software",
@@ -943,24 +1541,8 @@
     "clinic scheduling"
    ],
    "tool": false,
-   "feature": "scheduling"
-  },
-  {
-   "batch": "H_software",
-   "slug": "when-i-work-alternatives",
-   "url": "/blog/when-i-work-alternatives/",
-   "keyword": "when i work alternatives",
-   "intent": "commercial",
-   "volume": 700,
-   "kd": 0,
-   "country": "us",
-   "secondary": [
-    "when i work competitors",
-    "apps like when i work",
-    "employee scheduling app alternatives"
-   ],
-   "tool": false,
-   "feature": "scheduling"
+   "feature": "scheduling",
+   "section": "blog"
   }
  ],
  "features": [

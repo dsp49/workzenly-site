@@ -56,3 +56,58 @@ US employment rules vary by federal, state and city law and change every year. U
 - Specific nouns and real numbers. No filler intros, no “In conclusion”.
 - Avoid: seamless, unlock, empower, leverage, robust, cutting-edge, game-changer, delve, elevate, revolutionize, all-in-one, “look no further”. Few or no em dashes.
 - Sentence-case headings.
+
+## Listicles (/tools/ and /templates/)
+
+Listicles are the pages we most want to rank. They must be the most useful page on the first results page
+for their keyword: complete, current, honest and quick to scan.
+
+### Software roundups: /tools/<slug>/ (template: content-plan/templates/tool-listicle.html)
+
+1. **Research the field first.** Use WebSearch to find the products that really compete for this query in the
+   US today (category pages on G2 or Capterra are fine for finding candidates, never for copying ratings or
+   quotes). Pick 7 to 10 that fit the searcher, all currently operating, with a US website.
+2. **Verify every product on its own site today** with WebFetch: home page, features, pricing page, app store
+   listing if relevant. Record: what it is, who it is built for, the 2 to 4 features that matter for this query,
+   free plan or trial (and its limits), the lowest published price with its unit (per user/month, per
+   location/month, base fee + per person), platforms (web, iOS, Android, kiosk). If no price is published,
+   write "Quote". Never guess; if a fact cannot be confirmed, leave it out.
+3. **Capture assets for every product** (shared across listicles, so reuse folders that already exist):
+   `python content-plan/capture_tool.py <tool-slug> <homepage-url> --name="<Name>"`. Then open
+   `assets/tools/<tool-slug>/home.jpg` and `logo.png` with the Read tool and look at them.
+   - If the screenshot is a captcha, an error, or mostly a cookie wall: re-run with `--force` once; if still bad,
+     try the product’s features page URL instead of the home page.
+   - If the logo is a lettermark, blurry, or the wrong mark: re-run with `--logo-url=<official PNG/JPG>` (press
+     kit, brand page, or a Wikimedia Commons PNG thumbnail), or crop the brand mark out of the screenshot with
+     `--crop-logo=x,y,w,h` (1280×720 coordinates; check the result).
+4. **Order** the list by best fit for the searcher, and say in each card who it is best for. Each “Top pick” covers
+   a different buyer (best overall, best free, best for restaurants, best for payroll, and so on).
+5. **Workzenly appears once**, as an honest entry: `tool-card tool-card--ours`, the “Our product” tag, logo
+   `/apple-touch-icon.png`, screenshot `/og-image.png` (1200×630). Describe only what it does (see the top of this
+   guide). Its price and trial fields say “Book a demo”. On “X alternatives” pages, never list X itself as an
+   alternative; give X a short fair summary in the intro instead.
+6. **Each tool card** has 180–260 words: what it is and who it suits, what stands out (specific features, not
+   adjectives), 3–4 strengths and 2–3 drawbacks that are concrete and checkable (“Payroll is a paid add-on”,
+   “No Android app”, “Free plan limited to one location”). No star ratings, scores, user counts, awards or review
+   quotes. No disparaging language; drawbacks are facts.
+7. **Sections in order:** disclosure, intro (keyword in the first 100 words; who this list is for), top picks,
+   comparison table, the tool cards (mid-article CTA after the 3rd or 4th card), how we chose, how to choose
+   (a buyer’s checklist specific to the category, with US specifics like FLSA overtime, state breaks, predictive
+   scheduling laws where relevant), FAQ, closing CTA. Related links at the bottom go to other /tools/ and
+   /templates/ pages.
+8. **Alt text**: logos “<Name> logo”; screenshots “<Name> home page showing <what is visible>”.
+
+### Free-template roundups: /templates/<slug>/ (template: content-plan/templates/template-listicle.html)
+
+1. Offer 5 to 10 genuinely different templates (layout, use case, industry, period), not one template five times.
+2. Build the real files with `content-plan/tplkit.py` from a script saved at
+   `content-plan/template_builds/<slug>.py` (so they can be rebuilt). Files go to `assets/templates/<slug>/` with
+   clear names (`weekly-employee-schedule-restaurant.xlsx`). Sheets: .xlsx + printable .pdf. Letters and forms:
+   .docx + .pdf + a “Copy text” button. Use working formulas for totals and hours where the template needs them.
+3. Run the build script, then open at least one .pdf and one .xlsx/.docx to confirm they were created.
+4. The on-page preview shows the template filled with realistic US sample data, so a visitor sees exactly what
+   they get before downloading. Wide previews scroll inside their box on phones.
+5. Each template card: name, best for, preview, download buttons, a one-line description of what is inside, and
+   two or three sentences on when and how to use it. Letters and HR forms add the key legal notes (for example,
+   at-will language, final paycheck timing varies by state, keep records for the required period) as principles,
+   verified on dol.gov or the state labor site, and tell readers to check their state.

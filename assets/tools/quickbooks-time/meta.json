@@ -1,0 +1,13 @@
+{
+ "slug": "quickbooks-time",
+ "url": "https://quickbooks.intuit.com/time-tracking/?country=US",
+ "domain": "quickbooks.intuit.com",
+ "captured": "2026-11-07",
+ "name": "QuickBooks Time",
+ "logo_source": "https://www.google.com/s2/favicons?domain=quickbooks.intuit.com&sz=256",
+ "logo_px": 196,
+ "logo_flag": "ok",
+ "screenshot_ok": true,
+ "screenshot_note": "ok, pricing page (time-tracking page showed a survey/country pop-up)",
+ "screenshot_url": "https://quickbooks.intuit.com/time-tracking/pricing/"
+}

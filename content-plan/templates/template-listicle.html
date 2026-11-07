@@ -1,0 +1,219 @@
+<!doctype html>
+<!--
+  WORKZENLY FREE-TEMPLATE LISTICLE TEMPLATE  (/templates/<slug>/index.html)
+  For "free X templates" and "X form" roundups. Replace every {{PLACEHOLDER}}; repeat blocks as marked.
+
+  Downloads: build real files with content-plan/tplkit.py into assets/templates/<slug>/ (see its docstring).
+  Every template card links at least one real file that exists (.xlsx for sheets and schedules, .docx for
+  letters and forms, plus a .pdf printable). Letters and short forms also get a "Copy text" button.
+  The on-page preview shows the template itself (an HTML table for sheets, the letter text for letters),
+  filled with realistic US sample data, readable on a phone (it scrolls sideways inside its box if wide).
+
+  Checked by content-plan/seo_check.py: title 35–60 chars, description 120–158, one h1 with the keyword,
+  keyword in the first 100 words, ≥ 5 .tpl-card each with a preview and ≥ 1 working download link,
+  a mid-article .cta-inline (30–65% of words), ≥ 4 internal links, FAQ 4–7 mirrored in FAQPage JSON-LD,
+  ItemList JSON-LD listing every template in order, ≥ 1200 words.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/templates/{{SLUG}}/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/templates/{{SLUG}}/">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="{{META_DESCRIPTION}}">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta property="article:published_time" content="2026-11-07">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "{{H1}}",
+        "description": "{{META_DESCRIPTION}}",
+        "datePublished": "2026-11-07",
+        "dateModified": "2026-11-07",
+        "author": { "@type": "Organization", "name": "Workzenly", "url": "https://workzenly.com/" },
+        "publisher": { "@type": "Organization", "name": "Workzenly", "logo": { "@type": "ImageObject", "url": "https://workzenly.com/apple-touch-icon.png" } },
+        "mainEntityOfPage": "https://workzenly.com/templates/{{SLUG}}/",
+        "image": "https://workzenly.com/og-image.png"
+      },
+      {
+        "@type": "ItemList",
+        "name": "{{H1}}",
+        "numberOfItems": {{N}},
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "item": { "@type": "DigitalDocument", "name": "{{TPL_1_NAME}}", "url": "https://workzenly.com/assets/templates/{{SLUG}}/{{TPL_1_FILE}}", "encodingFormat": "{{TPL_1_MIME}}", "isAccessibleForFree": true } }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Free templates", "item": "https://workzenly.com/templates/" },
+          { "@type": "ListItem", "position": 3, "name": "{{SHORT_NAME}}", "item": "https://workzenly.com/templates/{{SLUG}}/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "{{FAQ_Q1}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A1}}" } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="{{PRIMARY_KEYWORD}}" data-intent="transactional" data-topic="{{TOPIC}}">
+
+<header class="nav">
+  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/time-clock/">Time clock</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/features/pto/">PTO</a>
+    <a class="link" href="/blog/" aria-current="page">Resources</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="/templates/">Free templates</a></li>
+    <li aria-current="page">{{SHORT_NAME}}</li>
+  </ol>
+</nav>
+
+<main>
+  <header class="post-head">
+    <div class="post-head__text">
+      <h1>{{H1}}</h1>
+      <p class="post-head__lead">{{LEAD_SENTENCE}}</p>
+      <p class="post-meta"><span>By <b>Workzenly team</b></span><span>Updated November 7, 2026</span><span>{{N}} free templates</span><span>No sign-up needed</span></p>
+    </div>
+    <aside class="post-head__aside">
+      <strong>{{ASIDE_TITLE}}</strong>
+      <p>{{ASIDE_TEXT}}</p>
+      <a class="button button--small" href="{{ASIDE_LINK}}">{{ASIDE_BUTTON}}</a>
+    </aside>
+  </header>
+
+  <div class="post post--wide">
+    <nav class="toc" aria-label="On this page">
+      <p class="toc__title">On this page</p>
+      <ol>
+        <li><a href="#tpl-{{TPL_1_ID}}">{{TPL_1_NAME}}</a></li>
+        <!-- one <li> per template -->
+        <li><a href="#how-to-use">How to use them</a></li>
+        <li><a href="#faq">Questions</a></li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <div class="summary">
+        <p class="summary__title">Quick answer</p>
+        <ul><li>{{TAKEAWAY_1}}</li><li>{{TAKEAWAY_2}}</li><li>{{TAKEAWAY_3}}</li></ul>
+      </div>
+
+      <p>{{INTRO_PARAGRAPH_WITH_PRIMARY_KEYWORD}}</p>
+
+      <!-- ONE TEMPLATE CARD per template -->
+      <section class="tpl-card" id="tpl-{{TPL_1_ID}}" aria-labelledby="h-{{TPL_1_ID}}">
+        <h2 id="h-{{TPL_1_ID}}">1. {{TPL_1_NAME}}</h2>
+        <p class="tool-card__best">Best for <b>{{TPL_1_BEST_FOR}}</b></p>
+        <div class="tpl-preview">
+          <!-- a filled-in preview: <table> for sheets and schedules; for letters use class="tpl-preview tpl-preview--letter" with id="tpl-text-{{TPL_1_ID}}" -->
+        </div>
+        <div class="dl-row">
+          <a class="dl-btn" href="/assets/templates/{{SLUG}}/{{TPL_1_FILE}}" download>Download Excel (.xlsx)</a>
+          <a class="dl-btn dl-btn--ghost" href="/assets/templates/{{SLUG}}/{{TPL_1_PDF}}" download>Printable PDF</a>
+          <!-- letters: <button class="copy-btn" type="button" data-copy="tpl-text-{{TPL_1_ID}}">Copy text</button> -->
+        </div>
+        <p class="tpl-meta">{{FILE_FORMATS_AND_WHAT_IS_INSIDE}}</p>
+        <p>{{WHEN_TO_USE_IT_AND_HOW_TO_FILL_IT}}</p>
+      </section>
+
+      <!-- MID-ARTICLE CTA: between 30% and 65% of the words -->
+      <aside class="cta-inline" aria-label="Try Workzenly">
+        <div>
+          <p class="cta-inline__title">{{CTA1_TITLE}}</p>
+          <p>{{CTA1_TEXT}}</p>
+        </div>
+        <a class="cta-inline__btn" href="{{CTA1_LINK}}">{{CTA1_BUTTON}}</a>
+      </aside>
+
+      <h2 id="how-to-use">How to use these templates</h2>
+      <p>…</p>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>{{FAQ_Q1}}</summary><p>{{FAQ_A1}}</p></details>
+      </div>
+
+      <aside class="cta-inline cta-inline--quiet" aria-label="Book a demo">
+        <div>
+          <p class="cta-inline__title">{{CTA2_TITLE}}</p>
+          <p>{{CTA2_TEXT}}</p>
+        </div>
+        <a class="cta-inline__btn" href="/#start">Book a demo</a>
+      </aside>
+
+      <div class="byline">
+        <span class="byline__mark" aria-hidden="true">W</span>
+        <p>Made by the Workzenly team, who build time clock, scheduling, PTO and payroll software for US businesses. Templates are free to use and edit. They are general starting points, not legal advice; check federal, state and local requirements before you rely on one.</p>
+      </div>
+    </article>
+  </div>
+
+  <section class="related" aria-labelledby="related-title">
+    <h2 id="related-title">More free templates</h2>
+    <div class="related__list">
+      <a class="related__item" href="/templates/{{RELATED_SLUG_1}}/"><b>{{RELATED_TITLE_1}}</b><span>{{RELATED_TOPIC_1}}</span></a>
+      <a class="related__item" href="/templates/{{RELATED_SLUG_2}}/"><b>{{RELATED_TITLE_2}}</b><span>{{RELATED_TOPIC_2}}</span></a>
+      <a class="related__item" href="/tools/{{RELATED_SLUG_3}}/"><b>{{RELATED_TITLE_3}}</b><span>{{RELATED_TOPIC_3}}</span></a>
+    </div>
+  </section>
+
+  <section class="close-cta" aria-labelledby="close-title">
+    <h2 id="close-title">Outgrow the spreadsheet</h2>
+    <div class="close-cta__side">
+      <p>Workzenly turns schedules, time cards and PTO into one app your team already has on their phones.</p>
+      <a class="button" href="/#start">Book a demo</a>
+    </div>
+  </section>
+</main>
+
+<footer class="simple-foot">
+  <p>© <span id="year">2026</span> Workzenly</p>
+  <nav aria-label="Footer">
+    <a href="/features/time-clock/">Time clock</a>
+    <a href="/features/scheduling/">Scheduling</a>
+    <a href="/features/payroll/">Payroll</a>
+    <a href="/features/pto/">PTO</a>
+    <a href="/tools/">Best tools</a>
+    <a href="/templates/">Free templates</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+  <p><a href="mailto:hello@workzenly.com">hello@workzenly.com</a></p>
+</footer>
+
+<script src="/blog.js" defer></script>
+</body>
+</html>

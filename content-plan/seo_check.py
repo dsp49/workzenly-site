@@ -14,10 +14,15 @@ from collections import Counter, defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PLAN = json.load(open(os.path.join(ROOT, "content-plan", "plan.json"), encoding="utf-8"))
-POSTS = {p["slug"]: p for p in PLAN["posts"]}
+SECTIONS = {"blog": {}, "tools": {}, "templates": {}}
+for _p in PLAN["posts"]:
+    SECTIONS[_p.get("section", "blog")][_p["slug"]] = _p
+POSTS = SECTIONS["blog"]
 FEATS = {f["slug"]: f for f in PLAN["features"]}
-VALID_PATHS = {"/", "/blog/", "/#start", "/#features"} | {p["url"] for p in PLAN["posts"]} | {f["url"] for f in PLAN["features"]}
+VALID_PATHS = ({"/", "/blog/", "/tools/", "/templates/", "/#start", "/#features"}
+               | {p["url"] for p in PLAN["posts"]} | {f["url"] for f in PLAN["features"]})
 MIN_WORDS = {"informational": 1300, "transactional": 1000, "commercial": 1500}
+LISTICLE_MIN_WORDS = {"tools": 1800, "templates": 1200}
 BANNED = ["seamless", "seamlessly", "unlock", "unleash", "empower", "leverage", "game-changer", "game changer",
           "cutting-edge", "fast-paced", "delve", "supercharge", "revolutionize", "robust", "elevate your",
           "in today's", "look no further", "all-in-one"]
@@ -118,12 +123,14 @@ def words(text):
 
 def check(path, quiet=False):
     rel = os.path.relpath(path, ROOT).replace("\\", "/")
-    m = re.match(r"(blog|features)/([^/]+)/index\.html$", rel)
+    m = re.match(r"(blog|features|tools|templates)/([^/]+)/index\.html$", rel)
     fails, warns = [], []
     if not m:
-        return rel, ["path must be blog/<slug>/index.html or features/<slug>/index.html"], [], {}
+        return rel, ["path must be <blog|tools|templates|features>/<slug>/index.html"], [], {}
     kind, slug = m.groups()
-    plan = (POSTS if kind == "blog" else FEATS).get(slug)
+    plan = (FEATS if kind == "features" else SECTIONS[kind]).get(slug)
+    listicle = kind in ("tools", "templates")
+    article_kind = kind in ("blog", "tools", "templates")
     if not plan:
         return rel, [f"slug '{slug}' is not in content-plan/plan.json"], [], {}
     kw, intent = plan["keyword"], plan["intent"]
@@ -186,7 +193,7 @@ def check(path, quiet=False):
             warns.append(f"<h1> is long ({len(h1t)} chars)")
 
     main = root.find("main")
-    content = root.find("article", cls="prose") if kind == "blog" else main
+    content = root.find("article", cls="prose") if article_kind else main
     if content is None:
         fails.append("no article.prose (blog) or <main> (feature) found")
         return rel, fails, warns, info
@@ -195,16 +202,22 @@ def check(path, quiet=False):
         h2s = [h for h in main.find_all("h2")]
     if len(h2s) < 5:
         fails.append(f"only {len(h2s)} <h2> headings (need ≥ 5)")
-    if kind == "blog":
+    if article_kind:
         ids = [h.attrs.get("id") for h in h2s]
         if not all(ids):
             fails.append("every article <h2> needs an id")
         toc = root.find("nav", cls="toc")
         toc_ids = [a.attrs.get("href", "")[1:] for a in toc.find_all("a")] if toc else []
-        missing = [i for i in ids if i and i not in toc_ids]
+
+        def in_toc(h):
+            if h.attrs.get("id") in toc_ids:
+                return True
+            return any(a.attrs.get("id") in toc_ids for a in h.ancestors() if a.tag == "section")
+        missing = [h.attrs.get("id") for h in h2s if h.attrs.get("id") and not in_toc(h)]
+        ids_all = ids + [n.attrs.get("id") for n in content.find_all("section") if n.attrs.get("id")]
         if missing:
             fails.append(f"h2 ids missing from table of contents: {missing}")
-        dead = [i for i in toc_ids if i not in ids]
+        dead = [i for i in toc_ids if i not in ids_all]
         if dead:
             fails.append(f"table of contents links to missing ids: {dead}")
         dup = [i for i, c in Counter(ids).items() if c > 1]
@@ -213,7 +226,7 @@ def check(path, quiet=False):
 
     # --- words, keyword placement ---
     text = content.get_text()
-    if kind == "blog":
+    if article_kind:
         # body text excluding the CTA blocks and the byline
         skip_nodes = set(id(n) for n in content.find_all(cls="cta-inline")) | set(id(n) for n in content.find_all(cls="byline"))
 
@@ -230,7 +243,7 @@ def check(path, quiet=False):
         text = txt(content)
     w = words(text)
     info["words"] = len(w)
-    need = MIN_WORDS[intent] if kind == "blog" else 900
+    need = LISTICLE_MIN_WORDS[kind] if listicle else (MIN_WORDS[intent] if kind == "blog" else 900)
     if len(w) < need:
         fails.append(f"{len(w)} words (need ≥ {need} for {intent})")
     first100 = " ".join(w[:100])
@@ -248,15 +261,15 @@ def check(path, quiet=False):
         warns.append(f"few secondary keywords used ({len(sec_hits)}/{len(plan.get('secondary', []))})")
 
     # --- CTAs ---
-    ctas = list((content if kind == "blog" else main).find_all(cls="cta-inline"))
-    need_cta = 2 if kind == "blog" else 1
+    ctas = list((content if article_kind else main).find_all(cls="cta-inline"))
+    need_cta = 2 if article_kind else 1
     if len(ctas) < need_cta:
         fails.append(f"{len(ctas)} .cta-inline blocks (need ≥ {need_cta})")
     for c in ctas:
         a = c.find("a")
         if not a or not a.attrs.get("href"):
             fails.append("a CTA block has no link")
-    if kind == "blog" and ctas:
+    if article_kind and ctas:
         # position of the first CTA, measured in body words before it
         marker = "⁣CTA⁣"
         first = ctas[0]
@@ -269,17 +282,19 @@ def check(path, quiet=False):
             fails.append(f"first CTA sits at {pos:.0%} of the article (place it between 30% and 65%)")
 
     # --- links ---
-    scope = content if kind == "blog" else main
+    scope = content if article_kind else main
     in_links = set()
     for a in scope.find_all("a"):
         href = a.attrs.get("href", "")
         if any(x.tag in ("nav", "footer") or "related" in x.classes() for x in a.ancestors()):
             continue
-        if href.startswith(("/blog/", "/features/")) and href.rstrip("#") != f"/{kind}/{slug}/":
+        base_ = href.split("#")[0]
+        if (href.startswith(("/blog/", "/features/", "/tools/", "/templates/")) and base_ != f"/{kind}/{slug}/"
+                and base_ not in ("/tools/", "/templates/", "/blog/")):
             in_links.add(href.split("#")[0])
     info["internal_links"] = len(in_links)
     if len(in_links) < 4:
-        fails.append(f"{len(in_links)} contextual internal links (need ≥ 4 to other /blog/ or /features/ pages)")
+        fails.append(f"{len(in_links)} contextual internal links (need ≥ 4 to other blog, tools, templates or feature pages)")
     for a in root.find_all("a"):
         href = a.attrs.get("href", "")
         if href.startswith("/") and not href.startswith("//"):
@@ -295,11 +310,18 @@ def check(path, quiet=False):
     for img in root.find_all("img"):
         if img.attrs.get("alt") is None:
             fails.append(f"image without alt: {img.attrs.get('src')}")
+        src = img.attrs.get("src", "")
+        if src.startswith("/") and not os.path.isfile(os.path.join(ROOT, src.lstrip("/").split("?")[0])):
+            fails.append(f"image file missing: {src}")
+    for a in root.find_all("a"):
+        href = a.attrs.get("href", "")
+        if href.startswith("/assets/") and not os.path.isfile(os.path.join(ROOT, href.lstrip("/"))):
+            fails.append(f"download file missing: {href}")
 
     # --- FAQ + JSON-LD ---
-    faq = (content if kind == "blog" else main).find(cls="faq-list")
+    faq = (content if article_kind else main).find(cls="faq-list")
     qs = [re.sub(r"\s+", " ", d.find("summary").get_text()).strip() for d in faq.find_all("details") if d.find("summary")] if faq else []
-    lo, hi = (4, 7) if kind == "blog" else (5, 8)
+    lo, hi = (4, 7) if article_kind else (5, 8)
     if not (lo <= len(qs) <= hi):
         fails.append(f"{len(qs)} FAQ questions (need {lo}–{hi})")
     types, ld_qs = set(), []
@@ -321,12 +343,19 @@ def check(path, quiet=False):
                 for q in it.get("mainEntity", []):
                     if not q.get("acceptedAnswer", {}).get("text", "").strip():
                         fails.append("FAQPage answer is empty")
-            if t == "BlogPosting":
+            if t == "ItemList":
+                info["itemlist"] = len(it.get("itemListElement", []))
+            if t in ("BlogPosting", "Article"):
                 if it.get("mainEntityOfPage") != expected:
                     fails.append("BlogPosting.mainEntityOfPage must equal the canonical URL")
                 if info.get("h1") and norm(it.get("headline", "")) != norm(info["h1"]):
                     warns.append("BlogPosting.headline differs from the <h1>")
-    need_types = {"BlogPosting", "BreadcrumbList", "FAQPage"} if kind == "blog" else {"WebPage", "BreadcrumbList", "FAQPage"}
+    if kind == "blog":
+        need_types = {"BlogPosting", "BreadcrumbList", "FAQPage"}
+    elif listicle:
+        need_types = {"Article", "ItemList", "BreadcrumbList", "FAQPage"}
+    else:
+        need_types = {"WebPage", "BreadcrumbList", "FAQPage"}
     if not need_types <= types:
         fails.append(f"JSON-LD missing types: {sorted(need_types - types)}")
     if qs and [norm(q) for q in qs] != [norm(q) for q in ld_qs]:
@@ -340,6 +369,50 @@ def check(path, quiet=False):
             fails.append("calculator post needs an inline <script> that powers the tool")
     if kind == "features" and not root.find(pred=lambda n: "data-ui" in n.attrs):
         fails.append("feature page hero needs a product fragment with data-ui")
+
+    # --- listicles ---
+    if kind == "tools":
+        cards = list(content.find_all(cls="tool-card"))
+        info["cards"] = len(cards)
+        if len(cards) < 6:
+            fails.append(f"{len(cards)} .tool-card blocks (need at least 6 tools)")
+        if not content.find(cls="picks"):
+            fails.append("missing .picks (top picks at a glance)")
+        if not content.find("table", cls="cmp"):
+            fails.append("missing comparison table (table.cmp)")
+        for c in cards:
+            name = c.attrs.get("id", "?")
+            logo = c.find("img", cls="tool-card__logo")
+            if not logo or not (logo.attrs.get("alt") or "").strip():
+                fails.append(f"{name}: logo image with alt text missing")
+            shot = c.find("figure", cls="tool-card__shot")
+            if not shot or not shot.find("img") or not (shot.find("img").attrs.get("alt") or "").strip():
+                fails.append(f"{name}: screenshot figure with alt text missing")
+            if "tool-card--ours" not in c.classes():
+                v = c.find("a", cls="visit")
+                if not v or not v.attrs.get("href", "").startswith("http"):
+                    fails.append(f"{name}: visit link to the vendor site missing")
+                else:
+                    rel_ = v.attrs.get("rel", "")
+                    if "nofollow" not in rel_ or "noopener" not in rel_ or v.attrs.get("target") != "_blank":
+                        fails.append(f"{name}: visit link needs target=_blank and rel=nofollow noopener")
+            if not c.find(cls="proscons"):
+                fails.append(f"{name}: strengths and drawbacks (.proscons) missing")
+        if info.get("itemlist") is not None and info["itemlist"] != len(cards):
+            fails.append(f"ItemList has {info['itemlist']} items but the page has {len(cards)} tool cards")
+    if kind == "templates":
+        cards = list(content.find_all(cls="tpl-card"))
+        info["cards"] = len(cards)
+        if len(cards) < 5:
+            fails.append(f"{len(cards)} .tpl-card blocks (need at least 5 templates)")
+        for c in cards:
+            name = c.attrs.get("id", "?")
+            if not c.find(cls="tpl-preview"):
+                fails.append(f"{name}: preview (.tpl-preview) missing")
+            if not list(c.find_all("a", cls="dl-btn")):
+                fails.append(f"{name}: no download button (.dl-btn)")
+        if info.get("itemlist") is not None and info["itemlist"] != len(cards):
+            fails.append(f"ItemList has {info['itemlist']} items but the page has {len(cards)} template cards")
 
     # --- style / copy hygiene ---
     low = norm(text)
@@ -362,7 +435,7 @@ def main(argv):
     args = [a for a in argv if not a.startswith("--")]
     if "--all" in argv:
         args = []
-        for kind in ("blog", "features"):
+        for kind in ("blog", "tools", "templates", "features"):
             d = os.path.join(ROOT, kind)
             if os.path.isdir(d):
                 for s in sorted(os.listdir(d)):
@@ -391,7 +464,8 @@ def main(argv):
         bad += bool(f)
         if quiet and not f:
             continue
-        extra = f"  words={info.get('words')} links={info.get('internal_links')} cta@{info.get('cta_pos')}" if info else ""
+        extra = (f"  words={info.get('words')} links={info.get('internal_links')} cta@{info.get('cta_pos')}"
+                 + (f" cards={info['cards']}" if "cards" in info else "")) if info else ""
         print(f"{status}  {rel}{extra}")
         for x in f:
             print(f"   FAIL  {x}")

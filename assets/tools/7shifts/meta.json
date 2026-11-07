@@ -1,0 +1,9 @@
+{
+ "slug": "7shifts",
+ "url": "https://www.7shifts.com/",
+ "domain": "7shifts.com",
+ "captured": "2026-11-07",
+ "name": "7shifts",
+ "screenshot_ok": true,
+ "screenshot_note": "home page, captured with Chrome headless and a 240s timeout (capture_tool times out at 90s); cookie notice lower left"
+}
