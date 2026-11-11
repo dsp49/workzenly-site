@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PTO Tracking Software: Requests, Balances and Payroll</title>
-  <meta name="description" content="PTO tracking software that keeps balances current, shows who else is out before you approve, and sends approved time off straight to payroll.">
+  <title>PTO Tracking Software for Hourly Teams | Workzenly</title>
+  <meta name="description" content="PTO tracking software for US teams: requests in two taps, see who else is out before you approve, balances that accrue on their own and PTO sent to payroll.">
   <meta name="theme-color" content="#0b0b0b">
   <link rel="canonical" href="https://workzenly.com/features/pto/">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -13,8 +13,8 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Workzenly">
   <meta property="og:url" content="https://workzenly.com/features/pto/">
-  <meta property="og:title" content="PTO Tracking Software: Requests, Balances and Payroll">
-  <meta property="og:description" content="PTO tracking software that keeps balances current, shows who else is out before you approve, and sends approved time off straight to payroll.">
+  <meta property="og:title" content="PTO Tracking Software for Hourly Teams | Workzenly">
+  <meta property="og:description" content="PTO tracking software for US teams: requests in two taps, see who else is out before you approve, balances that accrue on their own and PTO sent to payroll.">
   <meta property="og:image" content="https://workzenly.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,22 +22,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
   <style>
-    .feat-section__body ul { list-style: disc; padding-left: 1.3em; }
-    .feat-section__body ol { padding-left: 1.3em; }
-    .feat-section__body li + li { margin-top: 0.5em; }
-    .feat-section__body li::marker { color: var(--muted); }
-    .feat-table { overflow-x: auto; }
-    .feat-table table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 16px; line-height: 1.45; }
-    .feat-table th, .feat-table td { text-align: left; vertical-align: top; padding: 12px 12px 12px 0; border-bottom: 1px solid var(--raised); }
-    .feat-table th { color: var(--muted); font-weight: 500; font-size: 14px; }
-    [data-ui] .frag__req { margin-top: 16px; background: #171717; border: 1px solid #262626; border-radius: 10px; padding: 14px; display: grid; gap: 10px; }
-    [data-ui] .frag__k { color: #a8a8a8; font-size: 12px; }
-    [data-ui] .frag__v { font-weight: 600; }
-    [data-ui] .frag__row { display: flex; gap: 8px; flex-wrap: wrap; }
-    [data-ui] .frag__btn--ghost { background: #2a2a2a; color: var(--ink); }
-    [data-ui] .frag__btn:disabled { opacity: 0.5; cursor: default; }
-    [data-ui].frag td small { display: block; color: #949494; font-size: 12px; }
+    .ui-cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+    .ui-cal__h { font-size: 11px; color: #7d7d79; padding: 0 4px 2px; }
+    .ui-cal__d { min-height: 54px; background: #111; border: 1px solid #1f1f1f; border-radius: 8px; padding: 4px; display: grid; gap: 3px; align-content: start; min-width: 0; }
+    .ui-cal__d > b { font-weight: 500; color: #8d8d89; font-size: 11px; padding-left: 2px; }
+    .ui-cal__d.is-today { border-color: #4a5e2a; }
+    .ui-cal__d.is-today > b { color: var(--accent); }
+    .ui-cal__d.is-out { opacity: 0.4; }
+    .ui-ev { display: block; font-size: 10.5px; line-height: 1.35; padding: 1px 5px; border-radius: 4px; background: var(--ok-bg); color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ui-ev--warn { background: var(--warn-bg); color: var(--warn); }
+    .ui-ev--info { background: #13202e; color: var(--info); }
+    .ui-big { font-size: 34px; font-weight: 600; letter-spacing: -0.03em; margin: 6px 0 2px; }
+    @media (max-width: 760px) { .ui-cal__d { min-height: 44px; } .ui-ev { font-size: 9.5px; padding: 1px 3px; } }
   </style>
   <script type="application/ld+json">
   {
@@ -45,275 +43,680 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "name": "PTO Tracking Software: Requests, Balances and Payroll",
-        "description": "PTO tracking software that keeps balances current, shows who else is out before you approve, and sends approved time off straight to payroll.",
+        "name": "PTO Tracking Software for Hourly Teams | Workzenly",
+        "description": "PTO tracking software for US teams: requests in two taps, see who else is out before you approve, balances that accrue on their own and PTO sent to payroll.",
         "url": "https://workzenly.com/features/pto/",
+        "dateModified": "2026-11-11",
         "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
       },
       {
         "@type": "SoftwareApplication",
         "name": "Workzenly PTO",
         "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web, Android, iOS",
-        "description": "PTO tracking software that keeps balances current, shows who else is out before you approve, and sends approved time off straight to payroll.",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "PTO tracking software for US employers: time off requests from the employee app, a team time-off calendar for managers, balances that accrue and update themselves, and approved PTO that flows into payroll.",
         "url": "https://workzenly.com/features/pto/"
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
-          { "@type": "ListItem", "position": 2, "name": "PTO", "item": "https://workzenly.com/features/pto/" }
+          { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://workzenly.com/features/" },
+          { "@type": "ListItem", "position": 3, "name": "PTO tracking", "item": "https://workzenly.com/features/pto/" }
         ]
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
-          { "@type": "Question", "name": "How do employees request time off?", "acceptedAnswer": { "@type": "Answer", "text": "From the Workzenly app on their phone, in two taps. They pick the dates, see their PTO balance before and after the request, add a note if they want, and send it. They get the answer in the same app, so nobody has to chase a manager by text." } },
-          { "@type": "Question", "name": "Do PTO balances update on their own?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Balances accrue and update themselves, and approved hours come off the balance as soon as the request is approved. Employees see the same number their manager and payroll see, which ends most of the \"how much PTO do I have left\" questions." } },
-          { "@type": "Question", "name": "Are employers required to offer paid vacation?", "acceptedAnswer": { "@type": "Answer", "text": "Not under federal law. The Fair Labor Standards Act does not require payment for time not worked, such as vacations, sick leave or holidays. Many states and some cities do require paid sick leave, and some states regulate how earned vacation is paid out, so check your state labor department." } },
-          { "@type": "Question", "name": "Do we have to pay out unused PTO when someone leaves?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the state and your written policy. California treats earned vacation as wages and requires it to be paid at the final rate of pay when employment ends. Other states follow the employer's policy. An accurate balance on the last day is what makes either rule easy to follow." } },
-          { "@type": "Question", "name": "Can we bring PTO balances over from a spreadsheet?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Send us your employee list and current PTO balances as a spreadsheet and we import them during setup, so nobody starts from zero. It is worth checking each balance with the employee once it is imported, because spreadsheet errors tend to carry over." } },
-          { "@type": "Question", "name": "Does PTO count toward overtime?", "acceptedAnswer": { "@type": "Answer", "text": "Not under federal law. Overtime is based on hours actually worked, so PTO, holidays and sick hours do not push someone over 40 hours in a workweek. An employer can choose to count them by policy, because that pays more than the law requires." } }
+          {"@type": "Question", "name": "What is PTO tracking software?", "acceptedAnswer": {"@type": "Answer", "text": "PTO tracking software records time off requests, routes them to a manager for approval, keeps each employee’s balance current as PTO accrues and is used, and sends approved hours to payroll. Workzenly also shows managers who else is out before they approve and gives every employee their balance in the app."} },
+          {"@type": "Question", "name": "How do employees request time off?", "acceptedAnswer": {"@type": "Answer", "text": "From the Workzenly app on their phone, in two taps. They pick the dates, see their PTO balance before and after the request, add a note if they want, and send it. They get the answer in the same app, so nobody has to chase a manager by text."} },
+          {"@type": "Question", "name": "Do PTO balances update on their own?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Balances accrue and update themselves, and approved hours come off the balance as soon as the request is approved. Employees see the same number their manager and payroll see, which ends most of the “how much PTO do I have left” questions."} },
+          {"@type": "Question", "name": "Do we have to pay out unused PTO when someone leaves?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the state and your written policy. California treats earned vacation as wages and requires it to be paid at the final rate of pay when employment ends, and it does not allow use-it-or-lose-it policies. Many other states follow the employer’s policy. An accurate balance on the last day makes either rule easy to follow."} },
+          {"@type": "Question", "name": "Can we bring PTO balances over from a spreadsheet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Send us your employee list and current PTO balances as a spreadsheet and we import them during setup, so nobody starts from zero. It is worth checking each balance with the employee first, because spreadsheet errors tend to carry over."} },
+          {"@type": "Question", "name": "Does PTO count toward overtime?", "acceptedAnswer": {"@type": "Answer", "text": "Not under federal law. Overtime is based on hours actually worked, so PTO, holiday and sick hours do not push someone over 40 hours in a workweek. An employer can choose to count them by policy, because that pays more than the law requires."} }
         ]
       }
     ]
   }
   </script>
 </head>
-<body data-keyword="pto tracking software" data-intent="commercial" data-topic="PTO">
+<body data-keyword="pto tracking software" data-intent="transactional" data-topic="PTO">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M4 16h16M6 16a6 6 0 0 1 12 0M12 7.5V5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z M3.5 7.5L12 12l8.5-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5V20H4z M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="10" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 19h6M12 15v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 18h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z M14 3v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12h6M9 16h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
 
 <header class="nav">
   <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
   <nav class="nav__links" aria-label="Main">
-    <a class="link" href="/features/time-clock/">Time clock</a>
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
     <a class="link" href="/features/scheduling/">Scheduling</a>
     <a class="link" href="/features/payroll/">Payroll</a>
-    <a class="link" href="/features/pto/" aria-current="page">PTO</a>
     <a class="link" href="/blog/">Blog</a>
   </nav>
   <a class="button button--small" href="/#start">Book a demo</a>
 </header>
 
 <nav class="crumbs" aria-label="Breadcrumb">
-  <ol><li><a href="/">Home</a></li><li aria-current="page">PTO</li></ol>
+  <ol><li><a href="/">Home</a></li><li><a href="/features/">Features</a></li><li aria-current="page">PTO tracking</li></ol>
 </nav>
 
-<main>
-  <section class="feat-hero" aria-labelledby="feat-title">
-    <div class="feat-hero__text">
-      <h1 id="feat-title">PTO tracking software that keeps balances and payroll in step</h1>
-      <p class="feat-hero__lead">Employees request time off from their phone. Managers see who else is out before they say yes. Balances update themselves, and approved PTO lands in the next payroll.</p>
-      <div class="feat-hero__actions">
-        <a class="button" href="/#start">Book a demo</a>
-        <a class="link" href="#how">See how a day off works</a>
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">PTO tracking</span>
+        <h1 id="hero-title">PTO tracking software that keeps every day off straight</h1>
+        <p class="fp-lead">Workzenly is PTO tracking software for teams that work in shifts. Employees request time off in two taps, managers see who else is out before they say yes, balances accrue and update themselves, and approved PTO lands in the next payroll.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Requests from any phone</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Who else is out, before you approve</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>PTO flows into payroll</li>
+        </ul>
       </div>
-    </div>
-    <div class="feat-hero__stage">
-      <div class="frag" data-ui id="pto">
-        <p class="frag__title">Time off · November</p>
-        <p class="frag__meta">Northfield Coffee, Austin, TX · PTO balances</p>
-        <table>
-          <thead>
-            <tr><th scope="col">Employee</th><th scope="col" class="num">Balance</th><th scope="col">Next time off</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Emily Carter<small>Kitchen</small></td><td class="num">44 of 80 hrs</td><td><span class="pill pill--ok">Fri, Nov 6</span></td></tr>
-            <tr><td>Chris Walker<small>Barista</small></td><td class="num">32 of 80 hrs</td><td><span class="pill pill--ok">Nov 4–6</span></td></tr>
-            <tr><td>Jordan Lee<small>Barista</small></td><td class="num" id="jordan-bal">36 of 80 hrs</td><td><span class="pill pill--warn" id="jordan-pill">Fri, Nov 27 · asked</span></td></tr>
-            <tr><td>Maya Torres<small>Front counter</small></td><td class="num">52 of 80 hrs</td><td><span class="pill">None booked</span></td></tr>
-          </tbody>
-        </table>
-        <div class="frag__req">
-          <div>
-            <p class="frag__k" id="req-k">Jordan Lee wants Fri, Nov 27 off · 8 hrs PTO</p>
-            <p class="frag__v" id="req-v">Also away that day: Aisha Brown (PTO)</p>
-          </div>
-          <div class="frag__row">
-            <button type="button" class="frag__btn frag__btn--ghost" id="req-decline">Decline</button>
-            <button type="button" class="frag__btn" id="req-approve">Approve</button>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly team time-off calendar for Northfield Coffee in November 2026, showing Chris Walker out November 4 to 6, Emily Carter out November 6, Aisha Brown out November 27 and two requests waiting for approval">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/time-off</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span><svg><use href="#i-clock"/></svg></span>
+              <span class="is-on"><svg><use href="#i-cal"/></svg></span>
+              <span><svg><use href="#i-sheet"/></svg></span>
+              <span><svg><use href="#i-pay"/></svg></span>
+              <span><svg><use href="#i-users"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Time off · November 2026</p><p class="ui-sub">Northfield Coffee · Austin, TX · Wed, Nov 11</p></div>
+                <div class="ui-seg" aria-hidden="true"><span class="is-on">Month</span><span>Week</span><span>List</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>2</b><small>Requests waiting</small><em class="is-warn">Jordan, Maya</em></div>
+                <div class="ui-kpi"><b>40</b><small>PTO hours approved</small><em>3 people in Nov</em></div>
+                <div class="ui-kpi"><b>0</b><small>Out today</small><em>Full team in</em></div>
+                <div class="ui-kpi"><b>Nov 27</b><small>Next day off</small><em>Aisha Brown</em></div>
+              </div>
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Team calendar</b><span class="ui-legend"><span><i style="background:#dafa9c"></i>Approved</span><span><i style="background:#f2c36b"></i>Waiting</span><span><i style="background:#9cc8fa"></i>Holiday</span></span></div>
+                <div class="ui-cal">
+                  <span class="ui-cal__h">Sun</span><span class="ui-cal__h">Mon</span><span class="ui-cal__h">Tue</span><span class="ui-cal__h">Wed</span><span class="ui-cal__h">Thu</span><span class="ui-cal__h">Fri</span><span class="ui-cal__h">Sat</span>
+                  <div class="ui-cal__d"><b>1</b></div>
+                  <div class="ui-cal__d"><b>2</b></div>
+                  <div class="ui-cal__d"><b>3</b></div>
+                  <div class="ui-cal__d"><b>4</b><span class="ui-ev">Chris W.</span></div>
+                  <div class="ui-cal__d"><b>5</b><span class="ui-ev">Chris W.</span></div>
+                  <div class="ui-cal__d"><b>6</b><span class="ui-ev">Chris W.</span><span class="ui-ev">Emily C.</span></div>
+                  <div class="ui-cal__d"><b>7</b></div>
+                  <div class="ui-cal__d"><b>8</b></div>
+                  <div class="ui-cal__d"><b>9</b></div>
+                  <div class="ui-cal__d"><b>10</b></div>
+                  <div class="ui-cal__d is-today"><b>11</b></div>
+                  <div class="ui-cal__d"><b>12</b></div>
+                  <div class="ui-cal__d"><b>13</b></div>
+                  <div class="ui-cal__d"><b>14</b></div>
+                  <div class="ui-cal__d"><b>15</b></div>
+                  <div class="ui-cal__d"><b>16</b></div>
+                  <div class="ui-cal__d"><b>17</b></div>
+                  <div class="ui-cal__d"><b>18</b></div>
+                  <div class="ui-cal__d"><b>19</b></div>
+                  <div class="ui-cal__d"><b>20</b></div>
+                  <div class="ui-cal__d"><b>21</b></div>
+                  <div class="ui-cal__d"><b>22</b></div>
+                  <div class="ui-cal__d"><b>23</b></div>
+                  <div class="ui-cal__d"><b>24</b></div>
+                  <div class="ui-cal__d"><b>25</b></div>
+                  <div class="ui-cal__d"><b>26</b><span class="ui-ev ui-ev--info">Thanksgiving</span></div>
+                  <div class="ui-cal__d"><b>27</b><span class="ui-ev">Aisha B.</span><span class="ui-ev ui-ev--warn" id="cal-jordan">Jordan L. ?</span></div>
+                  <div class="ui-cal__d"><b>28</b></div>
+                  <div class="ui-cal__d"><b>29</b></div>
+                  <div class="ui-cal__d"><b>30</b><span class="ui-ev ui-ev--warn">Maya T. ?</span></div>
+                  <div class="ui-cal__d is-out"><b>1</b></div>
+                  <div class="ui-cal__d is-out"><b>2</b></div>
+                  <div class="ui-cal__d is-out"><b>3</b></div>
+                  <div class="ui-cal__d is-out"><b>4</b></div>
+                  <div class="ui-cal__d is-out"><b>5</b></div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="hero-req">Jordan Lee wants Fri, Nov 27 off · 8 hrs PTO</p><small>Aisha Brown is already out that day · Jordan’s balance after: 28 hrs</small></div><button type="button" class="ui-btn" data-act data-target="hero-req" data-text="Approved. 8 hrs PTO added to the Nov 15–28 pay run." data-done="Approved">Approve</button></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="why-title">
-    <h2 id="why-title">Why time off tracking breaks in spreadsheets</h2>
-    <div class="feat-section__body">
-      <p>At most small businesses, a PTO request starts as a text message, gets approved in a hallway, is written on a wall calendar and is typed into a spreadsheet when someone remembers. The balance in that spreadsheet is the one nobody trusts.</p>
-      <p>That causes three problems. Managers approve a Friday off without seeing that two other people on the same shift are already out. Employees ask the owner how much PTO they have left, and the answer takes a day. And payroll learns about the day off from an email, if it learns at all, so PTO is paid twice or not at all.</p>
-      <p>PTO tracking software fixes this by keeping the request, the approval, the balance, the schedule and the pay run in one record. In Workzenly, a day off is approved once and every other part of the system knows about it.</p>
-    </div>
-  </section>
-
-  <section class="feat-section" aria-labelledby="what-title">
-    <h2 id="what-title">What the Workzenly PTO tracker does</h2>
-    <ul class="feat-list">
-      <li><b>Requests in two taps</b><p>Employees ask for time off from their phone, pick the dates, add a note and send it. They see their balance before and after the request, so there are no surprises.</p></li>
-      <li><b>Who else is out, before you say yes</b><p>Managers see who else is away that day and why, whether PTO or training, before they approve. Cover can come straight from the <a class="link" href="/features/scheduling/">shift schedule</a>.</p></li>
-      <li><b>Balances that accrue on their own</b><p>PTO balances accrue and update themselves. Approved hours come off the balance at approval, and employees see the same number their manager sees.</p></li>
-      <li><b>Approved PTO goes to payroll</b><p>The hours land in the next pay run as PTO, at the employee's rate, with no email to payroll. See how that works in <a class="link" href="/features/payroll/">Workzenly payroll</a>.</p></li>
-      <li><b>One view of who is in and who is out</b><p>Managers see who is in today, who is late and who is out on PTO, alongside the clock-ins from the time clock, on one screen.</p></li>
-      <li><b>Policies people can find</b><p>Your time off policy and employee handbook live in the app, so employees can read the rules without asking anyone where they are.</p></li>
-    </ul>
-  </section>
-
-  <div class="feat-section">
-    <aside class="cta-inline" aria-label="Book a demo" style="grid-column: 1 / -1;">
-      <div><p class="cta-inline__title">Retire the PTO spreadsheet</p><p>See a time off request go from an employee's phone to a manager's approval to the next pay stub, with the balance right at every step.</p></div>
-      <a class="cta-inline__btn" href="/#start">Book a demo</a>
-    </aside>
-  </div>
-
-  <section class="feat-section" id="how" aria-labelledby="how-title">
-    <h2 id="how-title">How a day off works, start to finish</h2>
-    <div class="feat-section__body">
-      <p>Here is one request at Northfield Coffee in Austin, Texas.</p>
-      <ol>
-        <li><b>Emily asks for Friday off.</b> She opens the app on the bus, sees she has 52 hours of PTO left, and asks for Friday, November 6, a full 8-hour day, for her sister's wedding. The request shows her balance after approval: 44 of 80 hours.</li>
-        <li><b>Her manager checks the day.</b> Marcus sees that Chris Walker is already on PTO and Aisha Brown is at training that Friday. He finds cover from the schedule, and Tyler accepts the 9:00 AM to 5:30 PM shift.</li>
-        <li><b>He approves it.</b> One tap. Emily gets the answer in the app, the schedule shows her as off, and her balance drops to 44 hours.</li>
-        <li><b>Payroll already knows.</b> When the pay period of November 1 to 14 closes, Emily's pay run includes a line for 8 hours of PTO at $19.00 an hour, $152.00. Nobody typed it twice.</li>
-      </ol>
-      <p>Because the PTO hours are not hours worked, they do not count toward overtime under federal law. Emily's 6 overtime hours that period come only from the 46 hours she worked in the first week. Our guide to <a class="link" href="/blog/paid-time-off/">paid time off</a> covers accrual methods, carryover and how to write a PTO policy.</p>
-    </div>
-  </section>
-
-  <section class="feat-section" aria-labelledby="law-title">
-    <h2 id="law-title">What US law asks of your PTO tracking</h2>
-    <div class="feat-section__body">
-      <p>Leave rules come from federal, state and city law, and they change. These are the basics as of November 2026, from official sources:</p>
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for teams that work in shifts</p>
       <ul>
-        <li><b>No federal paid vacation.</b> The U.S. Department of Labor says the FLSA does not require payment for time not worked, such as vacations, sick leave or holidays. Those benefits are an agreement between employer and employee.</li>
-        <li><b>State paid sick leave.</b> Many states and cities require it. In California, employees earn at least 1 hour for every 30 hours worked, and employers must allow them to use at least 40 hours or 5 days a year. In New York, employers with 5 to 99 employees must provide up to 40 hours of paid sick leave a year, and those with 100 or more up to 56 hours.</li>
-        <li><b>Vacation payout at termination.</b> In California, earned and unused vacation must be paid at the final rate of pay when employment ends for any reason. A use-it-or-lose-it policy is not allowed there, though a cap on accrual is. Other states follow the employer's written policy, so put yours in the <a class="link" href="/templates/employee-handbook-templates/">employee handbook</a>.</li>
-        <li><b>FMLA.</b> Private employers with 50 or more employees in 20 or more workweeks must give eligible employees up to 12 workweeks of unpaid, job-protected leave in a 12-month period. Our <a class="link" href="/blog/fmla-leave/">FMLA leave guide</a> covers eligibility.</li>
-        <li><b>Records.</b> Under the FLSA, payroll records, which include PTO paid, must be kept for at least three years.</li>
-      </ul>
-      <p>Bereavement and jury duty leave also vary by state. See our guides to <a class="link" href="/blog/bereavement-leave/">bereavement leave</a> and <a class="link" href="/blog/jury-duty-pay/">jury duty pay</a>. Whatever leave management software you use, an accurate, dated balance for every employee is what lets you follow these rules and prove you did.</p>
-    </div>
-  </section>
-
-  <section class="feat-section" aria-labelledby="checklist-title">
-    <h2 id="checklist-title">A buying checklist for leave management software</h2>
-    <div class="feat-section__body">
-      <p>Take this list to any demo. Ask the vendor to show each one on screen.</p>
-      <ul>
-        <li><b>Employee request flow.</b> Can someone ask for a day off from a phone in under a minute, and see their balance first?</li>
-        <li><b>Coverage view.</b> Does the manager see who else is out that day, and the schedule, before approving?</li>
-        <li><b>Accrual rules.</b> Ask to see the accrual method you use today, such as hours per hours worked or a set amount each pay period, plus caps and carryover.</li>
-        <li><b>Separate leave types.</b> If your state requires paid sick leave, can it be tracked apart from vacation?</li>
-        <li><b>Payroll connection.</b> Does approved PTO reach payroll without a CSV or an email? This is where most errors come from.</li>
-        <li><b>Termination balances.</b> Can you see an exact balance on an employee's last day for a final paycheck?</li>
-        <li><b>Importing balances.</b> Who moves your current balances in, and how will you check them?</li>
-        <li><b>Hourly and salaried staff.</b> Does it work for people who clock in and for office staff who never do?</li>
-        <li><b>Pricing.</b> Check current pricing and what is included on each vendor's own site.</li>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Restaurants and cafés</li>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Retail stores</li>
+        <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Clinics</li>
+        <li><svg aria-hidden="true"><use href="#i-home"/></svg>Home care</li>
+        <li><svg aria-hidden="true"><use href="#i-hat"/></svg>Job sites</li>
+        <li><svg aria-hidden="true"><use href="#i-box"/></svg>Warehouses</li>
+        <li><svg aria-hidden="true"><use href="#i-desk"/></svg>Offices</li>
       </ul>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="compare-title">
-    <h2 id="compare-title">Spreadsheet, standalone vacation tracker or one app</h2>
-    <div class="feat-section__body">
-      <p>Before you buy PTO tracking software, compare it with the two options most small teams already use.</p>
-      <div class="feat-table">
-        <table>
-          <thead><tr><th scope="col">Criteria</th><th scope="col">Spreadsheet or shared calendar</th><th scope="col">Standalone vacation tracker</th><th scope="col">PTO inside a workforce app</th></tr></thead>
-          <tbody>
-            <tr><td>Cost to start</td><td>Nothing</td><td>A subscription</td><td>A subscription</td></tr>
-            <tr><td>Balance accuracy</td><td>Only as good as the last edit</td><td>Accrues automatically</td><td>Accrues automatically</td></tr>
-            <tr><td>Sees the schedule</td><td>No</td><td>Usually a separate calendar</td><td>Same schedule managers build</td></tr>
-            <tr><td>Reaches payroll</td><td>Typed in by hand</td><td>Export or integration</td><td>Flows into the pay run</td></tr>
-            <tr><td>Best fit</td><td>Two or three people with fixed hours</td><td>Office teams with a separate payroll</td><td>Hourly and shift-based teams</td></tr>
-          </tbody>
-        </table>
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">The request came by text, the yes came in the hallway, and payroll heard about it after payday.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">One record for every day off</h2>
+      <p class="fp-problem__p">A PTO tracker replaces the wall calendar, the text thread and the balance spreadsheet nobody trusts. The request an employee sends from the bus is the same record the manager approves, the same hours that come off the balance and the same line on the pay stub.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first month</p>
+        <h2 id="outcomes-title">Fewer surprise absences, fewer balance questions, no missing PTO on pay stubs</h2>
       </div>
-      <p>HR platforms such as BambooHR and Rippling include time off tracking as part of a wider HR system, and scheduling tools such as Homebase, When I Work and Deputy offer time off requests next to scheduling. Features change, so check current capabilities on each vendor's site. Our comparison of <a class="link" href="/tools/free-pto-trackers/">PTO tracker options</a> goes deeper.</p>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Requests in two taps</h3><p>Employees pick the dates and send the request from the Workzenly app. They see their balance before and after, and they get the answer in the same place, so nobody chases a manager by text.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Coverage checked before the yes</h3><p>Managers see who else is out that day on the team time-off calendar before they approve, so two baristas are never off on the busiest Friday of the year by accident.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Balances that keep themselves</h3><p>PTO balances accrue and update themselves. Approved hours come off at approval, and the employee, the manager and payroll all see the same number.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>PTO that reaches the paycheck</h3><p>Approved time off flows into payroll as PTO hours at the employee’s rate. No email to payroll, no PTO paid twice, no day off that never shows up.</p></article>
+      </div>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="fit-title">
-    <h2 id="fit-title">Honest trade-offs: where Workzenly fits</h2>
-    <div class="feat-section__body">
-      <p><b>Workzenly fits best</b> when time off affects coverage: a cafe, a store, a clinic or a crew where one person out means a shift to fill. Seeing the request, who else is away and the schedule on one screen is what saves the manager's afternoon.</p>
-      <p><b>A spreadsheet can be enough</b> for a team of two or three salaried people who plan vacations months ahead and rarely overlap. If that is you, a well-kept spreadsheet and a clear written policy will do.</p>
-      <p><b>Bring your edge cases to the demo.</b> If you operate in several states with different sick leave laws, or have a union contract with its own leave rules, show us your policy and we will walk through how it is set up, or tell you plainly where it does not fit.</p>
-      <p><b>Clean data first.</b> Whatever you choose, confirm every employee's starting balance before you switch. A wrong balance imported on day one stays wrong.</p>
+  <!-- PRODUCT TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">How PTO tracking software works in Workzenly</h2>
+        <p>The request, the approval, the balance and the pay run are one record, so a change in one shows up in the others.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="Parts of PTO tracking">
+          <button class="fp-tab" role="tab" id="tab-req" aria-controls="panel-req" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-phone"/></svg>Request</b><span>Two taps from the employee app</span></button>
+          <button class="fp-tab" role="tab" id="tab-ok" aria-controls="panel-ok" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-users"/></svg>Approve</b><span>See who else is out first</span></button>
+          <button class="fp-tab" role="tab" id="tab-bal" aria-controls="panel-bal" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-sheet"/></svg>Balances</b><span>Accrue and update themselves</span></button>
+          <button class="fp-tab" role="tab" id="tab-pay" aria-controls="panel-pay" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-pay"/></svg>Payroll</b><span>Approved PTO in the pay run</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-req" aria-labelledby="tab-req">
+          <div>
+            <h3>Ask for a day off in two taps</h3>
+            <p>Employees open the Workzenly app, pick the dates and send the request. The screen shows the balance now and the balance after, so nobody asks for hours they do not have.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Full days or partial days, with an optional note</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The answer arrives in the same app</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The time off policy is one tap away in the handbook</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Employee app time off request screen for Jordan Lee asking for Friday, November 27 off, with a balance of 36 hours dropping to 28 hours">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Request time off</p><p class="ui-title">Jordan Lee</p></div>
+              <div class="ui-seg" aria-hidden="true"><span class="is-on">PTO</span><span>Unpaid</span></div>
+              <div class="ui-card">
+                <p class="ui-sub">Date</p>
+                <p class="ui-title">Fri, Nov 27</p>
+                <p class="ui-sub">All day · 8 hrs · Barista 7:00 AM–3:30 PM</p>
+              </div>
+              <div class="ui-item"><div><p>Balance now</p><small>After this request</small></div><div style="text-align:right"><p class="num">36.0 hrs</p><small class="num">28.0 hrs</small></div></div>
+              <div class="ui-item"><div><p>Note</p><small>Family in town for Thanksgiving</small></div></div>
+              <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="req-status" data-text="Sent to Marcus. You’ll get the answer here." data-done="Sent">Send request</button>
+              <p class="ui-sub" id="req-status" style="text-align:center">Not sent yet</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-ok" aria-labelledby="tab-ok" hidden>
+          <div>
+            <h3>Approve with the whole day in view</h3>
+            <p>The request card shows who else is already off that day, the shift the employee would miss and their balance. Managers can approve from a phone.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Who else is out, and why, on the same card</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Balance before and after approval</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>One tap to approve or decline</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Time off request card for Jordan Lee for Friday, November 27, showing Aisha Brown is already out that day and Jordan's balance going from 36 to 28 hours">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Requests · Jordan Lee · Fri, Nov 27</span></div>
+            <div class="ui-main">
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Jordan Lee · Barista</b><span class="ui-pill ui-pill--warn" id="ok-pill">Waiting</span></div>
+                <div class="ui-list">
+                  <div class="ui-item"><div><p>Fri, Nov 27 · all day</p><small>8 hrs PTO · “Family in town for Thanksgiving”</small></div><span class="ui-pill">Asked Nov 10</span></div>
+                  <div class="ui-item"><div><p>Balance</p><small>36.0 hrs now · 28.0 hrs after</small></div><span class="ui-pill ui-pill--ok">Enough</span></div>
+                </div>
+              </div>
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Also out on Fri, Nov 27</b><span>1 person</span></div>
+                <div class="ui-list">
+                  <div class="ui-item"><div><p>Aisha Brown</p><small>PTO · approved Nov 2</small></div><span class="ui-pill ui-pill--ok">Approved</span></div>
+                  <div class="ui-item"><div><p>Jordan’s shift</p><small>Barista · 7:00 AM–3:30 PM</small></div><span class="ui-pill ui-pill--info">Needs cover</span></div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="ok-text">Approve Jordan’s day off?</p><small>The schedule and balance update the moment you tap</small></div><button type="button" class="ui-btn" data-act data-target="ok-text" data-text="Approved. Jordan sees it in the app." data-pill="ok-pill" data-pill-text="Approved" data-done="Approved">Approve</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-bal" aria-labelledby="tab-bal" hidden>
+          <div>
+            <h3>Balances employees can check themselves</h3>
+            <p>Each person sees their own PTO balance, what is pending and how they earned it, on their phone. It is the same number the manager and payroll see.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours earned each pay period, line by line</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pending requests shown separately</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Fewer “how much do I have left?” questions</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Employee app balance screen for Jordan Lee showing 36 hours of PTO available, 8 hours pending and recent accruals">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">My time off</p><p class="ui-title">Jordan Lee</p></div>
+              <div class="ui-card">
+                <p class="ui-sub">PTO available</p>
+                <p class="ui-big num">36.0 hrs</p>
+                <p class="ui-sub">Earns 0.0385 hrs per hour worked</p>
+                <p style="margin-top:10px"><span class="ui-pill ui-pill--warn">8.0 hrs pending · Fri, Nov 27</span></p>
+              </div>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Oct 18–31</p><small>80.0 hrs worked</small></div><span class="ui-pill ui-pill--ok">+3.08</span></div>
+                <div class="ui-item"><div><p>Oct 4–17</p><small>76.0 hrs worked</small></div><span class="ui-pill ui-pill--ok">+2.92</span></div>
+                <div class="ui-item"><div><p>Time off policy</p><small>Employee handbook</small></div><span class="ui-pill">Read</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pay" aria-labelledby="tab-pay" hidden>
+          <div>
+            <h3>Approved PTO lands in payroll</h3>
+            <p>When the pay period closes, approved PTO hours are already in the pay run at each employee’s rate, next to their regular hours and overtime.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>PTO arrives as PTO, not as a note to payroll</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Kept apart from hours worked for overtime</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pending requests flagged before the run</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Payroll PTO summary for the November 1 to 14 pay period: Emily Carter 8 hours at 19 dollars and Chris Walker 24 hours at 17.75 dollars, 32 hours and 578 dollars in total">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Payroll · Nov 1–14 · paid Fri, Nov 20</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Employee</th><th>Dates</th><th class="r">PTO hrs</th><th class="r">Rate</th><th class="r">PTO pay</th></tr></thead>
+                <tbody>
+                  <tr><td>Emily Carter</td><td>Fri, Nov 6</td><td class="r num">8.0</td><td class="r num">$19.00</td><td class="r num">$152.00</td></tr>
+                  <tr><td>Chris Walker</td><td>Nov 4–6</td><td class="r num">24.0</td><td class="r num">$17.75</td><td class="r num">$426.00</td></tr>
+                  <tr><td><b>Total</b></td><td></td><td class="r num"><b>32.0</b></td><td></td><td class="r num"><b>$578.00</b></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>Next run: Nov 15–28 · paid Fri, Dec 4</p><small>Jordan Lee · 8 hrs on Fri, Nov 27 · waiting for approval</small></div><span class="ui-pill ui-pill--warn">1 pending</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="guides-title">
-    <h2 id="guides-title">Guides and free tools</h2>
-    <div class="feat-section__body">
-      <ul>
-        <li><a class="link" href="/blog/paid-time-off/">Paid time off: policies and accrual explained</a></li>
-        <li><a class="link" href="/tools/free-pto-trackers/">Choosing a PTO tracker for a small team</a></li>
-        <li><a class="link" href="/blog/fmla-leave/">FMLA leave rules for employers</a></li>
-        <li><a class="link" href="/blog/bereavement-leave/">Bereavement leave and how to write a policy</a></li>
-        <li><a class="link" href="/blog/holiday-pay/">Holiday pay rules</a></li>
-        <li><a class="link" href="/templates/employee-handbook-templates/">Employee handbook template</a></li>
-      </ul>
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="PTO tracking in detail">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Accrual</p>
+          <h2>Balances that accrue from the hours people work</h2>
+          <p>Hourly staff earn PTO as they work, and Workzenly already has the approved hours. Tell us your rule during setup, such as 80 hours a year earned per hour worked, and balances update themselves every pay period.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Earned on hours worked, straight from timesheets</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>The same balance on every screen</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Starting balances imported from your spreadsheet</li>
+          </ul>
+          <a class="fp-row__more" href="/features/timesheets/">See timesheets <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Accrual card for an 80 hour a year PTO policy: 0.0385 hours per hour worked for hourly staff or 3.08 hours per biweekly paycheck, with PTO earned by four employees in the November 1 to 14 pay period">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Time off policy · Hourly staff</span></div>
+          <div class="ui-main">
+            <div class="ui-kpis">
+              <div class="ui-kpi"><b>80</b><small>Hours a year</small><em>Full-time</em></div>
+              <div class="ui-kpi"><b>0.0385</b><small>Per hour worked</small><em>80 ÷ 2,080</em></div>
+              <div class="ui-kpi"><b>3.08</b><small>Per biweekly check</small><em>80 ÷ 26</em></div>
+              <div class="ui-kpi"><b>120</b><small>Balance cap</small><em>hrs</em></div>
+            </div>
+            <div class="ui-card ui-scroll">
+              <div class="ui-card__head"><b>Earned this pay period</b><span>Nov 1–14</span></div>
+              <table class="ui-table">
+                <thead><tr><th>Employee</th><th class="r">Hours worked</th><th class="r">× rate</th><th class="r">PTO earned</th></tr></thead>
+                <tbody>
+                  <tr><td>Jordan Lee</td><td class="r num">82.5</td><td class="r num">0.0385</td><td class="r num">+3.17</td></tr>
+                  <tr><td>Emily Carter</td><td class="r num">78.0</td><td class="r num">0.0385</td><td class="r num">+3.00</td></tr>
+                  <tr><td>Maya Torres</td><td class="r num">76.0</td><td class="r num">0.0385</td><td class="r num">+2.92</td></tr>
+                  <tr><td>Sam Rivera</td><td class="r num">64.0</td><td class="r num">0.0385</td><td class="r num">+2.46</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ui-foot"><div><p>Earned on hours worked only</p><small>Emily’s 8 PTO hours on Nov 6 do not earn more PTO</small></div><span class="ui-pill ui-pill--ok">Up to date</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Coverage</p>
+          <h2>A day off and the schedule, on one screen</h2>
+          <p>Time off and shifts live in the same place. When Marcus approves Jordan’s Friday, Jordan comes off the schedule and the open shift is easy to offer to someone else. Staff see the change instantly, and managers are told before a shift goes uncovered.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved PTO shows on the week you build</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Open shifts offered to people who are free</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>A heads-up before a shift goes uncovered</li>
+          </ul>
+          <a class="fp-row__more" href="/features/scheduling/">See scheduling <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Schedule for Friday, November 27 showing Jordan Lee and Aisha Brown on PTO, Tyler N. on the morning bar shift and an open 7:00 AM shift that can be offered to Dana Brooks">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Schedule · Fri, Nov 27</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Jordan Lee · Barista</p><small>7:00 AM–3:30 PM</small></div><span class="ui-pill ui-pill--ok">PTO</span></div>
+              <div class="ui-item"><div><p>Aisha Brown</p><small>All day</small></div><span class="ui-pill ui-pill--ok">PTO</span></div>
+              <div class="ui-item"><div><p>Tyler N. · Barista</p><small>6:00 AM–2:30 PM</small></div><span class="ui-pill">Scheduled</span></div>
+              <div class="ui-item"><div><p>Maya Torres · Front counter</p><small>9:00 AM–5:30 PM</small></div><span class="ui-pill">Scheduled</span></div>
+              <div class="ui-item"><div><p>Open shift · Barista</p><small>7:00 AM–3:30 PM</small></div><span class="ui-pill ui-pill--warn" id="cov-pill">Uncovered</span></div>
+            </div>
+            <div class="ui-foot"><div><p id="cov-text">Jordan’s shift needs cover</p><small>Dana Brooks is free Friday</small></div><button type="button" class="ui-btn" data-act data-target="cov-text" data-text="Offered to Dana. She can pick it up in the app." data-pill="cov-pill" data-pill-text="Offered" data-done="Offered">Offer to Dana</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">A balance with a history</p>
+          <h2>Know exactly what is owed, any day of the year</h2>
+          <p>Every accrual, approval and day used is kept in each person’s record. When someone asks about their balance, or leaves in a state where unused vacation must be paid out, the answer is one screen away.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Each change dated, with who approved it</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Employees see the same history in the app</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>An exact balance for a final paycheck</li>
+          </ul>
+          <a class="fp-row__more" href="/features/employee-app/">See the employee app <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="PTO history for Emily Carter: 49 hours on October 31, 8 hours used on November 6, 3 hours earned in the November 1 to 14 pay period, 44 hours now">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">PTO history · Emily Carter</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Balance on Oct 31</p><small>Carried from the Oct 18–31 pay period</small></div><span class="num">49.00 hrs</span></div>
+              <div class="ui-item"><div><p>Used Fri, Nov 6 · 8 hrs</p><small>Approved by Marcus (manager)</small></div><span class="ui-pill ui-pill--info">−8.00</span></div>
+              <div class="ui-item"><div><p>Earned Nov 1–14</p><small>78.0 hrs worked × 0.0385</small></div><span class="ui-pill ui-pill--ok">+3.00</span></div>
+            </div>
+            <div class="ui-foot"><div><p>Balance now: 44.00 hrs</p><small>49.00 − 8.00 + 3.00 · at $19.00 an hour</small></div><span class="ui-pill ui-pill--ok">Matches payroll</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="faq-title">
-    <h2 id="faq-title">Questions</h2>
-    <div class="feat-section__body faq-list">
-      <details><summary>How do employees request time off?</summary><p>From the Workzenly app on their phone, in two taps. They pick the dates, see their PTO balance before and after the request, add a note if they want, and send it. They get the answer in the same app, so nobody has to chase a manager by text.</p></details>
-      <details><summary>Do PTO balances update on their own?</summary><p>Yes. Balances accrue and update themselves, and approved hours come off the balance as soon as the request is approved. Employees see the same number their manager and payroll see, which ends most of the "how much PTO do I have left" questions.</p></details>
-      <details><summary>Are employers required to offer paid vacation?</summary><p>Not under federal law. The Fair Labor Standards Act does not require payment for time not worked, such as vacations, sick leave or holidays. Many states and some cities do require paid sick leave, and some states regulate how earned vacation is paid out, so check your state labor department.</p></details>
-      <details><summary>Do we have to pay out unused PTO when someone leaves?</summary><p>It depends on the state and your written policy. California treats earned vacation as wages and requires it to be paid at the final rate of pay when employment ends. Other states follow the employer's policy. An accurate balance on the last day is what makes either rule easy to follow.</p></details>
-      <details><summary>Can we bring PTO balances over from a spreadsheet?</summary><p>Yes. Send us your employee list and current PTO balances as a spreadsheet and we import them during setup, so nobody starts from zero. It is worth checking each balance with the employee once it is imported, because spreadsheet errors tend to carry over.</p></details>
-      <details><summary>Does PTO count toward overtime?</summary><p>Not under federal law. Overtime is based on hours actually worked, so PTO, holidays and sick hours do not push someone over 40 hours in a workweek. An employer can choose to count them by policy, because that pays more than the law requires.</p></details>
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One time-off record, four people who rely on it</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Employees</h3></div><div><span>Replaces</span><p>Texting the manager and hoping</p></div><div><span>They use it to</span><p>Request time off, check their balance and read the time off policy</p></div><div><span>What they notice</span><p>An answer in the app, not a week of silence</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Managers</h3></div><div><span>Replaces</span><p>The wall calendar in the back room</p></div><div><span>They use it to</span><p>See who else is out, approve from a phone and cover the shift</p></div><div><span>What they notice</span><p>No more double-booked Fridays</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Payroll</h3></div><div><span>Replaces</span><p>Emails about who took what day</p></div><div><span>They use it to</span><p>Run payroll with approved PTO hours already in it</p></div><div><span>What they notice</span><p>PTO that matches the balance every time</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owners</h3></div><div><span>Replaces</span><p>A balance spreadsheet nobody trusts</p></div><div><span>They use it to</span><p>See PTO owed across the team and answer payout questions</p></div><div><span>What they notice</span><p>No guessing on someone’s last day</p></div></div>
+      </div>
     </div>
   </section>
 
-  <section class="close-cta" aria-labelledby="close-title">
-    <h2 id="close-title">Know who is out before Friday comes</h2>
-    <div class="close-cta__side"><p>Book a demo and we will set up a workspace with your company name, import a sample of your PTO balances and walk through a request from phone to pay stub.</p><a class="button" href="/#start">Book a demo</a></div>
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Everyone sees what they need, and nothing else</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Employees see their own</h3><p>Each person sees their own balance, requests and pay stubs, never a coworker’s.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Managers see their team</h3><p>Managers see their team’s shifts and time off, and approve their team’s requests.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and PTO pay are visible only to the people you give payroll access to.</p></article>
+      </div>
+    </div>
   </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Connected</p>
+        <h2 id="connect-title">Time off that talks to the rest of the workday</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Employee scheduling</h3><p>Approved time off shows on the week you build, so you schedule around it.</p><span>Scheduling →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Approved hours, overtime and PTO become pay stubs in the app.</p><span>Payroll →</span></a>
+        <a class="fp-link-card" href="/features/time-and-attendance/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Time and attendance</h3><p>See who is in, late or out on PTO today, on one screen.</p><span>Time and attendance →</span></a>
+        <a class="fp-link-card" href="/features/timesheets/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Timesheet app</h3><p>The approved hours that per-hour PTO accrual is built on.</p><span>Timesheets →</span></a>
+        <a class="fp-link-card" href="/features/employee-app/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Employee app</h3><p>Clock in, swap a shift, request PTO and check pay stubs from one app.</p><span>Employee app →</span></a>
+        <a class="fp-link-card" href="/features/hr-documents/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-doc"/></svg></span><h3>HR documents</h3><p>The handbook and time off policy stored where employees can find them.</p><span>HR documents →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">Retire the PTO spreadsheet before the holidays</h2>
+        <p>See a request go from an employee’s phone to a manager’s approval to the next pay stub. We set up a demo workspace with your company name before the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- BUYER'S GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it does</a></li>
+            <li><a href="#g-accrual">Accrual methods</a></li>
+            <li><a href="#g-federal">What federal law requires</a></li>
+            <li><a href="#g-payout">Payout and use-it-or-lose-it</a></li>
+            <li><a href="#g-sick">Paid sick leave and FMLA</a></li>
+            <li><a href="#g-must">Features that matter</a></li>
+            <li><a href="#g-switch">Moving off a spreadsheet</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>Bring your PTO policy and we will show it set up in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The buyer’s guide to PTO tracking software</h2>
+        <p>A wall calendar and a spreadsheet work until two people want the same Friday or someone leaves and asks to be paid for unused vacation. This guide covers what PTO tracking software does, how accrual works, the federal and state rules your balances have to follow, and how to choose a system for a team that works in shifts.</p>
+
+        <h3 id="g-what">What PTO tracking software does</h3>
+        <p>PTO tracking software, also sold as time off tracking software or leave management software, handles four jobs: it takes requests, routes them to the right manager, keeps each person’s balance current, and tells payroll what to pay.</p>
+        <p>A simple vacation tracker covers the first two jobs and leaves balances and payroll to you. For hourly teams, where one absence means a shift to fill, the value is in the last two jobs. When the time clock, schedule and payroll share one record, as they do in Workzenly, nobody retypes a day off.</p>
+
+        <h3 id="g-accrual">PTO accrual methods, with the math</h3>
+        <p>Accrual is how fast employees earn PTO. All of these examples use 80 hours a year (two weeks) and a full-time year of 2,080 hours (40 hours × 52 weeks). Our <a href="/blog/paid-time-off/">paid time off guide</a> has an accrual calculator.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Method</th><th>80 hours a year works out to</th><th>Part-timer at 25 hrs a week</th><th>Good fit</th><th>Watch out for</th></tr></thead>
+            <tbody>
+              <tr><td>Per hour worked</td><td>0.0385 hrs per hour (80 ÷ 2,080), about 1 hour per 26 worked</td><td>50 hrs a year</td><td>Hourly staff, variable schedules</td><td>Needs accurate punches</td></tr>
+              <tr><td>Per pay period, biweekly</td><td>3.08 hrs per paycheck (80 ÷ 26)</td><td>80 hrs unless you set a lower rate</td><td>Salaried, steady schedules</td><td>Part-timers earn the full-time amount</td></tr>
+              <tr><td>Per pay period, semimonthly</td><td>3.33 hrs per paycheck (80 ÷ 24)</td><td>80 hrs unless you set a lower rate</td><td>Salaried teams paid on the 15th and last day</td><td>Same as above</td></tr>
+              <tr><td>Front-loaded</td><td>80 hrs on January 1, prorated for new hires</td><td>Set by policy</td><td>Small teams that want it simple</td><td>Hours used before they are earned; payout rules in some states</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Per-hour accrual is the fairest method for hourly and part-time staff, and it is how most state sick leave laws work. It is also the first to break in a spreadsheet. In a PTO tracker connected to timesheets, the math happens on its own.</p>
+
+        <h3 id="g-federal">What federal law requires</h3>
+        <p>Less than most people think. The U.S. Department of Labor says the Fair Labor Standards Act “does not require payment for time not worked, such as vacations, sick leave or federal or other holidays.” Three federal points still shape how you track PTO:</p>
+        <ul>
+          <li><strong>PTO is not hours worked.</strong> Under 29 CFR 778.218, pay for vacation, holiday and sick hours does not count toward overtime. An employee who works 40 hours and takes 8 hours of PTO that week gets 48 hours of pay and no overtime premium.</li>
+          <li><strong>Records.</strong> Payroll records, which include PTO paid, must be kept for at least 3 years under the FLSA.</li>
+          <li><strong>Exempt employees.</strong> You can take a partial day from an exempt employee’s PTO balance, but you generally cannot cut their salary for a partial-day absence.</li>
+        </ul>
+        <p>Holidays are usually tracked apart from PTO. See our <a href="/blog/holiday-pay/">holiday pay guide</a>.</p>
+
+        <h3 id="g-payout">State payout and use-it-or-lose-it rules</h3>
+        <p>No federal rule covers paying out unused PTO. In most states, your written policy decides. A few states treat earned vacation as wages, and that changes what your balances have to do.</p>
+        <ul>
+          <li><strong>California.</strong> Under Labor Code 227.3, earned and unused vacation must be paid at the final rate of pay when employment ends. The Labor Commissioner says vacation vests as it is earned, so a use-it-or-lose-it policy is not allowed. A reasonable cap that stops further accrual is allowed. A PTO plan that combines vacation and sick time follows the same rules as vacation.</li>
+          <li><strong>Colorado, Montana and Nebraska</strong> also bar forfeiting earned vacation and require it to be paid at separation, according to their labor agencies and courts. Illinois, Massachusetts and several other states have their own payout rules.</li>
+          <li><strong>Everywhere else,</strong> say clearly in the handbook whether unused PTO is paid out and whether it carries over. Our <a href="/templates/employee-handbook-templates/">employee handbook template</a> has a section for it.</li>
+        </ul>
+        <p>The cost adds up fast. An employee paid $19.00 an hour who leaves with 44 hours of PTO is owed 44 × $19.00 = $836.00 in a payout state. A cap is a safer tool than an expiry date if you have staff in California.</p>
+
+        <h3 id="g-sick">Paid sick leave and FMLA</h3>
+        <p>As of November 2026, 20 states and Washington, D.C. require most private employers to provide paid sick leave, and some cities add their own. The most common rate is 1 hour for every 30 hours worked.</p>
+        <ul>
+          <li><strong>California</strong> requires at least 1 hour per 30 hours worked. Employees must be allowed to use at least 40 hours or 5 days a year, and employers may cap the balance at 80 hours or 10 days.</li>
+          <li><strong>New York</strong> requires up to 40 hours a year at employers with 5 to 99 employees and up to 56 hours at 100 or more.</li>
+          <li><strong>A combined PTO bank</strong> can satisfy a sick leave law if it meets every requirement, including accrual rate, carryover and same-day use for illness. If not, track sick leave as its own balance.</li>
+        </ul>
+        <p>The federal Family and Medical Leave Act covers private employers with 50 or more employees in 20 or more workweeks. Eligible employees get up to 12 workweeks of unpaid, job-protected leave in a 12-month period. Under 29 CFR 825.207, an employee may choose to use accrued PTO during FMLA leave, and if they do not, the employer may require it. Either way the paid time runs concurrently, so it counts against the 12 weeks and comes off the PTO balance. Our <a href="/blog/fmla-leave/">FMLA leave guide</a> covers eligibility and notices, and the <a href="/blog/bereavement-leave/">bereavement leave guide</a> covers a type of leave FMLA does not.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Leave laws change often, so check your state labor department or an employment lawyer for your situation.</p>
+
+        <h3 id="g-must">Features that matter in a PTO tracker</h3>
+        <ol>
+          <li><strong>A request flow people will use.</strong> Two taps from a phone, with the balance shown before the request goes in.</li>
+          <li><strong>A team time-off calendar.</strong> Managers see who else is out that day before they approve.</li>
+          <li><strong>The schedule next to the request.</strong> An approved day off should show on the week and open the shift for cover.</li>
+          <li><strong>Accrual that matches your policy.</strong> Per hour worked, per pay period or front-loaded, with caps and carryover.</li>
+          <li><strong>Separate balances where the law needs them.</strong> Sick leave apart from vacation if your state requires it.</li>
+          <li><strong>A payroll hand-off.</strong> Approved PTO in the pay run without a CSV or an email.</li>
+          <li><strong>A history for every balance.</strong> Each accrual and day used, dated, for questions and final paychecks.</li>
+          <li><strong>Permissions.</strong> Employees see their own balance, managers their team, payroll the pay.</li>
+        </ol>
+        <p>Comparing vendors? Our neutral list of the <a href="/tools/best-leave-management-software/">best leave management software</a> covers the main options, and the roundup of <a href="/tools/free-pto-trackers/">free PTO trackers</a> is worth a look if your team is very small.</p>
+
+        <h3 id="g-switch">Moving off a spreadsheet PTO tracker</h3>
+        <ol>
+          <li>Pick a start date at the beginning of a pay period, so no period is split across two systems.</li>
+          <li>Confirm every employee’s current balance with them, then send us the spreadsheet. Workzenly imports the employee list and PTO balances during setup. A wrong balance imported on day one stays wrong.</li>
+          <li>Write down your accrual rule, cap, carryover and payout terms, checked against your state’s law.</li>
+                    <li>Retire the old request form. If you are not ready to switch yet, our <a href="/templates/pto-tracker-templates/">PTO tracker templates</a> and <a href="/templates/time-off-request-forms/">time off request forms</a> are a tidy stopgap.</li>
+        </ol>
+
+        <h3 id="g-choose">How to choose leave management software</h3>
+        <p>Run one real month through every system you are considering. Take last month’s requests, including two people asking for the same day and someone who left, and see which tool gets every balance and paycheck right with the fewest manual steps. Ask each vendor to show your accrual rule, the payroll hand-off and the employee’s phone screen.</p>
+        <p>If you want to see that month in Workzenly, <a href="/#start">book a demo</a> and we will set up a workspace with your company name before the call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions about PTO tracking software</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>What is PTO tracking software?</summary><p>PTO tracking software records time off requests, routes them to a manager for approval, keeps each employee’s balance current as PTO accrues and is used, and sends approved hours to payroll. Workzenly also shows managers who else is out before they approve and gives every employee their balance in the app.</p></details>
+        <details><summary>How do employees request time off?</summary><p>From the Workzenly app on their phone, in two taps. They pick the dates, see their PTO balance before and after the request, add a note if they want, and send it. They get the answer in the same app, so nobody has to chase a manager by text.</p></details>
+        <details><summary>Do PTO balances update on their own?</summary><p>Yes. Balances accrue and update themselves, and approved hours come off the balance as soon as the request is approved. Employees see the same number their manager and payroll see, which ends most of the “how much PTO do I have left” questions.</p></details>
+        <details><summary>Do we have to pay out unused PTO when someone leaves?</summary><p>It depends on the state and your written policy. California treats earned vacation as wages and requires it to be paid at the final rate of pay when employment ends, and it does not allow use-it-or-lose-it policies. Many other states follow the employer’s policy. An accurate balance on the last day makes either rule easy to follow.</p></details>
+        <details><summary>Can we bring PTO balances over from a spreadsheet?</summary><p>Yes. Send us your employee list and current PTO balances as a spreadsheet and we import them during setup, so nobody starts from zero. It is worth checking each balance with the employee first, because spreadsheet errors tend to carry over.</p></details>
+        <details><summary>Does PTO count toward overtime?</summary><p>Not under federal law. Overtime is based on hours actually worked, so PTO, holiday and sick hours do not push someone over 40 hours in a workweek. An employer can choose to count them by policy, because that pays more than the law requires.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for PTO and leave</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/paid-time-off/"><small>GUIDE</small><b>Paid time off: accrual, payout and 2026 state laws</b></a>
+        <a href="/tools/best-leave-management-software/"><small>COMPARISON</small><b>Best leave management software for small teams</b></a>
+        <a href="/templates/pto-tracker-templates/"><small>TEMPLATES</small><b>Free PTO tracker templates</b></a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer class="simple-foot">
-  <p>© <span id="year">2026</span> Workzenly</p>
-  <nav aria-label="Footer">
-    <a href="/features/time-clock/">Time clock</a>
-    <a href="/features/scheduling/">Scheduling</a>
-    <a href="/features/payroll/">Payroll</a>
-    <a href="/features/pto/">PTO</a>
-    <a href="/blog/">Blog</a>
-  </nav>
-  <p><a href="mailto:info@workzenly.com">info@workzenly.com</a></p>
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="wordmark" href="/">Workzenly</a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features"><h2>People</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
 </footer>
 <script src="/blog.js" defer></script>
-<script>
-(() => {
-  const approve = document.getElementById('req-approve');
-  const decline = document.getElementById('req-decline');
-  const k = document.getElementById('req-k');
-  const v = document.getElementById('req-v');
-  const bal = document.getElementById('jordan-bal');
-  const pill = document.getElementById('jordan-pill');
-  if (!approve || !decline) return;
-  const done = () => { approve.disabled = true; decline.disabled = true; };
-  approve.addEventListener('click', () => {
-    bal.textContent = '28 of 80 hrs';
-    pill.textContent = 'Fri, Nov 27';
-    pill.className = 'pill pill--ok';
-    k.textContent = 'Approved · Jordan Lee, Fri, Nov 27';
-    v.textContent = '8 hrs PTO added to the Nov 15–28 pay run';
-    approve.textContent = 'Approved';
-    done();
-  });
-  decline.addEventListener('click', () => {
-    pill.textContent = 'None booked';
-    pill.className = 'pill';
-    k.textContent = 'Declined · Jordan Lee, Fri, Nov 27';
-    v.textContent = 'Balance stays at 36 hrs. Jordan sees the answer in the app.';
-    decline.textContent = 'Declined';
-    done();
-  });
-})();
-</script>
+<script src="/feature.js" defer></script>
 </body>
 </html>

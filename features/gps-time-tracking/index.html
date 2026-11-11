@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GPS Time Tracking App with Geofencing | Workzenly</title>
+  <meta name="description" content="Workzenly's GPS time tracking app records location at clock-in and clock-out, draws a geofence around each site and flags punches made outside it.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/features/gps-time-tracking/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/features/gps-time-tracking/">
+  <meta property="og:title" content="GPS Time Tracking App with Geofencing | Workzenly">
+  <meta property="og:description" content="Workzenly's GPS time tracking app records location at clock-in and clock-out, draws a geofence around each site and flags punches made outside it.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    .ui-field { display: grid; gap: 4px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+    .ui-field small { color: var(--muted); font-size: 11px; }
+    .ui-field p { font-size: 13px; color: var(--ink); }
+    .ui-notice { border: 1px solid var(--line); border-radius: 10px; padding: 10px; background: var(--surface); }
+    .ui-notice p { font-size: 12px; line-height: 1.45; color: var(--ink); }
+    .ui-notice small { display: block; margin-top: 6px; color: var(--muted); font-size: 11px; line-height: 1.4; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "GPS Time Tracking App with Geofencing | Workzenly",
+        "description": "Workzenly's GPS time tracking app records location at clock-in and clock-out, draws a geofence around each site and flags punches made outside it.",
+        "url": "https://workzenly.com/features/gps-time-tracking/",
+        "dateModified": "2026-11-11",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Workzenly GPS Time Tracking",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "GPS time tracking app for US hourly teams: location recorded with each clock-in and clock-out, a geofence around each site, flags for punches outside the geofence, and approved hours that flow into payroll.",
+        "url": "https://workzenly.com/features/gps-time-tracking/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://workzenly.com/features/" },
+          { "@type": "ListItem", "position": 3, "name": "GPS time tracking", "item": "https://workzenly.com/features/gps-time-tracking/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What does a GPS time tracking app record?", "acceptedAnswer": { "@type": "Answer", "text": "In Workzenly, the GPS time tracking app records the employee's location at the moment they clock in or out, and whether that spot was inside the geofence drawn around the site. Location is captured with the punch, and your written policy should tell employees exactly what is recorded and when." } },
+          { "@type": "Question", "name": "How accurate is GPS on a phone?", "acceptedAnswer": { "@type": "Answer", "text": "GPS.gov says GPS-enabled smartphones are typically accurate to within a 4.9 meter (16 foot) radius under open sky, and accuracy gets worse near buildings, bridges and trees. Indoors, phones often fall back on Wi-Fi, which Android's documentation puts at about 20 to 50 meters. That is why geofences need some room." } },
+          { "@type": "Question", "name": "How big should a geofence be?", "acceptedAnswer": { "@type": "Answer", "text": "Android's developer documentation recommends a minimum geofence radius of 100 to 150 meters, about 330 to 490 feet, for reliable results. Use more for large or open sites such as parks and construction lots. A fence that is too tight flags honest employees standing at the back door." } },
+          { "@type": "Question", "name": "Do I have to tell employees about GPS time tracking?", "acceptedAnswer": { "@type": "Answer", "text": "In some states, yes. New York, Connecticut and Delaware require written notice of certain electronic monitoring. Even where it is not required, a short written notice that says location is recorded only with the punch, who sees it and how long it is kept prevents most complaints." } },
+          { "@type": "Question", "name": "Do I have to pay employees for using their own phone?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your state. California Labor Code section 2802 requires employers to reimburse necessary work expenses, and a 2014 California appeals court decision applied it to a reasonable share of personal cell phone bills. Illinois has a similar reimbursement law. A shared tablet at the door keeps the personal phone optional." } },
+          { "@type": "Question", "name": "What happens when someone clocks in outside the geofence?", "acceptedAnswer": { "@type": "Answer", "text": "The punch is still recorded, with its time and location, and it is flagged for the manager as outside the geofence. The manager can approve it with a note, for example a crew that met at the parking lot, or correct it. The original punch stays in the edit history next to any change." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="gps time tracking app" data-intent="transactional" data-topic="GPS time tracking">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M4 16h16M6 16a6 6 0 0 1 12 0M12 7.5V5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z M3.5 7.5L12 12l8.5-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5V20H4z M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="10" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 19h6M12 15v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M3.5 6.5l5.5-2 6 2 5.5-2v13l-5.5 2-6-2-5.5 2z M9 4.5v13M15 6.5v13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-fence" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-dasharray="3 2.6"/><circle cx="12" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 18.2h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/features/">Features</a></li><li aria-current="page">GPS time tracking</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">GPS time tracking</span>
+        <h1 id="hero-title">A GPS time tracking app that checks the punch, not the person</h1>
+        <p class="fp-lead">Workzenly is a GPS time tracking app for crews that work at more than one site. Location is recorded with each clock-in and clock-out, a geofence sits around every site, and any punch made outside it lands in front of the manager before payroll.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Location with each punch</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>A geofence per site</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Outside punches flagged</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly locations dashboard for Northfield Coffee showing a map of three sites with geofences, today's clock-ins inside each fence, and one punch flagged outside the Zilker Park event geofence">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/locations</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span><svg><use href="#i-clock"/></svg></span>
+              <span class="is-on"><svg><use href="#i-map"/></svg></span>
+              <span><svg><use href="#i-cal"/></svg></span>
+              <span><svg><use href="#i-sheet"/></svg></span>
+              <span><svg><use href="#i-users"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Locations</p><p class="ui-sub">Northfield Coffee · Austin, TX · Wed, Nov 11</p></div>
+                <div class="ui-seg" aria-hidden="true"><span class="is-on">Today</span><span>Week</span><span>Pay period</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>3</b><small>Sites with geofences</small></div>
+                <div class="ui-kpi"><b>9</b><small>Clock-ins today</small></div>
+                <div class="ui-kpi"><b>8</b><small>Inside geofence</small><em>all three sites</em></div>
+                <div class="ui-kpi"><b>1</b><small>Outside geofence</small><em class="is-warn">Aisha, 0.3 mi</em></div>
+              </div>
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Today’s clock-ins by site</b><span class="ui-legend"><span><i style="background:#9cc8fa"></i>Inside</span><span><i style="background:#ff9a85"></i>Outside</span></span></div>
+                <svg class="ui-chart" viewBox="0 0 460 210" aria-hidden="true">
+                  <rect width="460" height="210" fill="#121212"/>
+                  <path d="M0 118 C 70 100, 120 130, 190 112 S 320 92, 460 120" fill="none" stroke="#17222e" stroke-width="16"/>
+                  <g stroke="#1e1e1e" stroke-width="8"><path d="M0 40h460M0 182h460M150 0v210M262 0v210M392 0v210"/></g>
+                  <g stroke="#262626" stroke-width="2"><path d="M60 0v210M0 150h460M330 0v210"/></g>
+                  <g fill="#1a1a1a"><rect x="168" y="132" width="28" height="18" rx="3"/><rect x="226" y="156" width="28" height="18" rx="3"/><rect x="340" y="52" width="40" height="22" rx="3"/><rect x="274" y="10" width="44" height="22" rx="3"/><rect x="404" y="140" width="44" height="30" rx="3"/></g>
+                  <circle cx="92" cy="72" r="54" fill="rgba(218,250,156,0.07)" stroke="#dafa9c" stroke-width="1.5" stroke-dasharray="5 5"/>
+                  <circle cx="212" cy="160" r="34" fill="rgba(218,250,156,0.07)" stroke="#dafa9c" stroke-width="1.5" stroke-dasharray="5 5"/>
+                  <circle cx="360" cy="64" r="40" fill="rgba(218,250,156,0.07)" stroke="#dafa9c" stroke-width="1.5" stroke-dasharray="5 5"/>
+                  <g fill="#dafa9c"><rect x="84" y="64" width="16" height="16" rx="3"/><rect x="204" y="152" width="16" height="16" rx="3"/><rect x="352" y="56" width="16" height="16" rx="3"/></g>
+                  <g fill="#9cc8fa"><circle cx="70" cy="56" r="5"/><circle cx="114" cy="90" r="5"/><circle cx="196" cy="146" r="5"/><circle cx="230" cy="172" r="5"/><circle cx="222" cy="142" r="5"/><circle cx="198" cy="176" r="5"/><circle cx="342" cy="48" r="5"/><circle cx="378" cy="82" r="5"/></g>
+                  <circle cx="186" cy="24" r="6" fill="#ff9a85"/>
+                  <text x="196" y="28" fill="#ff9a85" font-size="10">0.3 mi out</text>
+                  <text x="40" y="146" fill="#a6a6a2" font-size="10">Zilker event · 250 m</text>
+                  <text x="160" y="204" fill="#a6a6a2" font-size="10">South Congress · 150 m</text>
+                  <text x="322" y="120" fill="#a6a6a2" font-size="10">Roastery · 200 m</text>
+                </svg>
+              </div>
+              <div class="ui-card ui-scroll">
+                <table class="ui-table">
+                  <thead><tr><th>Employee</th><th>Site</th><th>Clock-in</th><th>Location</th></tr></thead>
+                  <tbody>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#f2c36b">AB</span>Aisha Brown</span></td><td>Zilker event</td><td class="num">6:41 AM</td><td><span class="ui-pill ui-pill--bad" id="hero-aisha">Outside · 0.3 mi</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#9cc8fa">JL</span>Jordan Lee</span></td><td>Roastery</td><td class="num">6:58 AM</td><td><span class="ui-pill ui-pill--ok">Inside</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#c9b6f5">EC</span>Emily Carter</span></td><td>South Congress</td><td class="num">7:00 AM</td><td><span class="ui-pill ui-pill--ok">Inside</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#dafa9c">MT</span>Maya Torres</span></td><td>South Congress</td><td class="num">8:58 AM</td><td><span class="ui-pill ui-pill--ok">Inside</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="ui-foot"><div><p id="hero-flag-text">1 punch outside a geofence</p><small>Aisha Brown · Zilker event · location saved with the punch</small></div><button type="button" class="ui-btn" data-act data-target="hero-flag-text" data-text="Approved with note: crew met at the shuttle lot." data-pill="hero-aisha" data-pill-text="Approved · noted" data-done="Approved">Approve with note</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for teams that work at more than one place</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-hat"/></svg>Job sites and crews</li>
+        <li><svg aria-hidden="true"><use href="#i-home"/></svg>Home care</li>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Multi-location cafés</li>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Retail chains</li>
+        <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Clinics</li>
+        <li><svg aria-hidden="true"><use href="#i-box"/></svg>Warehouses</li>
+        <li><svg aria-hidden="true"><use href="#i-cal"/></svg>Catering and events</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">The catering crew texts “here” from the highway, someone clocks in from the parking lot across town, and nobody can say which site the hours belong to.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">Know where each punch happened, without following anyone</h2>
+      <p class="fp-problem__p">GPS time tracking adds one fact to every clock-in: where the phone was when the button was pressed. Put a geofence around each site and the app sorts punches into inside and outside on its own. Managers only look at the few that need a second look.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first week</p>
+        <h2 id="outcomes-title">Punches you can trust at every site</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><h3>A location on every punch</h3><p>Each clock-in and clock-out carries a time and a place. No more asking crews where they started, and no more guessing which site to charge the hours to.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-fence"/></svg></span><h3>A geofence around each site</h3><p>Draw a circle around the café, the warehouse or today’s job site and set the radius. Punches inside it go straight through. Punches outside it get flagged.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Exceptions, not surveillance</h3><p>Managers review the handful of punches made outside a fence, approve them with a note or correct them. Nobody watches a dot move across a map all day.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Clean hours for payroll</h3><p>Once the flags are cleared, the week is approved in one tap and the hours, overtime and PTO flow into payroll. The location stays in the record if anyone asks later.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">How the GPS time tracking app works, from phone to payroll</h2>
+        <p>The employee clocks in, the app checks the geofence, the manager reviews anything outside it, and approved hours go to payroll. Four steps, one record.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="Parts of GPS time tracking">
+          <button class="fp-tab" role="tab" id="tab-clock" aria-controls="panel-clock" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-phone"/></svg>Clock in</b><span>Location captured with the punch</span></button>
+          <button class="fp-tab" role="tab" id="tab-fence" aria-controls="panel-fence" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-fence"/></svg>Geofences</b><span>One per site, radius you choose</span></button>
+          <button class="fp-tab" role="tab" id="tab-log" aria-controls="panel-log" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-alert"/></svg>Punch log</b><span>Inside or outside, at a glance</span></button>
+          <button class="fp-tab" role="tab" id="tab-pay" aria-controls="panel-pay" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-pay"/></svg>Payroll</b><span>Hours by site, approved once</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-clock" aria-labelledby="tab-clock">
+          <div>
+            <h3>Clock in at the site, with a clear notice</h3>
+            <p>Employees clock in from the Workzenly app on their phone. The first time, the app explains in plain words what is recorded: the location at clock-in and clock-out, nothing in between.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Location read when the punch is made</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The site and geofence status shown before they tap</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>A shared tablet at the door for anyone who prefers not to use a phone</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Employee app for Jordan Lee showing a location notice that says location is recorded only with clock-ins and clock-outs, and a clock-in button inside the Roastery geofence">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Good morning</p><p class="ui-title">Jordan Lee</p></div>
+              <div class="ui-notice">
+                <p><b>Location at clock-in and clock-out</b></p>
+                <p>Northfield Coffee records where you are when you clock in or out, to confirm you are at your site.</p>
+                <small>Seen by: you and your manager.</small>
+              </div>
+              <div class="ui-card">
+                <p class="ui-sub">Barista · Roastery</p>
+                <p style="font-size:30px;font-weight:600;letter-spacing:-0.03em;margin:6px 0 2px" class="num">6:58 AM</p>
+                <p class="ui-sub">Today’s shift 7:00 AM–3:30 PM</p>
+                <p style="margin-top:10px"><span class="ui-pill ui-pill--ok">Inside Roastery geofence</span></p>
+              </div>
+              <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="gps-status" data-text="Clocked in at 6:58 AM · Roastery" data-done="Clocked in">Clock in</button>
+              <p class="ui-sub" id="gps-status" style="text-align:center">Not clocked in yet</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-fence" aria-labelledby="tab-fence" hidden>
+          <div>
+            <h3>A geofence for every site you run</h3>
+            <p>Add each location, drop the pin on the entrance and pick a radius. A small café on a busy street needs less room than a park, a parking structure or a construction lot.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>One geofence per site, each with its own radius</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Add a site for an event or short job, then remove it</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Change the radius when honest punches keep landing outside</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Geofence setup card for the Zilker Park catering event, with a 250 meter radius selected and a map preview of the circle">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Locations · Zilker event · Geofence</span></div>
+            <div class="ui-main">
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Zilker Park catering event</b><span>Event site · added Nov 9</span></div>
+                <svg class="ui-chart" viewBox="0 0 320 120" aria-hidden="true">
+                  <rect width="320" height="120" fill="#121212"/>
+                  <g stroke="#1e1e1e" stroke-width="8"><path d="M0 22h320M40 0v120M270 0v120"/></g>
+                  <path d="M0 104 C 80 92, 200 112, 320 98" fill="none" stroke="#17222e" stroke-width="14"/>
+                  <circle cx="160" cy="58" r="48" fill="rgba(218,250,156,0.08)" stroke="#dafa9c" stroke-width="1.5" stroke-dasharray="5 5"/>
+                  <rect x="152" y="50" width="16" height="16" rx="3" fill="#dafa9c"/>
+                  <path d="M160 58h48" stroke="#a6a6a2" stroke-width="1"/>
+                  <text x="172" y="52" fill="#a6a6a2" font-size="10">250 m</text>
+                </svg>
+                <div class="ui-field"><small>Pin</small><p>Main tent entrance, Zilker Park</p></div>
+                <div class="ui-field"><small>Radius</small><div class="ui-seg" aria-hidden="true"><span>100 m</span><span>150 m</span><span>200 m</span><span class="is-on">250 m</span></div><small>250 m is about 820 ft. Open sites with parking lots need more room.</small></div>
+                <div class="ui-field"><small>Punches outside</small><p>Recorded and flagged for the manager</p></div>
+              </div>
+              <div class="ui-foot"><div><p id="fence-text">Unsaved changes</p><small>Applies to clock-ins from today</small></div><button type="button" class="ui-btn" data-act data-target="fence-text" data-text="Geofence saved · 250 m" data-done="Saved">Save geofence</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-log" aria-labelledby="tab-log" hidden>
+          <div>
+            <h3>A punch log that sorts itself</h3>
+            <p>Every punch shows the site, the time and whether it was inside the geofence. Outside punches show the distance from the site.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Inside and outside pills on every row</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Distance from the site on flagged punches</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approve with a note or correct, and keep the original</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Punch log for the week of Nov 8 with six punches across three sites, four inside the geofence and two outside">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Punch log · week of Nov 8</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>When</th><th>Employee</th><th>Site</th><th>Punch</th><th>Location</th></tr></thead>
+                <tbody>
+                  <tr><td>Mon, Nov 9</td><td>Jordan Lee</td><td>Roastery</td><td class="num">In 6:59 AM</td><td><span class="ui-pill ui-pill--ok">Inside</span></td></tr>
+                  <tr><td>Mon, Nov 9</td><td>Jordan Lee</td><td>Roastery</td><td class="num">Out 3:31 PM</td><td><span class="ui-pill ui-pill--ok">Inside</span></td></tr>
+                  <tr><td>Tue, Nov 10</td><td>Tyler N.</td><td>South Congress</td><td class="num">In 6:52 AM</td><td><span class="ui-pill ui-pill--bad" id="log-tyler">Outside · 0.4 mi</span></td></tr>
+                  <tr><td>Tue, Nov 10</td><td>Dana Brooks</td><td>South Congress</td><td class="num">In 7:00 AM</td><td><span class="ui-pill ui-pill--ok">Inside</span></td></tr>
+                  <tr><td>Wed, Nov 11</td><td>Aisha Brown</td><td>Zilker event</td><td class="num">In 6:41 AM</td><td><span class="ui-pill ui-pill--bad">Outside · 0.3 mi</span></td></tr>
+                  <tr><td>Wed, Nov 11</td><td>Sam Rivera</td><td>South Congress</td><td class="num">In 9:14 AM</td><td><span class="ui-pill ui-pill--ok">Inside</span></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>2 punches outside a geofence</p><small>Tyler N. · Tue · clocked in before reaching the café</small></div><button type="button" class="ui-btn ui-btn--ghost" data-act data-pill="log-tyler" data-pill-text="Reviewed" data-done="Reviewed">Mark reviewed</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pay" aria-labelledby="tab-pay" hidden>
+          <div>
+            <h3>Hours by site, straight into payroll</h3>
+            <p>Once flagged punches are cleared, managers approve the week and the hours move into the pay run, with regular, overtime and PTO kept apart. You also see how many hours each site used.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours totaled by site and by person</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Open flags shown before anyone approves</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pay stubs in the app on payday</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Pay period summary for Nov 1 to 14 showing hours by site: South Congress 312.5, Roastery 148.0 and catering events 46.5, totaling 507.0 hours">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Payroll · Nov 1–14 · paid Fri, Nov 20</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Site</th><th class="r">Punches</th><th class="r">Flagged</th><th class="r">Hours</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>South Congress</td><td class="r num">78</td><td class="r num">1</td><td class="r num">312.5</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Roastery</td><td class="r num">36</td><td class="r num">0</td><td class="r num">148.0</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Catering events</td><td class="r num">12</td><td class="r num">1</td><td class="r num">46.5</td><td><span class="ui-pill ui-pill--warn" id="pay-events">Waiting</span></td></tr>
+                  <tr><td><b>Total</b></td><td class="r num"><b>126</b></td><td class="r num"><b>2</b></td><td class="r num"><b>507.0</b></td><td></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>Catering events still waiting</p><small>Approve to send 46.5 hours to payroll</small></div><button type="button" class="ui-btn" data-act data-pill="pay-events" data-pill-text="Approved" data-done="Sent to payroll">Approve</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="GPS time tracking in detail">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Crews on the move</p>
+          <h2>Crews clock in at the site they are working today</h2>
+          <p>When people move between locations, the punch tells you where they started. A barista covering the roastery or a cook sent to an event: each clock-in lands at the right site, so hours add up by location without a spreadsheet.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>See who is clocked in at each site right now</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Compare who showed up against who was scheduled</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Add a site for an event or a short job</li>
+          </ul>
+          <a class="fp-row__more" href="/features/scheduling/">See scheduling <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Site board showing who is clocked in at South Congress, the Roastery and the Zilker Park event, against how many were scheduled">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Sites · on the clock now · 9:20 AM</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>South Congress</p><small>Emily Carter, Maya Torres, Sam Rivera, Dana Brooks</small></div><span class="ui-pill ui-pill--ok">4 of 4</span></div>
+              <div class="ui-item"><div><p>Roastery</p><small>Jordan Lee, Tyler N.</small></div><span class="ui-pill ui-pill--ok">2 of 2</span></div>
+              <div class="ui-item"><div><p>Zilker event</p><small>Aisha Brown, Priya Shah, Luis Ortega · 1 more due at 10:00 AM</small></div><span class="ui-pill ui-pill--info">3 of 4</span></div>
+            </div>
+            <div class="ui-card" style="margin-top:10px">
+              <div class="ui-card__head"><b>Clocked in vs scheduled</b><span class="num">9 of 10</span></div>
+              <div class="ui-bar-meter"><i style="width:90%"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Flagged punches</p>
+          <h2>A geofence time clock that flags, then lets you decide</h2>
+          <p>A punch outside the geofence is not thrown away and not paid without a look. It is recorded with its time and location and flagged for the manager. Most have a plain reason, like a crew meeting at the shuttle lot. Approve with a note or correct the time, and the original stays in the history.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>The original punch and location kept next to any change</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Who approved or edited, and why</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Employees can request a fix for a missed punch</li>
+          </ul>
+          <a class="fp-row__more" href="/features/timesheets/">See timesheets <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Edit history for Tyler N.'s Tuesday clock-in, showing the original punch outside the geofence, a correction by the manager and the approval">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">History · Tyler N. · Tue, Nov 10</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Clocked in 6:52 AM</p><small>Phone · 0.4 mi from South Congress</small></div><span class="ui-pill ui-pill--bad">Outside</span></div>
+              <div class="ui-item"><div><p>Flagged for review</p><small>Outside the 150 m geofence</small></div><span class="ui-pill ui-pill--warn">Flag</span></div>
+              <div class="ui-item"><div><p>Clock-in set to 7:00 AM</p><small>By Marcus (manager) · “Clocked in from the bus. Shift starts 7:00.”</small></div><span class="ui-pill ui-pill--info">Edited</span></div>
+              <div class="ui-item"><div><p>Week approved</p><small>By Marcus · Mon, Nov 16, 9:12 AM</small></div><span class="ui-pill ui-pill--ok">Approved</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Personal phones</p>
+          <h2>Employee GPS time tracking on personal phones, handled fairly</h2>
+          <p>Most crews clock in on their own phones. In states such as California, that can mean reimbursing part of the phone bill. Employees send the claim from the app and it is paid with the next paycheck. Anyone who would rather not use a phone can use a shared tablet.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Phone reimbursement claims paid with the next paycheck</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>A shared tablet kiosk as the no-phone option</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Your location policy stored in the handbook</li>
+          </ul>
+          <a class="fp-row__more" href="/features/expenses/">See expenses <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Expense claim from Aisha Brown for her share of a November phone bill, $20.00, approved to be paid on Fri, Nov 20">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Expenses · Aisha Brown</span></div>
+          <div class="ui-main">
+            <div class="ui-card">
+              <div class="ui-card__head"><b>Phone bill share · November</b><span class="num">$20.00</span></div>
+              <div class="ui-field"><small>Category</small><p>Phone</p></div>
+              <div class="ui-field"><small>Receipt</small><p>Photo of this month’s phone bill</p></div>
+              <div class="ui-field"><small>Paid with</small><p>Paycheck on Fri, Nov 20</p></div>
+            </div>
+            <div class="ui-foot"><div><p id="exp-text">Waiting for approval</p><small>Company phone policy: $20 a month for clock-in use</small></div><button type="button" class="ui-btn" data-act data-target="exp-text" data-text="Approved. Added to the Nov 20 paycheck." data-done="Approved">Approve</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One punch record, four people who rely on it</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Employees</h3></div><div><span>Replaces</span><p>Texting “I’m here” to the manager</p></div><div><span>They use it to</span><p>Clock in at the site, see their hours and ask for a fix if a punch was wrong</p></div><div><span>What they notice</span><p>They know exactly what is recorded, and when</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Managers and crew leads</h3></div><div><span>Replaces</span><p>Driving between sites to check who showed up</p></div><div><span>They use it to</span><p>See who is clocked in at each site, review flagged punches and approve the week</p></div><div><span>What they notice</span><p>A short list of flags instead of a long list of rows</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Payroll</h3></div><div><span>Replaces</span><p>Asking which site a set of hours belongs to</p></div><div><span>They use it to</span><p>Run payroll from approved hours with flags already cleared</p></div><div><span>What they notice</span><p>No disputed hours after payday</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owners</h3></div><div><span>Replaces</span><p>Guessing what each location costs to staff</p></div><div><span>They use it to</span><p>Compare hours by site and keep punch records ready if a claim comes in</p></div><div><span>What they notice</span><p>Labor hours they can tie to a place</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Location data stays with the people who need it</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Employees see their own</h3><p>Each person sees their own punches, hours, PTO and pay stubs, never a coworker’s.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Managers see their team</h3><p>Managers see their team’s shifts, punches and time off, and review their team’s flagged punches.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and pay stubs are visible only to the people you give payroll access to.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Connected</p>
+        <h2 id="connect-title">Location checks that feed the rest of the workday</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/time-clock/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Employee time clock app</h3><p>Clock in and out from a phone, with today’s shift on screen.</p><span>Time clock →</span></a>
+        <a class="fp-link-card" href="/features/time-and-attendance/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Time and attendance</h3><p>See who is in, late or out, and approve the week in one tap.</p><span>Time and attendance →</span></a>
+        <a class="fp-link-card" href="/features/time-clock-kiosk/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-store"/></svg></span><h3>Time clock kiosk</h3><p>A shared tablet at the door for people who would rather not use a phone.</p><span>Kiosk →</span></a>
+        <a class="fp-link-card" href="/features/overtime-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime tracking</h3><p>Weekly totals and warnings before a shift crosses 40 hours.</p><span>Overtime →</span></a>
+        <a class="fp-link-card" href="/features/employee-app/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Employee app</h3><p>Clock in, swap a shift, request PTO and check pay stubs.</p><span>Employee app →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Approved hours, overtime and PTO become pay stubs in the app.</p><span>Payroll →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">See your own sites with geofences drawn</h2>
+        <p>Send us your locations before the call and we set up a demo workspace with a geofence around each one.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- BUYER'S GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-how">How it works</a></li>
+            <li><a href="#g-accuracy">How accurate GPS is</a></li>
+            <li><a href="#g-radius">Setting the radius</a></li>
+            <li><a href="#g-notice">Employee notice laws</a></li>
+            <li><a href="#g-phones">Personal phones</a></li>
+            <li><a href="#g-policy">Writing the policy</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>Bring your site list and we will draw the geofences with you.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The buyer’s guide to a GPS time tracking app</h2>
+        <p>GPS time tracking solves one problem well: proving that a punch came from the place the work happens. It is most useful for teams with several sites and crews that move between jobs. This guide covers how it works, how accurate it is, which notice and reimbursement laws apply, and how to choose an app.</p>
+
+        <h3 id="g-how">How GPS time tracking works</h3>
+        <p>When an employee taps clock in, the phone reports its location. The app compares that location with the geofence, a virtual circle drawn around the site, and marks the punch as inside or outside. The same thing happens at clock-out. If you want the full background, our explainer on <a href="/blog/what-is-a-geofence/">what a geofence is</a> walks through it with diagrams.</p>
+        <p>Some apps read location all shift, as a breadcrumb trail. Workzenly records location with the clock-in and clock-out punch, which keeps the data small and the conversation with employees simple. If you need a route log, such as mileage for drivers, that is a different kind of tool.</p>
+
+        <h3 id="g-accuracy">How accurate is mobile time tracking with GPS?</h3>
+        <p>Accurate enough for “was this person at the site,” not for “which room were they in.” According to GPS.gov, the US government’s GPS site, GPS-enabled smartphones are typically accurate to within a 4.9 meter (16 foot) radius under open sky, and accuracy worsens near buildings, bridges and trees. Indoors, phones lean on Wi-Fi and cell signals instead.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Where the phone is</th><th>Typical accuracy</th><th>Source</th><th>What it means for punches</th></tr></thead>
+            <tbody>
+              <tr><td>Outdoors, open sky</td><td>About 4.9 m (16 ft)</td><td>GPS.gov</td><td>Reliable at yards, lots and open job sites</td></tr>
+              <tr><td>Indoors with Wi-Fi</td><td>About 20 to 50 m (65 to 165 ft)</td><td>Android developer docs</td><td>Fine for a store, if the fence has room</td></tr>
+              <tr><td>Indoor location available</td><td>As small as 5 m</td><td>Android developer docs</td><td>Only in some buildings, do not count on it</td></tr>
+              <tr><td>Rural, no Wi-Fi</td><td>Several hundred meters to several kilometers</td><td>Android developer docs</td><td>Use a large radius or expect flags</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>So treat a flagged punch as a question, not proof of anything.</p>
+
+        <h3 id="g-radius">Setting the geofence radius for each site</h3>
+        <p>Android’s developer documentation recommends a minimum geofence radius of 100 to 150 meters (about 330 to 490 feet) for reliable results, because typical Wi-Fi location accuracy is about 50 meters. Start there and adjust by site:</p>
+        <ul>
+          <li><strong>Small shop on a dense street.</strong> 150 m. Tall buildings bounce signals, so give it the full recommended minimum.</li>
+          <li><strong>Warehouse, plant or campus.</strong> Draw from the main entrance and size the circle to cover the parking lot employees actually use.</li>
+          <li><strong>Park, event, construction lot or rural site.</strong> 200 to 250 m or more. People clock in from the edge, and shuttle lots are often outside the obvious boundary.</li>
+        </ul>
+        <p>After two weeks, look at where flagged punches cluster. If honest employees keep landing just outside the line, widen the fence.</p>
+
+        <h3 id="g-notice">Employee notice laws for employee GPS time tracking</h3>
+        <p>There is no single federal rule for location at clock-in, but several states require notice before electronic monitoring. Treat location at the punch as monitoring and cover it in writing:</p>
+        <ul>
+          <li><strong>New York.</strong> Civil Rights Law section 52-c, in effect since May 7, 2022, requires employers with a place of business in the state that monitor employee phone calls, email or internet use to give written or electronic notice at hiring, get an acknowledgment, and post the notice where employees can see it. The Attorney General enforces it, with civil penalties of up to $500 for a first offense, $1,000 for a second and $3,000 for each later one.</li>
+          <li><strong>Connecticut.</strong> General Statutes section 31-48d requires prior written notice of electronic monitoring of employees, which can be given by posting a notice. Public Act 26-73, effective October 1, 2026, revised the statute; check the Connecticut Department of Labor for the current requirements.</li>
+          <li><strong>Delaware.</strong> Title 19, section 705 of the Delaware Code requires notice before monitoring employee phone, email or internet use, either daily or as a one-time notice the employee acknowledges. The civil penalty is $100 per violation.</li>
+        </ul>
+        <p>Even where no law requires it, give written notice. Say what is recorded (location at clock-in and clock-out), why, who sees it and how long you keep it. You can store the policy with the handbook in Workzenly so everyone can find it.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Rules change, so check your state labor department or an employment lawyer for your situation.</p>
+
+        <h3 id="g-phones">Personal phones and reimbursement</h3>
+        <p>Asking employees to clock in on their own phones can create a reimbursement duty. In California, Labor Code section 2802 requires employers to indemnify employees for all necessary expenditures or losses incurred in doing their jobs. In Cochran v. Schwan’s Home Service (2014), a California Court of Appeal held that when employees are required to use personal cell phones for work, the employer must reimburse a reasonable percentage of the bill, even if the employee has an unlimited plan. Illinois has a similar reimbursement law, and other states have their own rules.</p>
+        <p>Two fixes cover most teams: a modest monthly phone amount, sent as an expense claim and paid with the next paycheck, or a shared tablet at the site through the <a href="/features/time-clock-kiosk/">time clock kiosk</a> so the personal phone is optional. Our <a href="/blog/gps-time-clock-app/">GPS time clock app checklist</a> covers the reimbursement question in more depth.</p>
+
+        <h3 id="g-policy">Writing the location policy before rollout</h3>
+        <ol>
+          <li>Decide when location is read. We suggest punches only, and that is how Workzenly works.</li>
+          <li>Say who sees it and who reviews a flagged punch, and by when.</li>
+          <li>Offer a no-phone option, such as a shared tablet, and settle phone reimbursement if your state requires it.</li>
+          <li>Give the notice in writing, collect acknowledgments where the law asks for them, and add the policy to your <a href="/templates/employee-handbook-templates/">employee handbook</a>.</li>
+          <li>Run one pay period, then review the flags and resize any geofence that catches too many honest punches.</li>
+        </ol>
+        <p>One rule worth repeating: a punch outside the geofence does not change what you owe. Under the Fair Labor Standards Act, non-exempt employees are paid for all hours worked, wherever the punch came from. Use the flag to ask a question and fix the record, never to dock time that was worked. Our guide to <a href="/blog/time-and-attendance-tracking/">time and attendance tracking</a> covers record-keeping in more detail.</p>
+
+        <h3 id="g-choose">How to choose a GPS time clock app</h3>
+        <p>Run one real week of punches through each GPS time clock app on your list, including a parking-lot punch. Then ask each vendor:</p>
+        <ul>
+          <li>Is location read only at the punch, or all shift? Can you see that setting in writing?</li>
+          <li>Can you set a different radius per site, and add a site for an event or short job?</li>
+          <li>What happens to a punch outside the geofence: blocked, or recorded and flagged? Blocking means lost time records.</li>
+          <li>Is the original punch kept next to any correction, with who made it?</li>
+                    <li>Is there a no-phone option, like a shared tablet at the door?</li>
+          <li>Do approved hours go straight into payroll, or are they exported and retyped?</li>
+        </ul>
+        <p>For a neutral side-by-side, see our list of the <a href="/tools/best-gps-time-clock-apps/">best GPS time clock apps</a>, and the <a href="/templates/timesheet-templates/">timesheet templates</a> if you want to compare totals by hand during the trial week. If you want to see your own sites in Workzenly, <a href="/#start">book a demo</a> and we will draw a geofence around each one before the call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions about the GPS time tracking app</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>What does a GPS time tracking app record?</summary><p>In Workzenly, the GPS time tracking app records the employee's location at the moment they clock in or out, and whether that spot was inside the geofence drawn around the site. Location is captured with the punch, and your written policy should tell employees exactly what is recorded and when.</p></details>
+        <details><summary>How accurate is GPS on a phone?</summary><p>GPS.gov says GPS-enabled smartphones are typically accurate to within a 4.9 meter (16 foot) radius under open sky, and accuracy gets worse near buildings, bridges and trees. Indoors, phones often fall back on Wi-Fi, which Android's documentation puts at about 20 to 50 meters. That is why geofences need some room.</p></details>
+        <details><summary>How big should a geofence be?</summary><p>Android's developer documentation recommends a minimum geofence radius of 100 to 150 meters, about 330 to 490 feet, for reliable results. Use more for large or open sites such as parks and construction lots. A fence that is too tight flags honest employees standing at the back door.</p></details>
+        <details><summary>Do I have to tell employees about GPS time tracking?</summary><p>In some states, yes. New York, Connecticut and Delaware require written notice of certain electronic monitoring. Even where it is not required, a short written notice that says location is recorded only with the punch, who sees it and how long it is kept prevents most complaints.</p></details>
+        <details><summary>Do I have to pay employees for using their own phone?</summary><p>It depends on your state. California Labor Code section 2802 requires employers to reimburse necessary work expenses, and a 2014 California appeals court decision applied it to a reasonable share of personal cell phone bills. Illinois has a similar reimbursement law. A shared tablet at the door keeps the personal phone optional.</p></details>
+        <details><summary>What happens when someone clocks in outside the geofence?</summary><p>The punch is still recorded, with its time and location, and it is flagged for the manager as outside the geofence. The manager can approve it with a note, for example a crew that met at the parking lot, or correct it. The original punch stays in the edit history next to any change.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for GPS time tracking</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/what-is-a-geofence/"><small>GUIDE</small><b>What is a geofence? How geofencing works at work</b></a>
+        <a href="/blog/gps-time-clock-app/"><small>CHECKLIST</small><b>GPS time clock app: a buyer’s checklist</b></a>
+        <a href="/tools/best-gps-time-clock-apps/"><small>COMPARISON</small><b>Best GPS time clock apps, geofencing compared</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="wordmark" href="/">Workzenly</a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features"><h2>People</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>

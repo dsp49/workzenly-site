@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expense Reimbursement Software for Small Teams | Workzenly</title>
+  <meta name="description" content="Expense reimbursement software for US teams: staff photograph a receipt, pick a category and send, managers approve, and claims are paid on the next paycheck.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/features/expenses/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/features/expenses/">
+  <meta property="og:title" content="Expense Reimbursement Software for Small Teams | Workzenly">
+  <meta property="og:description" content="Expense reimbursement software for US teams: staff photograph a receipt, pick a category and send, managers approve, and claims are paid on the next paycheck.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    .ui-receipt { background: var(--paper); color: var(--paper-ink); font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 10.5px; line-height: 1.5; padding: 12px 12px 14px; border-radius: 3px; transform: rotate(-1.2deg); box-shadow: 0 14px 28px -14px rgba(0,0,0,.9); }
+    .ui-receipt__row { display: flex; justify-content: space-between; gap: 8px; }
+    .ui-receipt__c { text-align: center; }
+    .ui-receipt hr { border: 0; border-top: 1px dashed var(--paper-muted); margin: 6px 0; }
+    .ui-receipt--sm { font-size: 9.5px; padding: 10px; transform: rotate(1deg); }
+    .ui-field { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 9px 10px; border: 1px solid var(--line); border-radius: 9px; font-size: 12.5px; }
+    .ui-field span { color: var(--muted); font-size: 11.5px; }
+    .ui-item.is-on { border-color: var(--accent); }
+    .ui-claim { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 14px; align-items: start; }
+    @media (max-width: 560px) { .ui-claim { grid-template-columns: 1fr; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Expense Reimbursement Software for Small Teams | Workzenly",
+        "description": "Expense reimbursement software for US teams: staff photograph a receipt, pick a category and send, managers approve, and claims are paid on the next paycheck.",
+        "url": "https://workzenly.com/features/expenses/",
+        "dateModified": "2026-11-11",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Workzenly Expenses",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "Expense reimbursement software for US small and mid-sized employers: employees photograph a receipt, pick a category and send it from their phone, managers approve, and approved claims are paid with the next paycheck as a reimbursement line separate from wages.",
+        "url": "https://workzenly.com/features/expenses/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://workzenly.com/features/" },
+          { "@type": "ListItem", "position": 3, "name": "Expenses", "item": "https://workzenly.com/features/expenses/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is expense reimbursement software?", "acceptedAnswer": { "@type": "Answer", "text": "Expense reimbursement software lets employees submit work costs they paid themselves, with a photo of the receipt, and lets a manager approve or send back each claim. Approved claims are then paid back. In Workzenly, employees photograph the receipt, pick a category and send it from their phone, and approved claims are paid with the next paycheck." } },
+          { "@type": "Question", "name": "Are expense reimbursements taxable income?", "acceptedAnswer": { "@type": "Answer", "text": "Not when they are paid under an accountable plan. The IRS says amounts paid under an accountable plan are not wages and are exempt from income tax withholding, Social Security, Medicare and FUTA. The plan must require a business connection, substantiation within a reasonable period and the return of any excess. Reimbursements that fail those rules are treated as wages." } },
+          { "@type": "Question", "name": "Do employers have to reimburse employee expenses?", "acceptedAnswer": { "@type": "Answer", "text": "Federal law requires it only when an unreimbursed cost the employer requires, such as tools of the trade, would push pay below the minimum wage or required overtime. Some states go further. California Labor Code section 2802 and section 9.5 of the Illinois Wage Payment and Collection Act require employers to reimburse necessary work expenses." } },
+          { "@type": "Question", "name": "How do employees submit an expense in Workzenly?", "acceptedAnswer": { "@type": "Answer", "text": "In the Workzenly app on their phone. They photograph the receipt, enter the amount, pick a category, add a short note and tap send. Their manager sees the claim with the receipt photo attached and can approve it from a phone or a laptop." } },
+          { "@type": "Question", "name": "When do employees get their money back?", "acceptedAnswer": { "@type": "Answer", "text": "With the next paycheck. Approved claims flow into payroll and appear on the pay stub as a reimbursement line, separate from wages. At Northfield Coffee, Emily Carter's $86.00 kitchen supply receipt was approved during the November 1 to 14 pay period and paid on November 20 alongside her hours." } },
+          { "@type": "Question", "name": "What records should we keep for reimbursements?", "acceptedAnswer": { "@type": "Answer", "text": "Keep the receipt or other proof of what was bought, when, how much and why, plus the approval and the payment. The IRS tells employers to keep records of expense reimbursements, including substantiation. Workzenly keeps the receipt photo, category, note, approval and the paycheck it was paid on together with each claim." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="expense reimbursement software" data-intent="transactional" data-topic="Expenses">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M4 16h16M6 16a6 6 0 0 1 12 0M12 7.5V5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z M3.5 7.5L12 12l8.5-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5V20H4z M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="10" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 19h6M12 15v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8h6M9 11.5h6M9 15h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3.5l1.5-2.5h6L16.5 8H20v11H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13.2" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.5V4h8.5l8.5 8.5-8.5 8.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="8" cy="8.5" r="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-approve" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 12.3l2.7 2.7L16 9.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 17.5h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/features/">Features</a></li><li aria-current="page">Expenses</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Expenses</span>
+        <h1 id="hero-title">Expense reimbursement software that pays people back on payday</h1>
+        <p class="fp-lead">Workzenly is expense reimbursement software for teams that buy things out of pocket now and then. Employees photograph the receipt, pick a category and send it from their phone. Managers approve. Approved claims are paid with the next paycheck, on their own line, separate from wages.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Receipt photo from a phone</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Manager approval</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Paid with the next paycheck</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly expense approvals queue for Northfield Coffee showing three claims waiting for approval, one approved claim and spending by category for the November 1 to 14 pay period">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/expenses</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span><svg><use href="#i-clock"/></svg></span>
+              <span><svg><use href="#i-cal"/></svg></span>
+              <span class="is-on"><svg><use href="#i-receipt"/></svg></span>
+              <span><svg><use href="#i-pay"/></svg></span>
+              <span><svg><use href="#i-users"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Expense approvals</p><p class="ui-sub">Northfield Coffee · Austin, TX · Wed, Nov 11</p></div>
+                <div class="ui-seg" aria-hidden="true"><span class="is-on">Waiting</span><span>Approved</span><span>Paid</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>3</b><small>Waiting</small><em class="is-warn">$69.65</em></div>
+                <div class="ui-kpi"><b>$86.00</b><small>Approved</small><em>1 claim</em></div>
+                <div class="ui-kpi"><b>$155.65</b><small>This pay period</small><em>Nov 1–14</em></div>
+                <div class="ui-kpi"><b>Nov 20</b><small>Next paycheck</small><em>Friday</em></div>
+              </div>
+              <div class="ui-split">
+                <div class="ui-card ui-scroll">
+                  <table class="ui-table">
+                    <thead><tr><th>Employee</th><th>Category</th><th>Date</th><th class="r">Amount</th><th>Status</th></tr></thead>
+                    <tbody>
+                      <tr><td><span class="ui-person"><span class="ui-av" style="background:#9cc8fa">JL</span>Jordan Lee</span></td><td>Café supplies</td><td class="num">Nov 10</td><td class="r num">$23.47</td><td><span class="ui-pill ui-pill--warn" id="hx-1">Waiting</span></td></tr>
+                      <tr><td><span class="ui-person"><span class="ui-av" style="background:#dafa9c">MT</span>Maya Torres</span></td><td>Office supplies</td><td class="num">Nov 10</td><td class="r num">$31.18</td><td><span class="ui-pill ui-pill--warn" id="hx-2">Waiting</span></td></tr>
+                      <tr><td><span class="ui-person"><span class="ui-av" style="background:#c9b6f5">AB</span>Aisha Brown</span></td><td>Training</td><td class="num">Nov 11</td><td class="r num">$15.00</td><td><span class="ui-pill ui-pill--warn" id="hx-3">Waiting</span></td></tr>
+                      <tr><td><span class="ui-person"><span class="ui-av" style="background:#f2c36b">EC</span>Emily Carter</span></td><td>Kitchen supplies</td><td class="num">Nov 9</td><td class="r num">$86.00</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="ui-card">
+                  <div class="ui-card__head"><b>By category</b><span>Nov 1–14</span></div>
+                  <div class="ui-list">
+                    <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Kitchen supplies</span><span class="num">$86.00</span></div><div class="ui-bar-meter"><i style="width:100%"></i></div></div>
+                    <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Office supplies</span><span class="num">$31.18</span></div><div class="ui-bar-meter"><i style="width:36%"></i></div></div>
+                    <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Café supplies</span><span class="num">$23.47</span></div><div class="ui-bar-meter"><i style="width:27%"></i></div></div>
+                    <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Training</span><span class="num">$15.00</span></div><div class="ui-bar-meter"><i style="width:17%"></i></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="hx-text">3 claims waiting, $69.65 in total</p><small>Receipts attached · approved claims join the Nov 20 paycheck</small></div><button type="button" class="ui-btn" data-act data-target="hx-text" data-text="Approved. $69.65 joins the Nov 20 paycheck." data-done="Approved">Approve all</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for teams that work in shifts</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Restaurants and cafés</li>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Retail stores</li>
+        <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Clinics</li>
+        <li><svg aria-hidden="true"><use href="#i-home"/></svg>Home care</li>
+        <li><svg aria-hidden="true"><use href="#i-hat"/></svg>Job sites</li>
+        <li><svg aria-hidden="true"><use href="#i-box"/></svg>Warehouses</li>
+        <li><svg aria-hidden="true"><use href="#i-desk"/></svg>Offices</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">A receipt folded into an apron pocket, a text to the manager, and the money shows up a month later, if anyone remembers.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">Turn every receipt into a claim the day it happens</h2>
+      <p class="fp-problem__p">When an employee runs out for sheet pans or receipt paper, the receipt goes into the app before it gets lost. The manager approves it in the same place, and payroll pays it back on the next paycheck. Nobody keeps an envelope of receipts or a reimbursement spreadsheet.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first pay period</p>
+        <h2 id="outcomes-title">Receipts captured, claims approved, money back on payday</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-camera"/></svg></span><h3>The receipt is in before it fades</h3><p>Employees photograph the receipt on their phone right after they buy something, so the proof is attached to the claim instead of crumpled in a car.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-approve"/></svg></span><h3>Managers approve with the receipt in view</h3><p>Each claim shows the photo, the amount, the category and the employee’s note. Managers approve from a phone between rushes, or from a laptop.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Paid with the next paycheck</h3><p>Approved claims flow into payroll. No separate checks, no petty cash, and no second bank transfer to remember.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Kept apart from wages</h3><p>The reimbursement prints on the pay stub as its own line, so the employee sees the money came back and payroll keeps it out of taxable wages.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">How the employee expense app works, from receipt to paycheck</h2>
+        <p>Four steps, one record. The photo the employee takes at the store is the same receipt the manager approves and the same amount on the pay stub.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="Steps of an expense claim">
+          <button class="fp-tab" role="tab" id="tab-snap" aria-controls="panel-snap" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-camera"/></svg>Snap</b><span>Photograph the receipt</span></button>
+          <button class="fp-tab" role="tab" id="tab-cat" aria-controls="panel-cat" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-tag"/></svg>Categorize</b><span>Pick a category and send</span></button>
+          <button class="fp-tab" role="tab" id="tab-ok" aria-controls="panel-ok" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-approve"/></svg>Approve</b><span>Manager reviews the claim</span></button>
+          <button class="fp-tab" role="tab" id="tab-pay" aria-controls="panel-pay" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-pay"/></svg>Get paid</b><span>On the next pay stub</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-snap" aria-labelledby="tab-snap">
+          <div>
+            <h3>Photograph the receipt</h3>
+            <p>The employee opens the Workzenly app, takes a picture of the receipt and types the amount. It works like a receipt tracking app that already knows who you work for.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The receipt photo stays attached to the claim</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>A short note says what it was for</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The same app they use to clock in and see pay stubs</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Employee app screen where Emily Carter has photographed an $86.00 receipt from a restaurant supply store and entered the amount">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">New expense</p><p class="ui-title">Emily Carter</p></div>
+              <div class="ui-receipt">
+                <p class="ui-receipt__c"><b>EASTSIDE RESTAURANT SUPPLY</b><br>Austin, TX</p>
+                <p class="ui-receipt__c">11/09/2026 2:41 PM</p>
+                <hr>
+                <div class="ui-receipt__row"><span>SHEET PAN 4 @ 12.50</span><span>50.00</span></div>
+                <div class="ui-receipt__row"><span>DELI CONT 32OZ CS</span><span>18.50</span></div>
+                <div class="ui-receipt__row"><span>NITRILE GLOVES L</span><span>10.95</span></div>
+                <hr>
+                <div class="ui-receipt__row"><span>SUBTOTAL</span><span>79.45</span></div>
+                <div class="ui-receipt__row"><span>TAX 8.25%</span><span>6.55</span></div>
+                <div class="ui-receipt__row"><b>TOTAL</b><b>86.00</b></div>
+              </div>
+              <div class="ui-field"><span>Amount</span><b class="num">$86.00</b></div>
+              <div class="ui-field"><span>Date</span><b>Mon, Nov 9</b></div>
+              <p class="ui-sub" style="text-align:center">Photo attached · next: pick a category</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-cat" aria-labelledby="tab-cat" hidden>
+          <div>
+            <h3>Pick a category and send</h3>
+            <p>A short list of categories keeps every claim in the right bucket, so you can see what the kitchen spent on supplies this month without sorting receipts by hand.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>One tap to choose, one tap to send</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The note travels with the claim to the manager</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Employees see the status of every claim they sent</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Category picker in the employee app with Kitchen supplies selected for an $86.00 claim and a Send button">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">$86.00 · Mon, Nov 9</p><p class="ui-title">Choose a category</p></div>
+              <div class="ui-list">
+                <div class="ui-item is-on"><div><p>Kitchen supplies</p><small>Pans, containers, gloves</small></div><span class="ui-pill ui-pill--ok">Selected</span></div>
+                <div class="ui-item"><div><p>Café supplies</p><small>Milk, cups, syrups</small></div></div>
+                <div class="ui-item"><div><p>Office supplies</p><small>Paper, receipt rolls, ink</small></div></div>
+                <div class="ui-item"><div><p>Training</p><small>Courses and food handler cards</small></div></div>
+                <div class="ui-item"><div><p>Phone and internet</p><small>Work share of a personal bill</small></div></div>
+              </div>
+              <div class="ui-field"><span>Note</span><b>Weekend prep, pans ran short</b></div>
+              <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="cat-status" data-text="Sent to Marcus for approval" data-done="Sent">Send</button>
+              <p class="ui-sub" id="cat-status" style="text-align:center">Not sent yet</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-ok" aria-labelledby="tab-ok" hidden>
+          <div>
+            <h3>Approve with the receipt in front of you</h3>
+            <p>The manager sees the photo next to the amount, category and note. If it looks right, approve. If the receipt is missing or unclear, send it back with a comment.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approve one claim or the whole queue</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approve from a phone or a laptop</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Who approved, and when, is kept on the claim</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Manager view of Jordan Lee's $23.47 café supplies claim with the receipt photo, the note and an Approve button">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Expenses · Jordan Lee · Tue, Nov 10</span></div>
+            <div class="ui-main">
+              <div class="ui-claim">
+                <div class="ui-receipt ui-receipt--sm">
+                  <p class="ui-receipt__c"><b>CORNER GROCERY</b><br>Austin, TX</p>
+                  <p class="ui-receipt__c">11/10/2026 6:12 AM</p>
+                  <hr>
+                  <div class="ui-receipt__row"><span>WHOLE MILK GAL 3 @ 4.69</span><span>14.07</span></div>
+                  <div class="ui-receipt__row"><span>OAT MILK 64OZ 2 @ 4.70</span><span>9.40</span></div>
+                  <hr>
+                  <div class="ui-receipt__row"><b>TOTAL</b><b>23.47</b></div>
+                </div>
+                <div class="ui-list">
+                  <div class="ui-item"><div><p>Amount</p><small>Paid by Jordan</small></div><b class="num">$23.47</b></div>
+                  <div class="ui-item"><div><p>Category</p><small>Café supplies</small></div><span class="ui-pill">Nov 1–14</span></div>
+                  <div class="ui-item"><div><p>Note</p><small>Milk delivery late, ran to the store before open</small></div></div>
+                  <div class="ui-item"><div><p>Status</p><small>Sent Tue, Nov 10, 6:20 AM</small></div><span class="ui-pill ui-pill--warn" id="ok-pill">Waiting</span></div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p>Approve to pay on Fri, Nov 20</p><small>Paid as a reimbursement line, not wages</small></div><button type="button" class="ui-btn" data-act data-pill="ok-pill" data-pill-text="Approved" data-done="Approved">Approve</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pay" aria-labelledby="tab-pay" hidden>
+          <div>
+            <h3>Paid on the next pay stub</h3>
+            <p>Approved claims move into payroll with the approved hours, overtime and PTO. On payday, the employee opens the app and sees the reimbursement on its own line.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>One deposit, wages and reimbursement together</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Reimbursement shown separately from wages</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The stub is in the employee app on payday</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Emily Carter's pay stub for November 1 to 14, paid November 20, showing regular, overtime and PTO pay plus an $86.00 expense reimbursement line, for $1,777.00 gross">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Pay stub · Emily Carter · paid Fri, Nov 20</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Earnings</th><th class="r">Hours</th><th class="r">Rate</th><th class="r">Current</th></tr></thead>
+                <tbody>
+                  <tr><td>Regular</td><td class="r num">72.00</td><td class="r num">$19.00</td><td class="r num">$1,368.00</td></tr>
+                  <tr><td>Overtime</td><td class="r num">6.00</td><td class="r num">$28.50</td><td class="r num">$171.00</td></tr>
+                  <tr><td>PTO, Nov 6</td><td class="r num">8.00</td><td class="r num">$19.00</td><td class="r num">$152.00</td></tr>
+                  <tr><td><b>Expense reimbursement</b><small>Kitchen supplies · Nov 9 · not taxed</small></td><td class="r num">–</td><td class="r num">–</td><td class="r num"><b>$86.00</b></td></tr>
+                  <tr><td><b>Gross pay</b></td><td></td><td></td><td class="r num"><b>$1,777.00</b></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>Wages $1,691.00 · reimbursement $86.00</p><small>Taxes are worked out on wages only</small></div><span class="ui-pill ui-pill--ok">Paid</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="Expenses in detail">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">A record that holds up</p>
+          <h2>Every claim keeps its receipt, approval and payday</h2>
+          <p>Reimbursements are only tax-free when they are backed up. Each Workzenly claim keeps the receipt photo, what it was for, who approved it and the paycheck it was paid on, in one history you can pull up when your accountant asks.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Receipt photo and note stored with the claim</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approver name and time recorded</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Linked to the pay run that paid it</li>
+          </ul>
+          <a class="fp-row__more" href="/features/payroll/">See payroll <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="History of Emily Carter's $86.00 expense claim from submission on November 9 to payment on November 20">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">History · Emily Carter · $86.00</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Claim sent with receipt photo</p><small>Mon, Nov 9, 3:05 PM · Kitchen supplies</small></div><span class="ui-pill">Sent</span></div>
+              <div class="ui-item"><div><p>Note: “Weekend prep, pans ran short”</p><small>Added by Emily</small></div><span class="ui-pill ui-pill--info">Note</span></div>
+              <div class="ui-item"><div><p>Approved by Marcus (manager)</p><small>Tue, Nov 10, 8:41 AM · from phone</small></div><span class="ui-pill ui-pill--ok">Approved</span></div>
+              <div class="ui-item"><div><p>Added to pay run Nov 1–14</p><small>Reimbursement line, separate from wages</small></div><span class="ui-pill ui-pill--info">Payroll</span></div>
+              <div class="ui-item"><div><p>Paid with paycheck</p><small>Fri, Nov 20</small></div><span class="ui-pill ui-pill--ok">Paid</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">For managers on the floor</p>
+          <h2>Approve claims from your phone between rushes</h2>
+          <p>Managers rarely sit at a desk. The expense reimbursement app puts waiting claims on the manager’s phone next to timesheets and time off requests, so a $23 milk run gets approved in seconds instead of sitting in a pile until the end of the month.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Waiting claims listed with amounts and categories</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Tap a claim to see the receipt</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Send back with a comment if something is missing</li>
+          </ul>
+          <a class="fp-row__more" href="/features/employee-app/">See the employee app <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-phone" role="img" aria-label="Manager Marcus's phone showing three expense claims waiting for approval, totaling $69.65">
+          <div class="ui-phone__screen">
+            <div class="ui-phone__notch"></div>
+            <div><p class="ui-sub">Waiting for you</p><p class="ui-title">3 expense claims</p></div>
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Jordan Lee · $23.47</p><small>Café supplies · Nov 10</small></div><span class="ui-pill ui-pill--warn" id="mg-1">Waiting</span></div>
+              <div class="ui-item"><div><p>Maya Torres · $31.18</p><small>Office supplies · Nov 10</small></div><span class="ui-pill ui-pill--warn">Waiting</span></div>
+              <div class="ui-item"><div><p>Aisha Brown · $15.00</p><small>Training · Nov 11</small></div><span class="ui-pill ui-pill--warn">Waiting</span></div>
+            </div>
+            <div class="ui-field"><span>Total waiting</span><b class="num">$69.65</b></div>
+            <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-pill="mg-1" data-pill-text="Approved" data-done="Jordan’s claim approved">Approve Jordan’s claim</button>
+            <p class="ui-sub" style="text-align:center">Approved claims are paid Fri, Nov 20</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Phones, internet and other shared costs</p>
+          <h2>Handle the costs people forget to ask for</h2>
+          <p>When staff use their own phone for the <a href="/features/time-clock/">time clock app</a> or work from home part of the week, some states expect you to cover a share of the bill. Employees can send that as a claim with a copy of the bill, and your policy says what share you pay.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Attach a photo of the bill like any receipt</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Note the policy amount on the claim</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Paid with the next paycheck like everything else</li>
+          </ul>
+          <a class="fp-row__more" href="/features/time-clock/">See the time clock app <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Tyler N.'s claim for a $25.00 work share of his October phone bill, attached as a photo, waiting for approval">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Expenses · Tyler N. · Phone and internet</span></div>
+          <div class="ui-main">
+            <div class="ui-claim">
+              <div class="ui-receipt ui-receipt--sm">
+                <p class="ui-receipt__c"><b>MOBILE SERVICE BILL</b><br>Statement Oct 2026</p>
+                <hr>
+                <div class="ui-receipt__row"><span>PLAN, 1 LINE</span><span>65.00</span></div>
+                <div class="ui-receipt__row"><span>TAXES AND FEES</span><span>7.42</span></div>
+                <hr>
+                <div class="ui-receipt__row"><b>AMOUNT DUE</b><b>72.42</b></div>
+              </div>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Claimed</p><small>Work share per expense policy</small></div><b class="num">$25.00</b></div>
+                <div class="ui-item"><div><p>Note</p><small>Own phone used for clock-in and shift swaps</small></div></div>
+                <div class="ui-item"><div><p>Status</p><small>Sent Wed, Nov 11</small></div><span class="ui-pill ui-pill--warn" id="ph-pill">Waiting</span></div>
+              </div>
+            </div>
+            <div class="ui-foot"><div><p>Pays on Fri, Nov 20 if approved</p><small>Reimbursement line, separate from wages</small></div><button type="button" class="ui-btn" data-act data-pill="ph-pill" data-pill-text="Approved" data-done="Approved">Approve</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One expense claim, four people who rely on it</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Employees</h3></div><div><span>Replaces</span><p>Handing over crumpled receipts and waiting</p></div><div><span>They use it to</span><p>Photograph a receipt, pick a category, send it and see when it will be paid</p></div><div><span>What they notice</span><p>Their money back on the next payday</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Managers</h3></div><div><span>Replaces</span><p>An envelope of receipts in the office drawer</p></div><div><span>They use it to</span><p>Approve claims from a phone with the receipt in view, or send them back</p></div><div><span>What they notice</span><p>No more “did you get my receipt?” texts</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Payroll</h3></div><div><span>Replaces</span><p>Typing reimbursements in as a manual adjustment</p></div><div><span>They use it to</span><p>Pay approved claims with the pay run, as a line separate from wages</p></div><div><span>What they notice</span><p>Reimbursements that never end up taxed by mistake</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owners</h3></div><div><span>Replaces</span><p>Finding out what was spent from the bank statement</p></div><div><span>They use it to</span><p>See spending by category and pull up any receipt when the accountant asks</p></div><div><span>What they notice</span><p>Out-of-pocket spending they can actually see</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Everyone sees what they need, and nothing else</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Employees see their own</h3><p>Each person sees their own claims, receipts and pay stubs, never a coworker’s.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Managers approve their team</h3><p>Managers review and approve claims from the people they manage, alongside their team’s shifts and time off.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and pay stubs are visible only to the people you give payroll access to.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Connected</p>
+        <h2 id="connect-title">Expenses that land where the rest of pay does</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Approved hours, overtime, PTO and expenses become one pay run.</p><span>Payroll →</span></a>
+        <a class="fp-link-card" href="/features/employee-app/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Employee app</h3><p>Send a receipt, clock in, swap a shift and check pay stubs in one app.</p><span>Employee app →</span></a>
+        <a class="fp-link-card" href="/features/time-and-attendance/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Time and attendance</h3><p>Approved hours flow into the same pay run as the reimbursements.</p><span>Time and attendance →</span></a>
+        <a class="fp-link-card" href="/features/time-clock/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Time clock app</h3><p>Clock in and out from a phone, with GPS and geofencing.</p><span>Time clock →</span></a>
+        <a class="fp-link-card" href="/features/hr-documents/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>HR documents</h3><p>Keep your handbook and expense policy where every employee can find them.</p><span>HR documents →</span></a>
+        <a class="fp-link-card" href="/features/pto/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>PTO tracking</h3><p>Time off requests and balances that also land in payroll.</p><span>PTO →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">Pay back every receipt on the next payday</h2>
+        <p>See a claim go from a phone photo to a pay stub line. We set up a demo workspace with your company name before the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- BUYER'S GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it does</a></li>
+            <li><a href="#g-irs">IRS accountable plans</a></li>
+            <li><a href="#g-flsa">Federal wage rules</a></li>
+            <li><a href="#g-states">State reimbursement laws</a></li>
+            <li><a href="#g-policy">Sample expense policy</a></li>
+            <li><a href="#g-pay">Paying with payroll</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>See a real claim go from receipt to pay stub in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The buyer’s guide to expense reimbursement software</h2>
+        <p>Most small employers handle reimbursements with a shoebox, a spreadsheet or a petty cash drawer. That works until someone’s receipt goes missing, a reimbursement is taxed as wages by mistake, or an employee in California asks why they were never paid back for their phone. This guide covers what expense reimbursement software does, the IRS and wage rules behind it, a sample policy and how to choose a tool.</p>
+
+        <h3 id="g-what">What expense reimbursement software does</h3>
+        <p>Expense reimbursement software collects work costs that employees paid with their own money, keeps the proof, routes each claim to someone who can approve it and pays it back. Larger finance tools, often sold as expense report software, add corporate cards, travel booking and accounting exports. Hourly teams usually need the simple part: a quick way to send a receipt and a reliable way to get paid back.</p>
+        <p>For a café or a clinic, that means a milk run before open, a box of gloves or a food handler course. The amounts are small, but they matter to someone earning $18 an hour.</p>
+
+        <h3 id="g-irs">IRS accountable plan rules</h3>
+        <p>The tax treatment of a reimbursement depends on how you pay it. According to <a href="https://www.irs.gov/publications/p15" rel="noopener">IRS Publication 15</a>, amounts paid under an accountable plan are not wages and are not subject to income tax withholding, Social Security, Medicare or FUTA. To be an accountable plan, your arrangement must require employees to meet all three of these rules:</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Rule</th><th>What it means</th><th>Safe harbor timing</th></tr></thead>
+            <tbody>
+              <tr><td>Business connection</td><td>The expense was paid or incurred while working for you, and the payment is not money that would otherwise have been paid as wages.</td><td>Advances paid within 30 days of the expense</td></tr>
+              <tr><td>Substantiation</td><td>The employee accounts for the expense to you, usually with a receipt and what it was for.</td><td>Within 60 days after the expense</td></tr>
+              <tr><td>Return of excess</td><td>Any advance or allowance beyond the substantiated amount comes back to you.</td><td>Within 120 days after the expense</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The IRS says these periods depend on the facts. The timings above are what it generally treats as reasonable; a quarterly statement asking employees to account for or return outstanding amounts within 120 days also works. If an employee does not substantiate a cost or return the excess, that amount is treated as paid under a nonaccountable plan and becomes taxable wages. That is why the receipt photo matters: it is the substantiation. Our guide on <a href="/blog/how-to-read-a-pay-stub/">how to read a pay stub</a> shows how Emily’s $86.00 stays out of taxable wages.</p>
+
+        <h3 id="g-flsa">Federal wage rules: “free and clear”</h3>
+        <p>Federal law does not require you to reimburse every work cost. It does require that wages be paid “free and clear.” Under <a href="https://www.law.cornell.edu/cfr/text/29/531.35" rel="noopener">29 CFR 531.35</a>, if you require employees to provide tools of the trade, there is a violation when the cost of those tools cuts into the minimum or overtime wages the Fair Labor Standards Act requires.</p>
+        <p>An example: an employee earns the federal minimum of $7.25 an hour for 30 hours, or $217.50. If you require $40 of tools and don’t pay it back, they keep $177.50, about $5.92 an hour. That is below the minimum wage. At $17 or more an hour the federal floor holds, but state law may still require repayment.</p>
+
+        <h3 id="g-states">State reimbursement laws</h3>
+        <p>Some states go well beyond the federal rule. Two you will hear about most:</p>
+        <ul>
+          <li><strong>California.</strong> Labor Code section 2802 requires employers to indemnify employees for all necessary expenditures or losses incurred in direct consequence of their job duties. California courts have applied it to the work use of personal cell phones, holding that the employer owes a reasonable percentage of the bill even on an unlimited plan. Awards for unpaid reimbursements also carry interest from the date the employee paid the cost.</li>
+          <li><strong>Illinois.</strong> Section 9.5 of the Illinois Wage Payment and Collection Act (820 ILCS 115/9.5) requires reimbursement of necessary expenditures that are required for the job and primarily benefit the employer, when the employer authorized or required them. Employers may set written guidelines and limits, but a policy cannot provide for no or only trivial reimbursement. Employees generally submit expenses within 30 days, unless your written policy allows longer.</li>
+        </ul>
+        <p>A handful of other states and some cities have their own reimbursement rules, so check yours before you write a policy. For phones used to clock in, our guide to the <a href="/blog/gps-time-clock-app/">GPS time clock app</a> covers what California and Illinois expect. For home internet and office costs, see the reimbursement section of our <a href="/blog/hybrid-work-schedule/">hybrid work schedule</a> guide.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Tax and reimbursement rules change, so check with the IRS, your state labor department, a tax professional or an employment lawyer for your situation.</p>
+
+        <h3 id="g-policy">A sample expense policy outline</h3>
+        <p>Your expense policy is what makes the plan accountable and what tells employees what they can buy. Keep it short enough that people read it. A one-page outline:</p>
+        <ol>
+          <li><strong>Purpose.</strong> We pay back reasonable, necessary costs employees pay while working for us.</li>
+          <li><strong>Who can approve.</strong> Your direct manager approves claims. Ask before any single purchase over [amount].</li>
+          <li><strong>What we cover.</strong> Supplies for your shift, required training and certifications, [share] of a personal phone bill if you use your phone for work, and other costs your manager approves in advance.</li>
+          <li><strong>What we don’t cover.</strong> Personal items, commuting to your regular workplace, fines and anything not approved.</li>
+          <li><strong>How to claim.</strong> Photograph the receipt, pick a category, add a note on what it was for and send it in the Workzenly app within [30] days.</li>
+          <li><strong>Missing receipts.</strong> Tell your manager in writing what you bought, when, where and why.</li>
+          <li><strong>Advances.</strong> Account for any advance within 60 days and return what you didn’t spend within 120 days.</li>
+          <li><strong>When you get paid.</strong> Approved claims are paid with the next paycheck as a reimbursement, separate from wages.</li>
+        </ol>
+        <p>Put the policy in your <a href="/templates/employee-handbook-templates/">employee handbook</a> so new hires read it during onboarding.</p>
+
+        <h3 id="g-pay">Paying reimbursements with payroll</h3>
+        <p>You can pay reimbursements by check, bank transfer, petty cash or with the regular paycheck. The paycheck is easiest to track, because the money arrives on a date employees know. The catch: payroll must treat it as a reimbursement. Type $86.00 in as a bonus and it gets taxed.</p>
+        <p>In Workzenly, approved claims flow into <a href="/features/payroll/">payroll</a> as a reimbursement line. Emily Carter’s Nov 1–14 stub shows 72 regular hours ($1,368.00), 6 overtime hours at $28.50 ($171.00), 8 PTO hours ($152.00) and the $86.00 reimbursement, for $1,777.00 gross. Taxes are worked out on her $1,691.00 of wages, not on the reimbursement. Our guide on <a href="/blog/how-to-process-payroll/">how to process payroll</a> walks through the rest of the pay run, and the <a href="/templates/pay-stub-templates/">pay stub templates</a> show where a reimbursement line sits if you build stubs by hand.</p>
+
+        <h3 id="g-choose">How to choose expense reimbursement software</h3>
+        <p>Run one real claim through every tool you are considering. Take a recent receipt and follow it from the employee’s phone to the pay stub. Then ask:</p>
+        <ul>
+          <li><strong>How fast can an employee send a claim?</strong> Over a minute on a phone, and receipts pile up in pockets again.</li>
+          <li><strong>Does the receipt stay with the claim?</strong> You need it for substantiation.</li>
+          <li><strong>Can managers approve from a phone?</strong> Shift managers are rarely at a desk.</li>
+          <li><strong>How does the money get back?</strong> On the paycheck or by separate payment, and kept apart from wages?</li>
+          <li><strong>Is it one more app?</strong> A receipt tool separate from the time clock and pay stubs is one more login.</li>
+        </ul>
+        <p>Workzenly is built for the simple case: employees who pay out of pocket now and then and want the money back on payday. If you also need corporate cards or travel booking, ask about it on the demo call. If you are still picking a payroll provider, our neutral list of the <a href="/tools/best-payroll-services-for-small-business/">best payroll services for small business</a> compares the main options. When you want to see a claim go from receipt to pay stub, <a href="/#start">book a demo</a> and we will set up a workspace with your company name before the call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions about expense reimbursement software</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>What is expense reimbursement software?</summary><p>Expense reimbursement software lets employees submit work costs they paid themselves, with a photo of the receipt, and lets a manager approve or send back each claim. Approved claims are then paid back. In Workzenly, employees photograph the receipt, pick a category and send it from their phone, and approved claims are paid with the next paycheck.</p></details>
+        <details><summary>Are expense reimbursements taxable income?</summary><p>Not when they are paid under an accountable plan. The IRS says amounts paid under an accountable plan are not wages and are exempt from income tax withholding, Social Security, Medicare and FUTA. The plan must require a business connection, substantiation within a reasonable period and the return of any excess. Reimbursements that fail those rules are treated as wages.</p></details>
+        <details><summary>Do employers have to reimburse employee expenses?</summary><p>Federal law requires it only when an unreimbursed cost the employer requires, such as tools of the trade, would push pay below the minimum wage or required overtime. Some states go further. California Labor Code section 2802 and section 9.5 of the Illinois Wage Payment and Collection Act require employers to reimburse necessary work expenses.</p></details>
+        <details><summary>How do employees submit an expense in Workzenly?</summary><p>In the Workzenly app on their phone. They photograph the receipt, enter the amount, pick a category, add a short note and tap send. Their manager sees the claim with the receipt photo attached and can approve it from a phone or a laptop.</p></details>
+        <details><summary>When do employees get their money back?</summary><p>With the next paycheck. Approved claims flow into payroll and appear on the pay stub as a reimbursement line, separate from wages. At Northfield Coffee, Emily Carter's $86.00 kitchen supply receipt was approved during the November 1 to 14 pay period and paid on November 20 alongside her hours.</p></details>
+        <details><summary>What records should we keep for reimbursements?</summary><p>Keep the receipt or other proof of what was bought, when, how much and why, plus the approval and the payment. The IRS tells employers to keep records of expense reimbursements, including substantiation. Workzenly keeps the receipt photo, category, note, approval and the paycheck it was paid on together with each claim.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for expenses and pay</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/how-to-read-a-pay-stub/"><small>GUIDE</small><b>How to read a pay stub, line by line</b></a>
+        <a href="/blog/hybrid-work-schedule/"><small>GUIDE</small><b>Hybrid work schedules and home office reimbursement</b></a>
+        <a href="/tools/best-payroll-services-for-small-business/"><small>COMPARISON</small><b>Best payroll services for small business</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="wordmark" href="/">Workzenly</a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features"><h2>People</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>

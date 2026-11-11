@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overtime Tracking Software for Hourly Teams | Workzenly</title>
+  <meta name="description" content="Overtime tracking software that works out overtime from real punches, flags people near 40 hours mid-week and sends approved overtime to payroll at 1.5×.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/features/overtime-tracking/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/features/overtime-tracking/">
+  <meta property="og:title" content="Overtime Tracking Software for Hourly Teams | Workzenly">
+  <meta property="og:description" content="Overtime tracking software that works out overtime from real punches, flags people near 40 hours mid-week and sends approved overtime to payroll at 1.5×.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    .ui-otbar { position: relative; height: 8px; background: #222; border-radius: 999px; }
+    .ui-otbar i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px; }
+    .ui-otbar .ui-otbar__p { background: #3a3a3a; }
+    .ui-otbar .ui-otbar__w { background: var(--accent); }
+    .ui-otbar .ui-otbar__p.is-over { background: var(--warn); }
+    .ui-otbar::after { content: ""; position: absolute; left: 83.33%; top: -4px; bottom: -4px; width: 2px; background: var(--ink); opacity: .7; }
+    .ui-otmath { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; font-variant-numeric: tabular-nums; }
+    .ui-otmath span:nth-child(even) { text-align: right; }
+    .ui-otmath .ui-otmath__total { border-top: 1px solid var(--line); padding-top: 8px; font-weight: 600; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Overtime Tracking Software for Hourly Teams | Workzenly",
+        "description": "Overtime tracking software that works out overtime from real punches, flags people near 40 hours mid-week and sends approved overtime to payroll at 1.5×.",
+        "url": "https://workzenly.com/features/overtime-tracking/",
+        "dateModified": "2026-11-11",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Workzenly Overtime Tracking",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "Overtime tracking software for US hourly teams: overtime worked out from time clock punches, weekly totals split into regular and overtime hours, flags for people approaching 40 hours, and approved overtime sent to payroll at the right rate.",
+        "url": "https://workzenly.com/features/overtime-tracking/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://workzenly.com/features/" },
+          { "@type": "ListItem", "position": 3, "name": "Overtime tracking", "item": "https://workzenly.com/features/overtime-tracking/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is overtime tracking software?", "acceptedAnswer": { "@type": "Answer", "text": "Overtime tracking software totals each employee’s hours by workweek from their time clock punches, splits the week into regular and overtime hours, and warns managers when someone is getting close to 40 hours. Workzenly also sends approved overtime into payroll at 1.5 times the regular rate, so nobody adds it up by hand." } },
+          { "@type": "Question", "name": "How is overtime calculated under federal law?", "acceptedAnswer": { "@type": "Answer", "text": "Under the Fair Labor Standards Act, non-exempt employees are owed at least 1.5 times their regular rate of pay for every hour over 40 in a workweek. At $19.00 an hour, 46 hours is 40 regular hours ($760.00) plus 6 overtime hours at $28.50 ($171.00), for $931.00." } },
+          { "@type": "Question", "name": "Can overtime be averaged over a two-week pay period?", "acceptedAnswer": { "@type": "Answer", "text": "No. The Department of Labor says each workweek stands alone and averaging hours over two or more weeks is not permitted. An employee who works 50 hours one week and 30 the next is owed 10 hours of overtime, even though the two-week total is 80." } },
+          { "@type": "Question", "name": "Does PTO count toward 40 hours for overtime?", "acceptedAnswer": { "@type": "Answer", "text": "Not under federal law. Paid time off, holidays and sick days are not hours worked, so they do not count toward the 40 unless your own policy says they do. Workzenly keeps PTO hours separate from worked hours on the timesheet and in payroll." } },
+          { "@type": "Question", "name": "Do salaried employees get overtime?", "acceptedAnswer": { "@type": "Answer", "text": "Some do. Being paid a salary does not make someone exempt. To be exempt under the federal executive, administrative or professional exemptions, an employee generally must earn at least $684 a week on a salary basis and do work that meets a duties test. Salaried non-exempt employees are still owed overtime after 40 hours." } },
+          { "@type": "Question", "name": "How does Workzenly warn me before someone goes into overtime?", "acceptedAnswer": { "@type": "Answer", "text": "Workzenly totals each person’s week as punches come in and adds the shifts still on the schedule. Anyone approaching 40 hours shows up on the dashboard during the week, so a manager can move or swap a shift before the overtime happens, or approve it knowing what it will cost." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="overtime tracking software" data-intent="transactional" data-topic="Overtime tracking">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M4 16h16M6 16a6 6 0 0 1 12 0M12 7.5V5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z M3.5 7.5L12 12l8.5-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5V20H4z M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="10" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 19h6M12 15v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 16a8 8 0 1 1 16 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 16l4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4 19.5h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M5 8h13M14 4l4 4-4 4M19 16H6M10 12l-4 4 4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/features/">Features</a></li><li aria-current="page">Overtime tracking</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Overtime tracking</span>
+        <h1 id="hero-title">Overtime tracking software that catches it before payday</h1>
+        <p class="fp-lead">Workzenly is overtime tracking software built on real time clock punches. It totals each person’s workweek as it happens, splits it into regular and overtime hours, and flags anyone heading past 40 while there is still time to change the schedule. Approved overtime goes into payroll at the right rate.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Worked out from punches</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Near-40 flags mid-week</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Paid at 1.5× in payroll</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly overtime dashboard for Northfield Coffee, week of November 8: hours worked and projected against 40 for five employees, three projected over 40, 9.0 projected overtime hours and $252.94 of projected overtime pay">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/overtime</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span><svg><use href="#i-clock"/></svg></span>
+              <span class="is-on"><svg><use href="#i-gauge"/></svg></span>
+              <span><svg><use href="#i-cal"/></svg></span>
+              <span><svg><use href="#i-sheet"/></svg></span>
+              <span><svg><use href="#i-pay"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Overtime</p><p class="ui-sub">Northfield Coffee · Week of Nov 8 (Sun–Sat) · Wed, Nov 11</p></div>
+                <div class="ui-seg" aria-hidden="true"><span class="is-on">This week</span><span>Last week</span><span>Pay period</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>3</b><small>Projected over 40</small><em class="is-warn">Emily, Jordan, Sam</em></div>
+                <div class="ui-kpi"><b>1</b><small>Avoidable</small><em>Sam’s Sat shift</em></div>
+                <div class="ui-kpi"><b>9.0 h</b><small>Projected overtime</small><em>at 1.5× regular rate</em></div>
+                <div class="ui-kpi"><b>$252.94</b><small>Projected OT pay</small><em>$171.00 + $68.44 + $13.50</em></div>
+              </div>
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Hours vs 40</b><span class="ui-legend"><span><i style="background:#dafa9c"></i>Worked</span><span><i style="background:#3a3a3a"></i>Scheduled</span><span><i style="background:#f2c36b"></i>Over 40</span></span></div>
+                <div class="ui-list">
+                  <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Emily Carter · $19.00</span><span class="num">36.0 → 46.0 h · 6.0 OT</span></div><div class="ui-otbar"><i class="ui-otbar__p is-over" style="width:95.83%"></i><i class="ui-otbar__w" style="width:75%"></i></div></div>
+                  <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Jordan Lee · $18.25</span><span class="num">32.5 → 42.5 h · 2.5 OT</span></div><div class="ui-otbar"><i class="ui-otbar__p is-over" style="width:88.54%"></i><i class="ui-otbar__w" style="width:67.71%"></i></div></div>
+                  <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Sam Rivera · $18.00</span><span class="num">32.0 → 40.5 h with Sat · 0.5 OT</span></div><div class="ui-otbar"><i class="ui-otbar__p is-over" style="width:84.38%"></i><i class="ui-otbar__w" style="width:66.67%"></i></div></div>
+                  <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Maya Torres · $17.50</span><span class="num">26.4 → 34.4 h</span></div><div class="ui-otbar"><i class="ui-otbar__p" style="width:71.67%"></i><i class="ui-otbar__w" style="width:55%"></i></div></div>
+                  <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Dana Brooks · $18.25</span><span class="num">18.0 → 26.0 h</span></div><div class="ui-otbar"><i class="ui-otbar__p" style="width:54.17%"></i><i class="ui-otbar__w" style="width:37.5%"></i></div></div>
+                </div>
+              </div>
+              <div class="ui-card ui-scroll">
+                <table class="ui-table">
+                  <thead><tr><th>Employee</th><th class="r">OT hours</th><th class="r">OT rate</th><th class="r">Projected</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#f2c36b">EC</span>Emily Carter</span></td><td class="r num">6.0</td><td class="r num">$28.50</td><td class="r num">$171.00</td><td><span class="ui-pill ui-pill--warn" id="ot-emily">Thu shift</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#9cc8fa">JL</span>Jordan Lee</span></td><td class="r num">2.5</td><td class="r num">$27.375</td><td class="r num">$68.44</td><td><span class="ui-pill ui-pill--warn">Fri shift</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#c9b6f5">SR</span>Sam Rivera</span></td><td class="r num">0.5</td><td class="r num">$27.00</td><td class="r num">$13.50</td><td><span class="ui-pill ui-pill--info">Sat shift</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="ui-foot"><div><p id="ot-hero-text">9.0 overtime hours on this week’s schedule</p><small>Scale to 48 h · line marks 40 · Dana is free Saturday and under 40</small></div><button type="button" class="ui-btn" data-act data-target="ot-hero-text" data-text="Sam’s Saturday offered to Dana. Projected overtime now 8.5 h, $239.44." data-done="Offered">Offer Sat to Dana</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for teams that work in shifts</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Restaurants and cafés</li>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Retail stores</li>
+        <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Clinics</li>
+        <li><svg aria-hidden="true"><use href="#i-home"/></svg>Home care</li>
+        <li><svg aria-hidden="true"><use href="#i-hat"/></svg>Job sites</li>
+        <li><svg aria-hidden="true"><use href="#i-box"/></svg>Warehouses</li>
+        <li><svg aria-hidden="true"><use href="#i-desk"/></svg>Offices</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">Overtime usually shows up on Monday morning, when the week is over and the only thing left to do is pay it.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">Track employee overtime while the week is still open</h2>
+      <p class="fp-problem__p">Paper time cards tell you about overtime after it happened. Overtime tracking software counts every punch against the 40-hour line as it comes in, so a manager can decide on Wednesday whether Thursday’s extra shift is worth paying time and a half.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first pay period</p>
+        <h2 id="outcomes-title">Overtime you planned for, at the rate the law expects</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Counted from punches</h3><p>Overtime is worked out from the clock-ins and clock-outs people make on their phone or the tablet at the door, not from hours typed in on Friday.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime alerts mid-week</h3><p>People approaching 40 hours show up on the dashboard during the week, with the shifts still on their schedule added in, so you see Thursday’s overtime on Wednesday.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Regular and overtime, split</h3><p>Every weekly total is split into regular hours and overtime hours. PTO stays in its own column, so it never pushes someone over 40 by accident.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Paid at the right rate</h3><p>Approved overtime flows into payroll as overtime at 1.5 times the regular rate. Nobody multiplies hours by hand or retypes them into the pay run.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">How the overtime tracking software works, step by step</h2>
+        <p>Counting, warning, approving and paying overtime happen in one record.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="Parts of overtime tracking">
+          <button class="fp-tab" role="tab" id="tab-count" aria-controls="panel-count" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-sheet"/></svg>Count</b><span>Weekly totals, regular and overtime</span></button>
+          <button class="fp-tab" role="tab" id="tab-warn" aria-controls="panel-warn" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-alert"/></svg>Warn</b><span>Flags for people near 40</span></button>
+          <button class="fp-tab" role="tab" id="tab-approve" aria-controls="panel-approve" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-check"/></svg>Approve</b><span>Review overtime with the week</span></button>
+          <button class="fp-tab" role="tab" id="tab-pay" aria-controls="panel-pay" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-pay"/></svg>Pay</b><span>Overtime lines in the pay run</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-count" aria-labelledby="tab-count">
+          <div>
+            <h3>Overtime calculation software that shows its math</h3>
+            <p>Workzenly adds up each workweek from the punches, takes off unpaid meal breaks and splits the total at 40, with the overtime rate shown next to the hours.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Counted by workweek, not by pay period</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Each week counted on its own, never averaged</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Daily and weekly totals side by side</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Overtime calculation for Emily Carter, week of November 8: 46 hours at $19.00 split into 40 regular hours worth $760.00 and 6 overtime hours at $28.50 worth $171.00, total $931.00">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Overtime · Emily Carter · week of Nov 8</span></div>
+            <div class="ui-main">
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Hours this week</b><span>Kitchen · $19.00/hr</span></div>
+                <div class="ui-otmath">
+                  <span>Sun 9:00 · Mon 9:00 · Tue 9:00 · Wed 9:00 · Thu 10:00</span><span class="num">46.0 h</span>
+                  <span>Unpaid meal breaks (5 × 30 min)</span><span class="num">already off</span>
+                  <span>Regular hours</span><span class="num">40.0 h</span>
+                  <span>Overtime hours (over 40)</span><span class="num">6.0 h</span>
+                </div>
+              </div>
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Pay for the week</b><span>Federal rule · 1.5×</span></div>
+                <div class="ui-otmath">
+                  <span>40.0 h × $19.00</span><span class="num">$760.00</span>
+                  <span>6.0 h × $28.50 (1.5 × $19.00)</span><span class="num">$171.00</span>
+                  <span class="ui-otmath__total">Total</span><span class="num ui-otmath__total">$931.00</span>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p>40.0 regular · 6.0 overtime</p><small>Worked out from 5 days of punches · 1 corrected clock-out</small></div><span class="ui-pill ui-pill--info">Ready</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-warn" aria-labelledby="tab-warn" hidden>
+          <div>
+            <h3>Overtime alerts while there is time to act</h3>
+            <p>Workzenly adds what people have worked to what is still on the schedule. Anyone approaching 40 hours is flagged for the manager.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Projected hours, not just hours so far</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Shows which shift causes the overtime</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Managers act on it from their phone</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Manager app on Marcus’s phone listing overtime flags: Emily Carter projected 46.0 hours, Jordan Lee projected 42.5 hours and Sam Rivera projected 40.5 hours if he works Saturday">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Wed, Nov 11 · Manager</p><p class="ui-title">Marcus</p></div>
+              <div class="ui-card">
+                <p class="ui-sub">Overtime this week</p>
+                <p style="font-size:30px;font-weight:600;letter-spacing:-0.03em;margin:6px 0 2px" class="num">9.0 h</p>
+                <p class="ui-sub">Projected · $252.94 at 1.5×</p>
+              </div>
+              <div class="ui-item"><div><p>Emily Carter</p><small>36.0 now · 46.0 with Thu</small></div><span class="ui-pill ui-pill--warn">+6.0 OT</span></div>
+              <div class="ui-item"><div><p>Jordan Lee</p><small>32.5 now · 42.5 with Fri</small></div><span class="ui-pill ui-pill--warn">+2.5 OT</span></div>
+              <div class="ui-item"><div><p>Sam Rivera</p><small>32.0 now · 40.5 with Sat</small></div><span class="ui-pill ui-pill--info">+0.5 OT</span></div>
+              <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="ot-phone" data-text="Opened the schedule for Saturday" data-done="Opened">Review shifts</button>
+              <p class="ui-sub" id="ot-phone" style="text-align:center">3 shifts would add overtime</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-approve" aria-labelledby="tab-approve" hidden>
+          <div>
+            <h3>Approve overtime with the rest of the week</h3>
+            <p>Managers see who worked overtime, on which day and what it costs, then approve the team’s week in one tap.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime hours and cost on each row</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Original punches kept next to any edit</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approve one person or the whole team</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Timesheet approval for the week of November 8 showing regular and overtime hours for four employees, with overtime cost for Emily Carter and Jordan Lee">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Approvals · week of Nov 8</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Employee</th><th class="r">Regular</th><th class="r">Overtime</th><th class="r">OT cost</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Emily Carter</td><td class="r num">40.0</td><td class="r num">6.0</td><td class="r num">$171.00</td><td><span class="ui-pill ui-pill--warn" id="ap-emily">Waiting</span></td></tr>
+                  <tr><td>Jordan Lee</td><td class="r num">40.0</td><td class="r num">2.5</td><td class="r num">$68.44</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Sam Rivera</td><td class="r num">32.0</td><td class="r num">–</td><td class="r num">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Maya Torres</td><td class="r num">34.4</td><td class="r num">–</td><td class="r num">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>1 timesheet with overtime waiting</p><small>Emily Carter · Thu, Nov 12 took her to 46.0 h</small></div><button type="button" class="ui-btn" data-act data-pill="ap-emily" data-pill-text="Approved" data-done="Approved">Approve</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pay" aria-labelledby="tab-pay" hidden>
+          <div>
+            <h3>Overtime lands in payroll as overtime</h3>
+            <p>Approved overtime goes into the pay run on its own line at the overtime rate, and onto the pay stub in the app on payday.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Paid on the regular payday for the period</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Regular, overtime and PTO kept apart</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Each line traces back to the punches</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Payroll lines for the November 1 to 14 pay run showing overtime from the week of November 8: Emily Carter 6.0 hours at $28.50 for $171.00 and Jordan Lee 2.5 hours at $27.375 for $68.44, total $239.44">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Payroll · Nov 1–14 · paid Fri, Nov 20</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Line</th><th>Week</th><th class="r">Hours</th><th class="r">Rate</th><th class="r">Amount</th></tr></thead>
+                <tbody>
+                  <tr><td>Emily Carter · Overtime</td><td>Nov 8–14</td><td class="r num">6.0</td><td class="r num">$28.50</td><td class="r num">$171.00</td></tr>
+                  <tr><td>Jordan Lee · Overtime</td><td>Nov 8–14</td><td class="r num">2.5</td><td class="r num">$27.375</td><td class="r num">$68.44</td></tr>
+                  <tr><td><b>Overtime this run</b></td><td></td><td class="r num"><b>8.5</b></td><td></td><td class="r num"><b>$239.44</b></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p id="pay-ot-text">Overtime approved by Marcus, Mon, Nov 16</p><small>Jordan: 2.5 × $27.375 = $68.4375, paid as $68.44 · stubs in the app Fri, Nov 20</small></div><button type="button" class="ui-btn" data-act data-target="pay-ot-text" data-text="Added to the Nov 1–14 pay run" data-done="Added">Add to pay run</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="Overtime tracking in detail">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">The regular rate</p>
+          <h2>Overtime at the regular rate, not just the base wage</h2>
+          <p>Federal law prices overtime at 1.5 times the regular rate of pay, which includes shift differentials and promised bonuses. Workzenly works the premium into the week’s regular rate before it prices the overtime, so the extra half-time is right.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Shift differentials counted in the regular rate</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>The working shown on the timesheet</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>PTO and expense reimbursements kept out</li>
+          </ul>
+          <a class="fp-row__more" href="/features/payroll/">See payroll <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Regular rate calculation for Tyler N., week of November 1: 44 hours at $18.00 plus a $2.00 closing differential on 11 hours gives $814.00 straight-time pay, a regular rate of $18.50 and $37.00 of overtime premium, for $851.00">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Regular rate · Tyler N. · week of Nov 1</span></div>
+          <div class="ui-main">
+            <div class="ui-card">
+              <div class="ui-card__head"><b>Straight-time pay</b><span>Barista · $18.00/hr</span></div>
+              <div class="ui-otmath">
+                <span>44.0 h × $18.00</span><span class="num">$792.00</span>
+                <span>Closing differential: 11.0 h × $2.00</span><span class="num">$22.00</span>
+                <span class="ui-otmath__total">Straight-time total</span><span class="num ui-otmath__total">$814.00</span>
+              </div>
+            </div>
+            <div class="ui-card">
+              <div class="ui-card__head"><b>Overtime</b><span>$814.00 ÷ 44.0 h = $18.50 regular rate</span></div>
+              <div class="ui-otmath">
+                <span>Half-time premium: 4.0 h × $9.25</span><span class="num">$37.00</span>
+                <span class="ui-otmath__total">Pay for the week</span><span class="num ui-otmath__total">$851.00</span>
+              </div>
+            </div>
+            <div class="ui-foot"><div><p>Same as 40 h × $18.50 + 4 h × $27.75</p><small>Overtime at base rate only would underpay by $1.00</small></div><span class="ui-pill ui-pill--ok">Checked</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Overtime management software</p>
+          <h2>Move the shift, or pay the overtime on purpose</h2>
+          <p>Overtime is not always a mistake. What matters is deciding before it happens. When Workzenly flags a shift that would push someone past 40, the manager sees who else is free and under 40, and can offer the shift from the schedule in a couple of taps.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>See the overtime a shift would add</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Find teammates who are free and under 40</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Staff pick up or swap shifts in the app</li>
+          </ul>
+          <a class="fp-row__more" href="/features/scheduling/">See scheduling <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Shift decision for Saturday, November 14: Sam Rivera would reach 40.5 hours with 0.5 overtime hours at $27.00, while Dana Brooks is free and would reach 34.5 hours with no overtime">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Schedule · Sat, Nov 14 · Kitchen 7:00 AM–4:00 PM</span></div>
+          <div class="ui-main">
+            <div class="ui-card">
+              <div class="ui-card__head"><b>Who works Saturday?</b><span>8.5 h after a 30 min unpaid break</span></div>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Sam Rivera (scheduled)</p><small>32.0 h this week → 40.5 h · 0.5 OT at $27.00</small></div><span class="ui-pill ui-pill--warn">+$13.50</span></div>
+                <div class="ui-item"><div><p>Dana Brooks</p><small>Free · 26.0 h → 34.5 h</small></div><span class="ui-pill ui-pill--ok">No OT</span></div>
+                <div class="ui-item"><div><p>Maya Torres</p><small>Free · 34.4 h → 42.9 h</small></div><span class="ui-pill ui-pill--warn">+2.9 OT</span></div>
+              </div>
+            </div>
+            <div class="ui-foot"><div><p id="swap-text">Offer Saturday to Dana?</p><small>Sam stays at 32.0 hours, no overtime</small></div><button type="button" class="ui-btn" data-act data-target="swap-text" data-text="Saturday offered to Dana. Sam stays at 32.0 hours." data-done="Offered">Offer to Dana</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Records for the long run</p>
+          <h2>A clear record of every overtime hour</h2>
+          <p>When an employee or an auditor asks how overtime was counted, you need more than a total. Workzenly keeps every punch, every correction with who made it and why, and every approval in each person’s record.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Original punch kept next to any change</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Who approved the overtime, and when</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Employees see their own hours in the app</li>
+          </ul>
+          <a class="fp-row__more" href="/features/timesheets/">See timesheets <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="History of Emily Carter’s Thursday, November 12 shift: clock-in, a missed clock-out fixed by request, overtime approved and paid in the November 20 pay run">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">History · Emily Carter · Thu, Nov 12</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Clocked in 7:00 AM</p><small>Tablet at the door · 36.0 h before this shift</small></div><span class="ui-pill">Punch</span></div>
+              <div class="ui-item"><div><p>No clock-out recorded</p><small>Flagged at 6:00 PM</small></div><span class="ui-pill ui-pill--warn">Missed</span></div>
+              <div class="ui-item"><div><p>Clock-out set to 5:30 PM</p><small>Requested by Emily · accepted by Marcus · “Left after prep close”</small></div><span class="ui-pill ui-pill--info">Edited</span></div>
+              <div class="ui-item"><div><p>Week approved: 40.0 regular, 6.0 overtime</p><small>By Marcus · Mon, Nov 16, 9:12 AM</small></div><span class="ui-pill ui-pill--ok">Approved</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One overtime record, four people who rely on it</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Employees</h3></div><div><span>Replaces</span><p>Guessing how many hours they have left this week</p></div><div><span>They use it to</span><p>Clock in and out, see this week’s hours and fix a missed punch with a request</p></div><div><span>What they notice</span><p>Overtime on the pay stub that matches what they worked</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Managers</h3></div><div><span>Replaces</span><p>Adding up time cards on Thursday night</p></div><div><span>They use it to</span><p>See who is near 40, move or offer a shift and approve the week in one tap</p></div><div><span>What they notice</span><p>Overtime they chose, not overtime that surprised them</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Payroll</h3></div><div><span>Replaces</span><p>Working out overtime rates in a spreadsheet</p></div><div><span>They use it to</span><p>Run payroll from approved regular, overtime and PTO hours</p></div><div><span>What they notice</span><p>Fewer corrections and back-pay fixes after payday</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owners</h3></div><div><span>Replaces</span><p>Finding out about overtime from the bank statement</p></div><div><span>They use it to</span><p>Watch projected overtime pay each week and keep records ready if asked</p></div><div><span>What they notice</span><p>Labor cost that stays close to the plan</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Everyone sees what they need, and nothing else</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Employees see their own</h3><p>Each person sees their own hours, overtime, PTO and pay stubs, never a coworker’s.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Managers see their team</h3><p>Managers see their team’s shifts, hours and time off, and approve their team’s timesheets and overtime.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and pay stubs are visible only to the people you give payroll access to.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Connected</p>
+        <h2 id="connect-title">Overtime that talks to the rest of the workday</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/time-and-attendance/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Time and attendance</h3><p>Who is in, late or out, with breaks and overtime worked out.</p><span>Time and attendance →</span></a>
+        <a class="fp-link-card" href="/features/time-clock/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><h3>Employee time clock app</h3><p>Clock in and out from a phone, with this week’s hours on screen.</p><span>Time clock →</span></a>
+        <a class="fp-link-card" href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Employee scheduling</h3><p>Build the week and see who would cross 40.</p><span>Scheduling →</span></a>
+        <a class="fp-link-card" href="/features/timesheets/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Timesheet app</h3><p>Timesheets built from punches and approved a week at a time.</p><span>Timesheets →</span></a>
+        <a class="fp-link-card" href="/features/pto/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-swap"/></svg></span><h3>PTO tracking</h3><p>Time off kept apart from hours worked.</p><span>PTO →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Approved hours, overtime and PTO become pay stubs in the app.</p><span>Payroll →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">See next week’s overtime before you publish the schedule</h2>
+        <p>We set up a demo workspace with your company name before the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- BUYER'S GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it does</a></li>
+            <li><a href="#g-flsa">Federal overtime basics</a></li>
+            <li><a href="#g-rate">The regular rate</a></li>
+            <li><a href="#g-states">State daily overtime</a></li>
+            <li><a href="#g-exempt">Exempt vs non-exempt</a></li>
+            <li><a href="#g-cost">Controlling overtime cost</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>Bring a week with overtime in it and see how it is counted.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The buyer’s guide to overtime tracking software</h2>
+        <p>Most small employers add up time cards after the week ends and multiply anything over 40 by one and a half. That works until a bonus, a shift differential or a state daily rule changes the math. This guide covers the US rules overtime tracking software has to follow, where the rate most often goes wrong and what to look for in a tool.</p>
+
+        <h3 id="g-what">What overtime tracking software does</h3>
+        <p>Overtime tracking software does four jobs. It counts hours for each workweek from time clock punches, splits the week into regular and overtime hours, warns managers when someone is approaching the overtime line, and hands approved overtime to payroll at the correct rate.</p>
+        <p>The first and last jobs are where most errors come from: hours remembered on Friday, or overtime retyped into payroll at the base rate. In Workzenly the punch, the <a href="/features/timesheets/">timesheet</a> and the pay run are one record, so the overtime a manager approves is the overtime on the pay stub.</p>
+
+        <h3 id="g-flsa">Federal overtime basics</h3>
+        <p>The Fair Labor Standards Act (FLSA) sets the federal rule. According to the U.S. Department of Labor, non-exempt employees must be paid at least time and a half their regular rate of pay for hours worked over 40 in a workweek. A few details decide most overtime questions:</p>
+        <ul>
+          <li><strong>The workweek is fixed.</strong> The Department of Labor defines it as a fixed and regularly recurring period of 168 hours, seven consecutive 24-hour periods. It can start on any day and hour.</li>
+          <li><strong>Each week stands alone.</strong> Averaging hours over two or more weeks is not permitted. A biweekly pay period with 50 hours in one week and 30 in the other still contains 10 overtime hours.</li>
+          <li><strong>There is no federal daily limit.</strong> Some states add daily rules, covered below.</li>
+          <li><strong>Only hours worked count.</strong> PTO, holidays and sick time are not hours worked, so they do not count toward the 40 unless your own policy says so.</li>
+          <li><strong>Overtime is due on payday.</strong> The Department of Labor says overtime generally must be paid on the regular payday for the pay period in which it was earned.</li>
+        </ul>
+        <p>For a worked example: Emily earns $19.00 an hour and works 46 hours. That is 40 × $19.00 = $760.00, plus 6 × $28.50 = $171.00, for $931.00. Our <a href="/blog/overtime-calculator/">overtime calculator</a> runs the same math for any rate and number of hours, and the guide on <a href="/blog/how-to-calculate-overtime/">how to calculate overtime</a> walks through five worked examples.</p>
+
+        <h3 id="g-rate">What goes into the regular rate</h3>
+        <p>Overtime is 1.5 times the regular rate, not the base wage. The FLSA says the regular rate includes all pay for employment except payments the law itself leaves out: add up the week’s straight-time pay and divide by total hours worked. Overtime calculation software that only multiplies hours by the base wage gets this wrong.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Include in the regular rate</th><th>Leave out of the regular rate</th></tr></thead>
+            <tbody>
+              <tr><td>Hourly wages and salary</td><td>Pay for time not worked: PTO, vacation, holidays, sick leave</td></tr>
+              <tr><td>Shift differentials for nights, weekends or hazardous work</td><td>Discretionary bonuses the employer alone decides on, near the end of the period</td></tr>
+              <tr><td>Nondiscretionary bonuses: attendance, production, safety, quality, retention</td><td>Gifts on special occasions that are not tied to hours, production or efficiency</td></tr>
+              <tr><td>Commissions, whether paid weekly or later</td><td>Reimbursed business expenses such as mileage</td></tr>
+              <tr><td>On-call pay</td><td>Bona fide profit-sharing, benefit plan contributions and qualifying stock options</td></tr>
+              <tr><td>Piece-rate earnings</td><td>Premiums already paid at 1.5× or more for daily, weekend or holiday work</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>In the example above, Tyler earns $18.00 an hour plus $2.00 for 11 closing hours, and works 44 hours. Straight-time pay is $792.00 + $22.00 = $814.00, so his regular rate is $814.00 ÷ 44 = $18.50 and the half-time premium on 4 overtime hours is 4 × $9.25 = $37.00. He is owed $851.00, a dollar more than if overtime were priced at his base wage. Our guide to <a href="/blog/shift-differential/">shift differential pay</a> covers flat and percentage differentials in more detail.</p>
+
+        <h3 id="g-states">State daily overtime rules</h3>
+        <p>Federal law sets the floor. Where state law is stricter, employers must follow whichever rule pays the employee more. A few states count overtime by the day as well as the week:</p>
+        <ul>
+          <li><strong>California.</strong> Time and a half after 8 hours in a workday, after 40 in a workweek and for the first 8 hours on the seventh consecutive day of work in a workweek. Double time after 12 hours in a workday and after 8 hours on that seventh day. Each hour gets one premium. Our <a href="/blog/california-overtime-law/">California overtime law</a> guide has worked examples.</li>
+          <li><strong>Alaska.</strong> Overtime after 8 hours in a day as well as after 40 in a week, for covered employers.</li>
+          <li><strong>Nevada.</strong> Daily overtime after 8 hours in a 24-hour period for employees earning less than 1.5 times the state minimum wage, unless an alternative schedule applies.</li>
+          <li><strong>Colorado.</strong> Overtime after 12 hours in a workday or 12 consecutive hours, as well as after 40 in a week.</li>
+        </ul>
+        <p>If you have staff in one of these states, run a real week with a long day through any tool you consider. Workzenly shows daily and weekly totals side by side on every timesheet. Tell us your state on the demo call and we will walk through how your overtime rules are set up.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Overtime rules change and have exceptions, so check the U.S. Department of Labor, your state labor department or an employment lawyer for your situation.</p>
+
+        <h3 id="g-exempt">Exempt vs non-exempt employees</h3>
+        <p>Overtime rules apply to non-exempt employees. Every employee is non-exempt unless their job meets an exemption. For the federal executive, administrative and professional exemptions, that generally means being paid a fixed salary of at least $684 a week ($35,568 a year) and doing work that meets the duties test for the exemption. Job titles do not decide it, and paying someone a salary does not by itself make them exempt.</p>
+        <p>Several states set higher salary thresholds, including California, New York, Washington, Colorado, Alaska and Maine. A salaried shift lead under the threshold, or whose main job is serving customers, is owed overtime like anyone else, so keep recording hours for salaried non-exempt staff. Our guide to <a href="/blog/exempt-vs-non-exempt/">exempt vs non-exempt employees</a> lists the duties tests and state thresholds.</p>
+
+        <h3 id="g-cost">How to control overtime cost</h3>
+        <p>The cheapest overtime is the overtime you chose. A few habits keep it that way:</p>
+        <ol>
+          <li><strong>Check projected hours before you publish the schedule.</strong> If a draft week already has someone at 44 hours, fix it in <a href="/features/scheduling/">employee scheduling</a>, not on payday.</li>
+          <li><strong>Watch the middle of the week.</strong> A mid-week overtime alert gives you two or three days to act.</li>
+          <li><strong>Offer the shift to someone under 40.</strong> Let staff pick up or swap shifts in the app.</li>
+          <li><strong>Fix missed punches the same day.</strong> A missed clock-out can turn an 8-hour shift into a 14-hour one.</li>
+          <li><strong>Never refuse to pay overtime that was worked.</strong> Under the FLSA, hours worked must be paid even if overtime was not approved in advance. Handle unapproved overtime through your <a href="/blog/attendance-policy/">attendance policy</a>, not by cutting pay.</li>
+        </ol>
+
+        <h3 id="g-choose">How to choose overtime tracking software</h3>
+        <p>Run one real week through every tool you are considering, with someone over 40, a differential or bonus, a missed clock-out and some PTO. Then ask:</p>
+        <ul>
+          <li>Does it count overtime from actual punches, or from hours typed in?</li>
+          <li>Does it count each workweek separately inside a biweekly pay period?</li>
+          <li>Does it include differentials and nondiscretionary bonuses in the regular rate?</li>
+          <li>Does it keep PTO out of hours worked?</li>
+          <li>Does it warn managers during the week, using the schedule, or only report overtime afterwards?</li>
+          <li>Does approved overtime reach payroll as its own line at the overtime rate, without retyping?</li>
+          <li>Is there an edit history when punches are corrected?</li>
+        </ul>
+        <p>Overtime tracking works best inside a broader <a href="/features/time-and-attendance/">time and attendance</a> system. Comparing vendors? Our list of the <a href="/tools/best-time-and-attendance-software/">best time and attendance software</a> covers the main options neutrally, and the <a href="/templates/timesheet-templates/">timesheet templates</a> are a free starting point if you are still on paper. If you want to see your own week counted in Workzenly, <a href="/#start">book a demo</a> and we will set up a workspace with your company name before the call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions about overtime tracking software</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>What is overtime tracking software?</summary><p>Overtime tracking software totals each employee’s hours by workweek from their time clock punches, splits the week into regular and overtime hours, and warns managers when someone is getting close to 40 hours. Workzenly also sends approved overtime into payroll at 1.5 times the regular rate, so nobody adds it up by hand.</p></details>
+        <details><summary>How is overtime calculated under federal law?</summary><p>Under the Fair Labor Standards Act, non-exempt employees are owed at least 1.5 times their regular rate of pay for every hour over 40 in a workweek. At $19.00 an hour, 46 hours is 40 regular hours ($760.00) plus 6 overtime hours at $28.50 ($171.00), for $931.00.</p></details>
+        <details><summary>Can overtime be averaged over a two-week pay period?</summary><p>No. The Department of Labor says each workweek stands alone and averaging hours over two or more weeks is not permitted. An employee who works 50 hours one week and 30 the next is owed 10 hours of overtime, even though the two-week total is 80.</p></details>
+        <details><summary>Does PTO count toward 40 hours for overtime?</summary><p>Not under federal law. Paid time off, holidays and sick days are not hours worked, so they do not count toward the 40 unless your own policy says they do. Workzenly keeps PTO hours separate from worked hours on the timesheet and in payroll.</p></details>
+        <details><summary>Do salaried employees get overtime?</summary><p>Some do. Being paid a salary does not make someone exempt. To be exempt under the federal executive, administrative or professional exemptions, an employee generally must earn at least $684 a week on a salary basis and do work that meets a duties test. Salaried non-exempt employees are still owed overtime after 40 hours.</p></details>
+        <details><summary>How does Workzenly warn me before someone goes into overtime?</summary><p>Workzenly totals each person’s week as punches come in and adds the shifts still on the schedule. Anyone approaching 40 hours shows up on the dashboard during the week, so a manager can move or swap a shift before the overtime happens, or approve it knowing what it will cost.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for overtime</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/how-to-calculate-overtime/"><small>GUIDE</small><b>How to calculate overtime, step by step</b></a>
+        <a href="/blog/california-overtime-law/"><small>GUIDE</small><b>California overtime law: daily overtime, double time, 7th day</b></a>
+        <a href="/blog/overtime-calculator/"><small>CALCULATOR</small><b>Overtime calculator: time and a half pay</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="wordmark" href="/">Workzenly</a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features"><h2>People</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>

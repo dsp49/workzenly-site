@@ -74,10 +74,10 @@ def nav(active):
     return f"""<header class="nav">
   <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
   <nav class="nav__links" aria-label="Main">
-    <a class="link" href="/features/time-clock/">Time clock</a>
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
     <a class="link" href="/features/scheduling/">Scheduling</a>
     <a class="link" href="/features/payroll/">Payroll</a>
-    <a class="link" href="/features/pto/">PTO</a>
     <a class="link" href="/blog/" aria-current="page">{label}</a>
   </nav>
   <a class="button button--small" href="/#start">Book a demo</a>
@@ -203,7 +203,7 @@ for s, items in data.items():
         hub(s, items, counts)
 features = [f for f in PLAN["features"] if os.path.isfile(os.path.join(ROOT, "features", f["slug"], "index.html"))]
 
-urls = [("/", "1.0")] + [(f["url"], "0.9") for f in features]
+urls = [("/", "1.0")] + ([("/features/", "0.9")] if os.path.isfile(os.path.join(ROOT, "features", "index.html")) else []) + [(f["url"], "0.9") for f in features]
 for s in ("tools", "templates", "blog"):
     if data[s]:
         urls.append((f"/{s}/", "0.8"))

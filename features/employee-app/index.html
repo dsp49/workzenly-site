@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Employee Self Service App for Hourly Teams | Workzenly</title>
+  <meta name="description" content="An employee self service app for US teams: clock in, swap shifts, request PTO, see pay stubs and find policies. Each person sees only their own record.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/features/employee-app/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/features/employee-app/">
+  <meta property="og:title" content="Employee Self Service App for Hourly Teams | Workzenly">
+  <meta property="og:description" content="An employee self service app for US teams: clock in, swap shifts, request PTO, see pay stubs and find policies. Each person sees only their own record.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    .ui-phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-items: start; }
+    .ui-phones .ui-phone { width: auto; padding: 8px; border-radius: 26px; font-size: 11.5px; }
+    .ui-phones .ui-phone:nth-child(2) { margin-top: 28px; }
+    .ui-phones .ui-phone__screen { border-radius: 19px; padding: 12px 10px 14px; gap: 9px; min-height: 400px; }
+    .ui-phones .ui-title { font-size: 15px; }
+    .ui-phones .ui-sub, .ui-phones .ui-item small { font-size: 10.5px; }
+    .ui-phones .ui-item { padding: 7px 8px; }
+    .ui-phones .ui-item p { font-size: 11.5px; }
+    .ui-phones .ui-card { padding: 9px; }
+    .ui-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .ui-tiles .ui-card b { display: block; font-size: 15px; font-weight: 600; letter-spacing: -0.02em; margin-top: 2px; }
+    .ui-row { display: flex; justify-content: space-between; gap: 8px; padding: 4px 0; }
+    .ui-row + .ui-row { border-top: 1px solid #202020; }
+    .ui-row span { color: #8d8d89; }
+    .ui-row.is-total { font-weight: 600; }
+    .ui-row.is-total span { color: var(--ink); }
+    .ui-search { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 999px; background: #171717; color: var(--ink); }
+    .ui-search svg { width: 14px; height: 14px; color: var(--muted); flex: none; }
+    .ui-receipt { height: 92px; border-radius: 10px; border: 1px dashed #3a3a3a; display: grid; place-items: center; color: var(--muted); background: repeating-linear-gradient(0deg, #151515 0 10px, #181818 10px 11px); }
+    @media (max-width: 620px) {
+      .ui-phones { grid-template-columns: repeat(3, 210px); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+      .ui-phones .ui-phone { scroll-snap-align: start; }
+      .ui-phones .ui-phone:nth-child(2) { margin-top: 0; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Employee Self Service App for Hourly Teams | Workzenly",
+        "description": "An employee self service app for US teams: clock in, swap shifts, request PTO, see pay stubs and find policies. Each person sees only their own record.",
+        "url": "https://workzenly.com/features/employee-app/",
+        "dateModified": "2026-11-11",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Workzenly Employee App",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "An employee self service app for US teams: clock in and out, see and swap shifts, request PTO, check pay stubs, submit expenses, sign onboarding forms and search company policies, with each employee seeing only their own record.",
+        "url": "https://workzenly.com/features/employee-app/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://workzenly.com/features/" },
+          { "@type": "ListItem", "position": 3, "name": "Employee app", "item": "https://workzenly.com/features/employee-app/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is an employee self service app?", "acceptedAnswer": { "@type": "Answer", "text": "An employee self service app lets workers handle their own everyday HR tasks from a phone: clocking in, checking their schedule, requesting time off, viewing pay stubs and finding company policies. Instead of asking a manager or the office, they look it up or send a request. In Workzenly the same app also covers shift swaps, expenses and onboarding forms." } },
+          { "@type": "Question", "name": "Can employees see their coworkers’ pay or records?", "acceptedAnswer": { "@type": "Answer", "text": "No. In Workzenly each employee sees only their own record: their hours, shifts, PTO balance, pay stubs and documents. Managers see their team’s shifts and time off, and pay is visible only to the people you give payroll access to." } },
+          { "@type": "Question", "name": "Do employees need their own smartphone?", "acceptedAnswer": { "@type": "Answer", "text": "Most will use their own phone, because the employee side is built for phones first. Where phones stay in lockers or someone does not want work apps on a personal device, a shared tablet at the door works as a time clock instead. If you require personal phones, check your state’s rules on reimbursing work use, such as California’s." } },
+          { "@type": "Question", "name": "What can employees do themselves and what needs a manager?", "acceptedAnswer": { "@type": "Answer", "text": "Employees clock in and out, see their schedule, start a shift swap or pick up an open shift, read their pay stubs, search policies and fill out their own onboarding forms. Requests that affect pay or coverage, such as PTO, expense claims and missed-punch fixes, go to a manager to approve, and managers approve timesheets before they reach payroll." } },
+          { "@type": "Question", "name": "Are pay stubs in an app legal?", "acceptedAnswer": { "@type": "Answer", "text": "Federal law does not require pay stubs at all, but many states do, and states set their own rules on electronic stubs. Some allow them only if employees can view and print them, or agree to receive them that way. Check your state labor department before you stop handing out paper." } },
+          { "@type": "Question", "name": "How long does it take to roll out?", "acceptedAnswer": { "@type": "Answer", "text": "Most small teams are clocking in within a week. We import your employee list and PTO balances from a spreadsheet during setup, each person gets their own account, and we stay with you through the first pay run so the first pay stubs land in the app on payday." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="employee self service app" data-intent="transactional" data-topic="Employee app">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M4 16h16M6 16a6 6 0 0 1 12 0M12 7.5V5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z M3.5 7.5L12 12l8.5-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5V20H4z M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="10" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 19h6M12 15v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 18.5h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h14M14 4l4 4-4 4M20 16H6M10 12l-4 4 4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15 15l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sign" viewBox="0 0 24 24"><path d="M14 3.5H7a2.5 2.5 0 0 0-2.5 2.5v12A2.5 2.5 0 0 0 7 20.5h10a2.5 2.5 0 0 0 2.5-2.5V9z M14 3.5V9h5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 16c1.2-1.6 2-1.6 2.6 0s1.4 1.6 2.4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/features/">Features</a></li><li aria-current="page">Employee app</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Employee app</span>
+        <h1 id="hero-title">The employee self service app your team will actually open</h1>
+        <p class="fp-lead">Workzenly is an employee self service app for every person on your payroll. Clock in, see and swap shifts, request PTO, check pay stubs, send an expense, sign onboarding forms and find a policy, all from one phone. Each employee sees only their own record.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Built for phones first</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Shared tablet for clocking in</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Each person sees only their own</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-phones" data-ui role="img" aria-label="Three screens of the Workzenly employee app for Maya Torres: a home screen with a clock-in card, 52 of 80 PTO hours left and next paycheck on Friday, November 20; a shift swap screen offering her Saturday, November 21 shift to Aisha Brown; and her pay stub for October 18 to 31 showing $1,284.50 gross pay">
+          <div class="ui-phone">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Wed, Nov 11</p><p class="ui-title">Good morning, Maya</p></div>
+              <div class="ui-card">
+                <p class="ui-sub">Front counter · Northfield Coffee</p>
+                <p style="font-size:24px;font-weight:600;letter-spacing:-0.03em;margin:4px 0 0" class="num">8:58 AM</p>
+                <p class="ui-sub">Today’s shift 9:00 AM–5:30 PM</p>
+                <p style="margin-top:8px"><button type="button" class="ui-btn" data-act data-target="hero-clock" data-text="Clocked in at 8:58 AM" data-done="Clocked in">Clock in</button></p>
+                <p class="ui-sub" id="hero-clock" style="margin-top:6px">Not clocked in yet</p>
+              </div>
+              <div class="ui-tiles">
+                <div class="ui-card"><p class="ui-sub">PTO left</p><b class="num">52 hrs</b><p class="ui-sub">of 80 hrs</p></div>
+                <div class="ui-card"><p class="ui-sub">Next paycheck</p><b>Fri, Nov 20</b><p class="ui-sub">Nov 1–14</p></div>
+              </div>
+              <div class="ui-item"><div><p>Next shift</p><small>Mon, Nov 16 · 7:00 AM–3:30 PM</small></div><span class="ui-pill">8 h</span></div>
+            </div>
+          </div>
+
+          <div class="ui-phone">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Swap a shift</p><p class="ui-title">Sat, Nov 21</p></div>
+              <div class="ui-card">
+                <p class="ui-sub">Your shift</p>
+                <p style="font-weight:600;margin-top:2px">9:00 AM–5:30 PM</p>
+                <p class="ui-sub">Front counter · 8.0 h after break</p>
+              </div>
+              <p class="ui-sub">Who can take it</p>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Aisha Brown</p><small>Free Sat · 24.0 → 32.0 h</small></div><span class="ui-pill ui-pill--ok">Fits</span></div>
+                <div class="ui-item"><div><p>Jordan Lee</p><small>38.0 → 46.0 h that week</small></div><span class="ui-pill ui-pill--warn">Overtime</span></div>
+              </div>
+              <button type="button" class="ui-btn" style="min-height:36px" data-act data-target="hero-swap" data-text="Sent to Aisha. Your schedule updates when she accepts." data-done="Request sent">Ask Aisha</button>
+              <p class="ui-sub" id="hero-swap" style="text-align:center">Pick someone to ask</p>
+            </div>
+          </div>
+
+          <div class="ui-phone">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Pay stub · paid Fri, Nov 6</p><p class="ui-title">Oct 18–31</p></div>
+              <div class="ui-card">
+                <div class="ui-row"><span>Regular 65.4 h × $17.50</span><b class="num">$1,144.50</b></div>
+                <div class="ui-row"><span>PTO 8.0 h × $17.50</span><b class="num">$140.00</b></div>
+                <div class="ui-row is-total"><span>Gross pay</span><b class="num">$1,284.50</b></div>
+              </div>
+              <div class="ui-card">
+                <div class="ui-row"><span>Federal income tax</span><b class="num">−$62.00</b></div>
+                <div class="ui-row"><span>Social Security</span><b class="num">−$79.64</b></div>
+                <div class="ui-row"><span>Medicare</span><b class="num">−$18.63</b></div>
+                <div class="ui-row is-total"><span>Net pay</span><b class="num">$1,124.23</b></div>
+              </div>
+              <div class="ui-item"><div><p>Direct deposit</p><small>Checking ··4417</small></div><span class="ui-pill ui-pill--ok">Paid</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for teams that work in shifts</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Restaurants and cafés</li>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Retail stores</li>
+        <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Clinics</li>
+        <li><svg aria-hidden="true"><use href="#i-home"/></svg>Home care</li>
+        <li><svg aria-hidden="true"><use href="#i-hat"/></svg>Job sites</li>
+        <li><svg aria-hidden="true"><use href="#i-box"/></svg>Warehouses</li>
+        <li><svg aria-hidden="true"><use href="#i-desk"/></svg>Offices</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">“When am I working Saturday?” “How much PTO do I have?” “Where’s my pay stub?” Every one of those lands on the manager’s phone.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">Give every employee the answer before they ask</h2>
+      <p class="fp-problem__p">An employee app puts each person’s schedule, hours, PTO balance, pay stubs and paperwork on their own phone. The answer is the same record the manager and payroll use, so nobody has to look it up and text it back.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first month</p>
+        <h2 id="outcomes-title">Fewer questions for managers, fewer surprises for staff</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Schedules people can see</h3><p>Staff see the week the moment it is published, pick up open shifts and start swaps themselves. Managers get told before a shift goes uncovered, not after.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Pay questions answer themselves</h3><p>Pay stubs appear in the app on payday, next to the hours and PTO behind them. People can check their own numbers at 11 PM without waiting for the office to open.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Requests in one place</h3><p>PTO, expense claims and missed-punch fixes arrive as requests with the details filled in, instead of as texts, sticky notes and hallway conversations.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sign"/></svg></span><h3>Paperwork done before day one</h3><p>New hires sign their offer letter, fill out the W-4 and I-9, add direct deposit and read the handbook on their own phone, so the first shift starts with work.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">Four things employees do in the employee mobile app</h2>
+        <p>Every screen reads and writes the same record your managers and payroll work from, so a swap, a PTO request or an expense shows up where it needs to without anyone retyping it.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="Parts of the employee app">
+          <button class="fp-tab" role="tab" id="tab-shifts" aria-controls="panel-shifts" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-clock"/></svg>Shifts</b><span>Clock in, see the week, pick up</span></button>
+          <button class="fp-tab" role="tab" id="tab-pto" aria-controls="panel-pto" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-cal"/></svg>Time off</b><span>Request PTO in two taps</span></button>
+          <button class="fp-tab" role="tab" id="tab-exp" aria-controls="panel-exp" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-receipt"/></svg>Expenses</b><span>Photo, category, send</span></button>
+          <button class="fp-tab" role="tab" id="tab-pol" aria-controls="panel-pol" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-search"/></svg>Policies</b><span>Search the handbook and documents</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-shifts" aria-labelledby="tab-shifts">
+          <div>
+            <h3>The week, on the phone in their pocket</h3>
+            <p>Employees clock in from the app, with GPS and geofencing confirming they are at the right site. Their own shifts sit on the same screen, along with open shifts they can pick up.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Today’s shift and this week’s hours on one screen</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pick up an open shift or start a swap</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Ask for a fix if a clock-out was missed</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Employee app week view for Maya Torres with 26.4 hours worked, 8 hours still scheduled and an open Friday afternoon shift she can pick up">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">My week · Nov 8–14</p><p class="ui-title">Maya Torres</p></div>
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Hours this week</b><span class="num">26.4 of 40</span></div>
+                <div class="ui-bar-meter"><i style="width:66%"></i></div>
+                <p class="ui-sub" style="margin-top:8px">8.0 h still scheduled · today 9:00 AM–5:30 PM</p>
+              </div>
+              <div class="ui-item"><div><p>Open shift · Front counter</p><small>Fri, Nov 13 · 1:00–5:00 PM · 4.0 h</small></div><button type="button" class="ui-btn" data-act data-target="pick-text" data-text="Picked up. 38.4 h scheduled, still under 40." data-done="Picked up">Pick up</button></div>
+              <p class="ui-sub" id="pick-text">34.4 h scheduled this week</p>
+              <div class="ui-item"><div><p>Mon, Nov 9 clock-out</p><small>Recorded 3:31 PM</small></div><span class="ui-pill ui-pill--ok">OK</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pto" aria-labelledby="tab-pto" hidden>
+          <div>
+            <h3>Time off without the email chain</h3>
+            <p>Employees pick the day, see their balance before and after, and send. The manager sees who else is out before saying yes, and the balance updates itself once it is approved.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Balances accrue on their own each pay period</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Status shows pending, approved or declined</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved PTO lands in payroll as PTO</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="PTO request for Friday, November 27, 8 hours, taking Maya Torres from 52 to 44 hours of PTO">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Request time off</p><p class="ui-title">Fri, Nov 27</p></div>
+              <div class="ui-card">
+                <div class="ui-row"><span>Type</span><b>PTO</b></div>
+                <div class="ui-row"><span>Hours</span><b class="num">8.0</b></div>
+                <div class="ui-row"><span>Balance now</span><b class="num">52.0 h</b></div>
+                <div class="ui-row is-total"><span>After this request</span><b class="num">44.0 h</b></div>
+              </div>
+              <button type="button" class="ui-btn" style="min-height:40px" data-act data-target="pto-text" data-text="Sent to Marcus. You’ll see his answer here." data-done="Sent">Send request</button>
+              <p class="ui-sub" id="pto-text" style="text-align:center">Goes to Marcus (manager)</p>
+              <div class="ui-item"><div><p>Wed, Oct 28</p><small>PTO · 8.0 h</small></div><span class="ui-pill ui-pill--ok">Approved</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-exp" aria-labelledby="tab-exp" hidden>
+          <div>
+            <h3>Receipts sent from the store aisle</h3>
+            <p>Bought milk on the way in? Photograph the receipt, pick a category and send. Once a manager approves it, the claim is paid with the next paycheck and shows on the pay stub.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The receipt photo travels with the claim</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Employees see when it is approved</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Reimbursed on the next paycheck, not in cash</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Expense claim with a receipt photo for $23.40 of supplies, ready to send for approval">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">New expense</p><p class="ui-title">$23.40</p></div>
+              <div class="ui-receipt"><span><svg width="22" height="22" aria-hidden="true"><use href="#i-receipt"/></svg></span></div>
+              <div class="ui-card">
+                <div class="ui-row"><span>Category</span><b>Supplies</b></div>
+                <div class="ui-row"><span>Date</span><b>Wed, Nov 11</b></div>
+                <div class="ui-row"><span>Note</span><b>Milk run, opening</b></div>
+              </div>
+              <button type="button" class="ui-btn" style="min-height:40px" data-act data-target="exp-text" data-text="Sent. If approved, it’s paid Fri, Nov 20." data-done="Sent">Send</button>
+              <p class="ui-sub" id="exp-text" style="text-align:center">Paid with your next paycheck once approved</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pol" aria-labelledby="tab-pol" hidden>
+          <div>
+            <h3>The handbook, searchable</h3>
+            <p>Policies, the handbook and each person’s own documents are stored in Workzenly and searchable. Typing “uniform” finds the dress code before anyone texts the manager a photo of their shoes.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Search across the handbook and policies</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Their own signed offer letter and forms</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The current version, not last year’s PDF</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Policy search for the word uniform showing the dress code, the meal and rest break policy and the shift swap policy, plus Maya's own signed documents">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Policies and documents</p><p class="ui-title">Find a policy</p></div>
+              <div class="ui-search"><svg aria-hidden="true"><use href="#i-search"/></svg>uniform</div>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Dress code and uniform</p><small>Handbook · “black apron, closed-toe shoes”</small></div><span class="ui-pill ui-pill--info">Policy</span></div>
+                <div class="ui-item"><div><p>Uniform replacement</p><small>Handbook · expenses section</small></div><span class="ui-pill ui-pill--info">Policy</span></div>
+              </div>
+              <p class="ui-sub">My documents</p>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Offer letter</p><small>Signed</small></div><span class="ui-pill ui-pill--ok">Signed</span></div>
+                <div class="ui-item"><div><p>Employee handbook</p><small>Read and acknowledged</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="The employee app in detail">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Onboarding on the phone</p>
+          <h2>New hires finish the paperwork before the first shift</h2>
+          <p>The day someone accepts, the employee app becomes their onboarding packet. They sign the offer letter, fill out their W-4 and Section 1 of the I-9, add direct deposit and read the handbook. The manager sees what is done and what is left, and the documents stay with that person’s record.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Offer letter signed from the same app they will clock in with</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>W-4, I-9 and direct deposit filled out by the employee</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Handbook read and acknowledged before day one</li>
+          </ul>
+          <a class="fp-row__more" href="/features/onboarding/">See onboarding <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Onboarding checklist for Dana Brooks, a barista who started Monday, November 2, with every item completed before her first shift">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Onboarding · Dana Brooks · starts Mon, Nov 2</span></div>
+          <div class="ui-main">
+            <div class="ui-top">
+              <div><p class="ui-title">Dana Brooks</p><p class="ui-sub">Barista · $18.25/hr · Northfield Coffee</p></div>
+              <span class="ui-pill ui-pill--ok">Ready for day one</span>
+            </div>
+            <div class="ui-card">
+              <div class="ui-card__head"><b>Done on her phone</b><span>5 of 5</span></div>
+              <div class="ui-bar-meter"><i style="width:100%"></i></div>
+            </div>
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Offer letter signed</p><small>Tue, Oct 27</small></div><span class="ui-pill ui-pill--ok">Signed</span></div>
+              <div class="ui-item"><div><p>Form W-4</p><small>Thu, Oct 29</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Form I-9, Section 1</p><small>Thu, Oct 29 · documents on file Mon, Nov 2</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Direct deposit</p><small>Checking account added</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Employee handbook</p><small>Read Fri, Oct 30</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Shift swaps and open shifts</p>
+          <h2>Staff sort out coverage, managers stay in the loop</h2>
+          <p>When Maya can’t work a Saturday, she offers it from the app instead of texting the whole team. The schedule shows the change as soon as it happens, and managers get told before a shift goes uncovered, with time to offer it to someone who is free.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Swaps and pickups show on the schedule right away</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Warnings before a pickup pushes someone into overtime</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Uncovered shifts flagged before the day, not on it</li>
+          </ul>
+          <a class="fp-row__more" href="/features/scheduling/">See scheduling <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Manager view of schedule changes: Maya Torres offering her November 21 shift to Aisha Brown, Maya picking up a Friday open shift, and an uncovered Sunday kitchen shift">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Schedule changes · Northfield Coffee</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Maya Torres → Aisha Brown</p><small>Sat, Nov 21 · front counter · 9:00 AM–5:30 PM</small></div><span class="ui-pill ui-pill--info">Swap requested</span></div>
+              <div class="ui-item"><div><p>Maya Torres picked up an open shift</p><small>Fri, Nov 13 · 1:00–5:00 PM · 38.4 h that week</small></div><span class="ui-pill ui-pill--ok">Covered</span></div>
+              <div class="ui-item"><div><p>Kitchen shift has nobody on it</p><small>Sun, Nov 15 · 6:00 AM–2:30 PM</small></div><span class="ui-pill ui-pill--warn" id="sw-pill">Uncovered</span></div>
+            </div>
+            <div class="ui-foot"><div><p>Sam Rivera is free Sunday</p><small>Kitchen · 8.0 h after break · first shift of his week</small></div><button type="button" class="ui-btn" data-act data-pill="sw-pill" data-pill-text="Offered to Sam" data-done="Offered">Offer to Sam</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Expenses and pay</p>
+          <h2>From a receipt photo to the next pay stub</h2>
+          <p>Claims sent from the employee app land in one list for the manager, each with its receipt and category. Approved claims are added to the next paycheck alongside approved hours, overtime and PTO, and the employee sees the line on their pay stub on payday.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approve or send back with a reason</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved claims flow into payroll</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Employees track their own claims</li>
+          </ul>
+          <a class="fp-row__more" href="/features/expenses/">See expenses <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Expense approvals for the November 1 to 14 pay period: Emily Carter's $86 claim approved for the November 20 paycheck and Maya Torres's $23.40 claim waiting">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Expenses · Nov 1–14 · paid Fri, Nov 20</span></div>
+          <div class="ui-main ui-scroll">
+            <table class="ui-table">
+              <thead><tr><th>Employee</th><th>Category</th><th>Submitted</th><th class="r">Amount</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td><span class="ui-person"><span class="ui-av" style="background:#f2c36b">EC</span>Emily Carter</span></td><td>Kitchen supplies</td><td>Thu, Nov 5</td><td class="r num">$86.00</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                <tr><td><span class="ui-person"><span class="ui-av" style="background:#dafa9c">MT</span>Maya Torres</span></td><td>Supplies</td><td>Wed, Nov 11</td><td class="r num">$23.40</td><td><span class="ui-pill ui-pill--warn" id="exp-pill">Waiting</span></td></tr>
+                <tr><td><b>Total</b></td><td></td><td></td><td class="r num"><b>$109.40</b></td><td></td></tr>
+              </tbody>
+            </table>
+            <div class="ui-foot"><div><p>1 claim waiting · $23.40</p><small>Approve to add it to Maya’s Nov 20 paycheck</small></div><button type="button" class="ui-btn" data-act data-pill="exp-pill" data-pill-text="Approved" data-done="Added to payroll">Approve</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One employee app, four people who rely on it</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Employees</h3></div><div><span>Replaces</span><p>Texting the manager, paper stubs and the binder in the back</p></div><div><span>They use it to</span><p>Clock in, check and swap shifts, request PTO, read pay stubs, send expenses and find policies</p></div><div><span>What they notice</span><p>Answers at any hour, without asking anyone</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Managers</h3></div><div><span>Replaces</span><p>Group texts and requests scattered across channels</p></div><div><span>They use it to</span><p>Approve PTO, expenses and timesheets from their phone and see coverage gaps early</p></div><div><span>What they notice</span><p>Fewer “quick questions” during a rush</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Payroll</h3></div><div><span>Replaces</span><p>Printing stubs and re-entering direct deposit forms</p></div><div><span>They use it to</span><p>Run payroll from approved hours, PTO and expenses, then publish stubs to each app</p></div><div><span>What they notice</span><p>Fewer “was I paid right?” calls</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owners</h3></div><div><span>Replaces</span><p>Onboarding packets and filing cabinets</p></div><div><span>They use it to</span><p>Keep forms, policies and records with each person, with access they control</p></div><div><span>What they notice</span><p>Paperwork that is finished and findable</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Self service that stays private</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Employees see their own</h3><p>Each person sees their own shifts, hours, PTO, pay stubs and documents, never a coworker’s.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Managers see their team</h3><p>Managers see their team’s shifts and time off, and approve their team’s requests and timesheets.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and pay stubs are visible only to the employee and the people you give payroll access to.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Connected</p>
+        <h2 id="connect-title">One app in front of every Workzenly feature</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/time-clock/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Employee time clock app</h3><p>Clock in and out by phone with GPS and geofencing.</p><span>Time clock →</span></a>
+        <a class="fp-link-card" href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Employee scheduling</h3><p>Build the week by dragging people into shifts; staff see it instantly.</p><span>Scheduling →</span></a>
+        <a class="fp-link-card" href="/features/pto/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>PTO tracking</h3><p>Requests in two taps and balances that accrue on their own.</p><span>PTO →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Approved hours, PTO and expenses become pay stubs in the app.</p><span>Payroll →</span></a>
+        <a class="fp-link-card" href="/features/onboarding/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sign"/></svg></span><h3>Onboarding</h3><p>Offer letter, W-4, I-9 and direct deposit before day one.</p><span>Onboarding →</span></a>
+        <a class="fp-link-card" href="/features/hr-documents/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>HR documents</h3><p>Offer letters, I-9 documents and the handbook, stored with each person.</p><span>HR documents →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">Hand every employee their own record</h2>
+        <p>See the employee app with your own team’s names on it. We set up a demo workspace with your company name before the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- BUYER'S GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it does</a></li>
+            <li><a href="#g-vs">ESS app vs manager portal</a></li>
+            <li><a href="#g-who">Who changes what</a></li>
+            <li><a href="#g-privacy">Privacy and access</a></li>
+            <li><a href="#g-rules">Rules to check</a></li>
+            <li><a href="#g-rollout">Rolling it out to hourly staff</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>See the app your staff would use, with your own team in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The buyer’s guide to an employee self service app</h2>
+        <p>Most small employers already have self service of a kind: a schedule photo in the group chat and a manager who answers the same five questions every day. This guide covers what an employee self service app does, who changes what, the privacy and legal points to check, and how to roll one out to hourly staff.</p>
+
+        <h3 id="g-what">What an employee self service app does</h3>
+        <p>Employee self service (ESS) means employees look up and update their own work information instead of asking someone in charge. An ESS app puts that on the phone. For an hourly team the core jobs are:</p>
+        <ul>
+          <li><strong>Time.</strong> Clocking in and out, breaks, and seeing hours this week. Workzenly’s <a href="/features/time-clock/">employee time clock app</a> handles this, with GPS and geofencing.</li>
+          <li><strong>Schedule.</strong> Seeing the week as soon as it is published, picking up open shifts and swapping with a coworker.</li>
+          <li><strong>Time off.</strong> Requesting PTO and seeing the balance. Workzenly’s <a href="/features/pto/">PTO tracking</a> keeps balances accruing on their own.</li>
+          <li><strong>Pay.</strong> Reading pay stubs on payday and following the hours, PTO and expenses behind them.</li>
+          <li><strong>Paperwork.</strong> Signing the offer letter, filling out the W-4 and I-9, adding direct deposit, and finding the handbook later.</li>
+        </ul>
+        <p>Older employee self service portals were web pages built for office staff with a work email and a laptop. A shift worker needs the same functions on a phone, quick enough to use on a break. That is the difference between a portal people log into once a year and an employee app they open every shift.</p>
+
+        <h3 id="g-vs">ESS app vs manager portal</h3>
+        <p>Every workforce system has two sides. The employee side asks and looks things up. The manager side approves, plans and pays. Both should read from the same record, or you end up reconciling two versions of the truth.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Task</th><th>Employee self service app</th><th>Manager side</th></tr></thead>
+            <tbody>
+              <tr><td>Hours</td><td>Clock in and out, see this week’s total, ask for a missed-punch fix</td><td>See who is in, late or out; approve the week’s timesheets</td></tr>
+              <tr><td>Schedule</td><td>See own shifts, pick up open shifts, start a swap</td><td>Build the week, get told before a shift goes uncovered</td></tr>
+              <tr><td>Time off</td><td>Request PTO, see own balance and status</td><td>See who else is out, approve or decline</td></tr>
+              <tr><td>Pay</td><td>Read own pay stubs</td><td>Run payroll (payroll access only)</td></tr>
+              <tr><td>Expenses</td><td>Photograph receipt, pick category, send</td><td>Approve; approved claims paid with next paycheck</td></tr>
+              <tr><td>Documents</td><td>Sign own forms, search policies</td><td>Store records with each person, keep the handbook current</td></tr>
+              <tr><td>Device</td><td>Built for phones first</td><td>Approvals on a phone; payroll easiest on a laptop</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="g-who">What employees change themselves vs what managers approve</h3>
+        <p>The point of self service is fewer hand-offs, but anything that changes pay or coverage still needs a second pair of eyes. A sensible split for an hourly business looks like this:</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Employees do it themselves</th><th>Employee asks, manager approves</th><th>Manager or payroll only</th></tr></thead>
+            <tbody>
+              <tr><td>Clock in and out, start and end breaks</td><td>PTO requests</td><td>Pay rates and job titles</td></tr>
+              <tr><td>Read their schedule and pay stubs</td><td>Expense claims</td><td>Timesheet approval</td></tr>
+              <tr><td>Fill out their own W-4, I-9 Section 1 and direct deposit during onboarding</td><td>Fixes to a missed or wrong punch</td><td>Running payroll</td></tr>
+              <tr><td>Search policies and read the handbook</td><td>Shift swaps and pickups, if your policy says so</td><td>Reviewing I-9 identity documents</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Write the split into your <a href="/templates/employee-handbook-templates/">employee handbook</a> so nobody has to guess, especially for swaps. For punch fixes, the correction should keep the original punch next to it, with who made it and why.</p>
+
+        <h3 id="g-privacy">Privacy and access</h3>
+        <p>An employee app concentrates sensitive data: pay, bank details, tax forms, identity documents. Three rules keep it under control.</p>
+        <ol>
+          <li><strong>Each employee sees only their own record.</strong> No shared logins, no coworker’s pay stub one tap away. In Workzenly every person has their own account.</li>
+          <li><strong>Managers see their team, not everything.</strong> A shift lead needs the schedule and time off for their people. They do not need anyone’s pay rate.</li>
+          <li><strong>Pay is limited to payroll access.</strong> Decide who that is by name, and review the list when someone changes role or leaves.</li>
+        </ol>
+        <p>If you turn on GPS for clocking in, tell employees what is recorded and when. Workzenly records location at the clock-in, inside a geofence you draw; our guide to <a href="/blog/gps-time-clock-app/">GPS time clock apps</a> covers the notice and consent questions.</p>
+
+        <h3 id="g-rules">Rules to check before you go paperless</h3>
+        <ul>
+          <li><strong>Pay stubs.</strong> Federal law does not require pay stubs, but many states do, and each sets its own rules on electronic stubs. Some allow them only if the employee can view and print them or agrees to it. Our guide on <a href="/blog/how-to-read-a-pay-stub/">how to read a pay stub</a> explains what a stub shows and lists the common state rules.</li>
+          <li><strong>Time spent in the app.</strong> Under the Fair Labor Standards Act, work that is “suffered or permitted” is work time (29 CFR 785.11). If you require non-exempt staff to finish training, read policies or fill out forms in the app, pay for that time.</li>
+          <li><strong>Personal phones.</strong> California Labor Code section 2802 requires employers to reimburse necessary work expenses, and a 2014 California appeals court decision applied it to a reasonable share of personal cell phone bills. Check your state before you make a personal phone mandatory.</li>
+          <li><strong>Electronic W-4 and I-9.</strong> The IRS allows employers to collect the <a href="/blog/w-4-form/">Form W-4</a> electronically if the system meets its requirements. USCIS allows electronic <a href="/blog/i-9-form/">Form I-9</a> storage with integrity controls, an audit trail and an index; Section 1 is due no later than the first day of work for pay, and you still review the employee’s documents yourself.</li>
+        </ul>
+        <p class="fp-note">This guide is general information, not legal advice. Rules change, so check your state labor department or an employment lawyer for your situation.</p>
+
+        <h3 id="g-rollout">Rolling it out to hourly staff</h3>
+        <p>Hourly teams adopt an app when the first thing they do in it is useful. Start with clocking in and the schedule, which everyone needs every shift, then add pay stubs and requests.</p>
+        <ol>
+          <li><strong>Import everyone first.</strong> Send your employee list and current PTO balances as a spreadsheet; Workzenly imports them during setup, so each person opens the app to their own balance instead of a zero.</li>
+          <li><strong>Plan for people without a phone at work.</strong> Where phones stay in lockers, or someone does not want a work app on a personal device, set up a shared tablet at the door as a <a href="/features/time-clock-kiosk/">time clock kiosk</a>. They can check the rest from home.</li>
+          <li><strong>Do sign-up on the clock.</strong> Walk each shift through installing the app during a paid huddle.</li>
+          <li><strong>Pick a clean start date.</strong> Start at the beginning of a workweek and a pay period, so the first pay stub in the app covers hours that were all clocked in the app.</li>
+        </ol>
+        <p>New hires are the easiest group. If they sign their offer letter and finish their forms in the app, as described in our <a href="/blog/employee-onboarding/">employee onboarding guide</a>, it is already the place they go for work.</p>
+
+        <h3 id="g-choose">How to choose an employee app</h3>
+        <p>Hand a phone to your least technical employee and ask them to clock in, find next Saturday’s shift, request a day off and open last week’s pay stub. Then check that the request reaches the manager with the balance attached. Ask each vendor:</p>
+        <ul>
+          <li>Does the employee app use the same record as scheduling, time off and payroll, or does it sync?</li>
+          <li>What does an employee see, what does a manager see, and who can see pay?</li>
+          <li>What happens for workers without a smartphone at work?</li>
+          <li>Can new hires finish onboarding forms in the app before day one?</li>
+          <li>Who handles payroll tax deposits and filings? Ask us on the demo call how that works with Workzenly.</li>
+        </ul>
+        <p>If you are still building a shortlist, our neutral comparison of the <a href="/tools/best-hr-software-for-small-business/">best HR software for small business</a> covers the main options. If you want to see the employee app with your own team, <a href="/#start">book a demo</a> and we will set up a workspace with your company name before the call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions about an employee self service app</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>What is an employee self service app?</summary><p>An employee self service app lets workers handle their own everyday HR tasks from a phone: clocking in, checking their schedule, requesting time off, viewing pay stubs and finding company policies. Instead of asking a manager or the office, they look it up or send a request. In Workzenly the same app also covers shift swaps, expenses and onboarding forms.</p></details>
+        <details><summary>Can employees see their coworkers’ pay or records?</summary><p>No. In Workzenly each employee sees only their own record: their hours, shifts, PTO balance, pay stubs and documents. Managers see their team’s shifts and time off, and pay is visible only to the people you give payroll access to.</p></details>
+        <details><summary>Do employees need their own smartphone?</summary><p>Most will use their own phone, because the employee side is built for phones first. Where phones stay in lockers or someone does not want work apps on a personal device, a shared tablet at the door works as a time clock instead. If you require personal phones, check your state’s rules on reimbursing work use, such as California’s.</p></details>
+        <details><summary>What can employees do themselves and what needs a manager?</summary><p>Employees clock in and out, see their schedule, start a shift swap or pick up an open shift, read their pay stubs, search policies and fill out their own onboarding forms. Requests that affect pay or coverage, such as PTO, expense claims and missed-punch fixes, go to a manager to approve, and managers approve timesheets before they reach payroll.</p></details>
+        <details><summary>Are pay stubs in an app legal?</summary><p>Federal law does not require pay stubs at all, but many states do, and states set their own rules on electronic stubs. Some allow them only if employees can view and print them, or agree to receive them that way. Check your state labor department before you stop handing out paper.</p></details>
+        <details><summary>How long does it take to roll out?</summary><p>Most small teams are clocking in within a week. We import your employee list and PTO balances from a spreadsheet during setup, each person gets their own account, and we stay with you through the first pay run so the first pay stubs land in the app on payday.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for the employee app</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/how-to-read-a-pay-stub/"><small>GUIDE</small><b>How to read a pay stub, line by line</b></a>
+        <a href="/blog/employee-onboarding/"><small>GUIDE</small><b>Employee onboarding: a plan for the first 90 days</b></a>
+        <a href="/tools/best-hr-software-for-small-business/"><small>COMPARISON</small><b>Best HR software for small business</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="wordmark" href="/">Workzenly</a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features"><h2>People</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>

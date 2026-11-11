@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shift Scheduling App with Swaps and Open Shifts</title>
-  <meta name="description" content="A shift scheduling app for US hourly teams: drag people into shifts, publish to phones, let staff swap or pick up shifts, and see PTO before you post.">
+  <title>Employee Scheduling Software for Hourly Teams | Workzenly</title>
+  <meta name="description" content="Employee scheduling software for US hourly teams: drag people into shifts, publish to phones, handle swaps and open shifts, and see PTO before you post.">
   <meta name="theme-color" content="#0b0b0b">
   <link rel="canonical" href="https://workzenly.com/features/scheduling/">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -13,8 +13,8 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Workzenly">
   <meta property="og:url" content="https://workzenly.com/features/scheduling/">
-  <meta property="og:title" content="Shift Scheduling App with Swaps and Open Shifts">
-  <meta property="og:description" content="A shift scheduling app for US hourly teams: drag people into shifts, publish to phones, let staff swap or pick up shifts, and see PTO before you post.">
+  <meta property="og:title" content="Employee Scheduling Software for Hourly Teams | Workzenly">
+  <meta property="og:description" content="Employee scheduling software for US hourly teams: drag people into shifts, publish to phones, handle swaps and open shifts, and see PTO before you post.">
   <meta property="og:image" content="https://workzenly.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,18 +22,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
   <style>
-    .feat-section__body ul, .feat-section__body ol { padding-left: 1.3em; display: grid; gap: 10px; }
-    .feat-section__body ul { list-style: disc; }
-    .feat-section__body ol { list-style: decimal; }
-    .feat-section__body table { width: 100%; border-collapse: collapse; font-size: 16px; line-height: 1.45; min-width: 520px; }
-    .feat-section__body th, .feat-section__body td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line, #2a2a2a); }
-    .feat-section__body th { font-weight: 600; }
-    [data-ui].frag td small { display: block; color: #949494; font-size: 11px; }
-    [data-ui].frag td.is-swapped { color: var(--accent); }
-    [data-ui] .frag__swap { margin-top: 16px; padding: 14px; border-radius: 10px; background: #161616; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-    [data-ui] .frag__swap p { margin: 0; }
-    [data-ui] .frag__k { color: #949494; font-size: 12px; }
+    .ui-sched th, .ui-sched td { text-align: center; padding: 5px 3px; }
+    .ui-sched th:first-child, .ui-sched td:first-child { text-align: left; padding-left: 0; }
+    .ui-sched td:last-child, .ui-sched th:last-child { text-align: right; padding-right: 0; }
+    .ui-shift { display: block; padding: 3px 4px; border-radius: 6px; font-size: 11px; background: #1b1b1b; border-left: 3px solid var(--line); color: var(--ink); }
+    .ui-shift--counter { border-left-color: var(--accent); }
+    .ui-shift--barista { border-left-color: var(--info); }
+    .ui-shift--kitchen { border-left-color: var(--warn); }
+    .ui-shift--open { border: 1px dashed var(--bad); color: var(--bad); background: transparent; }
+    .ui-shift--pto { background: #222; color: #8d8d89; border-left-color: #555; }
+    .ui-off { color: #4a4a47; font-size: 11px; }
+    .ui-drop { border: 1px dashed #3b4a22; border-radius: 9px; padding: 9px 10px; color: var(--accent); font-size: 12.5px; }
   </style>
   <script type="application/ld+json">
   {
@@ -41,241 +42,648 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "name": "Shift Scheduling App with Swaps and Open Shifts",
-        "description": "A shift scheduling app for US hourly teams: drag people into shifts, publish to phones, let staff swap or pick up shifts, and see PTO before you post.",
+        "name": "Employee Scheduling Software for Hourly Teams | Workzenly",
+        "description": "Employee scheduling software for US hourly teams: drag people into shifts, publish to phones, handle swaps and open shifts, and see PTO before you post.",
         "url": "https://workzenly.com/features/scheduling/",
+        "dateModified": "2026-11-11",
         "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
       },
       {
         "@type": "SoftwareApplication",
         "name": "Workzenly Scheduling",
         "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web, Android, iOS",
-        "description": "A shift scheduling app for US hourly teams: drag people into shifts, publish to phones, let staff swap or pick up shifts, and see PTO before you post.",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "Employee scheduling software for US hourly teams: drag-and-drop weekly schedules, shift swaps and open shifts in the employee app, PTO visible while scheduling, alerts before a shift goes uncovered, and scheduled hours compared with actual punches.",
         "url": "https://workzenly.com/features/scheduling/"
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Scheduling", "item": "https://workzenly.com/features/scheduling/" }
+          { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://workzenly.com/features/" },
+          { "@type": "ListItem", "position": 3, "name": "Scheduling", "item": "https://workzenly.com/features/scheduling/" }
         ]
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
-          { "@type": "Question", "name": "How far in advance do I have to post a work schedule?", "acceptedAnswer": { "@type": "Answer", "text": "Federal law sets no notice period. Oregon and several cities, including Seattle, Chicago, Philadelphia, Los Angeles and New York City for fast food, require covered employers to post schedules 14 days ahead, and New York City retail employers must give 72 hours. If none of these apply to you, posting a week or more ahead is still good practice." } },
+          { "@type": "Question", "name": "What is employee scheduling software?", "acceptedAnswer": { "@type": "Answer", "text": "Employee scheduling software is where a manager builds the week of shifts, publishes it to the team and handles the changes that follow: swaps, open shifts and time off. Workzenly also shows approved PTO while you schedule, tells you before a shift goes uncovered, and compares the schedule with the hours people actually clocked." } },
+          { "@type": "Question", "name": "How far in advance do I have to post a work schedule?", "acceptedAnswer": { "@type": "Answer", "text": "Federal law sets no notice period. Oregon and several cities, including Seattle, San Francisco, Chicago, Philadelphia, Los Angeles and New York City for fast food, require covered employers to post schedules 14 days or two weeks ahead, and New York City retail employers must give 72 hours. If none of these apply to you, posting a week or more ahead is still good practice." } },
           { "@type": "Question", "name": "Do fair workweek laws apply to small businesses?", "acceptedAnswer": { "@type": "Answer", "text": "Usually not to a single independent shop. Most of these laws cover larger employers in set industries, often counted by employees or locations worldwide, such as 250 or 500 employees. Franchise locations can be counted toward the totals in some cities, so a small franchisee may be covered. Check the rules with your city or state labor agency." } },
           { "@type": "Question", "name": "Can employees swap shifts in Workzenly?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Staff see the schedule on their phones and can pick up an open shift or swap one with a teammate, and the schedule updates for everyone. Where a scheduling law applies, keep a record that the employee asked for the change; Oregon, for example, exempts changes made at an employee's written request from its notice rules." } },
           { "@type": "Question", "name": "Does the schedule show who is on PTO?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scheduling and PTO share one record, so approved time off shows up where you build shifts. When someone asks for a day off, the manager sees who else is already out that day before saying yes, and can find cover from the schedule in the same place." } },
-          { "@type": "Question", "name": "Do I have to pay for a shift I cancel?", "acceptedAnswer": { "@type": "Answer", "text": "Federal law only requires pay for hours worked, so it does not require pay for a canceled shift. Some states, including California and New York, require reporting-time or call-in pay when an employee reports to work and is sent home early, and fair workweek cities add predictability pay for late changes. Check your state and city rules." } },
-          { "@type": "Question", "name": "Can managers build the schedule from a phone?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Managers can build schedules, approve requests and check who is in from a phone. Many find it easier to plan a full week for a large team on a laptop, where you can see every day at once, and then handle swaps and last-minute changes from their phone during the week." } }
+          { "@type": "Question", "name": "How many hours can a 15-year-old be scheduled?", "acceptedAnswer": { "@type": "Answer", "text": "Under federal child labor rules, 14- and 15-year-olds can work outside school hours only: up to 3 hours on a school day, 18 hours in a school week, 8 hours on a non-school day and 40 hours in a non-school week, between 7 a.m. and 7 p.m. (9 p.m. from June 1 through Labor Day). Federal law does not limit hours for 16- and 17-year-olds, but many states do, and the stricter rule applies." } }
         ]
       }
     ]
   }
   </script>
 </head>
-<body data-keyword="shift scheduling app" data-intent="commercial" data-topic="Scheduling">
+<body data-keyword="employee scheduling software" data-intent="transactional" data-topic="Scheduling">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M4 16h16M6 16a6 6 0 0 1 12 0M12 7.5V5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z M3.5 7.5L12 12l8.5-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5V20H4z M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="10" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 19h6M12 15v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h14M14 4l4 4-4 4M20 16H6M10 12l-4 4 4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 18h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-drag" viewBox="0 0 24 24"><rect x="3.5" y="4" width="10" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 14l4 6 1.2-2.6 2.8-.4z M17 6h3.5M17 10h3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
 
 <header class="nav">
   <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
   <nav class="nav__links" aria-label="Main">
-    <a class="link" href="/features/time-clock/">Time clock</a>
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
     <a class="link" href="/features/scheduling/" aria-current="page">Scheduling</a>
     <a class="link" href="/features/payroll/">Payroll</a>
-    <a class="link" href="/features/pto/">PTO</a>
     <a class="link" href="/blog/">Blog</a>
   </nav>
   <a class="button button--small" href="/#start">Book a demo</a>
 </header>
 
 <nav class="crumbs" aria-label="Breadcrumb">
-  <ol><li><a href="/">Home</a></li><li aria-current="page">Scheduling</li></ol>
+  <ol><li><a href="/">Home</a></li><li><a href="/features/">Features</a></li><li aria-current="page">Scheduling</li></ol>
 </nav>
 
-<main>
-  <section class="feat-hero" aria-labelledby="feat-title">
-    <div class="feat-hero__text">
-      <h1 id="feat-title">A shift scheduling app with swaps, PTO and pay in one place</h1>
-      <p class="feat-hero__lead">Build next week by dragging people into shifts. Your team sees the schedule on their phones as soon as you publish, swaps or picks up shifts, and you hear before a shift goes uncovered.</p>
-      <div class="feat-hero__actions">
-        <a class="button" href="/#start">Book a demo</a>
-        <a class="link" href="#how">See how a week gets built</a>
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Scheduling</span>
+        <h1 id="hero-title">Employee scheduling software your whole team can see</h1>
+        <p class="fp-lead">Workzenly is employee scheduling software for hourly teams. Build the week by dragging people into shifts, and staff see it on their phones the moment you publish. They swap shifts and pick up open ones in the app, approved time off sits right on the grid, and you hear before a shift goes uncovered.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Drag and drop shifts</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Swaps and open shifts</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>PTO on the same grid</li>
+        </ul>
       </div>
-    </div>
-    <div class="feat-hero__stage">
-      <div class="frag" data-ui>
-        <p class="frag__title">Schedule · Week of Nov 9</p>
-        <p class="frag__meta">Northfield Coffee, Austin, TX · Published Mon, Oct 26</p>
-        <table>
-          <thead>
-            <tr><th scope="col">Name</th><th scope="col">Mon 9</th><th scope="col">Tue 10</th><th scope="col">Wed 11</th><th scope="col">Thu 12</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Maya Torres<small>Front counter</small></td><td>9–5:30</td><td>9–5:30</td><td>Off</td><td>9–5:30</td></tr>
-            <tr><td>Jordan Lee<small>Barista</small></td><td>7–3:30</td><td>7–3:30</td><td>7–3:30</td><td id="sc-jordan">7–3:30</td></tr>
-            <tr><td>Sam Rivera<small>Kitchen</small></td><td>6–2:30</td><td>Off</td><td>6–2:30</td><td>6–2:30</td></tr>
-            <tr><td>Chris Walker<small>Barista</small></td><td><span class="pill">PTO</span></td><td>12–8</td><td>12–8</td><td>Off</td></tr>
-            <tr><td>Tyler N.<small>Barista</small></td><td>Off</td><td>12–8</td><td>Off</td><td id="sc-tyler">Off</td></tr>
-          </tbody>
-        </table>
-        <div class="frag__swap">
-          <div>
-            <p class="frag__k" id="sc-k">Swap request</p>
-            <p id="sc-text">Jordan Lee offered Thu 7:00 AM–3:30 PM. Tyler N. said yes.</p>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly weekly schedule for Northfield Coffee, Sunday November 15 to Saturday November 21, with front counter, barista and kitchen shifts color-coded, Tyler on PTO Thursday and one open kitchen shift on Saturday">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/schedule</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span><svg><use href="#i-clock"/></svg></span>
+              <span class="is-on"><svg><use href="#i-cal"/></svg></span>
+              <span><svg><use href="#i-sheet"/></svg></span>
+              <span><svg><use href="#i-pay"/></svg></span>
+              <span><svg><use href="#i-users"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Schedule</p><p class="ui-sub">Northfield Coffee · Week of Nov 15–21 · Published Mon, Nov 9</p></div>
+                <div class="ui-seg" aria-hidden="true"><span>Day</span><span class="is-on">Week</span><span>Month</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>225</b><small>Hours scheduled</small><em>8 people</em></div>
+                <div class="ui-kpi"><b>1</b><small>Open shift</small><em class="is-warn">Sat, kitchen</em></div>
+                <div class="ui-kpi"><b>1</b><small>Out on PTO</small><em>Tyler, Thu</em></div>
+                <div class="ui-kpi"><b>1</b><small>Swap waiting</small><em>Jordan → Dana</em></div>
+              </div>
+              <div class="ui-card ui-scroll">
+                <div class="ui-card__head"><b>Shifts</b><span class="ui-legend"><span><i style="background:#dafa9c"></i>Counter</span><span><i style="background:#9cc8fa"></i>Barista</span><span><i style="background:#f2c36b"></i>Kitchen</span></span></div>
+                <table class="ui-table ui-sched">
+                  <thead><tr><th>Name</th><th>Sun 15</th><th>Mon 16</th><th>Tue 17</th><th>Wed 18</th><th>Thu 19</th><th>Fri 20</th><th>Sat 21</th><th class="r">Hrs</th></tr></thead>
+                  <tbody>
+                    <tr><td>Maya Torres</td><td><span class="ui-off">–</span></td><td><span class="ui-shift ui-shift--counter">9–5:30</span></td><td><span class="ui-shift ui-shift--counter">9–5:30</span></td><td><span class="ui-off">–</span></td><td><span class="ui-shift ui-shift--counter">9–5:30</span></td><td><span class="ui-shift ui-shift--counter">9–5:30</span></td><td><span class="ui-off">–</span></td><td class="r num">32</td></tr>
+                    <tr><td>Aisha Brown</td><td><span class="ui-shift ui-shift--counter">8–2</span></td><td><span class="ui-off">–</span></td><td><span class="ui-off">–</span></td><td><span class="ui-shift ui-shift--counter">9–5:30</span></td><td><span class="ui-off">–</span></td><td><span class="ui-off">–</span></td><td><span class="ui-shift ui-shift--counter">8–4:30</span></td><td class="r num">22</td></tr>
+                    <tr><td>Jordan Lee</td><td><span class="ui-shift ui-shift--barista">7–3:30</span></td><td><span class="ui-shift ui-shift--barista">7–3:30</span></td><td><span class="ui-shift ui-shift--barista">7–3:30</span></td><td><span class="ui-shift ui-shift--barista">7–3:30</span></td><td><span class="ui-shift ui-shift--barista">7–3:30</span></td><td><span class="ui-off">–</span></td><td><span class="ui-off">–</span></td><td class="r num">40</td></tr>
+                    <tr><td>Chris Walker</td><td><span class="ui-off">–</span></td><td><span class="ui-off">–</span></td><td><span class="ui-shift ui-shift--barista">12–8</span></td><td><span class="ui-shift ui-shift--barista">12–8</span></td><td><span class="ui-off">–</span></td><td><span class="ui-shift ui-shift--barista">12–8</span></td><td><span class="ui-shift ui-shift--barista">12–8</span></td><td class="r num">30</td></tr>
+                    <tr><td>Dana Brooks</td><td><span class="ui-off">–</span></td><td><span class="ui-shift ui-shift--barista">12–8</span></td><td><span class="ui-off">–</span></td><td><span class="ui-off">–</span></td><td><span class="ui-shift ui-shift--barista">12–8</span></td><td><span class="ui-off">–</span></td><td><span class="ui-shift ui-shift--barista">7–3:30</span></td><td class="r num">23</td></tr>
+                    <tr><td>Tyler N.</td><td><span class="ui-shift ui-shift--barista">12–6</span></td><td><span class="ui-off">–</span></td><td><span class="ui-off">–</span></td><td><span class="ui-off">–</span></td><td><span class="ui-shift ui-shift--pto">PTO</span></td><td><span class="ui-shift ui-shift--barista">7–3:30</span></td><td><span class="ui-off">–</span></td><td class="r num">14</td></tr>
+                    <tr><td>Sam Rivera</td><td><span class="ui-shift ui-shift--kitchen">6–2:30</span></td><td><span class="ui-shift ui-shift--kitchen">6–2:30</span></td><td><span class="ui-shift ui-shift--kitchen">6–2:30</span></td><td><span class="ui-shift ui-shift--kitchen">6–2:30</span></td><td><span class="ui-off">–</span></td><td><span class="ui-shift ui-shift--kitchen">6–2:30</span></td><td><span class="ui-off">–</span></td><td class="r num">40</td></tr>
+                    <tr><td>Emily Carter</td><td><span class="ui-shift ui-shift--kitchen">10–6:30</span></td><td><span class="ui-off">–</span></td><td><span class="ui-shift ui-shift--kitchen">10–6:30</span></td><td><span class="ui-off">–</span></td><td><span class="ui-shift ui-shift--kitchen">6–2:30</span></td><td><span class="ui-off">–</span></td><td><span class="ui-off">–</span></td><td class="r num">24</td></tr>
+                    <tr><td>Open shift</td><td></td><td></td><td></td><td></td><td></td><td></td><td><span class="ui-shift ui-shift--open">10–6:30</span></td><td class="r num">8</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="ui-foot"><div><p id="sc-open-text">Sat, Nov 21 kitchen shift has no one yet</p><small>Emily Carter is free and would reach 32 hours, no overtime</small></div><button type="button" class="ui-btn" data-act data-target="sc-open-text" data-text="Offered to Emily. She sees it on her phone now." data-done="Offered">Offer to Emily</button></div>
+            </div>
           </div>
-          <button type="button" class="frag__btn" id="sc-btn">Approve swap</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="why-title">
-    <h2 id="why-title">Why staff scheduling falls apart in a spreadsheet</h2>
-    <div class="feat-section__body">
-      <p>Most small businesses build the schedule in a spreadsheet, post a photo of it in a group text, and then manage the week by message. Someone asks to swap Thursday, someone else says yes, and the only record is a thread the manager has to scroll back through on Saturday.</p>
-      <p>The spreadsheet also cannot see anything else. It does not know that Chris already has Monday approved as PTO, that Sam was 14 minutes late three times last week, or that one more shift will push Jordan past 40 hours and into overtime. So the manager checks three places before every change, or skips the check and finds out on payday.</p>
-      <p>A shift scheduling app fixes the part the spreadsheet cannot: it keeps the schedule, the requests and the hours people actually worked in the same place, and puts the current version on every employee’s phone.</p>
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for teams that work in shifts</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Restaurants and cafés</li>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Retail stores</li>
+        <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Clinics</li>
+        <li><svg aria-hidden="true"><use href="#i-home"/></svg>Home care</li>
+        <li><svg aria-hidden="true"><use href="#i-hat"/></svg>Job sites</li>
+        <li><svg aria-hidden="true"><use href="#i-box"/></svg>Warehouses</li>
+        <li><svg aria-hidden="true"><use href="#i-desk"/></svg>Offices</li>
+      </ul>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="what-title">
-    <h2 id="what-title">What the Workzenly employee scheduling app does</h2>
-    <ul class="feat-list">
-      <li><b>Drag people into shifts</b><p>Build next week by dragging each person into the shifts you need, for one location or several. Managers can do it from a laptop or a phone.</p></li>
-      <li><b>Publish to every phone</b><p>When you publish, staff see their shifts in the Workzenly app straight away. No photo of a whiteboard, no “which version is current?” texts.</p></li>
-      <li><b>Pick up open shifts</b><p>Post a shift nobody is on yet and let your team pick it up, so the people who want more hours can find them without calling around.</p></li>
-      <li><b>Shift swap app built in</b><p>Employees swap a shift with a teammate from their phones, and the schedule updates for everyone. Every swap is in the record, not buried in a group chat.</p></li>
-      <li><b>Time off in view while you schedule</b><p>PTO lives in the same system. Before approving a day off, managers see who else is already out, and they can find cover from the schedule on the same screen.</p></li>
-      <li><b>Connected to the clock and payroll</b><p>The <a class="link" href="/features/time-clock/">time clock</a> knows each person’s shift, so late arrivals show up against it, and you are told before a shift goes uncovered. Worked hours then flow into payroll.</p></li>
-    </ul>
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">The schedule is a photo in the group text, Thursday’s swap lives in a thread, and nobody noticed Saturday’s kitchen shift is empty.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">One schedule, current on every phone</h2>
+      <p class="fp-problem__p">A spreadsheet cannot see that Tyler has Thursday off or that one more shift puts Sam into overtime. Staff scheduling software keeps the shifts, the requests, the time off and the hours worked in one record, and puts the latest version in everyone’s pocket.</p>
+    </div>
   </section>
 
-  <div class="feat-section">
-    <aside class="cta-inline" aria-label="Book a demo" style="grid-column: 1 / -1;">
-      <div><p class="cta-inline__title">Run the week without the group text</p><p>Workzenly puts the schedule, swaps and time off on everyone’s phone, so a Thursday swap is settled in the app instead of a thread.</p></div>
-      <a class="cta-inline__btn" href="/#start">Book a demo</a>
-    </aside>
-  </div>
-
-  <section class="feat-section" aria-labelledby="laws-title">
-    <h2 id="laws-title">Predictive scheduling and fair workweek laws</h2>
-    <div class="feat-section__body">
-      <p>There is no federal rule on how early you must post a schedule. One state and a group of cities have passed predictive scheduling, or fair workweek, laws for larger employers. They usually require advance notice, extra pay for late changes made by the employer, and rest between a closing and an opening shift. Here are the main ones, as published by each agency.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th scope="col">Where</th><th scope="col">Who is covered (summary)</th><th scope="col">Schedule notice</th></tr></thead>
-          <tbody>
-            <tr><td>Oregon (statewide)</td><td>Retail, hospitality and food service employers with 500+ employees worldwide</td><td>14 calendar days; 10 hours of rest after a shift unless the employee agrees, paid at time and a half</td></tr>
-            <tr><td>New York City</td><td>Fast food employers; retail employers</td><td>Fast food: 14 days. Retail: 72 hours, and no on-call shifts</td></tr>
-            <tr><td>San Francisco</td><td>Formula retail with 40+ establishments worldwide and 20+ employees in the city</td><td>Two weeks; pay for changes made on less than seven days’ notice</td></tr>
-            <tr><td>Seattle</td><td>Retail and food service with 500+ employees worldwide (full-service restaurants also need 40+ locations)</td><td>14 days; time and a half for shifts less than 10 hours apart</td></tr>
-            <tr><td>Chicago</td><td>Building services, healthcare, hotels, manufacturing, restaurants, retail and warehouse services, above size and pay thresholds</td><td>14 days</td></tr>
-            <tr><td>Philadelphia</td><td>Retail, hospitality and food service with 250+ employees and 30+ locations worldwide, franchises included</td><td>14 days, a good faith estimate of hours, and 9 hours of rest between shifts unless the worker consents</td></tr>
-            <tr><td>Los Angeles (city)</td><td>Retail employers with 300+ employees worldwide</td><td>14 days; employees can decline later changes</td></tr>
-          </tbody>
-        </table>
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first week</p>
+        <h2 id="outcomes-title">Less texting, fewer gaps, no surprise overtime</h2>
       </div>
-      <p>Los Angeles County added its own retail ordinance for unincorporated areas from July 1, 2025, and a few other cities have similar rules. Thresholds, premiums and exceptions differ in each place, and changes an employee asks for are often treated differently from changes the employer makes. Oregon, for example, exempts changes made at an employee’s written request. Confirm the details with the agency for your city or state before you rely on this summary.</p>
-      <p>Even if no law covers you, the habits are worth copying. Posting two weeks out makes it easier to keep good staff, and rotating patterns such as the <a class="link" href="/blog/dupont-schedule/">DuPont schedule</a> or the <a class="link" href="/blog/2-2-3-schedule/">2-2-3 schedule</a> are easier to post far ahead because they repeat.</p>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-drag"/></svg></span><h3>A week built in one sitting</h3><p>Drag people into shifts. Hours per person add up as you go, so you see who is at 40 before you publish.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Staff see it the moment you publish</h3><p>The schedule lands in the Workzenly app on every phone. No photo of a whiteboard, no “which version is right?” texts.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-swap"/></svg></span><h3>Swaps settled in the app</h3><p>People swap and pick up shifts from their phones. You approve with one tap, and every change is on the record.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Warned before a shift goes empty</h3><p>Workzenly tells managers when a shift still has no one on it, while there is time to offer it out.</p></article>
+      </div>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="check-title">
-    <h2 id="check-title">What to look for in employee scheduling software</h2>
-    <div class="feat-section__body">
-      <p>Use this checklist on any tool you trial, including ours.</p>
-      <ul>
-        <li><strong>Employees actually open it.</strong> The schedule has to be on their phones, current, and easy to read at a glance. If staff still ask “am I on tomorrow?”, the tool is not doing its job.</li>
-        <li><strong>Swaps and open shifts leave a record.</strong> You want to see who offered a shift, who took it and when, which matters most where scheduling laws treat employee requests differently.</li>
-        <li><strong>Time off is visible while you build.</strong> Approving PTO in one place and scheduling in another is how double-booking happens.</li>
-        <li><strong>Scheduled hours meet worked hours.</strong> A schedule tied to the time clock shows late arrivals and no-shows, and helps you spot overtime before the week ends. Our <a class="link" href="/blog/shift-differential/">shift differential guide</a> explains why night and weekend shifts also change the cost of a schedule.</li>
-        <li><strong>It fits your pattern.</strong> Retail and restaurants change shifts every week; clinics and plants run fixed rotations. Ask the vendor to build one of your real weeks in the demo.</li>
-        <li><strong>The hours go somewhere.</strong> If worked hours still have to be exported and keyed into payroll, you have moved the spreadsheet, not removed it.</li>
-      </ul>
+  <!-- PRODUCT TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">How the employee scheduling app runs a week</h2>
+        <p>Building, publishing, swapping and time off happen on the same schedule, so a change in one place shows up everywhere else.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="Parts of scheduling">
+          <button class="fp-tab" role="tab" id="tab-build" aria-controls="panel-build" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-drag"/></svg>Build</b><span>Drag people into shifts</span></button>
+          <button class="fp-tab" role="tab" id="tab-pub" aria-controls="panel-pub" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-phone"/></svg>Publish</b><span>On every phone, right away</span></button>
+          <button class="fp-tab" role="tab" id="tab-swap" aria-controls="panel-swap" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-swap"/></svg>Swaps</b><span>Trade shifts with a record</span></button>
+          <button class="fp-tab" role="tab" id="tab-pto" aria-controls="panel-pto" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-cal"/></svg>Time off</b><span>PTO in view while you plan</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-build" aria-labelledby="tab-build">
+          <div>
+            <h3>Drag people into the week</h3>
+            <p>Lay out the shifts each day needs, then drag people into them. Weekly hours update as you go, and approved PTO is already marked.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Shifts color-coded by role</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Weekly hours per person as you build</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Leave a shift open for the team to claim</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Monday November 16 shift list with an empty barista slot from noon to 8 PM and Dana Brooks available to drag into it">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Schedule · Mon, Nov 16</span></div>
+            <div class="ui-main">
+              <div class="ui-split">
+                <div class="ui-card">
+                  <div class="ui-card__head"><b>Mon, Nov 16</b><span>4 shifts</span></div>
+                  <div class="ui-list">
+                    <div class="ui-item"><div><p>Kitchen · 6:00 AM–2:30 PM</p><small>Sam Rivera</small></div><span class="ui-shift ui-shift--kitchen">8 h</span></div>
+                    <div class="ui-item"><div><p>Barista · 7:00 AM–3:30 PM</p><small>Jordan Lee</small></div><span class="ui-shift ui-shift--barista">8 h</span></div>
+                    <div class="ui-item"><div><p>Counter · 9:00 AM–5:30 PM</p><small>Maya Torres</small></div><span class="ui-shift ui-shift--counter">8 h</span></div>
+                    <div class="ui-drop"><p>Barista · 12:00–8:00 PM</p><small id="drag-slot" style="color:#8d8d89">Drop someone here</small></div>
+                  </div>
+                </div>
+                <div class="ui-card">
+                  <div class="ui-card__head"><b>Free Monday</b><span>Baristas</span></div>
+                  <div class="ui-list">
+                    <div class="ui-item"><div><p>Dana Brooks</p><small>15.5 h this week</small></div><button type="button" class="ui-btn" data-act data-target="drag-slot" data-text="Dana Brooks · now 23.0 h this week" data-done="Placed">Drag in</button></div>
+                    <div class="ui-item"><div><p>Tyler N.</p><small>14.0 h this week</small></div><span class="ui-pill">Free</span></div>
+                    <div class="ui-item"><div><p>Chris Walker</p><small>30.0 h this week</small></div><span class="ui-pill">Free</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p>Week of Nov 15–21 · draft</p><small>Shifts 7.5 h paid after a 30 min unpaid meal break</small></div><span class="ui-pill ui-pill--info">Not published</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pub" aria-labelledby="tab-pub" hidden>
+          <div>
+            <h3>Publish once, and everyone has it</h3>
+            <p>When you publish, each person sees their shifts in the Workzenly app, and later changes show up the same way.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Each person sees their week, role and hours</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Changes reach the people they affect</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The same app is where they clock in</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Maya Torres's phone showing her four front counter shifts for the week of November 15, 32 hours in total">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Your schedule</p><p class="ui-title">Week of Nov 15–21</p></div>
+              <div class="ui-item"><div><p>New schedule published</p><small>By Marcus · Mon, Nov 9</small></div><span class="ui-pill ui-pill--ok">New</span></div>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Mon, Nov 16</p><small>Front counter · 9:00 AM–5:30 PM</small></div><span class="ui-shift ui-shift--counter">8 h</span></div>
+                <div class="ui-item"><div><p>Tue, Nov 17</p><small>Front counter · 9:00 AM–5:30 PM</small></div><span class="ui-shift ui-shift--counter">8 h</span></div>
+                <div class="ui-item"><div><p>Thu, Nov 19</p><small>Front counter · 9:00 AM–5:30 PM</small></div><span class="ui-shift ui-shift--counter">8 h</span></div>
+                <div class="ui-item"><div><p>Fri, Nov 20</p><small>Front counter · 9:00 AM–5:30 PM</small></div><span class="ui-shift ui-shift--counter">8 h</span></div>
+              </div>
+              <p class="ui-sub" style="text-align:center">32 hours scheduled this week</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-swap" aria-labelledby="tab-swap" hidden>
+          <div>
+            <h3>A shift swap app built into the schedule</h3>
+            <p>Jordan can’t make Wednesday. He offers the shift, Dana accepts on her phone, and the manager sees both people’s new hours before approving.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Who asked, who accepted, who approved, and when</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours shown for both people before you say yes</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approve from your phone between rushes</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Swap request card: Jordan Lee's Wednesday November 18 barista shift going to Dana Brooks, with both people's weekly hours and no overtime">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Requests · swap</span></div>
+            <div class="ui-main">
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Swap request</b><span class="ui-pill ui-pill--warn" id="swap-pill">Waiting for you</span></div>
+                <p style="font-size:15px;font-weight:600">Wed, Nov 18 · Barista · 7:00 AM–3:30 PM</p>
+                <p class="ui-sub">Jordan Lee offered it Wed, Nov 11, 9:40 AM · Dana Brooks accepted 10:42 AM</p>
+              </div>
+              <div class="ui-split">
+                <div class="ui-card"><div class="ui-card__head"><span class="ui-person"><span class="ui-av" style="background:#9cc8fa">JL</span>Jordan Lee</span></div><p class="num">40.0 → 32.0 h</p><small class="ui-sub">Gives the shift</small></div>
+                <div class="ui-card"><div class="ui-card__head"><span class="ui-person"><span class="ui-av" style="background:#c9b6f5">DB</span>Dana Brooks</span></div><p class="num">23.0 → 31.0 h</p><small class="ui-sub">Takes the shift</small></div>
+              </div>
+              <div class="ui-foot"><div><p>Same role, no overtime for either</p><small>Note from Jordan: “Dentist appointment Wednesday morning”</small></div><button type="button" class="ui-btn" data-act data-pill="swap-pill" data-pill-text="Approved" data-done="Swap approved">Approve swap</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pto" aria-labelledby="tab-pto" hidden>
+          <div>
+            <h3>Time off you can see while you schedule</h3>
+            <p>Approved days off sit on the grid. When someone asks for a day, you see who else is out and who could cover before you answer.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved PTO blocks the day on the schedule</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>See who else is out before you say yes</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Balances update themselves when you approve</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Time off request from Maya Torres for Friday November 20, showing nobody else out that day and Aisha Brown free to cover the front counter shift">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Time off · week of Nov 15–21</span></div>
+            <div class="ui-main">
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Tyler N. · Thu, Nov 19</p><small>8 h PTO · approved Nov 2</small></div><span class="ui-pill ui-pill--ok">Approved</span></div>
+                <div class="ui-item"><div><p>Maya Torres · Fri, Nov 20</p><small>8 h PTO · scheduled Counter 9:00 AM–5:30 PM</small></div><span class="ui-pill ui-pill--warn" id="pto-pill">Requested</span></div>
+              </div>
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Fri, Nov 20 if you approve</b><span>Front counter</span></div>
+                <div class="ui-list">
+                  <div class="ui-item"><div><p>Also out that day</p><small>Nobody</small></div><span class="ui-pill">0</span></div>
+                  <div class="ui-item"><div><p>Free to cover</p><small>Aisha Brown · 22.0 → 30.0 h</small></div><span class="ui-pill ui-pill--info">No overtime</span></div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p>Maya would have 24.0 h scheduled + 8 h PTO</p><small>The Friday shift opens for Aisha when you approve</small></div><button type="button" class="ui-btn" data-act data-pill="pto-pill" data-pill-text="Approved" data-done="Approved">Approve</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="tradeoff-title">
-    <h2 id="tradeoff-title">Standalone scheduling tool or one connected system</h2>
-    <div class="feat-section__body">
-      <p>There are many good options. When I Work, Sling, Homebase, Deputy and 7shifts are well-known names in hourly scheduling, and 7shifts is built around restaurants. A standalone tool can go deeper on scheduling alone, and it may be the right call if you are happy with your payroll provider and only need the schedule fixed. Check each vendor’s site for current features and pricing; our <a class="link" href="/tools/when-i-work-alternatives/">When I Work alternatives</a> guide compares the main criteria.</p>
-      <p>The trade-off is the handoff. With separate tools, someone still moves hours from the schedule to the clock to payroll, and PTO lives somewhere else again. Workzenly takes the other route: one shift scheduling app that shares a record with the time clock, PTO and payroll, and one employee app for all of it. The cost of that choice is that you change more than one tool at once, so plan the switch around a pay period.</p>
-      <p>Industry needs differ too. Our guides to <a class="link" href="/tools/best-restaurant-scheduling-apps/">restaurant scheduling software</a>, <a class="link" href="/tools/best-retail-scheduling-software/">retail scheduling software</a> and <a class="link" href="/blog/healthcare-scheduling-software/">healthcare scheduling software</a> cover what matters in each.</p>
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="Scheduling in detail">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Open shifts</p>
+          <h2>Post a shift and let the right person grab it</h2>
+          <p>Post a shift as open, and people in that role see it in the app and pick it up with a tap. No calling around.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Open shifts show the role, time and paid hours</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Staff see how the shift changes their week</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>The schedule fills in as soon as someone claims it</li>
+          </ul>
+          <a class="fp-row__more" href="/features/employee-app/">See the employee app <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-phone" role="img" aria-label="Emily Carter's phone showing an open kitchen shift on Saturday November 21 from 10 AM to 6:30 PM with a pick up button">
+          <div class="ui-phone__screen">
+            <div class="ui-phone__notch"></div>
+            <div><p class="ui-sub">Open shifts</p><p class="ui-title">Emily Carter</p></div>
+            <div class="ui-card">
+              <p class="ui-sub">Kitchen · Northfield Coffee</p>
+              <p style="font-size:22px;font-weight:600;letter-spacing:-0.02em;margin:6px 0 2px">Sat, Nov 21</p>
+              <p class="ui-sub">10:00 AM–6:30 PM · 8 h paid · 30 min meal break</p>
+              <p style="margin-top:10px"><span class="ui-pill ui-pill--info">Your week: 24 → 32 h</span></p>
+            </div>
+            <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="pick-status" data-text="It’s yours. Saturday is on your schedule." data-done="Picked up">Pick up shift</button>
+            <p class="ui-sub" id="pick-status" style="text-align:center">Offered by Marcus · Wed, Nov 11</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Coverage alerts</p>
+          <h2>Hear about the empty shift on Wednesday, not Saturday</h2>
+          <p>If a shift is still uncovered as the day gets close, Workzenly tells the manager, with who is free and who would cross 40 hours.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Uncovered shifts flagged ahead of time</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime shown before you assign</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Offer the shift from the alert itself</li>
+          </ul>
+          <a class="fp-row__more" href="/features/overtime-tracking/">See overtime tracking <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Coverage alert: the Saturday November 21 kitchen shift has no one, with Emily Carter free at no overtime and Sam Rivera free but at 8 overtime hours costing 216 dollars">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Coverage · week of Nov 15–21</span></div>
+          <div class="ui-main">
+            <div class="ui-item"><div><p>Sat, Nov 21 · Kitchen · 10:00 AM–6:30 PM</p><small>Open since Mon, Nov 9 · no pickups yet · 10 days out</small></div><span class="ui-pill ui-pill--bad" id="cov-pill">Uncovered</span></div>
+            <div class="ui-card">
+              <div class="ui-card__head"><b>Who could take it</b><span>Kitchen staff</span></div>
+              <div class="ui-list">
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Emily Carter</span><span class="num">24.0 → 32.0 h</span></div><div class="ui-bar-meter"><i style="width:80%"></i></div></div>
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Sam Rivera</span><span class="num">40.0 → 48.0 h</span></div><div class="ui-bar-meter"><i style="width:100%;background:#f2c36b"></i></div></div>
+              </div>
+            </div>
+            <div class="ui-foot"><div><p id="cov-text">Sam would work 8 overtime hours</p><small>8 h × $27.00 (1.5 × $18.00) = $216.00 extra</small></div><button type="button" class="ui-btn" data-act data-target="cov-text" data-text="Offered to Emily. No overtime this week." data-pill="cov-pill" data-pill-text="Offered" data-done="Offered">Offer to Emily</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Schedule vs actual</p>
+          <h2>See who showed up against who was scheduled</h2>
+          <p>The time clock knows each person’s shift, so a late start or missed shift shows up the same morning. Worked hours flow on to payroll.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Today’s shifts next to today’s punches</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Late starts flagged against the scheduled time</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Scheduled hours and worked hours for the week</li>
+          </ul>
+          <a class="fp-row__more" href="/features/time-clock/">See the time clock app <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Today's schedule for Wednesday November 11 next to clock-in times, showing Sam Rivera 14 minutes late and Dana Brooks due at noon">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Schedule vs actual · Wed, Nov 11</span></div>
+          <div class="ui-main ui-scroll">
+            <table class="ui-table">
+              <thead><tr><th>Employee</th><th>Scheduled</th><th>Clocked in</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Jordan Lee</td><td class="num">7:00 AM–3:30 PM</td><td class="num">7:01 AM</td><td><span class="ui-pill ui-pill--ok">On shift</span></td></tr>
+                <tr><td>Emily Carter</td><td class="num">7:00 AM–4:30 PM</td><td class="num">7:00 AM</td><td><span class="ui-pill ui-pill--ok">On shift</span></td></tr>
+                <tr><td>Maya Torres</td><td class="num">9:00 AM–5:30 PM</td><td class="num">8:58 AM</td><td><span class="ui-pill ui-pill--ok">On shift</span></td></tr>
+                <tr><td>Sam Rivera</td><td class="num">9:00 AM–5:30 PM</td><td class="num">9:14 AM</td><td><span class="ui-pill ui-pill--warn">Late 14 min</span></td></tr>
+                <tr><td>Dana Brooks</td><td class="num">12:00–8:00 PM</td><td class="num">–</td><td><span class="ui-pill ui-pill--info">Due at noon</span></td></tr>
+              </tbody>
+            </table>
+            <div class="ui-foot"><div><p>5 scheduled · 4 in · 1 late · 1 not due yet</p><small>Punches go straight to this week’s timesheets</small></div><span class="ui-pill ui-pill--ok">Live</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="feat-section" id="how" aria-labelledby="how-title">
-    <h2 id="how-title">How a week gets built in Workzenly</h2>
-    <div class="feat-section__body">
-      <ol>
-        <li><strong>Start from your team.</strong> Send us your employee list as a spreadsheet and we import it during setup, so every person, role and location is already there.</li>
-        <li><strong>Build the week.</strong> Marcus drags Maya, Jordan, Sam and Tyler into next week’s shifts. Chris’s approved PTO on Monday is already showing, so nobody schedules him by mistake.</li>
-        <li><strong>Publish.</strong> The team sees the week on their phones. Maya checks her next shift: Monday, 9:00 AM to 5:30 PM.</li>
-        <li><strong>Let the team sort the small stuff.</strong> Jordan offers his Thursday opening shift, Tyler takes it, and the schedule updates for both of them.</li>
-        <li><strong>Close the loop.</strong> On the day, the time clock shows who is in against the schedule. Approved hours go into <a class="link" href="/features/payroll/">payroll</a>, and any <a class="link" href="/features/pto/">PTO</a> is paid as PTO without anyone typing it twice.</li>
-      </ol>
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One schedule, four people who rely on it</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Employees</h3></div><div><span>Replaces</span><p>Photos of the schedule and the group text</p></div><div><span>They use it to</span><p>Check their shifts, swap with a teammate, pick up open shifts and ask for time off</p></div><div><span>What they notice</span><p>No more “am I on tomorrow?”</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Managers</h3></div><div><span>Replaces</span><p>A spreadsheet plus three other places to check</p></div><div><span>They use it to</span><p>Build the week, approve swaps and PTO, and cover gaps before they happen</p></div><div><span>What they notice</span><p>Saturday problems found on Wednesday</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Payroll</h3></div><div><span>Replaces</span><p>Matching schedules to time cards by hand</p></div><div><span>They use it to</span><p>Pay worked hours, overtime and PTO that started from the same schedule</p></div><div><span>What they notice</span><p>Fewer “I swapped that shift” corrections</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owners</h3></div><div><span>Replaces</span><p>Finding out about overtime on the pay run</p></div><div><span>They use it to</span><p>See scheduled hours against worked hours, week by week</p></div><div><span>What they notice</span><p>Labor hours planned, not guessed</p></div></div>
+      </div>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="guides-title">
-    <h2 id="guides-title">Guides and free tools</h2>
-    <div class="feat-section__body">
-      <ul>
-        <li><a class="link" href="/templates/employee-schedule-templates/">Free work schedule templates for weekly shifts</a></li>
-        <li><a class="link" href="/blog/pitman-schedule/">The Pitman schedule for 12-hour shifts</a></li>
-        <li><a class="link" href="/blog/9-80-work-schedule/">How a 9/80 work schedule works</a></li>
-        <li><a class="link" href="/blog/hybrid-work-schedule/">Hybrid work schedule examples</a></li>
-        <li><a class="link" href="/blog/overtime-calculator/">Overtime calculator for time and a half</a></li>
-      </ul>
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Everyone sees what they need, and nothing else</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Employees see their own</h3><p>Each person sees their shifts, their requests, their PTO balance and their pay stubs, never a coworker’s record.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Managers see their team</h3><p>Managers see and edit their team’s shifts and time off, and approve their team’s swaps and requests.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and pay stubs are visible only to the people you give payroll access to.</p></article>
+      </div>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="faq-title">
-    <h2 id="faq-title">Frequently asked questions</h2>
-    <div class="feat-section__body faq-list">
-      <details><summary>How far in advance do I have to post a work schedule?</summary><p>Federal law sets no notice period. Oregon and several cities, including Seattle, Chicago, Philadelphia, Los Angeles and New York City for fast food, require covered employers to post schedules 14 days ahead, and New York City retail employers must give 72 hours. If none of these apply to you, posting a week or more ahead is still good practice.</p></details>
-      <details><summary>Do fair workweek laws apply to small businesses?</summary><p>Usually not to a single independent shop. Most of these laws cover larger employers in set industries, often counted by employees or locations worldwide, such as 250 or 500 employees. Franchise locations can be counted toward the totals in some cities, so a small franchisee may be covered. Check the rules with your city or state labor agency.</p></details>
-      <details><summary>Can employees swap shifts in Workzenly?</summary><p>Yes. Staff see the schedule on their phones and can pick up an open shift or swap one with a teammate, and the schedule updates for everyone. Where a scheduling law applies, keep a record that the employee asked for the change; Oregon, for example, exempts changes made at an employee's written request from its notice rules.</p></details>
-      <details><summary>Does the schedule show who is on PTO?</summary><p>Yes. Scheduling and PTO share one record, so approved time off shows up where you build shifts. When someone asks for a day off, the manager sees who else is already out that day before saying yes, and can find cover from the schedule in the same place.</p></details>
-      <details><summary>Do I have to pay for a shift I cancel?</summary><p>Federal law only requires pay for hours worked, so it does not require pay for a canceled shift. Some states, including California and New York, require reporting-time or call-in pay when an employee reports to work and is sent home early, and fair workweek cities add predictability pay for late changes. Check your state and city rules.</p></details>
-      <details><summary>Can managers build the schedule from a phone?</summary><p>Yes. Managers can build schedules, approve requests and check who is in from a phone. Many find it easier to plan a full week for a large team on a laptop, where you can see every day at once, and then handle swaps and last-minute changes from their phone during the week.</p></details>
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Connected</p>
+        <h2 id="connect-title">A schedule that talks to the rest of the workday</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/time-clock/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Employee time clock app</h3><p>Clock in from a phone with today’s shift on screen.</p><span>Time clock →</span></a>
+        <a class="fp-link-card" href="/features/time-and-attendance/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Time and attendance</h3><p>Who is in, late or out, measured against the schedule.</p><span>Time and attendance →</span></a>
+        <a class="fp-link-card" href="/features/pto/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>PTO tracking</h3><p>Requests in two taps, balances that update themselves.</p><span>PTO →</span></a>
+        <a class="fp-link-card" href="/features/overtime-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime tracking</h3><p>See who is close to 40 hours before you add a shift.</p><span>Overtime →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Worked hours, overtime and PTO become pay stubs in the app.</p><span>Payroll →</span></a>
+        <a class="fp-link-card" href="/features/employee-app/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Employee app</h3><p>Shifts, swaps, PTO and pay stubs on one phone app.</p><span>Employee app →</span></a>
+      </div>
     </div>
   </section>
 
-  <section class="close-cta" aria-labelledby="close-title">
-    <h2 id="close-title">Post next week’s schedule in minutes</h2>
-    <div class="close-cta__side"><p>Book a demo and we will build one of your real weeks in a workspace with your company name, then show a swap and a PTO request moving through it.</p><a class="button" href="/#start">Book a demo</a></div>
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">Post next week’s schedule without the group text</h2>
+        <p>We build one of your real weeks in a demo workspace, then run a swap and a PTO request through it.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
   </section>
+
+  <!-- BUYER'S GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it does</a></li>
+            <li><a href="#laws-title">Fair workweek laws</a></li>
+            <li><a href="#g-minors">Scheduling minors</a></li>
+            <li><a href="#g-build">Building a weekly schedule</a></li>
+            <li><a href="#g-patterns">Shift patterns and pay</a></li>
+            <li><a href="#g-must">Features that matter</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>See one of your real weeks built in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The buyer’s guide to employee scheduling software</h2>
+        <p>This guide covers what employee scheduling software does, the fair workweek laws that set notice rules in some places, the federal limits on scheduling minors, how to build a week that holds up, and how to pick a tool for an hourly team.</p>
+
+        <h3 id="g-what">What employee scheduling software does</h3>
+        <p>Scheduling software is a shared calendar of shifts. A manager assigns people and publishes the week; staff then see it on their phones, trade shifts, claim open ones and ask for time off, and every change updates the one schedule everybody reads.</p>
+        <p>Better tools also know who is on approved PTO, who is close to 40 hours and who actually clocked in. A schedule that doesn’t talk to the <a href="/features/time-and-attendance/">time and attendance</a> record can’t warn you about gaps or overtime.</p>
+        <p>Workzenly’s schedule, time clock, <a href="/features/pto/">PTO tracking</a> and payroll share one record. A standalone shift scheduling app can go deeper on scheduling alone; the trade-off is the hand-off between tools.</p>
+
+        <h3 id="laws-title">Predictive scheduling and fair workweek laws</h3>
+        <p>Federal law sets no schedule notice rule. One state and several cities have predictive scheduling, or fair workweek, laws for larger employers in certain industries, usually requiring advance notice, extra pay for late employer changes and rest between shifts. Here are the main ones, as published by each agency.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Where</th><th>Who is covered (summary)</th><th>Schedule notice</th><th>Other rules (summary)</th></tr></thead>
+            <tbody>
+              <tr><td>Oregon (statewide)</td><td>Retail, hospitality and food service employers with 500+ employees worldwide</td><td>14 calendar days</td><td>10 hours of rest after the previous day’s shift unless the employee asks or agrees; hours in that window paid at time and a half</td></tr>
+              <tr><td>New York City</td><td>Fast food employers; retail employers</td><td>Fast food: 14 days. Retail: 72 hours</td><td>Fast food: $10 to $75 for each change made less than 14 days ahead. Retail: no on-call shifts, and cancellations need 72 hours’ notice</td></tr>
+              <tr><td>San Francisco</td><td>Formula retail with 40+ establishments worldwide and 20+ employees in the city</td><td>Two weeks</td><td>Predictability pay of 1 to 4 hours for changes made on short notice; pay for on-call shifts that are not used</td></tr>
+              <tr><td>Seattle</td><td>Retail and food service with 500+ employees worldwide (full-service restaurants also need 40+ locations)</td><td>14 days</td><td>Time and a half for hours worked when shifts are less than 10 hours apart; a written good faith estimate of hours</td></tr>
+              <tr><td>Chicago</td><td>Building services, healthcare, hotels, manufacturing, restaurants, retail and warehouse services; 100+ employees worldwide (restaurants: 250+ employees and 30+ locations), with pay thresholds for covered workers</td><td>14 days</td><td>Workers can decline a shift starting less than 10 hours after the previous day’s shift; 1.25 times pay if they agree to work it</td></tr>
+              <tr><td>Philadelphia</td><td>Retail, hospitality and food service with 250+ employees and 30+ locations worldwide, chains and franchises included</td><td>14 days</td><td>A good faith estimate of hours, and 9 hours of rest between shifts unless the worker consents, with extra pay</td></tr>
+              <tr><td>Los Angeles (city)</td><td>Retail employers with 300+ employees worldwide</td><td>14 days</td><td>10 hours of rest between shifts unless the employee consents in writing, paid at 1.5 times for the shift; employees can decline later changes</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Los Angeles County added its own retail ordinance for unincorporated areas from July 1, 2025, and a few other places have similar rules. Thresholds and exceptions differ, and employee-requested changes are often treated differently. Oregon, for example, says changes made at an employee’s written request are not subject to its advance notice rule. A time-stamped swap request in the app is better evidence than a text.</p>
+                <p class="fp-note">This guide is general information, not legal advice. Scheduling rules change and thresholds are updated, so check your city or state labor agency or an employment lawyer for your situation.</p>
+
+        <h3 id="g-minors">Scheduling minors under federal child labor rules</h3>
+        <p>The Fair Labor Standards Act limits when the youngest workers can be scheduled. According to the U.S. Department of Labor, 14- and 15-year-olds may work outside school hours only, and no more than:</p>
+        <ul>
+          <li>3 hours on a school day, including Fridays</li>
+          <li>18 hours in a school week</li>
+          <li>8 hours on a non-school day</li>
+          <li>40 hours in a week when school is not in session</li>
+        </ul>
+        <p>Their shifts must fall between 7 a.m. and 7 p.m., except from June 1 through Labor Day, when the evening limit moves to 9 p.m. Federal law does not limit hours for 16- and 17-year-olds, though it still bars them from hazardous jobs, and many states do set hour limits for them. When federal and state rules both apply, the stricter one wins.</p>
+        <p>Keep a list of who is under 18 and check their shifts against both sets of rules before you publish. Workzenly shows weekly hours per person as you build, but the check itself is yours.</p>
+
+        <h3 id="g-build">How to build a weekly schedule that holds up</h3>
+        <ol>
+          <li><strong>Start from demand.</strong> List the shifts each day needs by role.</li>
+          <li><strong>Block out what you already know.</strong> Approved time off, standing days off and any limits for minors go on the grid before a single name does.</li>
+          <li><strong>Place regulars, then fill.</strong> Drag in steady shifts first, then part-timers. Watch weekly totals against 40 hours.</li>
+          <li><strong>Leave real gaps open.</strong> Post unowned shifts as open so people who want hours can claim them.</li>
+          <li><strong>Publish early.</strong> In fair workweek cities, it may be the law.</li>
+          <li><strong>Close the loop.</strong> Compare scheduled and worked hours weekly. Late starts, a <a href="/blog/no-call-no-show/">no-call, no-show</a> or steady overtime show what to change.</li>
+        </ol>
+        <p>If you are not ready for software, our <a href="/templates/employee-schedule-templates/">employee schedule templates</a> are a free starting point.</p>
+
+        <h3 id="g-patterns">Shift patterns and the cost of a schedule</h3>
+        <p>Teams that run around the clock often use a fixed rotation, which is easy to post far ahead. The <a href="/blog/2-2-3-schedule/">2-2-3 schedule</a> rotates 12-hour shifts over two weeks, and office or field teams sometimes use the <a href="/blog/9-80-work-schedule/">9/80 work schedule</a> to give every other Friday off.</p>
+        <p>The schedule also sets the labor bill: overtime after 40 hours, and sometimes a premium for nights and weekends. Our guide to <a href="/blog/shift-differential/">shift differential</a> pay explains how that works.</p>
+
+        <h3 id="g-must">Features that matter in staff scheduling software</h3>
+        <ol>
+          <li><strong>Fast building.</strong> Drag and drop, color-coded roles and weekly hours per person.</li>
+          <li><strong>A real employee app.</strong> The current schedule on each person’s phone, readable in two seconds.</li>
+          <li><strong>Swaps and open shifts with a record.</strong> Who offered, who accepted, who approved and when.</li>
+          <li><strong>Time off on the grid.</strong> Approving PTO in one place and scheduling in another is how double-booking happens.</li>
+          <li><strong>Coverage and overtime warnings.</strong> Find the empty Saturday shift on Wednesday.</li>
+          <li><strong>Schedule vs actual.</strong> A schedule tied to the time clock shows late starts and missed shifts the same day.</li>
+          <li><strong>A path to payroll.</strong> Worked hours should not need retyping.</li>
+        </ol>
+
+        <h3 id="g-choose">How to choose employee scheduling software</h3>
+        <p>Run last week, with its swap, sick call and unwanted shift, through every tool you are considering, and count the steps. Then hand a phone to one of your staff and watch them find their next shift and offer a swap.</p>
+        <p>For a neutral view of the market, our list of the <a href="/tools/best-employee-scheduling-apps/">best employee scheduling apps</a> compares the main options, and the <a href="/tools/best-scheduling-apps-for-small-business/">best scheduling apps for small business</a> focuses on smaller teams. If you run a café or restaurant, our guide to <a href="/tools/best-restaurant-scheduling-apps/">restaurant scheduling software</a> covers the rules that matter there.</p>
+        <p>To see your own week in Workzenly, <a href="/#start">book a demo</a>. We set up a workspace with your company name and staff before the call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions about employee scheduling software</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>What is employee scheduling software?</summary><p>Employee scheduling software is where a manager builds the week of shifts, publishes it to the team and handles the changes that follow: swaps, open shifts and time off. Workzenly also shows approved PTO while you schedule, tells you before a shift goes uncovered, and compares the schedule with the hours people actually clocked.</p></details>
+        <details><summary>How far in advance do I have to post a work schedule?</summary><p>Federal law sets no notice period. Oregon and several cities, including Seattle, San Francisco, Chicago, Philadelphia, Los Angeles and New York City for fast food, require covered employers to post schedules 14 days or two weeks ahead, and New York City retail employers must give 72 hours. If none of these apply to you, posting a week or more ahead is still good practice.</p></details>
+        <details><summary>Do fair workweek laws apply to small businesses?</summary><p>Usually not to a single independent shop. Most of these laws cover larger employers in set industries, often counted by employees or locations worldwide, such as 250 or 500 employees. Franchise locations can be counted toward the totals in some cities, so a small franchisee may be covered. Check the rules with your city or state labor agency.</p></details>
+        <details><summary>Can employees swap shifts in Workzenly?</summary><p>Yes. Staff see the schedule on their phones and can pick up an open shift or swap one with a teammate, and the schedule updates for everyone. Where a scheduling law applies, keep a record that the employee asked for the change; Oregon, for example, exempts changes made at an employee's written request from its notice rules.</p></details>
+        <details><summary>Does the schedule show who is on PTO?</summary><p>Yes. Scheduling and PTO share one record, so approved time off shows up where you build shifts. When someone asks for a day off, the manager sees who else is already out that day before saying yes, and can find cover from the schedule in the same place.</p></details>
+        <details><summary>How many hours can a 15-year-old be scheduled?</summary><p>Under federal child labor rules, 14- and 15-year-olds can work outside school hours only: up to 3 hours on a school day, 18 hours in a school week, 8 hours on a non-school day and 40 hours in a non-school week, between 7 a.m. and 7 p.m. (9 p.m. from June 1 through Labor Day). Federal law does not limit hours for 16- and 17-year-olds, but many states do, and the stricter rule applies.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for scheduling</h2>
+      <div class="fp-related__grid">
+        <a href="/tools/best-employee-scheduling-apps/"><small>COMPARISON</small><b>Best employee scheduling apps for hourly teams</b></a>
+        <a href="/templates/shift-schedule-templates/"><small>TEMPLATES</small><b>Free shift schedule templates</b></a>
+        <a href="/tools/best-retail-scheduling-software/"><small>GUIDE</small><b>Retail scheduling software: how to choose</b></a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer class="simple-foot">
-  <p>© <span id="year">2026</span> Workzenly</p>
-  <nav aria-label="Footer">
-    <a href="/features/time-clock/">Time clock</a>
-    <a href="/features/scheduling/">Scheduling</a>
-    <a href="/features/payroll/">Payroll</a>
-    <a href="/features/pto/">PTO</a>
-    <a href="/blog/">Blog</a>
-  </nav>
-  <p><a href="mailto:info@workzenly.com">info@workzenly.com</a></p>
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="wordmark" href="/">Workzenly</a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features"><h2>People</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
 </footer>
 <script src="/blog.js" defer></script>
-<script>
-(() => {
-  const $ = (id) => document.getElementById(id);
-  const btn = $('sc-btn');
-  btn.addEventListener('click', () => {
-    $('sc-jordan').textContent = 'Off';
-    $('sc-tyler').textContent = '7–3:30';
-    $('sc-tyler').classList.add('is-swapped');
-    $('sc-k').textContent = 'Swap approved';
-    $('sc-text').textContent = 'Tyler N. now opens Thursday. Both schedules are updated.';
-    btn.textContent = 'Approved';
-    btn.disabled = true;
-  });
-})();
-</script>
+<script src="/feature.js" defer></script>
 </body>
 </html>

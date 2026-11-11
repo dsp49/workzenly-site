@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timesheet App for Hourly Teams | Workzenly</title>
+  <meta name="description" content="A timesheet app for US hourly teams: timesheets built from every punch, breaks and overtime worked out, and the whole week approved in one tap.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/features/timesheets/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/features/timesheets/">
+  <meta property="og:title" content="Timesheet App for Hourly Teams | Workzenly">
+  <meta property="og:description" content="A timesheet app for US hourly teams: timesheets built from every punch, breaks and overtime worked out, and the whole week approved in one tap.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Timesheet App for Hourly Teams | Workzenly",
+        "description": "A timesheet app for US hourly teams: timesheets built from every punch, breaks and overtime worked out, and the whole week approved in one tap.",
+        "url": "https://workzenly.com/features/timesheets/",
+        "dateModified": "2026-11-11",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Workzenly Timesheets",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "Timesheet app for US hourly teams: timesheets built automatically from clock-ins, unpaid breaks deducted, regular and overtime hours split by workweek, an edit history for every correction, one-tap team approval and hours that flow into payroll.",
+        "url": "https://workzenly.com/features/timesheets/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://workzenly.com/features/" },
+          { "@type": "ListItem", "position": 3, "name": "Timesheets", "item": "https://workzenly.com/features/timesheets/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is a timesheet app?", "acceptedAnswer": { "@type": "Answer", "text": "A timesheet app records the hours each employee works and totals them by day and by workweek, so a manager can review and approve them before payroll. In Workzenly the timesheet fills itself in from clock-ins on a phone or a shared tablet, takes off unpaid breaks, splits regular and overtime hours and sends approved hours to payroll." } },
+          { "@type": "Question", "name": "Do employees have to fill in their timesheets?", "acceptedAnswer": { "@type": "Answer", "text": "No. Employees clock in and out, and Workzenly builds the timesheet from those punches. If someone forgets a punch, they send a fix request from the app with a note, and the manager approves or changes it. The original punch stays in the edit history next to the correction." } },
+          { "@type": "Question", "name": "How long do I have to keep timesheets?", "acceptedAnswer": { "@type": "Answer", "text": "Under the Fair Labor Standards Act, the Department of Labor says payroll records must be kept for at least 3 years and records used to compute wages, such as time cards, for at least 2 years. Some states require longer. Workzenly keeps each timesheet, edit and approval in the employee's record." } },
+          { "@type": "Question", "name": "Can a manager approve the whole team's timesheets at once?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Managers see every timesheet for the week in one table, check the few that are flagged, then approve the rest of the team in one tap. They can also open a single timesheet and approve just that person. Managers can approve from a phone." } },
+          { "@type": "Question", "name": "Can employees see their own timesheet?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each employee sees their own timesheet in the Workzenly app, with daily hours, breaks, regular and overtime totals and any edits. They see only their own record, never a coworker's, and they can request a fix if something looks wrong." } },
+          { "@type": "Question", "name": "Does the timesheet app round punches?", "acceptedAnswer": { "@type": "Answer", "text": "Federal rules allow rounding to the nearest 5 minutes, tenth of an hour or quarter hour only if, over time, it does not shortchange employees. Rounding that always favors the employer is not allowed. Paying exact punched minutes avoids the question, and that is how the timesheets on this page are shown." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="timesheet app" data-intent="transactional" data-topic="Timesheets">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M4 16h16M6 16a6 6 0 0 1 12 0M12 7.5V5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z M3.5 7.5L12 12l8.5-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5V20H4z M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="10" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 19h6M12 15v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z M13.5 6.5l4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 17.5h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/features/">Features</a></li><li aria-current="page">Timesheets</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Timesheets</span>
+        <h1 id="hero-title">The timesheet app that fills itself in from every punch</h1>
+        <p class="fp-lead">Workzenly is a timesheet app for hourly teams. Every clock-in becomes a line on the timesheet, unpaid breaks come off, and the week splits into regular and overtime hours on its own. Managers check the few that need a look and approve the whole team in one tap.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Built from real punches</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every edit kept in history</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>One-tap team approval</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly team timesheet table for Northfield Coffee, week of November 8, showing regular, overtime and PTO hours for eight employees, seven ready to approve and one flagged for review">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/timesheets</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span><svg><use href="#i-clock"/></svg></span>
+              <span><svg><use href="#i-cal"/></svg></span>
+              <span class="is-on"><svg><use href="#i-sheet"/></svg></span>
+              <span><svg><use href="#i-pay"/></svg></span>
+              <span><svg><use href="#i-users"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Timesheets</p><p class="ui-sub">Northfield Coffee · Week of Nov 8–14</p></div>
+                <div class="ui-seg" aria-hidden="true"><span class="is-on">Week</span><span>Pay period</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>262.5</b><small>Regular hours</small></div>
+                <div class="ui-kpi"><b>8.5</b><small>Overtime hours</small><em class="is-warn">Jordan, Emily</em></div>
+                <div class="ui-kpi"><b>8.0</b><small>PTO hours</small><em>Aisha</em></div>
+                <div class="ui-kpi"><b>7 / 8</b><small>Ready to approve</small><em>1 to review</em></div>
+              </div>
+              <div class="ui-card ui-scroll">
+                <table class="ui-table">
+                  <thead><tr><th>Employee</th><th class="r">Regular</th><th class="r">OT</th><th class="r">PTO</th><th class="r">Total</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#dafa9c">MT</span>Maya Torres</span></td><td class="r num">34.50</td><td class="r num">–</td><td class="r num">–</td><td class="r num">34.50</td><td><span class="ui-pill ui-pill--ok" id="hs-1">Ready</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#9cc8fa">JL</span>Jordan Lee</span></td><td class="r num">40.00</td><td class="r num">2.50</td><td class="r num">–</td><td class="r num">42.50</td><td><span class="ui-pill ui-pill--ok">Ready</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#f2c36b">SR</span>Sam Rivera</span></td><td class="r num">35.75</td><td class="r num">–</td><td class="r num">–</td><td class="r num">35.75</td><td><span class="ui-pill ui-pill--ok">Ready</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#c9b6f5">CW</span>Chris Walker</span></td><td class="r num">32.00</td><td class="r num">–</td><td class="r num">–</td><td class="r num">32.00</td><td><span class="ui-pill ui-pill--ok">Ready</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#ffb4a2">EC</span>Emily Carter</span></td><td class="r num">40.00</td><td class="r num">6.00</td><td class="r num">–</td><td class="r num">46.00</td><td><span class="ui-pill ui-pill--ok">Ready</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#a8e6cf">DB</span>Dana Brooks</span></td><td class="r num">26.00</td><td class="r num">–</td><td class="r num">–</td><td class="r num">26.00</td><td><span class="ui-pill ui-pill--ok">Ready</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#f5d0e6">TN</span>Tyler N.</span></td><td class="r num">30.25</td><td class="r num">–</td><td class="r num">–</td><td class="r num">30.25</td><td><span class="ui-pill ui-pill--bad">Review</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#e8e2a4">AB</span>Aisha Brown</span></td><td class="r num">24.00</td><td class="r num">–</td><td class="r num">8.00</td><td class="r num">32.00</td><td><span class="ui-pill ui-pill--ok">Ready</span></td></tr>
+                    <tr><td><b>Team total</b></td><td class="r num"><b>262.50</b></td><td class="r num"><b>8.50</b></td><td class="r num"><b>8.00</b></td><td class="r num"><b>279.00</b></td><td></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="ui-foot"><div><p id="ts-approve-text">7 timesheets ready · 1 needs a look</p><small>Tyler N. clocked in outside the geofence on Tue · breaks and overtime already worked out</small></div><button type="button" class="ui-btn" data-act data-target="ts-approve-text" data-text="7 approved. Payroll has the hours. Tyler’s is still open." data-done="Approved">Approve all ready</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for teams paid by the hour</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Restaurants and cafés</li>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Retail stores</li>
+        <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Clinics</li>
+        <li><svg aria-hidden="true"><use href="#i-home"/></svg>Home care</li>
+        <li><svg aria-hidden="true"><use href="#i-hat"/></svg>Job sites</li>
+        <li><svg aria-hidden="true"><use href="#i-box"/></svg>Warehouses</li>
+        <li><svg aria-hidden="true"><use href="#i-desk"/></svg>Offices</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">Friday afternoon: eight paper timesheets, two with missing lunches, one with a time crossed out, and a calculator to turn 7:57 into hours.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">Online timesheet software that does the adding for you</h2>
+      <p class="fp-problem__p">When the timesheet comes from the clock-in, nobody writes hours from memory. The punch Jordan makes at 7:01 AM is the line on his timesheet, the number his manager approves and the hours on his pay stub.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first week</p>
+        <h2 id="outcomes-title">Timesheets you check, not timesheets you build</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>No more filling in</h3><p>Employees clock in on their phone or the tablet at the door, and each punch lands on their timesheet. Nothing to fill in on Friday.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Math done the same way every time</h3><p>Unpaid meal breaks come off, short rest breaks stay paid, and hours over 40 in the workweek show up as overtime. No calculator, no 7:57 turned into 7.57.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-history"/></svg></span><h3>Corrections with a paper trail</h3><p>When a punch is fixed, the original stays next to the change, with who made it and why.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Approval in minutes</h3><p>Managers review the flagged timesheets, then approve the rest of the team’s week in one tap.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">How the Workzenly timesheet app works</h2>
+        <p>One timesheet, four moments: it builds from the punches, gets corrected with a record, gets approved, and the employee can see it all along.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="Parts of the timesheet">
+          <button class="fp-tab" role="tab" id="tab-build" aria-controls="panel-build" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-sheet"/></svg>Built from punches</b><span>Breaks off, overtime split</span></button>
+          <button class="fp-tab" role="tab" id="tab-fix" aria-controls="panel-fix" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-edit"/></svg>Corrections</b><span>Original punch kept</span></button>
+          <button class="fp-tab" role="tab" id="tab-approve" aria-controls="panel-approve" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-check"/></svg>Approval</b><span>One person or the whole team</span></button>
+          <button class="fp-tab" role="tab" id="tab-mine" aria-controls="panel-mine" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-phone"/></svg>Employee view</b><span>Their own timesheet, on their phone</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-build" aria-labelledby="tab-build">
+          <div>
+            <h3>A weekly timesheet nobody typed</h3>
+            <p>Each clock-in and clock-out becomes a row. The unpaid lunch comes off, and anything past 40 hours in the Sunday to Saturday workweek is split out as overtime.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Daily and weekly totals in hours:minutes and decimal</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Regular and overtime hours on separate lines</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Fixed punches marked so they stand out</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Weekly timesheet for Jordan Lee, week of November 8: six shifts totaling 42 hours 30 minutes, split into 40 regular hours and 2 hours 30 minutes of overtime">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Timesheet · Jordan Lee · week of Nov 8</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Day</th><th>In</th><th>Out</th><th>Break</th><th class="r">Hours</th></tr></thead>
+                <tbody>
+                  <tr><td>Sun, Nov 8</td><td>–</td><td>–</td><td>–</td><td class="r num">0:00</td></tr>
+                  <tr><td>Mon, Nov 9</td><td class="num">7:01 AM</td><td class="num">3:34 PM <span class="ui-pill ui-pill--info">Edited</span></td><td>30 min</td><td class="r num">8:03</td></tr>
+                  <tr><td>Tue, Nov 10</td><td class="num">7:00 AM</td><td class="num">3:30 PM</td><td>30 min</td><td class="r num">8:00</td></tr>
+                  <tr><td>Wed, Nov 11</td><td class="num">6:58 AM</td><td class="num">3:25 PM</td><td>30 min</td><td class="r num">7:57</td></tr>
+                  <tr><td>Thu, Nov 12</td><td class="num">7:00 AM</td><td class="num">3:30 PM</td><td>30 min</td><td class="r num">8:00</td></tr>
+                  <tr><td>Fri, Nov 13</td><td class="num">7:00 AM</td><td class="num">2:00 PM</td><td>30 min</td><td class="r num">6:30</td></tr>
+                  <tr><td>Sat, Nov 14</td><td class="num">7:00 AM</td><td class="num">11:00 AM</td><td>–</td><td class="r num">4:00</td></tr>
+                  <tr><td><b>Week total</b></td><td></td><td></td><td></td><td class="r num"><b>42:30</b></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>40:00 regular · 2:30 overtime</p><small>42.50 hours · overtime at 1.5 × $18.25 = $27.375 an hour</small></div><span class="ui-pill ui-pill--ok">Ready</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-fix" aria-labelledby="tab-fix" hidden>
+          <div>
+            <h3>Fix a punch without losing the original</h3>
+            <p>Maya worked 40 minutes past her clock-out. She sends a fix request with a note, Marcus approves it, and the timesheet keeps both the punch and the time she worked.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Employees request a fix with a reason</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Managers approve, change or decline it</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Original punch, edit and approver all kept</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Edit history for Maya Torres on Tuesday, November 10: original clock-out at 5:30 PM, her fix request to 6:10 PM, the manager's approval, and the day total changing from 8 hours to 8 hours 40 minutes">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">History · Maya Torres · Tue, Nov 10</span></div>
+            <div class="ui-main">
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Clocked in 9:00 AM · out 5:30 PM</p><small>Phone · inside geofence · 30 min lunch</small></div><span class="ui-pill">Original</span></div>
+                <div class="ui-item"><div><p>Fix requested: clock-out 6:10 PM</p><small>By Maya · “Covered the counter until Aisha got in”</small></div><span class="ui-pill ui-pill--warn">Request</span></div>
+                <div class="ui-item"><div><p>Clock-out changed to 6:10 PM</p><small>By Marcus (manager) · Wed, Nov 11, 8:40 AM</small></div><span class="ui-pill ui-pill--info" id="fix-pill">Edited</span></div>
+                <div class="ui-item"><div><p>Day total 8:00 → 8:40</p><small>Week total now 34:30, all regular</small></div><span class="ui-pill ui-pill--ok">Updated</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-approve" aria-labelledby="tab-approve" hidden>
+          <div>
+            <h3>Timesheet approval for one, or for everyone</h3>
+            <p>Open one person’s week when something needs a look, or approve the clean ones from the team table. Approvals are logged with name and time.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Flags for missed clock-outs, late starts and geofence misses</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approve from a laptop or a phone</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Payroll sees what is still waiting</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Single timesheet approval card for Sam Rivera, week of November 8: 35.75 regular hours with one late start on Wednesday, ready to approve">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Approve · Sam Rivera · week of Nov 8</span></div>
+            <div class="ui-main">
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>35.75</b><small>Regular</small></div>
+                <div class="ui-kpi"><b>0.00</b><small>Overtime</small></div>
+                <div class="ui-kpi"><b>5</b><small>Shifts</small></div>
+                <div class="ui-kpi"><b>1</b><small>Flag</small><em class="is-warn">Late Wed</em></div>
+              </div>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Started 14 minutes late</p><small>Wed, Nov 11 · scheduled 9:00 AM · in 9:14 AM</small></div><span class="ui-pill ui-pill--warn">Late</span></div>
+                <div class="ui-item"><div><p>Breaks</p><small>5 unpaid lunches of 30 min deducted</small></div><span class="ui-pill">OK</span></div>
+                <div class="ui-item"><div><p>Edits this week</p><small>None</small></div><span class="ui-pill ui-pill--warn" id="sam-pill">Waiting</span></div>
+              </div>
+              <div class="ui-foot"><div><p>Paid for time worked: 35.75 hours</p><small>Late start noted, not deducted beyond the punch</small></div><button type="button" class="ui-btn" data-act data-pill="sam-pill" data-pill-text="Approved" data-done="Approved">Approve Sam</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-mine" aria-labelledby="tab-mine" hidden>
+          <div>
+            <h3>An employee timesheet app in every pocket</h3>
+            <p>Employees see the same timesheet their manager approves: punches, breaks, the week’s total and any edits. If something looks off, they ask for a fix right there.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Their own hours only, never a coworker’s</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>See when the week was approved</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pay stub in the same app on payday</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Maya Torres's own timesheet on her phone for the week of November 8: five shifts totaling 34 hours 30 minutes, with Tuesday marked as edited">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">My timesheet · Week of Nov 8</p><p class="ui-title">Maya Torres</p></div>
+              <div class="ui-card">
+                <p class="ui-sub">Week total</p>
+                <p style="font-size:34px;font-weight:600;letter-spacing:-0.03em;margin:6px 0 2px" class="num">34:30</p>
+                <p class="ui-sub">34.50 regular · 0.00 overtime</p>
+              </div>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Mon, Nov 9</p><small>9:00 AM–5:30 PM · 30 min break</small></div><span class="num">8:00</span></div>
+                <div class="ui-item"><div><p>Tue, Nov 10</p><small>9:00 AM–6:10 PM · edited</small></div><span class="num">8:40</span></div>
+                <div class="ui-item"><div><p>Wed, Nov 11</p><small>8:58 AM–5:30 PM · 30 min break</small></div><span class="num">8:02</span></div>
+                <div class="ui-item"><div><p>Thu, Nov 12</p><small>9:00 AM–1:00 PM</small></div><span class="num">4:00</span></div>
+                <div class="ui-item"><div><p>Fri, Nov 13</p><small>8:57 AM–3:15 PM · 30 min break</small></div><span class="num">5:48</span></div>
+              </div>
+              <button type="button" class="ui-btn ui-btn--ghost" style="min-height:44px;font-size:14px" data-act data-target="mine-status" data-text="Fix request sent to Marcus" data-done="Request sent">Request a fix</button>
+              <p class="ui-sub" id="mine-status" style="text-align:center">Something wrong? Tell your manager here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="Timesheets in detail">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Breaks and overtime</p>
+          <h2>Breaks deducted and overtime split, the same way every week</h2>
+          <p>Under federal rules, short rest breaks count as paid time and a bona fide meal break of about 30 minutes, with the employee fully relieved of duty, does not. Workzenly applies that from the break punches, then moves everything past 40 hours in the workweek onto the overtime line.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Meal breaks clocked, not assumed</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Paid rest breaks left in the day’s total</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime split by workweek, not by pay period</li>
+          </ul>
+          <a class="fp-row__more" href="/features/overtime-tracking/">See overtime tracking <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Day breakdown for Emily Carter on Wednesday, November 11: in at 7:00 AM, a paid 10-minute rest break, an unpaid 30-minute lunch, out at 4:30 PM, 9 hours worked">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Emily Carter · Wed, Nov 11</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Clock in 7:00 AM</p><small>Kitchen · tablet at the door</small></div><span class="ui-pill">Punch</span></div>
+              <div class="ui-item"><div><p>Rest break 9:30–9:40 AM</p><small>10 min · stays in hours worked</small></div><span class="ui-pill ui-pill--ok">Paid</span></div>
+              <div class="ui-item"><div><p>Lunch 11:30 AM–12:00 PM</p><small>30 min · relieved of duty</small></div><span class="ui-pill ui-pill--info">Unpaid</span></div>
+              <div class="ui-item"><div><p>Clock out 4:30 PM</p><small>9:30 on the clock − 0:30 lunch</small></div><span class="ui-pill">Punch</span></div>
+            </div>
+            <div class="ui-foot"><div><p>9:00 hours worked today</p><small>Week so far 34:00 · Thu 8:00 and Fri 4:00 take her to 46:00, 6:00 overtime</small></div><span class="ui-pill ui-pill--warn">Over 40 Thu</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Records for the long run</p>
+          <h2>Timesheet software that keeps the record straight</h2>
+          <p>The Fair Labor Standards Act asks employers to keep hours worked each day and each week for non-exempt employees, keep payroll records for 3 years and keep the time cards behind them for 2. Workzenly keeps each week’s timesheet, punches, edits and approval in the employee’s record.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every week stored with who approved it and when</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Original punches kept next to any correction</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Ready to export when an auditor or employee asks</li>
+          </ul>
+          <a class="fp-row__more" href="/features/time-and-attendance/">See time and attendance <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Timesheet archive for Jordan Lee listing past weeks with total hours, overtime and who approved each week">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Records · Jordan Lee · timesheets</span></div>
+          <div class="ui-main ui-scroll">
+            <table class="ui-table">
+              <thead><tr><th>Week of</th><th class="r">Regular</th><th class="r">OT</th><th>Edits</th><th>Approved</th></tr></thead>
+              <tbody>
+                <tr><td>Nov 8</td><td class="r num">40.00</td><td class="r num">2.50</td><td>1</td><td><span class="ui-pill ui-pill--warn">Waiting</span></td></tr>
+                <tr><td>Nov 1</td><td class="r num">40.00</td><td class="r num">–</td><td>0</td><td><span class="ui-pill ui-pill--ok">Marcus · Nov 9</span></td></tr>
+                <tr><td>Oct 25</td><td class="r num">38.25</td><td class="r num">–</td><td>0</td><td><span class="ui-pill ui-pill--ok">Marcus · Nov 2</span></td></tr>
+                <tr><td>Oct 18</td><td class="r num">40.00</td><td class="r num">1.75</td><td>2</td><td><span class="ui-pill ui-pill--ok">Marcus · Oct 26</span></td></tr>
+              </tbody>
+            </table>
+            <div class="ui-foot"><div><p>All weeks kept with punches and edits</p><small>Open any week to see the original punches</small></div><button type="button" class="ui-btn ui-btn--ghost" data-act data-done="Export ready">Export</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Into the pay run</p>
+          <h2>Approved timesheets become paychecks</h2>
+          <p>Payroll runs biweekly, but overtime is counted per workweek. Each week is approved on its own, and when both are approved, regular, overtime and PTO hours land in payroll together. Employees see the pay stub in the app on payday.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Two workweeks, one pay period, no mixing</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved PTO arrives as PTO hours</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Nothing retyped from a timesheet</li>
+          </ul>
+          <a class="fp-row__more" href="/features/payroll/">See payroll <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Pay period November 1 to 14, paid Friday November 20, showing week one approved for all eight employees and week two with seven of eight ready">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Payroll · Nov 1–14 · paid Fri, Nov 20</span></div>
+          <div class="ui-main">
+            <div class="ui-card">
+              <div class="ui-card__head"><b>Timesheets in this pay period</b><span>8 employees</span></div>
+              <div class="ui-list">
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Week of Nov 1</span><span class="num">8 of 8 approved</span></div><div class="ui-bar-meter"><i style="width:100%"></i></div></div>
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Week of Nov 8</span><span class="num">7 of 8 ready</span></div><div class="ui-bar-meter"><i style="width:87.5%;background:#f2c36b"></i></div></div>
+              </div>
+            </div>
+            <div class="ui-foot"><div><p>Waiting on 1 timesheet: Tyler N.</p><small>Week of Nov 8 · flagged for review</small></div><span class="ui-pill ui-pill--warn">Waiting on approval</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One timesheet, four people who rely on it</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Employees</h3></div><div><span>Replaces</span><p>Writing hours on a paper sheet at the end of the week</p></div><div><span>They use it to</span><p>Clock in and out, check their week and request a fix for a missed punch</p></div><div><span>What they notice</span><p>The hours on the stub match the hours on the app</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Managers</h3></div><div><span>Replaces</span><p>Checking and signing a stack of sheets one at a time</p></div><div><span>They use it to</span><p>Review flagged timesheets and approve the team’s week in one tap</p></div><div><span>What they notice</span><p>Approvals done before the coffee gets cold</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Payroll</h3></div><div><span>Replaces</span><p>Converting minutes to decimals and retyping totals</p></div><div><span>They use it to</span><p>Run payroll from approved regular, overtime and PTO hours</p></div><div><span>What they notice</span><p>No chasing managers for signatures</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owners</h3></div><div><span>Replaces</span><p>A filing cabinet of old time sheets</p></div><div><span>They use it to</span><p>Look up any past week, with the punches, edits and approval behind it</p></div><div><span>What they notice</span><p>Records that answer the question the first time</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Everyone sees their part of the timesheet</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Employees see their own</h3><p>Each person sees their own timesheets, edits and pay stubs, never a coworker’s.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Managers see their team</h3><p>Managers see and approve timesheets for their team, along with shifts and time off.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and pay stubs are visible only to the people you give payroll access to.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Connected</p>
+        <h2 id="connect-title">Timesheets that connect to the rest of the week</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/time-clock/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Employee time clock app</h3><p>The punches every timesheet is built from, on a phone.</p><span>Time clock →</span></a>
+        <a class="fp-link-card" href="/features/time-clock-kiosk/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-store"/></svg></span><h3>Time clock kiosk</h3><p>A shared tablet at the door for floors without phones.</p><span>Kiosk →</span></a>
+        <a class="fp-link-card" href="/features/overtime-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime tracking</h3><p>See who is nearing 40 hours before the week is over.</p><span>Overtime →</span></a>
+        <a class="fp-link-card" href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Employee scheduling</h3><p>Compare the timesheet with the shifts you planned.</p><span>Scheduling →</span></a>
+        <a class="fp-link-card" href="/features/pto/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>PTO tracking</h3><p>Approved time off shows up on the timesheet as PTO hours.</p><span>PTO →</span></a>
+        <a class="fp-link-card" href="/features/employee-app/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Employee app</h3><p>Timesheet, schedule, PTO and pay stubs in one app.</p><span>Employee app →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">Close the week in minutes, not an afternoon</h2>
+        <p>See your own team’s timesheets in Workzenly. We set up a demo workspace with your company name before the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- BUYER'S GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it does</a></li>
+            <li><a href="#g-law">What a timesheet must record</a></li>
+            <li><a href="#g-keep">How long to keep them</a></li>
+            <li><a href="#g-types">Paper, spreadsheet or app</a></li>
+            <li><a href="#g-approve">How approval works</a></li>
+            <li><a href="#g-round">Breaks and rounding</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>See last week’s hours as timesheets in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The buyer’s guide to choosing a timesheet app</h2>
+        <p>A timesheet is the weekly record of when each employee worked. For hourly staff, payroll is built from it. This guide covers what a timesheet app should do, what federal law says a timesheet must contain and how long to keep it, and what to test before you pick one. If you want the basics first, start with <a href="/blog/what-is-a-timesheet/">what a timesheet is</a>.</p>
+
+        <h3 id="g-what">What a timesheet app does</h3>
+        <p>A timesheet app records start and stop times, subtracts unpaid breaks, totals hours by day and by workweek, and puts the result in front of a manager to approve. The difference between apps is where the times come from. In some, employees type their hours, a digital paper sheet. In others, including Workzenly, the timesheet is built from clock-ins on a phone or shared tablet as the work happens.</p>
+        <p>A good app also flags missed clock-outs, late starts and punches from outside the site, keeps the original punch next to every correction, lets a manager approve one person or the whole team, and hands approved hours to payroll.</p>
+        <p>Salaried staff are a separate case. Properly classified exempt employees do not need daily and weekly hours records under federal rules. Our guide to <a href="/blog/exempt-vs-non-exempt/">exempt vs non-exempt employees</a> explains who is who.</p>
+
+        <h3 id="g-law">What a timesheet must record under federal law</h3>
+        <p>The Fair Labor Standards Act does not require a time clock or a particular form. It does require accurate records. The Department of Labor’s recordkeeping rule at 29 CFR 516.2 lists what employers must keep for each non-exempt employee, and the Wage and Hour Division’s Fact Sheet #21 summarizes it. Some of the items live in the employee profile. The ones a timesheet app touches directly are:</p>
+        <ul>
+          <li>The time of day and day of the week the workweek begins</li>
+          <li>Hours worked each workday</li>
+          <li>Total hours worked each workweek</li>
+          <li>The regular hourly rate of pay for any workweek with overtime</li>
+          <li>Total daily or weekly straight-time earnings</li>
+          <li>Total overtime earnings for the workweek</li>
+          <li>All additions to and deductions from wages, total wages paid each pay period, and the date of payment and the pay period it covers</li>
+        </ul>
+        <p>The rest is identity: name and Social Security number, address, birth date if younger than 19, sex, occupation and basis of pay. In Workzenly those sit in the employee record, tied to the same person as the timesheet.</p>
+        <p>The workweek is a fixed, recurring 168-hour period, such as Sunday to Saturday, and overtime is counted per workweek, so two weeks of a biweekly period cannot be averaged. Converting minutes to decimals by hand is where errors creep in. Our <a href="/blog/hours-to-decimal-calculator/">hours to decimal calculator</a> shows why 7:57 is 7.95 hours, not 7.57.</p>
+
+        <h3 id="g-keep">How long to keep timesheets</h3>
+        <p>According to the Department of Labor, payroll records must be kept for at least 3 years. Records used to compute wages, such as time cards, wage rate tables and work schedules, must be kept for at least 2 years. They can be kept at the workplace or a central office.</p>
+        <p>Many employers keep timesheets for 3 years alongside payroll, and many states set longer periods.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Rules change, so check the Department of Labor, your state labor department or an employment lawyer for your situation.</p>
+
+        <h3 id="g-types">Paper vs spreadsheet vs timesheet app</h3>
+        <p>All three can meet the federal rule if records are complete and accurate. They differ in the work it takes.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th></th><th>Paper timesheet</th><th>Spreadsheet</th><th>Timesheet app</th></tr></thead>
+            <tbody>
+              <tr><td>Where times come from</td><td>Written by hand, often at the end of the week</td><td>Typed by the employee or manager</td><td>Clock-ins on a phone or tablet, as they happen</td></tr>
+              <tr><td>Breaks and overtime</td><td>Worked out with a calculator</td><td>Formulas, if nobody breaks them</td><td>Worked out from the punches</td></tr>
+              <tr><td>Corrections</td><td>Crossed out or rewritten</td><td>Overwritten, usually with no record</td><td>Original kept next to the edit, with who and why</td></tr>
+              <tr><td>Approval</td><td>A signature on each sheet</td><td>An email or a cell marked “OK”</td><td>One person or the whole team in one tap</td></tr>
+              <tr><td>Getting hours to payroll</td><td>Retyped</td><td>Copied and pasted</td><td>Approved hours flow in</td></tr>
+              <tr><td>Employee view</td><td>A photocopy, if they ask</td><td>Shared file, if you share it</td><td>Their own timesheet on their phone</td></tr>
+              <tr><td>Good fit</td><td>A few staff, one site</td><td>Small salaried teams</td><td>Hourly teams, shifts, several managers</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>If you are not ready to switch, our <a href="/templates/timesheet-templates/">free timesheet templates</a> give you weekly and biweekly layouts that cover the required fields, and the <a href="/blog/time-card-calculator/">time card calculator</a> totals a week with breaks. Most teams move to an app when they add a second manager, a second location or overtime that has to be caught early.</p>
+
+        <h3 id="g-approve">How timesheet approval works</h3>
+        <p>Approval is where a manager confirms the hours before they become pay. Federal rules do not require a signature, but a sign-off is when errors get caught. A simple workflow:</p>
+        <ol>
+          <li><strong>The week closes</strong> Saturday night with every punch on each timesheet.</li>
+          <li><strong>Flags come first:</strong> missed clock-outs, late starts, geofence misses and overtime.</li>
+          <li><strong>Fixes go through a request</strong> with a reason, and the original punch stays in the history.</li>
+          <li><strong>Approve the rest</strong> together, and the flagged ones once settled.</li>
+          <li><strong>Payroll takes over</strong> when both weeks of the pay period are approved.</li>
+        </ol>
+        <p>Make sure nobody is discouraged from recording time they worked, since unrecorded work still has to be paid, and approve soon after the week ends, while people still remember Tuesday.</p>
+
+        <h3 id="g-round">Breaks and rounding on a timesheet</h3>
+        <p>Federal rules treat short rest breaks, usually 20 minutes or less, as hours worked, so they stay paid. Bona fide meal periods, usually 30 minutes or more, are not work time if the employee is completely relieved of duty. A lunch eaten at the station while watching orders counts as work, which is why Workzenly deducts breaks from break punches rather than assuming one. Some states, such as California, Washington and Oregon, add their own meal and rest break rules.</p>
+        <p>Rounding is allowed but narrow. Under 29 CFR 785.48(b), recording times to the nearest 5 minutes, tenth of an hour or quarter hour is accepted only if, over time, it does not result in employees being underpaid. With quarter-hour rounding, that means 1 to 7 minutes round down and 8 to 14 minutes round up, in both directions. Rounding that only ever rounds in the employer’s favor is not allowed. Paying exact punched minutes, as in the timesheets above, avoids the question.</p>
+
+        <h3 id="g-choose">How to choose timesheet software</h3>
+        <p>Run one real week through each tool, with the messy parts: a forgotten clock-out, a late start, a skipped lunch and someone over 40 hours. Then check:</p>
+        <ul>
+          <li><strong>Where the hours come from.</strong> Clock-ins on a phone or shared tablet beat typed hours.</li>
+          <li><strong>The math.</strong> Breaks deducted from punches, overtime split per workweek, totals shown in both hours:minutes and decimal.</li>
+          <li><strong>The edit history.</strong> Make a correction. Are the original punch, the editor and the reason still visible?</li>
+          <li><strong>Approval.</strong> Can a manager approve one person and the whole team, from a phone, and see what is still waiting?</li>
+          <li><strong>The employee view.</strong> Can employees see their own timesheet and request a fix?</li>
+          <li><strong>The payroll hand-off.</strong> Do approved regular, overtime and PTO hours reach payroll without exporting and re-importing?</li>
+          <li><strong>Records.</strong> Can you pull up a week from last year with its punches, edits and approval?</li>
+        </ul>
+        <p>Our list of the <a href="/tools/best-time-and-attendance-software/">best time and attendance software</a> covers the main options neutrally. If you want to see that test week in Workzenly, <a href="/#start">book a demo</a> and we will set up a workspace with your company name before the call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions about our timesheet app</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>What is a timesheet app?</summary><p>A timesheet app records the hours each employee works and totals them by day and by workweek, so a manager can review and approve them before payroll. In Workzenly the timesheet fills itself in from clock-ins on a phone or a shared tablet, takes off unpaid breaks, splits regular and overtime hours and sends approved hours to payroll.</p></details>
+        <details><summary>Do employees have to fill in their timesheets?</summary><p>No. Employees clock in and out, and Workzenly builds the timesheet from those punches. If someone forgets a punch, they send a fix request from the app with a note, and the manager approves or changes it. The original punch stays in the edit history next to the correction.</p></details>
+        <details><summary>How long do I have to keep timesheets?</summary><p>Under the Fair Labor Standards Act, the Department of Labor says payroll records must be kept for at least 3 years and records used to compute wages, such as time cards, for at least 2 years. Some states require longer. Workzenly keeps each timesheet, edit and approval in the employee's record.</p></details>
+        <details><summary>Can a manager approve the whole team's timesheets at once?</summary><p>Yes. Managers see every timesheet for the week in one table, check the few that are flagged, then approve the rest of the team in one tap. They can also open a single timesheet and approve just that person. Managers can approve from a phone.</p></details>
+        <details><summary>Can employees see their own timesheet?</summary><p>Yes. Each employee sees their own timesheet in the Workzenly app, with daily hours, breaks, regular and overtime totals and any edits. They see only their own record, never a coworker's, and they can request a fix if something looks wrong.</p></details>
+        <details><summary>Does the timesheet app round punches?</summary><p>Federal rules allow rounding to the nearest 5 minutes, tenth of an hour or quarter hour only if, over time, it does not shortchange employees. Rounding that always favors the employer is not allowed. Paying exact punched minutes avoids the question, and that is how the timesheets on this page are shown.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for timesheets</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/what-is-a-timesheet/"><small>GUIDE</small><b>What is a timesheet? Meaning, rules and an example</b></a>
+        <a href="/templates/timesheet-templates/"><small>TEMPLATES</small><b>Free timesheet templates for Excel, Word and PDF</b></a>
+        <a href="/blog/time-card-calculator/"><small>CALCULATOR</small><b>Time card calculator for weekly hours and pay</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="wordmark" href="/">Workzenly</a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features"><h2>People</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>

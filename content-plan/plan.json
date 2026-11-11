@@ -1547,63 +1547,217 @@
  ],
  "features": [
   {
+   "slug": "time-and-attendance",
+   "url": "/features/time-and-attendance/",
+   "keyword": "time and attendance software",
+   "intent": "transactional",
+   "name": "Time and attendance",
+   "country": "us",
+   "secondary": [
+    "time and attendance system",
+    "employee attendance software",
+    "attendance tracking software",
+    "time and attendance app"
+   ]
+  },
+  {
    "slug": "time-clock",
    "url": "/features/time-clock/",
    "keyword": "employee time clock app",
-   "intent": "commercial",
-   "volume": 10000,
-   "kd": 22,
+   "intent": "transactional",
+   "name": "Time clock",
    "country": "us",
    "secondary": [
     "time clock app",
     "clock in clock out app",
-    "gps time clock",
-    "free time clock app"
-   ]
+    "online time clock",
+    "mobile time clock"
+   ],
+   "previous_keyword": "employee time clock app"
   },
   {
    "slug": "scheduling",
    "url": "/features/scheduling/",
-   "keyword": "shift scheduling app",
-   "intent": "commercial",
-   "volume": 350,
-   "kd": 0,
+   "keyword": "employee scheduling software",
+   "intent": "transactional",
+   "name": "Scheduling",
    "country": "us",
    "secondary": [
+    "shift scheduling app",
+    "staff scheduling software",
     "employee scheduling app",
-    "employee scheduling software",
-    "shift swap app",
-    "staff scheduling"
-   ]
+    "shift swap app"
+   ],
+   "previous_keyword": "shift scheduling app"
   },
   {
    "slug": "payroll",
    "url": "/features/payroll/",
    "keyword": "payroll software for small business",
-   "intent": "commercial",
-   "volume": 2700,
-   "kd": 35,
+   "intent": "transactional",
+   "name": "Payroll",
    "country": "us",
    "secondary": [
     "small business payroll",
-    "payroll app",
     "run payroll",
+    "payroll app",
     "direct deposit payroll"
-   ]
+   ],
+   "previous_keyword": "payroll software for small business"
   },
   {
    "slug": "pto",
    "url": "/features/pto/",
    "keyword": "pto tracking software",
-   "intent": "commercial",
-   "volume": 500,
-   "kd": 15,
+   "intent": "transactional",
+   "name": "PTO",
    "country": "us",
    "secondary": [
     "pto tracker",
-    "leave management software",
-    "time off tracking",
-    "vacation tracker"
+    "time off tracking software",
+    "vacation tracker",
+    "leave management software"
+   ],
+   "previous_keyword": "pto tracking software"
+  },
+  {
+   "slug": "timesheets",
+   "url": "/features/timesheets/",
+   "keyword": "timesheet app",
+   "intent": "transactional",
+   "name": "Timesheets",
+   "country": "us",
+   "secondary": [
+    "online timesheet software",
+    "timesheet software",
+    "employee timesheet app",
+    "timesheet approval"
+   ]
+  },
+  {
+   "slug": "gps-time-tracking",
+   "url": "/features/gps-time-tracking/",
+   "keyword": "gps time tracking app",
+   "intent": "transactional",
+   "name": "GPS time tracking",
+   "country": "us",
+   "secondary": [
+    "gps time clock app",
+    "employee gps time tracking",
+    "geofence time clock",
+    "mobile time tracking with gps"
+   ]
+  },
+  {
+   "slug": "time-clock-kiosk",
+   "url": "/features/time-clock-kiosk/",
+   "keyword": "time clock kiosk",
+   "intent": "transactional",
+   "name": "Time clock kiosk",
+   "country": "us",
+   "secondary": [
+    "kiosk time clock app",
+    "tablet time clock",
+    "ipad time clock",
+    "shared time clock"
+   ]
+  },
+  {
+   "slug": "overtime-tracking",
+   "url": "/features/overtime-tracking/",
+   "keyword": "overtime tracking software",
+   "intent": "transactional",
+   "name": "Overtime tracking",
+   "country": "us",
+   "secondary": [
+    "track employee overtime",
+    "overtime management software",
+    "overtime alerts",
+    "overtime calculation software"
+   ]
+  },
+  {
+   "slug": "hiring",
+   "url": "/features/hiring/",
+   "keyword": "hiring software for small business",
+   "intent": "transactional",
+   "name": "Hiring",
+   "country": "us",
+   "secondary": [
+    "applicant tracking software",
+    "recruiting software for small business",
+    "job posting software",
+    "hiring app"
+   ]
+  },
+  {
+   "slug": "onboarding",
+   "url": "/features/onboarding/",
+   "keyword": "employee onboarding software",
+   "intent": "transactional",
+   "name": "Onboarding",
+   "country": "us",
+   "secondary": [
+    "new hire onboarding software",
+    "onboarding app",
+    "digital onboarding",
+    "paperless onboarding"
+   ]
+  },
+  {
+   "slug": "expenses",
+   "url": "/features/expenses/",
+   "keyword": "expense reimbursement software",
+   "intent": "transactional",
+   "name": "Expenses",
+   "country": "us",
+   "secondary": [
+    "employee expense app",
+    "receipt tracking app",
+    "expense report software",
+    "expense reimbursement app"
+   ]
+  },
+  {
+   "slug": "performance-reviews",
+   "url": "/features/performance-reviews/",
+   "keyword": "performance review software",
+   "intent": "transactional",
+   "name": "Performance reviews",
+   "country": "us",
+   "secondary": [
+    "performance management software for small business",
+    "employee review software",
+    "goal tracking software",
+    "one on one meeting software"
+   ]
+  },
+  {
+   "slug": "hr-documents",
+   "url": "/features/hr-documents/",
+   "keyword": "hr document management software",
+   "intent": "transactional",
+   "name": "HR documents",
+   "country": "us",
+   "secondary": [
+    "employee document management",
+    "digital personnel files",
+    "employee file storage",
+    "certification tracking"
+   ]
+  },
+  {
+   "slug": "employee-app",
+   "url": "/features/employee-app/",
+   "keyword": "employee self service app",
+   "intent": "transactional",
+   "name": "Employee app",
+   "country": "us",
+   "secondary": [
+    "employee app",
+    "employee self service portal",
+    "ess app",
+    "employee mobile app"
    ]
   }
  ],

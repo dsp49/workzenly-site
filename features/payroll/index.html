@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Payroll Software for Small Business, Hours to Pay Stubs</title>
-  <meta name="description" content="Payroll software for small business that turns approved hours, overtime, PTO and expenses into payroll, with every pay stub in the employee app.">
+  <title>Payroll Software for Small Business | Workzenly</title>
+  <meta name="description" content="Payroll software for small business built on approved hours: overtime, PTO and expenses flow in, and pay stubs reach the employee app on payday.">
   <meta name="theme-color" content="#0b0b0b">
   <link rel="canonical" href="https://workzenly.com/features/payroll/">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -13,8 +13,8 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Workzenly">
   <meta property="og:url" content="https://workzenly.com/features/payroll/">
-  <meta property="og:title" content="Payroll Software for Small Business, Hours to Pay Stubs">
-  <meta property="og:description" content="Payroll software for small business that turns approved hours, overtime, PTO and expenses into payroll, with every pay stub in the employee app.">
+  <meta property="og:title" content="Payroll Software for Small Business | Workzenly">
+  <meta property="og:description" content="Payroll software for small business built on approved hours: overtime, PTO and expenses flow in, and pay stubs reach the employee app on payday.">
   <meta property="og:image" content="https://workzenly.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,20 +22,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
   <style>
-    .feat-section__body ul { list-style: disc; padding-left: 1.3em; }
-    .feat-section__body ol { padding-left: 1.3em; }
-    .feat-section__body li + li { margin-top: 0.5em; }
-    .feat-section__body li::marker { color: var(--muted); }
-    .feat-table { overflow-x: auto; }
-    .feat-table table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 16px; line-height: 1.45; }
-    .feat-table th, .feat-table td { text-align: left; vertical-align: top; padding: 12px 12px 12px 0; border-bottom: 1px solid var(--raised); }
-    .feat-table th { color: var(--muted); font-weight: 500; font-size: 14px; }
-    [data-ui] .frag__foot { margin-top: 16px; display: flex; justify-content: space-between; align-items: center; gap: 14px; background: #171717; border: 1px solid #262626; border-radius: 10px; padding: 14px; }
-    [data-ui] .frag__k { color: #a8a8a8; font-size: 12px; }
-    [data-ui] .frag__v { font-weight: 600; }
-    [data-ui] .frag__btn:disabled { background: #2a2a2a; color: var(--ink); cursor: default; }
-    [data-ui].frag td small { display: block; color: #949494; font-size: 12px; }
+    .ui-stub-row { display: flex; justify-content: space-between; gap: 10px; font-size: 12.5px; padding: 5px 0; border-top: 1px solid #202020; }
+    .ui-stub-row:first-of-type { border-top: 0; }
+    .ui-stub-row span { color: #8d8d89; }
+    .ui-stub-net { font-size: 30px; font-weight: 600; letter-spacing: -0.03em; margin: 4px 0 2px; }
   </style>
   <script type="application/ld+json">
   {
@@ -43,275 +35,675 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "name": "Payroll Software for Small Business, Hours to Pay Stubs",
-        "description": "Payroll software for small business that turns approved hours, overtime, PTO and expenses into payroll, with every pay stub in the employee app.",
+        "name": "Payroll Software for Small Business | Workzenly",
+        "description": "Payroll software for small business built on approved hours: overtime, PTO and expenses flow in, and pay stubs reach the employee app on payday.",
         "url": "https://workzenly.com/features/payroll/",
+        "dateModified": "2026-11-11",
         "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
       },
       {
         "@type": "SoftwareApplication",
         "name": "Workzenly Payroll",
         "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web, Android, iOS",
-        "description": "Payroll software for small business that turns approved hours, overtime, PTO and expenses into payroll, with every pay stub in the employee app.",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "Payroll software for small business that turns approved regular hours, overtime, PTO and expense reimbursements into a pay run, with pay stubs in the employee app on payday and pay visible only to people with payroll access.",
         "url": "https://workzenly.com/features/payroll/"
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Payroll", "item": "https://workzenly.com/features/payroll/" }
+          { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://workzenly.com/features/" },
+          { "@type": "ListItem", "position": 3, "name": "Payroll", "item": "https://workzenly.com/features/payroll/" }
         ]
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
-          { "@type": "Question", "name": "Can Workzenly run our payroll?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Approved hours, overtime, PTO and expense claims go straight into payroll, and each employee gets their pay stub in the Workzenly app on payday. If you need tax deposits and filings handled for you, ask us on the demo call exactly how that works for your account." } },
-          { "@type": "Question", "name": "How do employees get paid by direct deposit?", "acceptedAnswer": { "@type": "Answer", "text": "New hires add their direct deposit details during onboarding, on their own phone, along with their W-4 and I-9. The details sit in their record before the first pay run, so nobody emails a voided check or bank numbers to a manager." } },
-          { "@type": "Question", "name": "Does overtime get calculated automatically?", "acceptedAnswer": { "@type": "Answer", "text": "Overtime is worked out from the time clock punches, so hours over 40 in a workweek show up as overtime before you review the pay run. Federal law requires time and a half for non-exempt employees, and some states, such as California, add daily overtime rules." } },
-          { "@type": "Question", "name": "Who can see pay rates and pay stubs?", "acceptedAnswer": { "@type": "Answer", "text": "You decide. Employees see only their own pay stubs and record. Managers see their team's shifts and time off. Pay rates and payroll totals are visible only to the people you give payroll access to, such as the owner or a bookkeeper." } },
-          { "@type": "Question", "name": "Can we switch payroll in the middle of the year?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, though the start of a quarter is simplest, because each quarterly Form 941 return covers three months. Send us your employee list and PTO balances as a spreadsheet, and we import them during setup and stay with you for the first pay run." } },
-          { "@type": "Question", "name": "Can I run payroll from my phone?", "acceptedAnswer": { "@type": "Answer", "text": "Managers can approve timesheets and PTO from a phone, which is most of the work before payday. Reviewing and approving the pay run itself is easiest on a laptop, where you can see every employee's hours, overtime and totals side by side." } }
+          { "@type": "Question", "name": "What does payroll software for small business do?", "acceptedAnswer": { "@type": "Answer", "text": "It turns hours, pay rates, time off and deductions into gross pay, withholds taxes, works out net pay and gives each employee a pay stub. Some products also deposit taxes and file returns. Workzenly builds the pay run from approved hours, overtime, PTO and expense claims, and puts every pay stub in the employee app on payday." } },
+          { "@type": "Question", "name": "Can Workzenly run our payroll?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Approved hours, overtime, PTO and expense claims go straight into payroll, and each employee gets their pay stub in the Workzenly app on payday. If you need tax deposits and filings handled for you, ask us on the demo call exactly who handles deposits and filings for your account." } },
+          { "@type": "Question", "name": "Does overtime get calculated automatically?", "acceptedAnswer": { "@type": "Answer", "text": "Overtime is worked out from the time clock punches, by workweek, so hours over 40 in a week show up as overtime before you review the pay run. Federal law requires time and a half for non-exempt employees, and PTO hours do not count toward the 40. Some states, such as California, add daily overtime rules." } },
+          { "@type": "Question", "name": "Who can see pay rates and pay stubs?", "acceptedAnswer": { "@type": "Answer", "text": "You decide. Employees see only their own pay stubs and record. Managers see their team's shifts and time off and can approve hours without seeing pay. Pay rates and payroll totals are visible only to the people you give payroll access to, such as the owner or a bookkeeper." } },
+          { "@type": "Question", "name": "Can we switch payroll in the middle of the year?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, though the start of a quarter is simplest, because each quarterly Form 941 return covers three months. Keep year-to-date totals from your old provider so W-2s are complete. Send us your employee list and PTO balances as a spreadsheet, and we import them during setup and stay with you for the first pay run." } },
+          { "@type": "Question", "name": "Can I run payroll from my phone?", "acceptedAnswer": { "@type": "Answer", "text": "Managers can approve timesheets, PTO and expense claims from a phone, which is most of the work before payday. Reviewing and approving the pay run itself is easiest on a laptop, where you can see every employee's hours, overtime and totals side by side." } }
         ]
       }
     ]
   }
   </script>
 </head>
-<body data-keyword="payroll software for small business" data-intent="commercial" data-topic="Payroll">
+<body data-keyword="payroll software for small business" data-intent="transactional" data-topic="Payroll">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M4 16h16M6 16a6 6 0 0 1 12 0M12 7.5V5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z M3.5 7.5L12 12l8.5-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5V20H4z M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="10" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 19h6M12 15v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8h6M9 12h6M9 16h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 18h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
 
 <header class="nav">
   <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
   <nav class="nav__links" aria-label="Main">
-    <a class="link" href="/features/time-clock/">Time clock</a>
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
     <a class="link" href="/features/scheduling/">Scheduling</a>
     <a class="link" href="/features/payroll/" aria-current="page">Payroll</a>
-    <a class="link" href="/features/pto/">PTO</a>
     <a class="link" href="/blog/">Blog</a>
   </nav>
   <a class="button button--small" href="/#start">Book a demo</a>
 </header>
 
 <nav class="crumbs" aria-label="Breadcrumb">
-  <ol><li><a href="/">Home</a></li><li aria-current="page">Payroll</li></ol>
+  <ol><li><a href="/">Home</a></li><li><a href="/features/">Features</a></li><li aria-current="page">Payroll</li></ol>
 </nav>
 
-<main>
-  <section class="feat-hero" aria-labelledby="feat-title">
-    <div class="feat-hero__text">
-      <h1 id="feat-title">Payroll software for small business, built on the hours people worked</h1>
-      <p class="feat-hero__lead">Workzenly takes approved timesheets, overtime, PTO and expense claims and turns them into payroll. Every pay stub lands in the employee's app on payday.</p>
-      <div class="feat-hero__actions">
-        <a class="button" href="/#start">Book a demo</a>
-        <a class="link" href="#how">See how a pay run works</a>
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Payroll</span>
+        <h1 id="hero-title">Payroll software for small business, built on approved hours</h1>
+        <p class="fp-lead">Workzenly is payroll software for small business teams that clock in. Approved regular hours, overtime, PTO and expense reimbursements flow straight into the pay run, you review it on a laptop, and every employee finds their pay stub in the app on payday.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See a pay run</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours and PTO flow in</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pay stubs in the app</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pay only for payroll access</li>
+        </ul>
       </div>
-    </div>
-    <div class="feat-hero__stage">
-      <div class="frag" data-ui id="payrun">
-        <p class="frag__title">Pay run · Nov 1–14</p>
-        <p class="frag__meta">Northfield Coffee, Austin, TX · Pay date Fri, Nov 20</p>
-        <table>
-          <thead>
-            <tr><th scope="col">Employee</th><th scope="col" class="num">Hours</th><th scope="col" class="num">Gross</th><th scope="col">Status</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Emily Carter<small>Kitchen · $19.00/hr</small></td><td class="num">72 + 6 OT<small>8 PTO</small></td><td class="num">$1,777.00<small>incl. $86.00 expense</small></td><td><span class="pill pill--ok">Ready</span></td></tr>
-            <tr><td>Jordan Lee<small>Barista · $18.25/hr</small></td><td class="num">80 + 2.5 OT</td><td class="num">$1,528.44</td><td><span class="pill pill--ok">Ready</span></td></tr>
-            <tr><td>Maya Torres<small>Front counter · $17.50/hr</small></td><td class="num">76</td><td class="num">$1,330.00</td><td><span class="pill pill--ok">Ready</span></td></tr>
-            <tr><td>Chris Walker<small>Barista · $17.75/hr</small></td><td class="num">56<small>24 PTO</small></td><td class="num">$1,420.00</td><td><span class="pill pill--ok">Ready</span></td></tr>
-            <tr><td>Sam Rivera<small>Kitchen · $18.00/hr</small></td><td class="num">64</td><td class="num">$1,152.00</td><td><span class="pill pill--warn" id="sam-pill">Timesheet open</span></td></tr>
-          </tbody>
-        </table>
-        <div class="frag__foot">
-          <div>
-            <p class="frag__k" id="payrun-k">Before you approve</p>
-            <p class="frag__v" id="payrun-v">1 timesheet waiting for Sam Rivera</p>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly pay run for Northfield Coffee, pay period November 1 to 14 paid Friday November 20, showing $8,119.94 gross for six employees, where the gross pay comes from, and one timesheet still waiting for approval">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/payroll</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span><svg><use href="#i-clock"/></svg></span>
+              <span><svg><use href="#i-cal"/></svg></span>
+              <span><svg><use href="#i-sheet"/></svg></span>
+              <span class="is-on"><svg><use href="#i-pay"/></svg></span>
+              <span><svg><use href="#i-users"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Pay run · Nov 1–14</p><p class="ui-sub">Northfield Coffee · Austin, TX · Paid Fri, Nov 20</p></div>
+                <div class="ui-seg" aria-hidden="true"><span class="is-on">Review</span><span>Pay stubs</span><span>History</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>$8,119.94</b><small>Gross pay</small><em>6 employees</em></div>
+                <div class="ui-kpi"><b>8.5 h</b><small>Overtime</small><em>Emily, Jordan</em></div>
+                <div class="ui-kpi"><b>32 h</b><small>PTO</small><em>Chris, Emily</em></div>
+                <div class="ui-kpi"><b>$86.00</b><small>Reimbursements</small><em>1 claim</em></div>
+              </div>
+              <div class="ui-split">
+                <div class="ui-card">
+                  <div class="ui-card__head"><b>Where gross pay comes from</b><span>From approved records</span></div>
+                  <div class="ui-list">
+                    <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Regular · 398 h</span><span class="num">$7,216.50</span></div><div class="ui-bar-meter"><i style="width:89%"></i></div></div>
+                    <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">PTO · 32 h</span><span class="num">$578.00</span></div><div class="ui-bar-meter"><i style="width:7%;background:#9cc8fa"></i></div></div>
+                    <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Overtime · 8.5 h</span><span class="num">$239.44</span></div><div class="ui-bar-meter"><i style="width:3%;background:#f2c36b"></i></div></div>
+                    <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Expenses · 1 claim</span><span class="num">$86.00</span></div><div class="ui-bar-meter"><i style="width:1.5%;background:#c9b6f5"></i></div></div>
+                  </div>
+                </div>
+                <div class="ui-card">
+                  <div class="ui-card__head"><b>Before you approve</b><span>3</span></div>
+                  <div class="ui-list">
+                    <div class="ui-item"><div><p>Timesheet not approved</p><small>Sam Rivera · week of Nov 8</small></div><span class="ui-pill ui-pill--warn">Waiting</span></div>
+                    <div class="ui-item"><div><p>First paycheck</p><small>Dana Brooks · W-4 and deposit on file</small></div><span class="ui-pill ui-pill--ok">Ready</span></div>
+                    <div class="ui-item"><div><p>PTO Nov 4–6</p><small>Chris Walker · 24 h approved</small></div><span class="ui-pill ui-pill--ok">Ready</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-card ui-scroll">
+                <table class="ui-table">
+                  <thead><tr><th>Employee</th><th class="r">Regular</th><th class="r">OT</th><th class="r">PTO</th><th class="r">Gross</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#f5b6c9">EC</span>Emily Carter</span></td><td class="r num">72.0</td><td class="r num">6.0</td><td class="r num">8.0</td><td class="r num">$1,777.00<small>incl. $86.00 expense</small></td><td><span class="ui-pill ui-pill--ok">Ready</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#9cc8fa">JL</span>Jordan Lee</span></td><td class="r num">80.0</td><td class="r num">2.5</td><td class="r num">–</td><td class="r num">$1,528.44</td><td><span class="ui-pill ui-pill--ok">Ready</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#dafa9c">MT</span>Maya Torres</span></td><td class="r num">76.0</td><td class="r num">–</td><td class="r num">–</td><td class="r num">$1,330.00</td><td><span class="ui-pill ui-pill--ok">Ready</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#c9b6f5">CW</span>Chris Walker</span></td><td class="r num">56.0</td><td class="r num">–</td><td class="r num">24.0</td><td class="r num">$1,420.00</td><td><span class="ui-pill ui-pill--ok">Ready</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#f2c36b">SR</span>Sam Rivera</span></td><td class="r num">64.0</td><td class="r num">–</td><td class="r num">–</td><td class="r num">$1,152.00</td><td><span class="ui-pill ui-pill--warn" id="pr-sam">Waiting</span></td></tr>
+                    <tr><td><span class="ui-person"><span class="ui-av" style="background:#9cf0d6">DB</span>Dana Brooks</span></td><td class="r num">50.0</td><td class="r num">–</td><td class="r num">–</td><td class="r num">$912.50</td><td><span class="ui-pill ui-pill--ok">Ready</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="ui-foot"><div><p id="pr-text">1 timesheet waiting before this pay run can be approved</p><small>Sam Rivera · 32.0 h in the week of Nov 8</small></div><button type="button" class="ui-btn" data-act data-target="pr-text" data-text="All 6 timesheets approved. Pay run ready to review." data-pill="pr-sam" data-pill-text="Ready" data-done="Approved">Approve timesheet</button></div>
+            </div>
           </div>
-          <button type="button" class="frag__btn" id="payrun-btn">Approve timesheet</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="why-title">
-    <h2 id="why-title">Why small business payroll goes wrong before payday</h2>
-    <div class="feat-section__body">
-      <p>Most payroll mistakes at a small business are not math mistakes. They are copying mistakes. Hours live in a time clock or on paper cards, PTO approvals live in a text thread, and a receipt for oat milk sits in someone's glovebox. On the Monday before payday, the owner or bookkeeper types all of it into a payroll service by hand.</p>
-      <p>Each of those hand-offs is a place where 6 hours of overtime turns into 6 regular hours, a day of PTO is paid twice, or an $86.00 reimbursement waits another two weeks. Employees notice, and then they text you on your day off to ask why their check is short.</p>
-      <p>Good payroll software for small business closes those gaps by starting from the record that already exists. In Workzenly, the shift someone clocked in for, the overtime it produced and the PTO their manager approved are the same data that payroll reads. Nobody types it twice, and every number on a pay stub traces back to a shift someone actually worked.</p>
-    </div>
-  </section>
-
-  <section class="feat-section" aria-labelledby="what-title">
-    <h2 id="what-title">What Workzenly payroll does</h2>
-    <ul class="feat-list">
-      <li><b>Hours that are already approved</b><p>Managers approve a whole week of timesheets in one tap. Payroll picks up the approved hours from the <a class="link" href="/features/time-clock/">employee time clock</a>, so you review totals instead of re-entering them.</p></li>
-      <li><b>Overtime worked out from punches</b><p>Breaks, overtime and late arrivals are calculated from real clock-in and clock-out times. Hours over 40 in a workweek arrive in the pay run as overtime, not as a note to fix later.</p></li>
-      <li><b>PTO that lands as PTO</b><p>When a manager approves a day off, the hours come off the employee's balance and show up in the next payroll as PTO. Read more on <a class="link" href="/features/pto/">PTO tracking</a>.</p></li>
-      <li><b>Expenses paid with the paycheck</b><p>Employees photograph a receipt, pick a category and send it. Approved claims are paid with the next paycheck as a reimbursement line, separate from wages.</p></li>
-      <li><b>Pay stubs in the employee app</b><p>On payday every employee gets their pay stub in the Workzenly app, next to their shifts and PTO balance. No printed stubs, no forwarding PDFs.</p></li>
-      <li><b>Records and access you control</b><p>Offer letters, W-4s, I-9s, direct deposit details and pay history live in each person's record. Pay is visible only to the people you give payroll access to.</p></li>
-    </ul>
-  </section>
-
-  <div class="feat-section">
-    <aside class="cta-inline" aria-label="Book a demo" style="grid-column: 1 / -1;">
-      <div><p class="cta-inline__title">Stop retyping hours into payroll</p><p>See a real pay run built from time clock punches, approved PTO and expense claims, with the pay stub your employees would see on payday.</p></div>
-      <a class="cta-inline__btn" href="/#start">Book a demo</a>
-    </aside>
-  </div>
-
-  <section class="feat-section" id="how" aria-labelledby="how-title">
-    <h2 id="how-title">How you run payroll in Workzenly</h2>
-    <div class="feat-section__body">
-      <p>Here is one pay period at Northfield Coffee, from first shift to payday. Emily Carter works in the kitchen at $19.00 an hour.</p>
-      <ol>
-        <li><b>Employees clock in.</b> Emily clocks in from her phone or the shared tablet at the door. During the pay period of November 1 to 14 she works 78 hours: 46 in the first week and 32 in the second.</li>
-        <li><b>Time off is approved in the app.</b> Emily asks for Friday, November 6 off from her phone. Her manager approves it after checking who else is out, and 8 hours of PTO are recorded for that day.</li>
-        <li><b>Managers approve timesheets.</b> At the end of each week, the manager approves the team's timesheets in one tap. The 6 hours over 40 in week one are already marked as overtime.</li>
-        <li><b>Expenses ride along.</b> Emily's $86.00 receipt for a kitchen supply run was approved, so it joins the pay run as a reimbursement.</li>
-        <li><b>You review the pay run.</b> On a laptop, you see each employee's hours, overtime, PTO and gross pay. Emily's line reads 72 regular hours ($1,368.00), 6 overtime hours at $28.50 ($171.00), 8 PTO hours ($152.00) and $86.00 in expenses, for $1,777.00 gross.</li>
-        <li><b>Pay stubs publish on payday.</b> When the run is approved, each pay stub appears in the employee's app on payday. If Emily wants to understand a line, our guide on <a class="link" href="/blog/how-to-read-a-pay-stub/">how to read a pay stub</a> explains gross pay, deductions and year-to-date totals.</li>
-      </ol>
-      <p>Notice that the 8 PTO hours do not count toward the 40-hour overtime threshold. Under federal law, overtime is based on hours actually worked. You can check any week by hand with our <a class="link" href="/blog/overtime-calculator/">overtime calculator</a>.</p>
-    </div>
-  </section>
-
-  <section class="feat-section" aria-labelledby="duties-title">
-    <h2 id="duties-title">What small business payroll has to cover</h2>
-    <div class="feat-section__body">
-      <p>Whatever tool you use, running payroll as a US employer comes with federal duties. These are the ones the IRS lists for most employers, as of November 2026:</p>
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for teams paid by the hour</p>
       <ul>
-        <li><b>Withholding.</b> Withhold federal income tax based on each employee's <a class="link" href="/blog/w-4-form/">Form W-4</a>, plus the employee share of Social Security (6.2%) and Medicare (1.45%). The employer pays a matching 6.2% and 1.45%. The 2026 Social Security wage base is $184,500.</li>
-        <li><b>Federal unemployment tax (FUTA).</b> Paid by the employer only. Employees never have it withheld.</li>
-        <li><b>Deposits.</b> Employment taxes are deposited on a monthly or semiweekly schedule, chosen from your tax liability in a lookback period.</li>
-        <li><b>Returns.</b> Form 941 is filed quarterly, due April 30, July 31, October 31 and January 31. Form 940 for FUTA is due January 31.</li>
-        <li><b>Year-end forms.</b> Give employees their W-2 by January 31 and file W-2s with Form W-3 with the Social Security Administration by the same date.</li>
-        <li><b>Records.</b> The FLSA requires payroll records to be kept for at least three years and time cards for two.</li>
-      </ul>
-      <p>States add their own income tax withholding, unemployment insurance and, in some places, paid leave programs. Before you buy any payroll app, ask the vendor which of these duties it handles for you and which stay with you or your accountant. That is the single most useful question in a payroll demo, and it is a fair one to ask us too. If you are new to the process, start with our step-by-step guide on <a class="link" href="/blog/how-to-process-payroll/">how to process payroll</a>.</p>
-    </div>
-  </section>
-
-  <section class="feat-section" aria-labelledby="checklist-title">
-    <h2 id="checklist-title">A buying checklist for a payroll app</h2>
-    <div class="feat-section__body">
-      <p>Use this list on any demo call, ours included. A vendor should be able to show each item on screen, not just say yes.</p>
-      <ul>
-        <li><b>Where do the hours come from?</b> If the answer is "you import a CSV," someone will still be copying hours every pay period.</li>
-        <li><b>Is overtime calculated from punches?</b> Ask to see a 46-hour week and, if you operate in California or another state with daily overtime, a 12-hour day.</li>
-        <li><b>Does approved PTO reach payroll on its own?</b> It should come off the balance and appear as PTO without a separate email.</li>
-        <li><b>How are reimbursements paid?</b> Expenses should be separate from wages on the stub, because reimbursements under an accountable plan are generally not taxable wages.</li>
-        <li><b>What do employees see?</b> Ask for the employee's view of a pay stub on a phone, not just the admin report.</li>
-        <li><b>Who does tax deposits and filings?</b> Get a clear list: federal, state and local deposits, Forms 941 and 940, W-2s.</li>
-        <li><b>Direct deposit payroll setup.</b> Can new hires enter bank details themselves during onboarding?</li>
-        <li><b>Contractors.</b> If you pay any 1099 workers, ask how they are handled. Our <a class="link" href="/blog/1099-vs-w2/">1099 vs W-2 guide</a> explains why classification matters.</li>
-        <li><b>Access controls.</b> Can you limit pay rates to the owner and bookkeeper while managers still approve hours?</li>
-        <li><b>Setup and switching.</b> Who imports employees and balances, and will someone help with the first pay run?</li>
-        <li><b>Pricing.</b> Check the current price, per-employee fees and any add-on costs on each vendor's own site or in writing.</li>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Restaurants and cafés</li>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Retail stores</li>
+        <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Clinics</li>
+        <li><svg aria-hidden="true"><use href="#i-home"/></svg>Home care</li>
+        <li><svg aria-hidden="true"><use href="#i-hat"/></svg>Job sites</li>
+        <li><svg aria-hidden="true"><use href="#i-box"/></svg>Warehouses</li>
+        <li><svg aria-hidden="true"><use href="#i-desk"/></svg>Offices</li>
       </ul>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="compare-title">
-    <h2 id="compare-title">Comparing the ways to run payroll</h2>
-    <div class="feat-section__body">
-      <p>When you shop for payroll software for small business, you are usually choosing among three setups. None is right for everyone.</p>
-      <div class="feat-table">
-        <table>
-          <thead><tr><th scope="col">Criteria</th><th scope="col">Standalone payroll service</th><th scope="col">Accountant or bookkeeper</th><th scope="col">Payroll inside a workforce app</th></tr></thead>
-          <tbody>
-            <tr><td>Where hours come from</td><td>Typed in or imported from another tool</td><td>Sent to them as timesheets</td><td>The same app's time clock</td></tr>
-            <tr><td>PTO and overtime</td><td>Entered each pay period</td><td>Worked out from what you send</td><td>Flow in from approvals and punches</td></tr>
-            <tr><td>Employee experience</td><td>Separate payroll login</td><td>Paper or emailed stubs, often</td><td>Pay stub beside shifts and PTO</td></tr>
-            <tr><td>Best fit</td><td>Salaried teams with steady hours</td><td>Owners who want a person to own it</td><td>Hourly and shift-based teams</td></tr>
-            <tr><td>Watch for</td><td>Copying hours from scheduling and time tools</td><td>Cost per run and turnaround time</td><td>Confirm exactly what tax filing is included</td></tr>
-          </tbody>
-        </table>
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">The Monday before payday, someone copies hours off a time clock, PTO out of a text thread and a receipt out of a glovebox, then types it all into payroll.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">Small business payroll that starts from records you already approved</h2>
+      <p class="fp-problem__p">Most payroll mistakes at a small business are copying mistakes, not math mistakes. Six hours of overtime get keyed in as regular time, a day of PTO is paid twice, an $86.00 reimbursement waits another two weeks. In Workzenly the shift someone clocked, the PTO their manager approved and the receipt they sent are the same records payroll reads.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes on the first payday</p>
+        <h2 id="outcomes-title">Run payroll without retyping a single hour</h2>
       </div>
-      <p>Widely known payroll providers such as Gusto, ADP, Paychex and QuickBooks Payroll are mainly payroll and HR services. Tools such as Homebase and When I Work are better known for scheduling and time tracking. Capabilities change often, so check current features and pricing on each vendor's site. Our roundup of <a class="link" href="/tools/best-hr-software-for-small-business/">HR software for small business</a> covers the wider field.</p>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Hours arrive already approved</h3><p>Managers approve a whole week of timesheets in one tap. Payroll picks up those approved hours, so you review totals instead of entering them.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Overtime lands as overtime</h3><p>Overtime is worked out from the actual punches, by workweek. Hours over 40 reach the pay run at time and a half, not as a sticky note to fix later.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-receipt"/></svg></span><h3>PTO and expenses ride along</h3><p>Approved time off comes off the balance and shows up as PTO. Approved expense claims are paid with the next paycheck on their own line, separate from wages.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Fewer “was I paid right?” texts</h3><p>Every employee sees their pay stub in the app on payday, next to their shifts and PTO balance. Each line traces back to a shift they worked.</p></article>
+      </div>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="fit-title">
-    <h2 id="fit-title">Honest trade-offs: where Workzenly fits</h2>
-    <div class="feat-section__body">
-      <p><b>Workzenly fits best</b> when most of your people are hourly or work shifts: a coffee shop, a store, a clinic, a crew on a job site or a warehouse. That is where hours change every week and where copying them by hand causes most errors. It also fits when you want the time clock, schedule, PTO and pay stubs in one employee app rather than four.</p>
-      <p><b>It may be more than you need</b> if you have three salaried people who never clock in and never take unplanned time off. A basic payroll service or your accountant can handle a fixed salary every two weeks.</p>
-      <p><b>Ask before you switch</b> if you have complex needs: employees in many states, union rules, tipped employees with tip credits, or a payroll tax setup your accountant manages today. Bring those cases to the demo and we will show you how they run, or tell you plainly if they are not a fit.</p>
-      <p><b>Plan the timing.</b> Switching at the start of a quarter keeps each Form 941 period on one system. If you must switch mid-quarter, keep your year-to-date totals from the old provider so W-2s are complete.</p>
+  <!-- PRODUCT TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">How you run payroll in Workzenly</h2>
+        <p>One pay period at Northfield Coffee, from the hours coming in to the stub on Emily Carter’s phone.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="Parts of a pay run">
+          <button class="fp-tab" role="tab" id="tab-in" aria-controls="panel-in" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-sheet"/></svg>Hours in</b><span>Regular, overtime, PTO, expenses</span></button>
+          <button class="fp-tab" role="tab" id="tab-check" aria-controls="panel-check" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-alert"/></svg>Pre-run check</b><span>What is still waiting</span></button>
+          <button class="fp-tab" role="tab" id="tab-stub" aria-controls="panel-stub" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-phone"/></svg>Pay stubs</b><span>In the app on payday</span></button>
+          <button class="fp-tab" role="tab" id="tab-access" aria-controls="panel-access" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-lock"/></svg>Payroll access</b><span>Who sees pay</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-in" aria-labelledby="tab-in">
+          <div>
+            <h3>Every line comes from a record</h3>
+            <p>Open any employee in the pay run and each amount shows the record it came from. Emily’s $1,777.00 is four lines you can check in a minute.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Regular and overtime hours from approved timesheets</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>PTO from approved requests, at the employee’s rate</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved expense claims as a separate reimbursement</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Emily Carter's pay run line for November 1 to 14: 72 regular hours at $19.00, 6 overtime hours at $28.50, 8 PTO hours and an $86.00 expense, totaling $1,777.00 gross">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Pay run · Emily Carter · Nov 1–14</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Line</th><th class="r">Hours</th><th class="r">Rate</th><th class="r">Amount</th></tr></thead>
+                <tbody>
+                  <tr><td>Regular<small>2 timesheets approved by Marcus</small></td><td class="r num">72.00</td><td class="r num">$19.00</td><td class="r num">$1,368.00</td></tr>
+                  <tr><td>Overtime<small>46 h worked, week of Nov 1</small></td><td class="r num">6.00</td><td class="r num">$28.50</td><td class="r num">$171.00</td></tr>
+                  <tr><td>PTO<small>Fri, Nov 6 · request approved</small></td><td class="r num">8.00</td><td class="r num">$19.00</td><td class="r num">$152.00</td></tr>
+                  <tr><td>Expense reimbursement<small>Kitchen supplies · receipt approved</small></td><td class="r num">–</td><td class="r num">–</td><td class="r num">$86.00</td></tr>
+                  <tr><td><b>Gross pay</b></td><td class="r num"><b>86.00</b></td><td></td><td class="r num"><b>$1,777.00</b></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>Taxable wages start from $1,691.00</p><small>The $86.00 reimbursement is not wages</small></div><span class="ui-pill ui-pill--ok">Ready</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-check" aria-labelledby="tab-check" hidden>
+          <div>
+            <h3>A checklist before you approve</h3>
+            <p>Before the run, Workzenly lists what could change a paycheck, so you fix gaps before the stubs go out.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Timesheets still waiting, by manager</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Corrected punches, with who changed them</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>New hires’ W-4 and direct deposit on file</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Pre-run checklist for the November 1 to 14 pay run: one timesheet waiting for Sam Rivera, a fixed missed clock-out, a new hire ready for a first paycheck and approved PTO and expenses">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Payroll · Nov 1–14 · checklist</span></div>
+            <div class="ui-main">
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Timesheets approved: 5 of 6</p><small>Sam Rivera · week of Nov 8 · Marcus to approve</small></div><span class="ui-pill ui-pill--warn">Waiting</span></div>
+                <div class="ui-item"><div><p>Missed clock-out fixed</p><small>Jordan Lee · Mon, Nov 9 · set to 3:34 PM by Marcus</small></div><span class="ui-pill ui-pill--info">Edited</span></div>
+                <div class="ui-item"><div><p>New hire paperwork</p><small>Dana Brooks · W-4, I-9 and direct deposit done</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+                <div class="ui-item"><div><p>PTO in this period</p><small>Chris 24 h · Emily 8 h · all approved</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+                <div class="ui-item"><div><p>Expense claims</p><small>1 approved · $86.00 · Emily Carter</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              </div>
+              <div class="ui-foot"><div><p id="chk-text">Payroll can run once Sam’s week is approved</p><small>Pay date Fri, Nov 20</small></div><span class="ui-pill ui-pill--warn">Waiting on Marcus</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-stub" aria-labelledby="tab-stub" hidden>
+          <div>
+            <h3>Pay stubs in the employee app</h3>
+            <p>On payday each person opens the Workzenly app and sees their stub: hours, rates, deductions, net pay and year-to-date totals, with their PTO balance underneath.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Same app they use to clock in and request PTO</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Past stubs kept for when a landlord asks</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Each line explained in our <a href="/blog/how-to-read-a-pay-stub/">pay stub guide</a></li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Emily Carter's pay stub in the employee app: gross pay $1,777.00, pre-tax deductions $112.64, taxes $231.48, post-tax deductions $5.00 and net pay $1,427.88 paid Friday November 20">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Pay stub · Nov 1–14</p><p class="ui-title">Emily Carter</p></div>
+              <div class="ui-card">
+                <p class="ui-sub">Net pay · direct deposit</p>
+                <p class="ui-stub-net num">$1,427.88</p>
+                <p class="ui-sub">Paid Fri, Nov 20, 2026</p>
+              </div>
+              <div class="ui-card">
+                <div class="ui-stub-row"><span>Gross pay</span><b class="num">$1,777.00</b></div>
+                <div class="ui-stub-row"><span>Pre-tax deductions</span><b class="num">−$112.64</b></div>
+                <div class="ui-stub-row"><span>Taxes</span><b class="num">−$231.48</b></div>
+                <div class="ui-stub-row"><span>Post-tax deductions</span><b class="num">−$5.00</b></div>
+                <div class="ui-stub-row"><span>Net pay</span><b class="num">$1,427.88</b></div>
+              </div>
+              <div class="ui-item"><div><p>PTO balance</p><small>44.00 of 80.00 h</small></div><span class="ui-pill">8 h used</span></div>
+              <button type="button" class="ui-btn" style="min-height:40px" data-act data-target="stub-status" data-text="72 REG · 6 OT · 8 PTO · $86.00 REIMB" data-done="Showing lines">See every line</button>
+              <p class="ui-sub" id="stub-status" style="text-align:center">Earnings, taxes and YTD inside</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-access" aria-labelledby="tab-access" hidden>
+          <div>
+            <h3>Pay stays with payroll access</h3>
+            <p>Managers can approve hours and time off without seeing what anyone earns. Pay rates, payroll totals and other people’s stubs are visible only to the people you give payroll access to, such as the owner or a bookkeeper.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Employees see only their own record and stubs</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Managers see their team’s shifts and time off</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>You choose who gets payroll access</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Payroll access settings showing the owner and a bookkeeper with payroll access, the manager Marcus approving hours with pay hidden, and Emily Carter seeing only her own pay">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Settings · Payroll access</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Person</th><th>Role</th><th>Hours and PTO</th><th>Pay rates and stubs</th></tr></thead>
+                <tbody>
+                  <tr><td>Owner (you)</td><td>Admin</td><td>Everyone</td><td><span class="ui-pill ui-pill--ok">Payroll access</span></td></tr>
+                  <tr><td>Outside bookkeeper</td><td>Payroll</td><td>Everyone</td><td><span class="ui-pill ui-pill--ok">Payroll access</span></td></tr>
+                  <tr><td>Marcus</td><td>Manager</td><td>His team</td><td><span class="ui-pill" id="acc-marcus">Hidden</span></td></tr>
+                  <tr><td>Emily Carter</td><td>Employee</td><td>Her own</td><td><span class="ui-pill ui-pill--info">Her own</span></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p id="acc-text">Pay is visible to 2 people</p><small>Managers approve hours without seeing pay</small></div><span class="ui-pill ui-pill--ok">Saved</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="guides-title">
-    <h2 id="guides-title">Guides and free tools</h2>
-    <div class="feat-section__body">
-      <ul>
-        <li><a class="link" href="/blog/how-to-process-payroll/">How to process payroll, step by step</a></li>
-        <li><a class="link" href="/blog/overtime-calculator/">Overtime calculator for time and a half pay</a></li>
-        <li><a class="link" href="/blog/hours-to-decimal-calculator/">Hours to decimal calculator for payroll hours</a></li>
-        <li><a class="link" href="/blog/how-to-read-a-pay-stub/">How to read a pay stub</a></li>
-        <li><a class="link" href="/blog/exempt-vs-non-exempt/">Exempt vs non-exempt employees</a></li>
-        <li><a class="link" href="/blog/california-overtime-law/">California overtime law and daily overtime</a></li>
-      </ul>
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="Payroll in detail">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Overtime by workweek</p>
+          <h2>Overtime paid by the week it was worked</h2>
+          <p>Federal law counts overtime per workweek, not across a two-week pay period. Emily worked 46 hours in the week of November 1 and 32 the next, so 6 hours are overtime even though the period totals 78. Her 8 PTO hours do not count toward the 40, because PTO is not time worked. Workzenly splits each week from the punches.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Workweeks set to your Sunday–Saturday calendar</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime at 1.5 times the regular rate</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Check any week with our <a href="/blog/overtime-calculator/">overtime calculator</a></li>
+          </ul>
+          <a class="fp-row__more" href="/features/overtime-tracking/">See overtime tracking <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Emily Carter's hours split by workweek: 46 worked in the week of November 1 with 6 overtime hours and 8 PTO hours, 32 worked in the week of November 8">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Hours by workweek · Emily Carter</span></div>
+          <div class="ui-main ui-scroll">
+            <table class="ui-table">
+              <thead><tr><th>Workweek</th><th class="r">Worked</th><th class="r">Regular</th><th class="r">Overtime</th><th class="r">PTO</th></tr></thead>
+              <tbody>
+                <tr><td>Nov 1–7</td><td class="r num">46.0</td><td class="r num">40.0</td><td class="r num">6.0</td><td class="r num">8.0</td></tr>
+                <tr><td>Nov 8–14</td><td class="r num">32.0</td><td class="r num">32.0</td><td class="r num">–</td><td class="r num">–</td></tr>
+                <tr><td><b>Pay period</b></td><td class="r num"><b>78.0</b></td><td class="r num"><b>72.0</b></td><td class="r num"><b>6.0</b></td><td class="r num"><b>8.0</b></td></tr>
+              </tbody>
+            </table>
+            <div class="ui-foot"><div><p>6.0 h × $28.50 = $171.00</p><small>1.5 × $19.00 regular rate · PTO not counted toward 40</small></div><span class="ui-pill ui-pill--info">Overtime</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Expense reimbursements</p>
+          <h2>Receipts paid back with the next paycheck</h2>
+          <p>Employees photograph the receipt, pick a category and send it. Once approved, the claim joins the next pay run as a reimbursement line, kept apart from wages so it is not taxed like pay.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Receipt photo stored with the claim</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved claims paid on the next payday</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Shown on the stub as its own line</li>
+          </ul>
+          <a class="fp-row__more" href="/features/expenses/">See expenses <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Expense claim from Emily Carter for $86.00 of kitchen supplies, approved by Marcus and scheduled for the November 20 paycheck">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Expenses · Emily Carter</span></div>
+          <div class="ui-main">
+            <div class="ui-card">
+              <div class="ui-card__head"><b>Kitchen supplies</b><span class="num">$86.00</span></div>
+              <svg class="ui-chart" viewBox="0 0 300 96" aria-hidden="true">
+                <rect x="96" y="4" width="108" height="88" rx="6" fill="#171717" stroke="#2a2a2a"/>
+                <g stroke="#3a3a3a" stroke-width="4" stroke-linecap="round"><path d="M112 22h76M112 36h52M112 50h64M112 64h40"/></g>
+                <path d="M112 78h76" stroke="#dafa9c" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Category</p><small>Supplies · submitted Mon, Nov 9</small></div><span class="ui-pill">Receipt</span></div>
+                <div class="ui-item"><div><p>Approved by Marcus</p><small>Tue, Nov 10</small></div><span class="ui-pill ui-pill--ok">Approved</span></div>
+              </div>
+            </div>
+            <div class="ui-foot"><div><p>Paid with the Nov 20 paycheck</p><small>Reimbursement line · not wages</small></div><span class="ui-pill ui-pill--ok">In pay run</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">New hires</p>
+          <h2>Direct deposit payroll from day one</h2>
+          <p>New hires fill out their W-4 and I-9, add direct deposit details and sign the offer letter on their own phone before the first shift. By the first pay run, everything payroll needs is already in their record.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>W-4 entered by the employee, not retyped</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Bank details visible only with payroll access</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>First paycheck flagged in the pre-run check</li>
+          </ul>
+          <a class="fp-row__more" href="/features/onboarding/">See onboarding <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="New hire record for Dana Brooks, hired November 2, with offer letter, W-4, I-9, direct deposit and handbook complete and a first paycheck of $912.50 for 50 hours">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">People · Dana Brooks</span></div>
+          <div class="ui-main">
+            <div class="ui-top">
+              <div><p class="ui-title">Dana Brooks</p><p class="ui-sub">Barista · $18.25/hr · hired Mon, Nov 2</p></div>
+            </div>
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Offer letter</p><small>Signed on her phone</small></div><span class="ui-pill ui-pill--ok">Signed</span></div>
+              <div class="ui-item"><div><p>Form W-4</p><small>Filled out by Dana</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Form I-9</p><small>Section 1 complete</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Direct deposit</p><small>Account ending 4417</small></div><span class="ui-pill ui-pill--ok">Added</span></div>
+              <div class="ui-item"><div><p>Handbook</p><small>Read before day one</small></div><span class="ui-pill ui-pill--ok">Read</span></div>
+            </div>
+            <div class="ui-foot"><div><p>First paycheck Fri, Nov 20</p><small>50.0 h × $18.25 = $912.50 gross</small></div><span class="ui-pill ui-pill--ok">Ready</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="feat-section" aria-labelledby="faq-title">
-    <h2 id="faq-title">Questions</h2>
-    <div class="feat-section__body faq-list">
-      <details><summary>Can Workzenly run our payroll?</summary><p>Yes. Approved hours, overtime, PTO and expense claims go straight into payroll, and each employee gets their pay stub in the Workzenly app on payday. If you need tax deposits and filings handled for you, ask us on the demo call exactly how that works for your account.</p></details>
-      <details><summary>How do employees get paid by direct deposit?</summary><p>New hires add their direct deposit details during onboarding, on their own phone, along with their W-4 and I-9. The details sit in their record before the first pay run, so nobody emails a voided check or bank numbers to a manager.</p></details>
-      <details><summary>Does overtime get calculated automatically?</summary><p>Overtime is worked out from the time clock punches, so hours over 40 in a workweek show up as overtime before you review the pay run. Federal law requires time and a half for non-exempt employees, and some states, such as California, add daily overtime rules.</p></details>
-      <details><summary>Who can see pay rates and pay stubs?</summary><p>You decide. Employees see only their own pay stubs and record. Managers see their team's shifts and time off. Pay rates and payroll totals are visible only to the people you give payroll access to, such as the owner or a bookkeeper.</p></details>
-      <details><summary>Can we switch payroll in the middle of the year?</summary><p>Yes, though the start of a quarter is simplest, because each quarterly Form 941 return covers three months. Send us your employee list and PTO balances as a spreadsheet, and we import them during setup and stay with you for the first pay run.</p></details>
-      <details><summary>Can I run payroll from my phone?</summary><p>Managers can approve timesheets and PTO from a phone, which is most of the work before payday. Reviewing and approving the pay run itself is easiest on a laptop, where you can see every employee's hours, overtime and totals side by side.</p></details>
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One pay run, four people who rely on it</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Employees</h3></div><div><span>Replaces</span><p>Paper stubs and asking the owner what happened</p></div><div><span>They use it to</span><p>Check their pay stub, hours and PTO balance on payday, from their phone</p></div><div><span>What they notice</span><p>Overtime and reimbursements on the right lines</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Managers</h3></div><div><span>Replaces</span><p>Signing time cards and forwarding receipts</p></div><div><span>They use it to</span><p>Approve timesheets, PTO and expense claims, without seeing anyone’s pay</p></div><div><span>What they notice</span><p>No payday questions they can’t answer</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Payroll</h3></div><div><span>Replaces</span><p>Typing hours and PTO into a payroll service</p></div><div><span>They use it to</span><p>Clear the pre-run checklist, review each line and approve the run on a laptop</p></div><div><span>What they notice</span><p>Fewer corrections after payday</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owners</h3></div><div><span>Replaces</span><p>Finding out labor cost from the bank statement</p></div><div><span>They use it to</span><p>See gross pay, overtime and PTO for each pay period, and decide who gets payroll access</p></div><div><span>What they notice</span><p>Overtime they can see coming</p></div></div>
+      </div>
     </div>
   </section>
 
-  <section class="close-cta" aria-labelledby="close-title">
-    <h2 id="close-title">See your next pay run before you commit</h2>
-    <div class="close-cta__side"><p>Book a demo and we will set up a workspace with your company name, then walk through a pay period from clock-in to pay stub.</p><a class="button" href="/#start">Book a demo</a></div>
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Pay is private by default</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Employees see their own</h3><p>Each person sees their own pay stubs, hours, PTO and record, never a coworker’s.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Managers see their team</h3><p>Managers see their team’s shifts and time off and approve hours, with pay rates kept out of view.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Payroll access is a choice</h3><p>Pay rates, bank details and payroll totals are visible only to people you give payroll access to.</p></article>
+      </div>
+    </div>
   </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Connected</p>
+        <h2 id="connect-title">Where the numbers in payroll come from</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/time-and-attendance/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Time and attendance</h3><p>Clock-ins by phone or tablet, with breaks and lateness worked out.</p><span>Time and attendance →</span></a>
+        <a class="fp-link-card" href="/features/timesheets/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Timesheet app</h3><p>A whole week of timesheets approved in one tap.</p><span>Timesheets →</span></a>
+        <a class="fp-link-card" href="/features/overtime-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime tracking</h3><p>See who is close to 40 hours before the shift, not after.</p><span>Overtime →</span></a>
+        <a class="fp-link-card" href="/features/pto/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>PTO tracking</h3><p>Requests in two taps and balances that update themselves.</p><span>PTO →</span></a>
+        <a class="fp-link-card" href="/features/expenses/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-receipt"/></svg></span><h3>Expenses</h3><p>Photograph the receipt, send it, get paid back on payday.</p><span>Expenses →</span></a>
+        <a class="fp-link-card" href="/features/employee-app/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Employee app</h3><p>Pay stubs, shifts, PTO and policies in one place on the phone.</p><span>Employee app →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">See your next pay run before you switch</h2>
+        <p>We set up a demo workspace with your company name and walk through one pay period, from clock-in to pay stub.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- BUYER'S GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it does</a></li>
+            <li><a href="#g-duties">Employer payroll duties</a></li>
+            <li><a href="#g-deposits">Deposit schedules</a></li>
+            <li><a href="#g-calendar">Your payroll calendar</a></li>
+            <li><a href="#g-types">Service, software or app</a></li>
+            <li><a href="#g-ask">Questions for a demo</a></li>
+            <li><a href="#g-switch">Switching providers</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>Bring last period’s hours and we will run them in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The buyer’s guide to payroll software for small business</h2>
+        <p>This guide covers what small business payroll software does, the federal duties every US employer has, how to build a payroll calendar, and how to choose between a payroll service, payroll software and a workforce app with payroll built in.</p>
+
+        <h3 id="g-what">What small business payroll software does</h3>
+        <p>Every pay run follows the same steps: collect hours, work out gross pay, take out deductions and taxes, pay the net amount and give each employee a stub. After payday come tax deposits, returns and year-end forms. Our guide to <a href="/blog/how-to-process-payroll/">how to process payroll</a> walks through each step by hand.</p>
+        <p>Products differ most at the first step, getting the hours in, and the last, who deposits taxes and files returns. For an hourly team, getting the hours in is where most errors start: a missed clock-out, overtime counted across two weeks instead of one, a PTO day nobody told payroll about. Workzenly is built around that step. Hours, overtime, PTO and expense claims are approved where they happen and arrive in payroll already approved.</p>
+        <p>Whatever you use, the stub your employees get should show hours, rates, each deduction and net pay. Federal law does not require pay stubs, but many states do. If you are not ready for software, our <a href="/templates/pay-stub-templates/">pay stub templates</a> show what a complete one includes.</p>
+
+        <h3 id="g-duties">Employer payroll duties and deadlines</h3>
+        <p>These are the federal duties the IRS lists for most employers that file Form 941. States add their own income tax withholding, unemployment insurance and, in some places, paid leave or disability programs.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Duty</th><th>What it involves</th><th>When</th></tr></thead>
+            <tbody>
+              <tr><td>Withhold federal income tax</td><td>Based on each employee’s <a href="/blog/w-4-form/">Form W-4</a> and the IRS withholding tables</td><td>Every payday</td></tr>
+              <tr><td>Social Security and Medicare</td><td>Withhold 6.2% Social Security (on wages up to $184,500 in 2026) and 1.45% Medicare, and pay a matching employer share</td><td>Every payday</td></tr>
+              <tr><td>Deposit employment taxes</td><td>By electronic funds transfer, on a monthly or semiweekly schedule</td><td>See deposit schedules below</td></tr>
+              <tr><td>Form 941</td><td>Quarterly return of wages, withholding and Social Security and Medicare tax</td><td>April 30, July 31, October 31, January 31</td></tr>
+              <tr><td>FUTA and Form 940</td><td>Employer-only tax of 6.0% on the first $7,000 of each employee’s wages, with a credit of up to 5.4% for state unemployment tax paid</td><td>January 31, or February 10 if all FUTA tax was deposited on time</td></tr>
+              <tr><td>Forms W-2 and W-3</td><td>W-2 to each employee; W-2s with Form W-3 to the Social Security Administration</td><td>January 31</td></tr>
+              <tr><td>Keep records</td><td>All employment tax records, kept for at least 4 years</td><td>Ongoing</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>When a due date falls on a Saturday, Sunday or legal holiday, it moves to the next business day. January 31, 2027 is a Sunday, so 2026 Forms W-2 and the fourth-quarter Form 941 are due Monday, February 1, 2027. Form 941 also gets 10 extra days when every deposit for the quarter was made on time. The Fair Labor Standards Act also requires payroll records for 3 years.</p>
+        <p class="fp-note">This guide is general information, not legal or tax advice. Figures are from IRS guidance as of November 2026 and change from year to year. Check IRS Publication 15, your state agencies or an accountant for your situation.</p>
+
+        <h3 id="g-deposits">Federal tax deposit schedules</h3>
+        <p>Withheld taxes are sent to the IRS on one of two schedules. The names do not describe how often you pay people.</p>
+        <ul>
+          <li><strong>How your schedule is set.</strong> The IRS looks at the taxes you reported during a lookback period: the 12 months starting July 1 of the second preceding year. For 2026 that is July 1, 2024 to June 30, 2025. $50,000 or less makes you a monthly depositor; more than $50,000 makes you semiweekly.</li>
+          <li><strong>Monthly.</strong> Taxes on wages paid during a month are due by the 15th of the following month.</li>
+          <li><strong>Semiweekly.</strong> Taxes on Wednesday, Thursday or Friday paydays are due the following Wednesday. Taxes on Saturday through Tuesday paydays are due the following Friday.</li>
+          <li><strong>$100,000 next-day rule.</strong> If you pile up $100,000 or more in taxes on any day, deposit by the next business day, whatever your schedule.</li>
+          <li><strong>Under $2,500 a quarter.</strong> If your liability for the current or preceding quarter is under $2,500, you may be able to pay with a timely filed return instead of depositing.</li>
+        </ul>
+        <p>For Northfield Coffee’s Friday, November 20 payday, a monthly depositor would deposit by December 15, and a semiweekly depositor by Wednesday, November 25. Whether software makes those deposits for you is the biggest difference between products. On a Workzenly demo, ask us who handles deposits and filings for your account.</p>
+
+        <h3 id="g-calendar">Build a payroll calendar</h3>
+        <p>A payroll calendar fixes three dates for every period: when hours must be approved, when the run is reviewed and when people get paid. Here is Northfield Coffee’s biweekly calendar for the end of 2026.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Pay period</th><th>Timesheets approved</th><th>Pay run reviewed</th><th>Payday</th></tr></thead>
+            <tbody>
+              <tr><td>Nov 1–14</td><td>Mon, Nov 16</td><td>Tue, Nov 17</td><td>Fri, Nov 20</td></tr>
+              <tr><td>Nov 15–28</td><td>Mon, Nov 30</td><td>Tue, Dec 1</td><td>Fri, Dec 4</td></tr>
+              <tr><td>Nov 29–Dec 12</td><td>Mon, Dec 14</td><td>Tue, Dec 15</td><td>Fri, Dec 18</td></tr>
+              <tr><td>Dec 13–26</td><td>Mon, Dec 28</td><td>Tue, Dec 29</td><td>Fri, Jan 1, 2027 (holiday)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>January 1 is a federal holiday, so that payday needs a decision now. Paying on Thursday, December 31 puts those wages on 2026 forms, because payroll years follow the pay date, not the work date. Paying on Monday, January 4 keeps them in 2027 but means everyone is paid late. Many states also set how often you must pay, so check your state labor department before you change frequency.</p>
+
+        <h3 id="g-types">Payroll service, payroll software or a workforce app</h3>
+        <p>Shopping for a payroll app usually means choosing among four setups. None is right for everyone.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Setup</th><th>Where hours come from</th><th>Good fit</th><th>Watch out for</th></tr></thead>
+            <tbody>
+              <tr><td>Accountant or bookkeeper</td><td>Timesheets you send them</td><td>Owners who want a person to own payroll</td><td>Turnaround time, and hours still copied by hand</td></tr>
+              <tr><td>Full-service payroll</td><td>Typed in or imported each period</td><td>Salaried teams with steady pay</td><td>Copying hours from separate scheduling and time tools</td></tr>
+              <tr><td>Do-it-yourself payroll software</td><td>Typed in or imported</td><td>Owners comfortable filing their own returns</td><td>Every deposit and filing stays with you</td></tr>
+              <tr><td>Workforce app with payroll</td><td>The same app’s time clock and approvals</td><td>Hourly and shift-based teams</td><td>Ask exactly who handles deposits and filings</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>If you want to compare named providers, our neutral roundup of the <a href="/tools/best-payroll-services-for-small-business/">best payroll services for small business</a> covers the main options, and the list of <a href="/tools/free-payroll-software/">free payroll software</a> explains what “free” usually leaves out. Check current features and pricing on each vendor’s own site.</p>
+
+        <h3 id="g-ask">Questions to ask on any payroll demo</h3>
+        <p>Use this list on every call, ours included, and ask to see each answer on screen.</p>
+        <ol>
+          <li><strong>Where do the hours come from?</strong> If the answer is a CSV import, someone still copies hours every pay period.</li>
+          <li><strong>Is overtime counted per workweek?</strong> A 46-hour week then a 32-hour week should give 6 overtime hours, not 0.</li>
+          <li><strong>Does approved PTO reach payroll on its own?</strong> It should come off the balance and appear as PTO without a separate email.</li>
+          <li><strong>What does the employee see?</strong> Ask for the stub on a phone, not only the admin report.</li>
+          <li><strong>Who handles deposits and filings?</strong> Get a written list: federal and state deposits, Forms 941 and 940, W-2s and state returns. Ask us this too.</li>
+          <li><strong>Who pays contractors?</strong> If you pay 1099 workers, ask how. Our <a href="/blog/1099-vs-w2/">1099 vs W-2 guide</a> explains why classification matters, and <a href="/blog/exempt-vs-non-exempt/">exempt vs non-exempt</a> covers who is owed overtime.</li>
+        </ol>
+
+        <h3 id="g-switch">Switching payroll providers</h3>
+        <p>You can switch at any time, but the start of a quarter is simplest, because each Form 941 covers three months and one system then reports the whole quarter. Switching mid-year? Keep each employee’s year-to-date totals from the old provider so W-2s are complete. Send us your employee list and PTO balances as a spreadsheet and we import them during setup; most small teams are clocking in within a week, and we stay with you through the first pay run. To see your own pay period in Workzenly, <a href="/#start">book a demo</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions about payroll software for small business</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>What does payroll software for small business do?</summary><p>It turns hours, pay rates, time off and deductions into gross pay, withholds taxes, works out net pay and gives each employee a pay stub. Some products also deposit taxes and file returns. Workzenly builds the pay run from approved hours, overtime, PTO and expense claims, and puts every pay stub in the employee app on payday.</p></details>
+        <details><summary>Can Workzenly run our payroll?</summary><p>Yes. Approved hours, overtime, PTO and expense claims go straight into payroll, and each employee gets their pay stub in the Workzenly app on payday. If you need tax deposits and filings handled for you, ask us on the demo call exactly who handles deposits and filings for your account.</p></details>
+        <details><summary>Does overtime get calculated automatically?</summary><p>Overtime is worked out from the time clock punches, by workweek, so hours over 40 in a week show up as overtime before you review the pay run. Federal law requires time and a half for non-exempt employees, and PTO hours do not count toward the 40. Some states, such as California, add daily overtime rules.</p></details>
+        <details><summary>Who can see pay rates and pay stubs?</summary><p>You decide. Employees see only their own pay stubs and record. Managers see their team's shifts and time off and can approve hours without seeing pay. Pay rates and payroll totals are visible only to the people you give payroll access to, such as the owner or a bookkeeper.</p></details>
+        <details><summary>Can we switch payroll in the middle of the year?</summary><p>Yes, though the start of a quarter is simplest, because each quarterly Form 941 return covers three months. Keep year-to-date totals from your old provider so W-2s are complete. Send us your employee list and PTO balances as a spreadsheet, and we import them during setup and stay with you for the first pay run.</p></details>
+        <details><summary>Can I run payroll from my phone?</summary><p>Managers can approve timesheets, PTO and expense claims from a phone, which is most of the work before payday. Reviewing and approving the pay run itself is easiest on a laptop, where you can see every employee's hours, overtime and totals side by side.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for running payroll</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/how-to-process-payroll/"><small>GUIDE</small><b>How to process payroll, step by step</b></a>
+        <a href="/tools/best-payroll-services-for-small-business/"><small>COMPARISON</small><b>Best payroll services for small business</b></a>
+        <a href="/templates/pay-stub-templates/"><small>TEMPLATES</small><b>Free pay stub templates</b></a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer class="simple-foot">
-  <p>© <span id="year">2026</span> Workzenly</p>
-  <nav aria-label="Footer">
-    <a href="/features/time-clock/">Time clock</a>
-    <a href="/features/scheduling/">Scheduling</a>
-    <a href="/features/payroll/">Payroll</a>
-    <a href="/features/pto/">PTO</a>
-    <a href="/blog/">Blog</a>
-  </nav>
-  <p><a href="mailto:info@workzenly.com">info@workzenly.com</a></p>
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="wordmark" href="/">Workzenly</a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features"><h2>People</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
 </footer>
 <script src="/blog.js" defer></script>
-<script>
-(() => {
-  const btn = document.getElementById('payrun-btn');
-  const k = document.getElementById('payrun-k');
-  const v = document.getElementById('payrun-v');
-  const pill = document.getElementById('sam-pill');
-  if (!btn) return;
-  let step = 0;
-  btn.addEventListener('click', () => {
-    if (step === 0) {
-      step = 1;
-      pill.textContent = 'Ready';
-      pill.className = 'pill pill--ok';
-      k.textContent = 'All 5 timesheets approved';
-      v.textContent = '$7,207.44 gross for 5 employees';
-      btn.textContent = 'Approve pay run';
-    } else if (step === 1) {
-      step = 2;
-      k.textContent = 'Pay run approved';
-      v.textContent = 'Pay stubs go to the app on Fri, Nov 20';
-      btn.textContent = 'Approved';
-      btn.disabled = true;
-    }
-  });
-})();
-</script>
+<script src="/feature.js" defer></script>
 </body>
 </html>

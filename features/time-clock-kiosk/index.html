@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Time Clock Kiosk for Shared Tablets | Workzenly</title>
+  <meta name="description" content="A time clock kiosk on a shared tablet at the door. Each person clocks in with their own PIN, and punches land in the same timesheet as phone punches.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/features/time-clock-kiosk/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/features/time-clock-kiosk/">
+  <meta property="og:title" content="Time Clock Kiosk for Shared Tablets | Workzenly">
+  <meta property="og:description" content="A time clock kiosk on a shared tablet at the door. Each person clocks in with their own PIN, and punches land in the same timesheet as phone punches.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    /* Landscape tablet frame for kiosk screens */
+    .ui-tablet { background: #0f0f0f; border: 1px solid #2c2c2c; border-radius: 28px; padding: 14px; box-shadow: 0 40px 80px -30px rgba(0,0,0,0.85); font-size: 13px; line-height: 1.4; color: var(--ink); font-variant-numeric: normal; }
+    .ui-tablet__screen { background: #121212; border-radius: 16px; padding: 16px; display: grid; gap: 14px; }
+    .ui-tablet__top { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .ui-tablet__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 14px; align-items: start; }
+    .ui-tablet__clock { font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1; }
+    .ui-pin { display: flex; justify-content: center; gap: 10px; margin: 6px 0 12px; }
+    .ui-pin i { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid #5a5a56; }
+    .ui-pin i.is-on { background: var(--accent); border-color: var(--accent); }
+    .ui-pad { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .ui-pad span { display: grid; place-items: center; min-height: 40px; border-radius: 10px; background: #1b1b1b; border: 1px solid #262626; font-size: 16px; font-weight: 500; }
+    .ui-pad span.is-muted { background: transparent; border-color: transparent; color: #8d8d89; font-size: 12px; }
+    @media (max-width: 760px) { .ui-tablet__grid { grid-template-columns: 1fr; } .ui-tablet { border-radius: 20px; padding: 10px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Time Clock Kiosk for Shared Tablets | Workzenly",
+        "description": "A time clock kiosk on a shared tablet at the door. Each person clocks in with their own PIN, and punches land in the same timesheet as phone punches.",
+        "url": "https://workzenly.com/features/time-clock-kiosk/",
+        "dateModified": "2026-11-11",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Workzenly Time Clock Kiosk",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "A time clock kiosk for a shared tablet at the door: each employee clocks in and out and takes breaks under their own account, and kiosk punches land in the same timesheet as phone punches before flowing into payroll.",
+        "url": "https://workzenly.com/features/time-clock-kiosk/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://workzenly.com/features/" },
+          { "@type": "ListItem", "position": 3, "name": "Time clock kiosk", "item": "https://workzenly.com/features/time-clock-kiosk/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is a time clock kiosk?", "acceptedAnswer": { "@type": "Answer", "text": "A time clock kiosk is a shared device, usually a tablet mounted by the entrance, where employees clock in and out instead of using their own phones or a punch card. In Workzenly each person clocks in at the kiosk under their own account, and the punch goes into the same timesheet as any phone punch." } },
+          { "@type": "Question", "name": "Can some employees use the kiosk and others use their phones?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many teams mix the two: the kitchen or warehouse floor clocks in at the tablet by the door, while managers and staff who work off-site clock in from the Workzenly app on their phones, with GPS and geofencing. Every punch lands in the same timesheet, so the manager approves one week, not two." } },
+          { "@type": "Question", "name": "How do you stop buddy punching on a shared tablet?", "acceptedAnswer": { "@type": "Answer", "text": "Give every employee their own PIN and a written rule that punching for someone else is not allowed, put the tablet where a manager can see it, and review punches against the schedule. Workzenly shows who is in, late or out and flags missed clock-outs and late starts, so a punch that does not match the floor stands out." } },
+          { "@type": "Question", "name": "Are biometric time clock kiosks legal?", "acceptedAnswer": { "@type": "Answer", "text": "In most states, yes, but some regulate them closely. Illinois, under the Biometric Information Privacy Act, requires written notice, a written release and a public retention and destruction policy before an employer collects fingerprints or face scans, and Texas and Washington have their own biometric laws. Check your state before buying one. Workzenly's kiosk does not use biometrics." } },
+          { "@type": "Question", "name": "Does federal law require a time clock?", "acceptedAnswer": { "@type": "Answer", "text": "No. The U.S. Department of Labor says employers may use any timekeeping method they choose, as long as it is complete and accurate. Employers must keep payroll records for at least 3 years and time cards for at least 2 years. A kiosk is one way to keep those records without paper cards." } },
+          { "@type": "Question", "name": "What do I need to set up a tablet time clock?", "acceptedAnswer": { "@type": "Answer", "text": "A tablet, a stand or wall mount near the entrance, a power outlet and a reliable Wi-Fi connection. Send us your employee list as a spreadsheet and we import it during setup. Most small teams are clocking in within a week, and we stay with you through the first pay run." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="time clock kiosk" data-intent="transactional" data-topic="Time clock kiosk">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M4 16h16M6 16a6 6 0 0 1 12 0M12 7.5V5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z M3.5 7.5L12 12l8.5-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5V20H4z M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="10" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 19h6M12 15v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-tablet" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M18.5 12h.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-keypad" viewBox="0 0 24 24"><path d="M7 5h.1M12 5h.1M17 5h.1M7 10h.1M12 10h.1M17 10h.1M7 15h.1M12 15h.1M17 15h.1M12 20h.1" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 18.5h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/features/">Features</a></li><li aria-current="page">Time clock kiosk</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Time clock kiosk</span>
+        <h1 id="hero-title">A time clock kiosk for floors where phones stay in lockers</h1>
+        <p class="fp-lead">Workzenly turns a shared tablet at the door into a time clock kiosk. Each person clocks in, takes breaks and clocks out under their own PIN, and every kiosk punch lands in the same timesheet as phone punches, ready for one-tap approval and payroll.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>One tablet, each person’s own PIN</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Same timesheet as phone punches</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>No fingerprint scanner needed</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-tablet" data-ui role="img" aria-label="Landscape tablet mounted at the Northfield Coffee back door showing the Workzenly kiosk: a PIN pad on the left and today's crew with clock-in times on the right">
+          <div class="ui-tablet__screen">
+            <div class="ui-tablet__top">
+              <div><p class="ui-title">Northfield Coffee</p><p class="ui-sub">Back door tablet · Austin, TX</p></div>
+              <div style="text-align:right"><p class="ui-tablet__clock">10:58 AM</p><p class="ui-sub">Wednesday, Nov 11</p></div>
+            </div>
+            <div class="ui-tablet__grid">
+              <div class="ui-card">
+                <p style="text-align:center;font-weight:600">Enter your PIN</p>
+                <div class="ui-pin" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i></div>
+                <div class="ui-pad" aria-hidden="true">
+                  <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span class="is-muted">Clear</span><span>0</span><span class="is-muted">Back</span>
+                </div>
+              </div>
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Today’s crew</b><span>4 in · 2 due</span></div>
+                <div class="ui-list">
+                  <div class="ui-item"><span class="ui-person"><span class="ui-av" style="background:#f5b6c9">EC</span><span><p>Emily Carter</p><small>Kitchen · in 7:00 AM</small></span></span><span class="ui-pill ui-pill--ok">In</span></div>
+                  <div class="ui-item"><span class="ui-person"><span class="ui-av" style="background:#9cc8fa">JL</span><span><p>Jordan Lee</p><small>Barista · in 7:01 AM</small></span></span><span class="ui-pill ui-pill--info">On break</span></div>
+                  <div class="ui-item"><span class="ui-person"><span class="ui-av" style="background:#dafa9c">MT</span><span><p>Maya Torres</p><small>Front counter · in 8:58 AM</small></span></span><span class="ui-pill ui-pill--ok">In</span></div>
+                  <div class="ui-item"><span class="ui-person"><span class="ui-av" style="background:#f2c36b">SR</span><span><p>Sam Rivera</p><small>Kitchen · in 9:14 AM</small></span></span><span class="ui-pill ui-pill--warn">Late 14 min</span></div>
+                  <div class="ui-item"><span class="ui-person"><span class="ui-av" style="background:#b6f5e0">DB</span><span><p>Dana Brooks</p><small>Barista · shift 11:00 AM</small></span></span><span class="ui-pill" id="kiosk-dana">Due</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="ui-foot"><div><p id="kiosk-text">Hi, Dana. Your shift is 11:00 AM to 7:30 PM.</p><small>PIN accepted · punch goes to your timesheet</small></div><button type="button" class="ui-btn" data-act data-target="kiosk-text" data-text="Dana Brooks clocked in at 10:58 AM. Have a good shift." data-pill="kiosk-dana" data-pill-text="In" data-done="Clocked in">Clock in</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for floors where phones stay put</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Restaurant kitchens</li>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Cafés and bakeries</li>
+        <li><svg aria-hidden="true"><use href="#i-box"/></svg>Warehouses</li>
+        <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Clinics</li>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Retail stockrooms</li>
+        <li><svg aria-hidden="true"><use href="#i-hat"/></svg>Production floors</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">Phones live in the locker, the punch clock eats a card, and someone signs Sam in because he was “right behind me.”</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">One shared time clock, every punch still personal</h2>
+      <p class="fp-problem__p">A tablet by the door gives the whole crew one place to clock in, without asking anyone to carry a phone onto a food-safe line or a warehouse floor. Each punch belongs to one person and goes straight into their timesheet, next to anything they clocked from a phone.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first week</p>
+        <h2 id="outcomes-title">A shared time clock that doesn’t make a second set of records</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-keypad"/></svg></span><h3>Each person clocks in as themselves</h3><p>Everyone uses their own PIN at the tablet, so a punch is tied to one employee and one timesheet, not to a card in a rack anyone can grab.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-tablet"/></svg></span><h3>No phones on the floor</h3><p>Kitchens, clean rooms, patient areas and loading docks keep their phone rules. Staff clock in at the door and leave the phone in the locker.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Kiosk and phone in one timesheet</h3><p>A barista who clocks in at the tablet and a manager who clocks in from a phone end up in the same weekly timesheet, approved in one tap.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Hours that reach payroll as-is</h3><p>Breaks, overtime and late arrivals are worked out from the kiosk punches, and approved hours flow into the pay run with nothing retyped.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">How the Workzenly kiosk time clock app works</h2>
+        <p>The tablet at the door, the list of who is in, the manager’s timesheet and the location setup are parts of one record, so a punch at the kiosk shows up everywhere it should.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="Parts of the time clock kiosk">
+          <button class="fp-tab" role="tab" id="tab-punch" aria-controls="panel-punch" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-keypad"/></svg>Clock in</b><span>Own PIN, shift shown first</span></button>
+          <button class="fp-tab" role="tab" id="tab-who" aria-controls="panel-who" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-users"/></svg>Who’s in</b><span>The crew list on the kiosk</span></button>
+          <button class="fp-tab" role="tab" id="tab-mgr" aria-controls="panel-mgr" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-sheet"/></svg>One timesheet</b><span>Kiosk and phone punches together</span></button>
+          <button class="fp-tab" role="tab" id="tab-setup" aria-controls="panel-setup" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-store"/></svg>Setup</b><span>A tablet per location</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-punch" aria-labelledby="tab-punch">
+          <div>
+            <h3>Clock in at the door in a few seconds</h3>
+            <p>An employee walks in, enters their PIN and sees their own name and today’s shift before they tap. If they are late, they see that too, and so does the manager.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Clock in, start and end a break, clock out</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Today’s shift on screen before the punch</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Late starts recorded against the schedule</li>
+            </ul>
+          </div>
+          <div class="ui-tablet" role="img" aria-label="Kiosk screen after Sam Rivera enters his PIN, showing his 9:00 AM shift, a 14 minute late warning and a clock in button">
+            <div class="ui-tablet__screen">
+              <div class="ui-tablet__top"><div><p class="ui-sub">Back door tablet</p><p class="ui-title">Hi, Sam Rivera</p></div><p class="ui-tablet__clock">9:14 AM</p></div>
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Today’s shift</b><span>Kitchen · Wed, Nov 11</span></div>
+                <p style="font-size:22px;font-weight:600;letter-spacing:-0.02em">9:00 AM – 5:30 PM</p>
+                <p style="margin-top:8px"><span class="ui-pill ui-pill--warn">14 min after shift start</span></p>
+              </div>
+              <div class="ui-foot"><div><p id="sam-text">Ready to clock in</p><small>Not you? Tap Cancel and enter your own PIN</small></div><button type="button" class="ui-btn" data-act data-target="sam-text" data-text="Clocked in at 9:14 AM. Marcus can see you’re in." data-done="Clocked in">Clock in</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-who" aria-labelledby="tab-who" hidden>
+          <div>
+            <h3>Who’s clocked in, right on the kiosk</h3>
+            <p>The tablet shows the crew for today, who is on the clock, who is on break and who is still due. People can check they are actually clocked in before they tie on an apron.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>On the clock, on break and not in yet</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Fewer “did my punch go through?” questions</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Managers see the same list on their phone</li>
+            </ul>
+          </div>
+          <div class="ui-tablet" role="img" aria-label="Kiosk list of who is clocked in at Northfield Coffee: four on the clock, one on break and one not in yet">
+            <div class="ui-tablet__screen">
+              <div class="ui-tablet__top"><div><p class="ui-title">Who’s in</p><p class="ui-sub">Northfield Coffee · 10:58 AM</p></div><div class="ui-seg" aria-hidden="true"><span class="is-on">Today</span><span>Tomorrow</span></div></div>
+              <div class="ui-card ui-scroll">
+                <table class="ui-table">
+                  <thead><tr><th>Name</th><th>Shift</th><th>In</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td>Emily Carter</td><td class="num">7:00 AM – 3:30 PM</td><td class="num">7:00 AM</td><td><span class="ui-pill ui-pill--ok">On the clock</span></td></tr>
+                    <tr><td>Jordan Lee</td><td class="num">7:00 AM – 3:30 PM</td><td class="num">7:01 AM</td><td><span class="ui-pill ui-pill--info">Break since 10:40</span></td></tr>
+                    <tr><td>Maya Torres</td><td class="num">9:00 AM – 5:30 PM</td><td class="num">8:58 AM</td><td><span class="ui-pill ui-pill--ok">On the clock</span></td></tr>
+                    <tr><td>Sam Rivera</td><td class="num">9:00 AM – 5:30 PM</td><td class="num">9:14 AM</td><td><span class="ui-pill ui-pill--warn">Late 14 min</span></td></tr>
+                    <tr><td>Dana Brooks</td><td class="num">11:00 AM – 7:30 PM</td><td class="num">10:58 AM</td><td><span class="ui-pill ui-pill--ok">On the clock</span></td></tr>
+                    <tr><td>Tyler N.</td><td class="num">2:00 PM – 10:00 PM</td><td>–</td><td><span class="ui-pill">Not in yet</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-mgr" aria-labelledby="tab-mgr" hidden>
+          <div>
+            <h3>Kiosk and phone punches in one timesheet</h3>
+            <p>Managers see every punch with where it came from: the shared tablet or a phone inside the geofence. There is no separate kiosk report to reconcile at the end of the week.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Each punch shows its source</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Late starts and missed clock-outs flagged either way</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approve the whole team’s week in one tap</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Manager view of today's punches at Northfield Coffee: four from the back door tablet and one from a phone inside the geofence">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/attendance/today</span></div>
+            <div class="ui-main">
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>5</b><small>Clocked in</small></div>
+                <div class="ui-kpi"><b>4</b><small>From the kiosk</small></div>
+                <div class="ui-kpi"><b>1</b><small>From a phone</small></div>
+                <div class="ui-kpi"><b>1</b><small>Late today</small><em class="is-warn">Sam, 14 min</em></div>
+              </div>
+              <div class="ui-card ui-scroll">
+                <table class="ui-table">
+                  <thead><tr><th>Employee</th><th>In</th><th>Source</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td>Emily Carter</td><td class="num">7:00 AM</td><td><span class="ui-person"><svg width="14" height="14" aria-hidden="true"><use href="#i-tablet"/></svg>Kiosk · back door</span></td><td><span class="ui-pill ui-pill--ok">On shift</span></td></tr>
+                    <tr><td>Jordan Lee</td><td class="num">7:01 AM</td><td><span class="ui-person"><svg width="14" height="14" aria-hidden="true"><use href="#i-tablet"/></svg>Kiosk · back door</span></td><td><span class="ui-pill ui-pill--info">On break</span></td></tr>
+                    <tr><td>Maya Torres</td><td class="num">8:58 AM</td><td><span class="ui-person"><svg width="14" height="14" aria-hidden="true"><use href="#i-phone"/></svg>Phone · inside geofence</span></td><td><span class="ui-pill ui-pill--ok">On shift</span></td></tr>
+                    <tr><td>Sam Rivera</td><td class="num">9:14 AM</td><td><span class="ui-person"><svg width="14" height="14" aria-hidden="true"><use href="#i-tablet"/></svg>Kiosk · back door</span></td><td><span class="ui-pill ui-pill--warn">Late 14 min</span></td></tr>
+                    <tr><td>Dana Brooks</td><td class="num">10:58 AM</td><td><span class="ui-person"><svg width="14" height="14" aria-hidden="true"><use href="#i-tablet"/></svg>Kiosk · back door</span></td><td><span class="ui-pill ui-pill--ok">On shift</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-setup" aria-labelledby="tab-setup" hidden>
+          <div>
+            <h3>Set up a tablet for each location</h3>
+            <p>Add the location, decide whether people there clock in on the tablet, their phones or both, and sign the tablet in as that location’s kiosk. We help with all of it during setup.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Kiosk, phone or both, per location</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Geofence for the phone punches at the same site</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Employee list imported from a spreadsheet</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Location setup card for Northfield Coffee in Austin showing the back door tablet as its kiosk, phone clock-in with a 150 foot geofence, and the teams using each">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Settings · Locations · Northfield Coffee</span></div>
+            <div class="ui-main">
+              <div class="ui-top"><div><p class="ui-title">Northfield Coffee</p><p class="ui-sub">Austin, TX · workweek starts Sunday</p></div><span class="ui-pill ui-pill--ok">Active</span></div>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Shared tablet: back door</p><small>Kitchen and baristas clock in here</small></div><span class="ui-pill ui-pill--ok">Kiosk on</span></div>
+                <div class="ui-item"><div><p>Phone clock-in</p><small>Front counter and managers · 150 ft geofence</small></div><span class="ui-pill ui-pill--ok">On</span></div>
+                <div class="ui-item"><div><p>Breaks</p><small>30 min unpaid meal break, clocked at the kiosk or phone</small></div><span class="ui-pill">Set</span></div>
+                <div class="ui-item"><div><p>Employees at this location</p><small>8 people imported from a spreadsheet</small></div><span class="ui-pill ui-pill--info">8</span></div>
+              </div>
+              <div class="ui-foot"><div><p id="setup-text">Tablet ready to sign in as the kiosk</p><small>Signed in by Marcus (manager)</small></div><button type="button" class="ui-btn" data-act data-target="setup-text" data-text="Back door tablet is live as the kiosk." data-done="Live">Turn on kiosk</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="The time clock kiosk in detail">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Breaks and overtime</p>
+          <h2>Breaks clocked at the same tablet</h2>
+          <p>People start and end their meal break at the kiosk just like a clock-in. Workzenly deducts the unpaid meal break, keeps short rest breaks paid, totals the day and the week, and warns you when someone is heading past 40 hours.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every punch of the day in order</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Daily and weekly totals worked out for you</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime split out before it reaches payroll</li>
+          </ul>
+          <a class="fp-row__more" href="/features/time-and-attendance/">See time and attendance <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Sam Rivera's kiosk punches for Tuesday: in at 9:00 AM, meal break 1:00 to 1:30 PM, out at 5:30 PM, 8 hours worked">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Timesheet · Sam Rivera · Tue, Nov 10</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Clocked in 9:00 AM</p><small>Kiosk · back door</small></div><span class="ui-pill ui-pill--ok">On time</span></div>
+              <div class="ui-item"><div><p>Meal break 1:00 PM – 1:30 PM</p><small>Kiosk · back door · unpaid</small></div><span class="ui-pill">30 min</span></div>
+              <div class="ui-item"><div><p>Clocked out 5:30 PM</p><small>Kiosk · back door</small></div><span class="ui-pill">Out</span></div>
+            </div>
+            <div class="ui-foot"><div><p>8:00 hours worked</p><small>8:30 on the clock minus a 30 min unpaid break</small></div><span class="ui-pill ui-pill--info">Counted</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Missed punches</p>
+          <h2>A forgotten clock-out doesn’t become a guess</h2>
+          <p>Someone leaves in a rush and walks past the tablet. Workzenly flags the missed clock-out, the employee asks for a fix from the app, and the manager approves it. The original kiosk punch stays in the history next to the correction and the name of who made it.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Missed clock-outs flagged the same day</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Employees request the fix themselves</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Original punch kept beside every edit</li>
+          </ul>
+          <a class="fp-row__more" href="/features/timesheets/">See timesheets <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Edit history for Dana Brooks on Monday: kiosk clock-in, missed clock-out flag, fix requested from the app, and the manager's approved correction">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">History · Dana Brooks · Mon, Nov 9</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Clocked in 11:00 AM</p><small>Kiosk · back door</small></div><span class="ui-pill">Punch</span></div>
+              <div class="ui-item"><div><p>No clock-out recorded</p><small>Flagged at 8:30 PM</small></div><span class="ui-pill ui-pill--warn">Missed</span></div>
+              <div class="ui-item"><div><p>Fix requested: out at 7:32 PM</p><small>By Dana in the app · “Walked out with the trash, forgot the tablet”</small></div><span class="ui-pill ui-pill--info">Request</span></div>
+            </div>
+            <div class="ui-foot"><div><p id="fix-text">Approve the 7:32 PM clock-out?</p><small>The original record stays in the history</small></div><button type="button" class="ui-btn" data-act data-target="fix-text" data-text="Clock-out set to 7:32 PM by Marcus." data-done="Approved">Approve</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Payroll</p>
+          <h2>Kiosk hours go to payroll like any others</h2>
+          <p>At the end of the pay period, payroll sees approved regular hours, overtime and PTO per person, whatever device the punches came from. Employees check their pay stub in the app on payday.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Kiosk and phone hours add into one total</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime arrives as overtime</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved PTO lands as PTO</li>
+          </ul>
+          <a class="fp-row__more" href="/features/payroll/">See payroll <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Pay period Nov 1 to 14 summary showing hours worked from the kiosk and from phones per employee, split into regular, overtime and PTO hours">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Payroll · Nov 1–14 · paid Fri, Nov 20</span></div>
+          <div class="ui-main ui-scroll">
+            <table class="ui-table">
+              <thead><tr><th>Employee</th><th class="r">Kiosk</th><th class="r">Phone</th><th class="r">Regular</th><th class="r">OT</th><th class="r">PTO</th></tr></thead>
+              <tbody>
+                <tr><td>Emily Carter</td><td class="r num">78.0</td><td class="r num">–</td><td class="r num">72.0</td><td class="r num">6.0</td><td class="r num">8.0</td></tr>
+                <tr><td>Jordan Lee</td><td class="r num">82.5</td><td class="r num">–</td><td class="r num">80.0</td><td class="r num">2.5</td><td class="r num">–</td></tr>
+                <tr><td>Maya Torres</td><td class="r num">70.5</td><td class="r num">5.5</td><td class="r num">76.0</td><td class="r num">–</td><td class="r num">–</td></tr>
+                <tr><td>Sam Rivera</td><td class="r num">64.0</td><td class="r num">–</td><td class="r num">64.0</td><td class="r num">–</td><td class="r num">–</td></tr>
+                <tr><td><b>Total</b></td><td class="r num"><b>295.0</b></td><td class="r num"><b>5.5</b></td><td class="r num"><b>292.0</b></td><td class="r num"><b>8.5</b></td><td class="r num"><b>8.0</b></td></tr>
+              </tbody>
+            </table>
+            <div class="ui-foot"><div><p>300.5 hours worked · 8.0 PTO</p><small>Overtime at 1.5×, e.g. Emily at $28.50 an hour</small></div><span class="ui-pill ui-pill--ok">Approved</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One tablet at the door, four people who rely on it</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Floor staff</h3></div><div><span>Replaces</span><p>Punch cards and writing times on a sheet by the door</p></div><div><span>They use it to</span><p>Clock in, take breaks and clock out with their own PIN, and check they are on the list</p></div><div><span>What they notice</span><p>No phone needed on the floor</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Managers</h3></div><div><span>Replaces</span><p>Collecting cards and guessing at missed punches</p></div><div><span>They use it to</span><p>See who is in, late or out from their phone, approve fixes and approve the week in one tap</p></div><div><span>What they notice</span><p>One timesheet, whatever device people used</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Payroll</h3></div><div><span>Replaces</span><p>Adding up cards and typing them in</p></div><div><span>They use it to</span><p>Run payroll from approved regular, overtime and PTO hours</p></div><div><span>What they notice</span><p>Fewer corrections after payday</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owners</h3></div><div><span>Replaces</span><p>Buying and servicing a wall punch clock</p></div><div><span>They use it to</span><p>Run a tablet time clock at each location and keep records ready if anyone asks</p></div><div><span>What they notice</span><p>Labor hours they can trust</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">A shared device, private records</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Employees see their own</h3><p>Each person sees their own hours, timesheets, PTO and pay stubs in the app, never a coworker’s.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Managers see their team</h3><p>Managers see their team’s shifts, attendance and time off, and approve their team’s timesheets.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and pay stubs are visible only to the people you give payroll access to, and never on the kiosk.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Connected</p>
+        <h2 id="connect-title">The kiosk is one door into the same workday</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/time-clock/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Employee time clock app</h3><p>Clock in and out from a phone, with today’s shift on screen.</p><span>Time clock →</span></a>
+        <a class="fp-link-card" href="/features/gps-time-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><h3>GPS time tracking</h3><p>Geofenced phone punches for staff who start away from the tablet.</p><span>GPS →</span></a>
+        <a class="fp-link-card" href="/features/timesheets/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Timesheet app</h3><p>Timesheets built from punches and approved a week at a time.</p><span>Timesheets →</span></a>
+        <a class="fp-link-card" href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Employee scheduling</h3><p>The shift people see on the kiosk comes from the schedule you built.</p><span>Scheduling →</span></a>
+        <a class="fp-link-card" href="/features/overtime-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime tracking</h3><p>See who is getting close to 40 hours before the next shift.</p><span>Overtime →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Approved hours, overtime and PTO become pay stubs in the app.</p><span>Payroll →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">Put a time clock kiosk by your door this month</h2>
+        <p>On the demo we clock in a test shift on a tablet and a phone and follow both punches into one timesheet.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- BUYER'S GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-when">When a kiosk beats phones</a></li>
+            <li><a href="#g-types">Kiosk vs punch clock vs biometric</a></li>
+            <li><a href="#g-bio">Biometric privacy laws</a></li>
+            <li><a href="#g-buddy">Buddy punching without biometrics</a></li>
+            <li><a href="#g-place">Placement and setup</a></li>
+            <li><a href="#g-records">Records the law expects</a></li>
+            <li><a href="#g-choose">Choosing a kiosk app</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>See a tablet and a phone clock in to the same timesheet.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The buyer’s guide to a time clock kiosk</h2>
+        <p>A time clock kiosk is the simplest answer for a crew that can’t or won’t clock in on personal phones: one device by the entrance, and everyone punches there. This guide covers when a shared time clock beats phones, how it compares with other clocks, buddy punching, placement and choosing an app.</p>
+
+        <h3 id="g-when">When a kiosk beats phones</h3>
+        <p>Phone clock-in costs nothing in hardware and suits staff who start at different sites. A tablet at the door wins when:</p>
+        <ul>
+          <li><strong>Phones aren’t allowed on the floor.</strong> Commercial kitchens, food production, warehouses with forklifts, clinics and some retail stockrooms keep phones in lockers for safety, hygiene or patient privacy.</li>
+          <li><strong>Some people don’t have, or don’t want to use, a smartphone.</strong> Requiring a personal phone to get paid is a poor policy. A shared tablet gives everyone a way to clock in.</li>
+          <li><strong>Everyone starts at the same door.</strong> If the whole crew comes in one entrance, one device there is easier to supervise than a dozen phones.</li>
+                  </ul>
+        <p>Most teams end up with both. Floor staff use the kiosk, while managers, drivers and anyone who starts off-site clock in from the <a href="/features/time-clock/">employee time clock app</a> with GPS and geofencing. The <a href="/blog/gps-time-clock-app/">GPS time clock app</a> guide covers the phone side.</p>
+
+        <h3 id="g-types">Kiosk vs punch clock vs biometric terminal</h3>
+        <p>These are the three shared time clock options most small employers weigh. The full picture, including paper and spreadsheets, is in our guide to <a href="/blog/time-and-attendance-tracking/">time and attendance tracking</a>.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th></th><th>Tablet kiosk</th><th>Wall punch clock</th><th>Biometric terminal</th></tr></thead>
+            <tbody>
+              <tr><td>How people clock in</td><td>Own PIN on a shared tablet</td><td>Stamp a paper card</td><td>Fingerprint, face or hand scan</td></tr>
+              <tr><td>Hardware</td><td>A tablet, a mount and power</td><td>The clock, cards and a rack</td><td>A dedicated terminal</td></tr>
+              <tr><td>Getting hours to payroll</td><td>Punches go straight into timesheets</td><td>Cards added up and typed in</td><td>Depends on the vendor’s software</td></tr>
+              <tr><td>Breaks and overtime</td><td>Worked out from the punches</td><td>Worked out by hand</td><td>Depends on the vendor’s software</td></tr>
+              <tr><td>Buddy punching</td><td>Own PINs, a visible spot, reviews</td><td>Easy: anyone can stamp a card</td><td>Hardest to fake</td></tr>
+              <tr><td>Legal care needed</td><td>Normal record-keeping</td><td>Normal record-keeping</td><td>State biometric privacy laws</td></tr>
+              <tr><td>Good fit</td><td>Kitchens, warehouses, clinics, shops</td><td>One small site with stable shifts</td><td>Large single sites with strict audit needs</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A tablet time clock runs on ordinary hardware and its punches never need retyping. A biometric terminal is harder to fake but brings legal paperwork most small teams would rather skip.</p>
+
+        <h3 id="g-bio">Biometric time clocks and state privacy laws</h3>
+        <p>Fingerprint and face-scan clocks collect biometric identifiers, and several states regulate that closely. Illinois is the best known. Under the Biometric Information Privacy Act (740 ILCS 14), a private entity must tell people in writing that it is collecting biometric data, state the purpose and how long it will keep it, and get a written release first. It must also publish a written retention schedule and destroy the data once the purpose is met or within 3 years of the person’s last interaction, whichever comes first. BIPA also lets individuals sue.</p>
+        <p>Texas and Washington have their own biometric laws, New York limits requiring fingerprints as a condition of employment, and more states and cities add privacy rules most years. If you are considering a biometric terminal, read the current law in each state you operate in before you buy. Workzenly’s kiosk works with each person’s own PIN, so no fingerprint scanner is needed.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Biometric and privacy laws change often, so check your state’s current statute or an employment lawyer for your situation.</p>
+
+        <h3 id="g-buddy">Preventing buddy punching without biometrics</h3>
+        <p>Buddy punching, one employee clocking in for another, is the main worry with any shared time clock. You can make it rare without scanning anyone’s finger:</p>
+        <ol>
+          <li><strong>One PIN per person, never shared.</strong> Treat a PIN like a key to the building. Ask people to cover the pad and to tell a manager if theirs has been seen.</li>
+          <li><strong>Write it into policy.</strong> Your handbook should say that clocking in for someone else is not allowed and what happens if it does. Our <a href="/blog/attendance-policy/">attendance policy guide</a> has wording to start from.</li>
+          <li><strong>Put the tablet where a manager can see it.</strong> Near the manager’s station or the line, not in a back hallway nobody walks through.</li>
+          <li><strong>Compare punches with the floor.</strong> Workzenly shows who is in, late or out against the schedule. If the list says five people are working and you can count four, you know where to look.</li>
+          <li><strong>Review the exceptions every week.</strong> Missed clock-outs, late starts and people close to 40 hours are flagged, and the edit history keeps the original punch next to any change.</li>
+        </ol>
+        
+        <h3 id="g-place">Placement and setup</h3>
+        <p>Where the tablet sits matters as much as the app on it:</p>
+        <ul>
+          <li><strong>At the entrance staff actually use.</strong> Usually the back or staff door, so people clock in before they start work and clock out after they finish. Time spent working before a punch still counts as hours worked.</li>
+          <li><strong>Mounted and plugged in.</strong> A wall mount or locking stand with a charger keeps the kiosk where it belongs and stops it running flat mid-shift.</li>
+          <li><strong>On reliable Wi-Fi.</strong> Test the signal at the exact spot before you drill holes.</li>
+          <li><strong>Out of the way of steam, grease and forklifts.</strong> A case helps in kitchens and on loading docks.</li>
+                  </ul>
+        <p>Any current iPad or Android tablet that stays at the door is the usual choice for an iPad time clock or Android kiosk; confirm the device you plan to use on your demo call. Then send us your employee list as a spreadsheet. We import it, help you set up the location and the kiosk, and most small teams are clocking in within a week.</p>
+
+        <h3 id="g-records">Records the law expects</h3>
+        <p>The Fair Labor Standards Act does not require a time clock. The U.S. Department of Labor says employers may use any timekeeping method they choose, as long as it is complete and accurate. For non-exempt employees you need hours worked each day and each week, and you must keep payroll records for at least 3 years and time cards for at least 2. A kiosk that writes every punch, break and edit into each person’s record covers that without a filing cabinet.</p>
+        <p>If you still work from paper, the <a href="/templates/attendance-tracker-templates/">attendance tracker templates</a> are a free stopgap, and the <a href="/blog/time-card-calculator/">time card calculator</a> shows how punches, breaks and overtime add up for a week.</p>
+
+        <h3 id="g-choose">Choosing a kiosk time clock app</h3>
+        <p>Run a real week through each app on your shortlist, on the tablet you would actually mount. Check these:</p>
+        <ul>
+          <li>Does each person clock in under their own account, and can they see their shift before they punch?</li>
+          <li>Do kiosk punches and phone punches land in the same timesheet, or in two reports you reconcile?</li>
+          <li>Are breaks, overtime and late arrivals worked out from the punches?</li>
+          <li>Can an employee request a fix for a missed punch, and does the history keep the original?</li>
+          <li>Do approved hours flow into payroll without an export and re-import?</li>
+          <li>What does it collect? If biometrics, what notice, consent and retention does your state require?</li>
+        </ul>
+        <p>Our neutral comparison of the <a href="/tools/best-employee-time-clock-apps/">best employee time clock apps</a> covers the main options. If you want to see the kiosk in Workzenly, <a href="/#start">book a demo</a> and we will clock in a test shift on a tablet and a phone and show you both in one timesheet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions about a time clock kiosk</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>What is a time clock kiosk?</summary><p>A time clock kiosk is a shared device, usually a tablet mounted by the entrance, where employees clock in and out instead of using their own phones or a punch card. In Workzenly each person clocks in at the kiosk under their own account, and the punch goes into the same timesheet as any phone punch.</p></details>
+        <details><summary>Can some employees use the kiosk and others use their phones?</summary><p>Yes. Many teams mix the two: the kitchen or warehouse floor clocks in at the tablet by the door, while managers and staff who work off-site clock in from the Workzenly app on their phones, with GPS and geofencing. Every punch lands in the same timesheet, so the manager approves one week, not two.</p></details>
+        <details><summary>How do you stop buddy punching on a shared tablet?</summary><p>Give every employee their own PIN and a written rule that punching for someone else is not allowed, put the tablet where a manager can see it, and review punches against the schedule. Workzenly shows who is in, late or out and flags missed clock-outs and late starts, so a punch that does not match the floor stands out.</p></details>
+        <details><summary>Are biometric time clock kiosks legal?</summary><p>In most states, yes, but some regulate them closely. Illinois, under the Biometric Information Privacy Act, requires written notice, a written release and a public retention and destruction policy before an employer collects fingerprints or face scans, and Texas and Washington have their own biometric laws. Check your state before buying one. Workzenly's kiosk does not use biometrics.</p></details>
+        <details><summary>Does federal law require a time clock?</summary><p>No. The U.S. Department of Labor says employers may use any timekeeping method they choose, as long as it is complete and accurate. Employers must keep payroll records for at least 3 years and time cards for at least 2 years. A kiosk is one way to keep those records without paper cards.</p></details>
+        <details><summary>What do I need to set up a tablet time clock?</summary><p>A tablet, a stand or wall mount near the entrance, a power outlet and a reliable Wi-Fi connection. Send us your employee list as a spreadsheet and we import it during setup. Most small teams are clocking in within a week, and we stay with you through the first pay run.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for shared time clocks</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/time-and-attendance-tracking/"><small>GUIDE</small><b>Time and attendance tracking: punch clocks, kiosks, phones and biometrics</b></a>
+        <a href="/tools/best-employee-time-clock-apps/"><small>COMPARISON</small><b>The best employee time clock apps for 2026</b></a>
+        <a href="/templates/attendance-tracker-templates/"><small>TEMPLATES</small><b>Free attendance tracker templates</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="wordmark" href="/">Workzenly</a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features"><h2>People</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>
