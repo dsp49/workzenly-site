@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing: Time Clock, Scheduling and Payroll | Workzenly</title>
+  <meta name="description" content="Workzenly pricing in USD: plans from $29 a month plus $4 per employee. Time clock, scheduling, PTO and payroll for US teams. No setup fee, cancel anytime.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/pricing/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/pricing/">
+  <meta property="og:title" content="Pricing: Time Clock, Scheduling and Payroll | Workzenly">
+  <meta property="og:description" content="Workzenly pricing in USD: plans from $29 a month plus $4 per employee. Time clock, scheduling, PTO and payroll for US teams. No setup fee, cancel anytime.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    .pr-hero { text-align: center; padding: clamp(28px, 4vw, 56px) 0 clamp(32px, 4vw, 48px); }
+    .pr-hero h1 { margin: 22px auto 0; font-size: clamp(40px, 4.6vw, 72px); max-width: 16ch; }
+    .pr-hero .fp-lead { margin: 22px auto 0; max-width: 40em; }
+    .pr-toggle { margin: 32px auto 0; display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+    .pr-toggle button { border: 0; background: transparent; color: var(--muted); font-weight: 600; font-size: 15px; padding: 10px 18px; border-radius: 999px; cursor: pointer; }
+    .pr-toggle button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+    .pr-toggle small { font-weight: 600; margin-left: 6px; }
+    .pr-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-items: stretch; padding-top: 14px; }
+    .pr-card .pr-feats { flex: 1; }
+    .pr-feats a { color: inherit; text-decoration-color: #5a5a56; text-underline-offset: 3px; }
+    .pr-feats a:hover { text-decoration-color: var(--accent); }
+    .pr-card { position: relative; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line-soft); border-radius: 20px; padding: clamp(24px, 2.4vw, 32px); }
+    .pr-card--pop { border-color: #4a5e25; background: linear-gradient(180deg, #172010 0%, var(--surface) 40%); }
+    .pr-badge { position: absolute; top: -12px; left: 28px; background: var(--accent); color: var(--accent-ink); font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+    .pr-card h2 { font-size: 26px; letter-spacing: -0.03em; line-height: 1.1; }
+    .pr-for { margin-top: 8px; color: var(--muted); font-size: 15px; min-height: 2.8em; }
+    .pr-price { margin-top: 22px; display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+    .pr-price b { font-size: 46px; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+    .pr-price span { color: var(--muted); font-size: 15px; }
+    .pr-per { margin-top: 6px; color: #d7d7d2; font-size: 15px; }
+    .pr-per b { color: var(--accent); }
+    .pr-card .fp-btn { margin-top: 24px; justify-content: center; width: 100%; flex: none; }
+    .pr-feats { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); display: grid; gap: 11px; align-content: start; }
+    .pr-feats p { font-size: 13px; color: #7d7d79; font-weight: 600; letter-spacing: 0.02em; }
+    .pr-feats li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; font-size: 15px; color: #d7d7d2; line-height: 1.4; }
+    .pr-feats svg { width: 18px; height: 18px; color: var(--accent); margin-top: 1px; }
+    .pr-enterprise { margin-top: 12px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; background: var(--surface); border: 1px solid var(--line-soft); border-radius: 20px; padding: clamp(22px, 2.4vw, 32px); }
+    .pr-enterprise h2 { font-size: 24px; letter-spacing: -0.03em; }
+    .pr-enterprise p { margin-top: 8px; color: var(--muted); max-width: 60ch; }
+    .pr-includes { margin-top: 28px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; color: #cfcfca; font-size: 15px; }
+    .pr-includes li { display: inline-flex; gap: 8px; align-items: center; }
+    .pr-includes svg { width: 16px; height: 16px; color: var(--accent); }
+    .pr-calc { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(24px, 4vw, 56px); align-items: center; background: var(--surface); border: 1px solid var(--line-soft); border-radius: 20px; padding: clamp(24px, 3vw, 44px); margin-top: 44px; }
+    .pr-calc label { display: block; font-weight: 600; font-size: 16px; }
+    .pr-range { display: flex; align-items: center; gap: 16px; margin-top: 14px; }
+    .pr-range input[type="range"] { flex: 1; accent-color: #dafa9c; height: 28px; }
+    .pr-range input[type="number"] { width: 84px; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line); background: #0f0f0f; color: var(--ink); font-size: 16px; font-variant-numeric: tabular-nums; }
+    .pr-calc__note { margin-top: 14px; color: var(--muted); font-size: 14px; }
+    .pr-results { display: grid; gap: 8px; }
+    .pr-result { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: baseline; padding: 14px 16px; border-radius: 12px; background: #111; border: 1px solid #222; }
+    .pr-result--pop { border-color: #3b4a22; }
+    .pr-result b { font-size: 17px; }
+    .pr-result strong { font-size: 24px; letter-spacing: -0.03em; font-variant-numeric: normal; }
+    .pr-result small { grid-column: 1 / -1; color: #8d8d89; font-size: 13px; }
+    .pr-compare { margin-top: 44px; overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; }
+    .pr-compare table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 15px; }
+    .pr-compare th, .pr-compare td { padding: 14px 18px; border-bottom: 1px solid var(--line-soft); text-align: left; }
+    .pr-compare thead th { position: sticky; top: 0; background: #131313; font-size: 15px; }
+    .pr-compare td:not(:first-child), .pr-compare th:not(:first-child) { text-align: center; width: 17%; }
+    .pr-compare tbody th { font-weight: 500; color: #d7d7d2; }
+    .pr-compare .grp th { background: #101010; color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: 0.02em; padding-top: 18px; }
+    .pr-compare svg { width: 18px; height: 18px; color: var(--accent); vertical-align: middle; }
+    .pr-compare .no { color: #555; }
+    @media (max-width: 1080px) { .pr-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; } .pr-calc { grid-template-columns: 1fr; } .pr-for { min-height: 0; } }
+    @media (max-width: 760px) { .pr-enterprise { grid-template-columns: 1fr; } .pr-toggle button { padding: 10px 14px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Pricing: Time Clock, Scheduling and Payroll | Workzenly",
+        "description": "Workzenly pricing in USD: plans from $29 a month plus $4 per employee. Time clock, scheduling, PTO and payroll for US teams. No setup fee, cancel anytime.",
+        "url": "https://workzenly.com/pricing/",
+        "dateModified": "2026-11-11",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Workzenly",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "url": "https://workzenly.com/",
+        "offers": [
+          { "@type": "Offer", "name": "Starter", "price": "29.00", "priceCurrency": "USD", "description": "$29 per month plus $4 per active employee per month, billed monthly. Time clock, timesheets, scheduling, PTO and the employee app.", "url": "https://workzenly.com/pricing/" },
+          { "@type": "Offer", "name": "Plus", "price": "49.00", "priceCurrency": "USD", "description": "$49 per month plus $6 per active employee per month, billed monthly. Adds GPS time tracking, time clock kiosk, overtime tracking, hiring, onboarding, expenses, performance reviews and HR documents.", "url": "https://workzenly.com/pricing/" },
+          { "@type": "Offer", "name": "Complete", "price": "89.00", "priceCurrency": "USD", "description": "$89 per month plus $9 per active employee per month, billed monthly. Adds payroll from approved hours and pay stubs in the employee app.", "url": "https://workzenly.com/pricing/" }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://workzenly.com/pricing/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Who counts as an active employee?", "acceptedAnswer": { "@type": "Answer", "text": "Anyone who clocks in, is scheduled for a shift or is paid through Workzenly during the billing month. Owners and managers who only approve, schedule or review are not counted unless they also clock in or are paid through Workzenly. People who leave stop counting the month after their last shift." } },
+          { "@type": "Question", "name": "Is there a setup fee or a contract?", "acceptedAnswer": { "@type": "Answer", "text": "There is no setup fee. Monthly plans are month to month and you can cancel anytime; your plan stays active until the end of the month you have paid for. Annual plans are paid up front for 12 months and save 20%. Importing your employee list and PTO balances is included on every plan." } },
+          { "@type": "Question", "name": "Can I change plans later?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can move up to a bigger plan at any time and the new features turn on right away, with the price difference prorated for the rest of the billing period. Moving down takes effect at the start of your next billing period, so nothing you rely on disappears mid-month." } },
+          { "@type": "Question", "name": "Does the Complete plan file payroll taxes for me?", "acceptedAnswer": { "@type": "Answer", "text": "Complete runs payroll from approved hours, overtime, PTO and expense claims, and puts every pay stub in the employee app on payday. Who handles federal and state tax deposits and filings depends on your setup, so we walk through that for your state on the demo call before you sign up." } },
+          { "@type": "Question", "name": "How do you bill, and do prices include sales tax?", "acceptedAnswer": { "@type": "Answer", "text": "We bill in US dollars by credit card or ACH bank transfer. Monthly plans are charged at the start of each month for that month’s active employees. Prices do not include sales tax, which we add where your state requires it on software subscriptions." } },
+          { "@type": "Question", "name": "Do you offer discounts?", "acceptedAnswer": { "@type": "Answer", "text": "Annual billing saves 20% on every plan. Teams with more than 150 employees or more than five locations can ask for an Enterprise quote with volume pricing. Registered 501(c)(3) nonprofits get an extra 15% off any plan; tell us on the demo call." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-topic="Pricing">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-dash" viewBox="0 0 20 20"><path d="M6 10h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52"></a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/pricing/" aria-current="page">Pricing</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li aria-current="page">Pricing</li></ol>
+</nav>
+
+<main class="fp">
+
+  <section class="pr-hero" aria-labelledby="pricing-title">
+    <div class="fp-wrap">
+      <span class="fp-eyebrow">Pricing</span>
+      <h1 id="pricing-title">Simple pricing for teams that work in shifts</h1>
+      <p class="fp-lead">One monthly base price plus a flat rate for each active employee. No setup fee, no long contract, and we import your team for you.</p>
+      <div class="pr-toggle" role="group" aria-label="Billing period">
+        <button type="button" data-billing="monthly" aria-pressed="true">Monthly</button>
+        <button type="button" data-billing="annual" aria-pressed="false">Annual<small>Save 20%</small></button>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Plans" style="padding-bottom:clamp(56px,7vw,96px)">
+    <div class="fp-wrap">
+      <div class="pr-grid">
+        <article class="pr-card">
+          <h2>Starter</h2>
+          <p class="pr-for">For one location that wants clean hours and a schedule everyone can see.</p>
+          <p class="pr-price"><b data-price data-m="29" data-a="23.20">$29</b><span>/ month</span></p>
+          <p class="pr-per">plus <b data-price data-m="4" data-a="3.20">$4</b> per active employee / month</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+          <div class="pr-feats">
+            <p>INCLUDES</p>
+            <ul class="fp-bullets" style="margin:0">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/time-clock/">Employee time clock app</a> on any phone</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/timesheets/">Timesheets</a> with one-tap weekly approval</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Breaks, overtime and late arrivals worked out</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/scheduling/">Scheduling</a> with shift swaps and open shifts</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/pto/">PTO requests</a> and balances</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/employee-app/">Employee app</a> with the handbook and policies</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Email support</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="pr-card pr-card--pop">
+          <span class="pr-badge">Most popular</span>
+          <h2>Plus</h2>
+          <p class="pr-for">For growing teams that hire often, work across sites or need a kiosk at the door.</p>
+          <p class="pr-price"><b data-price data-m="49" data-a="39.20">$49</b><span>/ month</span></p>
+          <p class="pr-per">plus <b data-price data-m="6" data-a="4.80">$6</b> per active employee / month</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+          <div class="pr-feats">
+            <p>EVERYTHING IN STARTER, PLUS</p>
+            <ul class="fp-bullets" style="margin:0">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/gps-time-tracking/">GPS time tracking</a> and geofencing</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/time-clock-kiosk/">Time clock kiosk</a> on a shared tablet</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/overtime-tracking/">Overtime tracking</a> and exception flags</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/hiring/">Hiring</a>: roles, applications and offer letters</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/onboarding/">Onboarding</a>: W-4, I-9 and direct deposit by phone</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/expenses/">Expense reimbursement</a></span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/performance-reviews/">Performance reviews</a> and goals</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/hr-documents/">HR document storage</a></span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Phone and email support</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="pr-card">
+          <h2>Complete</h2>
+          <p class="pr-for">For teams that want hours, PTO and pay in one place, with no retyping.</p>
+          <p class="pr-price"><b data-price data-m="89" data-a="71.20">$89</b><span>/ month</span></p>
+          <p class="pr-per">plus <b data-price data-m="9" data-a="7.20">$9</b> per active employee / month</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+          <div class="pr-feats">
+            <p>EVERYTHING IN PLUS, PLUS</p>
+            <ul class="fp-bullets" style="margin:0">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><a href="/features/payroll/">Payroll</a> from approved hours, overtime and PTO</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Expense reimbursements paid with the paycheck</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Pay stubs in the employee app on payday</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Payroll access only for the people you choose</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Hands-on help through your first pay run</span></li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Priority phone and email support</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="pr-enterprise">
+        <div>
+          <h2>Enterprise</h2>
+          <p>More than 150 employees or more than five locations? We put together volume pricing, help you set up each site and stay with you through your first month of payroll.</p>
+        </div>
+        <a class="fp-btn fp-btn--ghost" href="/#start">Get a quote</a>
+      </div>
+
+      <ul class="pr-includes" aria-label="Included on every plan">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>No setup fee</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Employee list and PTO balances imported for you</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Month to month, cancel anytime</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Prices in US dollars</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="fp-band fp-band--raised" aria-labelledby="calc-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Cost calculator</p>
+        <h2 id="calc-title">What your team would pay</h2>
+        <p>Move the slider to your headcount. You only pay for employees who clock in, are scheduled or are paid that month.</p>
+      </div>
+      <div class="pr-calc">
+        <div>
+          <label for="calc-n">Active employees</label>
+          <div class="pr-range">
+            <input type="range" id="calc-range" min="1" max="150" value="12" aria-label="Active employees slider">
+            <input type="number" id="calc-n" min="1" max="150" value="12" inputmode="numeric">
+          </div>
+          <p class="pr-calc__note" id="calc-note">Billed monthly. Switch to annual billing at the top of the page to save 20%.</p>
+        </div>
+        <div class="pr-results" aria-live="polite">
+          <div class="pr-result"><b>Starter</b><strong id="calc-s">$77.00</strong><small id="calc-s-x">$29 + 12 × $4 per month</small></div>
+          <div class="pr-result pr-result--pop"><b>Plus</b><strong id="calc-p">$121.00</strong><small id="calc-p-x">$49 + 12 × $6 per month</small></div>
+          <div class="pr-result"><b>Complete</b><strong id="calc-c">$197.00</strong><small id="calc-c-x">$89 + 12 × $9 per month</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="fp-band" aria-labelledby="compare-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Compare plans</p>
+        <h2 id="compare-title">Every feature, side by side</h2>
+      </div>
+      <div class="pr-compare">
+        <table>
+          <thead><tr><th scope="col">Feature</th><th scope="col">Starter</th><th scope="col">Plus</th><th scope="col">Complete</th></tr></thead>
+          <tbody>
+            <tr class="grp"><th colspan="4" scope="colgroup">TIME AND ATTENDANCE</th></tr>
+            <tr><th scope="row">Employee time clock app</th><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Timesheets and one-tap weekly approval</th><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Breaks, overtime and late arrivals worked out</th><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">GPS time tracking and geofencing</th><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Time clock kiosk on a shared tablet</th><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Overtime tracking and exception flags</th><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr class="grp"><th colspan="4" scope="colgroup">SCHEDULING AND TIME OFF</th></tr>
+            <tr><th scope="row">Drag-and-drop shift scheduling</th><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Shift swaps and open shifts</th><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">PTO requests, approvals and balances</th><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr class="grp"><th colspan="4" scope="colgroup">PEOPLE</th></tr>
+            <tr><th scope="row">Employee self-service app</th><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Handbook and policies in the app</th><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Hiring: post roles, applications, offer letters</th><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Onboarding: W-4, I-9 and direct deposit by phone</th><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">HR documents stored with each person</th><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Performance reviews and goals</th><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr class="grp"><th colspan="4" scope="colgroup">PAY</th></tr>
+            <tr><th scope="row">Expense claims and approvals</th><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Payroll from approved hours, overtime and PTO</th><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Reimbursements paid with the paycheck</th><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Pay stubs in the employee app</th><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr class="grp"><th colspan="4" scope="colgroup">SETUP AND SUPPORT</th></tr>
+            <tr><th scope="row">Employee list and PTO balances imported</th><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Permissions by role</th><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+            <tr><th scope="row">Support</th><td>Email</td><td>Phone and email</td><td>Priority phone and email</td></tr>
+            <tr><th scope="row">Help through your first pay run</th><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td class="no"><svg aria-label="Not included"><use href="#i-dash"/></svg></td><td><svg aria-label="Included"><use href="#i-check"/></svg></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">Not sure which plan fits?</h2>
+        <p>Tell us your headcount and how you pay people. We set up a demo workspace with your company name and recommend a plan on the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Pricing questions</h2>
+        <p>Something else? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a> and a person will answer within one business day.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>Who counts as an active employee?</summary><p>Anyone who clocks in, is scheduled for a shift or is paid through Workzenly during the billing month. Owners and managers who only approve, schedule or review are not counted unless they also clock in or are paid through Workzenly. People who leave stop counting the month after their last shift.</p></details>
+        <details><summary>Is there a setup fee or a contract?</summary><p>There is no setup fee. Monthly plans are month to month and you can cancel anytime; your plan stays active until the end of the month you have paid for. Annual plans are paid up front for 12 months and save 20%. Importing your employee list and PTO balances is included on every plan.</p></details>
+        <details><summary>Can I change plans later?</summary><p>Yes. You can move up to a bigger plan at any time and the new features turn on right away, with the price difference prorated for the rest of the billing period. Moving down takes effect at the start of your next billing period, so nothing you rely on disappears mid-month.</p></details>
+        <details><summary>Does the Complete plan file payroll taxes for me?</summary><p>Complete runs payroll from approved hours, overtime, PTO and expense claims, and puts every pay stub in the employee app on payday. Who handles federal and state tax deposits and filings depends on your setup, so we walk through that for your state on the demo call before you sign up.</p></details>
+        <details><summary>How do you bill, and do prices include sales tax?</summary><p>We bill in US dollars by credit card or ACH bank transfer. Monthly plans are charged at the start of each month for that month’s active employees. Prices do not include sales tax, which we add where your state requires it on software subscriptions.</p></details>
+        <details><summary>Do you offer discounts?</summary><p>Annual billing saves 20% on every plan. Teams with more than 150 employees or more than five locations can ask for an Enterprise quote with volume pricing. Registered 501(c)(3) nonprofits get an extra 15% off any plan; tell us on the demo call.</p></details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52" loading="lazy"></a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features"><h2>People</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>All prices in US dollars and exclude applicable sales tax.</p></div>
+  </div>
+</footer>
+<script src="/feature.js" defer></script>
+<script>
+(() => {
+  const PLANS = { s: [29, 4], p: [49, 6], c: [89, 9] };
+  const ANNUAL = 0.8;
+  let billing = 'monthly';
+  const usd = (n) => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const short = (n) => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
+  const range = document.getElementById('calc-range');
+  const num = document.getElementById('calc-n');
+  const calc = () => {
+    const n = Math.min(150, Math.max(1, parseInt(num.value, 10) || 1));
+    const f = billing === 'annual' ? ANNUAL : 1;
+    for (const [k, [base, per]] of Object.entries(PLANS)) {
+      const b = Math.round(base * f * 100) / 100, e = Math.round(per * f * 100) / 100;
+      document.getElementById('calc-' + k).textContent = usd(b + n * e);
+      document.getElementById('calc-' + k + '-x').textContent = `${short(b)} + ${n} × ${short(e)} per month` + (billing === 'annual' ? `, ${usd((b + n * e) * 12)} billed yearly` : '');
+    }
+    document.getElementById('calc-note').textContent = billing === 'annual'
+      ? 'Billed annually: 20% off, paid up front for 12 months.'
+      : 'Billed monthly. Switch to annual billing at the top of the page to save 20%.';
+  };
+  range.addEventListener('input', () => { num.value = range.value; calc(); });
+  num.addEventListener('input', () => { range.value = Math.min(150, Math.max(1, parseInt(num.value, 10) || 1)); calc(); });
+  document.querySelectorAll('[data-billing]').forEach((btn) => btn.addEventListener('click', () => {
+    billing = btn.dataset.billing;
+    document.querySelectorAll('[data-billing]').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+    document.querySelectorAll('[data-price]').forEach((el) => {
+      const v = parseFloat(billing === 'annual' ? el.dataset.a : el.dataset.m);
+      el.textContent = short(v);
+    });
+    calc();
+  }));
+  calc();
+})();
+</script>
+</body>
+</html>

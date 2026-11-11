@@ -408,11 +408,13 @@ details[open] .plus::after { transform: rotate(0deg); }
 .foot__mail .link { font-size: clamp(20px, 1.8vw, 26px); font-weight: 500; }
 .foot__word {
   grid-column: 1 / span 8; min-height: 320px;
-  background: var(--ink); color: var(--bg);
+  background: var(--raised); color: var(--ink);
   display: grid; place-items: center;
   font-size: clamp(56px, 10.4vw, 168px); font-weight: 700; letter-spacing: -0.06em; line-height: 1;
   overflow: hidden;
 }
+/* The logo's lettering is white, so the tile stays dark */
+.foot__word img { width: min(82%, 560px); height: auto; }
 .foot__go {
   grid-column: 9 / span 4; min-height: 320px;
   background: var(--accent); color: var(--accent-ink); text-decoration: none;

@@ -72,12 +72,13 @@ def collect(section):
 def nav(active):
     label = {"blog": "Resources", "tools": "Resources", "templates": "Resources"}[active]
     return f"""<header class="nav">
-  <a class="wordmark" href="/" aria-label="Workzenly home">Workzenly</a>
+  <a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52"></a>
   <nav class="nav__links" aria-label="Main">
     <a class="link" href="/features/">Features</a>
     <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
     <a class="link" href="/features/scheduling/">Scheduling</a>
     <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/pricing/">Pricing</a>
     <a class="link" href="/blog/" aria-current="page">{label}</a>
   </nav>
   <a class="button button--small" href="/#start">Book a demo</a>
@@ -85,7 +86,7 @@ def nav(active):
 
 
 FOOT = """<footer class="simple-foot">
-  <p>© <span id="year">2026</span> Workzenly</p>
+  <div class="simple-foot__brand"><a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52" loading="lazy"></a><p>© <span id="year">2026</span> Workzenly</p></div>
   <nav aria-label="Footer">
     <a href="/features/time-clock/">Time clock</a>
     <a href="/features/scheduling/">Scheduling</a>
@@ -93,6 +94,7 @@ FOOT = """<footer class="simple-foot">
     <a href="/features/pto/">PTO</a>
     <a href="/tools/">Best tools</a>
     <a href="/templates/">Free templates</a>
+    <a href="/pricing/">Pricing</a>
     <a href="/blog/">Guides</a>
   </nav>
   <p><a href="mailto:info@workzenly.com">info@workzenly.com</a></p>
@@ -140,9 +142,9 @@ def hub(section, items, counts):
   <meta name="description" content="{esc(cfg["desc"])}">
   <meta name="theme-color" content="#0b0b0b">
   <link rel="canonical" href="{url}">
-  <link rel="icon" href="/favicon.ico" sizes="32x32">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Workzenly">
   <meta property="og:url" content="{url}">
@@ -203,7 +205,7 @@ for s, items in data.items():
         hub(s, items, counts)
 features = [f for f in PLAN["features"] if os.path.isfile(os.path.join(ROOT, "features", f["slug"], "index.html"))]
 
-urls = [("/", "1.0")] + ([("/features/", "0.9")] if os.path.isfile(os.path.join(ROOT, "features", "index.html")) else []) + [(f["url"], "0.9") for f in features]
+urls = [("/", "1.0")] + ([("/features/", "0.9")] if os.path.isfile(os.path.join(ROOT, "features", "index.html")) else []) + ([("/pricing/", "0.9")] if os.path.isfile(os.path.join(ROOT, "pricing", "index.html")) else []) + [(f["url"], "0.9") for f in features]
 for s in ("tools", "templates", "blog"):
     if data[s]:
         urls.append((f"/{s}/", "0.8"))

@@ -175,6 +175,9 @@
 .simple-foot a { color: var(--ink); text-decoration: none; }
 .simple-foot a:hover { text-decoration: underline; }
 .simple-foot p:last-child { justify-self: end; }
+.simple-foot__brand { display: grid; gap: 10px; justify-items: start; }
+.simple-foot__brand .logo__img { height: 36px; }
+.simple-foot .simple-foot__brand p { justify-self: start; }
 
 /* ---------- Blog index ---------- */
 .index-head { padding: 56px var(--margin) 48px; }

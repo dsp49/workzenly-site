@@ -7,9 +7,9 @@
   <meta name="description" content="Workzenly runs time clocks, schedules, PTO and payroll for US employers, and gives every employee one app for all of it.">
   <meta name="theme-color" content="#0b0b0b">
   <link rel="canonical" href="https://workzenly.com/">
-  <link rel="icon" href="/favicon.ico" sizes="32x32">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Workzenly">
@@ -24,10 +24,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -35,12 +31,13 @@
 
 <header class="nav">
   <a class="logo" href="#top" aria-label="Workzenly home">
-    <img src="assets/workzenly-logo.png" alt="Workzenly" class="logo__img" width="168" height="52">
+    <img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52">
   </a>
   <nav class="nav__links" aria-label="Main">
     <a class="link" href="#features">Features</a>
     <a class="link" href="#how">How it works</a>
     <a class="link" href="#workplaces">Workplaces</a>
+    <a class="link" href="/pricing/">Pricing</a>
     <a class="link" href="/blog/">Resources</a>
   </nav>
   <a class="button button--small" href="#start">Book a demo</a>
@@ -63,7 +60,7 @@
     <div class="hero__stage load" style="--i:2">
       <div class="app" data-ui id="app">
         <div class="app__bar">
-          <span class="app__brand"><img src="assets/logo-icon.png" alt="" class="app__brand-icon">Workzenly</span>
+          <span class="app__brand"><img src="/assets/logo-icon.png" alt="" class="app__brand-icon">Workzenly</span>
           <div class="seg" role="group" aria-label="Choose a view">
             <button type="button" class="seg__btn" data-role="employee" aria-pressed="true">Employee</button>
             <button type="button" class="seg__btn" data-role="employer" aria-pressed="false">Employer</button>
@@ -378,13 +375,14 @@
     <a class="link" href="/features/pto/">PTO</a>
     <a class="link" href="/tools/">Best tools</a>
     <a class="link" href="/templates/">Free templates</a>
+    <a class="link" href="/pricing/">Pricing</a>
     <a class="link" href="/blog/">Guides</a>
   </nav>
   <div class="foot__tile foot__mail">
     <p>Write to us</p>
     <a class="link" href="mailto:info@workzenly.com">info@workzenly.com</a>
   </div>
-  <div class="foot__tile foot__word" aria-hidden="true">Workzenly</div>
+  <div class="foot__tile foot__word" aria-hidden="true"><img src="/assets/workzenly-logo-lg.png" alt="" width="720" height="223" loading="lazy"></div>
   <a class="foot__tile foot__go" href="#start">
     <span>Book a demo</span>
     <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><path d="M10 38 38 10M16 10h22v22" fill="none" stroke="currentColor" stroke-width="4"/></svg>
