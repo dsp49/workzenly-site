@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Care Workforce Management Software | Workzenly</title>
+  <meta name="description" content="Home care workforce management software for US agencies: caregivers clock in at each client's home with GPS, travel time counted, timesheets into payroll.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/solutions/home-care/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/solutions/home-care/">
+  <meta property="og:title" content="Home Care Workforce Management Software | Workzenly">
+  <meta property="og:description" content="Home care workforce management software for US agencies: caregivers clock in at each client's home with GPS, travel time counted, timesheets into payroll.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    /* Page-local: a caregiver's day drawn as a route of client visits */
+    .ui-route { display: grid; font-size: 12px; }
+    .ui-stop, .ui-leg { display: grid; grid-template-columns: 58px 14px minmax(0, 1fr) auto; column-gap: 10px; align-items: center; }
+    .ui-stop { padding: 7px 0; }
+    .ui-stop > time { color: #8d8d89; font-size: 11px; white-space: nowrap; }
+    .ui-stop > i { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #3a3a3a; background: #0f0f0f; justify-self: center; }
+    .ui-stop--done > i { border-color: var(--accent); background: var(--accent); }
+    .ui-stop--now > i { border-color: var(--accent); box-shadow: 0 0 0 3px #1c2412; }
+    .ui-stop > div p { font-size: 12.5px; color: #f2f2ef; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ui-stop > div small { display: block; color: #8d8d89; font-size: 11px; }
+    .ui-leg { min-height: 22px; }
+    .ui-leg > i { width: 0; height: 22px; border-left: 2px dashed #3a3a3a; justify-self: center; }
+    .ui-leg--done > i { border-color: var(--accent); border-left-style: solid; }
+    .ui-leg > span { color: #a3b38a; font-size: 11px; }
+    .ui-leg > span.is-next { color: #7d7d79; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Home Care Workforce Management Software | Workzenly",
+        "description": "Home care workforce management software for US agencies: caregivers clock in at each client's home with GPS, travel time counted, timesheets into payroll.",
+        "url": "https://workzenly.com/solutions/home-care/",
+        "dateModified": "2026-11-12",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://workzenly.com/solutions/" },
+          { "@type": "ListItem", "position": 3, "name": "Home care", "item": "https://workzenly.com/solutions/home-care/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does Workzenly meet my state's EVV requirement?", "acceptedAnswer": { "@type": "Answer", "text": "No, and we do not claim it does. Under the 21st Century Cures Act, agencies paid by Medicaid for personal care or home health visits have electronic visit verification duties that run through their state's EVV system. Workzenly's punch records are your time record for paying caregivers under the FLSA. Ask us on the demo call how agencies run both." } },
+          { "@type": "Question", "name": "How does a caregiver clock in at a client's home?", "acceptedAnswer": { "@type": "Answer", "text": "Each client address gets its own geofence, a circle around the home with a radius you set. On arrival the app shows the visit and whether the caregiver is inside the fence, and they tap clock in. The time and location are saved with the punch. A punch outside the fence is recorded and flagged for the coordinator, never thrown away." } },
+          { "@type": "Question", "name": "Is travel time between clients paid?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Department of Labor's Fact Sheet #79D says travel from one client to another during the workday is hours worked, and the agency must make sure it is paid. The commute from the caregiver's own home to the first client and back from the last is ordinary commuting and generally not paid. Workzenly puts the time between one clock-out and the next clock-in on the timesheet as travel, counted toward the 40-hour week." } },
+          { "@type": "Question", "name": "Does the app track caregivers between visits?", "acceptedAnswer": { "@type": "Answer", "text": "No. Location is captured only at the moment of a clock-in or clock-out, with whether that spot was inside the client's geofence. Nothing is recorded while a caregiver drives between visits or after they clock out. Your written policy should tell caregivers what is recorded and when." } },
+          { "@type": "Question", "name": "Can caregivers see each other's schedules or pay?", "acceptedAnswer": { "@type": "Answer", "text": "Each caregiver sees their own visits, hours, PTO balance and pay stubs, plus the open visits the coordinator has posted, and never a coworker's pay or record. Coordinators see the schedule, attendance and time off for the caregivers they manage. Pay rates and pay stubs are visible only to people with payroll access." } },
+          { "@type": "Question", "name": "How long does it take to set up a home care agency?", "acceptedAnswer": { "@type": "Answer", "text": "Most agencies are scheduling visits and clocking in within a week. Send us your caregiver list, pay rates, PTO balances and client addresses as a spreadsheet; we import them, draw a geofence around each address, walk through your first week of visits and first timesheet approval with you, and stay with you through the first pay run." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="home care workforce management software" data-intent="transactional" data-topic="Home care">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 17.5h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7M6 9.5V20h12V9.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 13l1.8-5A1.5 1.5 0 0 1 7.2 7h9.6a1.5 1.5 0 0 1 1.4 1l1.8 5M4 13h16v4.5H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7.5 15.3h.1M16.4 15.3h.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7.5 17c.8-1.9 2.4-2.8 4.5-2.8s3.7.9 4.5 2.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52"></a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/solutions/" aria-current="page">Solutions</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/pricing/">Pricing</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/solutions/">Solutions</a></li><li aria-current="page">Home care</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Home care agencies</span>
+        <h1 id="hero-title">Home care workforce management software for every visit</h1>
+        <p class="fp-lead">Workzenly is home care workforce management software for US agencies. Schedule visits by client, let caregivers clock in and out at each client’s home from their phone inside a geofence, put travel between clients on the timesheet as hours worked, and approve the week before it goes to payroll.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>A geofence per client</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Travel on the timesheet</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved hours into payroll</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly today view for Hearthside Home Care, Thursday November 12 at 12:05 PM, showing caregiver Lorena Ocampo’s route of four client visits with clock-in and clock-out times, paid travel between them and geofence status, and an open Friday visit to offer">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/today</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span class="is-on"><svg><use href="#i-clock"/></svg></span>
+              <span><svg><use href="#i-cal"/></svg></span>
+              <span><svg><use href="#i-sheet"/></svg></span>
+              <span><svg><use href="#i-pay"/></svg></span>
+              <span><svg><use href="#i-users"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Today</p><p class="ui-sub">Hearthside Home Care · Thu, Nov 12 · 12:05 PM · Lorena Ocampo, HHA</p></div>
+                <div class="ui-seg" aria-hidden="true"><span class="is-on">Lorena</span><span>Yvette</span><span>Donna</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>4</b><small>Visits today</small><em>2 done, 1 in progress</em></div>
+                <div class="ui-kpi"><b>9.0</b><small>Visit hours</small><em>scheduled</em></div>
+                <div class="ui-kpi"><b>0:37</b><small>Travel so far</small><em>counted as hours worked</em></div>
+                <div class="ui-kpi"><b>0</b><small>Outside geofence</small><em>5 punches, all inside</em></div>
+              </div>
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Lorena’s route</b><span>Punches at each client’s door</span></div>
+                <div class="ui-route">
+                  <div class="ui-stop ui-stop--done"><time>7:00–9:00</time><i></i><div><p>M. Abernathy · N Campbell Ave</p><small>In 6:58 AM · Out 9:01 AM · 2 h 03 min</small></div><span class="ui-pill ui-pill--ok">Inside</span></div>
+                  <div class="ui-leg ui-leg--done"><span></span><i></i><span>Travel 18 min · paid</span><span></span></div>
+                  <div class="ui-stop ui-stop--done"><time>9:20–11:20</time><i></i><div><p>J. Soto · E Grant Rd</p><small>In 9:19 AM · Out 11:22 AM · 2 h 03 min</small></div><span class="ui-pill ui-pill--ok">Inside</span></div>
+                  <div class="ui-leg ui-leg--done"><span></span><i></i><span>Travel 19 min · paid</span><span></span></div>
+                  <div class="ui-stop ui-stop--now"><time>11:45–1:45</time><i></i><div><p>P. Gallegos · E Broadway Blvd</p><small>In 11:41 AM · in progress</small></div><span class="ui-pill ui-pill--ok">In now</span></div>
+                  <div class="ui-leg"><span></span><i></i><span class="is-next">Travel next</span><span></span></div>
+                  <div class="ui-stop"><time>2:00–5:00</time><i></i><div><p>A. Marchetti · N Oracle Rd</p><small>Geofence 150 m · not started</small></div><span class="ui-pill">Due 2:00 PM</span></div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="hc-foot">Yvette Mwangi is out Friday. Her 8:00–10:00 AM visit with R. Navarro, W Ina Rd, has no one yet</p><small>Teresa Hines is free and would reach 26.5 hours</small></div><button type="button" class="ui-btn" data-act data-target="hc-foot" data-text="Offered to Teresa. She sees the open visit in the app now." data-done="Offered">Offer to Teresa</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for the people who keep visits covered</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-home"/></svg>Agency owners and administrators</li>
+        <li><svg aria-hidden="true"><use href="#i-users"/></svg>Care coordinators and schedulers</li>
+        <li><svg aria-hidden="true"><use href="#i-badge"/></svg>CNAs, HHAs and companion caregivers</li>
+        <li><svg aria-hidden="true"><use href="#i-car"/></svg>Caregivers driving between clients</li>
+        <li><svg aria-hidden="true"><use href="#i-pay"/></svg>Whoever runs payroll every other Friday</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">The visit schedule is a spreadsheet, start times come in by text from five driveways, and nobody knows whether the drive between clients made it onto the timesheet.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">One schedule, one time clock, one pay run, for every client’s home</h2>
+      <p class="fp-problem__p">Home care workforce management software puts the visit schedule, the punches at each address and the pay in one record. The visit you assign is the visit the caregiver sees, the clock-in at the client’s door starts their hours, the drive to the next client is on the timesheet, and the approved week is what payroll pays.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first month</p>
+        <h2 id="outcomes-title">Covered visits, honest hours, and travel time that gets paid</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Visits scheduled by client</h3><p>Each client has standing visits; drag a caregiver into them and publish. Caregivers see their visits, with the address and window, in the app, and approved PTO sits on the grid so you do not assign someone who is away.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><h3>Clock-ins at the client’s door</h3><p>A geofence sits around every client address. The caregiver clocks in on their phone on arrival and out on leaving, and the time and location are saved with each punch. Punches outside the fence are flagged for the coordinator, not thrown away.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-car"/></svg></span><h3>Travel between clients on the timesheet</h3><p>The gap between one clock-out and the next clock-in shows on the timesheet as travel, so the drive between clients is paid and counts toward the 40-hour week, as the Department of Labor requires.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>One approval, then payroll</h3><p>Overtime from many short visits is worked out from the punches. Approve the week in one tap and the regular hours, overtime and PTO go into the pay run together.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">A home care week in Workzenly: home care scheduling software and a caregiver time clock app in one</h2>
+        <p>From the visits assigned on Friday to the pay stubs the Friday after next, one record carries every visit.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="A home care week">
+          <button class="fp-tab" role="tab" id="tab-visits" aria-controls="panel-visits" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-cal"/></svg>Schedule visits</b><span>Standing visits by client</span></button>
+          <button class="fp-tab" role="tab" id="tab-clock" aria-controls="panel-clock" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-pin"/></svg>Clock in at the door</b><span>Phone, GPS, a geofence per address</span></button>
+          <button class="fp-tab" role="tab" id="tab-travel" aria-controls="panel-travel" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-car"/></svg>Travel on the timesheet</b><span>Drives between clients as hours</span></button>
+          <button class="fp-tab" role="tab" id="tab-approve" aria-controls="panel-approve" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-pay"/></svg>Approve the week</b><span>One tap on Monday, pay stubs on Friday</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-visits" aria-labelledby="tab-visits">
+          <div>
+            <h3>Schedule next week by client, not by guesswork</h3>
+            <p>Each client’s standing visits are already on the grid. Drag a caregiver into them, watch their weekly hours add up, and publish. Caregivers see their visits in the app at once.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Standing visits per client, copied week to week</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours per caregiver while you build</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Told before a visit goes uncovered</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Visit schedule for Hearthside Home Care, week of November 15 to 21, listing standing visits for four clients with assigned caregivers and one unfilled Tuesday and Thursday afternoon visit, filled by dragging Teresa Hines in">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Visits · Nov 15–21</span></div>
+            <div class="ui-main">
+              <div class="ui-list">
+                <div class="ui-item"><div><p>M. Abernathy · N Campbell Ave · Mon, Tue, Thu 7:00–9:00 AM</p><small>Lorena Ocampo · 6 h · 40 h this week</small></div><span class="ui-pill ui-pill--ok">Filled</span></div>
+                <div class="ui-item"><div><p>J. Soto · E Grant Rd · Mon–Fri 9:20–11:20 AM</p><small>Lorena Ocampo · 10 h</small></div><span class="ui-pill ui-pill--ok">Filled</span></div>
+                <div class="ui-item"><div><p>P. Gallegos · E Broadway Blvd · daily 11:45 AM–1:45 PM</p><small>Donna Pruitt Mon–Fri · Yvette Mwangi weekends · 14 h</small></div><span class="ui-pill ui-pill--ok">Filled</span></div>
+                <div class="ui-item"><div><p>A. Marchetti · N Oracle Rd · Tue, Thu 2:00–5:00 PM</p><small id="hc-slot">No one yet · Teresa Hines is free, 22 h so far</small></div><span class="ui-pill ui-pill--warn" id="hc-slot-pill">Empty</span></div>
+              </div>
+              <div class="ui-foot"><div><p>Drag Teresa into both afternoons</p><small>Her week goes from 22 to 28 hours</small></div><button type="button" class="ui-btn" data-act data-target="hc-slot" data-text="Teresa Hines · 6 h · 28 h this week" data-pill="hc-slot-pill" data-pill-text="Filled" data-done="Added">Drag in</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-clock" aria-labelledby="tab-clock" hidden>
+          <div>
+            <h3>Clock in at the client’s door, from a phone</h3>
+            <p>Lorena pulls up at J. Soto’s home at 9:19. The app shows the visit, the address and that she is inside the geofence, and she taps clock in. The time and location are saved with the punch.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>A geofence with its own radius per client address</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Outside punches recorded and flagged, never blocked</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Location captured with the punch, not between visits</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Caregiver time clock app for Lorena Ocampo at 9:19 AM showing the J. Soto visit at E Grant Rd, inside a 150 meter geofence, with a clock-in button and 18 minutes of paid travel from the last client">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Thu, Nov 12</p><p class="ui-title">Next visit, Lorena</p></div>
+              <div class="ui-card">
+                <p class="ui-sub">J. Soto · E Grant Rd</p>
+                <p style="font-size:32px;font-weight:600;letter-spacing:-0.03em;margin:6px 0 2px">9:19 AM</p>
+                <p class="ui-sub">Visit 9:20–11:20 AM</p>
+                <p style="margin-top:10px"><span class="ui-pill ui-pill--ok">Inside geofence · 150 m</span></p>
+              </div>
+              <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="hc-phone" data-text="Clocked in at 9:19 AM at J. Soto’s" data-done="Clocked in">Clock in</button>
+              <p class="ui-sub" id="hc-phone" style="text-align:center">Not clocked in yet</p>
+              <div class="ui-item"><div><p>Travel from M. Abernathy</p><small>9:01–9:19 AM · 18 min · paid</small></div><span class="ui-pill ui-pill--ok">Hours</span></div>
+              <div class="ui-item"><div><p>Next</p><small>P. Gallegos · 11:45 AM</small></div><span class="ui-pill">2 h</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-travel" aria-labelledby="tab-travel" hidden>
+          <div>
+            <h3>Travel between clients, on the timesheet as hours</h3>
+            <p>Lorena’s Thursday is four visits and three drives. Each visit runs from clock-in to clock-out, and the travel between them is its own line, so the 51 minutes of driving are paid and count toward her 40 hours. The drive home is not work time and is not added.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Visit and travel lines, one daily total in decimals</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Missed clock-outs and long gaps flagged for the coordinator</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Timesheet for Lorena Ocampo on Thursday November 12: four client visits and three travel legs between them totaling 10 hours 5 minutes, 10.08 hours in decimal, with the commute home not counted">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Timesheet · Lorena · Thu, Nov 12</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Line</th><th>From</th><th>To</th><th class="r">Time</th></tr></thead>
+                <tbody>
+                  <tr><td>Visit · M. Abernathy</td><td>6:58 AM</td><td>9:01 AM</td><td class="r">2:03</td></tr>
+                  <tr><td>Travel</td><td>9:01 AM</td><td>9:19 AM</td><td class="r">0:18</td></tr>
+                  <tr><td>Visit · J. Soto</td><td>9:19 AM</td><td>11:22 AM</td><td class="r">2:03</td></tr>
+                  <tr><td>Travel</td><td>11:22 AM</td><td>11:41 AM</td><td class="r">0:19</td></tr>
+                  <tr><td>Visit · P. Gallegos</td><td>11:41 AM</td><td>1:47 PM</td><td class="r">2:06</td></tr>
+                  <tr><td>Travel</td><td>1:47 PM</td><td>2:01 PM</td><td class="r">0:14</td></tr>
+                  <tr><td>Visit · A. Marchetti</td><td>2:01 PM</td><td>5:03 PM</td><td class="r">3:02</td></tr>
+                  <tr><td><b>Thursday</b></td><td>Visits 9:14</td><td>Travel 0:51</td><td class="r"><b>10:05</b> <small>10.08 h</small></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>Drive home not counted</p><small>Normal travel home is not work time</small></div><span class="ui-pill ui-pill--ok">No flags</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-approve" aria-labelledby="tab-approve" hidden>
+          <div>
+            <h3>Approve the week on Monday, pay on Friday</h3>
+            <p>Timesheets build themselves from the punches. On Monday the coordinator looks only at the exceptions and approves the week in one tap, and the approved visit hours, travel, overtime and PTO go into the Nov 1–14 pay run paid Friday, Nov 20.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime at 1.5 × the regular rate, travel included</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved PTO lands as PTO</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pay stubs in the app on payday</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Weekly timesheet approval for November 8 to 14 showing visit hours, travel, PTO and totals for five Hearthside caregivers, Yvette Mwangi at 42.5 hours with 2.5 overtime, and one timesheet still waiting">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Timesheets · Nov 8–14 · approve Mon, Nov 16</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Caregiver</th><th class="r">Visits</th><th class="r">Travel</th><th class="r">PTO</th><th class="r">Total</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Lorena Ocampo</td><td class="r">36.5</td><td class="r">3.5</td><td class="r">–</td><td class="r">40.0</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Yvette Mwangi<small>2.5 h overtime</small></td><td class="r">38.0</td><td class="r">4.5</td><td class="r">–</td><td class="r">42.5</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Donna Pruitt</td><td class="r">22.0</td><td class="r">2.0</td><td class="r">8.0</td><td class="r">32.0</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Ruben Villanueva</td><td class="r">32.0</td><td class="r">3.0</td><td class="r">–</td><td class="r">35.0</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Teresa Hines</td><td class="r">22.0</td><td class="r">2.5</td><td class="r">–</td><td class="r">24.5</td><td><span class="ui-pill ui-pill--warn" id="hc-teresa">Waiting</span></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>1 timesheet still waiting</p><small>Teresa Hines · approve to send to payroll</small></div><button type="button" class="ui-btn" data-act data-pill="hc-teresa" data-pill-text="Approved" data-done="Sent to payroll">Approve</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="Home care details">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Overtime from short visits</p>
+          <h2>Nineteen visits in a week add up faster than one shift a day</h2>
+          <p>Two-hour visits across six days rarely feel like an overtime risk, until travel is counted. Yvette Mwangi’s week is 19 visits, 38.0 hours of visit time and 4.5 hours of driving: 42.5 hours, 2.5 of them overtime. Workzenly adds visits and travel against 40 as the week runs, so the coordinator sees it before Saturday, not on the pay stub.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Visits plus travel, by caregiver, against 40</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Caregivers near 40 flagged before the next assignment</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>State daily overtime, such as California’s, set up with us</li>
+          </ul>
+          <a class="fp-row__more" href="/features/overtime-tracking/">See overtime tracking <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Hours this week versus 40 for four Hearthside caregivers as of Thursday November 12, with Yvette Mwangi projected to 42.5 hours including travel and a suggestion to offer her Saturday visit to Teresa Hines">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Overtime · week of Nov 8</span></div>
+          <div class="ui-main">
+            <div class="ui-card">
+              <div class="ui-card__head"><b>Hours this week vs 40</b><span>Visits + travel, projected</span></div>
+              <div class="ui-list">
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Yvette Mwangi · 19 visits</span><span>31.0 → 42.5 h</span></div><div class="ui-bar-meter"><i style="width:100%;background:#f2c36b"></i></div></div>
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Lorena Ocampo · 18 visits</span><span>29.5 → 40.0 h</span></div><div class="ui-bar-meter"><i style="width:100%"></i></div></div>
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Ruben Villanueva · 15 visits</span><span>25.0 → 35.0 h</span></div><div class="ui-bar-meter"><i style="width:87.5%"></i></div></div>
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Teresa Hines · 11 visits</span><span>17.5 → 24.5 h</span></div><div class="ui-bar-meter"><i style="width:61%"></i></div></div>
+              </div>
+            </div>
+            <div class="ui-foot"><div><p id="hc-ot">Yvette’s Saturday 2:00–4:30 PM visit adds 2.5 overtime hours</p><small>Teresa Hines is free and would reach 27.0</small></div><button type="button" class="ui-btn" data-act data-target="hc-ot" data-text="Saturday offered to Teresa. Yvette stays at 40.0." data-done="Offered">Offer to Teresa</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Hiring and onboarding caregivers</p>
+          <h2>Onboard a caregiver with the paperwork and the CNA or HHA certificate together</h2>
+          <p>Post a role, keep applications in one list, schedule interviews and send the offer letter from the same screen. The new caregiver signs it, fills out their W-4 and I-9 Section 1, adds direct deposit and reads the handbook on their phone before the first visit. Their CNA or HHA certificate and CPR card are stored in their record as searchable data.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Offer letters that state the hourly rate and the travel policy</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Paperwork done before day one, on the new hire’s phone</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Certifications stored with each person</li>
+          </ul>
+          <a class="fp-row__more" href="/features/onboarding/">See onboarding <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Onboarding checklist for new caregiver Felix Baxter starting Monday November 16: offer signed, W-4 and direct deposit done, CNA certificate on file, I-9 Section 1 and handbook to do, CPR card requested">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Onboarding · Felix Baxter · starts Mon, Nov 16</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Offer letter · Caregiver (CNA), $17.25/hr</p><small>Signed Mon, Nov 9</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Form W-4</p><small>Signed Tue, Nov 10</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Direct deposit</p><small>Checking ··4471</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>CNA certificate</p><small>Uploaded Tue, Nov 10 · renews Mar 31, 2028</small></div><span class="ui-pill ui-pill--ok">On file</span></div>
+              <div class="ui-item"><div><p>Form I-9, Section 1</p><small>By his first day · Section 2 by Thu, Nov 19</small></div><span class="ui-pill ui-pill--warn">To do</span></div>
+              <div class="ui-item"><div><p>Employee handbook</p><small>Read and acknowledge</small></div><span class="ui-pill ui-pill--warn">To do</span></div>
+              <div class="ui-item"><div><p>CPR card</p><small>Upload a photo</small></div><span class="ui-pill">Requested</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">The caregiver side</p>
+          <h2>One caregiver scheduling app for visits, clock-ins, PTO and pay</h2>
+          <p>Caregivers see their visits with the address and window, pick up open visits, request a day off with their balance in front of them, clock in at each door and read their pay stub. Each person sees only their own record.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Visits, open visits and PTO in two taps</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pay stubs on payday</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>The handbook and travel policy, searchable</li>
+          </ul>
+          <a class="fp-row__more" href="/features/employee-app/">See the employee app <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-phone" role="img" aria-label="Employee app home screen for Teresa Hines on Thursday November 12 with an open Friday morning visit to pick up, tomorrow’s first visit, PTO balance and next paycheck">
+          <div class="ui-phone__screen">
+            <div class="ui-phone__notch"></div>
+            <div><p class="ui-sub">Thu, Nov 12 · 12:05 PM</p><p class="ui-title">Good afternoon, Teresa</p></div>
+            <div class="ui-card">
+              <p class="ui-sub">Open visit · Fri, Nov 13</p>
+              <p style="font-size:22px;font-weight:600;letter-spacing:-0.03em;margin:6px 0 2px">8:00–10:00 AM</p>
+              <p class="ui-sub">R. Navarro · W Ina Rd</p>
+              <p style="margin-top:10px"><span class="ui-pill ui-pill--ok">Takes you to 26.5 h</span></p>
+            </div>
+            <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="hc-pick" data-text="Picked up. Sharon will confirm it." data-done="Picked up">Pick up visit</button>
+            <p class="ui-sub" id="hc-pick" style="text-align:center">Offered by Sharon W.</p>
+            <div class="ui-item"><div><p>PTO left</p><small>31 of 48 hours</small></div><span class="ui-pill">Request</span></div>
+            <div class="ui-item"><div><p>Next paycheck</p><small>Fri, Nov 20 · Nov 1–14</small></div><span class="ui-pill ui-pill--ok">Pay stub</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One record, from the owner to the caregiver at the door</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owner or administrator</h3></div><div><span>Replaces</span><p>A visit spreadsheet and a payroll login</p></div><div><span>They use it to</span><p>Watch scheduled against clocked hours, keep overtime in check, run payroll from approved hours</p></div><div><span>What they notice</span><p>A time record they can stand behind</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Care coordinator</h3></div><div><span>Replaces</span><p>Calling around for cover and reading start times from texts</p></div><div><span>They use it to</span><p>Assign visits by client, post open visits when someone calls out, review flagged punches, approve the week</p></div><div><span>What they notice</span><p>A call-out takes one post, not ten calls</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>CNAs and HHAs</h3></div><div><span>Replaces</span><p>A printed visit list and a paper timesheet</p></div><div><span>They use it to</span><p>See visits, clock in and out at each door, pick up open visits, request PTO, read their pay stub</p></div><div><span>What they notice</span><p>The drive between clients shows up on the pay stub</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Whoever runs payroll</h3></div><div><span>Replaces</span><p>Retyping timesheets into a payroll service</p></div><div><span>They use it to</span><p>Run the pay period from approved hours, travel, overtime and PTO; answer pay questions from the edit history</p></div><div><span>What they notice</span><p>Fewer corrections the Monday after payday</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Everyone sees what they need, and nothing else</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Caregivers see their own</h3><p>Each caregiver sees their own visits, hours, PTO and pay stubs, never a coworker’s pay or client list.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Coordinators see their caregivers</h3><p>Coordinators see the schedule, attendance and time off for the caregivers they manage, and approve their timesheets.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and pay stubs are visible only to the people you give payroll access to.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">The features home care agencies use most</p>
+        <h2 id="connect-title">Everything a week of visits needs</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/gps-time-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><h3>GPS time tracking</h3><p>A geofence around every client address, with outside punches flagged for review.</p><span>GPS time tracking →</span></a>
+        <a class="fp-link-card" href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Visit scheduling</h3><p>Standing visits by client, open visits posted when someone calls out.</p><span>Scheduling →</span></a>
+        <a class="fp-link-card" href="/features/timesheets/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Timesheets</h3><p>Visit by visit, travel between them, approved for the week in one tap.</p><span>Timesheets →</span></a>
+        <a class="fp-link-card" href="/features/overtime-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime tracking</h3><p>Visits plus travel against 40, with warnings before the next assignment.</p><span>Overtime →</span></a>
+        <a class="fp-link-card" href="/features/hr-documents/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-badge"/></svg></span><h3>HR documents</h3><p>Certificates, CPR cards and policies stored with each caregiver.</p><span>Documents →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Approved visit hours, travel, overtime and PTO become pay stubs in the app.</p><span>Payroll →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">See your agency’s week of visits in Workzenly</h2>
+        <p>Tell us how many caregivers and clients you have. We set up a demo workspace with your agency’s name and geofences around a few client addresses before the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it needs to do</a></li>
+            <li><a href="#g-hours">Hours worked: travel, waiting, sleep</a></li>
+            <li><a href="#g-livein">Live-in and overnight shifts</a></li>
+            <li><a href="#g-wage">Minimum wage and overtime since 2015</a></li>
+            <li><a href="#g-evv">EVV and your time record</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>See your own clients and caregivers in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The agency owner’s guide to home care workforce management software</h2>
+        <p>A home care agency runs on visits, not shifts. The hours between clients are work, overtime arrives in two-hour pieces, and if Medicaid pays, the state has rules about proving a visit happened. Here is what home care workforce management software has to handle, and how to choose it.</p>
+
+        <h3 id="g-what">What home care workforce management software needs to do</h3>
+        <p>Five jobs. Schedule visits by client and publish them where caregivers see them. Record the start and end of each visit at the client’s address from the caregiver’s phone, with the location captured at the punch. Put travel between clients on the timesheet. Handle time off and call-outs without a coordinator on the phone all evening. Pay for exactly the hours approved. <a href="/features/scheduling/">Scheduling</a>, <a href="/features/gps-time-tracking/">GPS time tracking</a>, <a href="/features/timesheets/">timesheets</a>, <a href="/features/pto/">PTO</a> and <a href="/features/payroll/">payroll</a> in Workzenly are those five jobs on one record. Tools built only for mobile clock-ins, such as the ones in our list of the <a href="/tools/best-gps-time-clock-apps/">best GPS time clock apps</a>, stop at the punch.</p>
+        <p>The geofence makes a phone punch trustworthy. GPS.gov says GPS-enabled smartphones are typically accurate to within about 16 feet under open sky, worse near buildings and trees, and Android’s developer documentation recommends a minimum geofence radius of 100 to 150 meters (330 to 490 feet), so give an apartment building more room than a house. Our explainer on <a href="/blog/what-is-a-geofence/">what a geofence is</a> and the <a href="/blog/gps-time-clock-app/">GPS time clock app</a> guide cover the radius and the written policy.</p>
+
+        <h3 id="g-hours">Hours worked rules: travel time, waiting time and sleep time</h3>
+        <p>Travel between clients is hours worked. The Department of Labor’s Fact Sheet #79D says travel from one client to another during the workday is compensable, and the agency must make sure it is paid; ordinary travel from home to the first client and back from the last is not. The drive time counts toward the 40 hours for overtime. In Workzenly the gap between a clock-out at one door and the clock-in at the next shows on the timesheet as travel, and a coordinator corrects a long gap, such as an unpaid lunch, with a note.</p>
+        <p>A caregiver who must stay in the home ready to help is on duty and paid. On a shift under 24 hours, all the time is hours worked even if the caregiver may sleep. On a shift of 24 hours or more, employer and employee can agree to exclude a regularly scheduled sleep period of up to 8 hours if adequate sleeping facilities are provided and sleep is usually uninterrupted; interruptions are paid, and under 5 hours of sleep the whole night is paid. Our guide to <a href="/blog/time-and-attendance-tracking/">time and attendance tracking</a> covers the records behind this.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Situation</th><th>Federal rule (FLSA)</th><th>What to check</th></tr></thead>
+            <tbody>
+              <tr><td>Driving from one client to the next</td><td>Hours worked; the agency must make sure it is paid</td><td>Your written travel policy</td></tr>
+              <tr><td>Commute to the first client, home from the last</td><td>Not work time</td><td>State law or your policy may pay it</td></tr>
+              <tr><td>Shift under 24 hours, allowed to sleep</td><td>All hours worked</td><td>State rules on overnight pay</td></tr>
+              <tr><td>Shift of 24 hours or more</td><td>Up to 8 hours of sleep excluded by agreement; interruptions paid; under 5 hours of sleep, the whole night is paid</td><td>A written agreement and a record of interruptions</td></tr>
+              <tr><td>Overtime</td><td>1.5 × the regular rate after 40 hours, travel included</td><td>Daily overtime in California and a few other states</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="g-livein">Live-in and overnight shifts</h3>
+        <p>Under Fact Sheet #79B, a live-in caregiver lives on the client’s premises permanently or for extended periods: seven days a week, five days a week (120 hours or more), or five consecutive days or nights. Meal periods and sleep time can be excluded by a written agreement the employer keeps, and all hours worked must still be recorded. Since January 1, 2015, agencies may not claim the live-in overtime exemption, so an agency’s live-in caregiver earns overtime after 40 hours under federal law; New York draws its line for residential employees at 44 hours, according to the state labor department. In Workzenly a 24-hour shift is one long visit, interruptions are punch fixes with a note, and the signed sleep agreement sits in the caregiver’s record with the <a href="/features/hr-documents/">HR documents</a>.</p>
+
+        <h3 id="g-wage">Minimum wage and overtime for home care agencies since 2015</h3>
+        <p>Since a 2013 Department of Labor rule took effect on January 1, 2015, third-party employers such as home care agencies could not claim the FLSA companionship services or live-in exemptions, so their aides were owed the $7.25 federal minimum wage and overtime after 40 hours. In July 2025 the Department proposed returning to the earlier 1975 rules (90 Fed. Reg. 28976), and its Field Assistance Bulletin 2025-4 told investigators to stop enforcing the 2013 rule against agencies while that proposal is pending. As of this update the 2013 text is still in the regulation at 29 CFR 552.109, and the bulletin says it does not change any legal requirement. Many states require overtime for home care workers on their own. Talk to an employment attorney before changing how you pay overtime.</p>
+        <p>The arithmetic of short visits does not change. Yvette Mwangi earns $17.00 an hour and works 19 visits: 38.0 hours of visit time plus 4.5 hours of driving is 42.5 hours. Her pay is 40 × $17.00 = $680.00 plus 2.5 × $25.50 = $63.75, so $743.75; leave the travel off and she is $97.75 short. See <a href="/blog/how-to-calculate-overtime/">how to calculate overtime</a> for the regular-rate math; <a href="/blog/paid-time-off/">PTO</a> is paid but is not hours worked. Keep payroll records at least 3 years and time cards at least 2, and for a paper trail during a trial week start from our <a href="/templates/timesheet-templates/">timesheet templates</a>.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Home care wage rules are changing federally and differ by state; check your state labor department, your state Medicaid agency and an employment lawyer.</p>
+
+        <h3 id="g-evv">EVV and your time record: two different jobs</h3>
+        <p>Under Section 12006 of the 21st Century Cures Act, states must require electronic visit verification for Medicaid-funded personal care services (by January 1, 2020) and home health services (by January 1, 2023) that involve an in-home visit, according to medicaid.gov. EVV records the service, the client, the caregiver, the date, the location and the start and end times, and most states run or approve specific EVV systems. Workzenly is not an EVV system and does not connect to one. Its punch records are the agency’s time record for paying caregivers under the FLSA; EVV is handled by your state’s system, and agencies that bill Medicaid run both. Ask us on the demo call how agencies in your state do it.</p>
+
+        <h3 id="g-choose">How to choose</h3>
+        <ol>
+          <li><strong>Run last week through it.</strong> A real caregiver’s week with the drives, one call-out and one forgotten clock-out. See which tool makes a correct pay run with the fewest manual steps.</li>
+          <li><strong>Check the geofence per address.</strong> Its own radius per client, outside punches flagged rather than blocked, nothing recorded between punches.</li>
+          <li><strong>Make travel visible.</strong> If between-client time is not its own line, somebody is estimating it or nobody is paying it.</li>
+          <li><strong>Settle EVV first.</strong> If you bill Medicaid, ask every vendor whether they are an EVV system, work beside one, or neither.</li>
+          <li><strong>Count the hand-offs.</strong> Every retype between tools is a pay stub fixed later; our <a href="/blog/how-to-process-payroll/">payroll process guide</a> lists the steps.</li>
+        </ol>
+        <p>To see your own clients and caregivers in Workzenly, <a href="/#start">book a demo</a> and we will set up a workspace with your agency’s name and geofences around a few client addresses before the call. Plans and prices are on the <a href="/pricing/">pricing page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions from home care agency owners</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>Does Workzenly meet my state's EVV requirement?</summary><p>No, and we do not claim it does. Under the 21st Century Cures Act, agencies paid by Medicaid for personal care or home health visits have electronic visit verification duties that run through their state's EVV system. Workzenly's punch records are your time record for paying caregivers under the FLSA. Ask us on the demo call how agencies run both.</p></details>
+        <details><summary>How does a caregiver clock in at a client's home?</summary><p>Each client address gets its own geofence, a circle around the home with a radius you set. On arrival the app shows the visit and whether the caregiver is inside the fence, and they tap clock in. The time and location are saved with the punch. A punch outside the fence is recorded and flagged for the coordinator, never thrown away.</p></details>
+        <details><summary>Is travel time between clients paid?</summary><p>Yes. The Department of Labor's Fact Sheet #79D says travel from one client to another during the workday is hours worked, and the agency must make sure it is paid. The commute from the caregiver's own home to the first client and back from the last is ordinary commuting and generally not paid. Workzenly puts the time between one clock-out and the next clock-in on the timesheet as travel, counted toward the 40-hour week.</p></details>
+        <details><summary>Does the app track caregivers between visits?</summary><p>No. Location is captured only at the moment of a clock-in or clock-out, with whether that spot was inside the client's geofence. Nothing is recorded while a caregiver drives between visits or after they clock out. Your written policy should tell caregivers what is recorded and when.</p></details>
+        <details><summary>Can caregivers see each other's schedules or pay?</summary><p>Each caregiver sees their own visits, hours, PTO balance and pay stubs, plus the open visits the coordinator has posted, and never a coworker's pay or record. Coordinators see the schedule, attendance and time off for the caregivers they manage. Pay rates and pay stubs are visible only to people with payroll access.</p></details>
+        <details><summary>How long does it take to set up a home care agency?</summary><p>Most agencies are scheduling visits and clocking in within a week. Send us your caregiver list, pay rates, PTO balances and client addresses as a spreadsheet; we import them, draw a geofence around each address, walk through your first week of visits and first timesheet approval with you, and stay with you through the first pay run.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for home care teams</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/healthcare-scheduling-software/"><small>GUIDE</small><b>Healthcare scheduling software: travel time, credentials and EVV</b></a>
+        <a href="/tools/best-gps-time-clock-apps/"><small>COMPARISON</small><b>Best GPS time clock apps</b></a>
+        <a href="/templates/timesheet-templates/"><small>TEMPLATES</small><b>Free timesheet templates</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52" loading="lazy"></a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features and solutions"><h2>People and industries</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+        <li><a href="/solutions/">Solutions by industry</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>

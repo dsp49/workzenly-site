@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Field Service Time Tracking Software | Workzenly</title>
+  <meta name="description" content="Field service time tracking software for cleaning, landscaping and service crews: clock in at each site inside a geofence, hours by site, into payroll.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/solutions/field-services/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/solutions/field-services/">
+  <meta property="og:title" content="Field Service Time Tracking Software | Workzenly">
+  <meta property="og:description" content="Field service time tracking software for cleaning, landscaping and service crews: clock in at each site inside a geofence, hours by site, into payroll.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    /* Page-local: the crews board in the hero (three crews, each a list of site stops) */
+    .ui-crews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .ui-crew { background: #151515; border: 1px solid var(--line-soft); border-radius: 12px; padding: 10px 12px; min-width: 0; }
+    .ui-crew__head { display: grid; gap: 2px; padding-bottom: 8px; }
+    .ui-crew__head b { font-size: 13px; font-weight: 600; }
+    .ui-crew__head small { color: #8d8d89; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ui-stop { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 2px 8px; align-items: start; padding: 7px 0; border-top: 1px solid #202020; font-size: 12px; }
+    .ui-stop time { color: #8d8d89; font-size: 11px; line-height: 1.5; }
+    .ui-stop p { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ui-stop .ui-pill { grid-column: 2; justify-self: start; margin-top: 2px; }
+    .ui-stop--done p { color: #8d8d89; }
+    .ui-stop--now { background: #141b0c; margin: 0 -12px; padding-left: 12px; padding-right: 12px; border-top-color: #2b3519; }
+    @media (max-width: 760px) { .ui-crews { grid-template-columns: 1fr; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Field Service Time Tracking Software | Workzenly",
+        "description": "Field service time tracking software for cleaning, landscaping and service crews: clock in at each site inside a geofence, hours by site, into payroll.",
+        "url": "https://workzenly.com/solutions/field-services/",
+        "dateModified": "2026-11-12",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://workzenly.com/solutions/" },
+          { "@type": "ListItem", "position": 3, "name": "Field services", "item": "https://workzenly.com/solutions/field-services/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does Workzenly track my techs between sites?", "acceptedAnswer": { "@type": "Answer", "text": "No. Location is recorded at clock-in and clock-out, nothing in between. A geofence sits around each customer address, and a punch outside it is flagged for the crew lead with the distance from the site." } },
+          { "@type": "Question", "name": "How does a tech clock in at several sites in one day?", "acceptedAnswer": { "@type": "Answer", "text": "The day is a list of site stops on the tech's phone. On arrival at each site they clock in there, which closes the previous stop. The minutes between sites stay on the clock as paid time, lunch is clocked as a break, and the final clock-out is at the last site." } },
+          { "@type": "Question", "name": "Is travel time between job sites paid?", "acceptedAnswer": { "@type": "Answer", "text": "Under the Fair Labor Standards Act, travel between job sites during the workday is work time and must be counted as hours worked (29 CFR 785.38). The normal drive from home to the first site and home from the last one is not (29 CFR 785.35), unless the employee first reports to your yard to load tools, in which case the clock starts there. Workzenly keeps the between-site minutes on the clock." } },
+          { "@type": "Question", "name": "Can a crew lead see who is at which site?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A crew lead sees their own crew: who is clocked in, at which site, since when, and whether the punch was inside the geofence. Late starts, missed clock-outs and anyone close to 40 hours are flagged. Crew leads approve their crew's timesheets; pay rates stay with the people you give payroll access to." } },
+          { "@type": "Question", "name": "How do techs get paid back for supplies they buy on the road?", "acceptedAnswer": { "@type": "Answer", "text": "They photograph the receipt in the Workzenly app, pick a category, add a note and send it. The owner or crew lead approves it with the receipt in view, and the claim is paid with the next paycheck as its own line on the pay stub, separate from wages." } },
+          { "@type": "Question", "name": "How fast can I onboard a seasonal crew?", "acceptedAnswer": { "@type": "Answer", "text": "Send the offer letter from Workzenly and the new hire signs it, fills in the W-4 and I-9 Section 1, adds direct deposit and reads the handbook on their phone before day one. You complete I-9 Section 2 within three business days of the start. Someone rehired within three years of their original Form I-9 can come back on Supplement B, according to USCIS." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="field service time tracking software" data-intent="transactional" data-topic="Field services">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 17.5h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 7h10v9H3zM13 10h4.5l3 3v3H13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14M5 19l7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-spray" viewBox="0 0 24 24"><path d="M8 9h7l1 11H7zM10 9V6h3v3M13 6h4M18.5 4v.1M20 6.5v.1M18.5 9v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0 4.8 5.3L9 21.5a2 2 0 0 1-2.8-2.8l9.7-10.3a4 4 0 0 0 5.2-4.9l-2.6 2.5-2.6-.6-.6-2.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8h6M9 12h6M9 16h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52"></a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/solutions/" aria-current="page">Solutions</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/pricing/">Pricing</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/solutions/">Solutions</a></li><li aria-current="page">Field services</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Cleaning, landscaping and field crews</span>
+        <h1 id="hero-title">Field service time tracking software for crews on the road</h1>
+        <p class="fp-lead">Workzenly is field service time tracking software for US cleaning, landscaping, pest control and service companies. Give each crew its day as a list of sites, let techs clock in on arrival from their phones inside a geofence at each customer address, see who is where from the office, and send hours by site, overtime and receipts into payroll.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>A geofence per customer site</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours by site, travel kept on the clock</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Receipts paid with the paycheck</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly crews board for Redbud Facility Services on Thursday, November 12 at 10:42 AM: three crews, each a list of site stops with clock-in status, seven people on the clock and one punch flagged outside a geofence">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/crews</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span class="is-on"><svg><use href="#i-pin"/></svg></span>
+              <span><svg><use href="#i-cal"/></svg></span>
+              <span><svg><use href="#i-sheet"/></svg></span>
+              <span><svg><use href="#i-pay"/></svg></span>
+              <span><svg><use href="#i-users"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Today’s crews</p><p class="ui-sub">Redbud Facility Services · Oklahoma City, OK · Thu, Nov 12 · 10:42 AM</p></div>
+                <div class="ui-seg" aria-hidden="true"><span class="is-on">Today</span><span>Week</span><span>Pay period</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>9</b><small>Site stops today</small><em>3 crews</em></div>
+                <div class="ui-kpi"><b>3</b><small>Stops done</small><em>2 on site now</em></div>
+                <div class="ui-kpi"><b>7</b><small>On the clock</small><em>of 7 scheduled</em></div>
+                <div class="ui-kpi"><b>1</b><small>Flag</small><em class="is-warn">Outside geofence</em></div>
+              </div>
+              <div class="ui-crews">
+                <div class="ui-crew">
+                  <div class="ui-crew__head"><b>Crew A · Grounds</b><small>Marco Hernandez, Devon Osei · 7:00 AM–5:30 PM</small></div>
+                  <div class="ui-stop ui-stop--done"><time>7:00–9:00</time><p>Meridian Office Park</p><span class="ui-pill ui-pill--ok">Done</span></div>
+                  <div class="ui-stop ui-stop--now"><time>9:15–11:30</time><p>Westgate Shopping Center</p><span class="ui-pill ui-pill--ok">On site · in 9:15 AM</span></div>
+                  <div class="ui-stop"><time>12:15–2:45</time><p>Lincoln Elementary</p><span class="ui-pill">Next</span></div>
+                  <div class="ui-stop"><time>3:00–5:30</time><p>Quail Creek HOA</p><span class="ui-pill ui-pill--warn">Marco passes 40 h</span></div>
+                </div>
+                <div class="ui-crew">
+                  <div class="ui-crew__head"><b>Crew B · Cleaning</b><small>Keisha Whitaker, Ana Castillo, Linh Pham · 8:00 AM–4:30 PM</small></div>
+                  <div class="ui-stop ui-stop--done"><time>8:00–10:00</time><p>Northside Dental</p><span class="ui-pill ui-pill--ok">Done</span></div>
+                  <div class="ui-stop ui-stop--now"><time>10:30–1:00</time><p>Bricktown Law Offices</p><span class="ui-pill ui-pill--ok">On site · in 10:30 AM</span></div>
+                  <div class="ui-stop"><time>1:30–4:30</time><p>Memorial Road Fitness</p><span class="ui-pill">Next</span></div>
+                </div>
+                <div class="ui-crew">
+                  <div class="ui-crew__head"><b>Crew C · Floor care</b><small>Tom Farrell, Ray Sandoval · 7:30 AM–3:00 PM</small></div>
+                  <div class="ui-stop ui-stop--done"><time>7:30–10:30</time><p>Paseo Market</p><span class="ui-pill ui-pill--bad">Done · 1 outside punch</span></div>
+                  <div class="ui-stop"><time>11:00–3:00</time><p>Capitol Hill Library</p><span class="ui-pill ui-pill--info">Traveling · due 11:00</span></div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="fs-flag">Tom Farrell clocked in at Paseo Market from 0.4 mi away at 7:24 AM</p><small>His supply receipt is stamped 7:19 AM, two blocks from the site · location saved with the punch</small></div><button type="button" class="ui-btn" data-act data-target="fs-flag" data-text="Approved with note: supply run before the first stop. The original punch stays in the history." data-done="Approved">Approve with note</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for the people who run the trucks</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Owners and operations managers</li>
+        <li><svg aria-hidden="true"><use href="#i-users"/></svg>Crew leads</li>
+        <li><svg aria-hidden="true"><use href="#i-spray"/></svg>Cleaners and janitorial techs</li>
+        <li><svg aria-hidden="true"><use href="#i-leaf"/></svg>Landscaping and grounds crews</li>
+        <li><svg aria-hidden="true"><use href="#i-wrench"/></svg>HVAC, plumbing and pest control techs</li>
+        <li><svg aria-hidden="true"><use href="#i-pay"/></svg>Whoever runs payroll on Monday</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">Three trucks are out, the office knows where they should be, nobody knows where they are, and Friday’s hours come in as a text that says “about 48.”</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">One list of sites, one punch at each, one pay run</h2>
+      <p class="fp-problem__p">Field service time tracking software turns each crew’s day into a list of sites. The tech clocks in on arrival at each one, inside a geofence around the customer’s address. The office sees who is at which site, the timesheet shows hours by site with travel kept on the clock, and the approved week goes into payroll without being retyped from a text.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first month</p>
+        <h2 id="outcomes-title">Field employee time tracking you do not have to chase</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><h3>A punch at every site, not one at the end of the day</h3><p>Each customer address gets its own geofence. Techs clock in when they arrive and the previous stop closes. A punch outside the fence is recorded, flagged with the distance and waits for a crew lead.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Who is where, from the office</h3><p>The crews board shows every crew’s stops for today and which one they are on, with the clock-in time. No “where are you” calls. Location is read only when a punch is made, never between punches.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-receipt"/></svg></span><h3>Receipts paid on payday</h3><p>A tech buys floor finish on the way to a job, photographs the receipt in the app and sends it. Approved claims are paid with the next paycheck as their own line on the pay stub, separate from wages.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Long days that add up right</h3><p>A 10-hour day across four sites is counted site by site, with the minutes between them on the clock. Overtime past 40 hours is flagged before it happens and lands in payroll at 1.5 times the regular rate.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">A field service week in Workzenly</h2>
+        <p>From the day you build on Friday to the pay stubs the Friday after, one record carries every site stop.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="A field service week">
+          <button class="fp-tab" role="tab" id="tab-build" aria-controls="panel-build" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-cal"/></svg>Build a crew’s day</b><span>Sites in order, times, who rides along</span></button>
+          <button class="fp-tab" role="tab" id="tab-clock" aria-controls="panel-clock" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-pin"/></svg>Clock in at a site</b><span>From the phone, inside the geofence</span></button>
+          <button class="fp-tab" role="tab" id="tab-receipt" aria-controls="panel-receipt" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-receipt"/></svg>Claim a receipt</b><span>Supplies bought on the road</span></button>
+          <button class="fp-tab" role="tab" id="tab-pay" aria-controls="panel-pay" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-pay"/></svg>Approve and pay</b><span>One tap on Monday, pay stubs on Friday</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-build" aria-labelledby="tab-build">
+          <div>
+            <h3>Build Monday as a list of sites</h3>
+            <p>A crew’s day is a list of site shifts in the order you want them driven, each with a time window and the people on the truck. Start from last week, adjust the times, add the new hire and publish. Everyone on Crew A sees Monday at once. Workzenly does not plan the route; you keep the order you know works.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Site shifts carry the customer address and its geofence</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours per person shown as you build</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved PTO already on the grid</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Building Crew A's Monday, November 16: four site stops from 7 AM to 5:30 PM for Marco Hernandez and Devon Osei, with new hire Nadia Ibarra added to all four">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Build · Crew A · Mon, Nov 16</span></div>
+            <div class="ui-main">
+              <div class="ui-list">
+                <div class="ui-item"><div><p>1 · Meridian Office Park · 7:00 AM–9:00 AM</p><small>Marco Hernandez, Devon Osei · leaf cleanup, 2.0 h</small></div><span class="ui-pill ui-pill--ok">Filled</span></div>
+                <div class="ui-item"><div><p>2 · Westgate Shopping Center · 9:15 AM–11:30 AM</p><small>Marco Hernandez, Devon Osei · 2.25 h · lunch 11:45–12:15</small></div><span class="ui-pill ui-pill--ok">Filled</span></div>
+                <div class="ui-item"><div><p>3 · Lincoln Elementary · 12:15 PM–2:45 PM</p><small>Marco Hernandez, Devon Osei · 2.5 h</small></div><span class="ui-pill ui-pill--ok">Filled</span></div>
+                <div class="ui-item"><div><p>4 · Quail Creek HOA · 3:00 PM–5:30 PM</p><small>Marco Hernandez, Devon Osei · 2.5 h · 10.0 paid hours each for the day</small></div><span class="ui-pill ui-pill--ok">Filled</span></div>
+              </div>
+              <div class="ui-foot"><div><p id="fs-build">Nadia Ibarra starts Monday and has no stops yet</p><small>Offer, W-4 and direct deposit done · I-9 Section 2 due Thu, Nov 19</small></div><button type="button" class="ui-btn" data-act data-target="fs-build" data-text="Nadia added to all four stops · 10.0 h Monday, 40.0 h for the week" data-done="Added">Add Nadia to Crew A</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-clock" aria-labelledby="tab-clock" hidden>
+          <div>
+            <h3>Clock in on arrival, at every site</h3>
+            <p>The tech opens the app at the customer’s address and sees today’s stop, the geofence status and a plain notice of what is recorded. One tap clocks them in here and closes the last stop. The drive between sites stays on the clock as paid time; lunch is clocked as a break.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Location captured with the punch, inside or outside the fence</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Outside punches recorded and flagged, never silently dropped</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>A missed punch can be requested as a fix from the same screen</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Ana Castillo's phone at 10:30 AM at Bricktown Law Offices, stop 2 of 3, inside the geofence, with a location notice and a clock-in button">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Thu, Nov 12 · Crew B</p><p class="ui-title">Stop 2 of 3</p></div>
+              <div class="ui-card">
+                <p class="ui-sub">Bricktown Law Offices · 10:30 AM–1:00 PM</p>
+                <p style="font-size:32px;font-weight:600;letter-spacing:-0.03em;margin:6px 0 2px">10:30 AM</p>
+                <p class="ui-sub">Northside Dental closes when you clock in here</p>
+                <p style="margin-top:10px"><span class="ui-pill ui-pill--ok">Inside geofence · 100 m</span></p>
+              </div>
+              <div class="ui-item"><div><p>Location at clock-in and clock-out</p><small>Redbud records where you are when you punch, to confirm the site. Nothing in between. Seen by you and your crew lead.</small></div></div>
+              <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="fs-phone" data-text="Clocked in at 10:30 AM · Bricktown Law Offices" data-done="Clocked in">Clock in here</button>
+              <p class="ui-sub" id="fs-phone" style="text-align:center">On the clock since 8:30 AM · Northside Dental</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-receipt" aria-labelledby="tab-receipt" hidden>
+          <div>
+            <h3>Supplies bought on the road, paid back on payday</h3>
+            <p>Tom ran out of floor finish before the library job and stopped at the supply house. He photographs the receipt, picks the category, adds a note and sends it from the parking lot. Gail approves it with the receipt in view, and the $125.46 goes on his Nov 20 pay stub as a reimbursement line, apart from wages.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Receipt photo, category and note stay on the claim</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved claims paid with the next paycheck, no petty cash</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Who approved, and when, kept for your accountant</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Expense claim from Tom Farrell: a receipt from OKC Janitorial Supply dated November 12 for two pails of floor finish and three mop heads totaling $125.46, category supplies, waiting for approval">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Expenses · Tom Farrell · Thu, Nov 12</span></div>
+            <div class="ui-main">
+              <div class="ui-split">
+                <div class="ui-card" style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;color:#c9c9c4">
+                  <p style="text-align:center;font-weight:600">OKC JANITORIAL SUPPLY</p>
+                  <p style="text-align:center;color:#8d8d89">Oklahoma City, OK · 11/12/2026 7:19 AM</p>
+                  <p style="margin-top:8px">FLOOR FINISH 5GAL 2 @ 48.00 <span style="float:right">96.00</span></p>
+                  <p>MOP HEADS 3 @ 6.50 <span style="float:right">19.50</span></p>
+                  <p style="margin-top:8px;border-top:1px dashed #333;padding-top:6px">SUBTOTAL <span style="float:right">115.50</span></p>
+                  <p>TAX 8.625% <span style="float:right">9.96</span></p>
+                  <p style="font-weight:600">TOTAL <span style="float:right">125.46</span></p>
+                </div>
+                <div class="ui-list">
+                  <div class="ui-item"><div><p>Amount</p><small>Paid by Tom, personal card</small></div><b>$125.46</b></div>
+                  <div class="ui-item"><div><p>Category</p><small>Supplies</small></div><span class="ui-pill">Nov 1–14</span></div>
+                  <div class="ui-item"><div><p>Note</p><small>Library floors, finish ran out after Paseo</small></div></div>
+                  <div class="ui-item"><div><p>Status</p><small>Sent Thu, Nov 12, 7:31 AM</small></div><span class="ui-pill ui-pill--warn" id="fs-claim">Waiting</span></div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p>Approve to pay on Fri, Nov 20</p><small>Reimbursement line on the pay stub, not wages</small></div><button type="button" class="ui-btn" data-act data-pill="fs-claim" data-pill-text="Approved" data-done="Pays Nov 20">Approve</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pay" aria-labelledby="tab-pay" hidden>
+          <div>
+            <h3>Approve Monday, pay Friday</h3>
+            <p>Timesheets build themselves from the site punches. On Monday, Gail looks only at the flags, approves the pay period in one tap, and the hours, overtime, PTO and approved claims for Nov 1–14 go into the pay run paid on Friday, Nov 20.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime arrives as overtime at 1.5 times the regular rate</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Expense claims arrive as a separate reimbursement line</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours by site stay in the record</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Pay run for November 1 to 14 for seven Redbud Facility Services employees showing regular, overtime, PTO and expense totals, with Tom Farrell's timesheet still waiting">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Payroll · Nov 1–14 · paid Fri, Nov 20</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Employee</th><th class="r">Regular</th><th class="r">Overtime</th><th class="r">PTO</th><th class="r">Expenses</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Marco Hernandez</td><td class="r">80.0</td><td class="r">4.0</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Devon Osei</td><td class="r">72.0</td><td class="r">2.5</td><td class="r">–</td><td class="r">$48.20</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Keisha Whitaker</td><td class="r">80.0</td><td class="r">–</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Ana Castillo</td><td class="r">71.5</td><td class="r">–</td><td class="r">8.0</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Linh Pham</td><td class="r">80.0</td><td class="r">1.5</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Tom Farrell</td><td class="r">80.0</td><td class="r">–</td><td class="r">–</td><td class="r">$125.46</td><td><span class="ui-pill ui-pill--warn" id="fs-tom">Waiting</span></td></tr>
+                  <tr><td>Ray Sandoval</td><td class="r">68.0</td><td class="r">–</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>1 timesheet waiting</p><small>Tom Farrell · the Thursday flag is cleared · approve to send 80.0 h and $125.46 to payroll</small></div><button type="button" class="ui-btn" data-act data-pill="fs-tom" data-pill-text="Approved" data-done="Sent to payroll">Approve</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="Field service details">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Overtime on long days</p>
+          <h2>A 10-hour day across four sites, counted to the minute</h2>
+          <p>Leaf season means long days. Marco worked 10.5, 11.0 and 11.0 hours Monday through Wednesday, so he reaches 40 at 3:00 PM Thursday, the moment he clocks in at Quail Creek HOA. Workzenly keeps the between-site minutes on the clock, deducts the clocked lunch and marks the last 2.5 hours as overtime.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours by site, with travel after each stop shown on its own</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>People near 40 hours flagged before the shift that crosses it</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime at 1.5 times the regular rate, into payroll as overtime</li>
+          </ul>
+          <a class="fp-row__more" href="/features/overtime-tracking/">See overtime tracking <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Marco Hernandez's Thursday, November 12 timesheet: four sites with arrival and departure times, 9.25 site hours plus 0.75 hours of travel for 10.0 paid hours, of which 2.5 hours at Quail Creek HOA are overtime">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Timesheet · Marco Hernandez · Thu, Nov 12</span></div>
+          <div class="ui-main ui-scroll">
+            <table class="ui-table">
+              <thead><tr><th>Stop</th><th>Arrived</th><th>Left</th><th class="r">At site</th><th class="r">Travel after</th><th>Pay</th></tr></thead>
+              <tbody>
+                <tr><td>Meridian Office Park</td><td>7:00 AM</td><td>9:00 AM</td><td class="r">2.00</td><td class="r">0.25</td><td><span class="ui-pill">Regular</span></td></tr>
+                <tr><td>Westgate Shopping Center</td><td>9:15 AM</td><td>11:30 AM</td><td class="r">2.25</td><td class="r">0.25</td><td><span class="ui-pill">Regular</span></td></tr>
+                <tr><td>Lunch break<small>Clocked, unpaid</small></td><td>11:45 AM</td><td>12:15 PM</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill">Unpaid</span></td></tr>
+                <tr><td>Lincoln Elementary</td><td>12:15 PM</td><td>2:45 PM</td><td class="r">2.50</td><td class="r">0.25</td><td><span class="ui-pill">Regular</span></td></tr>
+                <tr><td>Quail Creek HOA</td><td>3:00 PM</td><td>5:30 PM</td><td class="r">2.50</td><td class="r">–</td><td><span class="ui-pill ui-pill--warn">Overtime</span></td></tr>
+                <tr><td><b>Thursday</b><small>Week: 32.5 h before today</small></td><td colspan="2"></td><td class="r"><b>9.25</b></td><td class="r"><b>0.75</b></td><td>10.00 h paid</td></tr>
+              </tbody>
+            </table>
+            <div class="ui-foot"><div><p id="fs-ot">7.5 regular hours, then 2.5 overtime from 3:00 PM at Quail Creek HOA</p><small>Week: 42.5 h · 40.0 at $22.00 = $880.00 · 2.5 at $33.00 = $82.50</small></div><button type="button" class="ui-btn" data-act data-target="fs-ot" data-text="Thursday approved. 42.5 h sent to the Nov 1–14 timesheet, 2.5 as overtime." data-done="Approved">Approve day</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">The crew lead’s view</p>
+          <h2>A mobile workforce time clock the crew lead can see</h2>
+          <p>Keisha runs Crew B from the truck. Her view shows her own crew only: who is clocked in, at which site, since when, and whether the punch was inside the geofence. Ana’s late start is flagged with the minutes, and Linh’s week is shown against 40 so Keisha knows Friday will cost overtime before Friday comes.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Late starts, missed clock-outs and outside punches flagged</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours this week against 40 for each person on the crew</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Fix a punch with a note; the original stays in the history</li>
+          </ul>
+          <a class="fp-row__more" href="/features/time-and-attendance/">See time and attendance <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Crew lead Keisha Whitaker's view of Crew B at 10:42 AM on Thursday: all three clocked in at Bricktown Law Offices inside the geofence, Ana Castillo late 30 minutes at the first stop, Linh Pham near 40 hours">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">My crew · Crew B · Thu, Nov 12 · 10:42 AM</span></div>
+          <div class="ui-main ui-scroll">
+            <table class="ui-table">
+              <thead><tr><th>Employee</th><th>Site now</th><th>In</th><th>Location</th><th class="r">Week by Thu</th><th>Flag</th></tr></thead>
+              <tbody>
+                <tr><td>Keisha Whitaker</td><td>Bricktown Law Offices</td><td>10:30 AM</td><td><span class="ui-pill ui-pill--ok">Inside</span></td><td class="r">32.0</td><td>–</td></tr>
+                <tr><td>Ana Castillo</td><td>Bricktown Law Offices</td><td>10:31 AM</td><td><span class="ui-pill ui-pill--ok">Inside</span></td><td class="r">31.5</td><td><span class="ui-pill ui-pill--warn">Late 30 min at stop 1</span></td></tr>
+                <tr><td>Linh Pham</td><td>Bricktown Law Offices</td><td>10:30 AM</td><td><span class="ui-pill ui-pill--ok">Inside</span></td><td class="r">33.5</td><td><span class="ui-pill ui-pill--warn">Near 40 h</span></td></tr>
+              </tbody>
+            </table>
+            <div class="ui-foot"><div><p id="fs-lead">Linh passes 40 hours at 3:00 PM Friday</p><small>Friday’s three stops add 8.0 h · 1.5 h would be overtime</small></div><button type="button" class="ui-btn" data-act data-target="fs-lead" data-text="Gail notified. Friday stays as scheduled with 1.5 h overtime budgeted." data-done="Sent">Tell Gail now</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">The employee side</p>
+          <h2>One app for every tech, on the phone already in their pocket</h2>
+          <p>Techs see today’s stops in order, clock in at each one, check their hours, send a receipt, request a day off with their balance in front of them and read their pay stub on Friday. Each person sees only their own record.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Today’s sites, hours this week and the next paycheck on one screen</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Receipt claims and PTO requests in two taps</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>The handbook and the location policy, searchable</li>
+          </ul>
+          <a class="fp-row__more" href="/features/employee-app/">See the employee app <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-phone" role="img" aria-label="Employee app home screen for Devon Osei on Thursday, November 12: on site at Westgate Shopping Center since 9:15 AM, two stops left, 32.0 hours this week, an approved $48.20 mulch receipt and the next paycheck on November 20">
+          <div class="ui-phone__screen">
+            <div class="ui-phone__notch"></div>
+            <div><p class="ui-sub">Thu, Nov 12</p><p class="ui-title">Good morning, Devon</p></div>
+            <div class="ui-card">
+              <p class="ui-sub">Crew A · Westgate Shopping Center</p>
+              <p style="font-size:32px;font-weight:600;letter-spacing:-0.03em;margin:6px 0 2px">9:15 AM</p>
+              <p class="ui-sub">On site · stop 2 of 4 · next Lincoln Elementary 12:15 PM</p>
+              <p style="margin-top:10px"><span class="ui-pill ui-pill--ok">Inside geofence</span></p>
+            </div>
+            <div class="ui-item"><div><p>Hours this week</p><small>32.0 of 40 by end of today</small></div><span class="ui-pill">Timesheet</span></div>
+            <div class="ui-item"><div><p>Mulch · $48.20</p><small>Approved · pays Fri, Nov 20</small></div><span class="ui-pill ui-pill--ok">Approved</span></div>
+            <div class="ui-item"><div><p>PTO left</p><small>36 of 40 hours</small></div><span class="ui-pill">Request</span></div>
+            <div class="ui-item"><div><p>Next paycheck</p><small>Fri, Nov 20 · Nov 1–14</small></div><span class="ui-pill ui-pill--ok">Pay stub</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One record, from the owner to the newest seasonal hire</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owner or operations manager</h3></div><div><span>Replaces</span><p>A whiteboard of routes, a stack of texted hours and a payroll login</p></div><div><span>They use it to</span><p>Build each crew’s day, watch the crews board, clear flags, run payroll from approved hours</p></div><div><span>What they notice</span><p>Hours by site they trust before payroll</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Crew lead</h3></div><div><span>Replaces</span><p>Calling around to see who made it to the site</p></div><div><span>They use it to</span><p>See their crew’s punches, fix a missed punch with a note, approve their crew’s timesheets</p></div><div><span>What they notice</span><p>A short list of flags instead of a long list of rows</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Technicians and cleaners</h3></div><div><span>Replaces</span><p>A paper route sheet and a text with the day’s hours</p></div><div><span>They use it to</span><p>See today’s sites, clock in at each one, send a receipt, request PTO, read their pay stub</p></div><div><span>What they notice</span><p>Pay stubs that match the sites they worked, with the mulch money on them</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Seasonal hires</h3></div><div><span>Replaces</span><p>A clipboard of forms on the first morning</p></div><div><span>They use it to</span><p>Sign the offer, fill in the W-4 and I-9 Section 1, add direct deposit, read the handbook on their phone</p></div><div><span>What they notice</span><p>They start on the truck, not in the office</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Everyone sees what they need, and nothing else</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Techs see their own</h3><p>Each person sees their own stops, punches, hours, claims and pay stubs, never a coworker’s pay or location.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Crew leads see their crew</h3><p>Crew leads see their own crew’s punches, flags and time off, and approve their crew’s timesheets, not another crew’s.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates, pay stubs and reimbursement totals are visible only to the people you give payroll access to.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">The features field crews use most</p>
+        <h2 id="connect-title">Everything a field service week needs</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/gps-time-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><h3>GPS time tracking</h3><p>A geofence around each customer address, location saved with every punch, outside punches flagged.</p><span>GPS time tracking →</span></a>
+        <a class="fp-link-card" href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Crew scheduling</h3><p>Each crew’s day as a list of site shifts, published to every phone at once.</p><span>Scheduling →</span></a>
+        <a class="fp-link-card" href="/features/expenses/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-receipt"/></svg></span><h3>Expenses</h3><p>Receipts photographed on the road, approved with the photo in view, paid with the paycheck.</p><span>Expenses →</span></a>
+        <a class="fp-link-card" href="/features/overtime-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime tracking</h3><p>Weekly totals against 40 as long days add up, with a warning before the stop that crosses it.</p><span>Overtime →</span></a>
+        <a class="fp-link-card" href="/features/onboarding/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Onboarding</h3><p>Offer letter, W-4, I-9 Section 1 and direct deposit on a seasonal hire’s phone before day one.</p><span>Onboarding →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Approved hours, overtime, PTO and reimbursements become pay stubs in the app.</p><span>Payroll →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">See your crews’ day in Workzenly</h2>
+        <p>Tell us how many trucks go out and how many sites a crew visits in a day. We set up a demo workspace with your company’s name before the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it needs to do</a></li>
+            <li><a href="#g-travel">Travel time between sites</a></li>
+            <li><a href="#g-phones">Personal phones and reimbursement</a></li>
+            <li><a href="#g-notice">Telling employees about location</a></li>
+            <li><a href="#g-seasonal">Seasonal hiring and the I-9</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>See your own crews and sites in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The owner’s guide to field service time tracking software</h2>
+        <p>A cleaning, landscaping, pest control or service company pays by the hour for work that happens somewhere else, usually several somewhere-elses a day. This guide covers what field service time tracking software has to handle, the federal rule on travel between sites, personal phones and reimbursement, telling employees about location checks, and the paperwork timing behind seasonal hiring.</p>
+
+        <h3 id="g-what">What field service time tracking software needs to do</h3>
+        <p>Five jobs, in order. Give each crew its day as a list of sites with times and the people on the truck. Record a punch at each site from a phone, inside a geofence around the customer’s address. Show the office who is where, from the punches alone. Count the day correctly: hours by site, travel on the clock, lunch off it, overtime once the week passes 40. Then pay for exactly the approved hours, with the receipts from the road on the same pay stub. In Workzenly, <a href="/features/scheduling/">scheduling</a>, <a href="/features/gps-time-tracking/">GPS time tracking</a>, <a href="/features/timesheets/">timesheets</a>, <a href="/features/expenses/">expenses</a> and <a href="/features/payroll/">payroll</a> are those five jobs on one record.</p>
+        <p>Be clear about what this software is not. Workzenly does not plan routes, send invoices, take customer bookings, log mileage or dispatch jobs by message. Our comparison of the <a href="/tools/best-gps-time-clock-apps/">best GPS time clock apps</a> shows how the clocks differ, and the <a href="/blog/gps-time-clock-app/">GPS time clock app guide</a> explains what a location-stamped punch does and does not tell you.</p>
+
+        <h3 id="g-travel">Travel time between sites is paid</h3>
+        <p>This is the rule most often broken when each tech texts in one number at the end of the day. Under the Fair Labor Standards Act, time spent traveling between job sites during the workday is work time and must be counted as hours worked (29 CFR 785.38). The ordinary drive from home to the first site, and home from the last one, is not work time (29 CFR 785.35), whether the employee works at one place or at different sites. If the employee must report to your yard first to load the truck or pick up tools, the clock starts there and the drive to the first site is paid, under the same section. The Department of Labor’s Fact Sheet 22 summarizes both rules.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Part of the day</th><th>Paid under the FLSA?</th><th>How Workzenly records it</th></tr></thead>
+            <tbody>
+              <tr><td>Home to the first site</td><td>No, ordinary commute (29 CFR 785.35)</td><td>Not on the clock until the tech clocks in at the site</td></tr>
+              <tr><td>Reporting to the yard, then driving to the first site</td><td>Yes, from arrival at the yard (29 CFR 785.38)</td><td>Make the yard a site with its own geofence and clock in there</td></tr>
+              <tr><td>Driving between sites during the day</td><td>Yes, hours worked (29 CFR 785.38)</td><td>Stays on the clock; shown as travel after each stop</td></tr>
+              <tr><td>Lunch, 30 minutes or more, fully relieved</td><td>No (Fact Sheet 22)</td><td>Clocked as a break and deducted</td></tr>
+              <tr><td>Last site to home</td><td>No, ordinary commute (29 CFR 785.35)</td><td>Ends at the clock-out at the last site</td></tr>
+              <tr><td>Hours past 40 in the workweek</td><td>At least 1.5 times the regular rate</td><td>Marked as overtime as it happens, flagged beforehand</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A few states define hours worked more broadly than the FLSA, so check your state before you set the rule. The overtime math is in our guide to <a href="/blog/how-to-calculate-overtime/">how to calculate overtime</a>. If you reimburse driving in a personal vehicle, our <a href="/blog/irs-mileage-rate/">IRS mileage rate</a> guide covers the rate and whether you have to pay it; Workzenly does not log mileage, so that stays in a separate record.</p>
+
+        <h3 id="g-phones">Personal phones and reimbursement</h3>
+        <p>Most field crews clock in on their own phones, and most will not mind if two things are handled. The first is cost. California Labor Code section 2802 requires employers to reimburse necessary work expenses, and a 2014 California appeals court decision applied it to a reasonable share of personal cell phone bills. The Illinois Wage Payment and Collection Act also requires reimbursement of necessary work expenses, which can include part of a personal phone bill. In Workzenly the employee sends the phone share as a claim with a photo of the bill, paid with the next paycheck under your policy.</p>
+        <p>The second is choice. Someone who would rather not install a work app on their own phone should still be able to clock in. A shared tablet works as a <a href="/features/time-clock-kiosk/">time clock kiosk</a> with a PIN per person, at the yard or riding in the truck.</p>
+
+        <h3 id="g-notice">Telling employees about location checks</h3>
+        <p>Say plainly what is recorded. With Workzenly that is one sentence: your location at clock-in and clock-out, to confirm the site, and nothing in between. Put it in the handbook and have each person acknowledge it. New York, Connecticut and Delaware require written notice of certain electronic monitoring, and California’s privacy law covers employee data. New York’s Civil Rights Law section 52-c, in effect since May 7, 2022, requires written or electronic notice at hiring, an acknowledgment and a posted notice; it is written around phone, email and internet monitoring, so cover a location check in the same notice rather than assume it is exempt. The law here is a patchwork, so the safest approach is clear notice and a narrow scope.</p>
+        <p>Set the geofence with the phone’s limits in mind. GPS-enabled phones are typically accurate to within about 16 feet under open sky, and accuracy worsens near buildings, bridges and trees, according to GPS.gov. Android’s developer documentation recommends a minimum geofence radius of 100 to 150 meters, about 330 to 490 feet. If honest punches keep landing just outside, widen the radius; the punch is flagged, never thrown away. Our guide <a href="/blog/what-is-a-geofence/">what is a geofence</a> covers radius and the notice laws in detail.</p>
+
+        <h3 id="g-seasonal">Seasonal hiring and the I-9</h3>
+        <p>Leaf season, mowing season and the summer pest rush all mean hiring in a hurry, often people who worked for you last year. The paperwork has fixed deadlines. The employee must complete Section 1 of Form I-9 no later than their first day of employment, and the employer must complete Section 2 within three business days of the hire, according to USCIS. Someone you rehire within three years of the date their previous Form I-9 was completed can come back on Supplement B of that form instead of a new one; after three years, a new form is required. Our <a href="/blog/i-9-form/">Form I-9 guide</a> covers the documents.</p>
+        <p>Workzenly <a href="/features/onboarding/">onboarding</a> sends the offer letter, W-4, I-9 Section 1, direct deposit form and handbook to the new hire’s phone the day they accept, so a seasonal crew member arrives Monday ready to ride, with the documents in their record. Section 2 still needs you or a crew lead to look at the documents in person. For a tech without a phone in the first week, our free <a href="/templates/timesheet-templates/">timesheet templates</a> keep the hours by site on paper until they are in the app.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Wage, travel-time and monitoring rules change, and states differ, so check your state labor department or an employment lawyer for your situation.</p>
+
+        <h3 id="g-choose">How to choose</h3>
+        <ol>
+          <li><strong>Run one real day through it.</strong> Take a crew’s actual day with four sites, a supply stop and a late start, and see which tool gets the paid hours right with the fewest manual steps.</li>
+          <li><strong>Check what the geofence does with an outside punch.</strong> Blocking it leaves a tech unpaid in a parking lot. Flagging it keeps people working and gives you the record.</li>
+          <li><strong>Ask what is recorded between punches.</strong> If the answer is “a breadcrumb trail,” ask whether your crews will install it. Clock-in and clock-out location is enough to confirm the site.</li>
+          <li><strong>Look at the receipt flow.</strong> A tech who fronts $125 for floor finish wants it on the next pay stub. Check that approved claims reach payroll without retyping.</li>
+          <li><strong>Count the hand-offs.</strong> Every time hours move between tools, someone fixes a pay stub later. Cleaning company scheduling software that stops at the schedule, or janitorial scheduling software with no time clock, still leaves hours to retype. Our <a href="/blog/how-to-process-payroll/">payroll process guide</a> lists every step of a pay run.</li>
+        </ol>
+        <p>To see your own crews’ day in Workzenly, <a href="/#start">book a demo</a> and we will set up a workspace with your company’s name and a few of your sites before the call. Plans and prices are on the <a href="/pricing/">pricing page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions from field service owners about time tracking software</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>Does Workzenly track my techs between sites?</summary><p>No. Location is recorded at clock-in and clock-out, nothing in between. A geofence sits around each customer address, and a punch outside it is flagged for the crew lead with the distance from the site.</p></details>
+        <details><summary>How does a tech clock in at several sites in one day?</summary><p>The day is a list of site stops on the tech’s phone. On arrival at each site they clock in there, which closes the previous stop. The minutes between sites stay on the clock as paid time, lunch is clocked as a break, and the final clock-out is at the last site.</p></details>
+        <details><summary>Is travel time between job sites paid?</summary><p>Under the Fair Labor Standards Act, travel between job sites during the workday is work time and must be counted as hours worked (29 CFR 785.38). The normal drive from home to the first site and home from the last one is not (29 CFR 785.35), unless the employee first reports to your yard to load tools, in which case the clock starts there. Workzenly keeps the between-site minutes on the clock.</p></details>
+        <details><summary>Can a crew lead see who is at which site?</summary><p>Yes. A crew lead sees their own crew: who is clocked in, at which site, since when, and whether the punch was inside the geofence. Late starts, missed clock-outs and anyone close to 40 hours are flagged. Crew leads approve their crew’s timesheets; pay rates stay with the people you give payroll access to.</p></details>
+        <details><summary>How do techs get paid back for supplies they buy on the road?</summary><p>They photograph the receipt in the Workzenly app, pick a category, add a note and send it. The owner or crew lead approves it with the receipt in view, and the claim is paid with the next paycheck as its own line on the pay stub, separate from wages.</p></details>
+        <details><summary>How fast can I onboard a seasonal crew?</summary><p>Send the offer letter from Workzenly and the new hire signs it, fills in the W-4 and I-9 Section 1, adds direct deposit and reads the handbook on their phone before day one. You complete I-9 Section 2 within three business days of the start. Someone rehired within three years of their original Form I-9 can come back on Supplement B, according to USCIS.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for field service teams</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/gps-time-clock-app/"><small>GUIDE</small><b>GPS time clock apps: what a location-stamped punch tells you</b></a>
+        <a href="/tools/best-gps-time-clock-apps/"><small>COMPARISON</small><b>Best GPS time clock apps</b></a>
+        <a href="/templates/timesheet-templates/"><small>TEMPLATES</small><b>Free timesheet templates</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52" loading="lazy"></a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features and solutions"><h2>People and industries</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+        <li><a href="/solutions/">Solutions by industry</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>

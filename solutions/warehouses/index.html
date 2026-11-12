@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warehouse Time and Attendance Software | Workzenly</title>
+  <meta name="description" content="Warehouse time and attendance software for three shifts: PIN kiosk at the door, nights that cross midnight, differentials in overtime, approval by shift lead.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/solutions/warehouses/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/solutions/warehouses/">
+  <meta property="og:title" content="Warehouse Time and Attendance Software | Workzenly">
+  <meta property="og:description" content="Warehouse time and attendance software for three shifts: PIN kiosk at the door, nights that cross midnight, differentials in overtime, approval by shift lead.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    /* Page-local: the three-shift grid and the rotation pattern grid */
+    .ui-grid { display: grid; grid-template-columns: 104px repeat(5, minmax(0, 1fr)); gap: 4px; font-size: 11.5px; }
+    .ui-grid > b { font-weight: 400; color: #8d8d89; padding: 4px 0; font-size: 11px; }
+    .ui-grid .ui-who { padding: 6px 0; display: grid; gap: 1px; align-content: center; }
+    .ui-grid .ui-who small { color: #7d7d79; font-size: 10.5px; }
+    .ui-shift { border-radius: 6px; padding: 5px 6px; background: #1b1b1b; border: 1px solid #262626; color: #d7d7d2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: center; }
+    .ui-shift--first { background: #1c2412; border-color: #2f3f1a; color: var(--accent); }
+    .ui-shift--second { background: #2a2110; border-color: #3f3318; color: var(--warn); }
+    .ui-shift--third { background: #13202e; border-color: #1e3247; color: var(--info); }
+    .ui-shift--pto { background: transparent; border: 1px dashed #3a3a38; color: #9d9d99; }
+    .ui-shift--open { background: transparent; border: 1px dashed #ff9a85; color: var(--bad); }
+    .ui-shift--off { background: transparent; border-color: transparent; color: #4d4d4a; }
+    .ui-grid--cycle { grid-template-columns: 64px repeat(14, minmax(0, 1fr)); gap: 3px; }
+    .ui-grid--cycle .ui-shift { padding: 5px 0; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Warehouse Time and Attendance Software | Workzenly",
+        "description": "Warehouse time and attendance software for three shifts: PIN kiosk at the door, nights that cross midnight, differentials in overtime, approval by shift lead.",
+        "url": "https://workzenly.com/solutions/warehouses/",
+        "dateModified": "2026-11-12",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://workzenly.com/solutions/" },
+          { "@type": "ListItem", "position": 3, "name": "Warehouses and manufacturing", "item": "https://workzenly.com/solutions/warehouses/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Can the floor clock in without phones?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A shared tablet at the floor entrance works as a time clock kiosk. Each person enters their own PIN, sees their name and shift, and taps to clock in, start a break or clock out, while phones stay in the lockers. Kiosk and phone punches land in the same timesheet, so a forklift operator at the door and a supervisor on a phone are counted the same way." } },
+          { "@type": "Question", "name": "How does warehouse time and attendance software handle a shift differential in overtime?", "acceptedAnswer": { "@type": "Answer", "text": "A shift differential counts toward the regular rate under federal rules, so overtime is 1.5 times the higher rate, not the base wage. Workzenly adds the differential to the week's straight-time earnings before it prices the overtime. A picker at $18.00 with 44 hours, 40 of them nights at a $1.50 differential, has a regular rate of $852.00 ÷ 44 = $19.3636, an overtime premium of 4 × $19.3636 × 0.5 = $38.73, and a week of $890.73." } },
+          { "@type": "Question", "name": "What happens to a night shift that crosses midnight?", "acceptedAnswer": { "@type": "Answer", "text": "Every hour is counted in the workweek it falls in, using the workweek start you set with us. With a Sunday-midnight start, a Saturday 10:00 PM to 6:30 AM shift puts 2.0 hours in the week that is ending and 6.0 hours, after the meal break, in the week that is starting. Many three-shift operations start the workweek at a shift change instead, such as Saturday 10:00 PM, so every night shift stays whole. 29 CFR 778.105 lets a workweek begin on any day and at any hour." } },
+          { "@type": "Question", "name": "Can it run a 2-2-3 or DuPont rotation?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Build the cycle once, copy it forward and publish weeks ahead. Workzenly shows hours per person per workweek as you build, which matters because a 2-2-3 schedule alternates 36 and 48 hours with a Sunday-start workweek and a DuPont schedule produces weeks of 48, 72, 48 and 0. Each workweek is counted on its own, so the 42-hour average does not stop the overtime." } },
+          { "@type": "Question", "name": "Can each shift lead approve only their own crew?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A shift lead sees their own team's schedule, attendance and timesheets and approves that team's week, and nothing from the other shifts. Pay rates and pay stubs are visible only to the people you give payroll access to, and each employee sees only their own record." } },
+          { "@type": "Question", "name": "How do we onboard temp-to-hire workers?", "acceptedAnswer": { "@type": "Answer", "text": "When a temp moves onto your payroll, you are now the employer. Send the offer letter from Workzenly; the new hire signs it, completes the W-4 and I-9 Section 1, adds direct deposit and reads the handbook on their phone before their first shift on your books, and their forklift certification is stored with their record. Until that day the staffing agency pays them, so ask the agency how its hours and yours line up." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="warehouse time and attendance software" data-intent="transactional" data-topic="Warehouses and manufacturing">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 17.5h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-keypad" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 8h.1M12 8h.1M15 8h.1M9 12h.1M12 12h.1M15 12h.1M9 16h.1M12 16h.1M15 16h.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52"></a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/solutions/" aria-current="page">Solutions</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/pricing/">Pricing</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/solutions/">Solutions</a></li><li aria-current="page">Warehouses and manufacturing</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Warehouses, distribution centers and plants</span>
+        <h1 id="hero-title">Warehouse time and attendance software built for three shifts</h1>
+        <p class="fp-lead">Workzenly is warehouse time and attendance software for US operations on first, second and third shift. A tablet at the floor entrance clocks everyone in by PIN while phones stay in the lockers. Night shifts that cross midnight land in the right workweek, differentials go into the overtime rate, and each shift lead approves their own crew before payroll.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>PIN kiosk at the door</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Differentials in the overtime rate</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approval per shift lead</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly attendance board for Ironbend Fulfillment at 2:12 PM on Thursday November 12: three first-shift and two second-shift employees clocked in, four from the kiosk and one from a phone, Simone Delacroix not in yet, two third-shift employees due at 10:00 PM">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/attendance/today</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span class="is-on"><svg><use href="#i-clock"/></svg></span>
+              <span><svg><use href="#i-cal"/></svg></span>
+              <span><svg><use href="#i-sheet"/></svg></span>
+              <span><svg><use href="#i-pay"/></svg></span>
+              <span><svg><use href="#i-users"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Who’s in</p><p class="ui-sub">Ironbend Fulfillment · Louisville, KY · Thu, Nov 12 · 2:12 PM · shift change</p></div>
+                <div class="ui-seg" aria-hidden="true"><span class="is-on">Today</span><span>Week</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>5</b><small>Clocked in</small><em>3 on 1st · 2 on 2nd</em></div>
+                <div class="ui-kpi"><b>4</b><small>Kiosk punches</small><em>1 from a phone</em></div>
+                <div class="ui-kpi"><b>1</b><small>Not in yet</small><em class="is-warn">Simone · due 2:00 PM</em></div>
+                <div class="ui-kpi"><b>2</b><small>Due tonight</small><em>3rd shift · 10:00 PM</em></div>
+              </div>
+              <div class="ui-card ui-scroll">
+                <div class="ui-card__head"><b>Today’s roster by shift</b><span class="ui-legend"><span><i style="background:#dafa9c"></i>1st 6–2:30</span><span><i style="background:#f2c36b"></i>2nd 2–10:30</span><span><i style="background:#9cc8fa"></i>3rd 10p–6:30a</span></span></div>
+                <table class="ui-table" style="min-width:480px">
+                  <thead><tr><th>Employee</th><th>Shift</th><th>In</th><th>Via</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td>Tamika Olsen<small>Shift lead</small></td><td>1st</td><td>5:52 AM</td><td>Kiosk · dock door</td><td><span class="ui-pill ui-pill--ok">On the clock</span></td></tr>
+                    <tr><td>Devon Castillo<small>Picker</small></td><td>1st</td><td>5:58 AM</td><td>Kiosk · dock door</td><td><span class="ui-pill ui-pill--ok">On the clock</span></td></tr>
+                    <tr><td>Kelsey Whitaker<small>Receiving · forklift</small></td><td>1st</td><td>6:03 AM</td><td>Kiosk · dock door</td><td><span class="ui-pill ui-pill--warn">Late 3 min</span></td></tr>
+                    <tr><td>Greg Pulaski<small>Shift lead</small></td><td>2nd</td><td>1:51 PM</td><td>Kiosk · dock door</td><td><span class="ui-pill ui-pill--ok">On the clock</span></td></tr>
+                    <tr><td>Kofi Boateng<small>Packer</small></td><td>2nd</td><td>1:57 PM</td><td>Phone · inside geofence</td><td><span class="ui-pill ui-pill--ok">On the clock</span></td></tr>
+                    <tr><td>Simone Delacroix<small>Packer</small></td><td>2nd</td><td>–</td><td>–</td><td><span class="ui-pill ui-pill--warn">Due 2:00 PM</span></td></tr>
+                    <tr><td>Ray Adeyemi<small>Shift lead</small></td><td>3rd</td><td>–</td><td>–</td><td><span class="ui-pill">Due 10:00 PM</span></td></tr>
+                    <tr><td>Jenna Szabo<small>Picker</small></td><td>3rd</td><td>–</td><td>–</td><td><span class="ui-pill">Due 10:00 PM</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="ui-foot"><div><p id="wh-foot">Simone Delacroix has not clocked in for 2nd shift</p><small>Greg Pulaski is the lead on 2nd · Mateo Ferreira joins 3rd shift Mon, Nov 16</small></div><button type="button" class="ui-btn" data-act data-target="wh-foot" data-text="Message sent. Simone sees it in the app." data-done="Sent">Message Simone</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for the people who run the floor around the clock</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Owners and operations managers</li>
+        <li><svg aria-hidden="true"><use href="#i-users"/></svg>Shift leads on 1st, 2nd and 3rd</li>
+        <li><svg aria-hidden="true"><use href="#i-box"/></svg>Pickers, packers and receivers</li>
+        <li><svg aria-hidden="true"><use href="#i-truck"/></svg>Forklift and dock crews</li>
+        <li><svg aria-hidden="true"><use href="#i-pay"/></svg>Whoever runs payroll on Monday</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">Third shift punched a card at 9:58 PM, somebody fixed a missed clock-out in pen, the night differential lives in a spreadsheet, and payroll works it out on Monday from three stacks.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">Warehouse time and attendance software that counts every shift the same way</h2>
+      <p class="fp-problem__p">One tablet at the door takes the punch. The timesheet works out the break, the late start, the night hours and the overtime, and puts each hour in the workweek it belongs to. The lead who saw the shift approves it. Payroll pays what was approved, with the differential already in the overtime rate.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first month</p>
+        <h2 id="outcomes-title">Cleaner punches, correct overtime, Mondays without the stacks</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-keypad"/></svg></span><h3>A kiosk at the door, phones in the lockers</h3><p>A shared tablet at the floor entrance is the time clock. Each person enters their own PIN, sees their name and shift, and taps. No card to grab for a friend, no phone on the forklift. Supervisors can clock in from the app inside the geofence, and both punches land in one timesheet.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-moon"/></svg></span><h3>Nights counted in the right week</h3><p>A 10:00 PM to 6:30 AM shift is one shift to the person working it and two dates to the timesheet. Workzenly puts every hour in the workweek it falls in, using the start day and hour you set, so a Saturday night never quietly moves overtime between weeks.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Differentials inside the overtime rate</h3><p>Federal rules count a shift differential toward the regular rate. Workzenly adds the night premium to the week’s straight-time pay before pricing the overtime, so the half-time is right and nobody owes back wages later.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Approval by the lead who was there</h3><p>The 3rd-shift lead approves 3rd shift. They see only their crew, fix a missed punch with a note while the original stays, and approve the week in one tap. Payroll gets three approved shifts, not three clipboards.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">A three-shift week in Workzenly</h2>
+        <p>Ironbend Fulfillment runs first shift 6:00 AM to 2:30 PM, second 2:00 PM to 10:30 PM and third 10:00 PM to 6:30 AM, each with a 30-minute unpaid meal break. Here is how the week moves from the schedule to the pay run.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="A three-shift week">
+          <button class="fp-tab" role="tab" id="tab-build" aria-controls="panel-build" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-cal"/></svg>Schedule the shifts</b><span>Three shifts, nine people, one grid</span></button>
+          <button class="fp-tab" role="tab" id="tab-clock" aria-controls="panel-clock" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-keypad"/></svg>Clock in at the door</b><span>Own PIN on the shared tablet</span></button>
+          <button class="fp-tab" role="tab" id="tab-night" aria-controls="panel-night" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-moon"/></svg>Nights across midnight</b><span>Hours land in the right workweek</span></button>
+          <button class="fp-tab" role="tab" id="tab-approve" aria-controls="panel-approve" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-sheet"/></svg>Approve by shift</b><span>Each lead signs off their own crew</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-build" aria-labelledby="tab-build">
+          <div>
+            <h3>Warehouse scheduling software for all three shifts</h3>
+            <p>Start from last week, drag people into first, second and third shift, and watch each person’s weekly hours as you go. Approved PTO is already on the grid, and a new hire’s first day appears when the offer is signed.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours per person while you build, so a Saturday truck is not surprise overtime</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Open shifts offered to people who are free and under 40</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Publish once and every shift sees it in the app</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Three-shift schedule for Ironbend Fulfillment, Monday November 16 to Friday November 20: nine people across first, second and third shift, 344 hours scheduled, Simone Delacroix on PTO Wednesday, Mateo Ferreira starting Monday, one open Saturday morning inbound shift">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Schedule · Mon, Nov 16 – Fri, Nov 20 · published Thu, Nov 12</span></div>
+            <div class="ui-main">
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>344</b><small>Hours scheduled</small><em>9 people</em></div>
+                <div class="ui-kpi"><b>1</b><small>Open shift</small><em class="is-warn">Sat 6–10 AM inbound</em></div>
+                <div class="ui-kpi"><b>1</b><small>PTO on the grid</small><em>Simone · Wed</em></div>
+                <div class="ui-kpi"><b>0</b><small>Over 40 hours</small><em>as scheduled</em></div>
+              </div>
+              <div class="ui-card ui-scroll">
+                <div class="ui-card__head"><b>Shifts</b><span class="ui-legend"><span><i style="background:#dafa9c"></i>1st</span><span><i style="background:#f2c36b"></i>2nd</span><span><i style="background:#9cc8fa"></i>3rd</span></span></div>
+                <div class="ui-grid" style="min-width:540px">
+                  <b></b><b>Mon 16</b><b>Tue 17</b><b>Wed 18</b><b>Thu 19</b><b>Fri 20</b>
+                  <div class="ui-who">Tamika Olsen<small>1st · lead · 40 h</small></div><span class="ui-shift ui-shift--first">6–2:30</span><span class="ui-shift ui-shift--first">6–2:30</span><span class="ui-shift ui-shift--first">6–2:30</span><span class="ui-shift ui-shift--first">6–2:30</span><span class="ui-shift ui-shift--first">6–2:30</span>
+                  <div class="ui-who">Devon Castillo<small>1st · 40 h</small></div><span class="ui-shift ui-shift--first">6–2:30</span><span class="ui-shift ui-shift--first">6–2:30</span><span class="ui-shift ui-shift--first">6–2:30</span><span class="ui-shift ui-shift--first">6–2:30</span><span class="ui-shift ui-shift--first">6–2:30</span>
+                  <div class="ui-who">Kelsey Whitaker<small>1st · 32 h</small></div><span class="ui-shift ui-shift--first">6–2:30</span><span class="ui-shift ui-shift--first">6–2:30</span><span class="ui-shift ui-shift--first">6–2:30</span><span class="ui-shift ui-shift--first">6–2:30</span><span class="ui-shift ui-shift--off">Off</span>
+                  <div class="ui-who">Greg Pulaski<small>2nd · lead · 40 h</small></div><span class="ui-shift ui-shift--second">2–10:30</span><span class="ui-shift ui-shift--second">2–10:30</span><span class="ui-shift ui-shift--second">2–10:30</span><span class="ui-shift ui-shift--second">2–10:30</span><span class="ui-shift ui-shift--second">2–10:30</span>
+                  <div class="ui-who">Kofi Boateng<small>2nd · 40 h</small></div><span class="ui-shift ui-shift--second">2–10:30</span><span class="ui-shift ui-shift--second">2–10:30</span><span class="ui-shift ui-shift--second">2–10:30</span><span class="ui-shift ui-shift--second">2–10:30</span><span class="ui-shift ui-shift--second">2–10:30</span>
+                  <div class="ui-who">Simone Delacroix<small>2nd · 32 h + 8 PTO</small></div><span class="ui-shift ui-shift--second">2–10:30</span><span class="ui-shift ui-shift--second">2–10:30</span><span class="ui-shift ui-shift--pto">PTO</span><span class="ui-shift ui-shift--second">2–10:30</span><span class="ui-shift ui-shift--second">2–10:30</span>
+                  <div class="ui-who">Ray Adeyemi<small>3rd · lead · 40 h</small></div><span class="ui-shift ui-shift--third">10p–6:30a</span><span class="ui-shift ui-shift--third">10p–6:30a</span><span class="ui-shift ui-shift--third">10p–6:30a</span><span class="ui-shift ui-shift--third">10p–6:30a</span><span class="ui-shift ui-shift--third">10p–6:30a</span>
+                  <div class="ui-who">Jenna Szabo<small>3rd · 40 h</small></div><span class="ui-shift ui-shift--third">10p–6:30a</span><span class="ui-shift ui-shift--third">10p–6:30a</span><span class="ui-shift ui-shift--third">10p–6:30a</span><span class="ui-shift ui-shift--third">10p–6:30a</span><span class="ui-shift ui-shift--third">10p–6:30a</span>
+                  <div class="ui-who">Mateo Ferreira<small>3rd · starts Mon · 40 h</small></div><span class="ui-shift ui-shift--third">10p–6:30a</span><span class="ui-shift ui-shift--third">10p–6:30a</span><span class="ui-shift ui-shift--third">10p–6:30a</span><span class="ui-shift ui-shift--third">10p–6:30a</span><span class="ui-shift ui-shift--third">10p–6:30a</span>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="wh-open">Saturday 6:00–10:00 AM inbound truck has no one yet</p><small>Kelsey W. is off Friday and Saturday and would reach 36 hours, no overtime</small></div><button type="button" class="ui-btn" data-act data-target="wh-open" data-text="Offered to Kelsey. She sees it in the app now." data-done="Offered">Offer to Kelsey</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-clock" aria-labelledby="tab-clock" hidden>
+          <div>
+            <h3>A manufacturing time clock at the door, not in a pocket</h3>
+            <p>Phones stay in the lockers. A tablet by the floor entrance is the time clock for every shift. Ray enters his PIN at 9:57 PM, sees his name and tonight’s shift, and taps once. The punch is his, with the kiosk as its source.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Clock in, breaks and clock out with the same PIN</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Late starts recorded against the scheduled shift</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The crew list on the tablet shows who is in, on break or due</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Kiosk clock-in screen on the Ironbend Fulfillment dock door tablet at 9:57 PM: a PIN pad, a greeting for Ray Adeyemi with tonight's 10:00 PM to 6:30 AM shift, and tonight's crew list showing Jenna Szabo due and the second shift still on the clock">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Kiosk · dock door tablet · Thu, Nov 12 · 9:57 PM</span></div>
+            <div class="ui-main">
+              <div class="ui-split">
+                <div class="ui-card">
+                  <div class="ui-card__head"><b>Enter your PIN</b><span>● ● ● ●</span></div>
+                  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px" aria-hidden="true">
+                    <span class="ui-btn ui-btn--ghost">1</span><span class="ui-btn ui-btn--ghost">2</span><span class="ui-btn ui-btn--ghost">3</span>
+                    <span class="ui-btn ui-btn--ghost">4</span><span class="ui-btn ui-btn--ghost">5</span><span class="ui-btn ui-btn--ghost">6</span>
+                    <span class="ui-btn ui-btn--ghost">7</span><span class="ui-btn ui-btn--ghost">8</span><span class="ui-btn ui-btn--ghost">9</span>
+                    <span class="ui-btn ui-btn--ghost">Clear</span><span class="ui-btn ui-btn--ghost">0</span><span class="ui-btn ui-btn--ghost">Back</span>
+                  </div>
+                </div>
+                <div class="ui-card">
+                  <div class="ui-card__head"><b>Tonight’s crew</b><span>3rd shift · 10:00 PM</span></div>
+                  <div class="ui-list">
+                    <div class="ui-item"><div><p>Ray Adeyemi</p><small>Shift lead · PIN accepted</small></div><span class="ui-pill ui-pill--info">Ready</span></div>
+                    <div class="ui-item"><div><p>Jenna Szabo</p><small>Picker · 10:00 PM</small></div><span class="ui-pill">Due</span></div>
+                    <div class="ui-item"><div><p>2nd shift</p><small>3 on the clock until 10:30 PM</small></div><span class="ui-pill ui-pill--ok">In</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="wh-kiosk">Hi, Ray. Your shift is 10:00 PM to 6:30 AM.</p><small>Not you? Tap Back and enter your own PIN</small></div><button type="button" class="ui-btn" data-act data-target="wh-kiosk" data-text="Clocked in at 9:57 PM. Punch sent to your timesheet." data-done="Clocked in">Clock in</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-night" aria-labelledby="tab-night" hidden>
+          <div>
+            <h3>Night shifts that cross the workweek boundary</h3>
+            <p>Ironbend’s workweek runs Sunday 12:00 AM to Saturday 11:59 PM. Ray covered a Saturday night on Nov 7, so 2.0 hours belong to the week of Nov 1 and 6.0 hours, after the meal break, to the week of Nov 8. The timesheet shows the split.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every hour counted in the workweek it falls in</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Unpaid meal breaks come off the night they are taken</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Regular and overtime totals per workweek, not per pay period</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Timesheet for Ray Adeyemi, week of November 1 to 7: five night shifts of 8 hours each, Friday off, and a Saturday night shift split at midnight into 2.0 hours for the week of November 1 and 6.0 hours for the week of November 8; week total 42.00 hours, 40.00 regular and 2.00 overtime">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Timesheet · Ray Adeyemi · 3rd shift · week of Nov 1–7</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Night</th><th>In</th><th>Out</th><th>Break</th><th class="r">Hours</th><th>Workweek</th></tr></thead>
+                <tbody>
+                  <tr><td>Sun, Nov 1</td><td>10:00 PM</td><td>6:30 AM Mon</td><td>30 min</td><td class="r">8.00</td><td>Nov 1–7</td></tr>
+                  <tr><td>Mon, Nov 2</td><td>10:00 PM</td><td>6:30 AM Tue</td><td>30 min</td><td class="r">8.00</td><td>Nov 1–7</td></tr>
+                  <tr><td>Tue, Nov 3</td><td>10:00 PM</td><td>6:30 AM Wed</td><td>30 min</td><td class="r">8.00</td><td>Nov 1–7</td></tr>
+                  <tr><td>Wed, Nov 4</td><td>10:00 PM</td><td>6:30 AM Thu</td><td>30 min</td><td class="r">8.00</td><td>Nov 1–7</td></tr>
+                  <tr><td>Thu, Nov 5</td><td>10:00 PM</td><td>6:30 AM Fri</td><td>30 min</td><td class="r">8.00</td><td>Nov 1–7</td></tr>
+                  <tr><td>Fri, Nov 6</td><td colspan="3">Off</td><td class="r">–</td><td></td></tr>
+                  <tr><td>Sat, Nov 7<small>Receiving cover</small></td><td>10:00 PM</td><td>12:00 AM →</td><td>–</td><td class="r">2.00</td><td><span class="ui-pill ui-pill--warn">Nov 1–7</span></td></tr>
+                  <tr><td>Sun, Nov 8<small>same shift</small></td><td>→ 12:00 AM</td><td>6:30 AM</td><td>30 min</td><td class="r">6.00</td><td><span class="ui-pill ui-pill--info">Nov 8–14</span></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>Week of Nov 1–7: 42.00 h · 40.00 regular + 2.00 overtime</p><small>Workweek starts Sunday 12:00 AM · the 6.00 h after midnight count toward Nov 8–14</small></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-approve" aria-labelledby="tab-approve" hidden>
+          <div>
+            <h3>Approve by shift lead, pay on Friday</h3>
+            <p>On Monday each lead opens their own crew’s week: Tamika for first shift, Greg for second, Ray for third. They look at the exceptions, approve, and the regular hours, overtime and PTO go into the Nov 1–14 pay run paid Friday, Nov 20.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>A lead sees and approves their own shift only</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>A fixed punch shows the fix, who made it and the original</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every pay stub in the app on payday</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Timesheet approvals for the week of November 1 to 7 at Ironbend Fulfillment: first shift 3 of 3 approved by Tamika Olsen, second shift 3 of 3 approved by Greg Pulaski, third shift 1 of 2 with Jenna Szabo's 44-hour week waiting for Ray Adeyemi">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Approvals · week of Nov 1–7 · due to payroll Mon, Nov 16</span></div>
+            <div class="ui-main">
+              <div class="ui-kpis" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+                <div class="ui-kpi"><b>3 / 3</b><small>1st shift · 112.0 h</small><em>Approved by Tamika O.</em></div>
+                <div class="ui-kpi"><b>3 / 3</b><small>2nd shift · 112.0 h + 8.0 PTO</small><em>Approved by Greg P.</em></div>
+                <div class="ui-kpi"><b>1 / 2</b><small>3rd shift · 86.0 h · 6.0 OT</small><em class="is-warn">Ray A. to approve</em></div>
+              </div>
+              <div class="ui-card">
+                <div class="ui-card__head"><b>3rd shift · Ray Adeyemi’s crew</b><span>Night differential $1.50/h</span></div>
+                <div class="ui-list">
+                  <div class="ui-item"><div><p>Ray Adeyemi · 42.00 h</p><small>40.00 regular · 2.00 OT · approved by the ops manager, Mon Nov 9</small></div><span class="ui-pill ui-pill--ok">Approved</span></div>
+                  <div class="ui-item"><div><p>Jenna Szabo · 44.00 h</p><small>40.00 regular · 4.00 OT · 1 edit: Tue Nov 3 clock-out missing, set to 6:30 AM by Ray, original kept</small></div><span class="ui-pill ui-pill--warn" id="wh-jenna">Waiting</span></div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p>1 timesheet waiting on 3rd shift</p><small>Jenna Szabo · approve to send to the Nov 1–14 pay run</small></div><button type="button" class="ui-btn" data-act data-pill="wh-jenna" data-pill-text="Approved" data-done="Sent to payroll">Approve</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="Warehouse details">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Shift differentials and overtime</p>
+          <h2>Overtime priced on the regular rate, differential included</h2>
+          <p>Ironbend pays pickers $18.00 an hour and a $1.50 differential on every 3rd-shift hour. In the week of Nov 1 Jenna worked five nights and a Saturday morning truck: 44 hours, 40 of them nights. The differential is part of her regular rate under federal rules, so overtime is priced on $19.36, not $18.00. Workzenly does that math from the punches.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Differential hours counted from the punches, not the schedule</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Weekly regular rate worked out before the half-time premium</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Warnings before a pickup pushes someone past 40</li>
+          </ul>
+          <a class="fp-row__more" href="/features/overtime-tracking/">See overtime tracking <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Pay breakdown for Jenna Szabo, week of November 1 to 7: 44 hours, straight time $792.00, night differential $60.00, regular rate $19.3636, overtime premium $38.73, total $890.73, compared with $888.00 if overtime were priced on base pay alone">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Pay · Jenna Szabo · week of Nov 1–7</span></div>
+          <div class="ui-main">
+            <div class="ui-card">
+              <div class="ui-card__head"><b>Regular rate with the night differential</b><span>Base $18.00 · 3rd shift +$1.50</span></div>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Hours worked</p><small>40.00 nights (Sun–Thu) + 4.00 day (Sat 6–10 AM)</small></div><span>44.00 h</span></div>
+                <div class="ui-item"><div><p>Straight time</p><small>44 × $18.00</small></div><span>$792.00</span></div>
+                <div class="ui-item"><div><p>Night differential</p><small>40 × $1.50</small></div><span>$60.00</span></div>
+                <div class="ui-item"><div><p>Regular rate</p><small>$852.00 ÷ 44 hours</small></div><span>$19.3636</span></div>
+                <div class="ui-item"><div><p>Overtime premium</p><small>4 × $19.3636 × 0.5</small></div><span>$38.73</span></div>
+                <div class="ui-item"><div><p>Gross pay for the week</p><small>$852.00 + $38.73</small></div><span class="ui-pill ui-pill--ok">$890.73</span></div>
+              </div>
+            </div>
+            <div class="ui-foot"><div><p>Priced on base pay alone, the week would be $888.00</p><small>$2.73 short, every week she works nights and overtime</small></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Rotating patterns</p>
+          <h2>Warehouse scheduling software for 2-2-3, DuPont and fixed shifts</h2>
+          <p>Ironbend runs fixed shifts Monday to Friday and is planning a 24/7 peak period on a 2-2-3 rotation. Build the 14-day cycle once, copy it forward and publish weeks ahead. Workzenly shows each team’s hours per workweek while you build: a <a href="/blog/2-2-3-schedule/">2-2-3 schedule</a> alternates 36 and 48 hours, and a <a href="/blog/dupont-schedule/">DuPont schedule</a> runs 48, 72, 48 and 0.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Days, nights and off days for teams A to D on one grid</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours per workweek, not the 42-hour average, before you publish</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Swaps and open shifts handled from the app, with the lead approving</li>
+          </ul>
+          <a class="fp-row__more" href="/features/scheduling/">See scheduling <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Fourteen-day 2-2-3 rotation preview for teams A to D: teams A and B alternate 12-hour day shifts, teams C and D alternate 12-hour night shifts, each team working seven shifts per cycle; with a Sunday 7:00 AM workweek Team A works 48 hours then 36">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Schedule pattern · 2-2-3 · 14-day preview</span></div>
+          <div class="ui-main">
+            <div class="ui-card ui-scroll">
+              <div class="ui-card__head"><b>Teams A–D · 12-hour shifts · cycle starts Mon</b><span class="ui-legend"><span><i style="background:#dafa9c"></i>Day 7a–7p</span><span><i style="background:#9cc8fa"></i>Night 7p–7a</span></span></div>
+              <div class="ui-grid ui-grid--cycle" style="min-width:520px">
+                <b></b><b>M</b><b>T</b><b>W</b><b>T</b><b>F</b><b>S</b><b>S</b><b>M</b><b>T</b><b>W</b><b>T</b><b>F</b><b>S</b><b>S</b>
+                <div class="ui-who">Team A<small>Days</small></div><span class="ui-shift ui-shift--first">D</span><span class="ui-shift ui-shift--first">D</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--first">D</span><span class="ui-shift ui-shift--first">D</span><span class="ui-shift ui-shift--first">D</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--first">D</span><span class="ui-shift ui-shift--first">D</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span>
+                <div class="ui-who">Team B<small>Days</small></div><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--first">D</span><span class="ui-shift ui-shift--first">D</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--first">D</span><span class="ui-shift ui-shift--first">D</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--first">D</span><span class="ui-shift ui-shift--first">D</span><span class="ui-shift ui-shift--first">D</span>
+                <div class="ui-who">Team C<small>Nights</small></div><span class="ui-shift ui-shift--third">N</span><span class="ui-shift ui-shift--third">N</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--third">N</span><span class="ui-shift ui-shift--third">N</span><span class="ui-shift ui-shift--third">N</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--third">N</span><span class="ui-shift ui-shift--third">N</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span>
+                <div class="ui-who">Team D<small>Nights</small></div><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--third">N</span><span class="ui-shift ui-shift--third">N</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--third">N</span><span class="ui-shift ui-shift--third">N</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--off">·</span><span class="ui-shift ui-shift--third">N</span><span class="ui-shift ui-shift--third">N</span><span class="ui-shift ui-shift--third">N</span>
+              </div>
+            </div>
+            <div class="ui-foot"><div><p id="wh-cycle">7 shifts per team per cycle · 84 hours in 14 days</p><small>Sunday 7:00 AM workweek: Team A works 48 h, then 36 h · 8 overtime hours per cycle</small></div><button type="button" class="ui-btn" data-act data-target="wh-cycle" data-text="Pattern copied forward through Sat, Jan 9. Publish when ready." data-done="Copied">Copy forward 4 cycles</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Attendance you can audit</p>
+          <h2>Every punch, every edit, every approval, in one record</h2>
+          <p>When a lead fixes a missed clock-out, the original punch stays next to the change with who made it and when. Late starts are flagged against the scheduled shift. When an employee or an auditor asks about one week two years from now, the record is there and exportable.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Original punch kept beside any correction, with the editor’s name and note</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Employees request punch fixes from the app</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Payroll records kept 3 years and time cards 2, as the FLSA requires</li>
+          </ul>
+          <a class="fp-row__more" href="/features/time-and-attendance/">See time and attendance <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Attendance history for Kofi Boateng, October 1 to November 12: 31 shifts scheduled, 30 worked, 1 PTO day, 2 late arrivals, 1 punch edit with the original kept, and a list of recent punches with their source">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Attendance · Kofi Boateng · 2nd shift · Oct 1 – Nov 12</span></div>
+          <div class="ui-main">
+            <div class="ui-kpis">
+              <div class="ui-kpi"><b>30</b><small>Shifts worked</small><em>31 scheduled · 1 PTO</em></div>
+              <div class="ui-kpi"><b>2</b><small>Late arrivals</small><em class="is-warn">9 and 11 min</em></div>
+              <div class="ui-kpi"><b>1</b><small>Punch edit</small><em>original kept</em></div>
+              <div class="ui-kpi"><b>0</b><small>Missed clock-outs</small><em>open</em></div>
+            </div>
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Thu, Nov 12 · 1:57 PM clock in</p><small>Phone · inside geofence · on time</small></div><span class="ui-pill ui-pill--ok">Punch</span></div>
+              <div class="ui-item"><div><p>Mon, Nov 9 · 2:09 PM clock in</p><small>Kiosk · dock door · late 9 min · note by Greg P.: “called ahead, traffic on I-65”</small></div><span class="ui-pill ui-pill--warn">Late</span></div>
+              <div class="ui-item"><div><p>Tue, Nov 3 · clock-out set to 10:30 PM</p><small>Original: missing · edited by Greg P., Wed Nov 4, 2:04 PM · requested by Kofi from the app</small></div><span class="ui-pill ui-pill--info">Edit</span></div>
+              <div class="ui-item"><div><p>Fri, Oct 16 · PTO, 8.00 h</p><small>Requested Oct 5 · approved by Greg P. Oct 6</small></div><span class="ui-pill">PTO</span></div>
+              <div class="ui-item"><div><p>Wed, Oct 14 · 2:11 PM clock in</p><small>Kiosk · dock door · late 11 min</small></div><span class="ui-pill ui-pill--warn">Late</span></div>
+            </div>
+            <div class="ui-foot"><div><p id="wh-export">Six weeks of punches, edits and approvals</p><small>Kofi sees the same history in his app</small></div><button type="button" class="ui-btn" data-act data-target="wh-export" data-text="Record exported for Oct 1 – Nov 12." data-done="Exported">Export record</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One record, from the owner to the night crew</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owner or operations manager</h3></div><div><span>Replaces</span><p>A punch clock, a differential spreadsheet and a Monday reconciling three shifts</p></div><div><span>They use it to</span><p>See who is in on every shift, watch hours against 40 midweek, run payroll from hours three leads approved</p></div><div><span>What they notice</span><p>Overtime they saw on Wednesday, not on the pay stub</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Shift lead, 1st, 2nd or 3rd</h3></div><div><span>Replaces</span><p>Signing cards at shift end and texting the next lead about who was late</p></div><div><span>They use it to</span><p>See their crew in, on break or late, fix a missed punch with a note, approve their shift’s week</p></div><div><span>What they notice</span><p>Approving a week takes minutes</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Pickers, packers, forklift and dock</h3></div><div><span>Replaces</span><p>A time card in a rack and a schedule taped to the break room wall</p></div><div><span>They use it to</span><p>Clock in at the door with a PIN, check next week, request a fix or a day off, read the pay stub on Friday</p></div><div><span>What they notice</span><p>The night differential is on the stub without asking</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Payroll and HR</h3></div><div><span>Replaces</span><p>Keying hours from three stacks and chasing one missing card</p></div><div><span>They use it to</span><p>Run the pay run from approved hours, onboard temp-to-hire workers before day one, keep the records an auditor asks for</p></div><div><span>What they notice</span><p>Monday is a review, not data entry</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Each shift sees its own, payroll sees the pay</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Employees see their own</h3><p>Each person sees their own shifts, punches, PTO and pay stubs in the app, never a coworker’s record.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Leads see their shift</h3><p>A 3rd-shift lead sees 3rd shift’s schedule, attendance and time off, and approves 3rd shift’s timesheets. Nothing from the other two.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates, differentials and pay stubs are visible only to the people you give payroll access to.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">The features warehouses use most</p>
+        <h2 id="connect-title">Everything a three-shift week needs</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/time-clock-kiosk/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-keypad"/></svg></span><h3>Time clock kiosk</h3><p>A shared tablet at the floor entrance, one PIN per person, phones in the lockers.</p><span>Kiosk →</span></a>
+        <a class="fp-link-card" href="/features/time-and-attendance/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Time and attendance</h3><p>Breaks, late starts and overtime from the punches, with every edit on the record.</p><span>Attendance →</span></a>
+        <a class="fp-link-card" href="/features/overtime-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime tracking</h3><p>Weekly totals against 40, differentials in the regular rate, warnings before a pickup.</p><span>Overtime →</span></a>
+        <a class="fp-link-card" href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Shift scheduling</h3><p>Three fixed shifts or a rotating pattern, published to every phone.</p><span>Scheduling →</span></a>
+        <a class="fp-link-card" href="/features/onboarding/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><h3>Onboarding</h3><p>Offer letter, W-4, I-9 and direct deposit on the new hire’s phone before day one.</p><span>Onboarding →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Approved hours, overtime and PTO from three shifts become pay stubs in the app.</p><span>Payroll →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">See your three shifts in Workzenly</h2>
+        <p>Tell us your shift times, your differential and your headcount. We set up a demo workspace with your company’s name before the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it needs to do</a></li>
+            <li><a href="#g-diff">Overtime with differentials</a></li>
+            <li><a href="#g-week">Nights and the workweek</a></li>
+            <li><a href="#g-rotate">Rotating patterns</a></li>
+            <li><a href="#g-breaks">Breaks by state</a></li>
+            <li><a href="#g-records">Records, OSHA and temps</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>See your own shifts and your differential in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The buyer’s guide to warehouse time and attendance software</h2>
+        <p>A plant on three shifts has timekeeping problems an office never meets: a shift that ends on a different date than it started, a night premium that changes the overtime rate, phones banned from the floor, and three leads who each know only their own crew. This guide covers what warehouse time and attendance software has to handle, the federal rules on differentials and the workweek, breaks in three states, records, and how to choose.</p>
+
+        <h3 id="g-what">What warehouse time and attendance software needs to do</h3>
+        <p>Five jobs, in order. Take the punch at the door from a shared device with each person’s own PIN, because a card rack lets anyone punch anyone. Work out breaks, late starts and missed clock-outs from the punches, keeping the original when something is fixed. Put each hour in the right workweek, including the hours after midnight. Price overtime on the regular rate, differential included. Then let each shift lead approve their own crew and send the hours to payroll without retyping. The <a href="/features/time-clock-kiosk/">time clock kiosk</a>, <a href="/features/time-and-attendance/">time and attendance</a>, <a href="/features/timesheets/">timesheets</a> and <a href="/features/payroll/">payroll</a> in Workzenly are those five jobs on one record.</p>
+        <p>Warehouse workforce management also means scheduling three shifts or a rotation and onboarding people who arrive through a staffing agency, so the time clock should sit next to <a href="/features/scheduling/">scheduling</a> and <a href="/features/onboarding/">onboarding</a>. Comparing vendors? Our list of the <a href="/tools/best-time-and-attendance-software/">best time and attendance software</a> covers the main options, and the free <a href="/templates/attendance-tracker-templates/">attendance tracker templates</a> are a starting point if you are still on paper.</p>
+
+        <h3 id="g-diff">Overtime when you pay a shift differential</h3>
+        <p>Federal law does not require a night premium; the Department of Labor says extra pay for night work is a matter of agreement between employer and employee. Once you pay one, 29 CFR 778.207 requires nightshift differentials to be included in the regular rate, whether a percentage of base pay or a set amount per hour, and overtime is 1.5 times that rate. Our <a href="/blog/shift-differential/">shift differential guide</a> has the full math; here is Jenna’s week from above.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Step</th><th>Math</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>Hours worked</td><td>40 night hours (Sun–Thu) + 4 day hours (Sat 6–10 AM)</td><td>44 hours</td></tr>
+              <tr><td>Straight-time pay</td><td>44 × $18.00</td><td>$792.00</td></tr>
+              <tr><td>Night differential</td><td>40 × $1.50</td><td>$60.00</td></tr>
+              <tr><td>Regular rate</td><td>($792.00 + $60.00) ÷ 44</td><td>$19.3636 (about $19.36)</td></tr>
+              <tr><td>Overtime premium</td><td>4 overtime hours × $19.3636 × 0.5</td><td>$38.73</td></tr>
+              <tr><td>Gross pay</td><td>$852.00 + $38.73</td><td>$890.73</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Priced on base pay alone, the premium would be $36.00 and the week $888.00, $2.73 short, repeated for every night worker in every overtime week, and back wages can be claimed for prior years. Two rules follow. Write down which hours earn the differential, by window or by shift. And count differential hours from the punches, not the schedule: a picker who stays an hour late inside the window is owed the premium for that hour. Our <a href="/blog/how-to-calculate-overtime/">overtime guide</a> and <a href="/blog/overtime-calculator/">overtime calculator</a> use the same regular-rate method.</p>
+
+        <h3 id="g-week">Night shifts that cross the workweek boundary</h3>
+        <p>Under the FLSA a workweek is a fixed and regularly recurring period of 168 hours, seven consecutive 24-hour periods, which may begin on any day and at any hour of the day (29 CFR 778.105). Once set it stays fixed, and it can be changed only if the change is meant to be permanent and not designed to evade overtime. Each workweek stands alone (29 CFR 778.104): hours cannot be averaged across a biweekly pay period. Federal recordkeeping rules also require you to record the time and day of week the workweek begins.</p>
+        <p>For a 10:00 PM to 6:30 AM third shift, the choice decides where a Saturday night goes. Ironbend’s workweek starts Sunday at 12:00 AM, so Ray’s Saturday cover shift on Nov 7 split into 2.0 hours for the week ending Nov 7, overtime because he already had 40, and 6.0 hours for the week starting Nov 8. Many three-shift operations avoid the split by starting the workweek at a shift change, as our <a href="/blog/first-second-third-shift-hours/">guide to 1st, 2nd and 3rd shift hours</a> explains. Either is lawful; pick one at setup.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Workweek starts</th><th>Sat 10:00 PM – Sun 6:30 AM shift</th><th>What to watch</th></tr></thead>
+            <tbody>
+              <tr><td>Sunday 12:00 AM (Ironbend today)</td><td>2.0 h in the week ending, 6.0 h in the week starting</td><td>Saturday cover can become overtime in the old week</td></tr>
+              <tr><td>Saturday 10:00 PM, at 3rd-shift start</td><td>Whole shift, 8.0 h, in the new week</td><td>Every night shift stays whole</td></tr>
+              <tr><td>Sunday 6:00 AM, at 1st-shift start</td><td>Whole shift, 8.0 h, in the old week</td><td>The last 30 minutes of a night shift would cross</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="g-rotate">Rotating patterns: 2-2-3 and DuPont</h3>
+        <p>When a warehouse goes 24/7, it usually moves to 12-hour rotating shifts. A <a href="/blog/2-2-3-schedule/">2-2-3 schedule</a> uses four teams on a 14-day cycle: work 2, off 2, work 3, off 2, work 2, off 3, for 84 hours every two weeks and every other weekend off. With a workweek starting Sunday at 7:00 AM the weeks alternate 36 and 48 hours, so each person earns 8 overtime hours per cycle; with a Monday 7:00 AM start the same grid splits 60 and 24, for 20. A <a href="/blog/dupont-schedule/">DuPont schedule</a> runs 28 days: 4 nights, 3 off, 3 days, 1 off, 3 nights, 3 off, 4 days, 7 off. It averages 42 hours but the weeks come out 48, 72, 48 and 0, so overtime lands in three of every four weeks, and the 72-hour week is a night block with the differential. The software job is to show hours per workweek before you publish, carry the pattern forward, and keep swaps inside the lead’s approval. Our free <a href="/templates/shift-schedule-templates/">shift schedule templates</a> have the grids if you want to try a pattern on paper first.</p>
+
+        <h3 id="g-breaks">Breaks on a three-shift floor</h3>
+        <p>Federal law does not require breaks. The Department of Labor’s Fact Sheet 22 says short rest periods, usually 20 minutes or less, count as hours worked, while bona fide meal periods, typically 30 minutes or more, generally need not be paid if the employee is completely relieved from duty. A packer who eats at the station while the line moves is working. States add their own rules.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>State</th><th>Meal break</th><th>Rest break</th></tr></thead>
+            <tbody>
+              <tr><td>California</td><td>30 minutes when a shift runs more than 5 hours</td><td>Paid 10 minutes for every 4 hours or major fraction; one extra hour of pay when a break is missed</td></tr>
+              <tr><td>Washington</td><td>At least 30 minutes when working more than 5 hours, starting between the 2nd and 5th hour; another meal period if working more than 3 hours past the scheduled shift</td><td>Paid 10 minutes for every 4 hours worked; no more than 3 hours without one</td></tr>
+              <tr><td>Illinois</td><td>At least 20 minutes for a 7.5-hour shift, starting no later than 5 hours in; another 20 minutes for every additional 4.5 continuous hours</td><td>No adult rest-break rule; 24 hours of rest in every consecutive 7-day period</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Set your break rule during setup so the unpaid meal comes off the right night and short rest breaks stay paid. On 12-hour shifts, check whether your state requires a second meal period, as Washington and Illinois do.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Wage, break and safety rules change every year, so check your state labor department or an employment lawyer for your situation.</p>
+
+        <h3 id="g-records">Records, OSHA and temp workers</h3>
+        <p>The FLSA requires hours worked each day and each week for non-exempt staff, payroll records kept 3 years and time cards 2. Workzenly keeps every punch, edit and approval in each person’s record, ready to export. OSHA adds a separate record under 29 CFR 1904. An employer with 10 or fewer employees at all times during the last calendar year is exempt unless OSHA says otherwise in writing, and certain low-hazard industries are exempt by NAICS code. Everyone else keeps the OSHA 300 Log and 301 reports, posts the certified 300A summary from February 1 to April 30 of the following year, and keeps all of it for 5 years. Workzenly is not an OSHA log. Every employer must report a work-related fatality within 8 hours and an in-patient hospitalization, amputation or loss of an eye within 24 hours.</p>
+        <p>Temp workers add one line to that record. OSHA treats a staffing agency and the host employer as joint employers of temporary workers who share responsibility for their safety, and 1904.31 puts injuries to agency workers you supervise day to day on your 300 Log, coordinated with the agency so each is recorded once. The agency runs a temp’s payroll until you hire them, so ask how its timekeeping lines up with yours and get advice on joint employment if the arrangement runs long. When you move a temp onto your payroll, you are now the employer: send the offer letter and have the <a href="/blog/new-hire-paperwork/">new hire paperwork</a>, the W-4, <a href="/blog/i-9-form/">Form I-9</a> Section 1 and direct deposit, done on their phone before the first shift on your books.</p>
+
+        <h3 id="g-choose">How to choose</h3>
+        <ol>
+          <li><strong>Run last week through it.</strong> Take one night shift that crossed midnight, one missed clock-out and one person over 40 with the differential, and see which tool produces a correct pay stub with the fewest manual steps.</li>
+          <li><strong>Check the kiosk.</strong> If phones stay in lockers, the shared tablet is the time clock. Ask how PINs, breaks and the crew list work, and whether kiosk and phone punches share one timesheet.</li>
+          <li><strong>Ask where the differential goes.</strong> It belongs in the regular rate before overtime is priced, counted from the punches, not the schedule.</li>
+          <li><strong>Set the workweek on purpose.</strong> Decide the start day and hour, record it, and check how the system handles the Saturday night shift.</li>
+          <li><strong>Test the lead’s view.</strong> A 3rd-shift lead should see 3rd shift and nothing else, and approve the week in one tap. Every time hours are retyped between tools, someone fixes a pay stub later; our <a href="/blog/how-to-process-payroll/">payroll process guide</a> lists every step.</li>
+        </ol>
+        <p>If you want to see your own three shifts in Workzenly, <a href="/#start">book a demo</a> and we will set up a workspace with your company’s name before the call. Plans and prices are on the <a href="/pricing/">pricing page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions from warehouse and plant managers</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>Can the floor clock in without phones?</summary><p>Yes. A shared tablet at the floor entrance works as a time clock kiosk. Each person enters their own PIN, sees their name and shift, and taps to clock in, start a break or clock out, while phones stay in the lockers. Kiosk and phone punches land in the same timesheet, so a forklift operator at the door and a supervisor on a phone are counted the same way.</p></details>
+        <details><summary>How does warehouse time and attendance software handle a shift differential in overtime?</summary><p>A shift differential counts toward the regular rate under federal rules, so overtime is 1.5 times the higher rate, not the base wage. Workzenly adds the differential to the week’s straight-time earnings before it prices the overtime. A picker at $18.00 with 44 hours, 40 of them nights at a $1.50 differential, has a regular rate of $852.00 ÷ 44 = $19.3636, an overtime premium of 4 × $19.3636 × 0.5 = $38.73, and a week of $890.73.</p></details>
+        <details><summary>What happens to a night shift that crosses midnight?</summary><p>Every hour is counted in the workweek it falls in, using the workweek start you set with us. With a Sunday-midnight start, a Saturday 10:00 PM to 6:30 AM shift puts 2.0 hours in the week that is ending and 6.0 hours, after the meal break, in the week that is starting. Many three-shift operations start the workweek at a shift change instead, such as Saturday 10:00 PM, so every night shift stays whole. 29 CFR 778.105 lets a workweek begin on any day and at any hour.</p></details>
+        <details><summary>Can it run a 2-2-3 or DuPont rotation?</summary><p>Yes. Build the cycle once, copy it forward and publish weeks ahead. Workzenly shows hours per person per workweek as you build, which matters because a 2-2-3 schedule alternates 36 and 48 hours with a Sunday-start workweek and a DuPont schedule produces weeks of 48, 72, 48 and 0. Each workweek is counted on its own, so the 42-hour average does not stop the overtime.</p></details>
+        <details><summary>Can each shift lead approve only their own crew?</summary><p>Yes. A shift lead sees their own team’s schedule, attendance and timesheets and approves that team’s week, and nothing from the other shifts. Pay rates and pay stubs are visible only to the people you give payroll access to, and each employee sees only their own record.</p></details>
+        <details><summary>How do we onboard temp-to-hire workers?</summary><p>When a temp moves onto your payroll, you are now the employer. Send the offer letter from Workzenly; the new hire signs it, completes the W-4 and I-9 Section 1, adds direct deposit and reads the handbook on their phone before their first shift on your books, and their forklift certification is stored with their record. Until that day the staffing agency pays them, so ask the agency how its hours and yours line up.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for three-shift teams</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/first-second-third-shift-hours/"><small>GUIDE</small><b>1st, 2nd and 3rd shift hours: times, pay and who works them</b></a>
+        <a href="/tools/best-time-and-attendance-software/"><small>COMPARISON</small><b>Best time and attendance software</b></a>
+        <a href="/templates/attendance-tracker-templates/"><small>TEMPLATES</small><b>Free attendance tracker templates</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52" loading="lazy"></a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features and solutions"><h2>People and industries</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+        <li><a href="/solutions/">Solutions by industry</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>

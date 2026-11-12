@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The 7-Minute Rule for Time Clock Rounding (2026 Guide)</title>
+  <meta name="description" content="The 7 minute rule explained: how quarter-hour time clock rounding works under 29 CFR 785.48, with full rounding tables, a calculator, examples and the risks.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/blog/7-minute-rule/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/blog/7-minute-rule/">
+  <meta property="og:title" content="The 7-Minute Rule for Time Clock Rounding (2026 Guide)">
+  <meta property="og:description" content="The 7 minute rule explained: how quarter-hour time clock rounding works under 29 CFR 785.48, with full rounding tables, a calculator, examples and the risks.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta property="article:published_time" content="2026-11-12">
+  <meta property="article:section" content="Time tracking">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "The 7-minute rule: how time clock rounding works",
+        "description": "The 7 minute rule explained: how quarter-hour time clock rounding works under 29 CFR 785.48, with full rounding tables, a calculator, examples and the risks.",
+        "datePublished": "2026-11-12",
+        "dateModified": "2026-11-12",
+        "author": { "@type": "Organization", "name": "Workzenly", "url": "https://workzenly.com/" },
+        "publisher": { "@type": "Organization", "name": "Workzenly", "logo": { "@type": "ImageObject", "url": "https://workzenly.com/apple-touch-icon.png" } },
+        "mainEntityOfPage": "https://workzenly.com/blog/7-minute-rule/",
+        "image": "https://workzenly.com/og-image.png",
+        "keywords": "7 minute rule, 7 minute rule time clock, time clock rounding, 15 minute rounding, payroll rounding rules"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://workzenly.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "7-minute rule", "item": "https://workzenly.com/blog/7-minute-rule/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is the 7-minute rule for time clocks?", "acceptedAnswer": { "@type": "Answer", "text": "The 7-minute rule is the common name for quarter-hour time clock rounding. Each punch is rounded to the nearest 15 minutes: a punch 1 to 7 minutes past the quarter hour rounds back to it, and a punch 8 to 14 minutes past rounds forward to the next one. So 9:07 becomes 9:00 and 9:08 becomes 9:15." } },
+          { "@type": "Question", "name": "Is the 7-minute rule a federal law?", "acceptedAnswer": { "@type": "Answer", "text": "Not exactly. No law requires rounding. The federal regulation 29 CFR 785.48(b) accepts rounding to the nearest 5 minutes, tenth of an hour or quarter hour, as long as over time employees are paid for all time worked. The 7-minute split is simply what nearest-quarter-hour rounding works out to, and the Department of Labor explains it in Fact Sheet #53." } },
+          { "@type": "Question", "name": "Can my employer round my clock-in time up but never round it down?", "acceptedAnswer": { "@type": "Answer", "text": "No. Rounding is accepted under federal rules only if it is neutral: it must round in both directions and average out so you are paid for all the time you actually work. A system that rounds late arrivals forward but never rounds early starts back always favors the employer, and the Department of Labor says that practice can violate the FLSA." } },
+          { "@type": "Question", "name": "Does the 7-minute rule apply to lunch breaks?", "acceptedAnswer": { "@type": "Answer", "text": "Be careful here. Federal rules do not single out meal punches, but rounding a 28-minute break to 30 minutes can turn a paid break into an unpaid one. In California, the state Supreme Court held in Donohue v. AMN Services (2021) that employers may not round meal-period punches at all. Most payroll teams record breaks to the exact minute." } },
+          { "@type": "Question", "name": "Can an employer round time if the clock records the exact minute?", "acceptedAnswer": { "@type": "Answer", "text": "Under federal rules, yes, if the rounding is neutral and averages out. California is the open question: a 2022 Court of Appeal decision, Camp v. Home Depot, said an employer that records exact minutes must pay them, and the California Supreme Court agreed to review that decision in 2023. Until it rules, many California employers pay exact minutes." } },
+          { "@type": "Question", "name": "Is it better to pay exact minutes or to round?", "acceptedAnswer": { "@type": "Answer", "text": "If your time clock records exact minutes, paying them is simpler and safer. It removes the need to prove your rounding averaged out, avoids state-law disputes and costs almost nothing in extra arithmetic because software does the math. Rounding made sense when hours were added by hand from punch cards; most apps now total exact minutes automatically." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="7 minute rule" data-intent="informational" data-topic="Time tracking">
+
+<header class="nav">
+  <a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52"></a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/solutions/">Solutions</a>
+    <a class="link" href="/pricing/">Pricing</a>
+    <a class="link" href="/blog/" aria-current="page">Resources</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li aria-current="page">7-minute rule</li>
+  </ol>
+</nav>
+
+<main>
+  <header class="post-head">
+    <div class="post-head__text">
+      <h1>The 7-minute rule: how time clock rounding works</h1>
+      <p class="post-head__lead">What the 7-minute rule means, the full quarter-hour, 5-minute and tenth-hour rounding tables, a rounding calculator, worked examples and the situations where rounding gets employers into trouble.</p>
+      <p class="post-meta"><span>By <b>Workzenly team</b></span><span>Updated November 12, 2026</span><span>11 min read</span></p>
+    </div>
+    <aside class="post-head__aside">
+      <strong>Still rounding punches by hand?</strong>
+      <p>Workzenly’s time clock records the exact minute and carries it into timesheets and payroll, so there is nothing to round and nothing to defend.</p>
+      <a class="button button--small" href="/features/time-clock/">See the time clock</a>
+    </aside>
+  </header>
+
+  <div class="post">
+    <nav class="toc" aria-label="On this page">
+      <p class="toc__title">On this page</p>
+      <ol>
+        <li><a href="#what-it-is">What the 7-minute rule is</a></li>
+        <li><a href="#calculator">Rounding calculator</a></li>
+        <li><a href="#tables">Rounding tables</a></li>
+        <li><a href="#examples">Worked examples</a></li>
+        <li><a href="#risky">When rounding is risky</a></li>
+        <li><a href="#states">State rules</a></li>
+        <li><a href="#exact-minutes">Why employers stop rounding</a></li>
+        <li><a href="#policy">Policy wording</a></li>
+        <li><a href="#faq">Questions</a></li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <div class="summary">
+        <p class="summary__title">Quick answer</p>
+        <ul>
+          <li>The 7-minute rule is quarter-hour rounding: punches 1 to 7 minutes past the quarter hour round back, 8 to 14 minutes round forward. 9:07 becomes 9:00; 9:08 becomes 9:15.</li>
+          <li>Federal rule 29 CFR 785.48(b) accepts rounding to the nearest 5 minutes, tenth of an hour or quarter hour only if, over time, employees are paid for all time worked. Rounding that always favors the employer is not allowed.</li>
+          <li>If your time clock records the exact minute, paying the exact minute is the simplest and safest choice. Rounding never adds pay you can count on, but it can add liability.</li>
+        </ul>
+      </div>
+
+      <p>The 7 minute rule is the everyday name for quarter-hour time clock rounding. Under it, a clock-in or clock-out is moved to the nearest 15-minute mark: 1 to 7 minutes past the quarter hour round down to it, and 8 to 14 minutes round up to the next one. The rule comes from the way the US Department of Labor reads 29 CFR 785.48(b), which accepts rounding to the nearest 5 minutes, tenth of an hour or quarter hour as long as, over time, the practice does not fail to pay employees for all the time they actually worked. This guide shows exactly how each minute rounds, what rounding does to a real paycheck, where employers get it wrong, and why many now skip rounding and pay exact minutes instead.</p>
+
+      <h2 id="what-it-is">What the 7-minute rule is</h2>
+      <p>Time clocks used to print the time on a card, and someone in payroll added the week by hand. Adding 7:53, 8:11 and 7:59 is slow, so employers rounded each punch to a quarter hour and worked in .25, .50 and .75 of an hour. The Department of Labor accepted the habit decades ago, and the regulation that recognizes it is still on the books.</p>
+      <p>The regulation, 29 CFR 785.48(b), says that in some industries, particularly where time clocks are used, there has long been a practice of recording starting and stopping times to the “nearest 5 minutes, or to the nearest one-tenth or quarter of an hour.” It presumes the arrangement averages out so employees are fully paid, and says the Wage and Hour Division will accept it for enforcement purposes, provided that it will not result, over a period of time, in failing to pay employees properly for all the time they have actually worked.</p>
+      <p>The 7-minute split is simply arithmetic. A quarter hour is 15 minutes, so the halfway point is 7.5 minutes. Any punch up to 7 minutes past a quarter-hour mark is closer to that mark and rounds back; any punch 8 minutes or more past it is closer to the next mark and rounds forward. The Department of Labor’s Fact Sheet #53 states it the same way: 1 to 7 minutes may be rounded down and not counted, but 8 to 14 minutes must be rounded up and counted as a quarter hour of work time. The fact sheet adds the warning that matters most: an employer may violate the FLSA if it always rounds down.</p>
+      <p>Three things follow from the rule, and most mistakes come from forgetting one of them.</p>
+      <ul>
+        <li><strong>It rounds both ways.</strong> An employee who clocks in at 8:53 is credited from 9:00 and loses 7 minutes; an employee who clocks in at 9:07 is also credited from 9:00 and gains 7 minutes. Over many punches the gains and losses are supposed to cancel out.</li>
+        <li><strong>It applies to the punch, not the total.</strong> You round each clock-in and clock-out, then total the rounded times. A few systems round the daily total instead; the federal rule talks about starting and stopping times, and that is the safer reading.</li>
+        <li><strong>It is permission, not a requirement.</strong> Nothing obliges you to round. Paying the exact minute always satisfies the federal rule.</li>
+      </ul>
+      <p>One more point of confusion: a 7-minute grace period in an attendance policy is a different thing. A grace period decides whether a late arrival counts as a tardy for discipline. Rounding decides what time payroll uses. Our <a href="/blog/tardiness-policy/">tardiness policy guide</a> keeps the two apart.</p>
+
+      <h2 id="calculator">Rounding calculator: see what one punch becomes</h2>
+      <p>Enter a punch time and the calculator shows what it becomes under quarter-hour rounding (the 7-minute rule), 5-minute rounding and tenth-hour rounding, and how many paid minutes the employee gains or loses on that single punch. Add an hourly rate to see the dollar effect. The default is Sam Rivera, who works in the kitchen at Northfield Coffee in Austin for $18.00 an hour, clocking in at 9:14 a.m. for a 9:00 shift.</p>
+
+      <div class="tool" id="calc">
+        <p class="tool__title">Time clock rounding calculator</p>
+        <form class="tool__grid" id="calc-form" novalidate>
+          <div>
+            <label for="rc-time">Punch time</label>
+            <input id="rc-time" type="time" value="09:14" step="60" required>
+          </div>
+          <div>
+            <label for="rc-type">This punch is a</label>
+            <select id="rc-type">
+              <option value="in" selected>Clock in (later time = fewer paid minutes)</option>
+              <option value="out">Clock out (later time = more paid minutes)</option>
+            </select>
+          </div>
+          <div>
+            <label for="rc-rate">Hourly rate ($, optional)</label>
+            <input id="rc-rate" type="number" inputmode="decimal" min="0" step="0.01" value="18">
+          </div>
+        </form>
+        <button class="tool__btn" type="submit" form="calc-form">Round this punch</button>
+        <div class="tool__result" aria-live="polite">
+          <p class="tool__big" id="rc-out">9:15 AM</p>
+          <p class="tool__note" id="rc-note">Under the 7-minute rule (nearest quarter hour), 9:14 AM is 14 minutes past 9:00 AM, so it rounds forward to 9:15 AM. As a clock in, the employee loses 1 paid minute ($0.30 at $18.00 an hour).</p>
+          <div class="tool__rows" id="rc-rows"></div>
+        </div>
+      </div>
+
+      <p>Notice that the three methods do not agree. A 9:14 clock-in costs the employee 1 minute under quarter-hour and 5-minute rounding, but gives them 2 minutes under tenth-hour rounding, because 14 minutes is closer to 12 than to 18. None of these differences is large on one punch. They matter when a system leans the same way every day, which is the problem the next sections cover.</p>
+
+      <h2 id="tables">Time clock rounding tables: quarter hour, 5 minute and tenth hour</h2>
+      <p>This table covers every minute of the clock, :00 to :59, under the three methods 29 CFR 785.48(b) names. Read the minute in the first column and the rounded value under each method. “Next :00” means the punch rounds up to the top of the following hour, so 9:53 under quarter-hour rounding becomes 10:00. For the tenth-hour column, each 6-minute step is one tenth of an hour: :06 is .1, :12 is .2 and so on, which is how it appears on a decimal timesheet.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Minute</th><th>Quarter hour (7-minute rule)</th><th>Nearest 5 min</th><th>Nearest tenth (6 min)</th><th>Minute</th><th>Quarter hour (7-minute rule)</th><th>Nearest 5 min</th><th>Nearest tenth (6 min)</th></tr></thead>
+          <tbody>
+            <tr><td>:00</td><td>:00</td><td>:00</td><td>:00</td><td>:30</td><td>:30</td><td>:30</td><td>:30</td></tr>
+            <tr><td>:01</td><td>:00</td><td>:00</td><td>:00</td><td>:31</td><td>:30</td><td>:30</td><td>:30</td></tr>
+            <tr><td>:02</td><td>:00</td><td>:00</td><td>:00</td><td>:32</td><td>:30</td><td>:30</td><td>:30</td></tr>
+            <tr><td>:03</td><td>:00</td><td>:05</td><td>:06</td><td>:33</td><td>:30</td><td>:35</td><td>:36</td></tr>
+            <tr><td>:04</td><td>:00</td><td>:05</td><td>:06</td><td>:34</td><td>:30</td><td>:35</td><td>:36</td></tr>
+            <tr><td>:05</td><td>:00</td><td>:05</td><td>:06</td><td>:35</td><td>:30</td><td>:35</td><td>:36</td></tr>
+            <tr><td>:06</td><td>:00</td><td>:05</td><td>:06</td><td>:36</td><td>:30</td><td>:35</td><td>:36</td></tr>
+            <tr><td>:07</td><td>:00</td><td>:05</td><td>:06</td><td>:37</td><td>:30</td><td>:35</td><td>:36</td></tr>
+            <tr><td>:08</td><td>:15</td><td>:10</td><td>:06</td><td>:38</td><td>:45</td><td>:40</td><td>:36</td></tr>
+            <tr><td>:09</td><td>:15</td><td>:10</td><td>:12</td><td>:39</td><td>:45</td><td>:40</td><td>:42</td></tr>
+            <tr><td>:10</td><td>:15</td><td>:10</td><td>:12</td><td>:40</td><td>:45</td><td>:40</td><td>:42</td></tr>
+            <tr><td>:11</td><td>:15</td><td>:10</td><td>:12</td><td>:41</td><td>:45</td><td>:40</td><td>:42</td></tr>
+            <tr><td>:12</td><td>:15</td><td>:10</td><td>:12</td><td>:42</td><td>:45</td><td>:40</td><td>:42</td></tr>
+            <tr><td>:13</td><td>:15</td><td>:15</td><td>:12</td><td>:43</td><td>:45</td><td>:45</td><td>:42</td></tr>
+            <tr><td>:14</td><td>:15</td><td>:15</td><td>:12</td><td>:44</td><td>:45</td><td>:45</td><td>:42</td></tr>
+            <tr><td>:15</td><td>:15</td><td>:15</td><td>:18</td><td>:45</td><td>:45</td><td>:45</td><td>:48</td></tr>
+            <tr><td>:16</td><td>:15</td><td>:15</td><td>:18</td><td>:46</td><td>:45</td><td>:45</td><td>:48</td></tr>
+            <tr><td>:17</td><td>:15</td><td>:15</td><td>:18</td><td>:47</td><td>:45</td><td>:45</td><td>:48</td></tr>
+            <tr><td>:18</td><td>:15</td><td>:20</td><td>:18</td><td>:48</td><td>:45</td><td>:50</td><td>:48</td></tr>
+            <tr><td>:19</td><td>:15</td><td>:20</td><td>:18</td><td>:49</td><td>:45</td><td>:50</td><td>:48</td></tr>
+            <tr><td>:20</td><td>:15</td><td>:20</td><td>:18</td><td>:50</td><td>:45</td><td>:50</td><td>:48</td></tr>
+            <tr><td>:21</td><td>:15</td><td>:20</td><td>:24</td><td>:51</td><td>:45</td><td>:50</td><td>:54</td></tr>
+            <tr><td>:22</td><td>:15</td><td>:20</td><td>:24</td><td>:52</td><td>:45</td><td>:50</td><td>:54</td></tr>
+            <tr><td>:23</td><td>:30</td><td>:25</td><td>:24</td><td>:53</td><td>next :00</td><td>:55</td><td>:54</td></tr>
+            <tr><td>:24</td><td>:30</td><td>:25</td><td>:24</td><td>:54</td><td>next :00</td><td>:55</td><td>:54</td></tr>
+            <tr><td>:25</td><td>:30</td><td>:25</td><td>:24</td><td>:55</td><td>next :00</td><td>:55</td><td>:54</td></tr>
+            <tr><td>:26</td><td>:30</td><td>:25</td><td>:24</td><td>:56</td><td>next :00</td><td>:55</td><td>:54</td></tr>
+            <tr><td>:27</td><td>:30</td><td>:25</td><td>:30</td><td>:57</td><td>next :00</td><td>:55</td><td>next :00</td></tr>
+            <tr><td>:28</td><td>:30</td><td>:30</td><td>:30</td><td>:58</td><td>next :00</td><td>next :00</td><td>next :00</td></tr>
+            <tr><td>:29</td><td>:30</td><td>:30</td><td>:30</td><td>:59</td><td>next :00</td><td>next :00</td><td>next :00</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Two notes on the table. Quarter-hour rounding never moves a punch by more than 7 minutes, 5-minute rounding by more than 2, and tenth-hour rounding by more than 3. And where a minute sits exactly halfway between two tenth-hour marks (:03, :09, :15 and so on), this table rounds up, in the employee’s favor on a clock-out and against them on a clock-in; some systems round those ties down, so check what yours does. Once punches are rounded, the quarter-hour values convert to decimals as .00, .25, .50 and .75; the <a href="/blog/hours-to-decimal-calculator/">hours to decimal calculator</a> handles that step and every other minute count.</p>
+
+      <h2 id="examples">Worked examples with the 7-minute rule</h2>
+      <p>These examples use staff at Northfield Coffee, a fictional coffee shop in Austin, Texas. All figures are illustrative gross pay before taxes.</p>
+      <h3>Single punches</h3>
+      <ul>
+        <li><strong>Sam Rivera clocks in at 9:14 a.m.</strong> 14 minutes past 9:00 is in the 8-to-14 range, so the punch rounds forward to 9:15. Sam is paid from 9:15 and loses 1 minute of worked time: $0.30 at $18.00 an hour.</li>
+        <li><strong>Maya Torres clocks in at 8:58 a.m.</strong> 58 minutes past 8:00 is 13 minutes past the 8:45 mark, so it rounds forward to 9:00. Maya loses 2 minutes, $0.58 at $17.50 an hour. If she had been doing nothing but waiting for her 9:00 shift, those minutes were not working time anyway (29 CFR 785.48(a) says employees who clock in early and do no work need not be paid for that time). If she started steaming milk at 8:58, they were.</li>
+        <li><strong>A clock-out at 5:07 p.m.</strong> 7 minutes past 5:00 rounds back to 5:00. The employee loses 7 minutes. Had they clocked out at 5:08, the punch would have rounded to 5:15 and they would have gained 7.</li>
+      </ul>
+      <h3>A full week: rounding versus exact minutes</h3>
+      <p>Here is Sam’s week, Monday to Friday, on a 9:00 to 5:00 shift with a 30-minute unpaid lunch recorded to the exact minute and taken out of both columns. Each clock-in and clock-out is rounded to the nearest quarter hour; the exact column uses the real punches.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Day</th><th>Clock in</th><th>Clock out</th><th>Rounded in</th><th>Rounded out</th><th class="num">Exact hours</th><th class="num">Rounded hours</th><th class="num">Difference</th></tr></thead>
+          <tbody>
+            <tr><td>Monday</td><td>9:14</td><td>5:07</td><td>9:15</td><td>5:00</td><td class="num">7.38 (7:23)</td><td class="num">7.25</td><td class="num">−8 min</td></tr>
+            <tr><td>Tuesday</td><td>8:58</td><td>5:09</td><td>9:00</td><td>5:15</td><td class="num">7.68 (7:41)</td><td class="num">7.75</td><td class="num">+4 min</td></tr>
+            <tr><td>Wednesday</td><td>9:03</td><td>5:02</td><td>9:00</td><td>5:00</td><td class="num">7.48 (7:29)</td><td class="num">7.50</td><td class="num">+1 min</td></tr>
+            <tr><td>Thursday</td><td>9:08</td><td>5:11</td><td>9:15</td><td>5:15</td><td class="num">7.55 (7:33)</td><td class="num">7.50</td><td class="num">−3 min</td></tr>
+            <tr><td>Friday</td><td>9:05</td><td>5:00</td><td>9:00</td><td>5:00</td><td class="num">7.42 (7:25)</td><td class="num">7.50</td><td class="num">+5 min</td></tr>
+            <tr><td><strong>Week</strong></td><td></td><td></td><td></td><td></td><td class="num"><strong>37.52 (37:31)</strong></td><td class="num"><strong>37.50</strong></td><td class="num"><strong>−1 min</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Exact pay is 2,251 minutes ÷ 60 × $18.00 = $675.30. Rounded pay is 37.50 × $18.00 = $675.00. Rounding cost Sam $0.30 this week, the same 1 minute from Monday that the <a href="/blog/tardiness-policy/">tardiness policy guide</a> shows for a single late punch. Some weeks it will go the other way and he will gain a few cents. That is what a neutral rounding system looks like: small differences in both directions that wash out over a year. If you want to check a week of your own punches, the <a href="/blog/time-card-calculator/">time card calculator</a> totals exact clock-in and clock-out times with unpaid breaks and does not round.</p>
+      <h3>The Department of Labor’s health care example</h3>
+      <p>Fact Sheet #53, written for hospitals and nursing homes, shows that rounding can also cost the employer. Its example is an employee scheduled 7:00 a.m. to 3:30 p.m. with a 30-minute unpaid lunch who clocks in 10 minutes early and clocks out 7 minutes late every day. Under the 7-minute rule the 6:50 a.m. punch rounds back to 6:45 and the 3:37 p.m. punch rounds back to 3:30. That is 8 hours 45 minutes less lunch, or 8.25 hours a day, 41.25 hours for the week, and the fact sheet says the employee is owed 1.25 hours of overtime. An employer who assumed the schedule was 40 hours and paid 40 would be short, and our <a href="/blog/overtime-calculator/">overtime calculator</a> shows what that 1.25 hours costs at time and a half.</p>
+
+      <aside class="cta-inline" aria-label="See the Workzenly time clock">
+        <div>
+          <p class="cta-inline__title">Pay the exact minute and skip the rounding question</p>
+          <p>Workzenly’s time clock records every clock-in, break and clock-out to the minute on a phone or shared tablet, then totals the week on a timesheet and sends approved hours to payroll, so nobody rounds, averages or defends a rounding policy.</p>
+        </div>
+        <a class="cta-inline__btn" href="/features/time-clock/">See the time clock</a>
+      </aside>
+
+      <h2 id="risky">When time clock rounding becomes a problem</h2>
+      <p>The federal rule has one condition: over time, employees must be paid for all the time they actually worked. Every rounding dispute comes down to a practice that failed that test. These are the patterns that get employers sued or investigated.</p>
+      <h3>Rounding that always goes the employer’s way</h3>
+      <p>The clearest violation is a system that rounds late clock-ins forward but leaves early clock-ins alone, or rounds early clock-outs back but credits late clock-outs at the scheduled time. Each punch that moves only moves against the employee, so the losses never average out. Fact Sheet #53 says plainly that an employer may violate the FLSA if it always rounds down. The federal courts have measured neutrality in the aggregate: the Wage and Hour Division’s 2026 opinion letter summarizes a Ninth Circuit case where rounding was upheld because one employee came out a net 3 minutes and $15 behind over about a year, an Eighth Circuit case that went the other way where the practice cost roughly 13,000 employees about 74,000 hours over six years, and a Tenth Circuit case where rounding favored the employer 94 percent of the time.</p>
+      <h3>Rounding early clock-ins to the scheduled start when people are working</h3>
+      <p>Opinion letter FLSA2026-8, dated May 28, 2026, looked at a public hospital that let employees clock in up to 7 minutes early and rounded those punches forward to the scheduled start, so a 6:53 a.m. clock-in was recorded as 7:00. Employees said they started chart review and handoff reports as soon as they clocked in. The Wage and Hour Division said that if employees are in fact doing compensable work in that window, the practice is neither facially neutral nor neutrally applied, because it only ever benefits the employer. It added that if employees who clock in up to 7 minutes late were also credited from their scheduled start, and that averaged out over time, the policy would likely comply. The same letter warns employers to expect “exacting scrutiny” of claims that a few regular minutes of work are too small to pay, because modern timekeeping records the exact time.</p>
+      <h3>Rounding meal breaks</h3>
+      <p>Rounding a 28-minute lunch to 30 minutes looks harmless until a state law requires a full 30-minute break. In Donohue v. AMN Services (2021), the California Supreme Court held that employers may not round meal-period punches, and that time records showing a short or late meal period create a presumption that the break was not provided. Outside California, rounding breaks still risks turning a paid short break into an unpaid one. Record meal punches exactly and leave them out of any rounding, as the week above does.</p>
+      <h3>Rounding when the system already records the exact minute</h3>
+      <p>Federal rules do not forbid this, but it is the weakest position to defend. If your app records 9:14 and you pay from 9:15, you have to show the system averaged out, and the records that prove or disprove it are your own. Some California courts have gone further, which the next section covers. The Wage and Hour Division made the same point in its 2026 letter, quoting an appeals court: with electronic timekeeping, checking whether rounding underpaid people is easy, because the system records the exact time of every punch.</p>
+      <h3>Rounding the grace period into pay</h3>
+      <p>A policy that says “you may clock in up to 7 minutes late without a tardy” and then also rounds every late punch forward has combined an attendance rule with a pay rule, and the pay rule only runs one way. Keep them separate: discipline follows the grace period, pay follows the punch or a neutral rounding rule.</p>
+
+      <h2 id="states">State rules on time clock rounding</h2>
+      <p>Most states follow the federal standard: neutral rounding is accepted, rounding that shortchanges employees is not. Two states need their own notes.</p>
+      <p><strong>California.</strong> The 2012 Court of Appeal decision in See’s Candy Shops v. Superior Court accepted neutral rounding, and California employers relied on it for a decade. Donohue (2021) then barred rounding of meal periods. In Camp v. Home Depot (2022), a Court of Appeal held that an employer that records exact minutes and can pay them must pay them, and in Woodworth v. Loma Linda University Medical Center (2023) another Court of Appeal followed Camp. The California Supreme Court granted review of Camp on February 1, 2023 (case S277518), which means the decision is not binding while the court considers it. As of November 2026 the court had not published its ruling; check its docket or ask an employment attorney before relying on rounding in California. Many California employers already pay exact minutes to avoid the question. Our <a href="/blog/california-overtime-law/">California overtime law</a> guide covers the state’s other wage rules.</p>
+      <p><strong>Oregon.</strong> The Bureau of Labor and Industries (BOLI) says Oregon requires employees to be paid for all hours worked and notes a November 29, 2022 federal district court ruling that Oregon’s rule on tracking and rounding hours differs from federal law. BOLI’s guidance is that employers may apply a rounding system to clock-in and clock-out times but must take precautions so employees are paid for all work time each pay period, for example by adjusting hours at the end of each pay period or by rounding only in the employee’s favor. In practice that means neutral rounding alone is not enough in Oregon.</p>
+      <p>Other states have paid sick leave, meal break and recordkeeping rules that interact with rounding, and city ordinances add more. Before you turn rounding on anywhere, check your state labor department’s guidance and write down what you find.</p>
+
+      <h2 id="exact-minutes">Why many employers stop rounding and pay exact minutes</h2>
+      <p>Rounding solved a problem that no longer exists. The arithmetic that was tedious with punch cards is instant when a <a href="/features/time-clock/">time clock app</a> records punches and a <a href="/features/timesheets/">timesheet</a> totals them. Once the math is free, rounding has no upside, only costs:</p>
+      <ul>
+        <li><strong>It does not save money.</strong> A neutral system averages out by definition. If it saves you money, it is not neutral, and that saving is back pay waiting to be claimed.</li>
+        <li><strong>It creates a burden of proof.</strong> With exact minutes, the records speak for themselves. With rounding, you may have to analyze years of punches to show the practice averaged out.</li>
+        <li><strong>It confuses employees.</strong> A barista who clocks out at 5:07 and sees 5:00 on the timesheet assumes she was shorted, even if last Tuesday went her way. Exact minutes end that conversation.</li>
+        <li><strong>It collides with state law.</strong> Meal-period rules in California and the pay-period checks Oregon expects both get easier when nothing is rounded.</li>
+        <li><strong>It muddles overtime.</strong> The Fact Sheet #53 example shows rounding pushing a 40-hour schedule to 41.25 hours. Exact minutes make the overtime line obvious.</li>
+      </ul>
+      <p>If you decide to keep rounding, keep it defensible: round every punch, in both directions, with the same increment for clock-ins and clock-outs; never round meal punches; run a quarterly check comparing rounded hours to exact hours for the whole team; and write the rule into the handbook so employees can see it. For what a compliant record looks like, read <a href="/blog/what-is-a-timesheet/">what a timesheet is</a>, and remember that the FLSA requires employers to keep payroll records for at least three years and time cards for at least two.</p>
+
+      <h2 id="policy">Policy wording you can copy</h2>
+      <p>Two versions of a timekeeping clause for an employee handbook. The first pays exact minutes, which we recommend wherever your clock records them. The second describes neutral quarter-hour rounding for employers who keep it. Replace the bracketed items and have an employment attorney review the wording for your state; the <a href="/templates/employee-handbook-templates/">employee handbook templates</a> show where this clause fits.</p>
+      <div class="template">
+        <div class="template__bar"><span class="template__name">Template 1: Exact-minute timekeeping policy (recommended)</span><button class="copy-btn" type="button" data-copy="tpl-1">Copy text</button></div>
+        <div class="template__body" id="tpl-1">TIMEKEEPING AND PAY FOR HOURS WORKED
+[Company name]   Effective date: [Month day, year]
+1. Recording time. Hourly (non-exempt) employees record the start and end of every shift and every meal break using [the employee app / the time clock tablet]. Clock in when you begin work and clock out when you stop. Do not perform any work before clocking in or after clocking out.
+2. No rounding. We pay for the exact minutes recorded between your clock-in and clock-out, less unpaid meal breaks recorded to the exact minute. We do not round punch times.
+3. Early and late punches. If you clock in before your scheduled start, do not begin working until your shift starts unless your manager asks you to. Time spent working is always paid, whenever it occurs.
+4. Meal breaks. Meal breaks are recorded with their own punches and are not rounded or auto-deducted. If you were not able to take your full break, tell your manager the same day so your time can be corrected.
+5. Corrections. Review your punches in [the employee app] each week. Report a missed or wrong punch to your manager within [2] days. Corrections are made by your manager and recorded with the reason.
+6. Questions. Contact [HR contact name] at [email or phone]. Nothing in this policy limits any right you have under federal, state or local law.</div>
+      </div>
+      <div class="template">
+        <div class="template__bar"><span class="template__name">Template 2: Neutral quarter-hour rounding policy</span><button class="copy-btn" type="button" data-copy="tpl-2">Copy text</button></div>
+        <div class="template__body" id="tpl-2">TIMEKEEPING AND ROUNDING
+[Company name]   Effective date: [Month day, year]
+1. Recording time. Hourly (non-exempt) employees clock in at the start of every shift and clock out at the end using [the employee app / the time clock tablet]. Do not work before clocking in or after clocking out.
+2. Rounding rule. Clock-in and clock-out times are rounded to the nearest quarter hour. A punch 1 to 7 minutes after a quarter-hour mark (for example 9:07) is recorded as that mark (9:00). A punch 8 to 14 minutes after a quarter-hour mark (for example 9:08) is recorded as the next mark (9:15). The same rule applies to clock-ins and clock-outs, early and late, so that over time it does not reduce the pay you earn.
+3. Meal breaks are not rounded. Meal break punches are recorded and paid or deducted to the exact minute.
+4. Review. [Company name] compares rounded hours with exact recorded hours at least [quarterly]. If the review shows that rounding has reduced total pay for any employee over the review period, we pay the difference.
+5. Working time is always paid. If you work before your scheduled start or after your scheduled end with your manager’s knowledge, that time is paid, subject to the rounding rule above.
+6. Corrections and questions. Review your punches in [the employee app] weekly and report errors to your manager within [2] days. Questions go to [HR contact name] at [email or phone]. Nothing in this policy limits any right you have under federal, state or local law.
+[Delete this policy and use the exact-minute version if you have employees in California or Oregon, or if your timekeeping system records exact minutes.]</div>
+      </div>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>What is the 7-minute rule for time clocks?</summary><p>The 7-minute rule is the common name for quarter-hour time clock rounding. Each punch is rounded to the nearest 15 minutes: a punch 1 to 7 minutes past the quarter hour rounds back to it, and a punch 8 to 14 minutes past rounds forward to the next one. So 9:07 becomes 9:00 and 9:08 becomes 9:15.</p></details>
+        <details><summary>Is the 7-minute rule a federal law?</summary><p>Not exactly. No law requires rounding. The federal regulation 29 CFR 785.48(b) accepts rounding to the nearest 5 minutes, tenth of an hour or quarter hour, as long as over time employees are paid for all time worked. The 7-minute split is simply what nearest-quarter-hour rounding works out to, and the Department of Labor explains it in Fact Sheet #53.</p></details>
+        <details><summary>Can my employer round my clock-in time up but never round it down?</summary><p>No. Rounding is accepted under federal rules only if it is neutral: it must round in both directions and average out so you are paid for all the time you actually work. A system that rounds late arrivals forward but never rounds early starts back always favors the employer, and the Department of Labor says that practice can violate the FLSA.</p></details>
+        <details><summary>Does the 7-minute rule apply to lunch breaks?</summary><p>Be careful here. Federal rules do not single out meal punches, but rounding a 28-minute break to 30 minutes can turn a paid break into an unpaid one. In California, the state Supreme Court held in Donohue v. AMN Services (2021) that employers may not round meal-period punches at all. Most payroll teams record breaks to the exact minute.</p></details>
+        <details><summary>Can an employer round time if the clock records the exact minute?</summary><p>Under federal rules, yes, if the rounding is neutral and averages out. California is the open question: a 2022 Court of Appeal decision, Camp v. Home Depot, said an employer that records exact minutes must pay them, and the California Supreme Court agreed to review that decision in 2023. Until it rules, many California employers pay exact minutes.</p></details>
+        <details><summary>Is it better to pay exact minutes or to round?</summary><p>If your time clock records exact minutes, paying them is simpler and safer. It removes the need to prove your rounding averaged out, avoids state-law disputes and costs almost nothing in extra arithmetic because software does the math. Rounding made sense when hours were added by hand from punch cards; most apps now total exact minutes automatically.</p></details>
+      </div>
+
+      <aside class="cta-inline cta-inline--quiet" aria-label="Book a demo">
+        <div>
+          <p class="cta-inline__title">See exact minutes flow from punch to paycheck</p>
+          <p>Book a 20-minute demo and we will show you a week of real punches landing on a timesheet and in payroll, with no rounding anywhere.</p>
+        </div>
+        <a class="cta-inline__btn" href="/#start">Book a demo</a>
+      </aside>
+
+      <div class="byline">
+        <span class="byline__mark" aria-hidden="true">W</span>
+        <p>Written by the Workzenly team, who build time clock, scheduling, PTO and payroll software for US businesses. This guide is general information, not legal or tax advice. Federal, state and local rules change; confirm current requirements with your state labor department or an employment attorney.</p>
+      </div>
+    </article>
+  </div>
+
+  <section class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Keep reading</h2>
+    <div class="related__list">
+      <a class="related__item" href="/blog/time-card-calculator/"><b>Time card calculator with lunch breaks</b><span>Time tracking</span></a>
+      <a class="related__item" href="/blog/hours-to-decimal-calculator/"><b>Hours to decimal calculator and minutes chart</b><span>Time tracking</span></a>
+      <a class="related__item" href="/blog/tardiness-policy/"><b>Tardiness at work: pay rules and a sample policy</b><span>Leave and attendance</span></a>
+    </div>
+  </section>
+
+  <section class="close-cta" aria-labelledby="close-title">
+    <h2 id="close-title">Run time, schedules and pay in one place</h2>
+    <div class="close-cta__side">
+      <p>Workzenly handles time clocks, schedules, PTO and payroll for employers, and gives every employee one app for all of it.</p>
+      <a class="button" href="/#start">Book a demo</a>
+    </div>
+  </section>
+</main>
+
+<footer class="simple-foot">
+  <div class="simple-foot__brand"><a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52" loading="lazy"></a><p>© <span id="year">2026</span> Workzenly</p></div>
+  <nav aria-label="Footer">
+    <a href="/features/time-clock/">Time clock</a>
+    <a href="/features/scheduling/">Scheduling</a>
+    <a href="/features/payroll/">Payroll</a>
+    <a href="/features/pto/">PTO</a>
+    <a href="/solutions/">Solutions</a>
+    <a href="/tools/">Best tools</a>
+    <a href="/templates/">Free templates</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/blog/">Guides</a>
+  </nav>
+  <p><a href="mailto:info@workzenly.com">info@workzenly.com</a></p>
+</footer>
+
+<script src="/blog.js" defer></script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const usd = (n) => '$' + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const round2 = (n) => Math.round(n * 100) / 100;
+  const rows = (id, list) => {
+    $(id).innerHTML = list.map(([k, v]) => `<div><span>${k}</span><span>${v}</span></div>`).join('');
+  };
+
+  // Parse "HH:MM" (24-hour, from the time input) or "9:14 am" typed into a text fallback.
+  function parseTime(str) {
+    const s = String(str || '').trim().toLowerCase();
+    const m = s.match(/^(\d{1,2})[:.](\d{2})\s*([ap]\.?m?\.?)?$/);
+    if (!m) return null;
+    let h = parseInt(m[1], 10);
+    const min = parseInt(m[2], 10);
+    if (min > 59 || h > 23) return null;
+    if (m[3]) {
+      if (m[3][0] === 'p' && h < 12) h += 12;
+      if (m[3][0] === 'a' && h === 12) h = 0;
+    }
+    return h * 60 + min;
+  }
+
+  // Minutes since midnight to "9:15 AM"; 1440 becomes "12:00 AM (next day)".
+  function clock(total) {
+    const next = total >= 1440;
+    const t = ((total % 1440) + 1440) % 1440;
+    const h24 = Math.floor(t / 60);
+    const m = t % 60;
+    const h12 = h24 % 12 === 0 ? 12 : h24 % 12;
+    return h12 + ':' + String(m).padStart(2, '0') + ' ' + (h24 < 12 ? 'AM' : 'PM') + (next ? ' (next day)' : '');
+  }
+
+  // Nearest-increment rounding of minutes since midnight; exact ties round up.
+  const roundTo = (total, inc) => Math.round(total / inc + 1e-9) * inc;
+
+  const methods = [
+    { name: 'Quarter hour (7-minute rule)', inc: 15 },
+    { name: 'Nearest 5 minutes', inc: 5 },
+    { name: 'Nearest tenth of an hour (6 minutes)', inc: 6 },
+  ];
+
+  function calc(e) {
+    if (e) e.preventDefault();
+    const total = parseTime($('rc-time').value);
+    const isIn = $('rc-type').value === 'in';
+    const rateRaw = $('rc-rate').value.trim();
+    const rate = Math.max(0, parseFloat(rateRaw) || 0);
+    if (total === null) {
+      $('rc-out').textContent = '--:--';
+      $('rc-note').textContent = 'Enter a time such as 9:14.';
+      rows('rc-rows', []);
+      return;
+    }
+    const q = roundTo(total, 15);
+    const shift = q - total; // positive = rounded later
+    const pastMark = ((total % 15) + 15) % 15;
+    const lower = total - pastMark;
+    // Paid minutes gained by the employee: a later clock-in loses minutes, a later clock-out gains them.
+    const gain = (shiftMin) => (isIn ? -shiftMin : shiftMin);
+    const describe = (g) => {
+      if (g === 0) return 'the paid time does not change';
+      const dollars = rate > 0 ? ' (' + usd(g / 60 * rate) + ' at ' + usd(rate) + ' an hour)' : '';
+      return 'the employee ' + (g > 0 ? 'gains ' : 'loses ') + Math.abs(g) + ' paid minute' + (Math.abs(g) === 1 ? '' : 's') + dollars;
+    };
+    $('rc-out').textContent = clock(q);
+    let note = 'Under the 7-minute rule (nearest quarter hour), ' + clock(total) + ' is ';
+    if (pastMark === 0) {
+      note += 'exactly on a quarter-hour mark, so it does not move.';
+    } else {
+      note += pastMark + ' minute' + (pastMark === 1 ? '' : 's') + ' past ' + clock(lower) + ', so it rounds ' + (pastMark <= 7 ? 'back to ' : 'forward to ') + clock(q) + '.';
+    }
+    note += ' As a clock ' + (isIn ? 'in' : 'out') + ', ' + describe(gain(shift)) + '.';
+    $('rc-note').textContent = note;
+    const list = [];
+    methods.forEach((mth) => {
+      const r = roundTo(total, mth.inc);
+      const g = gain(r - total);
+      let v = clock(r);
+      if (g !== 0) {
+        v += ' (' + (g > 0 ? '+' : '−') + Math.abs(g) + ' min' + (rate > 0 ? ', ' + (g > 0 ? '+' : '−') + usd(round2(g / 60 * rate)) : '') + ')';
+      } else {
+        v += ' (no change)';
+      }
+      list.push([mth.name, v]);
+    });
+    list.push(['Exact minute (no rounding)', clock(total)]);
+    rows('rc-rows', list);
+  }
+
+  $('calc-form').addEventListener('submit', calc);
+  $('calc-form').addEventListener('input', calc);
+  $('calc-form').addEventListener('change', calc);
+  calc();
+})();
+</script>
+</body>
+</html>

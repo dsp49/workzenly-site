@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clinic Staff Scheduling Software | Workzenly</title>
+  <meta name="description" content="Clinic staff scheduling software for US medical and dental practices: shifts by room and role, credentials on file, kiosk clock-in, hours into payroll.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/solutions/healthcare/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/solutions/healthcare/">
+  <meta property="og:title" content="Clinic Staff Scheduling Software | Workzenly">
+  <meta property="og:description" content="Clinic staff scheduling software for US medical and dental practices: shifts by room and role, credentials on file, kiosk clock-in, hours into payroll.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    /* Page-local: the clinic schedule grid in the hero, with a credential column */
+    .ui-grid { display: grid; grid-template-columns: 118px 104px repeat(6, minmax(0, 1fr)); gap: 4px; font-size: 11.5px; }
+    .ui-grid > b { font-weight: 400; color: #8d8d89; padding: 4px 0; font-size: 11px; }
+    .ui-grid .ui-who { padding: 6px 0; display: grid; gap: 1px; align-content: center; }
+    .ui-grid .ui-who small { color: #7d7d79; font-size: 10.5px; }
+    .ui-grid .ui-cred { display: grid; align-content: center; color: #a3b38a; font-size: 10.5px; line-height: 1.3; }
+    .ui-shift { border-radius: 6px; padding: 5px 6px; background: #1b1b1b; border: 1px solid #262626; color: #d7d7d2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ui-shift--ma { background: #1c2412; border-color: #2f3f1a; color: var(--accent); }
+    .ui-shift--rn { background: #2a2110; border-color: #3f3318; color: var(--warn); }
+    .ui-shift--desk { background: #13202e; border-color: #1e3247; color: var(--info); }
+    .ui-shift--open { background: transparent; border: 1px dashed #ff9a85; color: var(--bad); text-align: center; }
+    .ui-shift--off { background: transparent; border-color: transparent; color: #4d4d4a; text-align: center; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Clinic Staff Scheduling Software | Workzenly",
+        "description": "Clinic staff scheduling software for US medical and dental practices: shifts by room and role, credentials on file, kiosk clock-in, hours into payroll.",
+        "url": "https://workzenly.com/solutions/healthcare/",
+        "dateModified": "2026-11-12",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://workzenly.com/solutions/" },
+          { "@type": "ListItem", "position": 3, "name": "Healthcare", "item": "https://workzenly.com/solutions/healthcare/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Is this patient appointment scheduling?", "acceptedAnswer": { "@type": "Answer", "text": "No. Workzenly is clinic staff scheduling software: which providers, nurses, MAs and front desk staff work which shifts, the hours they clock, and the payroll those hours feed. Patient appointments stay in your practice management or EHR system, and the staff schedule holds no patient information." } },
+          { "@type": "Question", "name": "Can it check certifications before someone is scheduled?", "acceptedAnswer": { "@type": "Answer", "text": "Each license and card is stored with the person, with the dates from the document, and all of them appear in one searchable list. The expiry date sits beside the name on the schedule, so whoever builds the week sees it before assigning a shift. Workzenly does not send automatic expiry alerts; checking the list is a task someone owns." } },
+          { "@type": "Question", "name": "Does it handle 10-hour and 12-hour shifts and rotations?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Shifts can be any length, with the unpaid meal break set once per shift type. Weekly hours per person show while you build, so a Pitman or DuPont rotation, which averages 42 hours and has 48-hour weeks in it, shows its overtime weeks before you publish." } },
+          { "@type": "Question", "name": "Does Workzenly support the 8/80 overtime rule?", "acceptedAnswer": { "@type": "Answer", "text": "The 8/80 system is a federal option only for hospitals and residential care establishments, by prior agreement with employees, so a clinic or medical practice stays on the 40-hour workweek. If you run a hospital or residential care facility on 8/80, tell us on the demo call and we will set the rule up with you." } },
+          { "@type": "Question", "name": "Does the schedule contain patient information?", "acceptedAnswer": { "@type": "Answer", "text": "No. The schedule and timesheets hold staff names, roles, shifts, punches, hours, PTO and credentials, and no patient health information. Keep patient data in your EHR and practice management system; the staff schedule needs none of it." } },
+          { "@type": "Question", "name": "How do clinic staff clock in?", "acceptedAnswer": { "@type": "Answer", "text": "A shared tablet at the staff entrance works as a time clock kiosk, with a PIN for each person. Staff who move between sites, such as a float MA, clock in from the Workzenly app on their phone, with GPS and geofencing confirming they are at the clinic. Both land in the same timesheet." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="clinic staff scheduling software" data-intent="transactional" data-topic="Healthcare">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 17.5h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5v9M7.5 12h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="8.5" cy="11" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 16c.5-1.5 1.6-2.2 3-2.2s2.5.7 3 2.2M14 9.5h4M14 13h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-door" viewBox="0 0 24 24"><path d="M5 20.5V5a1.5 1.5 0 0 1 1.5-1.5h11A1.5 1.5 0 0 1 19 5v15.5M3 20.5h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 12.5v.1" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-stetho" viewBox="0 0 24 24"><path d="M6 3.5v6a5 5 0 0 0 10 0v-6M11 14.5v2a4 4 0 0 0 8 0v-2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52"></a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/solutions/" aria-current="page">Solutions</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/pricing/">Pricing</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/solutions/">Solutions</a></li><li aria-current="page">Healthcare</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Clinics and medical practices</span>
+        <h1 id="hero-title">Clinic staff scheduling software for every room and role</h1>
+        <p class="fp-lead">Workzenly is clinic staff scheduling software for US medical and dental practices, urgent care and small outpatient centers. It schedules your staff, not your patients: front desk, MAs, nurses and providers on one grid, each person’s licenses and cards stored beside them, a kiosk at the staff entrance for clock-in, and approved hours flowing into payroll.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Coverage by room and role</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Credentials stored with each person</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>No patient data in the schedule</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly schedule for Lakeshore Family Clinic, week of November 16, showing provider, nurse, medical assistant and front desk shifts by day with a credential column and one open Saturday medical assistant shift">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/schedule</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span><svg><use href="#i-clock"/></svg></span>
+              <span class="is-on"><svg><use href="#i-cal"/></svg></span>
+              <span><svg><use href="#i-sheet"/></svg></span>
+              <span><svg><use href="#i-badge"/></svg></span>
+              <span><svg><use href="#i-pay"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Schedule</p><p class="ui-sub">Lakeshore Family Clinic · Mon Nov 16 – Sat Nov 21 · published Mon, Nov 9</p></div>
+                <div class="ui-seg" aria-hidden="true"><span>Day</span><span class="is-on">Week</span><span>Month</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>228</b><small>Hours scheduled</small><em>6 hourly staff</em></div>
+                <div class="ui-kpi"><b>1</b><small>Open shift</small><em class="is-warn">Sat MA 8–2</em></div>
+                <div class="ui-kpi"><b>1</b><small>Swap waiting</small><em>Tomas ↔ Mei</em></div>
+                <div class="ui-kpi"><b>12</b><small>Credentials on file</small><em>all current</em></div>
+              </div>
+              <div class="ui-card ui-scroll">
+                <div class="ui-card__head"><b>Shifts by role</b><span class="ui-legend"><span><i style="background:#d7d7d2"></i>Provider</span><span><i style="background:#f2c36b"></i>RN</span><span><i style="background:#dafa9c"></i>MA</span><span><i style="background:#9cc8fa"></i>Front desk</span></span></div>
+                <div class="ui-grid" style="min-width:780px">
+                  <b></b><b>Credential</b><b>Mon 16</b><b>Tue 17</b><b>Wed 18</b><b>Thu 19</b><b>Fri 20</b><b>Sat 21</b>
+                  <div class="ui-who">Dr. Lindsay Whitfield<small>Provider · MD</small></div><div class="ui-cred">WI license<br>to Oct 31, 2027</div><span class="ui-shift">7–5:30</span><span class="ui-shift">7–5:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift">7–5:30</span><span class="ui-shift">7–5:30</span><span class="ui-shift ui-shift--off">Off</span>
+                  <div class="ui-who">Beatriz Castellano<small>Provider · NP</small></div><div class="ui-cred">WI RN + APNP<br>to Feb 29, 2028</div><span class="ui-shift">8:30–7</span><span class="ui-shift">8:30–7</span><span class="ui-shift">8:30–7</span><span class="ui-shift">8:30–7</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift">8–2</span>
+                  <div class="ui-who">Ruth Oyelaran<small>RN · triage</small></div><div class="ui-cred">WI RN to Feb 2028<br>BLS to Jan 2028</div><span class="ui-shift ui-shift--rn">7–5:30</span><span class="ui-shift ui-shift--rn">7–5:30</span><span class="ui-shift ui-shift--rn">7–5:30</span><span class="ui-shift ui-shift--rn">7–5:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--off">Off</span>
+                  <div class="ui-who">Tomas Mendes<small>MA · rooms 4–6</small></div><div class="ui-cred">CMA to May 2029<br>BLS to Dec 31, 2026</div><span class="ui-shift ui-shift--ma">8:30–7</span><span class="ui-shift ui-shift--ma">8:30–7</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--ma" style="border-style:dashed">8:30–7 ↔</span><span class="ui-shift ui-shift--ma">7–5:30</span><span class="ui-shift ui-shift--off">Off</span>
+                  <div class="ui-who">Mei Sato<small>MA · rooms 1–3</small></div><div class="ui-cred">BLS<br>to Jun 2027</div><span class="ui-shift ui-shift--ma">7–5:30</span><span class="ui-shift ui-shift--ma">7–5:30</span><span class="ui-shift ui-shift--ma" style="border-style:dashed">8:30–7 ↔</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--ma">7–5:30</span><span class="ui-shift ui-shift--off">Off</span>
+                  <div class="ui-who">Yusuf Adeyemi<small>MA · starts Mon</small></div><div class="ui-cred">RMA to Nov 2028<br>BLS to Sep 2028</div><span class="ui-shift ui-shift--ma">7–5:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--ma">7–5:30</span><span class="ui-shift ui-shift--ma">7–5:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--open" id="hc-open">Open 8–2</span>
+                  <div class="ui-who">Harper Weiss<small>Front desk lead</small></div><div class="ui-cred">CPR/AED<br>to Apr 2027</div><span class="ui-shift ui-shift--desk">6:45–3:15</span><span class="ui-shift ui-shift--desk">6:45–3:15</span><span class="ui-shift ui-shift--desk">6:45–3:15</span><span class="ui-shift ui-shift--desk">6:45–3:15</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--desk">8–2</span>
+                  <div class="ui-who">Noor Pham<small>Front desk</small></div><div class="ui-cred">–</div><span class="ui-shift ui-shift--desk">10:30–7</span><span class="ui-shift ui-shift--desk">10:30–7</span><span class="ui-shift ui-shift--desk">10:30–7</span><span class="ui-shift ui-shift--desk">10:30–7</span><span class="ui-shift ui-shift--desk">9–5:30</span><span class="ui-shift ui-shift--off">Off</span>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="hc-foot">Saturday 8–2 has no medical assistant yet</p><small>Yusuf is free Saturday, has his BLS card on file, and would reach 36 hours</small></div><button type="button" class="ui-btn" data-act data-target="hc-foot" data-text="Offered to Yusuf. He sees it in the app now." data-done="Offered">Offer to Yusuf</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for the people who keep the clinic open</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Practice owners and office managers</li>
+        <li><svg aria-hidden="true"><use href="#i-stetho"/></svg>Providers, RNs and LPNs</li>
+        <li><svg aria-hidden="true"><use href="#i-users"/></svg>Medical and dental assistants</li>
+        <li><svg aria-hidden="true"><use href="#i-door"/></svg>Front desk and billing</li>
+        <li><svg aria-hidden="true"><use href="#i-pay"/></svg>Whoever runs payroll</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">The schedule is a spreadsheet, the BLS cards are in a binder, two MAs swapped Thursday by text, and the office manager is adding up time cards the night before payroll.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">One staff schedule, one time clock, one pay run, with credentials beside each name</h2>
+      <p class="fp-problem__p">Clinic staff scheduling software puts the schedule, the credentials, the punches and the pay in one record. Every room and role has a name against it before the week is published, license and card dates sit on the grid, the kiosk at the staff entrance records the hours, and payroll pays what a manager approved. None of it touches a patient chart.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first month</p>
+        <h2 id="outcomes-title">Every room covered, every card on file, hours that match the pay stub</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Coverage by room and role</h3><p>Build the week as the clinic runs: front desk from 6:45, a provider in rooms 1–3 and 4–6, an RN on triage, an MA on each side, on 8-, 10- or 12-hour shifts. Approved PTO is already on the grid, and you are told before a room is left empty.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-badge"/></svg></span><h3>Credentials stored with each person</h3><p>RN and APNP licenses, BLS and CPR cards, MA certificates: each is stored in the person’s record with the dates on the document, and the expiry date shows beside their name on the schedule.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-door"/></svg></span><h3>Clock-in at the staff entrance</h3><p>A shared tablet by the staff door works as a medical office time clock, with a PIN for each person and breaks clocked the same way. Staff covering a second location clock in from their phone, inside that site’s geofence.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Healthcare timekeeping that lands in payroll</h3><p>Meal breaks, overtime and late starts are worked out from the punches. The office manager checks the exceptions, approves the pay period in one tap, and regular hours, overtime and PTO go into payroll together.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">A clinic week in medical practice scheduling software</h2>
+        <p>Lakeshore Family Clinic in Madison, Wisconsin runs two providers, an RN, three MAs and two front desk staff, Monday to Saturday. Here is their week.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="A clinic week">
+          <button class="fp-tab" role="tab" id="tab-cover" aria-controls="panel-cover" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-cal"/></svg>Check a day’s coverage</b><span>Every room and role, with a swap to approve</span></button>
+          <button class="fp-tab" role="tab" id="tab-creds" aria-controls="panel-creds" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-badge"/></svg>Credentials</b><span>Licenses and cards in one list</span></button>
+          <button class="fp-tab" role="tab" id="tab-pto" aria-controls="panel-pto" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-swap"/></svg>Approve PTO</b><span>With the room coverage in front of you</span></button>
+          <button class="fp-tab" role="tab" id="tab-pay" aria-controls="panel-pay" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-pay"/></svg>Approve timesheets</b><span>One tap for the pay period</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-cover" aria-labelledby="tab-cover">
+          <div>
+            <h3>See Thursday by room before Thursday arrives</h3>
+            <p>Open any day and the clinic is laid out the way it runs: front desk, provider rooms, triage, an MA on each side. Tomas has asked to trade his Thursday for Mei’s Wednesday. Both stay at 40 hours and Mei’s BLS card is current, so the manager approves it here.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every room and role shows who is on, from when to when</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Swaps show both people’s weekly hours before you say yes</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The credential date sits beside whoever is covering</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Coverage for Thursday November 19 at Lakeshore Family Clinic by room and role, all covered, with a swap of the late medical assistant shift from Tomas Mendes to Mei Sato waiting for approval">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Coverage · Thu, Nov 19 · 6:45 AM–7:00 PM</span></div>
+            <div class="ui-main">
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Front desk · 6:45 AM–7:00 PM</p><small>Harper Weiss 6:45–3:15 · Noor Pham 10:30–7</small></div><span class="ui-pill ui-pill--ok">Covered</span></div>
+                <div class="ui-item"><div><p>Provider · rooms 1–3 · 7:00 AM–5:30 PM</p><small>Dr. Lindsay Whitfield · WI license to Oct 2027</small></div><span class="ui-pill ui-pill--ok">Covered</span></div>
+                <div class="ui-item"><div><p>Provider · rooms 4–6 · 8:30 AM–7:00 PM</p><small>Beatriz Castellano, NP · APNP to Feb 2028</small></div><span class="ui-pill ui-pill--ok">Covered</span></div>
+                <div class="ui-item"><div><p>Triage and injections · 7:00 AM–5:30 PM</p><small>Ruth Oyelaran, RN · BLS to Jan 2028</small></div><span class="ui-pill ui-pill--ok">Covered</span></div>
+                <div class="ui-item"><div><p>MA · rooms 1–3 · 7:00 AM–5:30 PM</p><small>Yusuf Adeyemi · first week · BLS to Sep 2028</small></div><span class="ui-pill ui-pill--ok">Covered</span></div>
+                <div class="ui-item"><div><p>MA · rooms 4–6 · 8:30 AM–7:00 PM</p><small id="hc-swap">Tomas Mendes → Mei Sato · swap waiting</small></div><span class="ui-pill ui-pill--warn" id="hc-swap-pill">Swap</span></div>
+              </div>
+              <div class="ui-foot"><div><p>Tomas trades Thu 8:30–7 for Mei’s Wed 8:30–7</p><small>Both stay at 40.0 hours · Mei’s BLS card is current to Jun 2027</small></div><button type="button" class="ui-btn" data-act data-target="hc-swap" data-text="Mei Sato · BLS to Jun 2027" data-pill="hc-swap-pill" data-pill-text="Covered" data-done="Approved">Approve swap</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-creds" aria-labelledby="tab-creds" hidden>
+          <div>
+            <h3>Every license and card, in one list</h3>
+            <p>Each credential is stored in the person’s record with the dates from the document, and all of them appear in one list sorted by expiry. When a payer asks for a copy, the answer is one screen, not a binder.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Licenses, BLS and CPR cards, MA certificates, with a photo of each</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Expiry dates stored as data, shown on the schedule and in the list</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Checking the list each month is a task someone owns</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Credential list for Lakeshore Family Clinic sorted by expiry date: twelve credentials, all current, from Tomas Mendes’s BLS card expiring December 31, 2026 to Tomas Mendes’s CMA expiring May 2029">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Credentials · 12 on file · sorted by expiry</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Employee</th><th>Credential</th><th>Expires</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Tomas Mendes</td><td>BLS card</td><td>Dec 31, 2026</td><td><span class="ui-pill ui-pill--ok">Current</span></td></tr>
+                  <tr><td>Dr. Lindsay Whitfield</td><td>BLS card</td><td>Mar 31, 2027</td><td><span class="ui-pill ui-pill--ok">Current</span></td></tr>
+                  <tr><td>Harper Weiss</td><td>CPR/AED card</td><td>Apr 30, 2027</td><td><span class="ui-pill ui-pill--ok">Current</span></td></tr>
+                  <tr><td>Mei Sato</td><td>BLS card</td><td>Jun 30, 2027</td><td><span class="ui-pill ui-pill--ok">Current</span></td></tr>
+                  <tr><td>Beatriz Castellano</td><td>BLS card</td><td>Aug 31, 2027</td><td><span class="ui-pill ui-pill--ok">Current</span></td></tr>
+                  <tr><td>Dr. Lindsay Whitfield</td><td>Wisconsin medical license</td><td>Oct 31, 2027</td><td><span class="ui-pill ui-pill--ok">Current</span></td></tr>
+                  <tr><td>Ruth Oyelaran</td><td>BLS card</td><td>Jan 31, 2028</td><td><span class="ui-pill ui-pill--ok">Current</span></td></tr>
+                  <tr><td>Ruth Oyelaran</td><td>Wisconsin RN license</td><td>Feb 29, 2028</td><td><span class="ui-pill ui-pill--ok">Current</span></td></tr>
+                  <tr><td>Beatriz Castellano</td><td>Wisconsin RN + APNP license</td><td>Feb 29, 2028</td><td><span class="ui-pill ui-pill--ok">Current</span></td></tr>
+                  <tr><td>Yusuf Adeyemi</td><td>BLS card</td><td>Sep 30, 2028</td><td><span class="ui-pill ui-pill--ok">Current</span></td></tr>
+                  <tr><td>Yusuf Adeyemi</td><td>RMA certificate</td><td>Nov 30, 2028</td><td><span class="ui-pill ui-pill--ok">Current</span></td></tr>
+                  <tr><td>Tomas Mendes</td><td>CMA certificate</td><td>May 31, 2029</td><td><span class="ui-pill ui-pill--ok">Current</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pto" aria-labelledby="tab-pto" hidden>
+          <div>
+            <h3>Approve time off without leaving a room empty</h3>
+            <p>Mei asks for the Wednesday and Friday of Thanksgiving week from her phone. The request arrives with her balance, who else is out, and the two MA shifts it would leave open. Tomas and Yusuf are free and under 40 that week, so the PTO is approved and the rooms stay covered.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Requests in two taps, balance shown first</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The shifts the PTO would leave open, and who can take them</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved PTO lands on the grid and in payroll</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="PTO request from Mei Sato for Wednesday November 25 and Friday November 27, 20 hours, balance 64 to 44 hours, with the two medical assistant shifts covered by Tomas Mendes and Yusuf Adeyemi">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">PTO request · Mei Sato · Nov 25 and Nov 27</span></div>
+            <div class="ui-main">
+              <div class="ui-card">
+                <div class="ui-card__head"><b>20.0 hours PTO · balance 64.0 → 44.0</b><span>Clinic closed Thu, Nov 26</span></div>
+                <div class="ui-list">
+                  <div class="ui-item"><div><p>Wed, Nov 25 · MA rooms 4–6 · 8:30 AM–7:00 PM</p><small>Tomas Mendes is free · 30.0 → 40.0 h that week</small></div><span class="ui-pill ui-pill--ok">Covered</span></div>
+                  <div class="ui-item"><div><p>Fri, Nov 27 · MA rooms 1–3 · 7:00 AM–5:30 PM</p><small>Yusuf Adeyemi is free · 20.0 → 30.0 h that week</small></div><span class="ui-pill ui-pill--ok">Covered</span></div>
+                  <div class="ui-item"><div><p>Who else is out Nov 25–27</p><small>No one</small></div><span class="ui-pill">Clear</span></div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="hc-pto">Waiting for Renee to approve</p><small>Both rooms covered, no overtime</small></div><button type="button" class="ui-btn" data-act data-target="hc-pto" data-text="Approved. Mei, Tomas and Yusuf see it in the app." data-done="Approved">Approve PTO</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pay" aria-labelledby="tab-pay" hidden>
+          <div>
+            <h3>Approve Monday, pay Friday</h3>
+            <p>Punches from the staff-entrance kiosk and from phones build the timesheets. On Monday, Nov 16 the office manager looks only at the exceptions, approves Nov 1–14 in one tap, and regular hours, overtime and PTO go into the pay run paid Friday, Nov 20.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime arrives at 1.5 × the regular rate</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>A fixed punch keeps the original in the edit history</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every pay stub in the app on payday</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Pay run for November 1 to 14 showing regular, overtime and PTO hours for five Lakeshore Family Clinic employees, one timesheet still waiting after a missed clock-out was fixed">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Payroll · Nov 1–14 · paid Fri, Nov 20</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Employee</th><th class="r">Regular</th><th class="r">Overtime</th><th class="r">PTO</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Ruth Oyelaran</td><td class="r">80.0</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Tomas Mendes</td><td class="r">80.0</td><td class="r">6.0</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Mei Sato</td><td class="r">70.0</td><td class="r">–</td><td class="r">10.0</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Harper Weiss</td><td class="r">76.0</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Noor Pham</td><td class="r">80.0</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--warn" id="hc-noor">Waiting</span></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>1 timesheet still waiting</p><small>Noor Pham · Fri, Nov 13 clock-out added at 5:30 PM with a note; the missed punch stays in the history</small></div><button type="button" class="ui-btn" data-act data-pill="hc-noor" data-pill-text="Approved" data-done="Sent to payroll">Approve</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="Clinic details">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Overtime</p>
+          <h2>The 40-hour week, or 8/80 if you are a hospital</h2>
+          <p>Weekly hours per person add up while you build, and during the week the punches add up against them. A clinic pays overtime after 40 hours in the workweek. Hospitals and residential care facilities may instead use the federal 8/80 system, by prior agreement with employees: overtime after 8 hours in a day and 80 in a fixed 14-day period. Which costs less depends on shift length.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Who will pass 40 shown before the schedule is published</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime at 1.5 × the regular rate carried into payroll</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Running 8/80 at a hospital? Tell us on the demo call and we set it up with you</li>
+          </ul>
+          <a class="fp-row__more" href="/features/overtime-tracking/">See overtime tracking <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Overtime rule card for Lakeshore Family Clinic set to the 40-hour workweek, with a table comparing what two 80-hour fortnights for an RN at $38.00 an hour would cost under the 40-hour week and under 8/80">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Overtime rule · Lakeshore Family Clinic</span></div>
+          <div class="ui-main ui-scroll">
+            <div class="ui-card">
+              <div class="ui-card__head"><b>40-hour workweek · Sun–Sat</b><span class="ui-pill ui-pill--ok">Clinic</span></div>
+              <table class="ui-table">
+                <thead><tr><th>RN at $38.00/hr, two weeks, 80 hours</th><th class="r">40-hour week</th><th class="r">8/80</th></tr></thead>
+                <tbody>
+                  <tr><td>8-hour shifts<small>6 days (48 h), then 4 days (32 h)</small></td><td class="r">$3,192.00<small>8 OT hours in week one</small></td><td class="r">$3,040.00<small>no day over 8, total 80</small></td></tr>
+                  <tr><td>10-hour shifts<small>4 a week (40 h and 40 h)</small></td><td class="r">$3,040.00<small>no overtime</small></td><td class="r">$3,344.00<small>2 OT hours on each of 8 shifts</small></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ui-foot"><div><p>Lakeshore runs 10-hour shifts and is a clinic, so it stays on the 40-hour week</p><small>$38.00 × 40 = $1,520.00 regular, $57.00 an overtime hour</small></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Hiring and onboarding</p>
+          <h2>Hire an MA and have the paperwork and cards done before day one</h2>
+          <p>Post the role, keep every application in one list, schedule interviews and send the offer letter from the same screen. The new hire signs it, fills out the W-4 and I-9 Section 1, adds direct deposit, reads the handbook and uploads a photo of their BLS card and MA certificate on their phone. All of it is in their record before the first shift.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Offer letters that state the hourly rate and shift pattern</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Licenses and cards uploaded during onboarding, stored with the person</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Card dates on the schedule from day one</li>
+          </ul>
+          <a class="fp-row__more" href="/features/onboarding/">See onboarding <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Onboarding checklist for new medical assistant Yusuf Adeyemi starting Monday November 16: offer signed, W-4, direct deposit, I-9 Section 1, BLS card and RMA certificate done, handbook to do">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Onboarding · Yusuf Adeyemi · starts Mon, Nov 16</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Offer letter · Medical assistant, $20.00/hr, 10-hour shifts</p><small>Signed Fri, Nov 6</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Form W-4</p><small>Signed Sat, Nov 7</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Direct deposit</p><small>Checking ··4471</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Form I-9, Section 1</p><small>Done Mon, Nov 9 · Section 2 by Thu, Nov 19</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>BLS card</p><small>Photo uploaded · expires Sep 30, 2028</small></div><span class="ui-pill ui-pill--ok">On file</span></div>
+              <div class="ui-item"><div><p>RMA certificate</p><small>Photo uploaded · expires Nov 30, 2028</small></div><span class="ui-pill ui-pill--ok">On file</span></div>
+              <div class="ui-item"><div><p>Employee handbook</p><small id="hc-hb">Read and acknowledge</small></div><span class="ui-pill ui-pill--warn" id="hc-hb-pill">To do</span></div>
+            </div>
+            <div class="ui-foot"><div><p>6 of 7 steps done, 4 days before his first shift</p><small>Yusuf sees the handbook in the app on his phone</small></div><button type="button" class="ui-btn" data-act data-target="hc-hb" data-text="Acknowledged Thu, Nov 12" data-pill="hc-hb-pill" data-pill-text="Done" data-done="Complete">Mark acknowledged</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">The employee side</p>
+          <h2>One app for every MA, nurse and front desk coordinator</h2>
+          <p>Staff see their shifts and rooms, offer and pick up shifts, request time off with their balance in front of them, clock in, photograph a receipt for the supply run and read their pay stub on Friday. They also see their own documents, including the date on their BLS card. Each person sees only their own record.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Shifts, swaps and PTO in two taps</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Their own licenses and cards, with the dates on them</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pay stubs on payday, policies searchable</li>
+          </ul>
+          <a class="fp-row__more" href="/features/employee-app/">See the employee app <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-phone" role="img" aria-label="Employee app home screen for Tomas Mendes with today’s 8:30 to 7 shift in rooms 4 to 6, a clock-in button, PTO balance, next paycheck and his BLS card expiry date">
+          <div class="ui-phone__screen">
+            <div class="ui-phone__notch"></div>
+            <div><p class="ui-sub">Thu, Nov 12</p><p class="ui-title">Good morning, Tomas</p></div>
+            <div class="ui-card">
+              <p class="ui-sub">MA · rooms 4–6 · Lakeshore Family Clinic</p>
+              <p style="font-size:32px;font-weight:600;letter-spacing:-0.03em;margin:6px 0 2px">8:27 AM</p>
+              <p class="ui-sub">Today’s shift 8:30 AM–7:00 PM</p>
+              <p style="margin-top:10px"><span class="ui-pill ui-pill--ok">Inside geofence</span></p>
+            </div>
+            <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="hc-phone" data-text="Clocked in at 8:27 AM" data-done="Clocked in">Clock in</button>
+            <p class="ui-sub" id="hc-phone" style="text-align:center">Not clocked in yet</p>
+            <div class="ui-item"><div><p>PTO left</p><small>46 of 80 hours</small></div><span class="ui-pill">Request</span></div>
+            <div class="ui-item"><div><p>BLS card</p><small>Expires Dec 31, 2026</small></div><span class="ui-pill">My documents</span></div>
+            <div class="ui-item"><div><p>Next paycheck</p><small>Fri, Nov 20 · Nov 1–14</small></div><span class="ui-pill ui-pill--ok">Pay stub</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One record, from the practice owner to the front desk</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Practice owner or office manager</h3></div><div><span>Replaces</span><p>A schedule spreadsheet, a credentials binder, a payroll login and the group chat</p></div><div><span>They use it to</span><p>Build the week by room and role, check credentials, approve PTO against coverage, approve timesheets, run payroll</p></div><div><span>What they notice</span><p>Payroll takes an hour on Monday, not an evening</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Clinical lead (RN or lead MA)</h3></div><div><span>Replaces</span><p>Texting around for cover and signing paper time cards</p></div><div><span>They use it to</span><p>Post open shifts, approve swaps, see who is in or late, fix a missed punch with a note</p></div><div><span>What they notice</span><p>Covering a call-out takes one post, not ten texts</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>MAs, nurses and techs</h3></div><div><span>Replaces</span><p>A printed schedule by the break room and a punch clock</p></div><div><span>They use it to</span><p>See shifts and rooms, swap and pick up, clock in at the staff entrance or on their phone, request PTO, see their own cards and pay stubs</p></div><div><span>What they notice</span><p>Pay stubs that match the hours worked</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Front desk and billing</h3></div><div><span>Replaces</span><p>Paper time-off forms and a PTO spreadsheet</p></div><div><span>They use it to</span><p>Clock in and out with a PIN, clock meal breaks, request time off with the balance in view</p></div><div><span>What they notice</span><p>Time off answered the same day, not at payroll</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Everyone sees what they need, and nothing else</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Staff see their own</h3><p>Each person sees their own shifts, hours, PTO, documents and pay stubs, never a coworker’s pay or file.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Clinical leads see the team</h3><p>Leads see their team’s schedule, attendance, time off and credential dates, and approve their team’s timesheets.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and pay stubs are visible only to the people you give payroll access to.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">The features clinics use most</p>
+        <h2 id="connect-title">Healthcare workforce management software, one feature at a time</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Employee scheduling</h3><p>Build the week by room and role, publish once, let staff swap and pick up.</p><span>Scheduling →</span></a>
+        <a class="fp-link-card" href="/features/hr-documents/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-badge"/></svg></span><h3>Credentials and HR documents</h3><p>Licenses and cards stored with each person, with the dates on them, in one list.</p><span>HR documents →</span></a>
+        <a class="fp-link-card" href="/features/time-clock-kiosk/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-door"/></svg></span><h3>Time clock kiosk</h3><p>A shared tablet at the staff entrance, a PIN for each person.</p><span>Kiosk →</span></a>
+        <a class="fp-link-card" href="/features/pto/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-swap"/></svg></span><h3>PTO tracking</h3><p>Requests in two taps, and the room coverage before you say yes.</p><span>PTO →</span></a>
+        <a class="fp-link-card" href="/features/overtime-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime tracking</h3><p>Weekly totals against 40, with warnings before a pickup costs you.</p><span>Overtime →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Approved hours, overtime and PTO become pay stubs in the app.</p><span>Payroll →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">See your clinic’s week in Workzenly</h2>
+        <p>Tell us your rooms, roles and shift lengths. We set up a demo workspace with your practice’s name before the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it needs to do</a></li>
+            <li><a href="#g-shifts">8-, 10- and 12-hour shifts</a></li>
+            <li><a href="#g-overtime">Overtime and the 8/80 option</a></li>
+            <li><a href="#g-nurse">Nurse mandatory overtime limits</a></li>
+            <li><a href="#g-breaks">Breaks on long shifts</a></li>
+            <li><a href="#g-creds">Credential tracking</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>See your own rooms, roles and team in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The practice manager’s guide to clinic staff scheduling software</h2>
+        <p>A clinic runs on coverage: a provider in every room with patients booked, an MA for each provider, someone on triage, someone at the desk. Those people work 8-, 10- or 12-hour shifts, hold licenses and cards that expire, and are paid by the hour. This guide covers what clinic staff scheduling software has to handle, the rules a healthcare schedule sets off, credential tracking, and how to choose.</p>
+        <p>One distinction first. Patient appointments live in your practice management or EHR software and carry patient health information. The staff schedule carries names, roles, shifts, punches, hours, PTO and credentials, nothing about a patient, so Workzenly never needs a chart. Our <a href="/blog/healthcare-scheduling-software/">healthcare scheduling software guide</a> draws the same line for hospitals and home care.</p>
+
+        <h3 id="g-what">What clinic staff scheduling software needs to do</h3>
+        <p>Five jobs. Schedule by room and role, so you see that rooms 4–6 have a provider and an MA from 8:30 to 7, not just that six people work Thursday. Keep each person’s credentials beside their name. Handle PTO and swaps with the coverage in view, so a day off never leaves triage empty. Record hours from a kiosk at the staff entrance or a phone, with meal breaks and overtime worked out. Then pay the hours that were approved. <a href="/features/scheduling/">Scheduling</a>, <a href="/features/hr-documents/">HR documents</a>, <a href="/features/pto/">PTO</a>, the <a href="/features/time-clock-kiosk/">time clock kiosk</a> and <a href="/features/payroll/">payroll</a> in Workzenly are those five jobs on one record.</p>
+        <p>Tools built only for scheduling, including several of the <a href="/tools/best-employee-scheduling-apps/">best employee scheduling apps</a>, stop at the published grid; hours are retyped into payroll and credentials stay in a binder.</p>
+
+        <h3 id="g-shifts">8-, 10- and 12-hour shifts, and rotations</h3>
+        <p>A clinic open 7 to 7 covers the day with two overlapping 10-hour shifts, 7–5:30 and 8:30–7, each with a 30-minute unpaid meal break. Four 10s make a 40-hour week with a weekday off, which is why MAs and nurses like them; front desk staff usually stay on 8s. Urgent care runs 12-hour shifts, often three a week per nurse, or on a fixed rotation such as the <a href="/blog/pitman-schedule/">Pitman schedule</a> (two on, two off, three on, over two weeks) or the <a href="/blog/dupont-schedule/">DuPont schedule</a> (day and night 12s over four weeks). Both average 42 hours a week, so some weeks run to 48 and carry 8 overtime hours. Whatever the pattern, set the shift once with its meal break, roll it forward, and watch weekly hours per person while you build. Our <a href="/templates/shift-schedule-templates/">shift schedule templates</a> include 10-hour and 12-hour layouts.</p>
+
+        <h3 id="g-overtime">Overtime: the 40-hour week and the 8/80 option</h3>
+        <p>Under the Fair Labor Standards Act, non-exempt staff earn time and a half for hours over 40 in a fixed seven-day workweek, and evening or Saturday differentials go into the regular rate first; see our <a href="/blog/shift-differential/">shift differential guide</a> and <a href="/blog/how-to-calculate-overtime/">how to calculate overtime</a>. The Department of Labor’s Fact Sheet #21 says payroll records must be kept for at least three years, and time cards and work schedules for two.</p>
+        <p>Hospitals and residential care establishments have one extra option. Under 29 CFR 778.601, described in the Department of Labor’s Fact Sheet #54, they may use a fixed, regularly recurring 14-day work period instead of the 7-day workweek, by prior agreement or understanding with the affected employees before the work is performed. Overtime is then owed for hours over 8 in any workday and over 80 in the period, and one employee cannot be under both systems. A clinic is neither, so it stays on the 40-hour week. The choice turns on shift length:</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>RN at $38.00 an hour, two weeks, 80 hours</th><th>40-hour workweek</th><th>8/80 system</th></tr></thead>
+            <tbody>
+              <tr><td>8-hour shifts: 6 days (48 h), then 4 days (32 h)</td><td>40 × $38.00 + 8 × $57.00 = $1,976.00, then 32 × $38.00 = $1,216.00. Total $3,192.00</td><td>No day over 8, 80 in the period: 80 × $38.00 = $3,040.00</td></tr>
+              <tr><td>10-hour shifts: 4 a week (40 h and 40 h)</td><td>No overtime: 80 × $38.00 = $3,040.00</td><td>2 overtime hours on each of 8 shifts: 64 × $38.00 + 16 × $57.00 = $3,344.00</td></tr>
+              <tr><td>What to check in your state</td><td colspan="2">California adds daily overtime after 8 hours, double time after 12, a 12-hour alternative workweek for healthcare and its own 8/80 for hospitals; see our <a href="/blog/california-overtime-law/">California overtime law guide</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="g-nurse">State limits on mandatory overtime for nurses</h3>
+        <p>Federal law does not cap an adult’s hours. Several states restrict mandatory overtime for nurses or other direct-care staff, mostly at hospitals and 24-hour facilities. Three examples, as each state describes its own law:</p>
+        <ul>
+          <li><strong>New York.</strong> Labor Law Section 167 bars health care employers under Article 28 of the Public Health Law from requiring RNs and LPNs to work beyond their regularly scheduled hours, except in a health care disaster, a declared emergency, an unforeseen emergency where overtime is needed for safe patient care, or an ongoing procedure. The state Department of Labor says the employer must first make a good-faith effort to fill the hours voluntarily and keep a nurse coverage plan under 12 NYCRR Part 177; on-call time cannot substitute for mandatory overtime.</li>
+          <li><strong>Washington.</strong> RCW 49.28.140 says no employee of a health care facility may be required to work overtime, except for an unforeseeable emergent circumstance, prescheduled on-call time (not in place of regular shifts), documented reasonable efforts to obtain staffing, or finishing a patient care procedure in progress. Washington L&amp;I says facilities that do not operate 24 hours a day are not covered.</li>
+          <li><strong>Pennsylvania.</strong> Act 102 bars a health care facility from requiring hourly or nonsupervisory employees in direct patient care or clinical care services to work beyond their agreed, predetermined and regularly scheduled shifts. Employees may still agree to a regularly scheduled shift longer than 8 hours or volunteer for overtime; physicians, physician assistants and dentists are not covered.</li>
+        </ul>
+        <p>For software, the point is the record: an extra shift was offered, this person accepted it, at this time, so voluntary overtime can be shown to be voluntary. Workzenly keeps that record for every open shift and swap. Whether your clinic is covered is a question for your state labor department.</p>
+
+        <h3 id="g-breaks">Breaks on 10-hour and 12-hour shifts</h3>
+        <p>Federal law requires no meal or rest breaks for adults. The Department of Labor’s Fact Sheet #22 says short rest periods, usually 20 minutes or less, count as hours worked and must be paid, while a bona fide meal period, typically 30 minutes or more, need not be paid if the employee is completely relieved from duty. An MA who eats at the nurses’ station while answering the phone has not been relieved.</p>
+        <p>States add their own rules, and long shifts make them bite. California’s Division of Labor Standards Enforcement says a 30-minute meal period is required for a work period of more than five hours and a second one past ten hours; the second may be waived by mutual consent only if the day is no more than 12 hours and the first was not waived. Each missed meal period costs one extra hour of pay at the regular rate, and a paid 10-minute rest break is due for every four hours or major fraction. Washington L&amp;I requires a 30-minute meal period on shifts over five hours and a paid 10-minute rest break per four hours worked. So a 12-hour shift in either state carries two meal periods and three rest breaks. Set your break rule during setup and check your state.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Wage, break and overtime rules change every year, so check your state labor department, your licensing board or a healthcare employment lawyer for your situation.</p>
+
+        <h3 id="g-creds">Credential tracking as stored data</h3>
+        <p>A clinic’s credential list is short but unforgiving: provider, RN and APRN licenses, MA certificates where your state or payers require them, BLS or CPR cards for clinical roles, and whatever training your policies add. Track them as data stored with each person: the document photographed, the dates typed from the card, and one list across the clinic sorted by expiry. That is what Workzenly’s <a href="/features/hr-documents/">HR documents</a> feature does, and the expiry date then shows beside the name on the schedule and in the employee’s own app.</p>
+        <p>Two honest limits. Workzenly stores and shows the dates; it does not send automatic expiry alerts, so give one person the job of opening the list each month and chasing renewals due in the next ninety days. And storing a card is not primary-source verification with a state board, which is a separate process. A small practice needs the simpler version done well: the right documents on file, visible to the people who schedule.</p>
+
+        <h3 id="g-choose">How to choose</h3>
+        <ol>
+          <li><strong>Run last week through it.</strong> Take your real schedule, one swap, one PTO request and one missed clock-out, and see which tool turns them into a correct pay run with the fewest manual steps. Our <a href="/blog/how-to-process-payroll/">payroll process guide</a> lists every step.</li>
+          <li><strong>Look for rooms and roles, not just people.</strong> Can you see that triage is covered from 7 to 5:30, or only that Ruth works Thursday?</li>
+          <li><strong>Ask where credentials live.</strong> With the person, with dates, visible to whoever schedules? Or in an HR folder the scheduler never opens?</li>
+          <li><strong>Check the staff entrance.</strong> Phones stay in lockers in many clinical areas, so a tablet kiosk with PINs is not optional. Ask how breaks and missed punches work on it; our <a href="/features/time-and-attendance/">time and attendance</a> page covers both.</li>
+          <li><strong>Count the hand-offs.</strong> Every time hours are retyped between tools, someone fixes a pay stub later.</li>
+          <li><strong>Keep patient data out of it.</strong> If a tool asks for an EHR connection to schedule staff, ask why.</li>
+        </ol>
+        <p>To see your own clinic in Workzenly, <a href="/#start">book a demo</a> and we will set up a workspace with your practice’s name, rooms and roles before the call. Plans and prices are on the <a href="/pricing/">pricing page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions from practice managers about clinic staff scheduling software</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>Is this patient appointment scheduling?</summary><p>No. Workzenly is clinic staff scheduling software: which providers, nurses, MAs and front desk staff work which shifts, the hours they clock, and the payroll those hours feed. Patient appointments stay in your practice management or EHR system, and the staff schedule holds no patient information.</p></details>
+        <details><summary>Can it check certifications before someone is scheduled?</summary><p>Each license and card is stored with the person, with the dates from the document, and all of them appear in one searchable list. The expiry date sits beside the name on the schedule, so whoever builds the week sees it before assigning a shift. Workzenly does not send automatic expiry alerts; checking the list is a task someone owns.</p></details>
+        <details><summary>Does it handle 10-hour and 12-hour shifts and rotations?</summary><p>Yes. Shifts can be any length, with the unpaid meal break set once per shift type. Weekly hours per person show while you build, so a Pitman or DuPont rotation, which averages 42 hours and has 48-hour weeks in it, shows its overtime weeks before you publish.</p></details>
+        <details><summary>Does Workzenly support the 8/80 overtime rule?</summary><p>The 8/80 system is a federal option only for hospitals and residential care establishments, by prior agreement with employees, so a clinic or medical practice stays on the 40-hour workweek. If you run a hospital or residential care facility on 8/80, tell us on the demo call and we will set the rule up with you.</p></details>
+        <details><summary>Does the schedule contain patient information?</summary><p>No. The schedule and timesheets hold staff names, roles, shifts, punches, hours, PTO and credentials, and no patient health information. Keep patient data in your EHR and practice management system; the staff schedule needs none of it.</p></details>
+        <details><summary>How do clinic staff clock in?</summary><p>A shared tablet at the staff entrance works as a time clock kiosk, with a PIN for each person. Staff who move between sites, such as a float MA, clock in from the Workzenly app on their phone, with GPS and geofencing confirming they are at the clinic. Both land in the same timesheet.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for clinic teams</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/healthcare-scheduling-software/"><small>GUIDE</small><b>Healthcare scheduling software: 12-hour shifts, credentials, 8/80 and nurse overtime</b></a>
+        <a href="/tools/best-employee-scheduling-apps/"><small>COMPARISON</small><b>Best employee scheduling apps</b></a>
+        <a href="/templates/shift-schedule-templates/"><small>TEMPLATES</small><b>Free shift schedule templates</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52" loading="lazy"></a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features and solutions"><h2>People and industries</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+        <li><a href="/solutions/">Solutions by industry</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>

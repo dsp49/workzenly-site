@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Construction Time Tracking Software | Workzenly</title>
+  <meta name="description" content="Construction time tracking software for US contractors: crews clock in at the gate inside a job site geofence, overtime to the minute, hours into payroll.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/solutions/construction/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/solutions/construction/">
+  <meta property="og:title" content="Construction Time Tracking Software | Workzenly">
+  <meta property="og:description" content="Construction time tracking software for US contractors: crews clock in at the gate inside a job site geofence, overtime to the minute, hours into payroll.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    /* Page-local: the job-sites board in the hero and the crew-by-site grid in the tabs */
+    .ui-sites { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .ui-site .ui-card__head { align-items: flex-start; }
+    .ui-site .ui-card__head b { display: block; }
+    .ui-site .ui-card__head small { display: block; color: #8d8d89; font-size: 11px; font-weight: 400; margin-top: 2px; }
+    .ui-crew { display: grid; gap: 6px; }
+    .ui-crew div { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; }
+    .ui-crew div span { color: #8d8d89; font-size: 11.5px; white-space: nowrap; }
+    .ui-crew div span b { color: #f2f2ef; font-weight: 500; margin-left: 6px; }
+    .ui-grid { display: grid; grid-template-columns: 118px repeat(5, minmax(0, 1fr)); gap: 4px; font-size: 11.5px; }
+    .ui-grid > b { font-weight: 400; color: #8d8d89; padding: 4px 0; font-size: 11px; }
+    .ui-grid .ui-who { padding: 6px 0; display: grid; gap: 1px; align-content: center; }
+    .ui-grid .ui-who small { color: #7d7d79; font-size: 10.5px; }
+    .ui-shift { border-radius: 6px; padding: 5px 6px; background: #1b1b1b; border: 1px solid #262626; color: #d7d7d2; line-height: 1.35; }
+    .ui-shift--aks { background: #1c2412; border-color: #2f3f1a; color: var(--accent); }
+    .ui-shift--elk { background: #13202e; border-color: #1e3247; color: var(--info); }
+    .ui-shift--dun { background: #2a2110; border-color: #3f3318; color: var(--warn); }
+    .ui-shift--open { background: transparent; border: 1px dashed #ff9a85; color: var(--bad); text-align: center; }
+    @media (max-width: 760px) { .ui-sites { grid-template-columns: 1fr; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Construction Time Tracking Software | Workzenly",
+        "description": "Construction time tracking software for US contractors: crews clock in at the gate inside a job site geofence, overtime to the minute, hours into payroll.",
+        "url": "https://workzenly.com/solutions/construction/",
+        "dateModified": "2026-11-12",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://workzenly.com/solutions/" },
+          { "@type": "ListItem", "position": 3, "name": "Construction", "item": "https://workzenly.com/solutions/construction/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How does a geofence around a job site work for clock-ins?", "acceptedAnswer": { "@type": "Answer", "text": "Each job site gets its own geofence: a pin on the gate and a radius you choose. When a crew member clocks in, the app records the time and location of that punch and checks whether it was inside the fence. Punches inside go straight through; punches outside are recorded and flagged for the foreman to approve with a note or correct. Phone GPS is typically accurate to about 16 feet under open sky, and Android recommends a radius of at least 100 to 150 meters, so give open lots more room." } },
+          { "@type": "Question", "name": "Does travel between job sites count as hours worked?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Under 29 CFR 785.38, travel from one job site to another during the workday counts as hours worked, and so does the ride from your shop to the site when crews report to the shop first. The drive from home to the first site and home from the last is an ordinary commute and is not work time under 29 CFR 785.35, even when the site changes daily. In Workzenly, crews clock in at the first site or the shop and stay clocked in between sites." } },
+          { "@type": "Question", "name": "What happens to hours on a rain day?", "acceptedAnswer": { "@type": "Answer", "text": "Federal law pays for hours worked. If the crew shows up at 7 and you release them at 9, the punches record 2 hours, and the schedule you republish for tomorrow reaches every phone. Time spent waiting at the site for weather to clear, at your direction, is work time under the federal engaged-to-wait rule. California has its own reporting-time pay rule, generally half the scheduled day with a floor of 2 hours and a cap of 4, with exceptions for acts of God and orders from civil authorities. Check your state before setting a rain-day policy." } },
+          { "@type": "Question", "name": "Can Workzenly produce certified payroll for Davis-Bacon jobs?", "acceptedAnswer": { "@type": "Answer", "text": "No. Workzenly records each person’s hours by day and by job site, works out overtime and sends approved hours into payroll. The weekly certified payroll and its signed Statement of Compliance, which the Davis-Bacon regulations require on covered federal and federally assisted projects, are documents you prepare from those records. Tell us about your public work on the demo call and we will show you where the hours come from." } },
+          { "@type": "Question", "name": "Can I store OSHA 10 cards and forklift evaluations with each worker?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A photo of each card or record is stored in the person’s file with the dates typed in as data, and every certification appears in one searchable list, so a foreman can see who holds an OSHA 10 card and when a forklift operator’s three-year evaluation was last done. Checking what is due for renewal is yours to do." } },
+          { "@type": "Question", "name": "How long does setup take for a contractor?", "acceptedAnswer": { "@type": "Answer", "text": "Most contractors are clocking in at their sites within a week. Send us your crew list, pay rates and PTO balances as a spreadsheet and we import them, then we add your job sites with a geofence each, walk through the first schedule and weekly approval with you and stay with you through the first pay run." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="construction time tracking software" data-intent="transactional" data-topic="Construction">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 17.5h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11A6.5 6.5 0 0 1 18.5 10c0 4.8-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-hardhat" viewBox="0 0 24 24"><path d="M4 16a8 8 0 0 1 16 0M9.5 9V5.5h5V9M3 16h18v2.5H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 15.5a3.5 3.5 0 0 1 .6-6.95A5 5 0 0 1 17.3 10a3 3 0 0 1-.3 5.5H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 18.5l-1 2.5M13 18.5l-1 2.5M17 18.5l-1 2.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="8.5" cy="11" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M13.5 9.5h4M13.5 13h4M6 15.5h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 7h10v9H3zM13 10h4.5L20 13v3h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16.5" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52"></a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/solutions/" aria-current="page">Solutions</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/pricing/">Pricing</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/solutions/">Solutions</a></li><li aria-current="page">Construction</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Construction and trades</span>
+        <h1 id="hero-title">Construction time tracking software for crews on every job site</h1>
+        <p class="fp-lead">Workzenly is construction time tracking software for US contractors and trades. Crews clock in at the gate from their phones, a geofence around each job site checks the punch, foremen see who is on site, and approved hours, overtime and PTO go into payroll without anyone retyping a time card from the truck.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>A geofence per job site</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime to the minute</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours by site into payroll</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly job sites board for Bluestem Construction on Thursday, November 12 at 10:40 AM: seven of seven crew clocked in across three sites, 25.5 hours so far today, one punch outside the Dundee geofence">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/sites</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span class="is-on"><svg><use href="#i-pin"/></svg></span>
+              <span><svg><use href="#i-clock"/></svg></span>
+              <span><svg><use href="#i-cal"/></svg></span>
+              <span><svg><use href="#i-sheet"/></svg></span>
+              <span><svg><use href="#i-pay"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Job sites</p><p class="ui-sub">Bluestem Construction · Omaha, NE · Thu, Nov 12 · 10:40 AM</p></div>
+                <div class="ui-seg" aria-hidden="true"><span class="is-on">Today</span><span>Week</span><span>Pay period</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>7 / 7</b><small>On site now</small><em>3 sites</em></div>
+                <div class="ui-kpi"><b>25.5</b><small>Hours so far today</small><em>since 6:46 AM</em></div>
+                <div class="ui-kpi"><b>1</b><small>Outside a geofence</small><em class="is-warn">Tanya, Dundee</em></div>
+                <div class="ui-kpi"><b>1</b><small>Late start</small><em class="is-warn">Javier, 10 min</em></div>
+              </div>
+              <div class="ui-sites">
+                <div class="ui-card ui-site">
+                  <div class="ui-card__head"><b>Aksarben townhomes<small>200 m fence · Luis Castillo</small></b><span class="ui-pill ui-pill--ok">3 on site</span></div>
+                  <div class="ui-crew">
+                    <div>Luis Castillo<span>6:52 AM<b>3.8 h</b></span></div>
+                    <div>Andre Ferreira<span>6:58 AM<b>3.7 h</b></span></div>
+                    <div>Nick Petrov<span>7:04 AM<b>3.6 h</b></span></div>
+                  </div>
+                </div>
+                <div class="ui-card ui-site">
+                  <div class="ui-card__head"><b>Elkhorn warehouse<small>250 m fence · Marek Kaminski</small></b><span class="ui-pill ui-pill--ok">3 on site</span></div>
+                  <div class="ui-crew">
+                    <div>Marek Kaminski<span>6:46 AM<b>3.9 h</b></span></div>
+                    <div>Kenji Nakamura<span>6:52 AM<b>3.8 h</b></span></div>
+                    <div>Javier Dominguez<span>7:10 AM<b>3.5 h</b></span></div>
+                  </div>
+                </div>
+                <div class="ui-card ui-site">
+                  <div class="ui-card__head"><b>Dundee remodel<small>150 m fence · Tanya Sorensen</small></b><span class="ui-pill ui-pill--warn">1 flagged</span></div>
+                  <div class="ui-crew">
+                    <div>Tanya Sorensen<span>7:28 AM<b>3.2 h</b></span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="cn-hero">Tanya’s 7:28 AM punch was 0.2 mi outside the Dundee fence</p><small>She parked on the next street; location saved with the punch</small></div><button type="button" class="ui-btn" data-act data-target="cn-hero" data-text="Approved with a note. The original punch stays in the record." data-done="Approved">Approve with note</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for the people who run the job</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-hardhat"/></svg>Owners and general contractors</li>
+        <li><svg aria-hidden="true"><use href="#i-users"/></svg>Foremen and superintendents</li>
+        <li><svg aria-hidden="true"><use href="#i-truck"/></svg>Carpenters, laborers and operators</li>
+        <li><svg aria-hidden="true"><use href="#i-badge"/></svg>Electrical, plumbing and HVAC crews</li>
+        <li><svg aria-hidden="true"><use href="#i-pay"/></svg>Whoever runs payroll in the office</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">The crew texts “here” from the truck at 6:40, Wednesday’s time card has no clock-out, and nobody can say how many hours went to the Elkhorn job.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">One job site time clock for every crew, one pay run for the company</h2>
+      <p class="fp-problem__p">Construction time tracking software puts the punch, the site and the pay in one record. Each clock-in carries a time and the job site it happened at, each site has its own geofence, and the foreman sees who is on site without calling around. The hours approved on Monday are the hours payroll pays on Friday.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first month</p>
+        <h2 id="outcomes-title">Crews on site, hours by site, overtime to the minute</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><h3>Clock-ins at the gate, not from the truck</h3><p>Draw a geofence around each job site and set its radius. A punch inside goes straight through. A punch from the parking lot across the street is still recorded, with its time and location, and flagged for the foreman.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Foremen see who is on site</h3><p>One board shows every site, who is clocked in at each, when they arrived and their hours so far today. Late starts and missed clock-outs show up during the week, while the foreman still remembers what happened.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime across sites, one workweek</h3><p>An operator who spends Monday at the warehouse and Wednesday at the townhomes has one weekly total, not two. Workzenly adds the hours across sites, flags anyone near 40 before Friday and pays the minutes over 40 at time and a half.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Hours by job site into payroll</h3><p>Timesheets group by site, so each foreman approves their crew’s week in one tap. Approved hours, overtime and PTO go into the pay run together, and the office sees hours per site without a spreadsheet.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">A construction week in Workzenly</h2>
+        <p>From the crew schedule you publish to the pay stubs that follow, the same record carries every punch at every site.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="A construction week">
+          <button class="fp-tab" role="tab" id="tab-sched" aria-controls="panel-sched" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-cal"/></svg>Schedule the crews</b><span>Each site’s crew for the week, PTO on the grid</span></button>
+          <button class="fp-tab" role="tab" id="tab-gate" aria-controls="panel-gate" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-phone"/></svg>Clock in at the gate</b><span>A phone punch inside the site’s geofence</span></button>
+          <button class="fp-tab" role="tab" id="tab-flags" aria-controls="panel-flags" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-alert"/></svg>Foreman’s exceptions</b><span>Outside the fence, missed clock-out, near 40</span></button>
+          <button class="fp-tab" role="tab" id="tab-approve" aria-controls="panel-approve" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-sheet"/></svg>Approve by site</b><span>A week per site in one tap, then payroll</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-sched" aria-labelledby="tab-sched">
+          <div>
+            <h3>Crew scheduling software, one row per job site</h3>
+            <p>Put each site on a row, drag people into the days they are needed and watch weekly hours per person as you go. Approved PTO is already on the grid, so an empty Friday at the Dundee remodel shows up before the week starts.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>A new laborer on the Aksarben crew from his first day</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours per person shown while you build</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Publish once and every phone has the week</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Crew schedule for Bluestem Construction, week of November 16 to 20, three job sites by day, with the Dundee remodel empty on Friday because Tanya Sorensen is on PTO">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Crew schedule · Mon, Nov 16 – Fri, Nov 20</span></div>
+            <div class="ui-main">
+              <div class="ui-card ui-scroll">
+                <div class="ui-card__head"><b>Crews by site</b><span>8 people · 312 h scheduled · 8 h PTO</span></div>
+                <div class="ui-grid" style="min-width:540px">
+                  <b></b><b>Mon 16</b><b>Tue 17</b><b>Wed 18</b><b>Thu 19</b><b>Fri 20</b>
+                  <div class="ui-who">Aksarben townhomes<small>Luis Castillo</small></div><span class="ui-shift ui-shift--aks">Luis, Andre, Nick, Omar</span><span class="ui-shift ui-shift--aks">Luis, Andre, Nick, Omar</span><span class="ui-shift ui-shift--aks">Luis, Andre, Nick, Omar</span><span class="ui-shift ui-shift--aks">Luis, Andre, Nick, Omar</span><span class="ui-shift ui-shift--aks">Luis, Andre, Nick, Omar</span>
+                  <div class="ui-who">Elkhorn warehouse<small>Marek Kaminski</small></div><span class="ui-shift ui-shift--elk">Marek, Kenji, Javier</span><span class="ui-shift ui-shift--elk">Marek, Kenji, Javier</span><span class="ui-shift ui-shift--elk">Marek, Kenji, Javier</span><span class="ui-shift ui-shift--elk">Marek, Kenji, Javier</span><span class="ui-shift ui-shift--elk">Marek, Kenji, Javier</span>
+                  <div class="ui-who">Dundee remodel<small>Tanya Sorensen</small></div><span class="ui-shift ui-shift--dun">Tanya</span><span class="ui-shift ui-shift--dun">Tanya</span><span class="ui-shift ui-shift--dun">Tanya</span><span class="ui-shift ui-shift--dun">Tanya</span><span class="ui-shift ui-shift--open">Tanya on PTO · no one</span>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="cn-sched">Dundee has no one on Friday, Nov 20</p><small>Move Javier from Elkhorn for the day; he stays at 40 hours</small></div><button type="button" class="ui-btn" data-act data-target="cn-sched" data-text="Javier is at Dundee on Friday. Elkhorn keeps Marek and Kenji." data-done="Moved">Move Javier</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-gate" aria-labelledby="tab-gate" hidden>
+          <div>
+            <h3>A construction time clock app that checks the punch, not the person</h3>
+            <p>Andre walks through the gate at Aksarben at 6:58 AM and taps Clock in. The app reads his location at that moment, confirms it is inside the 200-meter fence and records the punch. Nothing is recorded between punches.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Today’s site and shift on screen before he taps</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>A plain notice of what is recorded and who sees it</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>A shared tablet in the trailer for anyone without a phone</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Employee app for Andre Ferreira on Thursday, November 12 at 6:58 AM: laborer at Aksarben townhomes, inside the 200 meter geofence, clock-in button, 18 hours so far this week after Tuesday's rain day">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Thu, Nov 12</p><p class="ui-title">Good morning, Andre</p></div>
+              <div class="ui-card">
+                <p class="ui-sub">Laborer · Aksarben townhomes</p>
+                <p style="font-size:32px;font-weight:600;letter-spacing:-0.03em;margin:6px 0 2px">6:58 AM</p>
+                <p class="ui-sub">Today 7:00 AM–3:30 PM · 30 min lunch</p>
+                <p style="margin-top:10px"><span class="ui-pill ui-pill--ok">Inside Aksarben fence · 200 m</span></p>
+              </div>
+              <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="cn-phone" data-text="Clocked in at 6:58 AM · Aksarben townhomes" data-done="Clocked in">Clock in</button>
+              <p class="ui-sub" id="cn-phone" style="text-align:center">Location is recorded at clock-in and clock-out only</p>
+              <div class="ui-item"><div><p>This week</p><small>18.0 h · rain day Tue, 2.0 h</small></div><span class="ui-pill">Week of Nov 8</span></div>
+              <div class="ui-item"><div><p>Next paycheck</p><small>Fri, Nov 20 · Nov 1–14</small></div><span class="ui-pill ui-pill--ok">Pay stub</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-flags" aria-labelledby="tab-flags" hidden>
+          <div>
+            <h3>The foreman looks at four punches, not seventy</h3>
+            <p>Most punches are fine and nobody touches them. Workzenly puts the rest in front of the foreman: a punch outside a fence, a Wednesday with no clock-out, a late start and an operator who will cross 40 hours if he works Friday.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Fix a missed clock-out with a note; the original punch stays</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Crew can request a punch fix from their phone</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Near-40 warnings while there is time to change Friday</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Exceptions across all Bluestem sites on Thursday, November 12: Tanya Sorensen's punch outside the Dundee fence, Javier Dominguez's missed Wednesday clock-out and 10 minute late start, and Kenji Nakamura at 38.5 hours with 8 more scheduled Friday">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Needs a look · all sites · Thu, Nov 12</span></div>
+            <div class="ui-main">
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Outside geofence · Tanya Sorensen</p><small>Dundee remodel · Thu 7:28 AM · 0.2 mi from the fence</small></div><span class="ui-pill ui-pill--warn">Review</span></div>
+                <div class="ui-item"><div><p>Missed clock-out · Javier Dominguez</p><small>Elkhorn warehouse · Wed, Nov 11 · in 6:58 AM, no out</small></div><span class="ui-pill ui-pill--bad" id="cn-javier">Fix</span></div>
+                <div class="ui-item"><div><p>Late start · Javier Dominguez</p><small>Elkhorn warehouse · Thu 7:10 AM · due 7:00 AM</small></div><span class="ui-pill ui-pill--warn">10 min</span></div>
+                <div class="ui-item"><div><p>Near 40 hours · Kenji Nakamura</p><small>38.5 h through Thu · 8 h scheduled Fri at Aksarben</small></div><span class="ui-pill ui-pill--warn">6.5 h OT if he works Fri</span></div>
+              </div>
+              <div class="ui-foot"><div><p>Marek says Javier left Elkhorn at 3:30 PM on Wednesday</p><small>Set the clock-out with a note; the 6:58 AM punch and the fix both stay in the record</small></div><button type="button" class="ui-btn" data-act data-pill="cn-javier" data-pill-text="Fixed" data-done="Clock-out set">Set clock-out</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-approve" aria-labelledby="tab-approve" hidden>
+          <div>
+            <h3>Approve a week by site on Monday, pay on Friday</h3>
+            <p>Timesheets build themselves from the punches and group by job site. Each foreman approves their crew’s week in one tap, and the approved hours go into the Nov 1–14 pay run paid on Friday, Nov 20.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime arrives as overtime at 1.5 × the regular rate</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Tuesday’s rain day shows 2.0 hours, from the punches</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every pay stub in the employee app on payday</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Weekly timesheet approval by site for the week of November 8 to 14: Elkhorn and Dundee approved, Aksarben townhomes waiting, 280 regular and 12.5 overtime hours in total">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Timesheets · week of Nov 8–14 · approve Mon, Nov 16</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Site · employee</th><th class="r">Regular</th><th class="r">Overtime</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Aksarben townhomes<small>Luis Castillo · Andre Ferreira · Nick Petrov</small></td><td class="r">120.0</td><td class="r">6.0</td><td><span class="ui-pill ui-pill--warn" id="cn-aks">Waiting</span></td></tr>
+                  <tr><td>Elkhorn warehouse<small>Marek Kaminski · Kenji Nakamura · Javier Dominguez</small></td><td class="r">120.0</td><td class="r">6.5</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Dundee remodel<small>Tanya Sorensen</small></td><td class="r">40.0</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td><b>All sites · 7 people</b></td><td class="r"><b>280.0</b></td><td class="r"><b>12.5</b></td><td><span class="ui-pill">292.5 h</span></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>Aksarben is still waiting on Luis</p><small>Luis 4.0 and Andre 2.0 overtime hours after Saturday’s make-up day</small></div><button type="button" class="ui-btn" data-act data-pill="cn-aks" data-pill-text="Approved" data-done="Sent to payroll">Approve Aksarben</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="Construction details">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Overtime across job sites</p>
+          <h2>Overtime that adds up across job sites, to the minute</h2>
+          <p>Federal overtime is counted per workweek, not per site. Kenji runs the telehandler at Elkhorn three days and at Aksarben two, and his 46.5 hours are one week. Workzenly totals the punches across sites, flags him on Thursday at 38.5 hours and pays the 6.5 hours over 40 at time and a half.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Exact punched minutes, no rounding to argue about</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>One weekly total however many sites a person works</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>State daily overtime, such as California’s, set up with us</li>
+          </ul>
+          <a class="fp-row__more" href="/features/overtime-tracking/">See overtime tracking <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Kenji Nakamura's week of November 8: 29.5 hours at Elkhorn warehouse and 17 hours at Aksarben townhomes, 46.5 hours in total, 40 regular and 6.5 overtime worth $273">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Timesheet · Kenji Nakamura · week of Nov 8</span></div>
+          <div class="ui-main ui-scroll">
+            <table class="ui-table">
+              <thead><tr><th>Day</th><th>Site</th><th>In</th><th>Out</th><th class="r">Hours</th></tr></thead>
+              <tbody>
+                <tr><td>Mon, Nov 9</td><td>Elkhorn warehouse</td><td>6:30 AM</td><td>5:00 PM</td><td class="r">10.0</td></tr>
+                <tr><td>Tue, Nov 10</td><td>Elkhorn warehouse</td><td>6:30 AM</td><td>5:00 PM</td><td class="r">10.0</td></tr>
+                <tr><td>Wed, Nov 11</td><td>Aksarben townhomes</td><td>6:45 AM</td><td>4:15 PM</td><td class="r">9.0</td></tr>
+                <tr><td>Thu, Nov 12</td><td>Elkhorn warehouse</td><td>6:52 AM</td><td>4:52 PM</td><td class="r">9.5</td></tr>
+                <tr><td>Fri, Nov 13</td><td>Aksarben townhomes</td><td>7:00 AM</td><td>3:30 PM</td><td class="r">8.0</td></tr>
+                <tr><td><b>Week total</b></td><td colspan="3"><small>30 min unpaid lunch each day · Elkhorn 29.5 h + Aksarben 17.0 h</small></td><td class="r"><b>46.5</b></td></tr>
+              </tbody>
+            </table>
+            <div class="ui-foot"><div><p>40.0 regular · 6.5 overtime</p><small>6.5 × $42.00 (1.5 × $28.00) = $273.00 overtime</small></div><span class="ui-pill ui-pill--ok">Ready</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Hiring and onboarding</p>
+          <h2>Hire and onboard a laborer from his phone, with his OSHA card</h2>
+          <p>Post the laborer opening, keep applications in one list, schedule the interview and send the offer letter from the same screen. Omar signs it, fills out his W-4 and I-9 Section 1, adds direct deposit and reads the handbook on his phone before Monday. His OSHA 10 card goes in his record as a photo and a date.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Offer letters with the hourly rate and the start date</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Paperwork done before day one, not in the trailer at 6:45</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>OSHA 10/30 cards and forklift evaluations stored with each person</li>
+          </ul>
+          <a class="fp-row__more" href="/features/onboarding/">See onboarding <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Onboarding checklist for new laborer Omar Guzman starting Monday, November 16: offer letter, W-4, direct deposit and OSHA 10 card done, I-9 Section 1 and handbook to do">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Onboarding · Omar Guzman · starts Mon, Nov 16 · Aksarben</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Offer letter · Laborer, $19.50/hr</p><small>Signed Mon, Nov 9</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Form W-4</p><small>Signed Tue, Nov 10</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Direct deposit</p><small>Checking ··4471</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>OSHA 10 card · Construction</p><small>Photo uploaded · completed Mar 2026 · stored in his record</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Form I-9, Section 1</p><small>Due by his first day · Section 2 by Thu, Nov 19</small></div><span class="ui-pill ui-pill--warn" id="cn-i9">To do</span></div>
+              <div class="ui-item"><div><p>Employee handbook and safety policy</p><small>Read and acknowledge</small></div><span class="ui-pill ui-pill--warn">To do</span></div>
+            </div>
+            <div class="ui-foot"><div><p>Omar is at Aksarben townhomes on Monday</p><small>Remind him about Section 1 from his record</small></div><button type="button" class="ui-btn" data-act data-pill="cn-i9" data-pill-text="Signed" data-done="Reminder sent">Send reminder</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Hours by job site</p>
+          <h2>Hours by job site for the whole pay period</h2>
+          <p>Every punch carries the site it happened at, so the office sees how many hours went to each job in the pay period, by week and by person, with no spreadsheet. The same approved hours go into payroll, so pay stubs and site totals always agree.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours per site, per week and per person</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Regular and overtime hours shown separately</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every punch, edit and approval kept in each person’s record</li>
+          </ul>
+          <a class="fp-row__more" href="/features/timesheets/">See timesheets <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Hours by job site for the November 1 to 14 pay period: Aksarben townhomes 273 hours, Elkhorn warehouse 221.5 hours, Dundee remodel 80 hours, 574.5 hours in total with 14.5 overtime">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Hours by site · Nov 1–14 · paid Fri, Nov 20</span></div>
+          <div class="ui-main">
+            <div class="ui-card">
+              <div class="ui-card__head"><b>Share of 574.5 hours</b><span>Where each punch happened</span></div>
+              <div class="ui-list">
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Aksarben townhomes · 4 people</span><span>273.0 h · 47.5%</span></div><div class="ui-bar-meter"><i style="width:47.5%"></i></div></div>
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Elkhorn warehouse · 3 people</span><span>221.5 h · 38.6%</span></div><div class="ui-bar-meter"><i style="width:38.6%;background:#9cc8fa"></i></div></div>
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Dundee remodel · 1 person</span><span>80.0 h · 13.9%</span></div><div class="ui-bar-meter"><i style="width:13.9%;background:#f2c36b"></i></div></div>
+              </div>
+            </div>
+            <div class="ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Week</th><th class="r">Aksarben</th><th class="r">Elkhorn</th><th class="r">Dundee</th><th class="r">Total</th></tr></thead>
+                <tbody>
+                  <tr><td>Nov 1–7</td><td class="r">130.0</td><td class="r">112.0</td><td class="r">40.0</td><td class="r">282.0</td></tr>
+                  <tr><td>Nov 8–14</td><td class="r">143.0</td><td class="r">109.5</td><td class="r">40.0</td><td class="r">292.5</td></tr>
+                  <tr><td><b>Pay period</b></td><td class="r"><b>273.0</b></td><td class="r"><b>221.5</b></td><td class="r"><b>80.0</b></td><td class="r"><b>574.5</b></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ui-foot"><div><p>560.0 regular + 14.5 overtime · 7 people</p><small>Hours by site are where people clocked in; job costing is not something Workzenly does</small></div><span class="ui-pill ui-pill--ok">Approved</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One record, from the owner to the newest laborer</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owner or general contractor</h3></div><div><span>Replaces</span><p>Time cards in the truck, a payroll login and an hours spreadsheet by job</p></div><div><span>They use it to</span><p>See who is on which site, hours per site, overtime before it happens, and run payroll from approved hours</p></div><div><span>What they notice</span><p>Hours by site they trust before payroll, not after</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Foreman or superintendent</h3></div><div><span>Replaces</span><p>Calling the crew at 6:40 and signing time cards from memory</p></div><div><span>They use it to</span><p>See who is on site, fix a missed clock-out, clear punches outside the fence, approve the crew’s week in one tap</p></div><div><span>What they notice</span><p>Monday’s approval takes four taps, not an hour</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Carpenters, laborers, operators</h3></div><div><span>Replaces</span><p>A paper card and a text to the foreman</p></div><div><span>They use it to</span><p>Clock in at the gate, see tomorrow’s site, request a punch fix or a day off, read their pay stub</p></div><div><span>What they notice</span><p>Pay stubs that match the hours they worked</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Office and payroll</h3></div><div><span>Replaces</span><p>Retyping time cards and filing I-9s in a cabinet</p></div><div><span>They use it to</span><p>Run payroll from approved hours, onboard new hires before day one, keep OSHA cards and I-9s in each person’s record</p></div><div><span>What they notice</span><p>Payroll Monday without a phone call to a job site</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Everyone sees what they need, and nothing else</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Crew see their own</h3><p>Each person sees their own punches, hours, PTO and pay stubs, never a coworker’s rate. Location is recorded with the punch, and the app says so.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Foremen see their site</h3><p>A foreman sees the crew on their site, their punches and exceptions, and approves their timesheets. The owner sees every site.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and pay stubs are visible only to the people you give payroll access to.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">The features contractors use most</p>
+        <h2 id="connect-title">Everything a job site week needs</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/gps-time-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><h3>GPS time tracking</h3><p>Location with each punch, a geofence per job site, outside punches flagged.</p><span>GPS time tracking →</span></a>
+        <a class="fp-link-card" href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Crew scheduling</h3><p>A row per site, people dragged into days, PTO on the grid, published to every phone.</p><span>Scheduling →</span></a>
+        <a class="fp-link-card" href="/features/overtime-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime tracking</h3><p>One weekly total across sites, warnings before Friday crosses 40.</p><span>Overtime →</span></a>
+        <a class="fp-link-card" href="/features/hiring/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Hiring</h3><p>Post the laborer opening, applications in one list, interviews and the offer letter.</p><span>Hiring →</span></a>
+        <a class="fp-link-card" href="/features/hr-documents/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-badge"/></svg></span><h3>HR documents and certifications</h3><p>OSHA cards, forklift evaluations and I-9s stored with each person, searchable.</p><span>HR documents →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Construction payroll software</h3><p>Approved hours, overtime and PTO become pay stubs in the app.</p><span>Payroll →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">See your job sites in Workzenly</h2>
+        <p>Tell us your active sites and your crew size. We set up a demo workspace with your company’s name and a geofence around each site before the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it needs to do</a></li>
+            <li><a href="#g-travel">Travel time between sites</a></li>
+            <li><a href="#g-weather">Rain days and early releases</a></li>
+            <li><a href="#g-prevailing">Prevailing wage and certified payroll</a></li>
+            <li><a href="#g-certs">OSHA cards and forklift records</a></li>
+            <li><a href="#g-class">W-2 crew or 1099 subs</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>See your own sites and crews in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The contractor’s guide to construction time tracking software</h2>
+        <p>A construction company pays by the hour for work that moves every few weeks, starts before the office opens and stops when the weather says so. This guide covers what construction time tracking software has to handle, the federal rules on travel and waiting time, rain days, prevailing wage jobs, OSHA cards and forklift records, and how to choose.</p>
+
+        <h3 id="g-what">What construction time tracking software needs to do</h3>
+        <p>Five jobs, in order. Record each punch with the time and the job site it happened at, from a phone at the gate or a shared tablet in the trailer. Show the foreman who is on site and which punches need a second look. Total hours per person per workweek across every site, with overtime worked out. Group the hours by site. Then pay exactly the hours that were approved. In Workzenly, <a href="/features/gps-time-tracking/">GPS time tracking</a> with a geofence per site, the <a href="/features/time-clock-kiosk/">time clock kiosk</a> for the trailer, <a href="/features/timesheets/">timesheets</a> grouped by site and <a href="/features/payroll/">payroll</a> are those five jobs on one record.</p>
+        <p>The geofence does the quiet work. Our guide to <a href="/blog/what-is-a-geofence/">what a geofence is</a> has the numbers: phone GPS is typically accurate to about 16 feet under open sky, worse near buildings and trees, and Android recommends a minimum radius of 100 to 150 meters. A townhome site on a city block might take 150 to 200 meters; a graded lot takes more. Two things a job site time clock should not do: record location between punches, or round. Exact punched minutes are simpler to defend and to explain to a carpenter reading his pay stub. Apps built around the clock alone, such as the ones compared in our list of the <a href="/tools/best-gps-time-clock-apps/">best GPS time clock apps</a>, usually stop at the punch, and the hours get retyped into payroll.</p>
+
+        <h3 id="g-travel">Travel time: the drive to the first site versus between sites</h3>
+        <p>The Portal-to-Portal Act of 1947 (29 U.S.C. 254) says employers need not pay for ordinary travel to and from the place where the principal work is done. The Department of Labor’s regulations at 29 CFR 785.35 to 785.38 draw the lines for crews that work at changing locations.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Situation</th><th>Federal rule</th><th>Where the punch happens in Workzenly</th></tr></thead>
+            <tbody>
+              <tr><td>Home to the first job site, and home from the last</td><td>Ordinary home-to-work travel, not work time, even when the site changes daily (29 CFR 785.35)</td><td>Clock in at the gate of the first site</td></tr>
+              <tr><td>Report to the shop or yard first, then ride to the site</td><td>Travel from the designated meeting place to the work site is part of the day’s work (29 CFR 785.38)</td><td>Clock in at the shop; give the shop its own geofence</td></tr>
+              <tr><td>Drive from one site to another during the day</td><td>Travel that is all in the day’s work, counted as hours worked (29 CFR 785.38)</td><td>Stay clocked in for the drive</td></tr>
+              <tr><td>Waiting at the site for weather, an inspector or a delivery, at your direction</td><td>Engaged to wait, which is work time (29 CFR 785.15)</td><td>Stay clocked in</td></tr>
+              <tr><td>A one-day job in another city for someone who usually works in one place</td><td>Travel time is work time, less the normal commute (29 CFR 785.37)</td><td>Clock in at departure; approve with a note</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The handbook version: the day starts at the first place you tell people to be, and it does not stop while they move between places you sent them. Workzenly records where each punch happened, so the record shows the crew clocked in at the shop at 6:30, not at the site at 7:15. Read <a href="/blog/how-to-calculate-overtime/">how to calculate overtime</a> for the regular-rate math when travel pay enters the week.</p>
+
+        <h3 id="g-weather">Rain days, early releases and reporting-time pay</h3>
+        <p>Federal law pays for hours worked, nothing more. A crew that shows up at 7:00 and is sent home at 9:00 earned two hours, and the punches say so. A crew told to wait in the trucks until the lightning passes is engaged to wait and is paid for the wait.</p>
+        <p>Some states add a minimum. California has its own reporting-time pay rule: an employee who reports for a scheduled day and gets less than half of it must generally be paid for half the scheduled day, no less than 2 hours and no more than 4, at the regular rate. The rule does not apply when work cannot begin because of threats to employees or property, when civil authorities recommend that work not start, when utilities fail, or when the interruption is an act of God or another cause outside the employer’s control. Weather often fits that last exception, but the facts matter, so ask a California employment lawyer before relying on it. New York and a few other states have call-in pay rules for some industries. In Workzenly, a rain day is what the punches show: 2.0 hours for each person on site that morning. Republish the schedule for the make-up Saturday and every phone has it. Our <a href="/blog/overtime-calculator/">overtime calculator</a> shows what a 44-hour week costs before you post it.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Wage and hour rules change every year, so check the U.S. Department of Labor, your state labor department or a construction employment lawyer for your situation.</p>
+
+        <h3 id="g-prevailing">Prevailing wage and certified payroll</h3>
+        <p>The Davis-Bacon Act covers federal contracts over $2,000 for the construction, alteration or repair of public buildings or public works, and the Related Acts extend it to projects federal agencies fund through grants, loans and guarantees. Covered contractors and subcontractors must pay laborers and mechanics at least the locally prevailing wage and fringe benefits, and must submit a certified payroll every week with a signed Statement of Compliance; form WH-347 is the Department of Labor’s optional form for it. Many states have their own prevailing wage laws for state-funded work.</p>
+        <p>Where Workzenly fits: it records the hours each person worked each day, by site, with overtime separated, and sends the approved totals into payroll. The certified payroll form, the classifications and the fringe math are yours to prepare from those records; Workzenly does not fill out WH-347. Our <a href="/templates/timesheet-templates/">timesheet templates</a> are a backup for a sub who is not yet on the system.</p>
+
+        <h3 id="g-certs">OSHA 10/30 cards and forklift records, stored with each person</h3>
+        <p>OSHA’s Outreach Training Program is voluntary under federal rules: the 10-hour class is for workers, the 30-hour class for supervisors. OSHA says the cards are not certifications and do not satisfy any OSHA standard’s training requirement, but some states and cities require the 10-hour card on certain projects, and general contractors often ask to see them. Forklift and telehandler operators are different: OSHA’s powered industrial truck standard at 29 CFR 1910.178(l) requires training and an evaluation before an operator runs the machine, an evaluation at least once every three years, and a record with the operator’s name, the training date, the evaluation date and who did the training.</p>
+        <p>In Workzenly, the card or evaluation is stored in the person’s file with the dates typed in as data, and every record appears in one searchable list, so “who on the Elkhorn crew can run the telehandler?” has an answer in a minute. See <a href="/features/hr-documents/">HR documents</a> for how the list works. Checking what comes due for renewal is yours to do.</p>
+
+        <h3 id="g-class">W-2 crew or 1099 subs: the misclassification question</h3>
+        <p>Construction runs on subcontractors, and the line matters. If your company controls how, when and where the work happens, supplies the tools and the schedule, and the work is part of your regular operations, the worker is likely an employee, whatever the contract says. Our <a href="/blog/1099-vs-w2/">1099 vs W-2 guide</a> walks through the IRS and Department of Labor tests, state ABC rules and what reclassification costs. A time clock is not a classification test, but it is evidence: a laborer who clocks in at your gate every morning and follows your foreman’s schedule looks like an employee because he is one. Workzenly is built for W-2 crews, from the W-4 and I-9 in <a href="/features/onboarding/">onboarding</a> to hours, overtime and pay stubs.</p>
+
+        <h3 id="g-choose">How to choose</h3>
+        <ol>
+          <li><strong>Run last week through it.</strong> Take your three busiest sites, the rain morning, one missed clock-out and the operator who worked two sites, and see which tool turns them into a correct pay run with the fewest manual steps.</li>
+          <li><strong>Stand at the gate.</strong> Clock in from the actual site with a real phone. If the fence flags you at the gate, the radius is wrong or the tool is.</li>
+          <li><strong>Check overtime across sites.</strong> Hours at two sites in one workweek must total as one week. Ask to see a split week on screen, and ask what is recorded between punches. The answer should be nothing.</li>
+          <li><strong>Count the hand-offs.</strong> Every retyped hour is a pay stub someone fixes later. Read our <a href="/blog/how-to-process-payroll/">payroll process guide</a> for the steps a pay run involves, and ask us on the demo call who handles tax deposits and filings.</li>
+        </ol>
+        <p>To see your own sites in Workzenly, <a href="/#start">book a demo</a> and we will set up a workspace with your company’s name and a geofence around each active site before the call. Plans and prices are on the <a href="/pricing/">pricing page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions from contractors about construction time tracking software</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>How does a geofence around a job site work for clock-ins?</summary><p>Each job site gets its own geofence: a pin on the gate and a radius you choose. When a crew member clocks in, the app records the time and location of that punch and checks whether it was inside the fence. Punches inside go straight through; punches outside are recorded and flagged for the foreman to approve with a note or correct. Phone GPS is typically accurate to about 16 feet under open sky, and Android recommends a radius of at least 100 to 150 meters, so give open lots more room.</p></details>
+        <details><summary>Does travel between job sites count as hours worked?</summary><p>Yes. Under 29 CFR 785.38, travel from one job site to another during the workday counts as hours worked, and so does the ride from your shop to the site when crews report to the shop first. The drive from home to the first site and home from the last is an ordinary commute and is not work time under 29 CFR 785.35, even when the site changes daily. In Workzenly, crews clock in at the first site or the shop and stay clocked in between sites.</p></details>
+        <details><summary>What happens to hours on a rain day?</summary><p>Federal law pays for hours worked. If the crew shows up at 7 and you release them at 9, the punches record 2 hours, and the schedule you republish for tomorrow reaches every phone. Time spent waiting at the site for weather to clear, at your direction, is work time under the federal engaged-to-wait rule. California has its own reporting-time pay rule, generally half the scheduled day with a floor of 2 hours and a cap of 4, with exceptions for acts of God and orders from civil authorities. Check your state before setting a rain-day policy.</p></details>
+        <details><summary>Can Workzenly produce certified payroll for Davis-Bacon jobs?</summary><p>No. Workzenly records each person’s hours by day and by job site, works out overtime and sends approved hours into payroll. The weekly certified payroll and its signed Statement of Compliance, which the Davis-Bacon regulations require on covered federal and federally assisted projects, are documents you prepare from those records. Tell us about your public work on the demo call and we will show you where the hours come from.</p></details>
+        <details><summary>Can I store OSHA 10 cards and forklift evaluations with each worker?</summary><p>Yes. A photo of each card or record is stored in the person’s file with the dates typed in as data, and every certification appears in one searchable list, so a foreman can see who holds an OSHA 10 card and when a forklift operator’s three-year evaluation was last done. Checking what is due for renewal is yours to do.</p></details>
+        <details><summary>How long does setup take for a contractor?</summary><p>Most contractors are clocking in at their sites within a week. Send us your crew list, pay rates and PTO balances as a spreadsheet and we import them, then we add your job sites with a geofence each, walk through the first schedule and weekly approval with you and stay with you through the first pay run.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for construction teams</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/gps-time-clock-app/"><small>GUIDE</small><b>GPS time clock app: a buyer’s checklist</b></a>
+        <a href="/tools/best-gps-time-clock-apps/"><small>COMPARISON</small><b>Best GPS time clock apps, geofences compared</b></a>
+        <a href="/templates/timesheet-templates/"><small>TEMPLATES</small><b>Free timesheet templates</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52" loading="lazy"></a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features and solutions"><h2>People and industries</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+        <li><a href="/solutions/">Solutions by industry</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>

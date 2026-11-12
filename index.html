@@ -3,19 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Workzenly · One place for the whole workday</title>
-  <meta name="description" content="Workzenly runs time clocks, schedules, PTO and payroll for US employers, and gives every employee one app for all of it.">
+  <title>Workzenly: Time Clock, Scheduling, PTO and Payroll in One App</title>
+  <meta name="description" content="Workzenly runs time clocks, schedules, PTO and payroll for US employers and gives every employee one app. Built for restaurants, retail, clinics, job sites and offices.">
   <meta name="theme-color" content="#0b0b0b">
   <link rel="canonical" href="https://workzenly.com/">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Workzenly">
   <meta property="og:url" content="https://workzenly.com/">
-  <meta property="og:title" content="Workzenly · One place for the whole workday">
-  <meta property="og:description" content="Workzenly runs time clocks, schedules, PTO and payroll for US employers, and gives every employee one app for all of it.">
+  <meta property="og:title" content="Workzenly: Time Clock, Scheduling, PTO and Payroll in One App">
+  <meta property="og:description" content="Workzenly runs time clocks, schedules, PTO and payroll for US employers and gives every employee one app. Built for restaurants, retail, clinics, job sites and offices.">
   <meta property="og:image" content="https://workzenly.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -24,169 +23,338 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <link rel="stylesheet" href="/home.css">
   <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://workzenly.com/#org",
+        "name": "Workzenly",
+        "url": "https://workzenly.com/",
+        "logo": "https://workzenly.com/assets/workzenly-logo-lg.png",
+        "email": "info@workzenly.com",
+        "areaServed": "US"
+      },
+      {
+        "@type": "WebSite",
+        "name": "Workzenly",
+        "url": "https://workzenly.com/",
+        "publisher": { "@id": "https://workzenly.com/#org" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Workzenly",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "url": "https://workzenly.com/",
+        "description": "Time clocks, employee scheduling, PTO tracking and payroll for US employers, with one app for every employee.",
+        "offers": [
+          { "@type": "Offer", "name": "Starter", "price": "29.00", "priceCurrency": "USD", "url": "https://workzenly.com/pricing/" },
+          { "@type": "Offer", "name": "Plus", "price": "49.00", "priceCurrency": "USD", "url": "https://workzenly.com/pricing/" },
+          { "@type": "Offer", "name": "Complete", "price": "89.00", "priceCurrency": "USD", "url": "https://workzenly.com/pricing/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Who is Workzenly for?", "acceptedAnswer": { "@type": "Answer", "text": "US businesses with hourly or salaried staff, from a single coffee shop to a company with several locations. The employer gets the admin tools and every employee gets their own app." } },
+          { "@type": "Question", "name": "Does every employee need a login?", "acceptedAnswer": { "@type": "Answer", "text": "Each person gets their own account for pay stubs, PTO and shifts. For sites where phones are not allowed on the floor, a shared tablet at the door handles clocking in." } },
+          { "@type": "Question", "name": "Can it run our payroll?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Approved hours, overtime, PTO and expenses go straight into payroll, and pay stubs are published to each employee’s app on payday. Ask us on the demo call who handles tax deposits and filings for your setup." } },
+          { "@type": "Question", "name": "Does it work on a phone?", "acceptedAnswer": { "@type": "Answer", "text": "The employee side is built for phones first. Managers can approve, build schedules and check who is in from a phone too; payroll is easiest on a laptop." } },
+          { "@type": "Question", "name": "We already use spreadsheets. Can we move our data?", "acceptedAnswer": { "@type": "Answer", "text": "Send us your employee list and PTO balances as a spreadsheet and we will import them during setup, so nobody starts from zero." } },
+          { "@type": "Question", "name": "How long does setup take?", "acceptedAnswer": { "@type": "Answer", "text": "Most small teams are clocking in within a week. We walk you through it on the demo call and stay with you for the first pay run." } },
+          { "@type": "Question", "name": "Who can see salaries and personal details?", "acceptedAnswer": { "@type": "Answer", "text": "You decide. Employees see only their own record, managers see their team’s shifts and time off, and pay is visible only to the people you give payroll access to." } },
+          { "@type": "Question", "name": "What does Workzenly cost?", "acceptedAnswer": { "@type": "Answer", "text": "Plans start at $29 a month plus $4 per active employee, with no setup fee and 20% off annual billing. The full plan comparison is on the pricing page." } }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M4 16h16M6 16a6 6 0 0 1 12 0M12 7.5V5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z M3.5 7.5L12 12l8.5-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5V20H4z M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="10" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 19h6M12 15v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M5 8h11v6a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5zM16 10h2a2 2 0 0 1 0 4h-2M7 4.5c0 1 1 1 1 2M10.5 4.5c0 1 1 1 1 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 4l2.4 5 5.4.6-4 3.7 1.1 5.4L12 16l-4.9 2.7 1.1-5.4-4-3.7 5.4-.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 17.5h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M18 8v6M15 11h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-check-list" viewBox="0 0 24 24"><path d="M4 7l2 2 3-3M4 15l2 2 3-3M12 8h8M12 16h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+</svg>
+
 <header class="nav">
-  <a class="logo" href="#top" aria-label="Workzenly home">
-    <img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52">
-  </a>
+  <a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52"></a>
   <nav class="nav__links" aria-label="Main">
-    <a class="link" href="#features">Features</a>
-    <a class="link" href="#how">How it works</a>
-    <a class="link" href="#workplaces">Workplaces</a>
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/solutions/">Solutions</a>
     <a class="link" href="/pricing/">Pricing</a>
     <a class="link" href="/blog/">Resources</a>
   </nav>
   <a class="button button--small" href="#start">Book a demo</a>
 </header>
 
-<main id="top">
+<main class="fp" id="top">
 
-  <!-- HERO: the product performs, for both sides of the workday -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero__text">
-      <h1 id="hero-title" class="load" style="--i:0">One place for<br> the whole workday</h1>
-      <p class="hero__lead load" style="--i:1">Workzenly runs time clocks, schedules, PTO and payroll for US employers, and gives every employee one app for all of it.</p>
-      <div class="hero__actions load" style="--i:2">
-        <a class="button" href="#start">Book a demo</a>
-        <a class="link" href="#features">See everything it does</a>
-      </div>
-      <p class="hero__hint load" style="--i:3">Switch sides on the card to see what each person gets.</p>
-    </div>
-
-    <div class="hero__stage load" style="--i:2">
-      <div class="app" data-ui id="app">
-        <div class="app__bar">
-          <span class="app__brand"><img src="/assets/logo-icon.png" alt="" class="app__brand-icon">Workzenly</span>
-          <div class="seg" role="group" aria-label="Choose a view">
-            <button type="button" class="seg__btn" data-role="employee" aria-pressed="true">Employee</button>
-            <button type="button" class="seg__btn" data-role="employer" aria-pressed="false">Employer</button>
-          </div>
+  <!-- HERO -->
+  <section class="fp-hero hm-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow load" style="--i:0">Time clock · Scheduling · PTO · Payroll</span>
+        <h1 id="hero-title" class="load" style="--i:1">One place for the whole workday</h1>
+        <p class="fp-lead load" style="--i:2">Workzenly runs time clocks, schedules, PTO and payroll for US employers, and gives every employee one app for all of it. The hours people clock are the hours they are paid for, with nothing retyped in between.</p>
+        <div class="fp-actions load" style="--i:3">
+          <a class="fp-btn" href="#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="/pricing/">See pricing</a>
         </div>
+        <ul class="fp-checks load" style="--i:4">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>No setup fee</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Clocking in within a week</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>One app for every employee</li>
+        </ul>
+      </div>
 
-        <!-- Employee view -->
-        <div class="app__view" data-view="employee">
-          <p class="app__hello">Good morning, Maya</p>
-          <p class="app__date" id="app-date">Saturday, October 31</p>
+      <div class="fp-hero__stage load" style="--i:2">
+        <div class="app" data-ui id="app">
+          <div class="app__bar">
+            <span class="app__brand"><img src="/assets/logo-icon.png" alt="" class="app__brand-icon">Workzenly</span>
+            <div class="seg" role="group" aria-label="Choose a view">
+              <button type="button" class="seg__btn" data-role="employee" aria-pressed="true">Employee</button>
+              <button type="button" class="seg__btn" data-role="employer" aria-pressed="false">Employer</button>
+            </div>
+          </div>
 
-          <div class="clock">
-            <div class="clock__top">
-              <div>
-                <p class="clock__label">Front counter · Northfield Coffee, Austin, TX</p>
-                <p class="clock__time num" id="clock-time" aria-live="off">9:02:14 AM</p>
-                <p class="clock__shift">Today’s shift 9:00 AM–5:30 PM</p>
+          <!-- Employee view -->
+          <div class="app__view" data-view="employee">
+            <p class="app__hello">Good morning, Maya</p>
+            <p class="app__date" id="app-date">Thursday, November 12</p>
+            <div class="clock">
+              <div class="clock__top">
+                <div>
+                  <p class="clock__label">Front counter · Northfield Coffee, Austin, TX</p>
+                  <p class="clock__time num" id="clock-time" aria-live="off">9:02:14 AM</p>
+                  <p class="clock__shift">Today’s shift 9:00 AM–5:30 PM</p>
+                </div>
+                <button type="button" class="clock__btn" id="clock-btn" aria-pressed="false">Clock in</button>
               </div>
-              <button type="button" class="clock__btn" id="clock-btn" aria-pressed="false">Clock in</button>
+              <p class="clock__status" id="clock-status">Not clocked in yet</p>
             </div>
-            <p class="clock__status" id="clock-status">Not clocked in yet</p>
+            <ul class="tiles">
+              <li class="tile"><span class="tile__k">PTO left</span><span class="tile__v">52 hrs <small>of 80 hrs</small></span></li>
+              <li class="tile"><span class="tile__k">Next paycheck</span><span class="tile__v">$1,284.50 <small>Fri, Nov 20</small></span></li>
+              <li class="tile"><span class="tile__k">Next shift</span><span class="tile__v">Mon 7:00 AM <small>to 3:30 PM</small></span></li>
+            </ul>
           </div>
 
-          <ul class="tiles">
-            <li class="tile">
-              <span class="tile__k">PTO left</span>
-              <span class="tile__v">52 hrs <small>of 80 hrs</small></span>
-            </li>
-            <li class="tile">
-              <span class="tile__k">Next paycheck</span>
-              <span class="tile__v">$1,284.50 <small>Fri, Nov 6</small></span>
-            </li>
-            <li class="tile">
-              <span class="tile__k">Next shift</span>
-              <span class="tile__v">Mon 7:00 AM <small>to 3:30 PM</small></span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Employer view -->
-        <div class="app__view" data-view="employer" hidden>
-          <p class="app__hello">Today at Northfield Coffee</p>
-          <p class="app__date"><span class="num">6</span> of <span class="num">8</span> people on shift</p>
-
-          <table class="roster">
-            <thead>
-              <tr><th scope="col">Name</th><th scope="col">Role</th><th scope="col" class="num">In</th><th scope="col">Status</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Maya Torres</td><td>Front counter</td><td class="num">8:58 AM</td><td><span class="pill pill--ok">On shift</span></td></tr>
-              <tr><td>Jordan Lee</td><td>Barista</td><td class="num">7:01 AM</td><td><span class="pill pill--ok">On shift</span></td></tr>
-              <tr><td>Sam Rivera</td><td>Kitchen</td><td class="num">9:14 AM</td><td><span class="pill pill--warn">Late 14 min</span></td></tr>
-              <tr><td>Chris Walker</td><td>Barista</td><td class="num">–</td><td><span class="pill">On PTO</span></td></tr>
-            </tbody>
-          </table>
-
-          <div class="approve">
-            <div>
-              <p class="approve__k">Waiting for you</p>
-              <p class="approve__v" id="approve-text">3 timesheets and 1 PTO request</p>
+          <!-- Employer view -->
+          <div class="app__view" data-view="employer" hidden>
+            <p class="app__hello">Today at Northfield Coffee</p>
+            <p class="app__date"><span class="num">6</span> of <span class="num">8</span> people on shift</p>
+            <table class="roster">
+              <thead><tr><th scope="col">Name</th><th scope="col">Role</th><th scope="col" class="num">In</th><th scope="col">Status</th></tr></thead>
+              <tbody>
+                <tr><td>Maya Torres</td><td>Front counter</td><td class="num">8:58 AM</td><td><span class="pill pill--ok">On shift</span></td></tr>
+                <tr><td>Jordan Lee</td><td>Barista</td><td class="num">7:01 AM</td><td><span class="pill pill--ok">On shift</span></td></tr>
+                <tr><td>Sam Rivera</td><td>Kitchen</td><td class="num">9:14 AM</td><td><span class="pill pill--warn">Late 14 min</span></td></tr>
+                <tr><td>Chris Walker</td><td>Barista</td><td class="num">–</td><td><span class="pill">On PTO</span></td></tr>
+              </tbody>
+            </table>
+            <div class="approve">
+              <div><p class="approve__k">Waiting for you</p><p class="approve__v" id="approve-text">3 timesheets and 1 PTO request</p></div>
+              <button type="button" class="approve__btn" id="approve-btn">Approve all</button>
             </div>
-            <button type="button" class="approve__btn" id="approve-btn">Approve all</button>
           </div>
         </div>
+        <p class="hm-hero__hint">Switch sides on the card to see what each person gets. The clock is live.</p>
       </div>
     </div>
   </section>
 
-  <!-- INTRO: who it is for -->
-  <section class="intro" aria-labelledby="intro-title">
-    <h2 id="intro-title" class="reveal">Built for both sides of the job</h2>
-    <p class="intro__lead reveal">Most small businesses run work on a payroll service, a scheduling spreadsheet, a PTO email chain and a group text. Workzenly puts it in one place, so the person who hires and the person who works see the same facts.</p>
-    <div class="intro__cols">
-      <p class="reveal"><b>For employers.</b> Post a job, hire, onboard, build the schedule, approve hours and run payroll from one account. Every number on a pay stub traces back to a shift someone actually worked.</p>
-      <p class="reveal"><b>For employees.</b> Clock in from your phone, swap a shift, request PTO, check your pay stub and find the policy you need without asking anyone where it is.</p>
-      <p class="reveal"><b>For managers.</b> See who is in today, who is late and who is out on PTO. Approve a whole week of timesheets in one tap, and get told before a shift goes uncovered.</p>
-      <p class="reveal"><b>For HR and payroll.</b> Offer letters, W-4s, I-9s, reviews and pay history live in each person’s record, so payday is a check and not a hunt through inboxes.</p>
+  <!-- BUILT FOR: industries -->
+  <section class="fp-built" aria-label="Built for every kind of workplace">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for teams that work in shifts, and the offices behind them</p>
+      <ul>
+        <li><a href="/solutions/restaurants/"><svg aria-hidden="true"><use href="#i-cup"/></svg>Restaurants</a></li>
+        <li><a href="/solutions/retail/"><svg aria-hidden="true"><use href="#i-store"/></svg>Retail</a></li>
+        <li><a href="/solutions/healthcare/"><svg aria-hidden="true"><use href="#i-cross"/></svg>Clinics</a></li>
+        <li><a href="/solutions/home-care/"><svg aria-hidden="true"><use href="#i-home"/></svg>Home care</a></li>
+        <li><a href="/solutions/construction/"><svg aria-hidden="true"><use href="#i-hat"/></svg>Construction</a></li>
+        <li><a href="/solutions/warehouses/"><svg aria-hidden="true"><use href="#i-box"/></svg>Warehouses</a></li>
+        <li><a href="/solutions/field-services/"><svg aria-hidden="true"><use href="#i-truck"/></svg>Field services</a></li>
+        <li><a href="/solutions/offices/"><svg aria-hidden="true"><use href="#i-desk"/></svg>Offices</a></li>
+      </ul>
     </div>
   </section>
 
-  <!-- FEATURES: the command list -->
-  <section class="features" id="features" aria-labelledby="features-title">
-    <h2 id="features-title" class="reveal">Everything a workplace needs</h2>
-    <p class="features__note reveal">Type to find a part of Workzenly, or move through the list.</p>
-    <div class="cmd" data-ui>
-      <label class="visually-hidden" for="cmd-input">Search Workzenly</label>
-      <input class="cmd__input" id="cmd-input" type="search" placeholder="Search Workzenly" autocomplete="off">
-      <ul class="cmd__list" id="cmd-list" role="listbox" aria-label="Parts of Workzenly">
-        <li class="cmd__row" role="option" aria-selected="true" tabindex="0" data-keys="H">
-          <span class="cmd__name">Hiring</span><span class="cmd__keys"><kbd>H</kbd></span>
-          <span class="cmd__text">Post a role, collect applications in one list, schedule interviews and send the offer letter from the same screen.</span>
-        </li>
-        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
-          <span class="cmd__name">Onboarding</span><span class="cmd__keys"><kbd>O</kbd></span>
-          <span class="cmd__text">New hires sign their offer letter, fill out their W-4 and I-9, add direct deposit and read the handbook before day one, on their own phone.</span>
-        </li>
-        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
-          <span class="cmd__name">Shifts and schedules</span><span class="cmd__keys"><kbd>S</kbd></span>
-          <span class="cmd__text">Build next week’s schedule by dragging people into shifts. Staff see it instantly and can pick up or swap a shift.</span>
-        </li>
-        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
-          <span class="cmd__name">Time and attendance</span><span class="cmd__keys"><kbd>T</kbd></span>
-          <span class="cmd__text">Clock in by phone or a shared tablet at the door, with GPS and geofencing. Breaks, overtime and late arrivals are worked out for you.</span>
-        </li>
-        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
-          <span class="cmd__name">PTO and time off</span><span class="cmd__keys"><kbd>L</kbd></span>
-          <span class="cmd__text">Request time off in two taps. Managers see who else is out before they say yes, and PTO balances accrue and update themselves.</span>
-        </li>
-        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
-          <span class="cmd__name">Payroll and pay stubs</span><span class="cmd__keys"><kbd>P</kbd></span>
-          <span class="cmd__text">Approved hours, overtime, PTO and expenses flow into payroll. Everyone gets their pay stub in the app on payday.</span>
-        </li>
-        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
-          <span class="cmd__name">Expenses</span><span class="cmd__keys"><kbd>E</kbd></span>
-          <span class="cmd__text">Photograph the receipt, pick a category, send. Approved claims are paid with the next paycheck.</span>
-        </li>
-        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
-          <span class="cmd__name">Reviews and goals</span><span class="cmd__keys"><kbd>G</kbd></span>
-          <span class="cmd__text">Set goals together, keep notes from one-on-ones, and run a review cycle without a single spreadsheet.</span>
-        </li>
-        <li class="cmd__row" role="option" aria-selected="false" tabindex="-1">
-          <span class="cmd__name">Documents and policies</span><span class="cmd__keys"><kbd>D</kbd></span>
-          <span class="cmd__text">Offer letters, I-9 documents, certifications and the employee handbook, stored with each person and searchable.</span>
-        </li>
-      </ul>
-      <p class="cmd__empty" id="cmd-empty" hidden>Nothing by that name yet. Ask us, it may be on the way.</p>
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q reveal">The schedule is a spreadsheet, the hours are on paper time cards, PTO is an email chain, and on Monday payroll retypes all of it.</p>
+      <div class="fp-problem__arrow reveal" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title" class="reveal">Capture the workday once, then pay for exactly that</h2>
+      <p class="fp-problem__p reveal">Workzenly puts hiring, scheduling, the time clock, PTO and payroll in one record. The shift you post is the shift people see on their phones, the hours they clock are the hours a manager approves, and the approved hours are what payroll pays. Every number on a pay stub traces back to a shift someone actually worked.</p>
+    </div>
+  </section>
+
+  <!-- PILLARS: tabs -->
+  <section class="fp-band fp-band--raised" id="features" aria-labelledby="pillars-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Everything a workplace needs</p>
+        <h2 id="pillars-title">Four parts of one record</h2>
+        <p>Time, schedules, people and pay live in the same place, so a change in one shows up in the others.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="Parts of Workzenly">
+          <button class="fp-tab" role="tab" id="tab-time" aria-controls="panel-time" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-clock"/></svg>Time and attendance</b><span>Phone or tablet clock-in, timesheets approved in one tap</span></button>
+          <button class="fp-tab" role="tab" id="tab-sched" aria-controls="panel-sched" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-cal"/></svg>Scheduling</b><span>Drag people into shifts; staff swap and pick up</span></button>
+          <button class="fp-tab" role="tab" id="tab-people" aria-controls="panel-people" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-users"/></svg>PTO and people</b><span>Time off, hiring, onboarding, reviews, documents</span></button>
+          <button class="fp-tab" role="tab" id="tab-pay" aria-controls="panel-pay" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-pay"/></svg>Payroll</b><span>Approved hours become pay stubs in the app</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-time" aria-labelledby="tab-time">
+          <div>
+            <h3>Clock in where the work is, approve the week in one tap</h3>
+            <p>Employees clock in from their phone, with GPS and geofencing confirming the site, or on a shared tablet at the door. Breaks, overtime and late arrivals are worked out for you, and the exceptions are what the manager sees.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>See who is in, who is late and who is out today</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Missed punches and overtime risk flagged during the week</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Edit history keeps the original punch next to any fix</li>
+            </ul>
+            <a class="fp-row__more" href="/features/time-and-attendance/">See time and attendance <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="ui-window" role="img" aria-label="Attendance view for Northfield Coffee: who is in, one late arrival, one on PTO, and three timesheets ready to approve">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Attendance · Thu, Nov 12</span></div>
+            <div class="ui-main">
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>6 / 8</b><small>On shift now</small></div>
+                <div class="ui-kpi"><b>1</b><small>Late today</small><em class="is-warn">Sam, 14 min</em></div>
+                <div class="ui-kpi"><b>1</b><small>Out on PTO</small><em>Chris</em></div>
+                <div class="ui-kpi"><b>214.5</b><small>Hours this week</small><em>of 236 scheduled</em></div>
+              </div>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Missed clock-out</p><small>Jordan Lee · Mon, Nov 9 · fix requested, 3:34 PM</small></div><span class="ui-pill ui-pill--warn">Review</span></div>
+                <div class="ui-item"><div><p>Near 40 hours</p><small>Emily Carter · 37.5 h before Thursday</small></div><span class="ui-pill ui-pill--info">Watch</span></div>
+                <div class="ui-item"><div><p>Outside geofence</p><small>Tyler N. · Tue · 0.4 mi from the store</small></div><span class="ui-pill ui-pill--bad">Review</span></div>
+              </div>
+              <div class="ui-foot"><div><p id="hm-ta">3 timesheets ready for approval</p><small>Week of Nov 8 · breaks and overtime already worked out</small></div><button type="button" class="ui-btn" data-act data-target="hm-ta" data-text="Approved. Payroll has the hours." data-done="Approved">Approve all</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-sched" aria-labelledby="tab-sched" hidden>
+          <div>
+            <h3>Build next week in minutes, publish once</h3>
+            <p>Drag people into shifts with approved time off already on the grid and weekly hours per person in view. Staff see the schedule on their phones the moment you publish, offer swaps, pick up open shifts, and you hear before a shift goes uncovered.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Swaps and open shifts from the employee app</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime shown before anyone says yes</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Scheduled hours against clocked hours, by day</li>
+            </ul>
+            <a class="fp-row__more" href="/features/scheduling/">See scheduling <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="ui-window" role="img" aria-label="Schedule for Northfield Coffee, Tuesday to Saturday November 17 to 21, with counter, kitchen and bar shifts and one open Saturday kitchen shift">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Schedule · week of Nov 15 · published</span></div>
+            <div class="ui-main">
+              <div class="ui-card ui-scroll">
+                <div class="ui-card__head"><b>Shifts</b><span class="ui-legend"><span><i style="background:#dafa9c"></i>Counter</span><span><i style="background:#f2c36b"></i>Kitchen</span><span><i style="background:#9cc8fa"></i>Bar</span></span></div>
+                <div class="ui-grid">
+                  <b></b><b>Tue 17</b><b>Wed 18</b><b>Thu 19</b><b>Fri 20</b><b>Sat 21</b>
+                  <div class="ui-who">Maya T.<small>Counter</small></div><span class="ui-shift ui-shift--counter">9–5:30</span><span class="ui-shift ui-shift--counter">9–5:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--counter">9–5:30</span><span class="ui-shift ui-shift--counter">9–5:30</span>
+                  <div class="ui-who">Jordan L.<small>Bar</small></div><span class="ui-shift ui-shift--bar">7–3:30</span><span class="ui-shift ui-shift--bar">7–3:30</span><span class="ui-shift ui-shift--bar" style="border-style:dashed">7–3:30 ↔</span><span class="ui-shift ui-shift--bar">7–3:30</span><span class="ui-shift ui-shift--off">Off</span>
+                  <div class="ui-who">Sam R.<small>Kitchen</small></div><span class="ui-shift ui-shift--kitchen">6–2:30</span><span class="ui-shift ui-shift--kitchen">6–2:30</span><span class="ui-shift ui-shift--kitchen">6–2:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--kitchen">6–2:30</span>
+                  <div class="ui-who">Emily C.<small>Kitchen</small></div><span class="ui-shift ui-shift--kitchen">10–6:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--kitchen">10–6:30</span><span class="ui-shift ui-shift--kitchen">10–6:30</span><span class="ui-shift ui-shift--open">Open</span>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="hm-sc">Saturday kitchen, 10–6:30, has no one yet</p><small>Tyler N. is free Saturday and would reach 32 hours, no overtime</small></div><button type="button" class="ui-btn" data-act data-target="hm-sc" data-text="Offered to Tyler. He sees it in the app now." data-done="Offered">Offer to Tyler</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-people" aria-labelledby="tab-people" hidden>
+          <div>
+            <h3>From the first application to the yearly review</h3>
+            <p>Post a role, keep every application in one list and send the offer letter from the same screen. New hires sign it, fill out their W-4 and I-9 and add direct deposit on their phone before day one. Time off takes two taps, and managers see who else is out before they say yes.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>PTO balances that accrue and update themselves</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Goals, one-on-one notes and review cycles without a spreadsheet</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Offer letters, I-9s, certifications and the handbook with each person</li>
+            </ul>
+            <a class="fp-row__more" href="/features/pto/">See PTO tracking <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="ui-window" role="img" aria-label="Time-off request from Jordan Lee for Friday November 27, showing who else is out that day and his balance before and after">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Time off · request</span></div>
+            <div class="ui-main">
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Jordan Lee wants Fri, Nov 27 off</b><span>8 h · PTO</span></div>
+                <div class="ui-list">
+                  <div class="ui-item"><div><p>Balance</p><small>36 h now · 28 h after</small></div><span class="ui-pill ui-pill--ok">Enough</span></div>
+                  <div class="ui-item"><div><p>Also out that day</p><small>Aisha Brown · PTO</small></div><span class="ui-pill">1 person</span></div>
+                  <div class="ui-item"><div><p>His Friday bar shift</p><small>Dana Brooks is free and under 40</small></div><span class="ui-pill ui-pill--info">Cover available</span></div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="hm-pto">Waiting for Marcus</p><small>Approved PTO lands in the Nov 15–28 pay run as PTO</small></div><button type="button" class="ui-btn" data-act data-target="hm-pto" data-text="Approved. Friday is off and payroll knows." data-done="Approved">Approve</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pay" aria-labelledby="tab-pay" hidden>
+          <div>
+            <h3>Payroll built on approved hours</h3>
+            <p>Approved regular hours, overtime, PTO and expense claims flow into the pay run together. Every employee gets their pay stub in the app on payday, and pay is visible only to the people you give payroll access to.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime arrives as overtime, at 1.5 × the regular rate</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved expenses paid with the next paycheck</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Help through your first pay run</li>
+            </ul>
+            <a class="fp-row__more" href="/features/payroll/">See payroll <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="ui-window" role="img" aria-label="Pay run for November 1 to 14, paid Friday November 20, with regular, overtime and PTO hours for five employees">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Payroll · Nov 1–14 · paid Fri, Nov 20</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Employee</th><th class="r">Regular</th><th class="r">Overtime</th><th class="r">PTO</th><th class="r">Gross</th></tr></thead>
+                <tbody>
+                  <tr><td>Emily Carter</td><td class="r">72.0</td><td class="r">6.0</td><td class="r">8.0</td><td class="r">$1,777.00</td></tr>
+                  <tr><td>Jordan Lee</td><td class="r">80.0</td><td class="r">2.5</td><td class="r">–</td><td class="r">$1,528.44</td></tr>
+                  <tr><td>Maya Torres</td><td class="r">76.0</td><td class="r">–</td><td class="r">–</td><td class="r">$1,330.00</td></tr>
+                  <tr><td>Chris Walker</td><td class="r">56.0</td><td class="r">–</td><td class="r">24.0</td><td class="r">$1,420.00</td></tr>
+                  <tr><td>Sam Rivera</td><td class="r">64.0</td><td class="r">–</td><td class="r">–</td><td class="r">$1,152.00</td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>Emily’s $1,777.00 includes an $86.00 expense claim</p><small>Pay stubs reach every employee’s app on Friday</small></div><span class="ui-pill ui-pill--ok">Ready to run</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -207,10 +375,8 @@
         <p class="how__sub">The hours come off her balance and land in the next payroll as PTO. Nobody types it twice.</p>
       </div>
     </div>
-
     <div class="how__stage" aria-hidden="true">
       <div class="req" data-ui data-state="1" id="req">
-        <!-- state 1 -->
         <div class="req__state" data-s="1">
           <p class="req__title">Request time off</p>
           <div class="req__field"><span>Type</span><b>PTO</b></div>
@@ -219,7 +385,6 @@
           <div class="req__field req__field--note"><span>Note</span><b>Sister’s wedding in Denver</b></div>
           <span class="req__btn">Send request</span>
         </div>
-        <!-- state 2 -->
         <div class="req__state" data-s="2">
           <p class="req__title">Emily Carter wants Fri, Nov 6 off</p>
           <p class="req__meta">Kitchen · 8 hrs · PTO</p>
@@ -229,12 +394,9 @@
             <li><span class="dot"></span>Aisha Brown <em>Training</em></li>
           </ul>
           <p class="req__k">Cover found</p>
-          <ul class="req__away">
-            <li><span class="dot dot--ok"></span>Tyler N. takes 9:00 AM–5:30 PM <em>Accepted</em></li>
-          </ul>
+          <ul class="req__away"><li><span class="dot dot--ok"></span>Tyler N. takes 9:00 AM–5:30 PM <em>Accepted</em></li></ul>
           <div class="req__row"><span class="req__btn req__btn--ghost">Decline</span><span class="req__btn">Approve</span></div>
         </div>
-        <!-- state 3 -->
         <div class="req__state" data-s="3">
           <p class="req__title">Pay period Nov 1–14</p>
           <p class="req__meta">Emily Carter · Kitchen · $19.00/hr</p>
@@ -251,84 +413,157 @@
     </div>
   </section>
 
-  <!-- HISTORY: clocking in, then and now -->
-  <section class="then" aria-labelledby="then-title">
-    <figure class="then__main reveal">
-      <div class="then__crop"><img class="drift" src="assets/clocking-on-1940.jpg" width="1300" height="994" loading="lazy" decoding="async"
-           alt="A woman in a cap pushes her time card into a factory time clock while a line of colleagues waits behind her, 1940"></div>
-      <figcaption>Clocking in for the morning shift at a factory in Britain, 1940.</figcaption>
-    </figure>
-    <div class="then__text">
-      <h2 id="then-title" class="reveal">Clocking in, since 1940</h2>
-      <p class="reveal">For most of the last century a shift began with a card pushed into a clock by the door. Someone in the office then copied every card into a ledger, worked out the pay and handed out the paychecks.</p>
-      <p class="reveal">The clock moved to the phone, but in most workplaces the copying never stopped. Workzenly is the clock, the ledger and the office in one place, so the time you clock in is the time you are paid for.</p>
-      <figure class="then__small reveal">
-        <img src="assets/punch-clock.jpg" width="900" height="1630" loading="lazy" decoding="async"
-             alt="A wooden master clock with brass gears above a black punch-card time recorder mounted on a blue wall">
-        <figcaption>An Ericsson time recorder, kept at the Lysekil Work Center in Sweden.</figcaption>
-      </figure>
+  <!-- ALL FEATURES -->
+  <section class="fp-band" aria-labelledby="all-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">All 15 features</p>
+        <h2 id="all-title">Pick the part of the workday you want to fix first</h2>
+        <p>Start with the time clock or the schedule, add payroll when you are ready. Everything lands in the same record.</p>
+      </div>
+      <div class="hm-all">
+        <a href="/features/time-and-attendance/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><span><b>Time and attendance</b><small>Who is in, late or out; timesheets approved weekly</small></span></a>
+        <a href="/features/time-clock/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><span><b>Employee time clock app</b><small>One-tap clock-in with today’s shift on screen</small></span></a>
+        <a href="/features/timesheets/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><span><b>Timesheets</b><small>Built from punches, breaks and overtime worked out</small></span></a>
+        <a href="/features/gps-time-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><span><b>GPS time tracking</b><small>Location with every punch, a geofence per site</small></span></a>
+        <a href="/features/time-clock-kiosk/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-store"/></svg></span><span><b>Time clock kiosk</b><small>A shared tablet at the door, each person’s own PIN</small></span></a>
+        <a href="/features/overtime-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><span><b>Overtime tracking</b><small>Weekly totals against 40, warnings before a shift</small></span></a>
+        <a href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><span><b>Employee scheduling</b><small>Drag people into shifts; swaps and open shifts</small></span></a>
+        <a href="/features/pto/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-swap"/></svg></span><span><b>PTO tracking</b><small>Two-tap requests, balances that update themselves</small></span></a>
+        <a href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><span><b>Payroll</b><small>Approved hours, overtime and PTO become pay stubs</small></span></a>
+        <a href="/features/expenses/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-receipt"/></svg></span><span><b>Expense reimbursement</b><small>Photograph the receipt, paid with the next paycheck</small></span></a>
+        <a href="/features/hiring/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-plus"/></svg></span><span><b>Hiring</b><small>Post a role, one list of applications, send the offer</small></span></a>
+        <a href="/features/onboarding/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-check-list"/></svg></span><span><b>Onboarding</b><small>Offer letter, W-4, I-9 and direct deposit before day one</small></span></a>
+        <a href="/features/performance-reviews/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-star"/></svg></span><span><b>Performance reviews</b><small>Goals, one-on-one notes and review cycles</small></span></a>
+        <a href="/features/hr-documents/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-folder"/></svg></span><span><b>HR documents</b><small>Offer letters, I-9s, certifications and the handbook</small></span></a>
+        <a href="/features/employee-app/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><span><b>Employee app</b><small>Clock in, swap, request PTO and read pay stubs</small></span></a>
+      </div>
     </div>
   </section>
 
-  <!-- WORKPLACES -->
-  <section class="places" id="workplaces" aria-labelledby="places-title">
-    <h2 id="places-title" class="reveal">Built for every kind of shift</h2>
-    <div class="places__grid">
-      <figure class="place place--a reveal">
-        <img src="assets/cafe-counter.jpg" width="1400" height="1053" loading="lazy" decoding="async" alt="A young man in a black T-shirt works the register behind a coffee shop counter">
-        <figcaption><b>Restaurants and retail.</b> Schedules that change every week, staff who swap shifts by text, and a register that opens at seven.</figcaption>
-      </figure>
-      <figure class="place place--b reveal">
-        <img src="assets/nurses-station.jpg" width="1400" height="941" loading="lazy" decoding="async" alt="Black and white photograph of staff talking across a hospital nurses’ station with a telephone and charts">
-        <figcaption><b>Clinics and home care.</b> Night shifts, handoffs and certifications that must be current before anyone is scheduled.</figcaption>
-      </figure>
-      <figure class="place place--c reveal">
-        <img src="assets/site-scaffold.jpg" width="1400" height="1050" loading="lazy" decoding="async" alt="A construction worker in a white hard hat and safety vest walks behind blue scaffolding on a concrete building">
-        <figcaption><b>Job sites and warehouses.</b> Crews clocking in at the gate with GPS, overtime counted to the minute.</figcaption>
-      </figure>
-      <div class="place place--d reveal">
-        <p class="place__big">And offices.</p>
-        <p>Hybrid days, PTO calendars and reviews for salaried teams who never clock in at all. Same app, same record, fewer tools.</p>
+  <!-- INDUSTRIES -->
+  <section class="fp-band fp-band--raised" id="workplaces" aria-labelledby="ind-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Built for every kind of shift</p>
+        <h2 id="ind-title">Set up for the way your industry works</h2>
+        <p>The same record, with the schedule patterns, clock-in options and rules each kind of workplace needs.</p>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/solutions/restaurants/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cup"/></svg></span><h3>Restaurants and cafés</h3><p>Schedules by station, a tablet at the kitchen door, tipped pay set up for your state.</p><span>Restaurants →</span></a>
+        <a class="fp-link-card" href="/solutions/retail/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-store"/></svg></span><h3>Retail</h3><p>Weekend peaks, part-time availability, minors on the schedule and fair workweek notice.</p><span>Retail →</span></a>
+        <a class="fp-link-card" href="/solutions/healthcare/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cross"/></svg></span><h3>Clinics and practices</h3><p>12-hour shifts, certifications stored with each person, PTO that never leaves a room uncovered.</p><span>Healthcare →</span></a>
+        <a class="fp-link-card" href="/solutions/home-care/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-home"/></svg></span><h3>Home care</h3><p>Caregivers clocking in at each client with GPS, travel between visits counted.</p><span>Home care →</span></a>
+        <a class="fp-link-card" href="/solutions/construction/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-hat"/></svg></span><h3>Construction and trades</h3><p>Crews clocking in at the gate with a geofence per job site, overtime to the minute.</p><span>Construction →</span></a>
+        <a class="fp-link-card" href="/solutions/warehouses/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-box"/></svg></span><h3>Warehouses and manufacturing</h3><p>Three shifts, a kiosk at the floor entrance, differentials in the regular rate.</p><span>Warehouses →</span></a>
+        <a class="fp-link-card" href="/solutions/field-services/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-truck"/></svg></span><h3>Cleaning and field crews</h3><p>Routes of sites, clock-ins on arrival, receipts for supplies paid with the paycheck.</p><span>Field services →</span></a>
+        <a class="fp-link-card" href="/solutions/offices/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-desk"/></svg></span><h3>Offices</h3><p>Hybrid days, PTO calendars and reviews for salaried teams who never clock in at all.</p><span>Offices →</span></a>
+        <a class="fp-link-card" href="/solutions/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>All industries</h3><p>See every solution page, or tell us about your workplace on the demo call.</p><span>Solutions →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Built for both sides of the job</p>
+        <h2 id="roles-title">The person who hires and the person who works see the same facts</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Employees</h3></div><div><span>Replaces</span><p>A photo of the schedule, a paper time card and asking where the handbook is</p></div><div><span>They use it to</span><p>Clock in from a phone, swap a shift, request PTO, check a pay stub and find a policy</p></div><div><span>What they notice</span><p>Pay stubs that match the hours they worked</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Managers</h3></div><div><span>Replaces</span><p>The group chat and a clipboard</p></div><div><span>They use it to</span><p>See who is in, late or out, approve a week of timesheets in one tap, and hear before a shift goes uncovered</p></div><div><span>What they notice</span><p>Minutes, not an afternoon, to close the week</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>HR and payroll</h3></div><div><span>Replaces</span><p>Retyping hours and a hunt through inboxes for W-4s</p></div><div><span>They use it to</span><p>Run payroll from approved hours, keep offer letters, I-9s and reviews in each person’s record</p></div><div><span>What they notice</span><p>Payday is a check, not a hunt</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owners</h3></div><div><span>Replaces</span><p>Four tools and a guess at labor cost until the bank statement</p></div><div><span>They use it to</span><p>Post a job, hire, onboard, schedule, approve hours and pay from one account</p></div><div><span>What they notice</span><p>Every number on a pay stub traces back to a shift someone actually worked</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING TEASER -->
+  <section class="fp-band fp-band--raised" id="pricing" aria-labelledby="price-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Pricing</p>
+        <h2 id="price-title">A base price plus a flat rate per active employee</h2>
+        <p>No setup fee, month to month, and we import your team for you. Prices in US dollars.</p>
+      </div>
+      <div class="hm-plans">
+        <article class="hm-plan">
+          <h3>Starter</h3>
+          <p class="hm-plan__price"><b>$29</b><span>/ month</span></p>
+          <p class="hm-plan__per">plus <b>$4</b> per active employee / month</p>
+          <p class="hm-plan__for">One location that wants clean hours and a schedule everyone can see.</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Time clock app and timesheets</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Scheduling with swaps and open shifts</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>PTO and the employee app</li>
+          </ul>
+        </article>
+        <article class="hm-plan hm-plan--pop">
+          <span class="hm-plan__badge">Most popular</span>
+          <h3>Plus</h3>
+          <p class="hm-plan__price"><b>$49</b><span>/ month</span></p>
+          <p class="hm-plan__per">plus <b>$6</b> per active employee / month</p>
+          <p class="hm-plan__for">Growing teams that hire often, work across sites or need a kiosk at the door.</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Everything in Starter</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>GPS, kiosk and overtime tracking</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hiring, onboarding, expenses, reviews, documents</li>
+          </ul>
+        </article>
+        <article class="hm-plan">
+          <h3>Complete</h3>
+          <p class="hm-plan__price"><b>$89</b><span>/ month</span></p>
+          <p class="hm-plan__per">plus <b>$9</b> per active employee / month</p>
+          <p class="hm-plan__for">Hours, PTO and pay in one place, with no retyping.</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Everything in Plus</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Payroll from approved hours</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pay stubs in the app, help through the first pay run</li>
+          </ul>
+        </article>
+      </div>
+      <p class="hm-plans__note"><span>Annual billing saves 20%. Enterprise pricing for 150+ employees or 5+ locations.</span><a class="fp-row__more" href="/pricing/" style="margin-top:0">Compare every plan <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Everyone sees what they need, and nothing else</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Employees see their own</h3><p>Each person sees their own hours, timesheets, PTO and pay stubs, never a coworker’s.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Managers see their team</h3><p>Managers see their team’s shifts, attendance and time off, and approve their team’s timesheets.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and pay stubs are visible only to the people you give payroll access to.</p></article>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="faq" id="faq" aria-labelledby="faq-title">
-    <h2 id="faq-title" class="faq__title reveal">Questions</h2>
-    <div class="faq__list">
-      <details name="faq" class="reveal" open>
-        <summary>Who is Workzenly for?<span class="plus" aria-hidden="true"></span></summary>
-        <p>US businesses with hourly or salaried staff, from a single coffee shop to a company with several locations. The employer gets the admin tools and every employee gets their own app.</p>
-      </details>
-      <details name="faq" class="reveal">
-        <summary>Does every employee need a login?<span class="plus" aria-hidden="true"></span></summary>
-        <p>Each person gets their own account for pay stubs, PTO and shifts. For sites where phones are not allowed on the floor, a shared tablet at the door handles clocking in.</p>
-      </details>
-      <details name="faq" class="reveal">
-        <summary>Can it run our payroll?<span class="plus" aria-hidden="true"></span></summary>
-        <p>Yes. Approved hours, overtime, PTO and expenses go straight into payroll, and pay stubs are published to each employee’s app on payday.</p>
-      </details>
-      <details name="faq" class="reveal">
-        <summary>Does it work on a phone?<span class="plus" aria-hidden="true"></span></summary>
-        <p>The employee side is built for phones first. Managers can approve, build schedules and check who is in from a phone too; payroll is easiest on a laptop.</p>
-      </details>
-      <details name="faq" class="reveal">
-        <summary>We already use spreadsheets. Can we move our data?<span class="plus" aria-hidden="true"></span></summary>
-        <p>Send us your employee list and PTO balances as a spreadsheet and we will import them during setup, so nobody starts from zero.</p>
-      </details>
-      <details name="faq" class="reveal">
-        <summary>How long does setup take?<span class="plus" aria-hidden="true"></span></summary>
-        <p>Most small teams are clocking in within a week. We walk you through it on the demo call and stay with you for the first pay run.</p>
-      </details>
-      <details name="faq" class="reveal">
-        <summary>Who can see salaries and personal details?<span class="plus" aria-hidden="true"></span></summary>
-        <p>You decide. Employees see only their own record, managers see their team’s shifts and time off, and pay is visible only to the people you give payroll access to.</p>
-      </details>
+  <section class="fp-band fp-faq" id="faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">Questions</p>
+        <h2 id="faq-title">Before you book</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>Who is Workzenly for?</summary><p>US businesses with hourly or salaried staff, from a single coffee shop to a company with several locations. The employer gets the admin tools and every employee gets their own app.</p></details>
+        <details><summary>Does every employee need a login?</summary><p>Each person gets their own account for pay stubs, PTO and shifts. For sites where phones are not allowed on the floor, a shared tablet at the door handles clocking in.</p></details>
+        <details><summary>Can it run our payroll?</summary><p>Yes. Approved hours, overtime, PTO and expenses go straight into payroll, and pay stubs are published to each employee’s app on payday. Ask us on the demo call who handles tax deposits and filings for your setup.</p></details>
+        <details><summary>Does it work on a phone?</summary><p>The employee side is built for phones first. Managers can approve, build schedules and check who is in from a phone too; payroll is easiest on a laptop.</p></details>
+        <details><summary>We already use spreadsheets. Can we move our data?</summary><p>Send us your employee list and PTO balances as a spreadsheet and we will import them during setup, so nobody starts from zero.</p></details>
+        <details><summary>How long does setup take?</summary><p>Most small teams are clocking in within a week. We walk you through it on the demo call and stay with you for the first pay run.</p></details>
+        <details><summary>Who can see salaries and personal details?</summary><p>You decide. Employees see only their own record, managers see their team’s shifts and time off, and pay is visible only to the people you give payroll access to.</p></details>
+        <details><summary>What does Workzenly cost?</summary><p>Plans start at $29 a month plus $4 per active employee, with no setup fee and 20% off annual billing. The full plan comparison is on the <a href="/pricing/">pricing page</a>.</p></details>
+      </div>
     </div>
   </section>
 
-  <!-- CTA: first step already open -->
+  <!-- START: the demo form -->
   <section class="start" id="start" aria-labelledby="start-title">
     <div class="start__text">
       <h2 id="start-title" class="reveal">Start with<br> your team</h2>
@@ -357,39 +592,45 @@
 
 </main>
 
-<footer class="foot">
-  <div class="foot__tile foot__statement">
-    <p>Workzenly is one place for time clocks, schedules, PTO and payroll, for the people who run work and the people who do it.</p>
-    <p class="foot__legal">© <span id="year">2026</span> Workzenly</p>
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52" loading="lazy"></a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features and solutions"><h2>People and industries</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+        <li><a href="/solutions/">Solutions by industry</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
   </div>
-  <nav class="foot__tile foot__nav" aria-label="Footer">
-    <a class="link" href="#features">Features</a>
-    <a class="link" href="#how">How it works</a>
-    <a class="link" href="#workplaces">Workplaces</a>
-    <a class="link" href="#faq">Questions</a>
-    <a class="link" href="/features/">All features</a>
-    <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
-    <a class="link" href="/features/time-clock/">Time clock</a>
-    <a class="link" href="/features/scheduling/">Scheduling</a>
-    <a class="link" href="/features/payroll/">Payroll</a>
-    <a class="link" href="/features/pto/">PTO</a>
-    <a class="link" href="/tools/">Best tools</a>
-    <a class="link" href="/templates/">Free templates</a>
-    <a class="link" href="/pricing/">Pricing</a>
-    <a class="link" href="/blog/">Guides</a>
-  </nav>
-  <div class="foot__tile foot__mail">
-    <p>Write to us</p>
-    <a class="link" href="mailto:info@workzenly.com">info@workzenly.com</a>
-  </div>
-  <div class="foot__tile foot__word" aria-hidden="true"><img src="/assets/workzenly-logo-lg.png" alt="" width="720" height="223" loading="lazy"></div>
-  <a class="foot__tile foot__go" href="#start">
-    <span>Book a demo</span>
-    <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><path d="M10 38 38 10M16 10h22v22" fill="none" stroke="currentColor" stroke-width="4"/></svg>
-  </a>
-  <p class="foot__credits">Pictures: <a class="link" href="https://commons.wikimedia.org/wiki/File:A_Day_in_the_Life_of_a_Munitions_Worker,_Britain,_1940_D679.jpg">“A Day in the Life of a Munitions Worker, 1940”</a>, Ministry of Information, public domain, via Imperial War Museums; <a class="link" href="https://commons.wikimedia.org/wiki/File:LM_Ericsson_tidkontroll_-_old_punch_clock_1.jpg">“LM Ericsson tidkontroll”</a> by W.carter, CC0; <a class="link" href="https://commons.wikimedia.org/wiki/File:Confused._(Unsplash).jpg">“The Coffee Nook”</a> by Zachary Staines, CC0; <a class="link" href="https://commons.wikimedia.org/wiki/File:Nurses%27_Station_at_West_Hospital_(4269772576).jpg">“Nurses’ Station at West Hospital”</a> by VCU Libraries, <a class="link" href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>; <a class="link" href="https://commons.wikimedia.org/wiki/File:Construction_worker_on_scaffolding_during_Mountbatten_House_redevelopment,_Chatham,_Kent.jpg">“Construction worker on scaffolding”</a> by OathOn, CC0. All via Wikimedia Commons.</p>
 </footer>
 
-<script src="main.js"></script>
+<script src="/main.js"></script>
+<script src="/feature.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restaurant Employee Management Software | Workzenly</title>
+  <meta name="description" content="Restaurant employee management software for US cafés, bars and restaurants: scheduling by station, phone and kiosk time clocks, payroll from approved hours.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/solutions/restaurants/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/solutions/restaurants/">
+  <meta property="og:title" content="Restaurant Employee Management Software | Workzenly">
+  <meta property="og:description" content="Restaurant employee management software for US cafés, bars and restaurants: scheduling by station, phone and kiosk time clocks, payroll from approved hours.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    /* Page-local: the schedule grid in the hero */
+    .ui-grid { display: grid; grid-template-columns: 96px repeat(5, minmax(0, 1fr)); gap: 4px; font-size: 11.5px; }
+    .ui-grid > b { font-weight: 400; color: #8d8d89; padding: 4px 0; font-size: 11px; }
+    .ui-grid .ui-who { padding: 6px 0; display: grid; gap: 1px; align-content: center; }
+    .ui-grid .ui-who small { color: #7d7d79; font-size: 10.5px; }
+    .ui-shift { border-radius: 6px; padding: 5px 6px; background: #1b1b1b; border: 1px solid #262626; color: #d7d7d2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ui-shift--counter { background: #1c2412; border-color: #2f3f1a; color: var(--accent); }
+    .ui-shift--kitchen { background: #2a2110; border-color: #3f3318; color: var(--warn); }
+    .ui-shift--bar { background: #13202e; border-color: #1e3247; color: var(--info); }
+    .ui-shift--open { background: transparent; border: 1px dashed #ff9a85; color: var(--bad); text-align: center; }
+    .ui-shift--off { background: transparent; border-color: transparent; color: #4d4d4a; text-align: center; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Restaurant Employee Management Software | Workzenly",
+        "description": "Restaurant employee management software for US cafés, bars and restaurants: scheduling by station, phone and kiosk time clocks, payroll from approved hours.",
+        "url": "https://workzenly.com/solutions/restaurants/",
+        "dateModified": "2026-11-12",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://workzenly.com/solutions/" },
+          { "@type": "ListItem", "position": 3, "name": "Restaurants", "item": "https://workzenly.com/solutions/restaurants/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does Workzenly handle tipped employees?", "acceptedAnswer": { "@type": "Answer", "text": "Workzenly records hours, overtime and PTO for every employee and sends the approved figures into payroll. Under federal law a tipped employee can be paid a $2.13 cash wage with a tip credit of up to $5.12, as long as tips bring them to at least $7.25 an hour; many states set a higher cash wage or allow no tip credit at all. Tell us your state and your tip-pool rules on the demo call and we will show how tipped pay is set up." } },
+          { "@type": "Question", "name": "Can staff clock in without phones on the floor?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A shared tablet by the kitchen door or host stand works as a time clock kiosk, and each person clocks in with their own PIN. Phone and kiosk punches land in the same timesheet, so a server who clocks in on the tablet and a manager who clocks in on their phone are counted the same way." } },
+          { "@type": "Question", "name": "How do shift swaps work for servers and cooks?", "acceptedAnswer": { "@type": "Answer", "text": "An employee offers a shift from their phone, a coworker accepts it, and the schedule updates for everyone. Managers see the swap, who is covering and whether the cover would push anyone past 40 hours. Open shifts work the same way: post it once and let people pick it up instead of texting the group chat." } },
+          { "@type": "Question", "name": "Does it track breaks for restaurant staff?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Employees clock meal breaks the same way they clock in. Unpaid meal breaks of 30 minutes or more are deducted and short rest breaks stay paid, following the federal rule. States such as California, Washington and Oregon require breaks at set points in a shift and charge a premium when one is missed, so set your break rule during setup and check your state's rule." } },
+          { "@type": "Question", "name": "Can I schedule a 16-year-old for a closing shift?", "acceptedAnswer": { "@type": "Answer", "text": "Federal law sets no hour limits for 16- and 17-year-olds, but it bars them from certain hazardous tasks, and many states limit their hours on school nights. Workers aged 14 and 15 may only work outside school hours, no more than 3 hours on a school day and 18 in a school week, and only between 7 a.m. and 7 p.m. (9 p.m. from June 1 through Labor Day). Check your state before you build the schedule." } },
+          { "@type": "Question", "name": "How long does it take to set up a restaurant?", "acceptedAnswer": { "@type": "Answer", "text": "Most restaurants are scheduling and clocking in within a week. Send us your staff list, pay rates and PTO balances as a spreadsheet and we import them, then we walk through your first schedule and first timesheet approval with you and stay with you through the first pay run." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="restaurant employee management software" data-intent="transactional" data-topic="Restaurants">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 17.5h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M5 8h11v6a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5zM16 10h2a2 2 0 0 1 0 4h-2M7 4.5c0 1 1 1 1 2M10.5 4.5c0 1 1 1 1 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c1 3 4 4.5 4 8.5a4 4 0 0 1-8 0c0-1.5.5-2.5 1.5-3.5.3 1.2 1 2 2 2.3C11 8 10.5 5 12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52"></a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/solutions/" aria-current="page">Solutions</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/pricing/">Pricing</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/solutions/">Solutions</a></li><li aria-current="page">Restaurants</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Restaurants, cafés and bars</span>
+        <h1 id="hero-title">Restaurant employee management software for the whole week</h1>
+        <p class="fp-lead">Workzenly is restaurant employee management software for US cafés, bars and restaurants. Build the week by station, let servers and cooks swap shifts from their phones, clock everyone in by phone or a tablet at the kitchen door, and send approved hours, overtime and PTO straight into payroll.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Schedules by station</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Phone or kiosk clock-in</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours flow into payroll</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly schedule for Northfield Coffee, week of November 15, showing counter, kitchen and bar shifts by day with one open Saturday kitchen shift">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/schedule</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span><svg><use href="#i-clock"/></svg></span>
+              <span class="is-on"><svg><use href="#i-cal"/></svg></span>
+              <span><svg><use href="#i-sheet"/></svg></span>
+              <span><svg><use href="#i-pay"/></svg></span>
+              <span><svg><use href="#i-users"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Schedule</p><p class="ui-sub">Northfield Coffee · Tue Nov 17 – Sat Nov 21 · published Mon, Nov 9</p></div>
+                <div class="ui-seg" aria-hidden="true"><span>Day</span><span class="is-on">Week</span><span>Month</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>232</b><small>Hours scheduled</small><em>9 people</em></div>
+                <div class="ui-kpi"><b>1</b><small>Open shift</small><em class="is-warn">Sat kitchen</em></div>
+                <div class="ui-kpi"><b>1</b><small>Swap waiting</small><em>Jordan → Dana</em></div>
+                <div class="ui-kpi"><b>0</b><small>Over 40 hours</small><em>as scheduled</em></div>
+              </div>
+              <div class="ui-card ui-scroll">
+                <div class="ui-card__head"><b>Shifts</b><span class="ui-legend"><span><i style="background:#dafa9c"></i>Counter</span><span><i style="background:#f2c36b"></i>Kitchen</span><span><i style="background:#9cc8fa"></i>Bar</span></span></div>
+                <div class="ui-grid" style="min-width:520px">
+                  <b></b><b>Tue 17</b><b>Wed 18</b><b>Thu 19</b><b>Fri 20</b><b>Sat 21</b>
+                  <div class="ui-who">Maya Torres<small>Counter</small></div><span class="ui-shift ui-shift--counter">9–5:30</span><span class="ui-shift ui-shift--counter">9–5:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--counter">9–5:30</span><span class="ui-shift ui-shift--counter">9–5:30</span>
+                  <div class="ui-who">Aisha Brown<small>Counter</small></div><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--counter">12–8</span><span class="ui-shift ui-shift--counter">9–5:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--counter">12–8</span>
+                  <div class="ui-who">Jordan Lee<small>Bar</small></div><span class="ui-shift ui-shift--bar">7–3:30</span><span class="ui-shift ui-shift--bar">7–3:30</span><span class="ui-shift ui-shift--bar" style="border-style:dashed">7–3:30 ↔</span><span class="ui-shift ui-shift--bar">7–3:30</span><span class="ui-shift ui-shift--off">Off</span>
+                  <div class="ui-who">Dana Brooks<small>Bar</small></div><span class="ui-shift ui-shift--bar">12–8</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--bar">12–8</span><span class="ui-shift ui-shift--bar">12–8</span><span class="ui-shift ui-shift--bar">7–3:30</span>
+                  <div class="ui-who">Sam Rivera<small>Kitchen</small></div><span class="ui-shift ui-shift--kitchen">6–2:30</span><span class="ui-shift ui-shift--kitchen">6–2:30</span><span class="ui-shift ui-shift--kitchen">6–2:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--kitchen">6–2:30</span>
+                  <div class="ui-who">Emily Carter<small>Kitchen</small></div><span class="ui-shift ui-shift--kitchen">10–6:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--kitchen">10–6:30</span><span class="ui-shift ui-shift--kitchen">10–6:30</span><span class="ui-shift ui-shift--open" id="rs-open">Open 10–6:30</span>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="rs-foot">Saturday kitchen, 10–6:30, has no one yet</p><small>Tyler N. is free Saturday and would reach 32 hours, no overtime</small></div><button type="button" class="ui-btn" data-act data-target="rs-foot" data-text="Offered to Tyler. He sees it in the app now." data-done="Offered">Offer to Tyler</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for the people who run the floor</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Owners and general managers</li>
+        <li><svg aria-hidden="true"><use href="#i-users"/></svg>Shift leads</li>
+        <li><svg aria-hidden="true"><use href="#i-cup"/></svg>Servers, baristas and bartenders</li>
+        <li><svg aria-hidden="true"><use href="#i-flame"/></svg>Line cooks and dishwashers</li>
+        <li><svg aria-hidden="true"><use href="#i-pay"/></svg>Whoever runs payroll on Monday</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">The schedule is a photo in the group chat, two cooks swapped Saturday by text, and payroll is working from a stack of time cards with coffee on them.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">One schedule, one time clock, one pay run, for front and back of house</h2>
+      <p class="fp-problem__p">Restaurant employee management software puts the schedule, the punches and the pay in one record. The shift you post is the shift people see on their phones, the hours they clock are the hours a manager approves, and the approved hours are what payroll pays. Nothing gets retyped between the host stand and the pay stub.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first month</p>
+        <h2 id="outcomes-title">Fewer uncovered shifts, cleaner hours, calmer Mondays</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Schedules people actually see</h3><p>Build the week by dragging people into counter, kitchen and bar shifts. The moment you publish, everyone sees their shifts in the app, and PTO already approved sits on the grid so you do not schedule someone who is away.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-swap"/></svg></span><h3>Swaps without the group chat</h3><p>A server offers Thursday from their phone, a coworker picks it up, and the schedule updates for everyone. Open shifts work the same way, and you see whether the cover would push anyone past 40 hours.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Clock-ins from the kitchen door</h3><p>Phones on the floor are a problem in most kitchens, so a shared tablet by the back door works as a time clock kiosk. Front-of-house staff can clock in on their own phones. Both land in the same timesheet.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Hours that land in payroll as-is</h3><p>Breaks, overtime and late starts are worked out from the punches. Approve the whole week in one tap and the regular hours, overtime and PTO go into the pay run together.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">A restaurant week in Workzenly</h2>
+        <p>From the schedule you post on Monday to the pay stubs that arrive on Friday, the same record carries every shift.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="A restaurant week">
+          <button class="fp-tab" role="tab" id="tab-build" aria-controls="panel-build" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-cal"/></svg>Build the week</b><span>Stations, opens, closes and PTO on one grid</span></button>
+          <button class="fp-tab" role="tab" id="tab-swap" aria-controls="panel-swap" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-swap"/></svg>Swaps and open shifts</b><span>Staff cover each other from their phones</span></button>
+          <button class="fp-tab" role="tab" id="tab-clock" aria-controls="panel-clock" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-clock"/></svg>Clock in</b><span>Phone for the floor, kiosk for the kitchen</span></button>
+          <button class="fp-tab" role="tab" id="tab-pay" aria-controls="panel-pay" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-pay"/></svg>Approve and pay</b><span>One tap on Monday, pay stubs on Friday</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-build" aria-labelledby="tab-build">
+          <div>
+            <h3>Build next week in minutes, by station</h3>
+            <p>Start from last week, drag people into counter, kitchen and bar shifts, and watch weekly hours per person as you go. Approved time off and standing days off are already on the grid.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Opening and closing shifts with the unpaid meal break set once</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours per person shown while you build, so no surprise overtime</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Publish once and everyone sees it in the app</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Monday, November 16 shift list for Northfield Coffee with an empty 12 to 8 bar slot filled by dragging Dana Brooks in">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Build · Mon, Nov 16</span></div>
+            <div class="ui-main">
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Counter · 9:00 AM–5:30 PM</p><small>Maya Torres · 32 h this week</small></div><span class="ui-pill ui-pill--ok">Filled</span></div>
+                <div class="ui-item"><div><p>Kitchen · 6:00 AM–2:30 PM</p><small>Sam Rivera · 40 h this week</small></div><span class="ui-pill ui-pill--ok">Filled</span></div>
+                <div class="ui-item"><div><p>Bar · 7:00 AM–3:30 PM</p><small>Jordan Lee · 40 h this week</small></div><span class="ui-pill ui-pill--ok">Filled</span></div>
+                <div class="ui-item"><div><p>Bar · 12:00 PM–8:00 PM</p><small id="rs-slot">No one yet · Dana Brooks is free, 15.5 h so far</small></div><span class="ui-pill ui-pill--warn" id="rs-slot-pill">Empty</span></div>
+              </div>
+              <div class="ui-foot"><div><p>Drag Dana into the 12–8 bar shift</p><small>Her week goes from 15.5 to 23.5 hours</small></div><button type="button" class="ui-btn" data-act data-target="rs-slot" data-text="Dana Brooks · 23.5 h this week" data-pill="rs-slot-pill" data-pill-text="Filled" data-done="Added">Drag in</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-swap" aria-labelledby="tab-swap" hidden>
+          <div>
+            <h3>Let the team cover the team</h3>
+            <p>Jordan cannot work Thursday. He offers the shift from his phone, Dana accepts it, and the manager sees both people’s new weekly hours before the swap goes through.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Swaps and open shifts posted from the app</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime shown before anyone says yes</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The schedule updates for everyone at once</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Swap request: Jordan Lee offers Thursday 7 to 3:30 bar shift to Dana Brooks; Jordan drops to 32 hours and Dana rises to 31.5">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Swap request · Thu, Nov 19</span></div>
+            <div class="ui-main">
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Bar · 7:00 AM–3:30 PM</b><span>8 h after break</span></div>
+                <div class="ui-list">
+                  <div class="ui-item"><div><p>Jordan Lee gives it up</p><small>40.0 → 32.0 h this week</small></div><span class="ui-pill">Offered</span></div>
+                  <div class="ui-item"><div><p>Dana Brooks takes it</p><small>23.5 → 31.5 h this week · no overtime</small></div><span class="ui-pill ui-pill--ok">Accepted</span></div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="rs-swap">Waiting for Marcus to approve</p><small>Both stay under 40 hours</small></div><button type="button" class="ui-btn" data-act data-target="rs-swap" data-text="Approved. Thursday is Dana’s." data-done="Approved">Approve swap</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-clock" aria-labelledby="tab-clock" hidden>
+          <div>
+            <h3>Phones at the front, a tablet at the back</h3>
+            <p>Servers and baristas clock in from the Workzenly app, with GPS and geofencing confirming they are at the restaurant. The kitchen clocks in on a shared tablet by the back door with their own PINs. Breaks are clocked the same way.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Late starts and missed clock-outs flagged for the manager</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Unpaid meal breaks deducted, short breaks kept paid</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Who is in, on break or late, at a glance</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Who is in at Northfield Coffee at 10:58 AM: four clocked in, one on break, one late, one due at noon">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Who’s in · Thu, Nov 12 · 10:58 AM</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Employee</th><th>Station</th><th>In</th><th>Via</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Sam Rivera</td><td>Kitchen</td><td>6:14 AM</td><td>Kiosk</td><td><span class="ui-pill ui-pill--warn">Late 14 min</span></td></tr>
+                  <tr><td>Emily Carter</td><td>Kitchen</td><td>10:01 AM</td><td>Kiosk</td><td><span class="ui-pill ui-pill--ok">In</span></td></tr>
+                  <tr><td>Jordan Lee</td><td>Bar</td><td>7:01 AM</td><td>Phone</td><td><span class="ui-pill ui-pill--info">On break</span></td></tr>
+                  <tr><td>Maya Torres</td><td>Counter</td><td>8:58 AM</td><td>Phone</td><td><span class="ui-pill ui-pill--ok">In</span></td></tr>
+                  <tr><td>Dana Brooks</td><td>Bar</td><td>–</td><td>–</td><td><span class="ui-pill">Due 12:00 PM</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pay" aria-labelledby="tab-pay" hidden>
+          <div>
+            <h3>Approve Monday, pay Friday</h3>
+            <p>Timesheets build themselves from the punches. On Monday the manager looks only at the exceptions, approves the week in one tap, and the approved regular hours, overtime and PTO go into the Nov 1–14 pay run paid on Friday, Nov 20.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime arrives as overtime at 1.5 × the regular rate</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Approved PTO lands as PTO, not a note</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every pay stub in the employee app on payday</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Pay run for November 1 to 14 showing regular, overtime and PTO hours for five Northfield Coffee employees, one timesheet still waiting">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Payroll · Nov 1–14 · paid Fri, Nov 20</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Employee</th><th class="r">Regular</th><th class="r">Overtime</th><th class="r">PTO</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Emily Carter</td><td class="r">72.0</td><td class="r">6.0</td><td class="r">8.0</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Jordan Lee</td><td class="r">80.0</td><td class="r">2.5</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Maya Torres</td><td class="r">76.0</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Chris Walker</td><td class="r">56.0</td><td class="r">–</td><td class="r">24.0</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Sam Rivera</td><td class="r">64.0</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--warn" id="rs-sam">Waiting</span></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>1 timesheet still waiting</p><small>Sam Rivera · approve to send to payroll</small></div><button type="button" class="ui-btn" data-act data-pill="rs-sam" data-pill-text="Approved" data-done="Sent to payroll">Approve</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="Restaurant details">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Overtime and labor hours</p>
+          <h2>See labor hours before the week costs you</h2>
+          <p>Hours per person and per station add up as you build the schedule, and during the week the clock-ins add up against it. When a Saturday pickup would put a cook over 40 hours, you see it before you say yes, and you see who else is free and under 40.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Scheduled hours versus clocked hours, by day</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime warnings before a shift crosses 40</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>State daily overtime, such as California’s, to set up with us</li>
+          </ul>
+          <a class="fp-row__more" href="/features/overtime-tracking/">See overtime tracking <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Hours this week versus 40 for Northfield Coffee staff, with Emily Carter projected to 46 hours and a suggestion to offer her Saturday shift to Tyler">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Overtime · week of Nov 8</span></div>
+          <div class="ui-main">
+            <div class="ui-card">
+              <div class="ui-card__head"><b>Hours this week vs 40</b><span>Projected with today’s schedule</span></div>
+              <div class="ui-list">
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Emily Carter</span><span>36.0 → 46.0 h</span></div><div class="ui-bar-meter"><i style="width:100%;background:#f2c36b"></i></div></div>
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Jordan Lee</span><span>32.5 → 42.5 h</span></div><div class="ui-bar-meter"><i style="width:100%;background:#f2c36b"></i></div></div>
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Sam Rivera</span><span>32.0 → 32.0 h</span></div><div class="ui-bar-meter"><i style="width:80%"></i></div></div>
+                <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Tyler N.</span><span>24.0 → 24.0 h</span></div><div class="ui-bar-meter"><i style="width:60%"></i></div></div>
+              </div>
+            </div>
+            <div class="ui-foot"><div><p id="rs-ot">Emily’s Saturday shift adds 6.0 overtime hours</p><small>Tyler N. is free Saturday and would reach 32</small></div><button type="button" class="ui-btn" data-act data-target="rs-ot" data-text="Saturday offered to Tyler. Emily stays at 36." data-done="Offered">Offer to Tyler</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Hiring and onboarding</p>
+          <h2>Hire for the season without a folder of paper</h2>
+          <p>Post a role, keep every application in one list, schedule interviews and send the offer letter from the same screen. New hires sign it, fill out their W-4 and I-9, add direct deposit and read the handbook on their phone before their first shift, and their food handler card goes in their record.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Offer letters that state the hourly rate and tipped status</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Paperwork done before day one, on the new hire’s phone</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Certifications stored with each person</li>
+          </ul>
+          <a class="fp-row__more" href="/features/onboarding/">See onboarding <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Onboarding checklist for new bartender Rosa Delgado starting Monday November 16: offer signed, W-4 and direct deposit done, I-9 Section 1 and handbook to do">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Onboarding · Rosa Delgado · starts Mon, Nov 16</span></div>
+          <div class="ui-main">
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Offer letter · Bartender, $17.75/hr</p><small>Signed Tue, Nov 10</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Form W-4</p><small>Signed Wed, Nov 11</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Direct deposit</p><small>Checking ··2210</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+              <div class="ui-item"><div><p>Form I-9, Section 1</p><small>Due by her first day · Section 2 by Thu, Nov 19</small></div><span class="ui-pill ui-pill--warn">To do</span></div>
+              <div class="ui-item"><div><p>Employee handbook</p><small>Read and acknowledge</small></div><span class="ui-pill ui-pill--warn">To do</span></div>
+              <div class="ui-item"><div><p>Food handler card</p><small>Upload a photo</small></div><span class="ui-pill">Requested</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">The employee side</p>
+          <h2>One app for every server, barista and cook</h2>
+          <p>Staff see their shifts, pick up open ones, request a day off with their balance in front of them, clock in, photograph a receipt for the supply run and read their pay stub on Friday. Each person sees only their own record.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Shifts, swaps and PTO in two taps</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pay stubs on payday, no forwarding PDFs</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>The handbook and policies, searchable</li>
+          </ul>
+          <a class="fp-row__more" href="/features/employee-app/">See the employee app <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-phone" role="img" aria-label="Employee app home screen for Maya Torres with today’s shift, a clock-in button, PTO balance and next paycheck">
+          <div class="ui-phone__screen">
+            <div class="ui-phone__notch"></div>
+            <div><p class="ui-sub">Thu, Nov 12</p><p class="ui-title">Good morning, Maya</p></div>
+            <div class="ui-card">
+              <p class="ui-sub">Counter · Northfield Coffee</p>
+              <p style="font-size:32px;font-weight:600;letter-spacing:-0.03em;margin:6px 0 2px">8:58 AM</p>
+              <p class="ui-sub">Today’s shift 9:00 AM–5:30 PM</p>
+              <p style="margin-top:10px"><span class="ui-pill ui-pill--ok">Inside geofence</span></p>
+            </div>
+            <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="rs-phone" data-text="Clocked in at 8:58 AM" data-done="Clocked in">Clock in</button>
+            <p class="ui-sub" id="rs-phone" style="text-align:center">Not clocked in yet</p>
+            <div class="ui-item"><div><p>PTO left</p><small>52 of 80 hours</small></div><span class="ui-pill">Request</span></div>
+            <div class="ui-item"><div><p>Next paycheck</p><small>Fri, Nov 20 · Nov 1–14</small></div><span class="ui-pill ui-pill--ok">Pay stub</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One record, from the owner to the dish pit</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owner or GM</h3></div><div><span>Replaces</span><p>A schedule spreadsheet, a payroll login and the group chat</p></div><div><span>They use it to</span><p>Watch scheduled hours against clocked hours, keep overtime in check and run payroll from approved hours</p></div><div><span>What they notice</span><p>Labor hours they trust before payroll, not after</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Shift lead</h3></div><div><span>Replaces</span><p>Texting around for cover and signing time cards</p></div><div><span>They use it to</span><p>Post open shifts, approve swaps, see who is in or late, fix a missed punch with a note</p></div><div><span>What they notice</span><p>Covering a shift takes one post, not ten texts</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Servers, baristas, bartenders</h3></div><div><span>Replaces</span><p>A photo of the schedule and a paper time card</p></div><div><span>They use it to</span><p>See shifts, swap and pick up, clock in on their phone, request PTO, read their pay stub</p></div><div><span>What they notice</span><p>Pay stubs that match the hours they worked</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Kitchen</h3></div><div><span>Replaces</span><p>A punch clock and a clipboard</p></div><div><span>They use it to</span><p>Clock in and out on the tablet by the door with their own PIN, clock breaks, check next week’s shifts</p></div><div><span>What they notice</span><p>No phone needed on the line</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Everyone sees what they need, and nothing else</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Staff see their own</h3><p>Each person sees their own shifts, hours, PTO and pay stubs, never a coworker’s pay.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Shift leads see the team</h3><p>Shift leads see their team’s schedule, attendance and time off, and approve their team’s timesheets.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and pay stubs are visible only to the people you give payroll access to.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">The features restaurants use most</p>
+        <h2 id="connect-title">Everything a restaurant week needs</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Employee scheduling</h3><p>Build the week by station, publish once, let staff swap and pick up.</p><span>Scheduling →</span></a>
+        <a class="fp-link-card" href="/features/time-clock-kiosk/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-store"/></svg></span><h3>Time clock kiosk</h3><p>A shared tablet by the kitchen door for staff without phones on the line.</p><span>Kiosk →</span></a>
+        <a class="fp-link-card" href="/features/time-clock/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Employee time clock app</h3><p>Front-of-house clock-ins from a phone, with today’s shift on screen.</p><span>Time clock →</span></a>
+        <a class="fp-link-card" href="/features/overtime-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime tracking</h3><p>Weekly totals against 40, with warnings before a pickup costs you.</p><span>Overtime →</span></a>
+        <a class="fp-link-card" href="/features/pto/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>PTO tracking</h3><p>Requests in two taps, and who else is off before you say yes.</p><span>PTO →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Approved hours, overtime and PTO become pay stubs in the app.</p><span>Payroll →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">See your restaurant’s week in Workzenly</h2>
+        <p>Tell us your stations and your team size. We set up a demo workspace with your restaurant’s name before the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it needs to do</a></li>
+            <li><a href="#g-tips">Tipped wages and overtime</a></li>
+            <li><a href="#g-laws">Scheduling and break laws</a></li>
+            <li><a href="#g-minors">Scheduling minors</a></li>
+            <li><a href="#g-labor">Labor hours and cost</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>See your own schedule and team in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The restaurant owner’s guide to employee management software</h2>
+        <p>A restaurant runs on a schedule that changes every week, staff who are paid by the hour and often by the tip, and a kitchen where phones do not belong. This guide covers what restaurant employee management software has to handle, the federal rules behind tipped pay and overtime, the scheduling and break laws that reach restaurants, and how to choose a system for one location or ten.</p>
+
+        <h3 id="g-what">What restaurant employee management software needs to do</h3>
+        <p>Four jobs, in order. Schedule the week by station and publish it where staff will see it. Record hours from a phone or a shared tablet, with breaks and overtime worked out. Handle time off and swaps without a manager in the middle of every text. Then pay for exactly the hours that were approved. <a href="/features/scheduling/">Scheduling</a>, the <a href="/features/time-clock-kiosk/">time clock kiosk</a>, <a href="/features/pto/">PTO</a> and <a href="/features/payroll/">payroll</a> in Workzenly are those four jobs on one record.</p>
+        <p>Tools built only for scheduling, such as the ones compared in our list of the <a href="/tools/best-restaurant-scheduling-apps/">best restaurant scheduling apps</a>, stop at the schedule. The hours then get retyped into a payroll service, which is where most Friday corrections start.</p>
+
+        <h3 id="g-tips">Tipped wages and overtime</h3>
+        <p>Under the Fair Labor Standards Act, an employer may pay a tipped employee a cash wage of $2.13 an hour and take a tip credit of up to $5.12, as long as tips bring the employee to at least the $7.25 federal minimum wage; the employer must make up any shortfall and must tell employees about the tip credit in advance, according to the U.S. Department of Labor. Many states set a higher cash wage, and some, including California, Washington and Oregon, allow no tip credit at all. Our <a href="/blog/texas-minimum-wage/">Texas minimum wage</a> guide walks through the federal rule as Texas applies it.</p>
+        <p>Overtime for tipped staff is figured on the full minimum wage, not the cash wage: time and a half on $7.25 is $10.88, minus the tip credit, so the employer pays at least $5.76 cash for each overtime hour at the federal rates. Managers and supervisors may not keep any part of a tip pool. See <a href="/blog/how-to-calculate-overtime/">how to calculate overtime</a> for the regular-rate math when a server also earns a shift differential.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Rule</th><th>Federal</th><th>What to check in your state</th></tr></thead>
+            <tbody>
+              <tr><td>Tipped cash wage</td><td>$2.13 an hour</td><td>Higher cash wage, or no tip credit (CA, WA, OR and others)</td></tr>
+              <tr><td>Tip credit</td><td>Up to $5.12, with notice to employees</td><td>Smaller or no credit; tip pool rules</td></tr>
+              <tr><td>Overtime</td><td>1.5 × regular rate after 40 hours a week</td><td>Daily overtime in California and a few other states</td></tr>
+              <tr><td>Meal breaks</td><td>Not required; unpaid only if 30+ minutes and fully relieved</td><td>Required breaks and premiums in CA, WA, OR and others</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="g-laws">Scheduling and break laws that reach restaurants</h3>
+        <p>Fair workweek laws in Oregon and in cities including New York City, San Francisco, Seattle, Chicago, Philadelphia and Los Angeles require some food-service employers to post schedules in advance, usually 14 days, and to pay a premium for late changes. New York City’s fast-food law covers chains with 30 or more locations nationally. Our <a href="/features/scheduling/#laws-title">scheduling page</a> has the verified table of who is covered and the notice each law requires.</p>
+        <p>Break rules are set by states, not federal law. California requires a 30-minute meal break when a shift runs more than 5 hours and a paid 10-minute rest break for every 4 hours or major fraction, and charges one extra hour of pay when a break is missed. Set your break rule during setup and read the <a href="/blog/time-card-calculator/">time card calculator</a> guide for how breaks come off the day’s hours.</p>
+
+        <h3 id="g-minors">Scheduling minors</h3>
+        <p>Federal child labor rules let 14- and 15-year-olds work only outside school hours: no more than 3 hours on a school day, 18 in a school week, 8 on a non-school day and 40 in a non-school week, between 7 a.m. and 7 p.m. (9 p.m. from June 1 through Labor Day), according to the Department of Labor. They may not cook over an open flame or operate most power equipment. Federal law sets no hour limits for 16- and 17-year-olds, but many states do, and no one under 18 may run a power-driven meat slicer. Workzenly shows each person’s weekly hours as you build the schedule; checking the hours against your state’s rules for minors is yours to do.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Wage and scheduling rules change every year, so check your state labor department or a restaurant employment lawyer for your situation.</p>
+
+        <h3 id="g-labor">Labor hours and labor cost</h3>
+        <p>Most restaurant owners watch labor as a share of sales. The software side of that is hours: scheduled hours per day and per station, clocked hours against them, and the overtime that creeps in when a Saturday pickup takes a cook from 36 hours to 46. A worked example: Emily Carter earns $19.00 an hour; 46 hours in a week is 40 × $19.00 = $760.00 plus 6 × $28.50 = $171.00, so $931.00. Offering that Saturday shift to Tyler at 24 hours instead costs 8 × $17.75 = $142.00 and no overtime. Workzenly shows the hours and the overtime risk while you build; sales forecasting is not something it does, so keep your POS reports beside it.</p>
+
+        <h3 id="g-choose">How to choose</h3>
+        <ol>
+          <li><strong>Run last week through it.</strong> Take your real schedule, the swaps that happened and one missed clock-out, and see which tool turns them into a correct pay run with the fewest manual steps.</li>
+          <li><strong>Check the kitchen.</strong> If phones stay in lockers, the tablet kiosk is not optional. Ask how PINs, breaks and missed punches work on it.</li>
+          <li><strong>Ask about tipped pay for your state.</strong> Cash wage, tip credit and tip-pool rules differ, and the system has to carry the right ones into payroll.</li>
+          <li><strong>Look at the employee side.</strong> Staff who avoid the app produce the same bad data as paper. Open the app as a server would.</li>
+          <li><strong>Count the hand-offs.</strong> Every time hours are retyped between tools, someone fixes a pay stub later. Read our <a href="/blog/how-to-process-payroll/">payroll process guide</a> for the full set of steps a pay run involves.</li>
+        </ol>
+        <p>If you want to see your own week in Workzenly, <a href="/#start">book a demo</a> and we will set up a workspace with your restaurant’s name before the call. Plans and prices are on the <a href="/pricing/">pricing page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions from restaurant owners</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>Does Workzenly handle tipped employees?</summary><p>Workzenly records hours, overtime and PTO for every employee and sends the approved figures into payroll. Under federal law a tipped employee can be paid a $2.13 cash wage with a tip credit of up to $5.12, as long as tips bring them to at least $7.25 an hour; many states set a higher cash wage or allow no tip credit at all. Tell us your state and your tip-pool rules on the demo call and we will show how tipped pay is set up.</p></details>
+        <details><summary>Can staff clock in without phones on the floor?</summary><p>Yes. A shared tablet by the kitchen door or host stand works as a time clock kiosk, and each person clocks in with their own PIN. Phone and kiosk punches land in the same timesheet, so a server who clocks in on the tablet and a manager who clocks in on their phone are counted the same way.</p></details>
+        <details><summary>How do shift swaps work for servers and cooks?</summary><p>An employee offers a shift from their phone, a coworker accepts it, and the schedule updates for everyone. Managers see the swap, who is covering and whether the cover would push anyone past 40 hours. Open shifts work the same way: post it once and let people pick it up instead of texting the group chat.</p></details>
+        <details><summary>Does it track breaks for restaurant staff?</summary><p>Yes. Employees clock meal breaks the same way they clock in. Unpaid meal breaks of 30 minutes or more are deducted and short rest breaks stay paid, following the federal rule. States such as California, Washington and Oregon require breaks at set points in a shift and charge a premium when one is missed, so set your break rule during setup and check your state’s rule.</p></details>
+        <details><summary>Can I schedule a 16-year-old for a closing shift?</summary><p>Federal law sets no hour limits for 16- and 17-year-olds, but it bars them from certain hazardous tasks, and many states limit their hours on school nights. Workers aged 14 and 15 may only work outside school hours, no more than 3 hours on a school day and 18 in a school week, and only between 7 a.m. and 7 p.m. (9 p.m. from June 1 through Labor Day). Check your state before you build the schedule.</p></details>
+        <details><summary>How long does it take to set up a restaurant?</summary><p>Most restaurants are scheduling and clocking in within a week. Send us your staff list, pay rates and PTO balances as a spreadsheet and we import them, then we walk through your first schedule and first timesheet approval with you and stay with you through the first pay run.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for restaurant teams</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/shift-differential/"><small>GUIDE</small><b>Shift differential: paying for nights and weekends</b></a>
+        <a href="/tools/best-restaurant-scheduling-apps/"><small>COMPARISON</small><b>Best restaurant scheduling apps</b></a>
+        <a href="/templates/shift-schedule-templates/"><small>TEMPLATES</small><b>Free shift schedule templates</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52" loading="lazy"></a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features and solutions"><h2>People and industries</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+        <li><a href="/solutions/">Solutions by industry</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>

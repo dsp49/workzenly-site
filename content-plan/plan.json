@@ -1543,6 +1543,847 @@
    "tool": false,
    "feature": "scheduling",
    "section": "blog"
+  },
+  {
+   "section": "blog",
+   "batch": "A_pay_calculators",
+   "slug": "military-time-chart",
+   "url": "/blog/military-time-chart/",
+   "keyword": "military time chart",
+   "intent": "informational",
+   "volume": 165000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "military time converter",
+    "military time to standard time",
+    "24 hour clock chart",
+    "what time is 1800 in military time"
+   ],
+   "tool": true,
+   "feature": "time-clock"
+  },
+  {
+   "section": "blog",
+   "batch": "A_pay_calculators",
+   "slug": "hourly-paycheck-calculator",
+   "url": "/blog/hourly-paycheck-calculator/",
+   "keyword": "hourly paycheck calculator",
+   "intent": "transactional",
+   "volume": 60000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "paycheck calculator hourly",
+    "take home pay calculator",
+    "biweekly paycheck calculator",
+    "net pay calculator"
+   ],
+   "tool": true,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "A_pay_calculators",
+   "slug": "time-and-a-half",
+   "url": "/blog/time-and-a-half/",
+   "keyword": "time and a half",
+   "intent": "informational",
+   "volume": 40000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "time and a half calculator",
+    "what is time and a half",
+    "how to calculate time and a half",
+    "double time pay"
+   ],
+   "tool": true,
+   "feature": "overtime-tracking"
+  },
+  {
+   "section": "blog",
+   "batch": "A_pay_calculators",
+   "slug": "gross-pay-vs-net-pay",
+   "url": "/blog/gross-pay-vs-net-pay/",
+   "keyword": "gross pay vs net pay",
+   "intent": "informational",
+   "volume": 18000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "what is gross pay",
+    "what is net pay",
+    "gross vs net",
+    "gross income vs net income"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "A_pay_calculators",
+   "slug": "how-many-hours-is-full-time",
+   "url": "/blog/how-many-hours-is-full-time/",
+   "keyword": "how many hours is full time",
+   "intent": "informational",
+   "volume": 50000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "full time hours",
+    "full time hours per week",
+    "is 32 hours full time",
+    "full time vs part time"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "blog",
+   "batch": "A_pay_calculators",
+   "slug": "how-many-hours-is-part-time",
+   "url": "/blog/how-many-hours-is-part-time/",
+   "keyword": "how many hours is part time",
+   "intent": "informational",
+   "volume": 55000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "part time hours",
+    "part time hours per week",
+    "how many hours is part time a week",
+    "part time vs full time hours"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "blog",
+   "batch": "A_pay_calculators",
+   "slug": "work-hours-in-a-year",
+   "url": "/blog/work-hours-in-a-year/",
+   "keyword": "how many work hours in a year",
+   "intent": "informational",
+   "volume": 35000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "working hours in a year",
+    "2080 hours",
+    "how many working days in 2027",
+    "work hours per month"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "A_pay_calculators",
+   "slug": "7-minute-rule",
+   "url": "/blog/7-minute-rule/",
+   "keyword": "7 minute rule",
+   "intent": "informational",
+   "volume": 12000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "7 minute rule time clock",
+    "time clock rounding",
+    "15 minute rounding",
+    "payroll rounding rules"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "section": "blog",
+   "batch": "A_pay_calculators",
+   "slug": "overtime-laws-by-state",
+   "url": "/blog/overtime-laws-by-state/",
+   "keyword": "overtime laws by state",
+   "intent": "informational",
+   "volume": 9000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "state overtime laws",
+    "daily overtime states",
+    "overtime rules by state",
+    "overtime pay laws"
+   ],
+   "tool": false,
+   "feature": "overtime-tracking"
+  },
+  {
+   "section": "blog",
+   "batch": "B_payroll_forms",
+   "slug": "what-is-fica",
+   "url": "/blog/what-is-fica/",
+   "keyword": "what is fica",
+   "intent": "informational",
+   "volume": 60000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "fica tax",
+    "fica tax rate 2026",
+    "fica meaning",
+    "social security and medicare tax"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "B_payroll_forms",
+   "slug": "employer-payroll-taxes",
+   "url": "/blog/employer-payroll-taxes/",
+   "keyword": "employer payroll taxes",
+   "intent": "informational",
+   "volume": 25000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "how much are payroll taxes",
+    "payroll tax rates 2026",
+    "payroll taxes for employers",
+    "what are payroll taxes"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "B_payroll_forms",
+   "slug": "futa-and-suta",
+   "url": "/blog/futa-and-suta/",
+   "keyword": "futa tax",
+   "intent": "informational",
+   "volume": 14000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "suta tax",
+    "futa tax rate 2026",
+    "what is futa",
+    "state unemployment tax"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "B_payroll_forms",
+   "slug": "w2-deadline",
+   "url": "/blog/w2-deadline/",
+   "keyword": "when are w2s sent out",
+   "intent": "informational",
+   "volume": 90000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "w2 deadline 2027",
+    "w-2 due date",
+    "when do employers have to send w2",
+    "w2 form 2026"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "B_payroll_forms",
+   "slug": "payroll-deductions",
+   "url": "/blog/payroll-deductions/",
+   "keyword": "payroll deductions",
+   "intent": "informational",
+   "volume": 12000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "pre tax deductions",
+    "post tax deductions",
+    "what are payroll deductions",
+    "mandatory payroll deductions"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "B_payroll_forms",
+   "slug": "payroll-calendar-2027",
+   "url": "/blog/payroll-calendar-2027/",
+   "keyword": "payroll calendar 2027",
+   "intent": "transactional",
+   "volume": 15000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "biweekly pay schedule 2027",
+    "2027 pay periods",
+    "27 pay periods 2027",
+    "semi monthly payroll calendar 2027"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "B_payroll_forms",
+   "slug": "how-many-pay-periods-in-a-year",
+   "url": "/blog/how-many-pay-periods-in-a-year/",
+   "keyword": "how many pay periods in a year",
+   "intent": "informational",
+   "volume": 22000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "biweekly pay periods",
+    "semi monthly vs biweekly",
+    "pay frequency",
+    "how many paychecks in a year"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "B_payroll_forms",
+   "slug": "how-long-does-direct-deposit-take",
+   "url": "/blog/how-long-does-direct-deposit-take/",
+   "keyword": "how long does direct deposit take",
+   "intent": "informational",
+   "volume": 45000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "when does direct deposit hit",
+    "what time does direct deposit go through",
+    "direct deposit early",
+    "direct deposit payroll"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "B_payroll_forms",
+   "slug": "2027-payroll-tax-changes",
+   "url": "/blog/2027-payroll-tax-changes/",
+   "keyword": "2027 payroll tax changes",
+   "intent": "informational",
+   "volume": 6000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "social security wage base 2027",
+    "2027 payroll taxes",
+    "payroll changes 2027",
+    "401k contribution limit 2027"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "B_payroll_forms",
+   "slug": "irs-mileage-rate",
+   "url": "/blog/irs-mileage-rate/",
+   "keyword": "irs mileage rate 2026",
+   "intent": "informational",
+   "volume": 90000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "standard mileage rate 2026",
+    "mileage reimbursement rate 2026",
+    "irs mileage rate 2027",
+    "mileage reimbursement"
+   ],
+   "tool": false,
+   "feature": "expenses"
+  },
+  {
+   "section": "blog",
+   "batch": "C_minimum_wage",
+   "slug": "illinois-minimum-wage",
+   "url": "/blog/illinois-minimum-wage/",
+   "keyword": "illinois minimum wage",
+   "intent": "informational",
+   "volume": 30000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "illinois minimum wage 2026",
+    "chicago minimum wage",
+    "minimum wage in illinois",
+    "illinois minimum wage 2027"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "C_minimum_wage",
+   "slug": "washington-minimum-wage",
+   "url": "/blog/washington-minimum-wage/",
+   "keyword": "washington minimum wage",
+   "intent": "informational",
+   "volume": 25000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "washington state minimum wage 2027",
+    "seattle minimum wage",
+    "wa minimum wage",
+    "washington minimum wage 2026"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "C_minimum_wage",
+   "slug": "arizona-minimum-wage",
+   "url": "/blog/arizona-minimum-wage/",
+   "keyword": "arizona minimum wage",
+   "intent": "informational",
+   "volume": 22000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "arizona minimum wage 2027",
+    "minimum wage in arizona",
+    "flagstaff minimum wage",
+    "tucson minimum wage"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "C_minimum_wage",
+   "slug": "colorado-minimum-wage",
+   "url": "/blog/colorado-minimum-wage/",
+   "keyword": "colorado minimum wage",
+   "intent": "informational",
+   "volume": 20000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "colorado minimum wage 2027",
+    "denver minimum wage",
+    "minimum wage in colorado",
+    "colorado tipped minimum wage"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "C_minimum_wage",
+   "slug": "new-jersey-minimum-wage",
+   "url": "/blog/new-jersey-minimum-wage/",
+   "keyword": "new jersey minimum wage",
+   "intent": "informational",
+   "volume": 18000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "nj minimum wage 2027",
+    "minimum wage in nj",
+    "new jersey minimum wage 2026",
+    "nj tipped minimum wage"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "C_minimum_wage",
+   "slug": "massachusetts-minimum-wage",
+   "url": "/blog/massachusetts-minimum-wage/",
+   "keyword": "massachusetts minimum wage",
+   "intent": "informational",
+   "volume": 16000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "minimum wage in massachusetts",
+    "massachusetts minimum wage 2026",
+    "ma minimum wage",
+    "massachusetts tipped minimum wage"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "C_minimum_wage",
+   "slug": "pennsylvania-minimum-wage",
+   "url": "/blog/pennsylvania-minimum-wage/",
+   "keyword": "pennsylvania minimum wage",
+   "intent": "informational",
+   "volume": 20000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "pa minimum wage",
+    "minimum wage in pennsylvania",
+    "pennsylvania minimum wage increase",
+    "philadelphia minimum wage"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "C_minimum_wage",
+   "slug": "georgia-minimum-wage",
+   "url": "/blog/georgia-minimum-wage/",
+   "keyword": "georgia minimum wage",
+   "intent": "informational",
+   "volume": 18000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "minimum wage in georgia",
+    "georgia minimum wage 2026",
+    "atlanta minimum wage",
+    "georgia tipped minimum wage"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "D_leave_attendance",
+   "slug": "federal-holidays-2027",
+   "url": "/blog/federal-holidays-2027/",
+   "keyword": "federal holidays 2027",
+   "intent": "informational",
+   "volume": 110000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "2027 federal holidays",
+    "federal holidays 2026",
+    "bank holidays 2027",
+    "holiday schedule 2027"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "section": "blog",
+   "batch": "D_leave_attendance",
+   "slug": "paid-sick-leave-by-state",
+   "url": "/blog/paid-sick-leave-by-state/",
+   "keyword": "paid sick leave by state",
+   "intent": "informational",
+   "volume": 12000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "sick leave laws by state",
+    "states with paid sick leave",
+    "mandatory sick leave states",
+    "sick time laws"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "section": "blog",
+   "batch": "D_leave_attendance",
+   "slug": "pto-payout-laws-by-state",
+   "url": "/blog/pto-payout-laws-by-state/",
+   "keyword": "pto payout laws by state",
+   "intent": "informational",
+   "volume": 9000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "pto payout",
+    "vacation payout laws",
+    "states that require pto payout",
+    "unused pto payout"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "section": "blog",
+   "batch": "D_leave_attendance",
+   "slug": "final-paycheck-laws-by-state",
+   "url": "/blog/final-paycheck-laws-by-state/",
+   "keyword": "final paycheck laws by state",
+   "intent": "informational",
+   "volume": 10000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "last paycheck laws",
+    "final pay laws",
+    "when do you get your last paycheck",
+    "final paycheck law"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "D_leave_attendance",
+   "slug": "floating-holiday",
+   "url": "/blog/floating-holiday/",
+   "keyword": "floating holiday",
+   "intent": "informational",
+   "volume": 15000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "what is a floating holiday",
+    "floating holiday policy",
+    "floating holidays meaning",
+    "floating holiday vs pto"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "section": "blog",
+   "batch": "D_leave_attendance",
+   "slug": "comp-time",
+   "url": "/blog/comp-time/",
+   "keyword": "comp time",
+   "intent": "informational",
+   "volume": 14000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "compensatory time",
+    "comp time vs overtime",
+    "is comp time legal",
+    "comp time for salaried employees"
+   ],
+   "tool": false,
+   "feature": "overtime-tracking"
+  },
+  {
+   "section": "blog",
+   "batch": "D_leave_attendance",
+   "slug": "lunch-break-laws-by-state",
+   "url": "/blog/lunch-break-laws-by-state/",
+   "keyword": "lunch break laws by state",
+   "intent": "informational",
+   "volume": 15000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "break laws by state",
+    "meal break laws",
+    "rest break laws",
+    "are employers required to give breaks"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "section": "blog",
+   "batch": "D_leave_attendance",
+   "slug": "maternity-leave",
+   "url": "/blog/maternity-leave/",
+   "keyword": "how does maternity leave work",
+   "intent": "informational",
+   "volume": 30000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "maternity leave in the us",
+    "paid maternity leave by state",
+    "fmla maternity leave",
+    "paid family leave states"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "section": "blog",
+   "batch": "D_leave_attendance",
+   "slug": "at-will-employment",
+   "url": "/blog/at-will-employment/",
+   "keyword": "at will employment",
+   "intent": "informational",
+   "volume": 30000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "what is at will employment",
+    "at will employment states",
+    "at will employment meaning",
+    "exceptions to at will employment"
+   ],
+   "tool": false,
+   "feature": "hr-documents"
+  },
+  {
+   "section": "blog",
+   "batch": "D_leave_attendance",
+   "slug": "severance-pay",
+   "url": "/blog/severance-pay/",
+   "keyword": "severance pay",
+   "intent": "informational",
+   "volume": 28000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "what is severance pay",
+    "severance package",
+    "is severance pay required",
+    "how is severance calculated"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "D_leave_attendance",
+   "slug": "pay-transparency-laws-by-state",
+   "url": "/blog/pay-transparency-laws-by-state/",
+   "keyword": "pay transparency laws by state",
+   "intent": "informational",
+   "volume": 6000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "salary transparency laws",
+    "pay transparency law",
+    "states with pay transparency laws",
+    "salary range in job postings"
+   ],
+   "tool": false,
+   "feature": "hiring"
+  },
+  {
+   "section": "blog",
+   "batch": "E_scheduling",
+   "slug": "first-second-third-shift-hours",
+   "url": "/blog/first-second-third-shift-hours/",
+   "keyword": "2nd shift hours",
+   "intent": "informational",
+   "volume": 35000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "first shift hours",
+    "third shift hours",
+    "what is second shift",
+    "1st 2nd 3rd shift",
+    "swing shift hours"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "blog",
+   "batch": "E_scheduling",
+   "slug": "4-10-work-schedule",
+   "url": "/blog/4-10-work-schedule/",
+   "keyword": "4/10 work schedule",
+   "intent": "informational",
+   "volume": 15000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "4 10 schedule",
+    "four 10 hour days",
+    "4 day work week schedule",
+    "4x10 schedule"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "blog",
+   "batch": "F_time_tracking",
+   "slug": "time-theft",
+   "url": "/blog/time-theft/",
+   "keyword": "time theft",
+   "intent": "informational",
+   "volume": 5500,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "what is time theft",
+    "time theft examples",
+    "buddy punching",
+    "employee time theft"
+   ],
+   "tool": false,
+   "feature": "time-clock"
+  },
+  {
+   "section": "blog",
+   "batch": "G_people_docs",
+   "slug": "two-weeks-notice-letter",
+   "url": "/blog/two-weeks-notice-letter/",
+   "keyword": "two weeks notice letter",
+   "intent": "transactional",
+   "volume": 150000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "two weeks notice",
+    "resignation letter",
+    "two weeks notice template",
+    "how to write a two weeks notice"
+   ],
+   "tool": false,
+   "feature": "hr-documents"
   }
  ],
  "features": [
@@ -1775,5 +2616,127 @@
   "timesheet-template": "/templates/timesheet-templates/",
   "when-i-work-alternatives": "/tools/when-i-work-alternatives/",
   "work-schedule-template": "/templates/employee-schedule-templates/"
- }
+ },
+ "solutions": [
+  {
+   "slug": "restaurants",
+   "url": "/solutions/restaurants/",
+   "keyword": "restaurant employee management software",
+   "intent": "transactional",
+   "name": "Restaurants",
+   "industry": "Restaurants, cafes and bars",
+   "country": "us",
+   "secondary": [
+    "restaurant scheduling software",
+    "restaurant time clock",
+    "restaurant payroll software",
+    "restaurant staff scheduling"
+   ]
+  },
+  {
+   "slug": "retail",
+   "url": "/solutions/retail/",
+   "keyword": "retail workforce management software",
+   "intent": "transactional",
+   "name": "Retail",
+   "industry": "Retail stores",
+   "country": "us",
+   "secondary": [
+    "retail scheduling software",
+    "retail time clock",
+    "retail employee scheduling",
+    "store scheduling software"
+   ]
+  },
+  {
+   "slug": "healthcare",
+   "url": "/solutions/healthcare/",
+   "keyword": "clinic staff scheduling software",
+   "intent": "transactional",
+   "name": "Healthcare",
+   "industry": "Clinics and medical practices",
+   "country": "us",
+   "secondary": [
+    "healthcare workforce management software",
+    "medical office time clock",
+    "medical practice scheduling software",
+    "healthcare timekeeping"
+   ]
+  },
+  {
+   "slug": "home-care",
+   "url": "/solutions/home-care/",
+   "keyword": "home care workforce management software",
+   "intent": "transactional",
+   "name": "Home care",
+   "industry": "Home care agencies",
+   "country": "us",
+   "secondary": [
+    "home care scheduling software",
+    "caregiver time clock app",
+    "home health time tracking",
+    "caregiver scheduling app"
+   ]
+  },
+  {
+   "slug": "construction",
+   "url": "/solutions/construction/",
+   "keyword": "construction time tracking software",
+   "intent": "transactional",
+   "name": "Construction",
+   "industry": "Construction and trades",
+   "country": "us",
+   "secondary": [
+    "construction time clock app",
+    "crew scheduling software",
+    "construction payroll software",
+    "job site time clock"
+   ]
+  },
+  {
+   "slug": "warehouses",
+   "url": "/solutions/warehouses/",
+   "keyword": "warehouse time and attendance software",
+   "intent": "transactional",
+   "name": "Warehouses and manufacturing",
+   "industry": "Warehouses and manufacturing",
+   "country": "us",
+   "secondary": [
+    "manufacturing time clock",
+    "warehouse scheduling software",
+    "warehouse workforce management",
+    "factory time clock"
+   ]
+  },
+  {
+   "slug": "field-services",
+   "url": "/solutions/field-services/",
+   "keyword": "field service time tracking software",
+   "intent": "transactional",
+   "name": "Field services",
+   "industry": "Cleaning, landscaping and field crews",
+   "country": "us",
+   "secondary": [
+    "cleaning company scheduling software",
+    "mobile workforce time clock",
+    "field employee time tracking",
+    "janitorial scheduling software"
+   ]
+  },
+  {
+   "slug": "offices",
+   "url": "/solutions/offices/",
+   "keyword": "employee management software for small business",
+   "intent": "transactional",
+   "name": "Offices",
+   "industry": "Offices and professional services",
+   "country": "us",
+   "secondary": [
+    "small business hr software",
+    "pto tracking for small business",
+    "hybrid team attendance",
+    "small office hr app"
+   ]
+  }
+ ]
 }

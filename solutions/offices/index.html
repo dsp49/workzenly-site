@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Employee Management Software for Small Business | Workzenly</title>
+  <meta name="description" content="Employee management software for small business offices: PTO balances, hybrid office days, reviews, HR documents and payroll for salaried and hourly staff.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/solutions/offices/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/solutions/offices/">
+  <meta property="og:title" content="Employee Management Software for Small Business | Workzenly">
+  <meta property="og:description" content="Employee management software for small business offices: PTO balances, hybrid office days, reviews, HR documents and payroll for salaried and hourly staff.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    /* Page-local: the office week grid (PTO calendar in the hero, in-office days in the tabs) */
+    .ui-cal { display: grid; grid-template-columns: 112px repeat(5, minmax(0, 1fr)); gap: 4px; font-size: 11.5px; }
+    .ui-cal > b { font-weight: 400; color: #8d8d89; padding: 4px 0; font-size: 11px; }
+    .ui-cal .ui-who { padding: 6px 0; display: grid; gap: 1px; align-content: center; }
+    .ui-cal .ui-who small { color: #7d7d79; font-size: 10.5px; }
+    .ui-day { border-radius: 6px; padding: 5px 6px; background: #1b1b1b; border: 1px solid #262626; color: #a9a9a4; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ui-day--office { background: #1c2412; border-color: #2f3f1a; color: var(--accent); }
+    .ui-day--home { background: #13202e; border-color: #1e3247; color: var(--info); }
+    .ui-day--pto { background: #2a2110; border-color: #3f3318; color: var(--warn); }
+    .ui-day--off { background: transparent; border-color: transparent; color: #4d4d4a; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Employee Management Software for Small Business | Workzenly",
+        "description": "Employee management software for small business offices: PTO balances, hybrid office days, reviews, HR documents and payroll for salaried and hourly staff.",
+        "url": "https://workzenly.com/solutions/offices/",
+        "dateModified": "2026-11-12",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://workzenly.com/solutions/" },
+          { "@type": "ListItem", "position": 3, "name": "Offices", "item": "https://workzenly.com/solutions/offices/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Is employee management software for small business worth it when most of our staff are salaried?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, because the record is not about the clock. Salaried staff still take PTO against a balance, work set in-office days, get reviews, sign documents and need a pay stub every two weeks. Workzenly keeps that in one record per person, and the hourly employees in the office clock in from the same app, so their overtime is worked out before payroll." } },
+          { "@type": "Question", "name": "Do exempt employees have to clock in?", "acceptedAnswer": { "@type": "Answer", "text": "No. The Fair Labor Standards Act's hours-worked records apply to non-exempt employees; for exempt staff the Department of Labor asks only that you keep the basis on which pay is set. In Workzenly salaried employees never see a clock-in button. Hourly staff clock in from their phone or a shared tablet, and their hours flow into the same pay run." } },
+          { "@type": "Question", "name": "How does PTO work for salaried staff in Workzenly?", "acceptedAnswer": { "@type": "Answer", "text": "Each person has a balance that accrues on its own. They request days in two taps and see the balance before and after; the manager sees who else is out before approving. An exempt employee's salary does not change when they take a day, only the balance does, which the Department of Labor allows as long as the full salary is paid for any week with work." } },
+          { "@type": "Question", "name": "Can hourly staff clock in from home on hybrid days?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. An hourly employee clocks in and out from the app on home days exactly as at the office, and the location is captured with the punch. Hours over 40 in the workweek are overtime wherever they were worked, and short breaks of 20 minutes or less are paid at home too. Workzenly records the punch; it does not track anyone between punches." } },
+          { "@type": "Question", "name": "Where do performance reviews and signed documents live?", "acceptedAnswer": { "@type": "Answer", "text": "In the employee's record, next to their PTO, schedule and pay: goals, one-on-one notes and the signed review, plus the offer letter, W-4, I-9, direct deposit form and handbook acknowledgment. Each employee sees only their own record; managers see their team. EEOC rules require keeping personnel records for one year, and one year from an involuntary termination." } },
+          { "@type": "Question", "name": "How long does setup take for an office of 10 people?", "acceptedAnswer": { "@type": "Answer", "text": "About a week. Send us your employee list, salaries and hourly rates, PTO balances and your handbook, and we import them. We set up your in-office days and PTO rules with you, invite everyone to the app, and stay with you through the first pay run so the first pay stubs land in the app on payday." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="employee management software for small business" data-intent="transactional" data-topic="Offices">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7M6 9.5V20h12V9.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7.5" width="18" height="12.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 7.5V5.5a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 5.5v2M3 13h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5M9 15l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 11.9v.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52"></a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/solutions/" aria-current="page">Solutions</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/pricing/">Pricing</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/solutions/">Solutions</a></li><li aria-current="page">Offices</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Offices and professional services</span>
+        <h1 id="hero-title">Employee management software for small business offices</h1>
+        <p class="fp-lead">Workzenly is employee management software for small business offices: accounting firms, agencies, law offices and startups where most people are salaried and never clock in. PTO balances, in-office days, hiring and onboarding, reviews, HR documents and payroll for salaried and hourly staff, in one record per person and one app on every phone.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>PTO calendar and balances</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Salaried and hourly in one pay run</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Reviews and documents on record</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly people dashboard for Copperline Advisory Group on Thursday, November 12: two people out this week plus one part day, one hire in onboarding, three reviews due and two documents to sign, with a PTO calendar for November 9 to 13">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/people</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span class="is-on"><svg><use href="#i-users"/></svg></span>
+              <span><svg><use href="#i-cal"/></svg></span>
+              <span><svg><use href="#i-target"/></svg></span>
+              <span><svg><use href="#i-doc"/></svg></span>
+              <span><svg><use href="#i-pay"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">People</p><p class="ui-sub">Copperline Advisory Group · Boise, ID · Thu, Nov 12</p></div>
+                <div class="ui-seg" aria-hidden="true"><span class="is-on">This week</span><span>Month</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>2</b><small>Out this week</small><em class="is-warn">+ 1 part day</em></div>
+                <div class="ui-kpi"><b>1</b><small>Hire in progress</small><em>Offer accepted</em></div>
+                <div class="ui-kpi"><b>3</b><small>Reviews due</small><em>by Mon, Nov 30</em></div>
+                <div class="ui-kpi"><b>2</b><small>Documents to sign</small><em class="is-warn">Anya L.</em></div>
+              </div>
+              <div class="ui-card ui-scroll">
+                <div class="ui-card__head"><b>Who’s out · Nov 9–13</b><span class="ui-legend"><span><i style="background:#f2c36b"></i>PTO</span><span><i style="background:#2a2a2a"></i>Working</span></span></div>
+                <div class="ui-cal" style="min-width:520px">
+                  <b></b><b>Mon 9</b><b>Tue 10</b><b>Wed 11</b><b>Thu 12</b><b>Fri 13</b>
+                  <div class="ui-who">Ingrid Okonjo<small>Managing partner</small></div><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span>
+                  <div class="ui-who">Yasmin Brandt<small>Tax manager</small></div><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day ui-day--pto">PTO 8 h</span><span class="ui-day">In</span><span class="ui-day">In</span>
+                  <div class="ui-who">Wren Moreau<small>Senior accountant</small></div><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day ui-day--pto">PTO 8 h</span><span class="ui-day ui-day--pto">PTO 8 h</span>
+                  <div class="ui-who">Desmond Achebe<small>Staff accountant</small></div><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span>
+                  <div class="ui-who">Colette Falk<small>Office manager</small></div><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span>
+                  <div class="ui-who">Lucia Quintero<small>Admin assistant · hourly</small></div><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span>
+                  <div class="ui-who">Ravi Thornton<small>Bookkeeper · hourly, 30 h</small></div><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day">In</span><span class="ui-day ui-day--pto">PTO 4 h</span>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="of-hero">Anya Lindgren has 2 documents left before Mon, Nov 30</p><small>I-9 Section 1 and the handbook acknowledgment · offer, W-4 and direct deposit are done</small></div><button type="button" class="ui-btn" data-act data-target="of-hero" data-text="Reminder sent to Anya’s phone." data-done="Sent">Send reminder</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for the people who run a small office</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-brief"/></svg>Owners, partners and founders</li>
+        <li><svg aria-hidden="true"><use href="#i-users"/></svg>Office managers who are also HR</li>
+        <li><svg aria-hidden="true"><use href="#i-target"/></svg>Team leads who run reviews</li>
+        <li><svg aria-hidden="true"><use href="#i-clock"/></svg>Hourly admin and support staff</li>
+        <li><svg aria-hidden="true"><use href="#i-pay"/></svg>Whoever runs payroll every other Friday</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">PTO lives in a shared calendar, balances live in a spreadsheet, the handbook is a PDF from 2023, and the signed offer letters are in someone’s inbox.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">Nobody clocks in. The record still matters.</h2>
+      <p class="fp-problem__p">In an office, employee management software for small business is about the record, not the time clock. Who is out next week and what their balance is. Which days people are in. Whether the new hire’s I-9 is signed. When the last review happened. What salaried staff are paid, and what the hourly people actually worked. Workzenly keeps it in one record per person, and payroll reads from that record.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first month</p>
+        <h2 id="outcomes-title">Small business HR software that replaces four spreadsheets</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sun"/></svg></span><h3>PTO with a balance behind it</h3><p>People request days in two taps and see their balance before and after. You see who else is out before you approve. Balances accrue on their own, so nobody recalculates them in January.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-home"/></svg></span><h3>In-office days everyone can see</h3><p>Set anchor days and let people pick the rest. Publish once and the app shows each person their office and home days, with approved PTO already on the grid.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-target"/></svg></span><h3>Reviews that happen on time</h3><p>Goals set together, one-on-one notes kept as you go, and a review cycle that shows who has finished their part. The signed review goes into the person’s record.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>One pay run for salaries and hours</h3><p>Salaried staff are paid their salary; hourly staff are paid the hours a manager approved, overtime included. Pay stubs reach every phone on payday.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">An office month in Workzenly</h2>
+        <p>Copperline Advisory Group is a seven-person accounting firm in Boise with one hire starting November 30. Here is what November looks like in their workspace.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="An office month">
+          <button class="fp-tab" role="tab" id="tab-pto" aria-controls="panel-pto" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-sun"/></svg>PTO request</b><span>Balance, who else is out, approve in one tap</span></button>
+          <button class="fp-tab" role="tab" id="tab-hybrid" aria-controls="panel-hybrid" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-home"/></svg>Hybrid week</b><span>Anchor days, home days and PTO on one grid</span></button>
+          <button class="fp-tab" role="tab" id="tab-review" aria-controls="panel-review" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-target"/></svg>Review cycle</b><span>Who has finished, who needs a nudge</span></button>
+          <button class="fp-tab" role="tab" id="tab-onboard" aria-controls="panel-onboard" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-doc"/></svg>Hire and onboard</b><span>From posted role to signed I-9</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pto" aria-labelledby="tab-pto">
+          <div>
+            <h3>PTO tracking for small business, with the balance in view</h3>
+            <p>Desmond picks Nov 23 to 25 in the app and sees his balance go from 64 to 40 hours before he sends it. Yasmin, his manager, sees that no one else on the tax team is out that week and approves from her phone. The days land on the office grid and come off his balance at once.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Balances accrue and update on their own</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Who else is out, shown before you approve</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Salaried PTO changes the balance, not the paycheck</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="PTO request from Desmond Achebe for November 23 to 25, 24 hours, balance 64 to 40, with the Thanksgiving week calendar showing no one else out and an approve button">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">PTO request · Desmond Achebe · Mon, Nov 23 – Wed, Nov 25</span></div>
+            <div class="ui-main">
+              <div class="ui-card">
+                <div class="ui-card__head"><b>3 days · 24.0 hours</b><span>Balance 64.0 → 40.0 h</span></div>
+                <div class="ui-list">
+                  <div class="ui-item"><div><p>Mon, Nov 23 – Wed, Nov 25</p><small>3 working days · Thu, Nov 26 and Fri, Nov 27 are company holidays</small></div><span class="ui-pill ui-pill--warn">Pending</span></div>
+                  <div class="ui-item"><div><p>Who else is out that week</p><small>No one on the tax team · Lucia Quintero out Wed, Nov 25</small></div><span class="ui-pill ui-pill--ok">Covered</span></div>
+                  <div class="ui-item"><div><p>Note from Desmond</p><small>“Family in Portland. Back Mon, Nov 30.”</small></div><span class="ui-pill">Note</span></div>
+                </div>
+              </div>
+              <div class="ui-foot"><div><p id="of-pto">Waiting for Yasmin Brandt</p><small>Approving puts the days on the office grid and updates his balance</small></div><button type="button" class="ui-btn" data-act data-target="of-pto" data-text="Approved. Desmond sees it in the app; balance is 40.0 h." data-done="Approved">Approve</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-hybrid" aria-labelledby="tab-hybrid" hidden>
+          <div>
+            <h3>Hybrid team attendance on one grid</h3>
+            <p>Anchor days are Tuesday and Thursday; everyone picks their other office days. Colette builds the week of Nov 16 with approved PTO already on it, publishes once, and each person sees their days in the app. The two hourly staff clock in from the app wherever they work; salaried staff just see their days.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Anchor days set once, home days chosen per person</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>PTO already on the grid, so no one is planned in while away</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>How many are in each day, before you publish</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Hybrid week schedule for Copperline Advisory Group, November 16 to 20, showing office, home and PTO days per person with everyone in on Tuesday and Thursday and three people in on Wednesday">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Office week · Mon, Nov 16 – Fri, Nov 20 · draft</span></div>
+            <div class="ui-main ui-scroll">
+              <div class="ui-card__head"><b>In-office days</b><span class="ui-legend"><span><i style="background:#dafa9c"></i>Office</span><span><i style="background:#9cc8fa"></i>Home</span><span><i style="background:#f2c36b"></i>PTO</span></span></div>
+              <div class="ui-cal" style="min-width:520px">
+                <b></b><b>Mon 16</b><b>Tue 17</b><b>Wed 18</b><b>Thu 19</b><b>Fri 20</b>
+                <div class="ui-who">Ingrid Okonjo<small>Salaried</small></div><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--home">Home</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--home">Home</span>
+                <div class="ui-who">Yasmin Brandt<small>Salaried</small></div><span class="ui-day ui-day--home">Home</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--home">Home</span>
+                <div class="ui-who">Wren Moreau<small>Salaried</small></div><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--home">Home</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span>
+                <div class="ui-who">Desmond Achebe<small>Salaried</small></div><span class="ui-day ui-day--home">Home</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--home">Home</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span>
+                <div class="ui-who">Colette Falk<small>Salaried</small></div><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span>
+                <div class="ui-who">Lucia Quintero<small>Hourly · clocks in</small></div><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--home">Home</span>
+                <div class="ui-who">Ravi Thornton<small>Hourly · clocks in</small></div><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--home">Home</span><span class="ui-day ui-day--office">Office</span><span class="ui-day ui-day--home">Home</span>
+              </div>
+              <div class="ui-foot"><div><p id="of-week">In the office: Mon 5 · Tue 7 · Wed 3 · Thu 7 · Fri 3</p><small>8 desks · Tue and Thu are anchor days · no PTO this week</small></div><button type="button" class="ui-btn" data-act data-target="of-week" data-text="Published Thu, Nov 12. Everyone sees their days in the app." data-done="Published">Publish week</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-review" aria-labelledby="tab-review" hidden>
+          <div>
+            <h3>A review cycle you can see the end of</h3>
+            <p>Annual reviews close on Nov 30. Each person writes a self-review, their manager writes theirs, they meet, and both sign. Ingrid sees who has finished each step without asking, and the goals set in January sit next to the review.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Self-review, manager review, meeting, signature, in order</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Goals and one-on-one notes kept through the year</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Finished reviews stored in the person’s record</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Annual review cycle for Copperline Advisory Group closing November 30: three complete, one scheduled, one in progress and Desmond Achebe’s self-review not started">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Reviews · 2026 annual cycle · closes Mon, Nov 30</span></div>
+            <div class="ui-main">
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>3</b><small>Complete</small><em>signed by both</em></div>
+                <div class="ui-kpi"><b>2</b><small>In progress</small><em>meetings this month</em></div>
+                <div class="ui-kpi"><b>1</b><small>Not started</small><em class="is-warn">self-review due Nov 20</em></div>
+                <div class="ui-kpi"><b>19/24</b><small>Goals met so far</small><em>24 set across 6 people</em></div>
+              </div>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Yasmin Brandt · reviewed by Ingrid</p><small>Self-review done · meeting Wed, Nov 18, 2:00 PM</small></div><span class="ui-pill ui-pill--info">Scheduled</span></div>
+                <div class="ui-item"><div><p>Wren Moreau · reviewed by Yasmin</p><small>Self-review done · manager review in draft</small></div><span class="ui-pill ui-pill--info">In progress</span></div>
+                <div class="ui-item"><div><p>Desmond Achebe · reviewed by Yasmin</p><small id="of-review">Self-review not started · due Fri, Nov 20</small></div><span class="ui-pill ui-pill--warn">Not started</span></div>
+                <div class="ui-item"><div><p>Colette Falk · reviewed by Ingrid</p><small>Signed Tue, Nov 10 · 4 of 4 goals met</small></div><span class="ui-pill ui-pill--ok">Complete</span></div>
+                <div class="ui-item"><div><p>Lucia Quintero · reviewed by Colette</p><small>Signed Mon, Nov 9 · 3 of 4 goals met</small></div><span class="ui-pill ui-pill--ok">Complete</span></div>
+                <div class="ui-item"><div><p>Ravi Thornton · 90-day review by Colette</p><small>Signed Thu, Nov 5 · joins the annual cycle in 2027</small></div><span class="ui-pill ui-pill--ok">Complete</span></div>
+              </div>
+              <div class="ui-foot"><div><p>Desmond is the only one who has not started</p><small>Goals from January are already attached to his form</small></div><button type="button" class="ui-btn" data-act data-target="of-review" data-text="Reminder sent to Desmond’s phone · due Fri, Nov 20" data-done="Reminded">Remind Desmond</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-onboard" aria-labelledby="tab-onboard" hidden>
+          <div>
+            <h3>Hire by phone, onboard before day one</h3>
+            <p>Copperline posted a Senior Tax Associate role on Oct 19, kept the 14 applications in one list, scheduled three interviews and sent Anya Lindgren the offer letter from the same screen. Her W-4 and direct deposit are done on her phone; the I-9 Section 1 and the handbook are due before she starts on Nov 30.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Post the role, applications in one list, interviews scheduled</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Offer, W-4, I-9 Section 1, direct deposit and handbook on her phone</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every signed document stored in her record</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Onboarding board for Anya Lindgren, Senior Tax Associate starting Monday, November 30: hiring summary, offer letter, W-4 and direct deposit done, I-9 Section 1 and handbook to do, CPA license requested">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Onboarding · Anya Lindgren · starts Mon, Nov 30</span></div>
+            <div class="ui-main">
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Senior Tax Associate</b><span>Posted Mon, Oct 19 · 14 applications · 3 interviews</span></div>
+                <div class="ui-item"><div><p>Offer accepted Mon, Nov 9</p><small>Salary $78,000 · exempt · reports to Yasmin Brandt</small></div><span class="ui-pill ui-pill--ok">Hired</span></div>
+              </div>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Offer letter</p><small>Signed Mon, Nov 9</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+                <div class="ui-item"><div><p>Form W-4</p><small>Signed Tue, Nov 10</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+                <div class="ui-item"><div><p>Direct deposit</p><small>Checking ··4471</small></div><span class="ui-pill ui-pill--ok">Done</span></div>
+                <div class="ui-item"><div><p>Form I-9, Section 1</p><small>Due by her first day · Section 2 by Thu, Dec 3</small></div><span class="ui-pill ui-pill--warn">To do</span></div>
+                <div class="ui-item"><div><p>Employee handbook</p><small>Read and acknowledge</small></div><span class="ui-pill ui-pill--warn">To do</span></div>
+                <div class="ui-item"><div><p>CPA license · Idaho</p><small>Number and expiry stored as data</small></div><span class="ui-pill">Requested</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="Office details">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Payroll</p>
+          <h2>Salaried and hourly staff in one pay run</h2>
+          <p>Five people at Copperline are paid a salary. Two are hourly: Lucia worked 43.5 hours in the first week of the period, so 3.5 of them are overtime at time and a half. The pay run shows both kinds of pay side by side, and pay stubs reach the app on Friday, Nov 20.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Salaries paid as salaries; approved hours paid as hours</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Overtime at 1.5 × the regular rate, worked out from the punches</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Payroll access only for the people you choose</li>
+          </ul>
+          <a class="fp-row__more" href="/features/payroll/">See payroll <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Pay run for November 1 to 14 at Copperline Advisory Group: five salaried employees and two hourly employees, with Lucia Quintero’s 3.5 overtime hours, PTO hours taken and a gross total of $21,906.00">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Payroll · Nov 1–14 · paid Fri, Nov 20</span></div>
+          <div class="ui-main ui-scroll">
+            <table class="ui-table">
+              <thead><tr><th>Employee</th><th>Basis</th><th class="r">Hours</th><th class="r">PTO</th><th class="r">Gross</th></tr></thead>
+              <tbody>
+                <tr><td>Ingrid Okonjo</td><td>Salary · $156,000</td><td class="r">–</td><td class="r">–</td><td class="r">$6,000.00</td></tr>
+                <tr><td>Yasmin Brandt</td><td>Salary · $104,000</td><td class="r">–</td><td class="r">8.0</td><td class="r">$4,000.00</td></tr>
+                <tr><td>Wren Moreau</td><td>Salary · $91,000</td><td class="r">–</td><td class="r">16.0</td><td class="r">$3,500.00</td></tr>
+                <tr><td>Desmond Achebe</td><td>Salary · $62,400</td><td class="r">–</td><td class="r">–</td><td class="r">$2,400.00</td></tr>
+                <tr><td>Colette Falk</td><td>Salary · $58,500</td><td class="r">–</td><td class="r">–</td><td class="r">$2,250.00</td></tr>
+                <tr><td>Lucia Quintero</td><td>Hourly · $24.00</td><td class="r">80.0 + 3.5 OT</td><td class="r">–</td><td class="r">$2,046.00</td></tr>
+                <tr><td>Ravi Thornton</td><td>Hourly · $28.50</td><td class="r">56.0</td><td class="r">4.0</td><td class="r">$1,710.00</td></tr>
+                <tr><td><b>Total gross</b></td><td></td><td class="r"></td><td class="r"></td><td class="r"><b>$21,906.00</b></td></tr>
+              </tbody>
+            </table>
+            <div class="ui-foot"><div><p>1 timesheet still waiting</p><small id="of-ot">Lucia Quintero · 43.5 h in week 1 · 3.5 OT × $36.00 = $126.00</small></div><button type="button" class="ui-btn" data-act data-target="of-ot" data-text="Lucia Quintero · approved · $2,046.00 sent to payroll" data-done="Approved">Approve</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">HR documents</p>
+          <h2>The handbook and every signed form, findable</h2>
+          <p>Offer letters, W-4s, I-9s, signed reviews and handbook acknowledgments are filed under each person. Licenses are stored as data with their expiry dates. The handbook is searchable from the app, so a question about parental leave gets a policy section, not a reply-all.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>One folder per person, filled in by onboarding</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Handbook search for employees, with acknowledgments on file</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Who can open what is set by permission</li>
+          </ul>
+          <a class="fp-row__more" href="/features/hr-documents/">See HR documents <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Documents screen at Copperline Advisory Group: a handbook search for parental leave returning two policy sections, and Wren Moreau’s record with offer letter, W-4, I-9, CPA license, handbook acknowledgment and 2025 review">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Documents · search: parental leave</span></div>
+          <div class="ui-main">
+            <div class="ui-split">
+              <div class="ui-card">
+                <div class="ui-card__head"><b><svg width="14" height="14" style="vertical-align:-2px" aria-hidden="true"><use href="#i-search"/></svg> Handbook · 2 results</b><span>v4 · Jan 2026</span></div>
+                <div class="ui-list">
+                  <div class="ui-item"><div><p>§ 6.3 Parental leave</p><small>Eligibility, 12 weeks, how to request</small></div><span class="ui-pill ui-pill--ok">Policy</span></div>
+                  <div class="ui-item"><div><p>§ 6.1 Paid time off</p><small>Accrual, carryover cap, how leave is paid</small></div><span class="ui-pill">Related</span></div>
+                  <div class="ui-item"><div><p>Acknowledgments</p><small>7 of 8 signed · Anya L. pending</small></div><span class="ui-pill ui-pill--warn">1 open</span></div>
+                </div>
+              </div>
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Wren Moreau · record</b><span>6 documents</span></div>
+                <div class="ui-list">
+                  <div class="ui-item"><div><p>Offer letter</p><small>Signed Mar 4, 2024</small></div><span class="ui-pill ui-pill--ok">Signed</span></div>
+                  <div class="ui-item"><div><p>Form W-4 · Form I-9</p><small>I-9 Section 2 completed Mar 6, 2024</small></div><span class="ui-pill ui-pill--ok">Signed</span></div>
+                  <div class="ui-item"><div><p>Handbook acknowledgment</p><small>v4 signed Jan 12, 2026</small></div><span class="ui-pill ui-pill--ok">Signed</span></div>
+                  <div class="ui-item"><div><p>CPA license · Idaho</p><small>Expires Jun 30, 2027</small></div><span class="ui-pill ui-pill--info">Data</span></div>
+                  <div class="ui-item"><div><p>2025 annual review</p><small>Signed Dec 2, 2025</small></div><span class="ui-pill ui-pill--ok">Signed</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">The employee side</p>
+          <h2>A small office HR app on every phone</h2>
+          <p>Desmond opens the app and sees his office days, his PTO request waiting with Yasmin, the self-review due Friday and the pay stub that arrives on Nov 20. Lucia and Ravi see the same things plus a clock-in button. Each person sees only their own record.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>PTO, in-office days and reviews in two taps</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pay stubs on payday, no PDFs by email</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Policies searchable; expenses with a photo of the receipt</li>
+          </ul>
+          <a class="fp-row__more" href="/features/employee-app/">See the employee app <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-phone" role="img" aria-label="Employee app home screen for Desmond Achebe on Thursday, November 12: office day, PTO request pending with balance, self-review due Friday, next paycheck November 20 and handbook search">
+          <div class="ui-phone__screen">
+            <div class="ui-phone__notch"></div>
+            <div><p class="ui-sub">Thu, Nov 12</p><p class="ui-title">Good morning, Desmond</p></div>
+            <div class="ui-card">
+              <p class="ui-sub">Staff accountant · Copperline Advisory Group</p>
+              <p style="font-size:24px;font-weight:600;letter-spacing:-0.03em;margin:6px 0 2px">Office day</p>
+              <p class="ui-sub">Next week: Tue, Thu, Fri in the office</p>
+              <p style="margin-top:10px"><span class="ui-pill ui-pill--info">Salaried · no clock-in</span></p>
+            </div>
+            <div class="ui-item"><div><p>PTO Nov 23–25</p><small>Pending with Yasmin · 64 → 40 h</small></div><span class="ui-pill ui-pill--warn">Pending</span></div>
+            <div class="ui-item"><div><p>Self-review</p><small id="of-phone">Due Fri, Nov 20 · not started</small></div><span class="ui-pill ui-pill--warn" id="of-phone-pill">To do</span></div>
+            <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="of-phone" data-text="Started · your January goals are attached" data-pill="of-phone-pill" data-pill-text="Started" data-done="Opened">Start self-review</button>
+            <div class="ui-item"><div><p>Next paycheck</p><small>Fri, Nov 20 · Nov 1–14</small></div><span class="ui-pill ui-pill--ok">Pay stub</span></div>
+            <div class="ui-item"><div><p>Handbook</p><small>Search a policy</small></div><span class="ui-pill">Search</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One record, from the managing partner to the front desk</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owner or partner</h3></div><div><span>Replaces</span><p>A payroll login, a PTO spreadsheet and a reviews folder</p></div><div><span>They use it to</span><p>See who is out, approve the pay run, run the review cycle, keep pay visible only to themselves</p></div><div><span>What they notice</span><p>Questions about PTO and pay stop reaching their desk</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Office manager</h3></div><div><span>Replaces</span><p>The shared calendar, the handbook PDF and the onboarding checklist in email</p></div><div><span>They use it to</span><p>Build the office week, send offer letters and onboarding packets, approve hourly timesheets, run payroll</p></div><div><span>What they notice</span><p>New hires arrive with the paperwork already signed</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Team lead</h3></div><div><span>Replaces</span><p>Texts asking “are you in Wednesday?” and a review template on a laptop</p></div><div><span>They use it to</span><p>Approve their team’s PTO with the calendar in view, keep one-on-one notes, write reviews</p></div><div><span>What they notice</span><p>Reviews start from the goals that were actually set</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Employees, salaried and hourly</h3></div><div><span>Replaces</span><p>Emailing the office manager for a day off or a pay stub</p></div><div><span>They use it to</span><p>Request PTO with the balance in view, see office days, read pay stubs, search the handbook; hourly staff clock in</p></div><div><span>What they notice</span><p>Their balance is right without asking</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Everyone sees what they need, and nothing else</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Staff see their own</h3><p>Each person sees their own PTO, office days, documents, reviews and pay stubs, never a coworker’s salary or review.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Team leads see the team</h3><p>Team leads see their team’s time off and office days, approve requests, and write reviews for the people who report to them.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Salaries, hourly rates and pay stubs are visible only to the people you give payroll access to, usually the owner and the office manager.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">The features offices use most</p>
+        <h2 id="connect-title">Everything a small office’s people record needs</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/pto/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-sun"/></svg></span><h3>PTO tracking</h3><p>Requests in two taps, balances that accrue, and who else is out before you approve.</p><span>PTO →</span></a>
+        <a class="fp-link-card" href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-home"/></svg></span><h3>Scheduling</h3><p>In-office and home days on one grid, published to every phone, PTO already on it.</p><span>Scheduling →</span></a>
+        <a class="fp-link-card" href="/features/performance-reviews/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-target"/></svg></span><h3>Performance reviews</h3><p>Goals, one-on-one notes and review cycles, stored in each person’s record.</p><span>Reviews →</span></a>
+        <a class="fp-link-card" href="/features/hr-documents/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-doc"/></svg></span><h3>HR documents</h3><p>Offer letters, I-9s, licenses and the handbook, filed by person and searchable.</p><span>Documents →</span></a>
+        <a class="fp-link-card" href="/features/hiring/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-brief"/></svg></span><h3>Hiring and onboarding</h3><p>Post a role, interview, send the offer, and have the paperwork signed before day one.</p><span>Hiring →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Salaries, approved hours, overtime and PTO become pay stubs in the app.</p><span>Payroll →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">See your office’s people record in Workzenly</h2>
+        <p>Tell us how many salaried and hourly people you have and which days you are in. We set up a demo workspace with your firm’s name before the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it needs to do</a></li>
+            <li><a href="#g-exempt">Exempt and non-exempt staff</a></li>
+            <li><a href="#g-pto">PTO rules</a></li>
+            <li><a href="#g-hybrid">Hybrid work rules</a></li>
+            <li><a href="#g-records">Reviews and records</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>See your own team, balances and office days in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The small office guide to employee management software</h2>
+        <p>An office with eight or twenty people usually has no HR department. The office manager or a partner handles PTO, onboarding, reviews and payroll between other work, and most staff are salaried, so a time clock is not the problem to solve. This guide covers what employee management software for small business has to do in that setting, the federal rules behind exempt pay, PTO and hybrid work, the records to keep, and how to choose.</p>
+
+        <h3 id="g-what">What employee management software needs to do for a small office</h3>
+        <p>Five jobs. One record per person: pay basis, PTO balance, in-office days, documents and reviews. Time off with balances that are right and a view of who else is out. A new hire taken from offer letter to signed I-9 without paper. Reviews on a schedule, with what was signed kept. And one pay run that pays salaried staff their salary and hourly staff their approved hours. In Workzenly those are <a href="/features/pto/">PTO</a>, <a href="/features/scheduling/">scheduling</a>, <a href="/features/onboarding/">onboarding</a>, <a href="/features/performance-reviews/">performance reviews</a>, <a href="/features/hr-documents/">HR documents</a> and <a href="/features/payroll/">payroll</a> on one record.</p>
+        <p>The test for any system is whether the office manager can stop keeping a second copy. If balances still live in a spreadsheet because the accrual rules do not match your policy, the software has added a login without removing any work.</p>
+
+        <h3 id="g-exempt">Exempt and non-exempt staff in the same office</h3>
+        <p>Most office staff are salaried and treated as exempt from overtime, but exempt is a legal status, not a pay style. Under the Fair Labor Standards Act, the Department of Labor enforces a standard salary level of $684 a week ($35,568 a year) for the executive, administrative and professional exemptions; the job must also pass a duties test and be paid on a salary basis. A $62,400 staff accountant clears the salary level; whether the position is exempt depends on the duties. Several states set higher thresholds. Our <a href="/blog/exempt-vs-non-exempt/">exempt vs non-exempt guide</a> walks through the tests job by job.</p>
+        <p>Non-exempt staff, often the receptionist, an administrative assistant or a part-time bookkeeper, must get at least minimum wage for every hour worked and 1.5 times their regular rate for hours over 40 in a workweek, and you must keep a record of their hours. For exempt staff the FLSA’s hours-worked records are not required; you keep the basis on which pay is set, and the Department of Labor says an exempt employee gets the full salary for any week in which they do any work, with only the deductions the regulations allow. A worked example: Lucia Quintero earns $24.00 an hour and worked 43.5 hours in the week of Nov 1, so 40 × $24.00 = $960.00 plus 3.5 × $36.00 = $126.00, or $1,086.00 for the week. Workzenly gives hourly people a clock-in button and salaried people none, and both land on the same pay run. Our <a href="/blog/salary-to-hourly-calculator/">salary to hourly calculator</a> helps when you are deciding how to pay a new role.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Question</th><th>Salaried, exempt</th><th>Hourly, non-exempt</th></tr></thead>
+            <tbody>
+              <tr><td>Pay</td><td>Full salary for any week with work; at least $684 a week federally, higher in some states</td><td>At least minimum wage for every hour; 1.5 × regular rate after 40 hours in a workweek</td></tr>
+              <tr><td>Time records</td><td>Hours-worked records not required; keep the basis on which pay is set</td><td>Hours each day and each week; keep time records 2 years and payroll records 3 years</td></tr>
+              <tr><td>Time off</td><td>PTO comes off the balance; the paycheck stays the same</td><td>PTO paid as PTO hours; PTO does not count toward the 40</td></tr>
+              <tr><td>Hybrid days</td><td>No clock-in; office days on the schedule</td><td>Clock in from the app at home or the office; short breaks paid, off-the-clock work counts</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="g-pto">PTO tracking for small business offices</h3>
+        <p>No federal law requires paid vacation, so the rules come from your policy and your state. The parts that must be in the software, not just the handbook, are the accrual rate, any cap or carryover limit, and what happens at termination. In California, Colorado, Montana and Nebraska, earned vacation and vacation-style PTO cannot be forfeited and must be paid out when the job ends. California’s Labor Commissioner says vacation pay vests as it is earned, so a use-it-or-lose-it rule is not allowed there, a reasonable cap on accrual is, and unused vacation is paid at the final rate of pay. Our <a href="/blog/paid-time-off/">paid time off guide</a> has the accrual math and the state sick leave rules a policy also has to meet.</p>
+        <p>For an exempt employee the salary does not change when they take a day; only the balance does. The Department of Labor allows an employer to charge an exempt employee’s PTO bank for an absence, even part of a day, as long as the full salary is paid for any week with work. That makes an accurate balance the whole job, which is why Workzenly accrues balances on its own and shows the balance before and after each request, to the employee and to the manager.</p>
+
+        <h3 id="g-hybrid">Hybrid work rules, briefly</h3>
+        <p>A hybrid schedule does not change the Fair Labor Standards Act. The Department of Labor’s Field Assistance Bulletin 2023-1 applies it to telework: breaks of 20 minutes or less are paid wherever the employee is, a meal break is unpaid only if the person is fully relieved, and work the employer knows or should know about counts as hours worked, so an hourly employee answering email at 9 p.m. is working. Give hourly staff the same app to clock in at home and at the office, and say in the policy that after-hours work is recorded and paid. Exempt staff do not clock in for pay purposes; the salary basis rule applies at home too.</p>
+        <p>The rule that surprises small offices most is state income tax: states generally tax wages where the work is physically done, so a hybrid employee working from home across a state line may mean withholding in a second state, and New York applies a convenience-of-the-employer rule to some nonresidents. Our <a href="/blog/hybrid-work-schedule/">hybrid work schedule guide</a> covers the models, a policy template and the tax detail. Settle withholding with your payroll adviser before approving an out-of-state arrangement.</p>
+
+        <h3 id="g-records">Reviews, documents and how long to keep them</h3>
+        <p>No law requires performance reviews, but if you hold them the anti-discrimination laws enforced by the EEOC apply: use the same job-related criteria for everyone in a role and keep what was written. EEOC regulations require employers to keep personnel and employment records for one year, and for one year from the date of an involuntary termination. The FLSA asks for payroll records for 3 years and the time records behind them for 2. Form I-9 Section 2 must be completed within 3 business days of the first day of work. Our <a href="/templates/performance-review-templates/">performance review templates</a> are a starting point, and the <a href="/templates/employee-handbook-templates/">employee handbook templates</a> cover the policies the handbook search will be answering.</p>
+        <p>Storing documents with the person is what makes the record useful: the review sits next to the goals it was measured against, an I-9 can be produced for an inspector without opening anyone’s pay letter, and a license is a number with an expiry date, not a photo. Workzenly lists licenses in one place; watching the expiry dates is still your job.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Exempt thresholds, PTO payout rules and state tax rules change, so check the Department of Labor, your state labor department or an employment attorney for your situation.</p>
+
+        <h3 id="g-choose">How to choose</h3>
+        <ol>
+          <li><strong>Start from the record, not the clock.</strong> Many tools are built around hourly shift work. Open the salaried employee’s view and check that it makes sense when no one clocks in. Our comparisons of the <a href="/tools/best-hr-software-for-small-business/">best HR software for small business</a> and the <a href="/tools/best-hris-for-small-business/">best HRIS for small business</a> cover tools built this way.</li>
+          <li><strong>Run your PTO policy through it.</strong> Enter the accrual rate, cap and carryover rule and check one balance by hand. If the software cannot express your policy, you will keep the spreadsheet.</li>
+          <li><strong>Hire one person in the trial.</strong> Send an offer letter and see what the new hire signs before day one and where the signed copies end up.</li>
+          <li><strong>Check both kinds of pay.</strong> Put one salaried and one hourly person through a pay run; the overtime should come from recorded hours, not be typed in. Read <a href="/blog/how-to-process-payroll/">how to process payroll</a> for every step, and ask on the demo call who handles tax deposits and filings.</li>
+          <li><strong>Look at the employee side.</strong> Open the app as a staff accountant would: balance, office days, pay stub, handbook. If people will not use it, the record goes stale.</li>
+        </ol>
+        <p>If you want to see your own office in Workzenly, <a href="/#start">book a demo</a> and we will set up a workspace with your firm’s name before the call. Plans and prices are on the <a href="/pricing/">pricing page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions from office managers and partners</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>Is employee management software for small business worth it when most of our staff are salaried?</summary><p>Yes, because the record is not about the clock. Salaried staff still take PTO against a balance, work set in-office days, get reviews, sign documents and need a pay stub every two weeks. Workzenly keeps that in one record per person, and the hourly employees in the office clock in from the same app, so their overtime is worked out before payroll.</p></details>
+        <details><summary>Do exempt employees have to clock in?</summary><p>No. The Fair Labor Standards Act’s hours-worked records apply to non-exempt employees; for exempt staff the Department of Labor asks only that you keep the basis on which pay is set. In Workzenly salaried employees never see a clock-in button. Hourly staff clock in from their phone or a shared tablet, and their hours flow into the same pay run.</p></details>
+        <details><summary>How does PTO work for salaried staff in Workzenly?</summary><p>Each person has a balance that accrues on its own. They request days in two taps and see the balance before and after; the manager sees who else is out before approving. An exempt employee’s salary does not change when they take a day, only the balance does, which the Department of Labor allows as long as the full salary is paid for any week with work.</p></details>
+        <details><summary>Can hourly staff clock in from home on hybrid days?</summary><p>Yes. An hourly employee clocks in and out from the app on home days exactly as at the office, and the location is captured with the punch. Hours over 40 in the workweek are overtime wherever they were worked, and short breaks of 20 minutes or less are paid at home too. Workzenly records the punch; it does not track anyone between punches.</p></details>
+        <details><summary>Where do performance reviews and signed documents live?</summary><p>In the employee’s record, next to their PTO, schedule and pay: goals, one-on-one notes and the signed review, plus the offer letter, W-4, I-9, direct deposit form and handbook acknowledgment. Each employee sees only their own record; managers see their team. EEOC rules require keeping personnel records for one year, and one year from an involuntary termination.</p></details>
+        <details><summary>How long does setup take for an office of 10 people?</summary><p>About a week. Send us your employee list, salaries and hourly rates, PTO balances and your handbook, and we import them. We set up your in-office days and PTO rules with you, invite everyone to the app, and stay with you through the first pay run so the first pay stubs land in the app on payday.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for small offices</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/exempt-vs-non-exempt/"><small>GUIDE</small><b>Exempt vs non-exempt: the salary and duties tests</b></a>
+        <a href="/tools/best-hris-for-small-business/"><small>COMPARISON</small><b>Best HRIS for small business</b></a>
+        <a href="/templates/pto-tracker-templates/"><small>TEMPLATES</small><b>Free PTO tracker templates</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52" loading="lazy"></a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features and solutions"><h2>People and industries</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+        <li><a href="/solutions/">Solutions by industry</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>

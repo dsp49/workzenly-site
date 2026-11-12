@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retail Workforce Management Software | Workzenly</title>
+  <meta name="description" content="Retail workforce management software for US stores: schedules by zone across locations, kiosk and phone time clocks, and payroll by store from approved hours.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://workzenly.com/solutions/retail/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Workzenly">
+  <meta property="og:url" content="https://workzenly.com/solutions/retail/">
+  <meta property="og:title" content="Retail Workforce Management Software | Workzenly">
+  <meta property="og:description" content="Retail workforce management software for US stores: schedules by zone across locations, kiosk and phone time clocks, and payroll by store from approved hours.">
+  <meta property="og:image" content="https://workzenly.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/blog.css">
+  <link rel="stylesheet" href="/feature.css">
+  <style>
+    /* Page-local: the two-store schedule board by zone in the hero */
+    .ui-grid { display: grid; grid-template-columns: 104px repeat(7, minmax(0, 1fr)); gap: 4px; font-size: 11px; }
+    .ui-grid > b { font-weight: 400; color: #8d8d89; padding: 4px 0; font-size: 11px; }
+    .ui-grid .ui-zone { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 8px; color: #8d8d89; font-size: 10.5px; letter-spacing: 0.02em; text-transform: uppercase; padding: 8px 0 2px; border-bottom: 1px solid var(--line-soft); }
+    .ui-grid .ui-zone em { font-style: normal; text-transform: none; letter-spacing: 0; color: var(--accent); }
+    .ui-grid .ui-who { padding: 5px 0; display: grid; gap: 1px; align-content: center; }
+    .ui-grid .ui-who small { color: #7d7d79; font-size: 10.5px; }
+    .ui-shift { border-radius: 6px; padding: 5px 5px; background: #1b1b1b; border: 1px solid #262626; color: #d7d7d2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: center; }
+    .ui-shift--reg { background: #1c2412; border-color: #2f3f1a; color: var(--accent); }
+    .ui-shift--floor { background: #13202e; border-color: #1e3247; color: var(--info); }
+    .ui-shift--stock { background: #2a2110; border-color: #3f3318; color: var(--warn); }
+    .ui-shift--open { background: transparent; border: 1px dashed #ff9a85; color: var(--bad); }
+    .ui-shift--off { background: transparent; border-color: transparent; color: #4d4d4a; }
+    .ui-shift--na { background: repeating-linear-gradient(135deg, #161616 0 4px, #1d1d1d 4px 8px); border-color: #262626; color: #6f6f6b; }
+    .ui-store { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 10px; margin-top: 6px; border-radius: 8px; background: #151515; border: 1px solid var(--line-soft); font-size: 11.5px; color: #d7d7d2; }
+    .ui-store span { color: #8d8d89; }
+    .ui-cov { display: grid; gap: 6px; }
+    .ui-cov svg { width: 100%; height: auto; display: block; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Retail Workforce Management Software | Workzenly",
+        "description": "Retail workforce management software for US stores: schedules by zone across locations, kiosk and phone time clocks, and payroll by store from approved hours.",
+        "url": "https://workzenly.com/solutions/retail/",
+        "dateModified": "2026-11-12",
+        "isPartOf": { "@type": "WebSite", "name": "Workzenly", "url": "https://workzenly.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://workzenly.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://workzenly.com/solutions/" },
+          { "@type": "ListItem", "position": 3, "name": "Retail", "item": "https://workzenly.com/solutions/retail/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does Workzenly work for more than one store?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each store is its own location with its own schedule, geofence and tablet kiosk, and each store manager sees only their store. The owner sees every store on one board, and timesheets and payroll are grouped by store. An employee who covers a shift at another store clocks in there and the punch lands in the same timesheet." } },
+          { "@type": "Question", "name": "How does retail scheduling software handle part-timers whose availability changes?", "acceptedAnswer": { "@type": "Answer", "text": "Each person's unavailable times and approved time off sit on the grid while you build, so a student with Monday and Wednesday classes is never dropped into a Monday morning shift. When availability changes mid-week, swaps and open shifts let the team cover each other from their phones, and the manager sees everyone's weekly hours before saying yes." } },
+          { "@type": "Question", "name": "Can store staff clock in if phones stay in the break room?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A shared tablet by the stockroom door or behind the registers works as a time clock kiosk, and each person clocks in with their own PIN. Staff who prefer their phones clock in from the Workzenly app, with GPS confirming they are inside the store's geofence. Kiosk and phone punches land in the same timesheet." } },
+          { "@type": "Question", "name": "Does it help with fair workweek laws for retail?", "acceptedAnswer": { "@type": "Answer", "text": "Workzenly records when each schedule was published and keeps a history of every change, and swap and open-shift requests are stored as requests from the employee with a time stamp. That is the evidence fair workweek laws ask for. Checking your city's notice period and premium rules is still yours to do; New York City retail, for example, requires 72 hours' written notice and bans on-call shifts." } },
+          { "@type": "Question", "name": "Can I schedule a 15-year-old on the register after school?", "acceptedAnswer": { "@type": "Answer", "text": "Under federal child labor rules, 14- and 15-year-olds may do cashiering, bagging and shelf stocking, but only outside school hours, for no more than 3 hours on a school day, 18 hours in a school week, 8 hours on a non-school day and 40 hours in a non-school week, and only between 7 a.m. and 7 p.m. (9 p.m. from June 1 through Labor Day). They may not operate power-driven machinery, and no one under 18 may operate a baler or compactor. Many states add their own limits, so check yours." } },
+          { "@type": "Question", "name": "How long does it take to set up two stores?", "acceptedAnswer": { "@type": "Answer", "text": "About a week. Send us your staff list by store, pay rates and PTO balances as a spreadsheet and we import them, set up each store's hours, zones and geofence, and put a tablet kiosk at each stockroom door. Then we walk through your first schedule and first timesheet approval with you and stay through the first pay run." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-keyword="retail workforce management software" data-intent="transactional" data-topic="Retail">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l3.5 3.5L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v12M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-pay" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17.2v.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M15.5 6.2a3 3 0 0 1 0 5.6M17 14.8c1.8.5 3 1.9 3.5 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5l1.5-5h13L20 9.5M4 9.5h16v10H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 17.5h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 12.5V5a1.5 1.5 0 0 1 1.5-1.5h7.5l8 8-9 9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 8h.1" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 8l8.5-4 8.5 4v8l-8.5 4-8.5-4zM3.5 8l8.5 4 8.5-4M12 12v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8.5h14l-1 11H6zM9 8.5V7a3 3 0 0 1 6 0v1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52"></a>
+  <nav class="nav__links" aria-label="Main">
+    <a class="link" href="/features/">Features</a>
+    <a class="link" href="/solutions/" aria-current="page">Solutions</a>
+    <a class="link" href="/features/scheduling/">Scheduling</a>
+    <a class="link" href="/features/payroll/">Payroll</a>
+    <a class="link" href="/pricing/">Pricing</a>
+    <a class="link" href="/blog/">Blog</a>
+  </nav>
+  <a class="button button--small" href="/#start">Book a demo</a>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol><li><a href="/">Home</a></li><li><a href="/solutions/">Solutions</a></li><li aria-current="page">Retail</li></ol>
+</nav>
+
+<main class="fp">
+
+  <!-- HERO -->
+  <section class="fp-hero" aria-labelledby="hero-title">
+    <div class="fp-wrap fp-hero__grid">
+      <div>
+        <span class="fp-eyebrow">Retail stores</span>
+        <h1 id="hero-title">Retail workforce management software for every store and shift</h1>
+        <p class="fp-lead">Workzenly is retail workforce management software for US stores with one location or ten. Build each store's week by zone with coverage for every open hour, let part-timers pick up shifts from their phones, clock the team in at a tablet by the stockroom door, and run payroll by store from approved hours.</p>
+        <div class="fp-actions">
+          <a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="fp-btn fp-btn--ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="fp-checks">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Schedules by store and zone</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Kiosk or phone clock-in</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Payroll by store</li>
+        </ul>
+      </div>
+
+      <div class="fp-hero__stage">
+        <div class="ui-window" data-ui role="img" aria-label="Workzenly schedule board for Ridgeline Mercantile, week of November 15 to 21, showing the Carytown store by zone with managers, registers, floor and stockroom shifts, one open Saturday floor shift, Saturday coverage by hour, and the Short Pump store collapsed to a total of 127.5 hours">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">app.workzenly.com/schedule</span></div>
+          <div class="ui-app">
+            <div class="ui-side" aria-hidden="true">
+              <span><svg><use href="#i-clock"/></svg></span>
+              <span class="is-on"><svg><use href="#i-cal"/></svg></span>
+              <span><svg><use href="#i-sheet"/></svg></span>
+              <span><svg><use href="#i-pay"/></svg></span>
+              <span><svg><use href="#i-users"/></svg></span>
+            </div>
+            <div class="ui-main">
+              <div class="ui-top">
+                <div><p class="ui-title">Schedule</p><p class="ui-sub">Ridgeline Mercantile · Sun Nov 15 – Sat Nov 21 · published Thu, Nov 5</p></div>
+                <div class="ui-seg" aria-hidden="true"><span class="is-on">All stores</span><span>Carytown</span><span>Short Pump</span></div>
+              </div>
+              <div class="ui-kpis">
+                <div class="ui-kpi"><b>303.5</b><small>Hours scheduled</small><em>2 stores · 9 people</em></div>
+                <div class="ui-kpi"><b>1</b><small>Open shift</small><em class="is-warn">Sat floor, Carytown</em></div>
+                <div class="ui-kpi"><b>1</b><small>Under 18 on schedule</small><em>Riley V. · 24.5 h</em></div>
+                <div class="ui-kpi"><b>0</b><small>Over 40 hours</small><em>as scheduled</em></div>
+              </div>
+              <div class="ui-card ui-scroll">
+                <div class="ui-card__head"><b>Shifts by zone</b><span class="ui-legend"><span><i style="background:#dafa9c"></i>Registers</span><span><i style="background:#9cc8fa"></i>Floor</span><span><i style="background:#f2c36b"></i>Stockroom</span></span></div>
+                <div class="ui-grid" style="min-width:640px">
+                  <b></b><b>Sun 15</b><b>Mon 16</b><b>Tue 17</b><b>Wed 18</b><b>Thu 19</b><b>Fri 20</b><b>Sat 21</b>
+                  <div class="ui-zone"><span>Carytown · Managers</span><em>Open 10–8, Sun 11–6</em></div>
+                  <div class="ui-who">Tessa Whitfield<small>Store manager · 40 h</small></div><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift">9:30–6</span><span class="ui-shift">9:30–6</span><span class="ui-shift">12–8:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift">9:30–6</span><span class="ui-shift">9:30–6</span>
+                  <div class="ui-zone"><span>Carytown · Registers</span><em>Register opens 10:00</em></div>
+                  <div class="ui-who">Nadia Fletcher<small>Register lead · 39.5 h</small></div><span class="ui-shift ui-shift--reg">10:30–6:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--reg">12–8:30</span><span class="ui-shift ui-shift--reg">9:30–6</span><span class="ui-shift ui-shift--reg">9:30–6</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--reg">12–8:30</span>
+                  <div class="ui-zone"><span>Carytown · Floor</span><em>1 open shift</em></div>
+                  <div class="ui-who">Jonah Delaney<small>Sales floor · 32 h</small></div><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--floor">12–8:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--floor">12–8:30</span><span class="ui-shift ui-shift--floor">12–8:30</span><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--floor">9:30–6</span>
+                  <div class="ui-who">Riley Vance<small>Sales floor · 16 · 24.5 h</small></div><span class="ui-shift ui-shift--floor">10:30–6:30</span><span class="ui-shift ui-shift--na">Unavail.</span><span class="ui-shift ui-shift--na">Unavail.</span><span class="ui-shift ui-shift--na">Unavail.</span><span class="ui-shift ui-shift--floor">4–8:30</span><span class="ui-shift ui-shift--floor">4–8:30</span><span class="ui-shift ui-shift--floor">12–8:30</span>
+                  <div class="ui-who">Open shift<small>Sales floor · 6.5 h</small></div><span class="ui-shift ui-shift--off"></span><span class="ui-shift ui-shift--off"></span><span class="ui-shift ui-shift--off"></span><span class="ui-shift ui-shift--off"></span><span class="ui-shift ui-shift--off"></span><span class="ui-shift ui-shift--off"></span><span class="ui-shift ui-shift--open" id="rt-open">Open 11–6</span>
+                  <div class="ui-zone"><span>Carytown · Stockroom</span><em>Truck Tue and Fri, 7:00</em></div>
+                  <div class="ui-who">Celia Marsh<small>Stockroom lead · 40 h</small></div><span class="ui-shift ui-shift--off">Off</span><span class="ui-shift ui-shift--stock">7–3:30</span><span class="ui-shift ui-shift--stock">7–3:30</span><span class="ui-shift ui-shift--stock">7–3:30</span><span class="ui-shift ui-shift--stock">7–3:30</span><span class="ui-shift ui-shift--stock">7–3:30</span><span class="ui-shift ui-shift--off">Off</span>
+                  <div class="ui-store"><div>Short Pump <span>· 4 people · 127.5 h · no open shifts</span></div><span>Show ▾</span></div>
+                </div>
+              </div>
+              <div class="ui-card ui-cov">
+                <div class="ui-card__head"><b>Saturday coverage by hour · Carytown</b><span class="ui-legend"><span><i style="background:#dafa9c"></i>Scheduled</span><span><i style="background:#f2c36b"></i>Short</span><span><i style="border:1px dashed #4d4d4a;background:transparent"></i>Needed</span></span></div>
+                <svg viewBox="0 0 320 62" aria-hidden="true">
+                  <g fill="none" stroke="#4d4d4a" stroke-dasharray="2 2">
+                    <rect x="4" y="30" width="22" height="16"/><rect x="36" y="22" width="22" height="24"/><rect x="68" y="6" width="22" height="40"/><rect x="100" y="6" width="22" height="40"/><rect x="132" y="6" width="22" height="40"/><rect x="164" y="6" width="22" height="40"/><rect x="196" y="6" width="22" height="40"/><rect x="228" y="6" width="22" height="40"/><rect x="260" y="30" width="22" height="16"/><rect x="292" y="30" width="22" height="16"/>
+                  </g>
+                  <g fill="#dafa9c">
+                    <rect x="4" y="30" width="22" height="16"/><rect x="260" y="30" width="22" height="16"/><rect x="292" y="30" width="22" height="16"/>
+                  </g>
+                  <g fill="#f2c36b">
+                    <rect x="36" y="30" width="22" height="16"/><rect x="68" y="14" width="22" height="32"/><rect x="100" y="14" width="22" height="32"/><rect x="132" y="14" width="22" height="32"/><rect x="164" y="14" width="22" height="32"/><rect x="196" y="14" width="22" height="32"/><rect x="228" y="14" width="22" height="32"/>
+                  </g>
+                  <line x1="0" y1="46.5" x2="320" y2="46.5" stroke="#2a2a2a"/>
+                  <g fill="#7d7d79" font-size="9" text-anchor="middle" font-family="inherit">
+                    <text x="15" y="58">10</text><text x="47" y="58">11</text><text x="79" y="58">12</text><text x="111" y="58">1</text><text x="143" y="58">2</text><text x="175" y="58">3</text><text x="207" y="58">4</text><text x="239" y="58">5</text><text x="271" y="58">6</text><text x="303" y="58">7</text>
+                  </g>
+                </svg>
+              </div>
+              <div class="ui-foot"><div><p id="rt-foot">Saturday floor at Carytown, 11–6, has no one yet: one person short from 11 to 6</p><small>Elias O. from Short Pump is free Saturday and would reach 38.5 hours, no overtime</small></div><button type="button" class="ui-btn" data-act data-target="rt-foot" data-text="Offered to Elias. He sees it in the app now." data-done="Offered">Offer to Elias</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILT FOR -->
+  <section class="fp-built" aria-label="Who it is built for">
+    <div class="fp-wrap fp-built__in">
+      <p>Built for the people who open and close the store</p>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-store"/></svg>Owners with one store or several</li>
+        <li><svg aria-hidden="true"><use href="#i-users"/></svg>Store and assistant managers</li>
+        <li><svg aria-hidden="true"><use href="#i-tag"/></svg>Cashiers and sales associates</li>
+        <li><svg aria-hidden="true"><use href="#i-box"/></svg>Stockroom and receiving</li>
+        <li><svg aria-hidden="true"><use href="#i-pay"/></svg>Whoever runs payroll on Monday</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEM → ANSWER -->
+  <section class="fp-band fp-problem" aria-labelledby="problem-title">
+    <div class="fp-wrap">
+      <p class="fp-problem__q">Saturday is two people short, the college kid changed his class schedule again, and the register has to open at 10 whether or not anyone is there to open it.</p>
+      <div class="fp-problem__arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></div>
+      <h2 id="problem-title">One schedule, one time clock, one pay run, across every store</h2>
+      <p class="fp-problem__p">Retail workforce management software puts the schedule, the punches and the pay in one record for each store. The shifts you publish are the shifts staff see on their phones, the hours they clock at the stockroom door are the hours a manager approves, and the approved hours by store are what payroll pays. Nothing is retyped.</p>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="fp-band fp-band--tight fp-outcomes" aria-labelledby="outcomes-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">What changes in the first month</p>
+        <h2 id="outcomes-title">Covered weekends, fewer surprise hours, one pay run for all stores</h2>
+      </div>
+      <div class="fp-outcomes__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Coverage you can see before Saturday</h3><p>Build each store's week by zone: registers, sales floor, stockroom. The board shows how many people are on for every open hour, so the 11-to-6 gap on Saturday shows up on Thursday.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-swap"/></svg></span><h3>Part-timers who cover each other</h3><p>Unavailable times and approved time off sit on the grid while you build. When a student's classes change, they offer the shift from their phone, a coworker picks it up, and you see both weekly totals before you approve.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>A retail time clock at the stockroom door</h3><p>Phones stay in the break room in most stores, so a shared tablet by the stockroom door works as the time clock, one PIN per person. Whoever opens can clock in from their phone inside the store's geofence. Both land in the same timesheet.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll by store, from approved hours</h3><p>Breaks, overtime and late starts are worked out from the punches, timesheets are grouped by store, and each store's week is approved in one tap. Regular hours, overtime and PTO go into the pay run together.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: TABS -->
+  <section class="fp-band fp-band--raised" id="how" aria-labelledby="how-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">How it works</p>
+        <h2 id="how-title">A retail week in Workzenly, store by store</h2>
+        <p>From the schedule published two weeks out to Friday's pay stubs, one record carries every shift at Ridgeline Mercantile's two stores.</p>
+      </div>
+
+      <div class="fp-tabs" data-tabs>
+        <div class="fp-tabs__list" role="tablist" aria-label="A retail week">
+          <button class="fp-tab" role="tab" id="tab-build" aria-controls="panel-build" aria-selected="true"><b><svg aria-hidden="true"><use href="#i-cal"/></svg>Build around availability</b><span>Classes, school days and PTO already on the grid</span></button>
+          <button class="fp-tab" role="tab" id="tab-pickup" aria-controls="panel-pickup" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-phone"/></svg>Open-shift pickup</b><span>Staff claim Saturday from their phones</span></button>
+          <button class="fp-tab" role="tab" id="tab-clock" aria-controls="panel-clock" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-clock"/></svg>Clock in at the door</b><span>Kiosk in the stockroom, phone for openers</span></button>
+          <button class="fp-tab" role="tab" id="tab-pay" aria-controls="panel-pay" aria-selected="false" tabindex="-1"><b><svg aria-hidden="true"><use href="#i-pay"/></svg>Pay by store</b><span>Approve each store, one pay run on Friday</span></button>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-build" aria-labelledby="tab-build">
+          <div>
+            <h3>Build next week around who can actually work it</h3>
+            <p>Start from last week and drag people into register, floor and stockroom shifts. Jonah's Monday and Wednesday classes, Riley's school days and Devon's approved day off are already blocked out, and each person's weekly hours update as you go.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Unavailable times and approved PTO shown on the grid before a single name goes in</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours per person while you build, with anyone near 40 flagged</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Publish once and both stores see it in the app</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Build view for Carytown, Wednesday November 18, listing each person's availability and an empty 12 to 8:30 floor shift that Jonah Delaney is dragged into, taking him from 24 to 32 hours">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Build · Carytown · Wed, Nov 18</span></div>
+            <div class="ui-main">
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Jonah Delaney · Sales floor</p><small>Unavailable Mon and Wed before noon (classes) · 24.0 h so far</small></div><span class="ui-pill ui-pill--ok">Free after 12</span></div>
+                <div class="ui-item"><div><p>Riley Vance · Sales floor · 16</p><small>School days: after 4:00 PM only · 24.5 h this week</small></div><span class="ui-pill">Not Wed</span></div>
+                <div class="ui-item"><div><p>Nadia Fletcher · Registers</p><small>Any day but Mon and Fri · 39.5 h this week</small></div><span class="ui-pill ui-pill--warn">Near 40</span></div>
+                <div class="ui-item"><div><p>Floor · 12:00 PM–8:30 PM</p><small id="rt-slot">No one yet · Jonah is free after noon</small></div><span class="ui-pill ui-pill--warn" id="rt-slot-pill">Empty</span></div>
+              </div>
+              <div class="ui-foot"><div><p>Drag Jonah into the Wednesday 12–8:30 floor shift</p><small>His week goes from 24.0 to 32.0 hours</small></div><button type="button" class="ui-btn" data-act data-target="rt-slot" data-text="Jonah Delaney · 32.0 h this week" data-pill="rt-slot-pill" data-pill-text="Filled" data-done="Added">Drag in</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pickup" aria-labelledby="tab-pickup" hidden>
+          <div>
+            <h3>Post the gap once, let the team claim it</h3>
+            <p>The Saturday 11-to-6 floor shift at Carytown has no one. Tessa posts it as an open shift, people at both stores see it in the app with what their week would become, Elias at Short Pump picks it up, Tessa confirms, and the board updates for everyone.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Open shifts and swaps requested from the app, with a time stamp</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>The new weekly total shown before anyone says yes</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Staff can pick up at a sister store, and clock in there</li>
+            </ul>
+          </div>
+          <div class="ui-phone" role="img" aria-label="Employee app open shifts screen for Elias Okonkwo showing a Saturday 11 to 6 floor shift at Carytown worth 6.5 hours that would take his week to 38.5 hours, and a Sunday register shift at Short Pump already taken">
+            <div class="ui-phone__screen">
+              <div class="ui-phone__notch"></div>
+              <div><p class="ui-sub">Thu, Nov 12</p><p class="ui-title">Open shifts</p></div>
+              <div class="ui-card">
+                <p class="ui-sub">Carytown · Sales floor</p>
+                <p style="font-size:20px;font-weight:600;letter-spacing:-0.02em;margin:6px 0 2px">Sat, Nov 21 · 11:00 AM–6:00 PM</p>
+                <p class="ui-sub">6.5 h after break · your week would be 38.5 h</p>
+                <p style="margin-top:10px"><span class="ui-pill ui-pill--ok">No overtime</span></p>
+              </div>
+              <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="rt-pick" data-text="Requested. Tessa will confirm in the app." data-done="Requested">Pick up this shift</button>
+              <p class="ui-sub" id="rt-pick" style="text-align:center">Posted by Tessa W. · 2 others can see it</p>
+              <div class="ui-item"><div><p>Short Pump · Registers</p><small>Sun, Nov 22 · 10:30 AM–6:30 PM</small></div><span class="ui-pill">Taken</span></div>
+              <div class="ui-item"><div><p>Your week, Nov 15–21</p><small>32.0 h scheduled · Short Pump</small></div><span class="ui-pill ui-pill--ok">Published</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-clock" aria-labelledby="tab-clock" hidden>
+          <div>
+            <h3>A tablet at the stockroom door, a phone for whoever opens</h3>
+            <p>Celia arrives at 6:58 for the Thursday truck, taps her PIN on the tablet by the stockroom door and sees her name and today's shift before she clocks in. Tessa opens at 9:24 from her own phone, inside the store's geofence. Both stores' punches land on one "who's in" screen.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>One PIN per person on a shared tablet; no phones needed on the floor</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Late starts, missed clock-outs and punches outside the geofence flagged for the manager</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Who is in, on break, late or due, at both stores</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Who is in at Ridgeline Mercantile at 10:02 AM on Thursday November 12: Celia Marsh clocked in on the stockroom kiosk at 6:58, Tessa Whitfield by phone at 9:24, Nadia Fletcher late 11 minutes, Elias Okonkwo in at Short Pump, Devon Schultz and Riley Vance due later">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Who’s in · both stores · Thu, Nov 12 · 10:02 AM</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Employee</th><th>Store</th><th>Zone</th><th>In</th><th>Via</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Celia Marsh</td><td>Carytown</td><td>Stockroom</td><td>6:58 AM</td><td>Kiosk</td><td><span class="ui-pill ui-pill--ok">In</span></td></tr>
+                  <tr><td>Tessa Whitfield</td><td>Carytown</td><td>Manager</td><td>9:24 AM</td><td>Phone</td><td><span class="ui-pill ui-pill--ok">In</span></td></tr>
+                  <tr><td>Nadia Fletcher</td><td>Carytown</td><td>Registers</td><td>9:41 AM</td><td>Kiosk</td><td><span class="ui-pill ui-pill--warn">Late 11 min</span></td></tr>
+                  <tr><td>Elias Okonkwo</td><td>Short Pump</td><td>Floor</td><td>9:29 AM</td><td>Kiosk</td><td><span class="ui-pill ui-pill--ok">In</span></td></tr>
+                  <tr><td>Devon Schultz</td><td>Short Pump</td><td>Manager</td><td>–</td><td>–</td><td><span class="ui-pill">Due 12:00 PM</span></td></tr>
+                  <tr><td>Riley Vance</td><td>Carytown</td><td>Floor</td><td>–</td><td>–</td><td><span class="ui-pill">Due 4:00 PM</span></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p id="rt-kiosk">Carytown kiosk · Celia Marsh · PIN accepted at 6:58 AM</p><small>Today 7:00 AM–3:30 PM · Stockroom · truck day</small></div><button type="button" class="ui-btn" data-act data-target="rt-kiosk" data-text="Celia clocked in at 6:58 AM · Carytown stockroom" data-done="Clocked in">Clock in</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-tabs__panel" role="tabpanel" id="panel-pay" aria-labelledby="tab-pay" hidden>
+          <div>
+            <h3>Approve each store on Monday, pay everyone on Friday</h3>
+            <p>Timesheets build themselves from the punches, grouped by store. Tessa approves Carytown, Devon approves Short Pump, and the owner sees both totals before the Nov 1–14 pay run goes out on Friday, Nov 20.</p>
+            <ul class="fp-bullets">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hours, overtime at 1.5 × and PTO subtotaled by store</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Only the people you choose can see pay rates and pay stubs</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Every pay stub in the employee app on payday</li>
+            </ul>
+          </div>
+          <div class="ui-window" role="img" aria-label="Pay run for November 1 to 14 grouped by store: Carytown 344.5 regular and 2 overtime hours across five people, Short Pump 183 regular hours and 8 PTO hours across three people, with Riley Vance's timesheet still waiting">
+            <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Payroll · Nov 1–14 · paid Fri, Nov 20</span></div>
+            <div class="ui-main ui-scroll">
+              <table class="ui-table">
+                <thead><tr><th>Employee</th><th class="r">Regular</th><th class="r">Overtime</th><th class="r">PTO</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Tessa Whitfield<small>Carytown</small></td><td class="r">80.0</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Nadia Fletcher<small>Carytown</small></td><td class="r">79.5</td><td class="r">2.0</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Jonah Delaney<small>Carytown</small></td><td class="r">64.0</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Riley Vance<small>Carytown</small></td><td class="r">41.0</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--warn" id="rt-riley">Waiting</span></td></tr>
+                  <tr><td>Celia Marsh<small>Carytown</small></td><td class="r">80.0</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td><b>Carytown</b><small>5 people</small></td><td class="r"><b>344.5</b></td><td class="r"><b>2.0</b></td><td class="r">–</td><td></td></tr>
+                  <tr><td>Devon Schultz<small>Short Pump</small></td><td class="r">71.0</td><td class="r">–</td><td class="r">8.0</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Harper Quinn<small>Short Pump</small></td><td class="r">48.0</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td>Elias Okonkwo<small>Short Pump</small></td><td class="r">64.0</td><td class="r">–</td><td class="r">–</td><td><span class="ui-pill ui-pill--ok">Approved</span></td></tr>
+                  <tr><td><b>Short Pump</b><small>3 people</small></td><td class="r"><b>183.0</b></td><td class="r">–</td><td class="r"><b>8.0</b></td><td></td></tr>
+                </tbody>
+              </table>
+              <div class="ui-foot"><div><p>1 timesheet still waiting</p><small>Riley Vance · 41.0 h over two weeks · approve to send to payroll</small></div><button type="button" class="ui-btn" data-act data-pill="rt-riley" data-pill-text="Approved" data-done="Sent to payroll">Approve</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP-DIVE ROWS -->
+  <section class="fp-band" aria-label="Retail details">
+    <div class="fp-wrap">
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Schedule versus actual</p>
+          <h2>See what each store's week really cost in hours</h2>
+          <p>Scheduled hours by store and zone sit next to clocked hours as the week runs. An early clock-out on the floor, a stockroom shift that ran long for a late truck or a missed clock-out at the sister store shows up the same day, and the original punch stays in the edit history.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Scheduled versus clocked hours by store, zone and day</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Exception flags for late starts, missed clock-outs, outside-geofence punches and anyone near 40</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Punch fixes requested by the employee, approved by the manager, original kept</li>
+          </ul>
+          <a class="fp-row__more" href="/features/timesheets/">See timesheets <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Schedule versus actual for Sunday November 8 to Thursday November 12: Carytown scheduled 168 hours and clocked 165.5 by zone, Short Pump scheduled 116 and clocked 117.5, with two exception flags listed">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Schedule vs actual · Sun Nov 8 – Thu Nov 12</span></div>
+          <div class="ui-main">
+            <div class="ui-split">
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Carytown</b><span>168.0 scheduled · 165.5 clocked</span></div>
+                <div class="ui-list">
+                  <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Managers</span><span>32.0 → 32.0 h</span></div><div class="ui-bar-meter"><i style="width:100%"></i></div></div>
+                  <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Registers</span><span>48.0 → 47.5 h</span></div><div class="ui-bar-meter"><i style="width:99%"></i></div></div>
+                  <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Sales floor</span><span>56.0 → 53.0 h</span></div><div class="ui-bar-meter"><i style="width:95%;background:#9cc8fa"></i></div></div>
+                  <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Stockroom</span><span>32.0 → 33.0 h</span></div><div class="ui-bar-meter"><i style="width:100%;background:#f2c36b"></i></div></div>
+                </div>
+              </div>
+              <div class="ui-card">
+                <div class="ui-card__head"><b>Short Pump</b><span>116.0 · 117.5</span></div>
+                <div class="ui-list">
+                  <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Managers</span><span>32.0 → 32.0</span></div><div class="ui-bar-meter"><i style="width:100%"></i></div></div>
+                  <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Registers</span><span>40.0 → 40.0</span></div><div class="ui-bar-meter"><i style="width:100%"></i></div></div>
+                  <div><div class="ui-card__head" style="margin-bottom:6px"><span style="color:#f2f2ef">Sales floor</span><span>44.0 → 45.5</span></div><div class="ui-bar-meter"><i style="width:100%;background:#f2c36b"></i></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="ui-list">
+              <div class="ui-item"><div><p>Missed clock-out · Elias Okonkwo · Tue, Nov 10</p><small>Short Pump floor · clocked in 9:29 AM, no clock-out · Elias requested 6:02 PM</small></div><span class="ui-pill ui-pill--warn">Fix waiting</span></div>
+              <div class="ui-item"><div><p>Left early · Jonah Delaney · Tue, Nov 10</p><small>Carytown floor · out 5:30 PM, scheduled to 8:30 · exam, note from Tessa</small></div><span class="ui-pill ui-pill--ok">Approved</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row fp-row--flip">
+        <div class="fp-row__text">
+          <p class="fp-kicker">Seasonal hiring and onboarding</p>
+          <h2>Hire for the holidays without a folder of paper</h2>
+          <p>Post the seasonal role once, keep every application in one list, schedule interviews and send the offer letter from the same screen. The new hire signs it, fills out the W-4 and I-9 Section 1, adds direct deposit and reads the handbook on their phone before the first Saturday. Everything stays in their record for next season.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Offer letters that state the hourly rate, store and end date of the season</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Paperwork done before day one, on the new hire's phone</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Documents kept with each person, so a returning hire is not a new file</li>
+          </ul>
+          <a class="fp-row__more" href="/features/hiring/">See hiring <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-window" role="img" aria-label="Hiring pipeline for a seasonal sales associate at Short Pump: 23 applied, 6 interviewed, 1 offer signed; Maren Castillo onboarding for a November 16 start, Ines Caldwell interviewed with an offer to send, Kwame Boateng interview scheduled Friday">
+          <div class="ui-bar"><span class="ui-dots"><i></i><i></i><i></i></span><span class="ui-url">Hiring · Seasonal sales associate · Short Pump</span></div>
+          <div class="ui-main">
+            <div class="ui-card">
+              <div class="ui-card__head"><b>Posted Mon, Oct 26 · through Sun, Jan 3</b><span>23 applied · 6 interviewed · 1 offer signed</span></div>
+              <div class="ui-list">
+                <div class="ui-item"><div><p>Maren Castillo · starts Mon, Nov 16</p><small>Offer signed Mon, Nov 9 · W-4, I-9 Section 1 and direct deposit done · handbook to read</small></div><span class="ui-pill ui-pill--ok">Onboarding</span></div>
+                <div class="ui-item"><div><p>Ines Caldwell · interviewed Wed, Nov 11</p><small>Devon: hire · offer drafted, $15.50/hr, Short Pump, Nov 23 – Jan 3</small></div><span class="ui-pill ui-pill--warn" id="rt-ines">Offer to send</span></div>
+                <div class="ui-item"><div><p>Kwame Boateng · interview Fri, Nov 13, 2:00 PM</p><small>With Devon at Short Pump · 4 more applications to review</small></div><span class="ui-pill ui-pill--info">Scheduled</span></div>
+              </div>
+            </div>
+            <div class="ui-foot"><div><p>Send Ines the offer letter</p><small>She signs on her phone, then the W-4, I-9 Section 1 and direct deposit follow</small></div><button type="button" class="ui-btn" data-act data-pill="rt-ines" data-pill-text="Offer sent" data-done="Sent">Send offer</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fp-row">
+        <div class="fp-row__text">
+          <p class="fp-kicker">The employee side</p>
+          <h2>One app for every cashier, associate and stocker</h2>
+          <p>Staff see their shifts at whichever store they work, pick up open ones, request a day off with their balance in front of them, clock in, photograph a receipt and read their pay stub on Friday. Each person sees only their own record.</p>
+          <ul class="fp-bullets">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Shifts, swaps, open shifts and PTO in two taps</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Pay stubs on payday, no PDFs forwarded from the back office</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>The handbook, dress code and return policy, searchable</li>
+          </ul>
+          <a class="fp-row__more" href="/features/employee-app/">See the employee app <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ui-phone" role="img" aria-label="Employee app home screen for Jonah Delaney on Thursday November 12 with today's 12 to 8:30 floor shift at Carytown, a clock-in button, PTO balance of 28 of 40 hours and the next paycheck on November 20">
+          <div class="ui-phone__screen">
+            <div class="ui-phone__notch"></div>
+            <div><p class="ui-sub">Thu, Nov 12</p><p class="ui-title">Good afternoon, Jonah</p></div>
+            <div class="ui-card">
+              <p class="ui-sub">Sales floor · Carytown</p>
+              <p style="font-size:32px;font-weight:600;letter-spacing:-0.03em;margin:6px 0 2px">11:56 AM</p>
+              <p class="ui-sub">Today’s shift 12:00 PM–8:30 PM</p>
+              <p style="margin-top:10px"><span class="ui-pill ui-pill--ok">Inside geofence</span></p>
+            </div>
+            <button type="button" class="ui-btn" style="min-height:44px;font-size:14px" data-act data-target="rt-phone" data-text="Clocked in at 11:56 AM" data-done="Clocked in">Clock in</button>
+            <p class="ui-sub" id="rt-phone" style="text-align:center">Not clocked in yet</p>
+            <div class="ui-item"><div><p>PTO left</p><small>28 of 40 hours</small></div><span class="ui-pill">Request</span></div>
+            <div class="ui-item"><div><p>Next paycheck</p><small>Fri, Nov 20 · Nov 1–14</small></div><span class="ui-pill ui-pill--ok">Pay stub</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="fp-band fp-band--raised" aria-labelledby="roles-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Who uses it</p>
+        <h2 id="roles-title">One record, from the owner to the stockroom</h2>
+      </div>
+      <div class="fp-roles__table">
+        <div class="fp-roles__row"><div><span>Role</span><h3>Owner</h3></div><div><span>Replaces</span><p>A schedule spreadsheet per store, a payroll login and a weekly call to each manager</p></div><div><span>They use it to</span><p>See every store's scheduled and clocked hours on one board, keep overtime in check, run payroll from approved hours</p></div><div><span>What they notice</span><p>Labor hours by store they trust before payroll, not after</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Store manager</h3></div><div><span>Replaces</span><p>The group chat, a printed schedule by the time clock and a stack of punch corrections</p></div><div><span>They use it to</span><p>Build the week by zone, post open shifts, approve swaps, see who is in or late, fix a punch with a note, approve the store's timesheets</p></div><div><span>What they notice</span><p>Saturday is covered on Thursday</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Cashiers and sales associates</h3></div><div><span>Replaces</span><p>A photo of the schedule and a time card in a rack</p></div><div><span>They use it to</span><p>See shifts, swap and pick up, clock in on the tablet or their phone, request PTO, read their pay stub</p></div><div><span>What they notice</span><p>Pay stubs that match the hours worked</p></div></div>
+        <div class="fp-roles__row"><div><span>Role</span><h3>Stockroom and receiving</h3></div><div><span>Replaces</span><p>A punch clock by the loading door and a clipboard</p></div><div><span>They use it to</span><p>Clock in, out and on break at the stockroom tablet with their own PIN, check next week's truck days</p></div><div><span>What they notice</span><p>No phone needed on the dock</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMISSIONS -->
+  <section class="fp-band fp-band--tight" aria-labelledby="trust-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">Access you control</p>
+        <h2 id="trust-title">Everyone sees what they need, and nothing else</h2>
+      </div>
+      <div class="fp-trust__grid">
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Staff see their own</h3><p>Each person sees their own shifts, hours, PTO and pay stubs, never a coworker's pay or another store's numbers.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-store"/></svg></span><h3>Store managers see their store</h3><p>A store manager sees their store's schedule, attendance and time off, and approves its timesheets. The owner sees all stores.</p></article>
+        <article class="fp-card"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Pay stays with payroll</h3><p>Pay rates and pay stubs are visible only to the people you give payroll access to.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECTED FEATURES -->
+  <section class="fp-band fp-band--tight" aria-labelledby="connect-title">
+    <div class="fp-wrap">
+      <div class="fp-head">
+        <p class="fp-kicker">The features stores use most</p>
+        <h2 id="connect-title">Everything a retail week needs</h2>
+      </div>
+      <div class="fp-connect__grid">
+        <a class="fp-link-card" href="/features/scheduling/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>Store scheduling software</h3><p>Build each store's week by zone, publish once, let staff swap and pick up.</p><span>Scheduling →</span></a>
+        <a class="fp-link-card" href="/features/time-clock-kiosk/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-box"/></svg></span><h3>Time clock kiosk</h3><p>A shared tablet at the stockroom door, one PIN per person.</p><span>Kiosk →</span></a>
+        <a class="fp-link-card" href="/features/hiring/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-tag"/></svg></span><h3>Hiring</h3><p>Post the seasonal role, interview, and send the offer letter from one list.</p><span>Hiring →</span></a>
+        <a class="fp-link-card" href="/features/overtime-tracking/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><h3>Overtime tracking</h3><p>Weekly totals against 40, with warnings before a pickup costs you.</p><span>Overtime →</span></a>
+        <a class="fp-link-card" href="/features/pto/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-cal"/></svg></span><h3>PTO tracking</h3><p>Requests in two taps, and who else is off that weekend before you say yes.</p><span>PTO →</span></a>
+        <a class="fp-link-card" href="/features/payroll/"><span class="fp-icon"><svg aria-hidden="true"><use href="#i-pay"/></svg></span><h3>Payroll</h3><p>Approved hours by store become pay stubs in the app on Friday.</p><span>Payroll →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="fp-cta cta-inline" aria-labelledby="cta-title">
+    <div class="fp-cta__in">
+      <div>
+        <h2 id="cta-title">See your stores' week in Workzenly</h2>
+        <p>Tell us your store hours, zones and team size. We set up a demo workspace with your stores' names before the call.</p>
+      </div>
+      <div class="fp-actions"><a class="fp-btn" href="/#start">Book a demo <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section class="fp-band fp-guide" aria-labelledby="guide-title" style="margin-top:clamp(80px,9vw,120px)">
+    <div class="fp-wrap fp-guide__grid">
+      <aside class="fp-guide__side">
+        <nav class="fp-guide__toc" aria-label="Guide topics">
+          <p>In this guide</p>
+          <ol>
+            <li><a href="#g-what">What it needs to do</a></li>
+            <li><a href="#g-fww">Fair workweek rules</a></li>
+            <li><a href="#g-minors">Minors on the schedule</a></li>
+            <li><a href="#g-parttime">Part-time and the 30-hour line</a></li>
+            <li><a href="#g-multi">Setting up more than one store</a></li>
+            <li><a href="#g-records">Attendance and records</a></li>
+            <li><a href="#g-choose">How to choose</a></li>
+          </ol>
+        </nav>
+        <div class="fp-guide__sales">
+          <b>Talk it through</b>
+          <p>See your own stores and team in a demo workspace.</p>
+          <a class="fp-btn" href="/#start">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="fp-guide__body">
+        <h2 id="guide-title">The store owner's guide to retail workforce management software</h2>
+        <p>A store runs on a week that peaks on Saturday, a team that is mostly part-time, a register that opens at a fixed minute, and often a second location. This guide covers what retail workforce management software has to handle, the fair workweek laws that reach retail first, the federal limits on minors' hours, the part-time line, more than one store, and how to choose.</p>
+
+        <h3 id="g-what">What retail workforce management software needs to do</h3>
+        <p>Five jobs, in order. Schedule each store by zone and show coverage for every open hour, not just a list of names. Work around availability that changes with the semester, and let staff trade and pick up shifts without a manager in the middle of every text. Record hours from a shared tablet or a phone, with breaks, overtime and late starts worked out. Hire and onboard seasonal staff in time for Black Friday. Then pay each store for exactly the hours that were approved. <a href="/features/scheduling/">Scheduling</a>, the <a href="/features/time-clock-kiosk/">time clock kiosk</a>, <a href="/features/hiring/">hiring</a>, <a href="/features/onboarding/">onboarding</a> and <a href="/features/payroll/">payroll</a> in Workzenly are those five jobs on one record.</p>
+        <p>Tools built only for retail employee scheduling, like most of those in our comparison of the <a href="/tools/best-retail-scheduling-software/">best retail scheduling software</a>, stop at publishing; the hours then get retyped into a payroll service, and the first corrections appear on Friday. Still on a spreadsheet? Our <a href="/templates/weekly-schedule-templates/">weekly schedule templates</a> show what a zone-by-zone grid looks like.</p>
+
+        <h3 id="g-fww">Fair workweek rules that reach retail</h3>
+        <p>Federal law says nothing about how far ahead a schedule must be posted. One state and several cities do, and retail is the industry they name first. New York City's retail rule is the strictest on short notice: 72 hours' written notice of the schedule, no on-call shifts, no cancellations within 72 hours, and no added shifts on short notice without the worker's written consent, according to the city's Department of Consumer and Worker Protection. The full verified table is on our <a href="/features/scheduling/#laws-title">scheduling page</a>; this is the retail summary.</p>
+        <div class="fp-table-wrap">
+          <table class="fp-table">
+            <thead><tr><th>Where</th><th>Retail employers covered (summary)</th><th>Schedule notice</th><th>Other rules (summary)</th></tr></thead>
+            <tbody>
+              <tr><td>New York City</td><td>Retail employers in the city</td><td>72 hours</td><td>No on-call shifts; no cancellations within 72 hours; added shifts on short notice only with written consent</td></tr>
+              <tr><td>Oregon (statewide)</td><td>Retail, hospitality and food service with 500+ employees worldwide</td><td>14 calendar days</td><td>Good faith estimate at hiring; 10 hours of rest after the previous day's shift unless the employee agrees, paid at time and a half; employee-requested written changes exempt</td></tr>
+              <tr><td>Seattle</td><td>Retail and food service with 500+ employees worldwide</td><td>14 days</td><td>Time and a half for hours worked when shifts are less than 10 hours apart; a written good faith estimate of hours</td></tr>
+              <tr><td>San Francisco</td><td>Formula retail with 40+ establishments worldwide and 20+ employees in the city</td><td>Two weeks</td><td>Predictability pay of 1 to 4 hours for short-notice changes; pay for on-call shifts that are not used</td></tr>
+              <tr><td>Los Angeles (city)</td><td>Retail employers with 300+ employees worldwide</td><td>14 days</td><td>10 hours of rest between shifts unless the employee consents in writing, paid at 1.5 times; employees can decline later changes</td></tr>
+              <tr><td>Chicago and Philadelphia</td><td>Retail among other industries; 100+ employees (Chicago) or 250+ employees and 30+ locations (Philadelphia)</td><td>14 days</td><td>Rest between shifts of 10 hours (Chicago) or 9 hours (Philadelphia) unless the worker agrees, with extra pay</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Most independent stores fall under the thresholds everywhere but New York City. Publishing two weeks ahead is still the right habit: people can only claim a Saturday they can see. Oregon and others treat changes the employee asks for differently from the employer's changes, and a swap requested from the app carries the employee's name and a time stamp; a text thread does not.</p>
+        <p class="fp-note">This guide is general information, not legal advice. Scheduling and wage rules change and thresholds are updated, so check your city or state labor agency or an employment lawyer for your situation.</p>
+
+        <h3 id="g-minors">Minors on the schedule</h3>
+        <p>Under the Fair Labor Standards Act, as summarized by the U.S. Department of Labor, 14- and 15-year-olds may work in retail jobs such as cashiering, bagging and stocking shelves, but only outside school hours and within these limits:</p>
+        <ul>
+          <li>No more than 3 hours on a school day, including Fridays</li>
+          <li>No more than 18 hours in a week when school is in session</li>
+          <li>No more than 8 hours on a non-school day</li>
+          <li>No more than 40 hours in a week when school is not in session</li>
+          <li>Only between 7 a.m. and 7 p.m., extended to 9 p.m. from June 1 through Labor Day</li>
+        </ul>
+        <p>They may not operate power-driven machinery other than office machines or work from ladders. Federal law sets no hour limits for 16- and 17-year-olds, but no one under 18 may operate a paper baler or compactor, which matters in every stockroom. Many states add hour and night limits for 16- and 17-year-olds, and the stricter rule applies. Workzenly shows each person's hours as you build and lets you block out school hours; checking a minor's shifts against your state's rules is yours to do. Keep each minor's age record in <a href="/features/hr-documents/">HR documents</a> so whoever builds the schedule can see who is under 18.</p>
+
+        <h3 id="g-parttime">Part-time hours and the 30-hour line</h3>
+        <p>"Part-time" means three different things. Your handbook sets one line, usually 20 to 29 hours, for benefits. The Bureau of Labor Statistics counts 35 hours as full-time. And for the Affordable Care Act's employer shared responsibility rules, the IRS counts an employee averaging at least 30 hours of service a week, or 130 hours a month, as full-time; an applicable large employer, generally 50 or more full-time employees including equivalents, must offer that person coverage. Our guide to <a href="/blog/how-many-hours-is-part-time/">how many hours is part time</a> covers all three.</p>
+        <p>The retail problem is drift. A part-timer scheduled for 24 hours picks up two open Saturdays a month, covers a sick day and averages 31. Hours per person on the schedule show that in week two rather than on a year-end report. The same weekly total keeps a pickup from turning a 38-hour week into 46: every hour a non-exempt employee works past 40 costs <a href="/blog/how-to-calculate-overtime/">1.5 times the regular rate</a>, and a few states, California among them, add daily overtime.</p>
+
+        <h3 id="g-multi">Setting up more than one store</h3>
+        <p>A second store doubles the schedules, not the owner. The setup that works is one account with each store as its own location:</p>
+        <ul>
+          <li><strong>Each store has its own schedule, hours and zones.</strong> The board shows one store at a time or both.</li>
+          <li><strong>Each store has its own geofence and its own kiosk.</strong> A phone punch is recorded with its location and compared against that store's geofence; a tablet at each stockroom door takes PIN punches. Our <a href="/blog/what-is-a-geofence/">geofence guide</a> covers how big to draw it when two stores share a plaza.</li>
+          <li><strong>Store managers see their store; the owner sees all of them.</strong> Tessa approves Carytown's timesheets, Devon approves Short Pump's, and neither sees the other's pay.</li>
+          <li><strong>Staff can float.</strong> When Elias from Short Pump picks up a Saturday at Carytown, he clocks in at Carytown and the hours count toward one weekly total of 38.5, not two totals of 32 and 6.5.</li>
+          <li><strong>Payroll is one run, subtotaled by store.</strong> You see what each store cost in regular hours, overtime and PTO, and pay everyone on the same Friday.</li>
+        </ul>
+
+        <h3 id="g-records">Attendance, no-shows and records</h3>
+        <p>A register that opens at 10 cannot wait for someone who is 20 minutes late, so most stores write down what "late" means and what happens after the third one. Our <a href="/blog/attendance-policy/">attendance policy templates</a> give you four to copy, and the <a href="/blog/no-call-no-show/">no-call, no-show</a> guide covers the opener who never shows and never calls. A policy only holds up if the record behind it is clean: the scheduled start, the actual punch and the note on any fix, with the original punch kept. The Fair Labor Standards Act accepts any complete and accurate timekeeping method and requires a record of hours worked each day and each workweek; payroll records must be kept at least three years and time cards and schedules two, according to the Department of Labor.</p>
+
+        <h3 id="g-choose">How to choose</h3>
+        <ol>
+          <li><strong>Run last Saturday through it.</strong> Take your real schedule for the busiest day, two swaps that happened by text, one late opener and one missed clock-out, and see which tool turns them into a correct pay run with the fewest steps.</li>
+          <li><strong>Count coverage, not names.</strong> Ask to see how many people are on the floor at 2 p.m., by zone.</li>
+          <li><strong>Check the stockroom.</strong> If phones stay in lockers, the tablet kiosk is not optional. Ask how PINs, breaks and a second store's tablet work.</li>
+          <li><strong>Open the app as a 19-year-old cashier would.</strong> Staff who avoid the app produce the same bad data as paper. Pick up a shift, request a day off, read a pay stub.</li>
+          <li><strong>Count the hand-offs.</strong> Every time hours are retyped between tools, someone fixes a pay stub later. Our guide to <a href="/blog/how-to-process-payroll/">how to process payroll</a> lists every step; on the demo call, ask us who handles tax deposits and filings for your setup.</li>
+        </ol>
+        <p>If you want to see your own stores in Workzenly, <a href="/#start">book a demo</a> and we will set up a workspace with your stores' names before the call. Plans and prices are on the <a href="/pricing/">pricing page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- FAQ -->
+  <section class="fp-band fp-faq" aria-labelledby="faq-title">
+    <div class="fp-wrap fp-faq__grid">
+      <div class="fp-head">
+        <p class="fp-kicker">FAQ</p>
+        <h2 id="faq-title">Questions from store owners</h2>
+        <p>Something else on your mind? Write to <a href="mailto:info@workzenly.com">info@workzenly.com</a>.</p>
+      </div>
+      <div class="faq-list">
+        <details open><summary>Does Workzenly work for more than one store?</summary><p>Yes. Each store is its own location with its own schedule, geofence and tablet kiosk, and each store manager sees only their store. The owner sees every store on one board, and timesheets and payroll are grouped by store. An employee who covers a shift at another store clocks in there and the punch lands in the same timesheet.</p></details>
+        <details><summary>How does retail scheduling software handle part-timers whose availability changes?</summary><p>Each person’s unavailable times and approved time off sit on the grid while you build, so a student with Monday and Wednesday classes is never dropped into a Monday morning shift. When availability changes mid-week, swaps and open shifts let the team cover each other from their phones, and the manager sees everyone’s weekly hours before saying yes.</p></details>
+        <details><summary>Can store staff clock in if phones stay in the break room?</summary><p>Yes. A shared tablet by the stockroom door or behind the registers works as a time clock kiosk, and each person clocks in with their own PIN. Staff who prefer their phones clock in from the Workzenly app, with GPS confirming they are inside the store’s geofence. Kiosk and phone punches land in the same timesheet.</p></details>
+        <details><summary>Does it help with fair workweek laws for retail?</summary><p>Workzenly records when each schedule was published and keeps a history of every change, and swap and open-shift requests are stored as requests from the employee with a time stamp. That is the evidence fair workweek laws ask for. Checking your city’s notice period and premium rules is still yours to do; New York City retail, for example, requires 72 hours’ written notice and bans on-call shifts.</p></details>
+        <details><summary>Can I schedule a 15-year-old on the register after school?</summary><p>Under federal child labor rules, 14- and 15-year-olds may do cashiering, bagging and shelf stocking, but only outside school hours, for no more than 3 hours on a school day, 18 hours in a school week, 8 hours on a non-school day and 40 hours in a non-school week, and only between 7 a.m. and 7 p.m. (9 p.m. from June 1 through Labor Day). They may not operate power-driven machinery, and no one under 18 may operate a baler or compactor. Many states add their own limits, so check yours.</p></details>
+        <details><summary>How long does it take to set up two stores?</summary><p>About a week. Send us your staff list by store, pay rates and PTO balances as a spreadsheet and we import them, set up each store’s hours, zones and geofence, and put a tablet kiosk at each stockroom door. Then we walk through your first schedule and first timesheet approval with you and stay through the first pay run.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="fp-band--tight fp-related" aria-labelledby="related-title">
+    <div class="fp-wrap">
+      <h2 id="related-title" style="font-size:clamp(26px,2.4vw,36px)">Guides for store teams</h2>
+      <div class="fp-related__grid">
+        <a href="/blog/attendance-policy/"><small>GUIDE</small><b>Attendance policy: four free policies to copy</b></a>
+        <a href="/tools/best-retail-scheduling-software/"><small>COMPARISON</small><b>Best retail scheduling software</b></a>
+        <a href="/templates/weekly-schedule-templates/"><small>TEMPLATES</small><b>Free weekly schedule templates</b></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fp-foot">
+  <div class="fp-wrap">
+    <div class="fp-foot__grid">
+      <div class="fp-foot__brand"><a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52" loading="lazy"></a><p>Time clocks, schedules, PTO and payroll for US employers, and one app for every employee.</p></div>
+      <nav aria-label="Time and pay features"><h2>Time and pay</h2><ul>
+        <li><a href="/features/time-and-attendance/">Time and attendance</a></li>
+        <li><a href="/features/time-clock/">Time clock app</a></li>
+        <li><a href="/features/timesheets/">Timesheets</a></li>
+        <li><a href="/features/gps-time-tracking/">GPS time tracking</a></li>
+        <li><a href="/features/time-clock-kiosk/">Time clock kiosk</a></li>
+        <li><a href="/features/overtime-tracking/">Overtime tracking</a></li>
+        <li><a href="/features/payroll/">Payroll</a></li>
+        <li><a href="/features/expenses/">Expenses</a></li>
+      </ul></nav>
+      <nav aria-label="People features and solutions"><h2>People and industries</h2><ul>
+        <li><a href="/features/scheduling/">Scheduling</a></li>
+        <li><a href="/features/pto/">PTO tracking</a></li>
+        <li><a href="/features/hiring/">Hiring</a></li>
+        <li><a href="/features/onboarding/">Onboarding</a></li>
+        <li><a href="/features/performance-reviews/">Performance reviews</a></li>
+        <li><a href="/features/hr-documents/">HR documents</a></li>
+        <li><a href="/features/employee-app/">Employee app</a></li>
+        <li><a href="/solutions/">Solutions by industry</a></li>
+      </ul></nav>
+      <nav aria-label="Resources"><h2>Resources</h2><ul>
+        <li><a href="/features/">All features</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tools/">Software comparisons</a></li>
+        <li><a href="/templates/">Free templates</a></li>
+        <li><a href="/#start">Book a demo</a></li>
+        <li><a href="mailto:info@workzenly.com">info@workzenly.com</a></li>
+      </ul></nav>
+    </div>
+    <div class="fp-foot__legal"><p>© <span id="year">2026</span> Workzenly</p><p>Built for US employers and their teams.</p></div>
+  </div>
+</footer>
+<script src="/blog.js" defer></script>
+<script src="/feature.js" defer></script>
+</body>
+</html>

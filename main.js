@@ -62,46 +62,6 @@
     $('#approve-text').textContent = 'All caught up. Payroll has the hours.';
   });
 
-  /* ---------- Features: command list ---------- */
-  const input = $('#cmd-input');
-  const rows = $$('.cmd__row');
-  const empty = $('#cmd-empty');
-  const visible = () => rows.filter((r) => !r.hidden);
-  const select = (row, focus = false) => {
-    if (!row) return;
-    rows.forEach((r) => { const on = r === row; r.setAttribute('aria-selected', String(on)); r.tabIndex = on ? 0 : -1; });
-    if (focus) row.focus({ preventScroll: false });
-  };
-  rows.forEach((row) => {
-    row.addEventListener('click', () => select(row));
-    row.addEventListener('mouseenter', () => { if (matchMedia('(hover: hover)').matches) select(row); });
-    row.addEventListener('keydown', (e) => {
-      const list = visible();
-      const i = list.indexOf(row);
-      if (e.key === 'ArrowDown') { e.preventDefault(); select(list[Math.min(i + 1, list.length - 1)], true); }
-      if (e.key === 'ArrowUp') { e.preventDefault(); if (i === 0) input.focus(); else select(list[i - 1], true); }
-    });
-  });
-  input?.addEventListener('input', () => {
-    const q = input.value.trim().toLowerCase();
-    rows.forEach((r) => { r.hidden = q !== '' && !r.textContent.toLowerCase().includes(q); });
-    const list = visible();
-    empty.hidden = list.length > 0;
-    if (list.length && !list.some((r) => r.getAttribute('aria-selected') === 'true')) select(list[0]);
-  });
-  input?.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowDown') { e.preventDefault(); select(visible()[0], true); }
-  });
-  // Single-letter shortcuts while the list is in view and nothing is being typed
-  document.addEventListener('keydown', (e) => {
-    if (e.metaKey || e.ctrlKey || e.altKey || /^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement?.tagName)) return;
-    const list = $('#cmd-list');
-    const r = list?.getBoundingClientRect();
-    if (!r || r.bottom < 0 || r.top > innerHeight) return;
-    const hit = rows.find((row) => row.querySelector('kbd')?.textContent.toLowerCase() === e.key.toLowerCase());
-    if (hit && !hit.hidden) select(hit);
-  });
-
   /* ---------- How it works: the request changes with each statement ---------- */
   // Wide screens: a step takes over when it reaches the middle of the window,
   // beside the card. Phones: the card is pinned above the text, so a step takes

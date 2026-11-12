@@ -19,8 +19,9 @@ for _p in PLAN["posts"]:
     SECTIONS[_p.get("section", "blog")][_p["slug"]] = _p
 POSTS = SECTIONS["blog"]
 FEATS = {f["slug"]: f for f in PLAN["features"]}
-VALID_PATHS = ({"/", "/blog/", "/tools/", "/templates/", "/#start", "/#features"}
-               | {p["url"] for p in PLAN["posts"]} | {f["url"] for f in PLAN["features"]})
+SOLS = {f["slug"]: f for f in PLAN.get("solutions", [])}
+VALID_PATHS = ({"/", "/blog/", "/tools/", "/templates/", "/features/", "/solutions/", "/pricing/", "/#start", "/#features"}
+               | {p["url"] for p in PLAN["posts"]} | {f["url"] for f in PLAN["features"]} | {f["url"] for f in PLAN.get("solutions", [])})
 MIN_WORDS = {"informational": 1300, "transactional": 1000, "commercial": 1500}
 LISTICLE_MIN_WORDS = {"tools": 1800, "templates": 1200}
 BANNED = ["seamless", "seamlessly", "unlock", "unleash", "empower", "leverage", "game-changer", "game changer",
@@ -123,12 +124,12 @@ def words(text):
 
 def check(path, quiet=False):
     rel = os.path.relpath(path, ROOT).replace("\\", "/")
-    m = re.match(r"(blog|features|tools|templates)/([^/]+)/index\.html$", rel)
+    m = re.match(r"(blog|features|tools|templates|solutions)/([^/]+)/index\.html$", rel)
     fails, warns = [], []
     if not m:
-        return rel, ["path must be <blog|tools|templates|features>/<slug>/index.html"], [], {}
+        return rel, ["path must be <blog|tools|templates|features|solutions>/<slug>/index.html"], [], {}
     kind, slug = m.groups()
-    plan = (FEATS if kind == "features" else SECTIONS[kind]).get(slug)
+    plan = (FEATS if kind == "features" else SOLS if kind == "solutions" else SECTIONS[kind]).get(slug)
     listicle = kind in ("tools", "templates")
     article_kind = kind in ("blog", "tools", "templates")
     if not plan:
@@ -198,7 +199,7 @@ def check(path, quiet=False):
         fails.append("no article.prose (blog) or <main> (feature) found")
         return rel, fails, warns, info
     h2s = [h for h in content.find_all("h2")]
-    if kind == "feature" or kind == "features":
+    if kind in ("features", "solutions"):
         h2s = [h for h in main.find_all("h2")]
     if len(h2s) < 5:
         fails.append(f"only {len(h2s)} <h2> headings (need ≥ 5)")
@@ -289,8 +290,8 @@ def check(path, quiet=False):
         if any(x.tag in ("nav", "footer") or "related" in x.classes() for x in a.ancestors()):
             continue
         base_ = href.split("#")[0]
-        if (href.startswith(("/blog/", "/features/", "/tools/", "/templates/")) and base_ != f"/{kind}/{slug}/"
-                and base_ not in ("/tools/", "/templates/", "/blog/")):
+        if (href.startswith(("/blog/", "/features/", "/tools/", "/templates/", "/solutions/")) and base_ != f"/{kind}/{slug}/"
+                and base_ not in ("/tools/", "/templates/", "/blog/", "/features/", "/solutions/")):
             in_links.add(href.split("#")[0])
     info["internal_links"] = len(in_links)
     if len(in_links) < 4:
@@ -367,7 +368,7 @@ def check(path, quiet=False):
             fails.append("calculator post needs a working .tool widget")
         if not any(not a.get("src") and a.get("type") != "application/ld+json" and s.strip() for a, s in b.scripts):
             fails.append("calculator post needs an inline <script> that powers the tool")
-    if kind == "features" and not root.find(pred=lambda n: "data-ui" in n.attrs):
+    if kind in ("features", "solutions") and not root.find(pred=lambda n: "data-ui" in n.attrs):
         fails.append("feature page hero needs a product fragment with data-ui")
 
     # --- listicles ---
@@ -435,7 +436,7 @@ def main(argv):
     args = [a for a in argv if not a.startswith("--")]
     if "--all" in argv:
         args = []
-        for kind in ("blog", "tools", "templates", "features"):
+        for kind in ("blog", "tools", "templates", "features", "solutions"):
             d = os.path.join(ROOT, kind)
             if os.path.isdir(d):
                 for s in sorted(os.listdir(d)):

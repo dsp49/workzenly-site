@@ -75,7 +75,7 @@ def nav(active):
   <a class="logo" href="/" aria-label="Workzenly home"><img src="/assets/workzenly-logo-sm.png" alt="Workzenly" class="logo__img" width="168" height="52"></a>
   <nav class="nav__links" aria-label="Main">
     <a class="link" href="/features/">Features</a>
-    <a class="link" href="/features/time-and-attendance/">Time and attendance</a>
+    <a class="link" href="/solutions/">Solutions</a>
     <a class="link" href="/features/scheduling/">Scheduling</a>
     <a class="link" href="/features/payroll/">Payroll</a>
     <a class="link" href="/pricing/">Pricing</a>
@@ -92,6 +92,7 @@ FOOT = """<footer class="simple-foot">
     <a href="/features/scheduling/">Scheduling</a>
     <a href="/features/payroll/">Payroll</a>
     <a href="/features/pto/">PTO</a>
+    <a href="/solutions/">Solutions</a>
     <a href="/tools/">Best tools</a>
     <a href="/templates/">Free templates</a>
     <a href="/pricing/">Pricing</a>
@@ -205,7 +206,8 @@ for s, items in data.items():
         hub(s, items, counts)
 features = [f for f in PLAN["features"] if os.path.isfile(os.path.join(ROOT, "features", f["slug"], "index.html"))]
 
-urls = [("/", "1.0")] + ([("/features/", "0.9")] if os.path.isfile(os.path.join(ROOT, "features", "index.html")) else []) + ([("/pricing/", "0.9")] if os.path.isfile(os.path.join(ROOT, "pricing", "index.html")) else []) + [(f["url"], "0.9") for f in features]
+solutions = [f for f in PLAN.get("solutions", []) if os.path.isfile(os.path.join(ROOT, "solutions", f["slug"], "index.html"))]
+urls = [("/", "1.0")] + ([("/features/", "0.9")] if os.path.isfile(os.path.join(ROOT, "features", "index.html")) else []) + ([("/solutions/", "0.9")] if os.path.isfile(os.path.join(ROOT, "solutions", "index.html")) else []) + [(f["url"], "0.9") for f in solutions] + ([("/pricing/", "0.9")] if os.path.isfile(os.path.join(ROOT, "pricing", "index.html")) else []) + [(f["url"], "0.9") for f in features]
 for s in ("tools", "templates", "blog"):
     if data[s]:
         urls.append((f"/{s}/", "0.8"))
@@ -215,4 +217,4 @@ for u, pr in urls:
     sm.append(f"  <url>\n    <loc>https://workzenly.com{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <priority>{pr}</priority>\n  </url>")
 sm.append("</urlset>")
 open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(sm) + "\n")
-print("hubs:", counts, "| features:", len(features), "| sitemap:", len(urls), "URLs")
+print("hubs:", counts, "| features:", len(features), "| solutions:", len(solutions), "| sitemap:", len(urls), "URLs")
