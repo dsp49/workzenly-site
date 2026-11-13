@@ -2384,6 +2384,686 @@
    ],
    "tool": false,
    "feature": "hr-documents"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "employee-turnover-statistics",
+   "url": "/blog/employee-turnover-statistics/",
+   "keyword": "employee turnover statistics",
+   "intent": "informational",
+   "volume": 14000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "turnover rate by industry",
+    "average employee turnover rate",
+    "employee turnover rate 2026",
+    "quit rate statistics"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "remote-work-statistics",
+   "url": "/blog/remote-work-statistics/",
+   "keyword": "remote work statistics",
+   "intent": "informational",
+   "volume": 22000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "work from home statistics",
+    "telework statistics",
+    "hybrid work statistics",
+    "remote work trends 2026"
+   ],
+   "tool": false,
+   "feature": "employee-app"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "small-business-statistics",
+   "url": "/blog/small-business-statistics/",
+   "keyword": "small business statistics",
+   "intent": "informational",
+   "volume": 27000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "small business employment statistics",
+    "number of small businesses in the us",
+    "small business failure rate",
+    "small business facts"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "minimum-wage-statistics",
+   "url": "/blog/minimum-wage-statistics/",
+   "keyword": "minimum wage statistics",
+   "intent": "informational",
+   "volume": 5400,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "minimum wage workers statistics",
+    "how many people earn minimum wage",
+    "minimum wage facts",
+    "minimum wage data"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "overtime-statistics",
+   "url": "/blog/overtime-statistics/",
+   "keyword": "overtime statistics",
+   "intent": "informational",
+   "volume": 2400,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "average overtime hours",
+    "overtime pay statistics",
+    "unpaid overtime statistics",
+    "overtime violations"
+   ],
+   "tool": false,
+   "feature": "overtime-tracking"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "employee-engagement-statistics",
+   "url": "/blog/employee-engagement-statistics/",
+   "keyword": "employee engagement statistics",
+   "intent": "informational",
+   "volume": 12000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "employee engagement rate",
+    "gallup employee engagement",
+    "disengaged employees statistics",
+    "employee engagement 2026"
+   ],
+   "tool": false,
+   "feature": "performance-reviews"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "absenteeism-statistics",
+   "url": "/blog/absenteeism-statistics/",
+   "keyword": "absenteeism statistics",
+   "intent": "informational",
+   "volume": 3600,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "employee absenteeism rate",
+    "absence rate by industry",
+    "cost of absenteeism",
+    "workplace absenteeism"
+   ],
+   "tool": false,
+   "feature": "time-and-attendance"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "pto-statistics",
+   "url": "/blog/pto-statistics/",
+   "keyword": "pto statistics",
+   "intent": "informational",
+   "volume": 4400,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "paid time off statistics",
+    "vacation days statistics",
+    "unused pto statistics",
+    "average pto days"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "paid-sick-leave-statistics",
+   "url": "/blog/paid-sick-leave-statistics/",
+   "keyword": "paid sick leave statistics",
+   "intent": "informational",
+   "volume": 2900,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "sick leave statistics",
+    "access to paid sick leave",
+    "workers without paid sick leave",
+    "sick days statistics"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "wage-theft-statistics",
+   "url": "/blog/wage-theft-statistics/",
+   "keyword": "wage theft statistics",
+   "intent": "informational",
+   "volume": 3600,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "wage and hour violations",
+    "back wages recovered",
+    "unpaid wages statistics",
+    "wage theft facts"
+   ],
+   "tool": false,
+   "feature": "timesheets"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "part-time-employment-statistics",
+   "url": "/blog/part-time-employment-statistics/",
+   "keyword": "part time employment statistics",
+   "intent": "informational",
+   "volume": 2400,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "part time workers statistics",
+    "involuntary part time",
+    "part time jobs data",
+    "part time vs full time statistics"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "gig-economy-statistics",
+   "url": "/blog/gig-economy-statistics/",
+   "keyword": "gig economy statistics",
+   "intent": "informational",
+   "volume": 14000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "gig worker statistics",
+    "independent contractor statistics",
+    "freelance statistics",
+    "contingent workers"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "hiring-statistics",
+   "url": "/blog/hiring-statistics/",
+   "keyword": "hiring statistics",
+   "intent": "informational",
+   "volume": 6600,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "recruiting statistics",
+    "job openings statistics",
+    "time to hire statistics",
+    "hiring trends 2026"
+   ],
+   "tool": false,
+   "feature": "hiring"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "employee-onboarding-statistics",
+   "url": "/blog/employee-onboarding-statistics/",
+   "keyword": "employee onboarding statistics",
+   "intent": "informational",
+   "volume": 4400,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "onboarding statistics",
+    "new hire turnover statistics",
+    "onboarding facts",
+    "first 90 days statistics"
+   ],
+   "tool": false,
+   "feature": "onboarding"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "burnout-statistics",
+   "url": "/blog/burnout-statistics/",
+   "keyword": "burnout statistics",
+   "intent": "informational",
+   "volume": 12000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "workplace burnout statistics",
+    "employee burnout statistics",
+    "work stress statistics",
+    "burnout rate"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "employee-benefits-statistics",
+   "url": "/blog/employee-benefits-statistics/",
+   "keyword": "employee benefits statistics",
+   "intent": "informational",
+   "volume": 3600,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "benefits statistics",
+    "employer benefits data",
+    "access to employee benefits",
+    "retirement plan statistics"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "employer-health-insurance-statistics",
+   "url": "/blog/employer-health-insurance-statistics/",
+   "keyword": "employer health insurance statistics",
+   "intent": "informational",
+   "volume": 2900,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "employer sponsored health insurance statistics",
+    "average health insurance premium",
+    "health insurance cost per employee",
+    "kff employer health benefits"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "average-hourly-wage",
+   "url": "/blog/average-hourly-wage/",
+   "keyword": "average hourly wage",
+   "intent": "informational",
+   "volume": 18000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "average hourly wage in the us",
+    "average hourly earnings",
+    "average hourly pay",
+    "average wage by industry"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "restaurant-industry-statistics",
+   "url": "/blog/restaurant-industry-statistics/",
+   "keyword": "restaurant industry statistics",
+   "intent": "informational",
+   "volume": 9900,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "restaurant employment statistics",
+    "restaurant turnover rate",
+    "restaurant labor statistics",
+    "food service industry statistics"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "retail-industry-statistics",
+   "url": "/blog/retail-industry-statistics/",
+   "keyword": "retail industry statistics",
+   "intent": "informational",
+   "volume": 6600,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "retail employment statistics",
+    "retail turnover rate",
+    "retail workers statistics",
+    "retail labor statistics"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "healthcare-workforce-statistics",
+   "url": "/blog/healthcare-workforce-statistics/",
+   "keyword": "healthcare workforce statistics",
+   "intent": "informational",
+   "volume": 3600,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "nursing shortage statistics",
+    "healthcare staffing statistics",
+    "healthcare employment statistics",
+    "nurse turnover rate"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "construction-labor-shortage-statistics",
+   "url": "/blog/construction-labor-shortage-statistics/",
+   "keyword": "construction labor shortage statistics",
+   "intent": "informational",
+   "volume": 2400,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "construction industry statistics",
+    "construction workforce statistics",
+    "construction employment data",
+    "construction job openings"
+   ],
+   "tool": false,
+   "feature": "gps-time-tracking"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "unemployment-rate-by-state",
+   "url": "/blog/unemployment-rate-by-state/",
+   "keyword": "unemployment rate by state",
+   "intent": "informational",
+   "volume": 40000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "state unemployment rates",
+    "unemployment rate 2026",
+    "highest unemployment rate by state",
+    "lowest unemployment rate by state"
+   ],
+   "tool": false,
+   "feature": "hiring"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "workplace-injury-statistics",
+   "url": "/blog/workplace-injury-statistics/",
+   "keyword": "workplace injury statistics",
+   "intent": "informational",
+   "volume": 6600,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "workplace accident statistics",
+    "occupational injury statistics",
+    "workplace fatalities statistics",
+    "osha statistics"
+   ],
+   "tool": false,
+   "feature": "hr-documents"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "union-membership-statistics",
+   "url": "/blog/union-membership-statistics/",
+   "keyword": "union membership statistics",
+   "intent": "informational",
+   "volume": 4400,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "union membership rate",
+    "labor union statistics",
+    "union membership by state",
+    "union workers statistics"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "gender-pay-gap-statistics",
+   "url": "/blog/gender-pay-gap-statistics/",
+   "keyword": "gender pay gap statistics",
+   "intent": "informational",
+   "volume": 14000,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "gender wage gap",
+    "women's earnings statistics",
+    "pay gap by state",
+    "equal pay statistics"
+   ],
+   "tool": false,
+   "feature": "payroll"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "four-day-work-week-statistics",
+   "url": "/blog/four-day-work-week-statistics/",
+   "keyword": "four day work week statistics",
+   "intent": "informational",
+   "volume": 3600,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "4 day work week statistics",
+    "4 day work week results",
+    "four day week trial results",
+    "compressed workweek statistics"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "layoff-statistics",
+   "url": "/blog/layoff-statistics/",
+   "keyword": "layoff statistics",
+   "intent": "informational",
+   "volume": 8100,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "layoffs 2026",
+    "layoff data",
+    "layoffs and discharges",
+    "mass layoff statistics"
+   ],
+   "tool": false,
+   "feature": "hr-documents"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "employee-retention-statistics",
+   "url": "/blog/employee-retention-statistics/",
+   "keyword": "employee retention statistics",
+   "intent": "informational",
+   "volume": 6600,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "retention rate statistics",
+    "employee tenure statistics",
+    "why employees leave statistics",
+    "average employee tenure"
+   ],
+   "tool": false,
+   "feature": "performance-reviews"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "average-work-week-hours",
+   "url": "/blog/average-work-week-hours/",
+   "keyword": "average work week hours",
+   "intent": "informational",
+   "volume": 8100,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "average hours worked per week",
+    "average work hours per week us",
+    "average workweek",
+    "hours worked statistics"
+   ],
+   "tool": false,
+   "feature": "timesheets"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "shift-work-statistics",
+   "url": "/blog/shift-work-statistics/",
+   "keyword": "shift work statistics",
+   "intent": "informational",
+   "volume": 1900,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "shift workers statistics",
+    "night shift statistics",
+    "work schedule statistics",
+    "irregular schedules statistics"
+   ],
+   "tool": false,
+   "feature": "scheduling"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "women-in-the-workforce-statistics",
+   "url": "/blog/women-in-the-workforce-statistics/",
+   "keyword": "women in the workforce statistics",
+   "intent": "informational",
+   "volume": 9900,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "women labor force participation",
+    "working women statistics",
+    "women employment statistics",
+    "mothers in the workforce"
+   ],
+   "tool": false,
+   "feature": "pto"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "job-satisfaction-statistics",
+   "url": "/blog/job-satisfaction-statistics/",
+   "keyword": "job satisfaction statistics",
+   "intent": "informational",
+   "volume": 5400,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "employee satisfaction statistics",
+    "job satisfaction survey results",
+    "worker satisfaction 2026",
+    "job satisfaction by industry"
+   ],
+   "tool": false,
+   "feature": "performance-reviews"
+  },
+  {
+   "section": "blog",
+   "batch": "S_statistics",
+   "slug": "labor-productivity-statistics",
+   "url": "/blog/labor-productivity-statistics/",
+   "keyword": "labor productivity statistics",
+   "intent": "informational",
+   "volume": 2900,
+   "kd": 0,
+   "volume_source": "estimate_2026-11",
+   "country": "us",
+   "secondary": [
+    "productivity statistics",
+    "us productivity growth",
+    "worker productivity data",
+    "productivity by industry"
+   ],
+   "tool": false,
+   "feature": "time-and-attendance"
   }
  ],
  "features": [

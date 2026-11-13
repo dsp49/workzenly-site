@@ -14,7 +14,7 @@ slugify = lambda t: re.sub(r"[^a-z]+", "-", t.lower()).strip("-")
 BLOG_TOPICS = {
     "A_pay_calculators": "Pay and overtime", "B_payroll_forms": "Payroll and tax forms", "C_minimum_wage": "Minimum wage",
     "D_leave_attendance": "Time off and attendance", "E_scheduling": "Scheduling", "F_time_tracking": "Time tracking",
-    "G_people_docs": "Hiring and people", "H_software": "HR software",
+    "G_people_docs": "Hiring and people", "H_software": "HR software", "S_statistics": "Workforce statistics",
 }
 TOOL_KINDS = {"best": "Best software", "free": "Free tools", "alternatives": "Alternatives"}
 TEMPLATE_TOPICS = {"scheduling": "Schedules", "time-clock": "Timesheets and attendance", "pto": "Time off and policies",
