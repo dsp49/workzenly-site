@@ -98,7 +98,7 @@ FOOT = """<footer class="simple-foot">
     <a href="/pricing/">Pricing</a>
     <a href="/blog/">Guides</a>
   </nav>
-  <p><a href="mailto:info@workzenly.com">info@workzenly.com</a></p>
+  <p><a href="mailto:info@workzenly.com">info@workzenly.com</a> · <a href="https://www.linkedin.com/company/workzenly" target="_blank" rel="noopener">LinkedIn</a></p>
 </footer>"""
 
 
@@ -212,9 +212,28 @@ for s in ("tools", "templates", "blog"):
     if data[s]:
         urls.append((f"/{s}/", "0.8"))
         urls += [(p["url"], "0.7") for p in data[s]]
+# lastmod comes from each page's own JSON-LD dateModified, so a rebuild or a
+# sitewide nav tweak never re-dates old pages. Hubs take the newest date of
+# the pages they list. Bump a page's dateModified only when its content changes.
+def page_date(u):
+    f = os.path.join(ROOT, "index.html") if u == "/" else os.path.join(ROOT, u.strip("/"), "index.html")
+    try:
+        m = re.search(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})', open(f, encoding="utf-8").read())
+    except OSError:
+        m = None
+    return m.group(1) if m else None
+
+dates = {u: page_date(u) for u, _ in urls}
+for hub_url in ("/features/", "/solutions/", "/tools/", "/templates/", "/blog/"):
+    if hub_url in dates and not dates[hub_url]:
+        kids = [d for u, d in dates.items() if u != hub_url and u.startswith(hub_url) and d]
+        dates[hub_url] = max(kids) if kids else None
+missing = [u for u, d in dates.items() if not d]
+if missing:
+    print("WARNING no dateModified, using", TODAY, "for:", " ".join(missing))
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for u, pr in urls:
-    sm.append(f"  <url>\n    <loc>https://workzenly.com{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <priority>{pr}</priority>\n  </url>")
+    sm.append(f"  <url>\n    <loc>https://workzenly.com{u}</loc>\n    <lastmod>{dates[u] or TODAY}</lastmod>\n    <priority>{pr}</priority>\n  </url>")
 sm.append("</urlset>")
 open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(sm) + "\n")
 print("hubs:", counts, "| features:", len(features), "| solutions:", len(solutions), "| sitemap:", len(urls), "URLs")
